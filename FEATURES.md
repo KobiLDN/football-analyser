@@ -21,6 +21,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.26** — Auto-marked 11 results (Man United 3-2 Nottingham; Brentford 2-2 Crystal Palace; Everton 1-3 Sunderland, +8 more).
 - **v2.25** — Auto-marked 8 results (Bremen 0-2 Dortmund; Heidenheim 0-2 Mainz; Freiburg 4-1 RB Leipzig, +5 more).
 - **v2.24** — Auto-marked 1 result (Aston Villa 4-2 Liverpool).
 - **v2.23** — Auto-marked 3 results (Valencia 1-1 Rayo Vallecano; Girona 1-1 Real Sociedad; Real Madrid 2-0 Real Oviedo).
