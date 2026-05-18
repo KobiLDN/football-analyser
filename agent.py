@@ -82,7 +82,9 @@ def format_team_news(items):
 
 
 def build_replacement(home, away, day, time_, result, analysis):
-    dp      = analysis["drawProbability"]
+    hw      = analysis["homeWin"]
+    d       = analysis["draw"]
+    aw      = analysis["awayWin"]
     verdict = analysis["verdict"]
     odds    = escape_js_string(analysis["fairOdds"])
     f       = analysis["factors"]
@@ -98,7 +100,7 @@ def build_replacement(home, away, day, time_, result, analysis):
     return f"""{{
         day: '{day}',
         home: '{escape_js_string(home)}', away: '{escape_js_string(away)}', time: '{time_}',
-        result: {result_str}, drawProbability: {dp}, verdict: '{verdict}', fairOdds: '{odds}',
+        result: {result_str}, homeWin: {hw}, draw: {d}, awayWin: {aw}, verdict: '{verdict}', fairOdds: '{odds}',
         factors: {{
           formBalance:   {factor('formBalance')},
           drawRates:     {factor('drawRates')},
@@ -218,7 +220,7 @@ def fetch_news(home, away, max_results=8, full_text_limit=4):
 
 def build_prompt(home, away, competition, articles):
     news = "\n".join(articles) if articles else "No live news available."
-    return f"""Analyse this fixture for draw probability.
+    return f"""Analyse this fixture and estimate win probabilities.
 
 FIXTURE: {home} vs {away} — {competition}
 
@@ -228,7 +230,9 @@ CURRENT NEWS:
 Return ONLY this JSON structure — no markdown, no code fences, no explanation:
 
 {{
-  "drawProbability": <integer 0-100>,
+  "homeWin": <integer 0-100>,
+  "draw": <integer 0-100>,
+  "awayWin": <integer 0-100>,
   "verdict": "<Low|Moderate|Good|Strong>",
   "fairOdds": "<e.g. 3.50–3.80>",
   "factors": {{
@@ -246,7 +250,8 @@ Return ONLY this JSON structure — no markdown, no code fences, no explanation:
   "summary": "<2-3 sentence summary>"
 }}
 
-Verdict: Low < 28%, Moderate 28-35%, Good 36-44%, Strong 45%+
+IMPORTANT: homeWin + draw + awayWin MUST sum to exactly 100.
+Verdict is based on draw probability: Low < 28%, Moderate 28-35%, Good 36-44%, Strong 45%+
 Factor scores: 50 = neutral, higher = more favourable for a draw.
 Use real player names from the news where available.
 """
@@ -313,7 +318,7 @@ def run():
         html = patch_fixture(html, home, away,
                              build_replacement(home, away, day, time_, result, analysis))
         save_html(html)
-        print(f"  Done — {analysis['drawProbability']}% {analysis['verdict']}\n")
+        print(f"  Done — H:{analysis['homeWin']}% D:{analysis['draw']}% A:{analysis['awayWin']}% · {analysis['verdict']}\n")
 
     print("All fixtures researched.")
 

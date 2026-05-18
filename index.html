@@ -160,6 +160,15 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .pct-display { font-size: 20px; font-weight: 700; min-width: 48px; text-align: right; }
 .mini-bar-wrap { width: 70px; height: 3px; background: var(--border2); border-radius: 99px; overflow: hidden; }
 .mini-bar { height: 100%; }
+.prob-bar-wrap { min-width: 110px; }
+.prob-labels { display: flex; justify-content: space-between; font-size: 9px; font-weight: 600; margin-bottom: 3px; }
+.prob-label-h { color: var(--blue); }
+.prob-label-d { color: var(--amber); }
+.prob-label-a { color: #e05252; }
+.prob-bar { display: flex; height: 4px; border-radius: 99px; overflow: hidden; }
+.prob-home { background: var(--blue); }
+.prob-draw { background: var(--amber); }
+.prob-away { background: #e05252; }
 .vtag {
   font-size: 10px;
   font-weight: 700;
@@ -2123,7 +2132,7 @@ function renderFixtureListHead() {
       <div class="fixture-list-col">Fixture</div>
       <div class="fixture-list-col">League</div>
       <div class="fixture-list-col research">Research</div>
-      <div class="fixture-list-col metric">Draw Probability</div>
+      <div class="fixture-list-col metric">Win Probabilities</div>
       <div class="fixture-list-col signal">Draw Signal</div>
       <div></div>
     </div>`;
@@ -2151,7 +2160,7 @@ function renderAll() {
   filtered.forEach(f => { if (!grouped[f.day]) grouped[f.day] = []; grouped[f.day].push(f); });
 
   const upcoming    = filtered.filter(f => !f.result).length;
-  const topPick     = filtered.length ? Math.max(...filtered.map(f => f.drawProbability)) : 0;
+  const topPick     = filtered.length ? Math.max(...filtered.map(f => f.draw ?? f.drawProbability)) : 0;
   const strongPicks = filtered.filter(f => f.verdict === 'Strong' || f.verdict === 'Good').length;
 
   document.getElementById('main').innerHTML = `
@@ -2189,7 +2198,7 @@ function renderMain() {
   });
 
   const upcoming    = filtered.filter(f => !f.result).length;
-  const topPick     = filtered.length ? Math.max(...filtered.map(f => f.drawProbability)) : 0;
+  const topPick     = filtered.length ? Math.max(...filtered.map(f => f.draw ?? f.drawProbability)) : 0;
   const strongPicks = filtered.filter(f => f.verdict === 'Strong' || f.verdict === 'Good').length;
 
   document.getElementById('main').innerHTML = `
@@ -2275,8 +2284,22 @@ function renderFixture(f, key, leagueName) {
         <div class="fixture-tag-cell">${leagueTag}</div>
         <div class="fixture-tag-cell">${researchBadge}</div>
         <div class="draw-probability-cell">
-          <div class="pct-display" style="color:${f.verdict==='Strong'?'var(--blue)':f.verdict==='Good'?'var(--green)':f.verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
-          <div class="mini-bar-wrap"><div class="mini-bar ${bc}" style="width:${f.drawProbability}%"></div></div>
+          ${f.homeWin !== undefined
+            ? `<div class="prob-bar-wrap">
+                <div class="prob-labels">
+                  <span class="prob-label-h">H ${f.homeWin}%</span>
+                  <span class="prob-label-d">D ${f.draw}%</span>
+                  <span class="prob-label-a">A ${f.awayWin}%</span>
+                </div>
+                <div class="prob-bar">
+                  <div class="prob-home" style="width:${f.homeWin}%"></div>
+                  <div class="prob-draw" style="width:${f.draw}%"></div>
+                  <div class="prob-away" style="width:${f.awayWin}%"></div>
+                </div>
+               </div>`
+            : `<div class="pct-display" style="color:${f.verdict==='Strong'?'var(--blue)':f.verdict==='Good'?'var(--green)':f.verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
+               <div class="mini-bar-wrap"><div class="mini-bar ${bc}" style="width:${f.drawProbability}%"></div></div>`
+          }
         </div>
         <div class="vtag ${vc}">${f.verdict}</div>
         <div class="chevron">▼</div>
