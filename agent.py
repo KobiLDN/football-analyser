@@ -251,7 +251,11 @@ Return ONLY this JSON structure — no markdown, no code fences, no explanation:
 }}
 
 IMPORTANT: homeWin + draw + awayWin MUST sum to exactly 100.
-Verdict is based on draw probability: Low < 28%, Moderate 28-35%, Good 36-44%, Strong 45%+
+Verdict is based on the highest of the three probabilities (model confidence):
+  Low < 45% — no clear favourite, too close to call
+  Moderate 45-54% — slight lean but uncertain
+  Good 55-64% — one outcome clearly favoured
+  Strong 65%+ — dominant favourite
 Factor scores: 50 = neutral, higher = more favourable for a draw.
 Use real player names from the news where available.
 """

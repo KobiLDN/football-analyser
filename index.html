@@ -528,187 +528,278 @@ const LEAGUES = [
       {
         day: 'Tuesday 19 May',
         home: 'Bournemouth', away: 'Man City', time: '19:30',
-        result: null, drawProbability: 25, verdict: 'Low', fairOdds: '3.10–3.40',
+        result: null, homeWin: 25, draw: 28, awayWin: 47, verdict: 'Moderate', fairOdds: '1.60–2.00',
         factors: {
-          formBalance:   { score: 65, detail: 'Man City is on a strong run of form (six consecutive matches unbeaten and scoring goals), while Bournemouth\'s recent form is mixed but they are fighting for European spots.' },
-          drawRates:     { score: 30, detail: 'The historical draw rate between the two teams is low, with Man City dominating the head-to-head record (16 wins to 1 defeat).' },
-          headToHead:    { score: 20, detail: 'Manchester City has a dominant record against Bournemouth (16 wins in 17 meetings), suggesting difficulty for Bournemouth to secure a draw.' },
-          goalTendency:  { score: 55, detail: 'Both teams show an ability to score goals (Man City on a run of 12 consecutive matches scoring goals; Bournemouth also noted for goal-scoring runs), suggesting potential attacking action but not necessarily high draw probability.' },
-          leagueContext: { score: 40, detail: 'The match is highly competitive as both teams have stakes (Bournemouth in the European race, Man City potentially needing a win to secure the title), making it difficult to predict but favoring decisive action.' }
+          formBalance:   { score: 75, detail: 'Manchester City is in exceptional form, highlighted by their recent domestic double win (FA Cup final), while Bournemouth\'s focus remains on securing a European place.' },
+          drawRates:     { score: 60, detail: 'Historically, matches involving Man City can be cagey, but the fixture context suggests City\'s high stakes in the title race might push them to secure all three points.' },
+          headToHead:    { score: 50, detail: 'No specific recent head-to-head data is provided, making this factor neutral. However, Man City have historically dominated Bournemouth.' },
+          goalTendency:  { score: 65, detail: 'Man City\'s ability to restrict opponents (e.g., restricting the south-west London side to no shots on target) suggests they are capable of controlling games and scoring goals.' },
+          leagueContext: { score: 80, detail: 'This match is highly critical for Man City\'s title race against Arsenal. Their motivation will be immense, while Bournemouth needs a win to secure European qualification.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Andoni Iraola is managing Bournemouth, who are fighting for European places at home.' }
-            ],
+            { tag: 'doubt', text: 'Tyler Adams — Sustained possible MCL injury, impacting World Cup year availability.' }
+          ],
           away: [
-              { tag: 'key', text: 'Pep Guardiola leads Manchester City, whose primary focus remains on the Premier League title race.' }
-            ]
+            { tag: 'key', text: 'Rodri — Potential return date is uncertain for the FA Cup final, but his status remains a key concern.' }
+          ]
         },
-        context: 'This fixture is a massive showdown with high stakes for both clubs. Man City enters as heavy favorites due to their league dominance and superior form, especially given their pursuit of the Premier League title. Bournemouth will be highly motivated at home, aiming to secure crucial European points against a top-tier opponent.',
-        summary: 'Manchester City are overwhelming favorites to win this fixture, driven by their exceptional form and historical dominance over Bournemouth. While Bournemouth will fight hard at home for European qualification, Man City\'s quality and league objectives make a draw unlikely.'
+        context: 'Manchester City enters this fixture with immense pressure from their title race against Arsenal. Having just won a domestic double, they are highly motivated to maintain momentum and secure maximum points away from home. Bournemouth will be playing with the desperation of a team fighting for European spots, knowing that any result could significantly impact their season ambitions.',
+        summary: 'Manchester City are strong favorites due to their superior form and high stakes in the title race. While Bournemouth will fight hard for survival/European places, Man City\'s attacking prowess and defensive solidity make them the clear frontrunners.'
       },
 
       {
         day: 'Tuesday 19 May',
         home: 'Chelsea', away: 'Tottenham', time: '20:15',
-        result: null, drawProbability: 33, verdict: 'Moderate', fairOdds: '3.20–3.60',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '3.40–3.60',
         factors: {
-          formBalance:   { score: 55, detail: 'Tottenham are coming off two consecutive wins and have scored in their last four matches, suggesting good current form. Chelsea\'s recent form is less defined by the provided snippets but they are playing at home.' },
-          drawRates:     { score: 45, detail: 'The news mentions Chelsea having \'one draw in their last 15 matches\' (this seems to be a general statement or misattributed data), and Tottenham also having \'one draw in their last 15 matches.\' This suggests draws are not overwhelmingly likely based on the provided context.' },
-          headToHead:    { score: 30, detail: 'The historical head-to-head record is not detailed enough to give a strong assessment, but both teams are rivals, which often leads to cagey affairs or high tension, making draws possible.' },
-          goalTendency:  { score: 50, detail: 'The news mentions \'gutsy 1-1 draw at Liverpool\' for Chelsea and goals being scored by Tottenham in their last four matches. This suggests a balanced goal tendency, but no clear pattern of high scoring or low scoring.' },
-          leagueContext: { score: 40, detail: 'Both teams are deep into the season (Round 37), with Chelsea concerned about European football and Tottenham aiming for survival. The stakes are high but focused on individual survival rather than a clear league dominance narrative.' }
+          formBalance:   { score: 55, detail: 'Chelsea\'s form is described as \'pretty poor in the league – and pretty poor at home,\' while Tottenham has had mixed results but needs a win for survival.' },
+          drawRates:     { score: 70, detail: 'The fixture history suggests high draw potential, with multiple sources highlighting draws or close matches between the rivals.' },
+          headToHead:    { score: 65, detail: 'Historically, Chelsea has dominated recent league encounters (winning last five), but Tottenham\'s away record against Chelsea is poor (only one win in last 35). The rivalry suggests unpredictability.' },
+          goalTendency:  { score: 60, detail: 'The news mentions high-scoring historical matches and recent draws (1-1 draw at Liverpool mentioned), suggesting both teams can score.' },
+          leagueContext: { score: 75, detail: 'This is a massive derby with huge implications for both clubs. Tottenham needs the win for survival, while Chelsea\'s focus might be elsewhere (European hopes/relegation). This high stakes environment boosts draw probability.' }
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Joao Pedro — injury scare mentioned in relation to Chelsea\'s squad.' }
-            ],
+            { tag: 'doubt', text: 'Levi Colwill — mentioned as a doubt ahead of the fixture.' },
+            { tag: 'doubt', text: 'Romeo Lavia — missed FA Cup final with a \'slight knock\', but status is uncertain.' }
+          ],
           away: [
-              { tag: 'key', text: 'James Maddison — expected return from injury, boosting Tottenham\'s attack.' }
-            ]
+            { tag: 'key', text: 'Vicario — confirmed available for selection, despite injury concerns previously raised.' },
+            { tag: 'doubt', text: 'Dominic Solanke — potential injury concern (hamstring setback) impacting his season and World Cup hopes.' }
+          ]
         },
-        context: 'This fixture is a high-stakes London derby played late in the season. Chelsea are fighting for European football and pride, while Tottenham are focused on securing survival. The match will likely be highly emotional and tactical, with both sides prioritizing defensive solidity given their respective league positions and ambitions.',
-        summary: 'The Chelsea vs Tottenham fixture is a tense, high-stakes derby where both teams have significant season objectives. While Tottenham show better recent form, the rivalry nature of the game keeps the draw probability moderate. Expect a tight contest decided by individual moments of brilliance.'
+        context: 'This London derby is played under immense pressure, with Tottenham needing a result to secure Premier League safety. Chelsea, despite having European ambitions, are struggling in the league and lack recent momentum. The high stakes of the rivalry, combined with both teams\' inconsistent form, points towards a tightly contested match where tactical discipline will be key.',
+        summary: 'The fixture is highly balanced due to the intense derby atmosphere and contrasting motivations. Tottenham\'s desperate need for survival clashes with Chelsea\'s lingering European hopes, making it unpredictable. Given the high stakes and historical draw tendencies, a stalemate remains a strong possibility.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Sunderland', away: 'Chelsea', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Moderate', fairOdds: '1.90–2.00',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Sunderland\'s recent win at Everton (3-1) shows strong form and resilience, while Chelsea\'s overall campaign has been described as a \'nightmare,\' despite some recent positive signs.' },
+          drawRates:     { score: 60, detail: 'The fixture is high-stakes given the European qualification implications for Sunderland, suggesting both teams will be cautious. However, Chelsea\'s history of fluctuating form suggests a draw remains possible.' },
+          headToHead:    { score: 50, detail: 'No direct recent head-to-head results are provided in the news to establish a clear pattern, making this factor neutral.' },
+          goalTendency:  { score: 60, detail: 'Both teams have shown an ability to score (Sunderland\'s 3-1 win; Chelsea having scored against Man Utd and City in the past), suggesting goals are likely, but defensive focus due to stakes may temper this.' },
+          leagueContext: { score: 70, detail: 'The fixture is crucial for Sunderland\'s European ambitions (Conference League/Europa League qualification). Chelsea also needs points, making the match highly competitive and high-pressure.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Regis Le Bris\' message suggests high motivation for the squad.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Liam Delap — Will not be available due to injury (hamstring).' },
+            { tag: 'doubt', text: 'Pedro Neto and Alejandro Garnacho — Listed as doubts.' }
+          ]
+        },
+        context: 'This match is a high-stakes European qualifier for Sunderland, who are desperate to secure their continental spot. Chelsea, despite recent FA Cup success and managerial changes (Enzo Maresca/interim coaches), are under immense pressure to stabilize their league form. The tactical narrative will likely involve Sunderland pressing high given the stakes, while Chelsea will aim to control possession and exploit any gaps left by an ambitious home side.',
+        summary: 'Sunderland enters this match with significant motivation driven by European qualification hopes, having shown strong recent form. Chelsea, despite some squad depth issues (Delap out), are also desperate for points in a tumultuous season. The high stakes suggest a tight contest where Sunderland\'s attacking intent could be balanced by Chelsea\'s experience.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Brighton & Hove Albion', away: 'Man United', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Moderate', fairOdds: '3.00–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Brighton\'s recent form is mixed, but Man United are also dealing with injury concerns and rotation, suggesting a more balanced contest.' },
+          drawRates:     { score: 70, detail: 'Both teams have shown signs of defensive resilience in their respective seasons, making draws a plausible outcome.' },
+          headToHead:    { score: 50, detail: 'No direct recent head-to-head data is provided for this specific fixture, suggesting parity.' },
+          goalTendency:  { score: 60, detail: 'Both teams have scored important goals in their respective seasons (e.g., Brighton\'s goal attempts vs Leeds), indicating attacking potential, but defensive solidity is also present.' },
+          leagueContext: { score: 45, detail: 'This fixture appears to be a late-season match with limited immediate league stakes for either side based on the provided context, leading to cautious approaches.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Fabian Hurzeler\'s squad is noted as being in a regrouping phase after missing European football opportunities.' }
+          ],
+          away: [
+            { tag: 'doubt', text: 'Benjamin Sesko: Availability for the final game is uncertain due to injury concerns (shin injury).' },
+            { tag: 'key', text: 'The squad may be heavily rotated, with Michael Carrick set to field a less than optimal side.' }
+          ]
+        },
+        context: 'This fixture is characterized by both teams managing their end-of-season ambitions. Brighton will look to regroup after missing European football opportunities, while Manchester United are likely to prioritize squad rotation and managing player fitness over securing maximum points. The match could be tactical, with both sides wary of giving away crucial results.',
+        summary: 'The fixture is predicted to be closely contested, leaning towards a draw given the end-of-season context and injury concerns for Man United. Brighton\'s attacking flair will meet United\'s potential defensive solidity, making goals likely but decisive moments difficult.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Crystal Palace', away: 'Arsenal', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 25, draw: 28, awayWin: 47, verdict: 'Moderate', fairOdds: '1.60–1.90',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 75, detail: 'Arsenal is in strong form, having been two points ahead of rivals and generally performing well in the title race context.' },
+          drawRates:     { score: 60, detail: 'The fixture involves high-stakes league football, which can lead to cautious play, but Arsenal\'s attacking prowess often dictates a clearer winner.' },
+          headToHead:    { score: 50, detail: 'No specific recent head-to-head data is provided for this fixture, making it neutral. However, the context suggests high stakes.' },
+          goalTendency:  { score: 65, detail: 'Both teams are involved in attacking football (Palace\'s Conference League final and Arsenal\'s title push), suggesting goals are likely, but Arsenal\'s attack is typically more potent.' },
+          leagueContext: { score: 40, detail: 'Crystal Palace has nothing to play for domestically, which might lead to a relaxed attitude. However, the high stakes of the title race for Arsenal maintain intense focus.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Chris Richards — suffered an ankle injury in the draw with Brentford, raising concerns about his availability/fitness.' }
+          ],
+          away: []
+        },
+        context: 'This match is framed as a title decider for Arsenal, giving them immense motivation. While Crystal Palace might be less focused on domestic results (having nothing to play for), manager Oliver Glasner has vowed to field his strongest side, despite the injury scare involving Chris Richards. Arsenal\'s superior squad depth and attacking quality are expected to overcome any potential complacency from Palace.',
+        summary: 'Arsenal enters this fixture as title favorites with high motivation, while Crystal Palace is dealing with key injuries and potentially lower domestic focus. Despite Glasner\'s commitment to fielding his best team, Arsenal\'s overall quality and league momentum give them a clear advantage in this crucial encounter.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Burnley', away: 'Wolverhampton', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 30, draw: 30, awayWin: 40, verdict: 'Moderate', fairOdds: '2.50–3.20',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Wolverhampton\'s recent news suggests players are returning to training and the squad may be near-fully fit, giving them a slight edge in current form compared to Burnley.' },
+          drawRates:     { score: 50, detail: 'The general fixture context does not provide enough data on historical draw rates between these two specific clubs for an accurate assessment.' },
+          headToHead:    { score: 40, detail: 'No direct head-to-head information is provided in the news articles to assess past encounters between Burnley and Wolverhampton Wanderers.' },
+          goalTendency:  { score: 55, detail: 'The available context does not offer specific goal scoring or concession trends for either team that would significantly skew predictions.' },
+          leagueContext: { score: 70, detail: 'Burnley\'s league status (relegated/19th spot) suggests a lack of motivation and focus compared to Wolverhampton, who are aiming to solidify their Premier League standing.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'No specific key players or major absences for Burnley were mentioned in relation to Wolves.' }
+          ],
+          away: [
+            { tag: 'key', text: 'Wolverhampton may have a near-fully fit squad as several injured players like Jose Sa, Hugo Bueno, and Ladislav Krejci are returning to training.' }
+          ]
+        },
+        context: 'This fixture pits a struggling, relegated Burnley side against Wolverhampton Wanderers. While the news is heavily focused on Arsenal\'s title race and Burnley\'s poor form, Wolves benefit from positive squad updates suggesting improved fitness levels. The narrative suggests that motivation and league standing will be critical, favoring the more ambitious away side.',
+        summary: 'Wolverhampton enters this match with better reported squad fitness and a higher level of motivation compared to relegated Burnley. While Burnley may aim for an upset, Wolves\' superior current form and league context give them the edge in this fixture.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Fulham', away: 'Newcastle', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 25, draw: 28, awayWin: 47, verdict: 'Moderate', fairOdds: '1.70–2.00',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Fulham has shown inconsistency recently, dropping points and suffering penalty shootout heartbreaks. Newcastle, conversely, have been strong performers in recent fixtures (e.g., beating West Ham).' },
+          drawRates:     { score: 70, detail: 'The general body of news does not provide enough specific data on historical draw rates between these two teams to give a definitive score, but the overall fixture context suggests a competitive match.' },
+          headToHead:    { score: 55, detail: 'The last meeting in April saw Newcastle securing a narrow 1-0 away victory via Bruno Guimaraes\' late strike, giving them a slight psychological edge.' },
+          goalTendency:  { score: 60, detail: 'Both teams are involved in high-stakes matches, suggesting attacking intent. However, recent defensive struggles or tight fixtures could temper goal expectations.' },
+          leagueContext: { score: 50, detail: 'The league context is balanced; Fulham\'s focus is on returning to winning ways, while Newcastle are aiming for a victorious end to their home slate.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Marco Silva\'s men have had recent injury issues (e.g., Antonee Robinson missing the match at Newcastle).' }
+          ],
+          away: [
+            { tag: 'key', text: 'Bruno Guimaraes was instrumental in the last meeting, giving Newcastle a key advantage.' }
+          ]
+        },
+        context: 'This fixture pits Fulham\'s struggle for consistency against Newcastle\'s strong recent form and attacking pedigree. Given Newcastle\'s superior performance metrics and the slight edge from their last head-to-head victory, they are favored to control possession and create chances at Craven Cottage.',
+        summary: 'Newcastle enters this match as the favorites due to better current form and a favorable head-to-head record. Fulham will struggle to replicate their best performances given recent inconsistency. Expect a tight contest where Newcastle\'s attacking quality should prove decisive.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Liverpool', away: 'Brentford', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Moderate', fairOdds: '1.70–2.00',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Liverpool generally maintains a high level of performance, though recent news suggests they have been hampered by injuries (e.g., concerns over Salah/Robertson tributes and general injury list) which could affect their consistency.' },
+          drawRates:     { score: 40, detail: 'The fixture is not highlighted as historically prone to draws in the provided news, suggesting a more open contest is expected.' },
+          headToHead:    { score: 50, detail: 'No specific head-to-head information between Liverpool and Brentford was available in the current news cycle, making this factor neutral.' },
+          goalTendency:  { score: 60, detail: 'The general tone of the news suggests high-scoring games (e.g., Crystal Palace 2-2 draw), indicating both teams are expected to attack and score goals.' },
+          leagueContext: { score: 75, detail: 'Liverpool\'s primary focus is securing a top-five finish for the Champions League, providing immense motivation. Brentford, while having exceeded expectations, will be motivated to secure points against a title contender.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Mohamed Salah — Mentioned in relation to tributes and potential absences/concerns.' },
+            { tag: 'key', text: 'Arne Slot\'s team — High motivation to secure top-five finish, despite injury concerns.' }
+          ],
+          away: [
+            { tag: 'doubt', text: 'Chris Richards (Crystal Palace) — While not directly related to Brentford, the news mentions Crystal Palace\'s struggles and general team fragility, suggesting potential defensive vulnerability for Brentford.' }
+          ]
+        },
+        context: 'Liverpool will approach this match with high stakes, aiming to solidify their Champions League qualification spot. Tactically, they are expected to dominate possession and attack (as per Slot\'s comments), but any lingering injury concerns or fatigue could be exploited by a motivated Brentford side looking for counter-attacking opportunities.',
+        summary: 'Liverpool enters the fixture as strong favorites due to their league ambitions, but potential squad depth issues and recent fitness concerns temper expectations. Brentford will aim to capitalize on Liverpool\'s moments of vulnerability in a highly competitive Premier League battle.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Man City', away: 'Aston Villa', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.80–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'Man City\'s recent news focuses on their title race and FA Cup win, suggesting high morale and focus. Aston Villa\'s form has been inconsistent (only one point from last three league games mentioned in relation to Liverpool), though they are highly motivated for European qualification.' },
+          drawRates:     { score: 65, detail: 'The fixture involves two top-half Premier League sides with high stakes. Both teams prioritize results, increasing the likelihood of a cagey, balanced match.' },
+          headToHead:    { score: 30, detail: 'Historical head-to-head data is not provided for this specific fixture, but Man City\'s recent dominance suggests an edge, although Villa has shown resilience against top teams.' },
+          goalTendency:  { score: 50, detail: 'Both teams are capable of scoring goals (Man City’s attacking prowess vs. Villa’s need for points), suggesting a balanced goal expectation rather than a low-scoring affair.' },
+          leagueContext: { score: 60, detail: 'The league context is high stakes for both clubs, as they are fighting for European spots (Man City\'s title race/tribute; Villa\'s Champions League qualification). This elevates the importance of every result.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Pep Guardiola is focused on winning the Premier League title, indicating high motivation and squad focus despite his departure announcement.' }
+          ],
+          away: [
+            { tag: 'doubt', text: 'Amadou Onana (calf injury) was sidelined for Villa\'s game against Liverpool, suggesting potential fitness concerns within the squad.' }
+          ]
+        },
+        context: 'This fixture is a clash between title-contending Man City and ambitious Aston Villa. While Man City are driven by their quest for a seventh Premier League title, Villa will be highly motivated to secure Champions League football. The match is expected to be tactically disciplined, with both sides prioritizing defensive solidity while looking to exploit key attacking moments.',
+        summary: 'Man City enters the game under immense pressure to maintain their title challenge and honor Guardiola\'s legacy. Aston Villa are equally determined, needing a strong result to solidify their European ambitions. The high stakes suggest a tight contest where tactical execution will be paramount.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Nottingham', away: 'Bournemouth', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '3.00–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'The news provided focuses heavily on Bournemouth\'s upcoming clash with Manchester City and other fixtures (Nottingham Forest vs Chelsea/Man United). Specific recent form data for Nottingham vs Bournemouth is absent, suggesting a relatively balanced expectation.' },
+          drawRates:     { score: 60, detail: 'Given the lack of immediate context or strong favorites in the provided news snippets, and the general nature of Premier League fixtures, a draw remains a highly plausible outcome.' },
+          headToHead:    { score: 50, detail: 'No direct head-to-head information between Nottingham and Bournemouth is available in the current news feed. The analysis must proceed without this critical data point.' },
+          goalTendency:  { score: 55, detail: 'The general tone of the provided articles suggests competitive matches (e.g., Man City\'s struggles/Bournemouth\'s unbeaten run), implying both teams are capable of scoring goals.' },
+          leagueContext: { score: 40, detail: 'The news context is dominated by title race drama (Man City vs Arsenal) and other fixtures. This suggests the league focus is elsewhere, potentially leading to a less intense or predictable match-day atmosphere for this specific fixture.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'No specific player news available for Nottingham Forest.' }
+          ],
+          away: [
+            { tag: 'key', text: 'Lewis Cook is back in training and could make his return against City (Bournemouth).' }
+          ]
+        },
+        context: 'The fixture analysis is severely hampered by the provided news, which focuses almost entirely on Bournemouth\'s massive clash with Manchester City. While general Premier League tension exists, there are no specific tactical insights or recent form indicators for Nottingham Forest vs Bournemouth. Therefore, the prediction leans towards a tightly contested match where both sides have enough quality to secure points.',
+        summary: 'This is expected to be a closely matched affair given the lack of clear favorites in the provided context. Both teams possess enough attacking talent to challenge for a result, making a draw a highly probable outcome.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Tottenham', away: 'Everton', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'Both teams show mixed form based on the provided news snippets, with recent results being inconclusive for a clear favourite.' },
+          drawRates:     { score: 70, detail: 'The general tone of the news suggests tight matches and potential draws, as both sides are fighting for survival or European spots.' },
+          headToHead:    { score: 45, detail: 'Historical head-to-head data is not provided specifically for Tottenham vs Everton in a recent context, making this factor neutral.' },
+          goalTendency:  { score: 60, detail: 'The news mentions several close games and draws (e.g., Chelsea\'s 1-1 draw at Liverpool), suggesting both teams can score but defenses are solid.' },
+          leagueContext: { score: 50, detail: 'Both clubs appear to be in mid-to-lower table positions based on the scattered league context provided, meaning survival is a primary goal for both sides.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Richarlison — Dreams of joining Everton suggest potential motivation/transfer interest.' }
+          ],
+          away: []
+        },
+        context: 'This fixture is framed as a battle for survival and European aspirations. Given the general instability suggested by the news (Tottenham\'s relegation odds, Everton\'s involvement in transfer speculation), both teams are likely to prioritize defensive stability while looking for moments of attacking ingenuity.',
+        summary: 'The match between Tottenham and Everton is expected to be closely contested with little clear favourite. Both sides have mixed form and high stakes regarding their league status, suggesting a tight affair where tactical discipline will be key.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'West Ham', away: 'Leeds United', time: '16:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '3.40–3.70',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'West Ham\'s recent form is highly volatile and marked by relegation battles (e.g., loss to Arsenal). Leeds have secured their top-flight status with a win over Brighton, suggesting better current stability.' },
+          drawRates:     { score: 65, detail: 'Both teams are involved in high-stakes league fixtures and the fixture history suggests competitive matches, making a draw a strong possibility.' },
+          headToHead:    { score: 40, detail: 'No direct head-to-head information is provided for this specific match, so we assume parity. The general context of relegation/survival battles often leads to cagey affairs.' },
+          goalTendency:  { score: 50, detail: 'The news highlights West Ham\'s defensive struggles (conceding an unparalleled 20 goals in the last 15 minutes) but also suggests both teams are capable of scoring given their league context.' },
+          leagueContext: { score: 60, detail: 'Both clubs have been heavily involved in survival/relegation concerns recently (West Ham), while Leeds secured safety. This high-stakes environment increases the likelihood of a tight contest.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Declan Rice — Potential defensive deployment if Aaron Cresswell is unavailable, though this suggests injury concerns.' }
+          ],
+          away: [
+            { tag: 'key', text: 'N/A — Leeds\' top-flight status is secure following their win over Brighton, suggesting key players are fit and motivated for a final home run.' }
+          ]
+        },
+        context: 'This fixture pits West Ham, still grappling with the fallout of relegation battles and defensive instability (noted by conceding 20 goals in the last 15 minutes), against Leeds United, who have successfully navigated their own survival concerns. The match is expected to be fiercely contested, with both sides prioritizing stability over flair, leading to a tactical, cagey affair.',
+        summary: 'The fixture presents two teams coming off vastly different league narratives: West Ham struggling for consistency and Leeds celebrating safety. While West Ham\'s defensive issues are concerning, Leeds\' recent stability suggests they will be tough opponents. The high stakes of the Premier League mean neither side will take unnecessary risks, pointing towards a closely matched encounter.'
       }
     ]
 },
@@ -1040,141 +1131,230 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Alavés', away: 'Rayo Vallecano', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 32, draw: 33, awayWin: 35, verdict: 'Moderate', fairOdds: '2.90–3.20',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Both teams are involved in crucial late-season league battles, leading to high motivation but not necessarily consistent form.' },
+          drawRates:     { score: 75, detail: 'The competitive nature and perceived parity between the two sides suggest that a draw is a highly probable outcome.' },
+          headToHead:    { score: 50, detail: 'No specific recent head-to-head data was provided for this fixture, making it difficult to predict based on past results.' },
+          goalTendency:  { score: 65, detail: 'With high stakes attached to league survival and European spots, both managers are likely to prioritize defensive stability over attacking flair.' },
+          leagueContext: { score: 80, detail: 'The intense pressure of the final La Liga stages means every point is vital, elevating the tactical importance far above standard league matches.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'out', text: 'Jon Guridi — Subbed off with injury during recent fixture.' },
+            { tag: 'doubt', text: 'Jon Pacheco — Confirmed fitness setback, potentially limiting his availability.' }
+          ],
+          away: []
+        },
+        context: 'This match is set against the backdrop of a highly competitive La Liga season where survival and European qualification are paramount. Expect a tactical, cagey affair where both teams will prioritize defensive solidity. The slight edge to Rayo Vallecano reflects their perceived ability to manage high-pressure away environments, but Alavés\' home crowd support will make this an extremely tight contest.',
+        summary: 'The fixture is predicted to be highly competitive and low-scoring due to the immense pressure of the league context. With draw probabilities being highest, a point for either side is likely the primary goal. Rayo Vallecano holds a marginal edge, but Alavés\' home advantage keeps the match balanced.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Real Betis', away: 'Levante', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 70, draw: 18, awayWin: 12, verdict: 'Low', fairOdds: '1.45–2.00',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 75, detail: 'Barcelona boasts a stellar home record (18 wins in 18 matches) and high scoring output at home, while Real Betis\'s recent form is mixed, despite some strong runs.' },
+          drawRates:     { score: 30, detail: 'The historical data suggests a low probability of a draw, especially given Barcelona\'s dominant home performance and the stakes involved for both teams.' },
+          headToHead:    { score: 45, detail: 'In their last four meetings, results have been mixed (2 wins, 2 draws), suggesting parity, but recent form heavily favors Barcelona.' },
+          goalTendency:  { score: 60, detail: 'Barcelona\'s home league goals scored (54) are exceptionally high, indicating a strong attacking threat at the Spotify Camp Nou.' },
+          leagueContext: { score: 70, detail: 'Barcelona is aiming to finish strongly and protect their flawless home record. Real Betis needs points for survival/positioning, but facing league leaders makes it difficult.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Frenkie de Jong — ruled out due to illness.' },
+            { tag: 'key', text: 'Lewandowski — set to play in his farewell match at Camp Nou.' }
+          ],
+          away: [
+            { tag: 'doubt', text: 'Manuel Pellegrini\'s core starters — facing a massive selection crisis due to injuries and disciplinary issues.' },
+            { tag: 'out', text: 'Fermín López — suffered a serious foot injury against Betis, requiring surgery.' }
+          ]
+        },
+        context: 'Barcelona will approach this fixture with immense confidence, driven by their perfect home record and attacking prowess. Real Betis, while fighting for survival in La Liga, faces a squad grappling with significant injuries and absences, making the task of securing points at Camp Nou extremely challenging.',
+        summary: 'This is a highly anticipated clash where Barcelona\'s dominant home form and star power are expected to overwhelm an injury-hampered Real Betis side. While Betis will fight hard for survival points, Barça\'s attacking depth and flawless record give them a significant advantage.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Celta', away: 'Sevilla FC', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.10–3.20',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Celta\'s form is poor (losing last three league games), but Sevilla has shown inconsistency in recent fixtures, making the balance slightly tilted towards a draw or narrow home win.' },
+          drawRates:     { score: 70, detail: 'Both teams are involved in mid-table battles and tend to play pragmatic football, suggesting a higher probability of a stalemate.' },
+          headToHead:    { score: 55, detail: 'The historical head-to-head record is not detailed enough, but recent encounters suggest parity between the two sides.' },
+          goalTendency:  { score: 60, detail: 'Both teams have shown capability to score goals at home and away, suggesting that while a draw is possible, both sides can find the net.' },
+          leagueContext: { score: 50, detail: 'The league context is focused on several other battles (Betis, Getafe), meaning neither team has overwhelming pressure to win, which often leads to cautious play and draws.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'No specific key players are mentioned for Celta in relation to Sevilla\'s fixture, but general injury issues persist (e.g., Iago Aspas has been injured).' }
+          ],
+          away: [
+            { tag: 'key', text: 'Sevilla FC is a strong side capable of challenging for European spots, though specific player news against Celta is absent.' }
+          ]
+        },
+        context: 'This fixture pits two teams battling in the lower-to-mid table of La Liga. Given that both clubs are focused on securing their respective European berths and have shown signs of inconsistency (Celta\'s poor form, Sevilla\'s mixed results), the match is likely to be cagey. Celta will look to leverage home support despite recent struggles, while Sevilla will aim for a disciplined performance to secure crucial points.',
+        summary: 'The matchup between Celta and Sevilla appears highly balanced, with both sides having enough quality to challenge for points. The focus on European qualification adds pressure, but the overall league context suggests cautious play, making a draw a very plausible outcome.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Espanyol', away: 'Real Sociedad', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 30, draw: 32, awayWin: 38, verdict: 'Moderate', fairOdds: '2.15–2.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Real Sociedad appears to be in better form recently (e.g., beating Girona 1-0), while Espanyol\'s recent form is mixed and includes consecutive losses.' },
+          drawRates:     { score: 70, detail: 'The fixture involves two teams with varied league performances, suggesting a potential stalemate or closely contested match.' },
+          headToHead:    { score: 50, detail: 'No specific head-to-head data for Espanyol vs Real Sociedad was provided in the news snippets, making this factor neutral.' },
+          goalTendency:  { score: 60, detail: 'Both teams have shown moments of attacking intent (e.g., Real Sociedad\'s ability to score at home), suggesting goals are likely but not guaranteed.' },
+          leagueContext: { score: 55, detail: 'The league context is generally mid-table for both sides, with neither team having a clear objective beyond securing points, leading to cautious play.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'No specific key injuries or doubts were mentioned for Espanyol in relation to Real Sociedad.' }
+          ],
+          away: [
+            { tag: 'key', text: 'Ander Barrenetxea is confirmed out of action for Real Sociedad due to a left adductor longus injury, though he may return later.' }
+          ]
+        },
+        context: 'Real Sociedad will be looking to build on their recent positive results and capitalize on the home advantage at Reale Arena. Espanyol, meanwhile, needs to improve their consistency and defensive solidity to challenge a potentially motivated Real Sociedad side.',
+        summary: 'This fixture presents a balanced contest with Real Sociedad holding a slight edge due to better current form and home advantage. Expect a tactical battle where both sides prioritize stability over high-risk attacking plays.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Getafe', away: 'Osasuna', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '3.00–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Getafe has shown strong recent form (seven points from last four matches and only two losses in the last nine), while Osasuna\'s away record is poor, having won just two of their last 17 league fixtures on the road.' },
+          drawRates:     { score: 60, detail: 'The fixture involves teams fighting for survival/European spots, often leading to cautious play and draws. However, both sides have shown attacking capability recently (Levante beat Osasuna 3-2).' },
+          headToHead:    { score: 40, detail: 'Historically, the fixture is relatively balanced, though Levante has only won one of their last seven games against Osasuna. The reverse match saw Osasuna beat Levante 2-0.' },
+          goalTendency:  { score: 55, detail: 'Both teams are involved in high-stakes matches (relegation/European race), suggesting tactical caution but also the necessity to score goals against direct rivals. Goals are expected but not guaranteed.' },
+          leagueContext: { score: 70, detail: 'The league context is highly volatile, with both teams needing points for survival or European qualification. This high pressure often leads to tight, competitive matches where a draw is a very realistic outcome.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Getafe are highlighted as having strong recent form and being involved in high-stakes fixtures, giving them confidence at home.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Osasuna\'s Raul Moro has ended his season due to a hamstring injury. Valentín Rosier also suffered an injury previously.' }
+          ]
+        },
+        context: 'This match is set against the backdrop of a tense La Liga final weekend, with both Getafe and Osasuna needing maximum points for their respective ambitions (European spots/survival). Getafe\'s strong home form contrasts with Osasuna\'s struggles away from home. Tactically, expect a cagey affair where both managers prioritize not losing, making the draw a highly plausible result.',
+        summary: 'Getafe enters this fixture in better form and has a significant advantage at home compared to Osasuna\'s poor away record. However, given the high stakes of the league context—where points are crucial for survival and European qualification—both teams are expected to play cautiously. This balance suggests that while Getafe holds a slight edge, Osasuna remains capable enough to secure a draw.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Mallorca', away: 'Real Oviedo', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.75–3.10',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 75, detail: 'Mallorca\'s recent scoring form (9 consecutive games) and the high motivation of playing at home in a relegation battle give them an edge.' },
+          drawRates:     { score: 65, detail: 'Given the extreme stakes of survival in La Liga, both teams are expected to prioritize defensive stability, increasing the likelihood of a draw.' },
+          headToHead:    { score: 55, detail: 'The provided news lacks specific recent head-to-head data for this fixture, suggesting parity despite Mallorca\'s home advantage.' },
+          goalTendency:  { score: 50, detail: 'While desperation can lead to goals, the pressure of relegation often results in cagey, tactical matches with limited attacking freedom.' },
+          leagueContext: { score: 60, detail: 'Both clubs are fighting for survival. Mallorca must win to keep their hopes alive, while Oviedo needs points after struggling in their first top-flight season since 2000.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'This fixture is defined by desperation. Mallorca will rely heavily on the intensity of playing at home, while Real Oviedo must overcome their struggles in La Liga to secure vital points. Expect a highly tactical battle where every mistake could prove fatal to survival hopes.',
+        summary: 'The match carries immense weight due to the relegation battle status for both clubs. While Mallorca holds the slight advantage through home form and motivation, Real Oviedo\'s desperate need for points makes them dangerous away from home. A draw remains a very plausible outcome given the cautious nature of high-stakes survival matches.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Real Madrid', away: 'Athletic', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Moderate', fairOdds: '1.80–2.10',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Real Madrid possess superior overall quality but have been experiencing a disappointing run of form and title disappointment. Athletic Bilbao has shown defensive resilience by securing draws against top-tier opposition.' },
+          drawRates:     { score: 75, detail: 'The recent history cited in the news suggests that matches between these sides are often cagey affairs, leading to low-scoring draws (e.g., a reported 0-0 draw).' },
+          headToHead:    { score: 68, detail: 'Based on limited recent data provided in the news, the fixture has shown parity, with results leaning towards stalemates.' },
+          goalTendency:  { score: 70, detail: 'The narrative points toward tight, defensive battles rather than open goal exchanges, suggesting a low-scoring affair is likely.' },
+          leagueContext: { score: 65, detail: 'Both clubs are operating under significant pressure—Real Madrid to salvage their season status and Athletic Bilbao to maintain consistency against rivals.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'No specific key player absences were detailed for this fixture, but Real Madrid is noted as being in a period of disappointing results following their title challenge.' }
+          ],
+          away: [
+            { tag: 'key', text: 'Athletic Bilbao has demonstrated defensive stability, capable of securing points even against major rivals (as evidenced by recent 0-0 draws).' }
+          ]
+        },
+        context: 'This fixture is set up as a battle between Real Madrid\'s inherent attacking quality and Athletic Bilbao\'s disciplined, resilient defense. The historical context suggests that the match will be highly tactical, with both sides prioritizing defensive solidity to secure points in a season marked by high drama and disappointment.',
+        summary: 'The recent history of 0-0 draws indicates that this fixture is unlikely to be an open affair. While Real Madrid holds the quality edge, Athletic Bilbao\'s resilience makes them dangerous away from home, setting up a tense, low-scoring encounter.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Valencia', away: 'Barça', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.40–3.10',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'Both teams have shown patchy form recently (Valencia: only two wins in last six; Barça: recent injury issues). Valencia\'s home advantage is a slight positive factor.' },
+          drawRates:     { score: 70, detail: 'The news indicates both clubs are dealing with significant squad depth issues and high stakes, suggesting a tight, cagey affair where draws are highly probable.' },
+          headToHead:    { score: 50, detail: 'No direct H2H data is provided for this specific fixture in the news snippets. The historical rivalry suggests high tension but no clear advantage.' },
+          goalTendency:  { score: 60, detail: 'Valencia\'s recent matches show both goals scored and conceded (e.g., 3-0 win vs Atletico, but also conceding in other fixtures). Barça has been involved in high-scoring games recently.' },
+          leagueContext: { score: 55, detail: 'The fixture is a major La Liga clash, increasing the importance and thus the tension. Both teams are focused on securing points for their respective goals (European qualification/survival).' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'out', text: 'José Luis Gayà — Confirmed injury.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Lamine Yamal — Suffering from multiple injuries (hamstring, groin) and is doubtful for the season/World Cup.' },
+            { tag: 'out', text: 'Eric García — Confirmed injury after collision in Champions League match.' }
+          ]
+        },
+        context: 'This fixture pits Valencia against FC Barcelona, a clash fueled by historical rivalry and high stakes. Both sides are severely hampered by injuries (Valencia losing Gayà; Barça suffering setbacks with Yamal and García). The tactical narrative will likely be cautious, prioritizing defensive solidity over attacking flair due to the lack of key personnel on both sides.',
+        summary: 'The match is set up as a tense, evenly matched affair given the high stakes and mutual squad limitations. With both teams dealing with significant injury crises, neither side can rely fully on their star players, suggesting a tight contest where tactical discipline will dominate.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Girona', away: 'Elche', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 38, draw: 34, awayWin: 28, verdict: 'Moderate', fairOdds: '2.60–2.90',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'Both teams\' form is overshadowed by the massive pressure of relegation survival, leading to cautious play rather than pure attacking flair.' },
+          drawRates:     { score: 90, detail: 'The high stakes—where both losing or drawing could mean relegation for one side—make a stalemate highly probable due to mutual caution.' },
+          headToHead:    { score: 50, detail: 'No specific head-to-head data is available in the provided news; the focus remains entirely on the league survival context.' },
+          goalTendency:  { score: 70, detail: 'In relegation six-pointers, defensive stability and tactical caution usually dominate, suggesting a lower goal count.' },
+          leagueContext: { score: 95, detail: 'This is the defining match for both clubs\' survival. The pressure to secure points outweighs any desire for attacking dominance.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Girona FC — Must win at home (Montilivi) to avoid relegation, placing immense psychological pressure on the squad.' }
+          ],
+          away: [
+            { tag: 'key', text: 'Elche CF — Must avoid defeat against Girona to secure their La Liga status for next season, providing high motivation.' }
+          ]
+        },
+        context: 'This fixture is a do-or-die relegation battle. Both Girona and Elche are under extreme pressure; Girona must win at home, while Elche only needs to avoid defeat. This dynamic suggests that the match will be tactically disciplined, with both sides prioritizing defensive solidity over attacking risks.',
+        summary: 'The fixture is defined by desperation, making a draw highly likely as both teams approach the game extremely cautiously. While Girona holds the slight advantage of playing at home and needing a win, Elche\'s equally high motivation to secure a point makes this a tense, cagey affair.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Villarreal', away: 'Atleti', time: '21:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '3.00–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Villarreal has shown strong recent form (e.g., 2-1 win over Sevilla), while Atleti\'s form is mixed, despite their league position.' },
+          drawRates:     { score: 70, detail: 'Both teams are involved in high-stakes La Liga battles, increasing the likelihood of a cagey draw as both prioritize points.' },
+          headToHead:    { score: 55, detail: 'The head-to-head record is not strongly skewed towards either side based on the provided snippets, suggesting parity in this fixture.' },
+          goalTendency:  { score: 60, detail: 'Villarreal\'s attacking prowess (scoring 55 times) suggests they can score, but Atleti\'s defensive solidity keeps the goal expectancy balanced.' },
+          leagueContext: { score: 75, detail: 'Both teams are fighting for European spots and top-four positions, making this a highly competitive match where caution is expected.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Villarreal\'s overall attacking form (scoring 55 times) suggests key players are in good scoring rhythm.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Atleti is missing two key defensive players: José María Giménez and Nahuel Molina, who finished with physical issues.' },
+            { tag: 'key', text: 'Atleti\'s focus on workload management suggests potential fatigue or rotation concerns for star players.' }
+          ]
+        },
+        context: 'This fixture is a crucial clash between two sides vying for European qualification spots in La Liga. Villarreal, with their strong home record and attacking output, will look to capitalize on any defensive lapses by Atleti. However, Atleti\'s disciplined nature and the absence of key defenders like Giménez and Molina could be exploited by Marcelino\'s side. The game is expected to be tactical, with both managers prioritizing a result over excessive risk-taking.',
+        summary: 'The match is predicted to be highly competitive due to the high stakes in the league race. Villarreal holds an edge at home and has shown good attacking form, but Atleti benefits from disciplined play and key absences for the Yellow Submarine\'s defense. A draw remains a very plausible outcome.'
       }
     ]
   },
@@ -1427,141 +1607,230 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Fiorentina', away: 'Atalanta', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.60–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'Atalanta\'s recent form is poor (7 games without a win), but Fiorentina also has mixed results and key players like Parisi are injured.' },
+          drawRates:     { score: 60, detail: 'The fixture involves two teams battling for European spots in Serie A, suggesting tactical caution which often leads to draws.' },
+          headToHead:    { score: 45, detail: 'No direct recent head-to-head data is provided for Fiorentina vs Atalanta, making this factor neutral.' },
+          goalTendency:  { score: 65, detail: 'Both teams are involved in high-stakes matches, suggesting an open game with potential goals, though caution might temper it.' },
+          leagueContext: { score: 70, detail: 'The league context is highly competitive (battle for European spots), which increases the likelihood of a tight, balanced match.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'out', text: 'Fabiano Parisi — ACL tear in right knee (serious injury)' },
+            { tag: 'doubt', text: 'Robin Gosens — Muscular injury (recent worry)' }
+          ],
+          away: [
+            { tag: 'key', text: 'Raffaele Palladino — New coach, tasked with turning around the club\'s fortunes.' }
+          ]
+        },
+        context: 'This fixture is crucial for both sides in their European qualification push. Fiorentina will be hampered by key injuries (Parisi, Gosens), while Atalanta enters under new management from Palladino, who must quickly stabilize the team after a long winless run. The game is expected to be tactically balanced, with both managers prioritizing defensive solidity given the high stakes.',
+        summary: 'The match pits an injury-affected Fiorentina against an Atalanta side undergoing a coaching transition under Raffaele Palladino. Both teams are desperate for points in the race for European qualification. Given the league importance and key personnel issues on both sides, a closely contested draw is highly probable.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Milan', away: 'Cagliari', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Low', fairOdds: '1.35–1.65',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 75, detail: 'Milan is aiming to solidify its top-four position and bounce back from a rough patch (W1, D1, L2), suggesting high motivation and superior current form compared to Cagliari.' },
+          drawRates:     { score: 30, detail: 'The news suggests Milan is heavily favored to win, indicating that draws are considered unlikely given their league ambitions and perceived superiority.' },
+          headToHead:    { score: 50, detail: 'No direct recent head-to-head information was provided for this specific fixture (Milan vs Cagliari).' },
+          goalTendency:  { score: 60, detail: 'Inter Milan\'s goalscoring form is highlighted in the news, suggesting that while Milan are attacking, they might not be overly dominant in scoring against a struggling side.' },
+          leagueContext: { score: 85, detail: 'Milan has clear top-four ambitions and needs to \'re-establish breathing room.\' Cagliari is focused on survival and appears defensively motivated but lacks the overall quality or momentum of Milan.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Christian Pulisic — Status for vital clash vs Genoa revealed amid recent injury, though he is a key player in the race for Champions League spot.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Riyad Idrissi — Suffered a devastating anterior cruciate ligament injury and is ruled out for 4-6 months.' },
+            { tag: 'doubt', text: 'Yerry Mina — Might have to do without the veteran defender due to a muscular injury.' }
+          ]
+        },
+        context: 'Milan enters this match with high stakes, needing a win to solidify their position in the top-four race. They will be heavily motivated to dominate possession and attack, while Cagliari\'s primary focus is damage limitation and securing points for survival. Milan\'s superior squad depth and league standing give them a significant edge.',
+        summary: 'Milan are clear favorites due to their strong league ambitions and perceived form advantage. The news highlights several key absences for Cagliari, further tilting the odds in favor of the Rossoneri. A decisive home win for Milan is expected as they push to maintain distance from rivals.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Bologna', away: 'Inter', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 30, draw: 28, awayWin: 42, verdict: 'Moderate', fairOdds: '2.50–3.10',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Inter shows superior recent form (four consecutive top-flight wins without leaking a goal) compared to Bologna\'s inconsistent run.' },
+          drawRates:     { score: 70, detail: 'The fixture involves two strong Serie A sides with high stakes, suggesting a competitive match and potential for draws.' },
+          headToHead:    { score: 55, detail: 'Inter has the upper hand historically against Bologna, beating them in recent encounters (e.g., 2-0 win in January).' },
+          goalTendency:  { score: 60, detail: 'Both teams are offensively capable, but Inter\'s ability to keep clean sheets suggests they can control the tempo and limit opponent scoring.' },
+          leagueContext: { score: 50, detail: 'The league context is high-stakes for both, with Bologna fighting for European spots and Inter battling at the top of the table.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'No specific key players listed as doubtful or out for Bologna in relation to this fixture, but general injury concerns are noted from past news (Immobile and Casale).' }
+          ],
+          away: [
+            { tag: 'key', text: 'Inter boasts a strong squad depth and key players like Thuram and Zaccagni who have been recovering/available.' }
+          ]
+        },
+        context: 'This match is a clash between two ambitious Serie A sides. Inter, riding a wave of defensive solidity and consistent winning form, will aim to maintain their title challenge momentum. Bologna, needing points for European aspirations, will look to exploit any potential lapses in concentration from the reigning champions.',
+        summary: 'Inter enters this fixture with superior recent form and attacking prowess, making them slight favorites. However, Bologna remains a tough opponent at home, ensuring the match is expected to be highly competitive. The cumulative strength of Inter\'s squad gives them an edge, but Bologna\'s fight makes it difficult to predict a clear winner.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Torino', away: 'Juventus', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.70–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Juventus has shown strong recent form (e.g., beating Udinese 2-0), while Torino\'s form is less clear from the provided snippets, but they are playing at home in a derby setting which boosts morale.' },
+          drawRates:     { score: 75, detail: 'The fixture history and general narrative suggest high tension, leading to multiple draws (e.g., Motta lamenting \'too many draws\' after the Torino derby stalemate).' },
+          headToHead:    { score: 60, detail: 'Derby della Mole fixtures are historically tight and unpredictable, often resulting in low-scoring affairs.' },
+          goalTendency:  { score: 55, detail: 'The news mentions a recent 1-1 draw at Torino and tactical battles suggesting defensive solidity, but also goal-scoring moments (Gatti\'s strike).' },
+          leagueContext: { score: 60, detail: 'Both teams are in the top half of the table fighting for Champions League spots, making this a high-stakes match where caution and tactical discipline are paramount.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'Torino (Home) - Playing in the Derby della Mole at home, providing a significant psychological advantage.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Arkadiusz Milik — Listed as having sustained new injuries and his season is likely over (historical context).' },
+            { tag: 'doubt', text: 'Dusan Vlahovic — While scoring goals, the news suggests he has been involved in VAR controversies, indicating potential tactical focus on him.' }
+          ]
+        },
+        context: 'This Derby della Mole is a highly charged affair. Juventus aims to continue their dominance and secure top-tier status, relying on their recent unbeaten streak (19 fixtures). However, Torino will be motivated by the home crowd and the prestige of the derby. The tactical battle is expected to be intense, favoring disciplined play and potentially leading to a cagey, low-scoring affair.',
+        summary: 'This fixture pits Juventus\'s strong form and league ambitions against Torino\'s passionate home challenge in the Derby della Mole. Given the high stakes and historical tendency for draws in this rivalry, caution is expected from both sides. The match should be tightly contested with tactical nuances dominating the narrative.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Verona', away: 'Roma', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 30, draw: 32, awayWin: 38, verdict: 'Moderate', fairOdds: '2.10–2.50',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Roma has shown better recent form (e.g., beating Bologna) and is highly motivated by the Champions League race, while Verona\'s form is inconsistent despite some recent wins.' },
+          drawRates:     { score: 75, detail: 'Both teams are involved in high-stakes league battles (Roma for UCL qualification; Verona aiming to solidify position), leading to cautious play and potential draws.' },
+          headToHead:    { score: 40, detail: 'No specific recent head-to-head data is provided for this fixture, making it difficult to assess historical dominance.' },
+          goalTendency:  { score: 55, detail: 'The news mentions Verona\'s ability to score (e.g., beating Como 1-0) and Roma scoring goals (Dybala), suggesting both sides can find the net, but defensive solidity is also a factor.' },
+          leagueContext: { score: 65, detail: 'The league context is extremely high for both teams, with Roma needing wins to secure UCL spots and Verona aiming to maintain stability. This pressure often leads to cagey affairs.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Manu Koné — Muscular problems flared up in training, making him questionable for the match.' }
+          ],
+          away: []
+        },
+        context: 'This fixture is highly charged due to the Champions League race implications. Roma will be attacking with high motivation, especially after recent wins and facing a crucial Derby della Capitale later in the week. However, Verona, playing at home, will prioritize defensive solidity and exploiting any lapse in concentration from the favored Giallorossi side.',
+        summary: 'Roma enters this match as slight favorites due to their league ambitions and overall form, but Hellas Verona\'s home advantage and the high-stakes nature of the game suggest a tight contest. The strong emphasis on UCL qualification for both sides points towards a low-scoring, tactical battle.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Lazio', away: 'AC Pisa', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.80–3.30',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Lazio\'s form is mixed; they suffered a heavy loss to Inter (3-0) but also showed ability in other fixtures. AC Pisa\'s recent results are less clear from the provided news.' },
+          drawRates:     { score: 75, detail: 'The fixture involves two teams with varying levels of motivation and stability, suggesting a cagey affair where neither side wants to risk an upset. The league context adds pressure for a draw.' },
+          headToHead:    { score: 50, detail: 'No direct recent head-to-head information is available between Lazio and AC Pisa in the provided news snippets.' },
+          goalTendency:  { score: 60, detail: 'Both teams are involved in high-stakes matches (Lazio preparing for a final, Pisa fighting relegation), which often leads to cautious play but also moments of attacking desperation.' },
+          leagueContext: { score: 70, detail: 'The match is played during the crucial end phase of the season. Lazio are focused on form/finals, while Pisa\'s motivation might be survival, creating a balanced tension.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Zaccagni — Missed the recent 3-0 loss to Inter (Coppa Italia Final focus)' },
+            { tag: 'doubt', text: 'Cataldi — Missed the recent 3-0 loss to Inter (Coppa Italia Final focus)' }
+          ],
+          away: []
+        },
+        context: 'This fixture is complicated by Lazio\'s immediate focus on the Coppa Italia final against Inter, potentially affecting squad rotation and intensity. AC Pisa, meanwhile, operates under the pressure of league survival or mid-table stability. The match will likely be tactical, with both sides prioritizing not losing points rather than dominating possession.',
+        summary: 'The fixture presents a difficult prediction due to Lazio\'s distraction from cup preparations and Pisa\'s underlying motivation for the season. Given the high stakes but mixed focus levels, a draw seems highly probable.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Parma', away: 'Sassuolo', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.75–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Both teams are in a transitional phase of the season, with recent news highlighting mixed results (Lecce vs Parma draw; Lazio beating Sassuolo). However, general league form is not strongly established for either side.' },
+          drawRates:     { score: 80, detail: 'The overall context suggests a cautious match. Both teams are focused on securing points rather than attacking risks, which often leads to draws in Serie A fixtures.' },
+          headToHead:    { score: 50, detail: 'No specific recent head-to-head data is provided for Parma vs Sassuolo, making this factor neutral. The general league context suggests parity.' },
+          goalTendency:  { score: 65, detail: 'The news mentions both teams having dropped points in the final minutes of play recently, suggesting potential defensive lapses but also a desire to secure results, keeping goal counts moderate.' },
+          leagueContext: { score: 70, detail: 'Both clubs are fighting for survival or stability (Parma aiming for safety; Sassuolo eyeing top-10). This high stakes context often leads to cagey, low-scoring affairs where a draw is a highly acceptable outcome.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'No specific key players or injuries are detailed for Parma in relation to Sassuolo, but the general news mentions Zion Suzuki suffering a serious hand injury.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Domenico Berardi is out until 2026 due to a medium level lesion of the flexor, a major blow for Sassuolo\'s attack.' }
+          ]
+        },
+        context: 'This fixture pits two sides battling in the lower reaches or mid-table stability zone. Parma, despite recent injury setbacks (Suzuki), will rely on home support to secure points needed for safety. Sassuolo, while possessing a potent front three, is hampered by the long-term absence of captain Domenico Berardi. Given the high stakes and defensive focus typical of relegation/mid-table battles in Serie A, both managers will prioritize avoiding defeat over aggressive attacking football.',
+        summary: 'The match appears highly balanced, with Sassuolo\'s key attacker missing for an extended period. Both teams are defensively motivated due to league pressures, suggesting a tight contest where the draw is a very realistic outcome.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Napoli', away: 'Udinese', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Low', fairOdds: '1.45–1.80',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 75, detail: 'Napoli are in strong form at home (20 wins and only one loss in last 28 Serie A home matches), while Udinese\'s recent away record is poor, having fallen to eight defeats in their nine away matches.' },
+          drawRates:     { score: 35, detail: 'Napoli has drawn three games this season (including a goalless draw against Como), suggesting they are capable of draws, but Udinese\'s poor form makes a stalemate less likely.' },
+          headToHead:    { score: 50, detail: 'No direct head-to-head information is provided in the news articles for this specific fixture.' },
+          goalTendency:  { score: 60, detail: 'Napoli\'s recent games have been competitive (e.g., goalless draw vs Como), but their overall attacking strength and home record suggest they are more likely to score against a struggling Udinese side.' },
+          leagueContext: { score: 70, detail: 'Napoli is focused on securing Champions League spots, giving them high motivation. Udinese\'s focus is survival, and their poor away form suggests they are under pressure.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'key', text: 'No specific key players mentioned for Napoli in this fixture, but the team\'s overall strong home record is a major asset.' }
+          ],
+          away: [
+            { tag: 'out', text: 'Nicolo Bertola — suffered a sprained right ankle (Udinese)' },
+            { tag: 'key', text: 'Nicolò Zaniolo — will miss the last two matches of the season due to a back problem (Udinese)' }
+          ]
+        },
+        context: 'Napoli enters this match with high confidence, bolstered by their exceptional home record and strong motivation to secure European qualification. Udinese, meanwhile, is struggling significantly away from home, having suffered multiple defeats on the road. Napoli\'s depth of squad strength and recent form give them a clear advantage in this fixture.',
+        summary: 'Napoli are heavily favored to win at home due to their stellar home record and superior current form. Udinese faces significant challenges both in terms of player availability (Bertola, Zaniolo) and poor away performance. Expect Napoli to dominate possession and secure the victory.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Cremonese', away: 'Como 1907', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 25, draw: 30, awayWin: 45, verdict: 'Moderate', fairOdds: '3.80–3.60',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Como has shown defensive solidity (three clean sheets) and are highly motivated for European qualification, while Cremonese\'s away form is concerning, with multiple reports of consecutive goals conceded.' },
+          drawRates:     { score: 75, detail: 'Both teams are in the middle of the table fighting their respective battles. This often leads to cautious, low-scoring matches where tactical parity results in a draw.' },
+          headToHead:    { score: 50, detail: 'No direct head-to-head data is available for this specific fixture, suggesting a neutral starting point for the analysis.' },
+          goalTendency:  { score: 65, detail: 'The focus on defensive solidity from Como and Cremonese\'s struggles to score away suggest that goals might be scarce, favoring a draw or narrow victory.' },
+          leagueContext: { score: 40, detail: 'Como has high stakes (Chasing Champions League spots), providing greater motivation. Cremonese appears focused on immediate survival rather than challenging for top honors.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Jamie Vardy and Martin Payero — Mentioned in past reports as potential injury concerns, impacting attacking depth.' }
+          ],
+          away: []
+        },
+        context: 'This fixture pits a defensively organized Como 1907, who are fighting for European spots, against a struggling Cremonese side. While Como\'s motivation is high and their defensive structure has been key to recent success, Cremonese\'s poor away form presents a significant hurdle. The match is expected to be tactically cautious, with both teams prioritizing stability over attacking flair.',
+        summary: 'Como 1907 enters this game as the slight favorite due to superior motivation and tactical defensive organization. However, Cremonese’s ability to frustrate opponents at home keeps the draw probability high. Expect a tight, low-scoring affair where Como\'s quality should ultimately see them through.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Lecce', away: 'Genoa', time: '15:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 35, draw: 32, awayWin: 33, verdict: 'Moderate', fairOdds: '2.70–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          drawRates:     { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 55, detail: 'Lecce\'s recent form is mixed, with a loss to Juventus, but they have secured points against Pisa and Udinese in the past. Genoa has had inconsistent results recently.' },
+          drawRates:     { score: 60, detail: 'The general context of Serie A fixtures suggests many tight matches, making draws a high probability outcome.' },
+          headToHead:    { score: 45, detail: 'No direct recent head-to-head results were provided for Lecce vs Genoa in the news snippets.' },
+          goalTendency:  { score: 50, detail: 'Both teams are involved in relegation battles and cup fixtures, suggesting a cautious approach with moderate goal scoring potential.' },
+          leagueContext: { score: 65, detail: 'The league context is highly volatile for both clubs as they fight against relegation, increasing the pressure and potentially leading to cagey affairs.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'No specific key players or doubts were mentioned for Lecce in relation to Genoa.' }
+          ],
+          away: [
+            { tag: 'key', text: 'Maxwel Cornet could return for Genoa, having recuperated from a small injury (unconfirmed).' }
+          ]
+        },
+        context: 'This fixture is set against the backdrop of intense relegation battles in Serie A. Both Lecce and Genoa will prioritize defensive solidity and securing points to improve their league standing. The match is expected to be tactical, with both managers wary of conceding ground.',
+        summary: 'Lecce versus Genoa presents a highly competitive encounter driven by survival instincts. Given the high stakes of relegation, a draw remains a strong possibility as both teams prioritize caution over attacking flair.'
       }
     ]
   },
@@ -2311,15 +2580,15 @@ function renderFixture(f, key, leagueName) {
           ${f.homeWin !== undefined
             ? (() => { const top = Math.max(f.homeWin, f.draw, f.awayWin); return `<div class="prob-bar-wrap">
                 <div class="prob-cols">
-                  <div class="prob-col" style="flex:${f.homeWin}">
+                  <div class="prob-col" style="flex:1">
                     <span class="prob-col-label">${f.home}</span>
                     <span class="prob-col-pct home${f.homeWin === top ? ' leading' : ''}">${f.homeWin}%</span>
                   </div>
-                  <div class="prob-col" style="flex:${f.draw}">
+                  <div class="prob-col" style="flex:1">
                     <span class="prob-col-label">Draw</span>
                     <span class="prob-col-pct draw-pct${f.draw === top ? ' leading' : ''}">${f.draw}%</span>
                   </div>
-                  <div class="prob-col" style="flex:${f.awayWin}">
+                  <div class="prob-col" style="flex:1">
                     <span class="prob-col-label">${f.away}</span>
                     <span class="prob-col-pct away${f.awayWin === top ? ' leading' : ''}">${f.awayWin}%</span>
                   </div>
