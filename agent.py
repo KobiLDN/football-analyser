@@ -3,6 +3,7 @@ import json
 import re
 import requests
 from html.parser import HTMLParser
+from understatapi import UnderstatClient
 
 LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SEARXNG_URL  = "http://localhost:8888/search"
@@ -146,7 +147,7 @@ def get_season_year():
 
 def fetch_xg(team, league_id):
     """
-    Fetch last-6 xG stats for a team from Understat.
+    Fetch last-6 xG stats for a team from Understat via understatapi.
     Returns a dict with averages and form string, or None if unavailable.
     """
     if league_id not in UNDERSTAT_LEAGUES:
@@ -155,28 +156,18 @@ def fetch_xg(team, league_id):
     if not slug:
         return None
 
-    year = get_season_year()
-    url  = f"https://understat.com/team/{slug}/{year}"
+    season = str(get_season_year())
     try:
-        resp = requests.get(url, timeout=10, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-        })
-        resp.raise_for_status()
+        with UnderstatClient() as understat:
+            matches = understat.team(team=slug).get_match_data(season=season)
 
-        m = re.search(r"var datesData\s*=\s*JSON\.parse\('(.+?)'\)", resp.text)
-        if not m:
-            return None
-
-        raw  = m.group(1).encode('utf-8').decode('unicode_escape')
-        data = json.loads(raw)
-
-        played = [g for g in data if g.get('isResult')][-6:]
+        played = [m for m in matches if m.get('isResult')][-6:]
         if not played:
             return None
 
-        xg_for     = [float(g['xG'])  for g in played]
-        xg_against = [float(g['xGA']) for g in played]
-        form       = [g['result'].upper() for g in played]
+        xg_for     = [float(m['xG'][m['side']]) for m in played]
+        xg_against = [float(m['xG']['a' if m['side'] == 'h' else 'h']) for m in played]
+        form       = [m['result'].upper() for m in played]
 
         return {
             'xg_for_avg':     round(sum(xg_for)     / len(xg_for),     2),
