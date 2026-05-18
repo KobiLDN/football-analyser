@@ -190,7 +190,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .v-low    { color: var(--red);   background: #1c0505; border: 1px solid #3a1010; }
 .v-mod    { color: var(--amber); background: #1c1200; border: 1px solid #3a2800; }
 .v-good   { color: var(--green); background: #001508; border: 1px solid #002a10; }
-.v-strong { color: var(--blue);  background: #000e1c; border: 1px solid #001c38; }
+.v-strong { color: #ffffff;      background: #000e1c; border: 1px solid #001c38; }
 .bar-low    { background: var(--red); }
 .bar-mod    { background: var(--amber); }
 .bar-good   { background: var(--green); }
@@ -2334,6 +2334,16 @@ const LEAGUES = [
 let activeId = 'all';
 let showPast = false;
 
+function calcVerdict(f) {
+  if (f.homeWin !== undefined) {
+    const top = Math.max(f.homeWin, f.draw, f.awayWin);
+    if (top >= 65) return 'Strong';
+    if (top >= 55) return 'Good';
+    if (top >= 45) return 'Moderate';
+    return 'Low';
+  }
+  return f.verdict || 'Low';
+}
 function verdictClass(v) {
   return { Low: 'v-low', Moderate: 'v-mod', Good: 'v-good', Strong: 'v-strong' }[v] || 'v-low';
 }
@@ -2516,8 +2526,9 @@ function renderMain() {
 }
 
 function renderFixture(f, key, leagueName) {
-  const vc = verdictClass(f.verdict);
-  const bc = barClass(f.verdict);
+  const verdict = calcVerdict(f);
+  const vc = verdictClass(verdict);
+  const bc = barClass(verdict);
   const factorNames = {
     formBalance: 'Form balance', drawRates: 'Draw rates',
     headToHead: 'Head to head', goalTendency: 'Goal tendency', leagueContext: 'Context'
@@ -2600,12 +2611,12 @@ function renderFixture(f, key, leagueName) {
                 </div>
                </div>`; })()
             : `<div class="legacy-prob">
-                 <div class="pct-display" style="color:${f.verdict==='Strong'?'var(--blue)':f.verdict==='Good'?'var(--green)':f.verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
+                 <div class="pct-display" style="color:${verdict==='Strong'?'var(--blue)':verdict==='Good'?'var(--green)':verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
                  <div class="mini-bar-wrap"><div class="mini-bar ${bc}" style="width:${f.drawProbability}%"></div></div>
                </div>`
           }
         </div>
-        <div class="vtag ${vc}">${f.verdict}</div>
+        <div class="vtag ${vc}">${verdict}</div>
         <div class="chevron">▼</div>
       </div>
       <div class="analysis">
