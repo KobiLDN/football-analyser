@@ -2,11 +2,181 @@ import json
 import re
 import requests
 from html.parser import HTMLParser
+from understatapi import UnderstatClient
 
 LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SEARXNG_URL  = "http://localhost:8888/search"
 MODEL        = "google/gemma-4-e4b"
 HTML_FILE    = "index.html"
+
+
+# ─── Understat xG ─────────────────────────────────────────────────────────────
+
+# Leagues Understat covers (matches index.html league ids)
+UNDERSTAT_LEAGUES = {'pl', 'laliga', 'seriea', 'bundesliga', 'ligue1'}
+
+# Map fixture short names → Understat URL slugs
+UNDERSTAT_TEAM_MAP = {
+    # Premier League
+    'Arsenal': 'Arsenal',
+    'Aston Villa': 'Aston_Villa',
+    'Bournemouth': 'Bournemouth',
+    'Brentford': 'Brentford',
+    'Brighton': 'Brighton',
+    'Chelsea': 'Chelsea',
+    'Crystal Palace': 'Crystal_Palace',
+    'Everton': 'Everton',
+    'Fulham': 'Fulham',
+    'Ipswich': 'Ipswich',
+    'Leicester': 'Leicester',
+    'Liverpool': 'Liverpool',
+    'Man City': 'Manchester_City',
+    'Man United': 'Manchester_United',
+    'Newcastle': 'Newcastle_United',
+    'Nottingham': 'Nottingham_Forest',
+    'Southampton': 'Southampton',
+    'Spurs': 'Tottenham',
+    'Sunderland': 'Sunderland',
+    'Tottenham': 'Tottenham',
+    'West Ham': 'West_Ham',
+    'Wolves': 'Wolverhampton_Wanderers',
+    # La Liga
+    'Alaves': 'Alaves',
+    'Athletic Club': 'Athletic_Club',
+    'Atletico Madrid': 'Atletico_Madrid',
+    'Barcelona': 'Barcelona',
+    'Betis': 'Real_Betis',
+    'Celta Vigo': 'Celta_Vigo',
+    'Espanol': 'Espanol',
+    'Getafe': 'Getafe',
+    'Girona': 'Girona',
+    'Las Palmas': 'Las_Palmas',
+    'Leganes': 'Leganes',
+    'Mallorca': 'Mallorca',
+    'Osasuna': 'Osasuna',
+    'Rayo Vallecano': 'Rayo_Vallecano',
+    'Real Betis': 'Real_Betis',
+    'Real Madrid': 'Real_Madrid',
+    'Real Sociedad': 'Real_Sociedad',
+    'Sevilla': 'Sevilla',
+    'Valencia': 'Valencia',
+    'Valladolid': 'Valladolid',
+    'Villarreal': 'Villarreal',
+    # Serie A
+    'AC Milan': 'AC_Milan',
+    'Atalanta': 'Atalanta',
+    'Bologna': 'Bologna',
+    'Cagliari': 'Cagliari',
+    'Como': 'Como',
+    'Empoli': 'Empoli',
+    'Fiorentina': 'Fiorentina',
+    'Genoa': 'Genoa',
+    'Inter Milan': 'Internazionale',
+    'Juventus': 'Juventus',
+    'Lazio': 'Lazio',
+    'Lecce': 'Lecce',
+    'Monza': 'Monza',
+    'Napoli': 'Napoli',
+    'Parma': 'Parma',
+    'Roma': 'Roma',
+    'Torino': 'Torino',
+    'Udinese': 'Udinese',
+    'Venezia': 'Venezia',
+    'Verona': 'Verona',
+    # Bundesliga
+    'Augsburg': 'Augsburg',
+    'Bayern Munich': 'Bayern_Munich',
+    'Bayer Leverkusen': 'Bayer_Leverkusen',
+    'Bochum': 'Bochum',
+    'Borussia Dortmund': 'Borussia_Dortmund',
+    'Borussia Monchengladbach': 'Borussia_Monchengladbach',
+    'Eintracht Frankfurt': 'Eintracht_Frankfurt',
+    'Freiburg': 'Freiburg',
+    'Heidenheim': 'Heidenheim',
+    'Hoffenheim': 'Hoffenheim',
+    'Holstein Kiel': 'Holstein_Kiel',
+    'Mainz': 'Mainz_05',
+    'RB Leipzig': 'RB_Leipzig',
+    'St. Pauli': 'St._Pauli',
+    'Stuttgart': 'Stuttgart',
+    'Union Berlin': 'Union_Berlin',
+    'Werder Bremen': 'Werder_Bremen',
+    'Wolfsburg': 'Wolfsburg',
+    # Ligue 1
+    'Angers': 'Angers',
+    'Auxerre': 'Auxerre',
+    'Brest': 'Brest',
+    'Le Havre': 'Le_Havre',
+    'Lens': 'Lens',
+    'Lille': 'Lille',
+    'Lyon': 'Lyon',
+    'Marseille': 'Marseille',
+    'Metz': 'Metz',
+    'Monaco': 'Monaco',
+    'Montpellier': 'Montpellier',
+    'Nantes': 'Nantes',
+    'Nice': 'Nice',
+    'PSG': 'Paris_Saint-Germain',
+    'Paris SG': 'Paris_Saint-Germain',
+    'Reims': 'Reims',
+    'Rennes': 'Rennes',
+    'Saint-Etienne': 'Saint-Etienne',
+    'Strasbourg': 'Strasbourg',
+    'Toulouse': 'Toulouse',
+}
+
+# Map index.html league display names → league ids
+LEAGUE_NAME_TO_ID = {
+    'Premier League':    'pl',
+    'La Liga':           'laliga',
+    'Serie A':           'seriea',
+    'Bundesliga':        'bundesliga',
+    'Ligue 1':           'ligue1',
+    'Champions League':  'ucl',
+    'Europa League':     'uel',
+    'Conference League': 'uecl',
+}
+
+
+def get_season_year():
+    """Return the Understat season start year (e.g. 2025 for the 2025-26 season)."""
+    now = datetime.datetime.now()
+    return now.year - 1 if now.month <= 7 else now.year
+
+
+def fetch_xg(team, league_id):
+    """
+    Fetch last-6 xG stats for a team from Understat via understatapi.
+    Returns a dict with averages and form string, or None if unavailable.
+    """
+    if league_id not in UNDERSTAT_LEAGUES:
+        return None
+    slug = UNDERSTAT_TEAM_MAP.get(team)
+    if not slug:
+        return None
+
+    season = str(get_season_year())
+    try:
+        with UnderstatClient() as understat:
+            matches = understat.team(team=slug).get_match_data(season=season)
+
+        played = [m for m in matches if m.get('isResult')][-6:]
+        if not played:
+            return None
+
+        xg_for     = [float(m['xG'][m['side']]) for m in played]
+        xg_against = [float(m['xG']['a' if m['side'] == 'h' else 'h']) for m in played]
+        form       = [m['result'].upper() for m in played]
+
+        return {
+            'xg_for_avg':     round(sum(xg_for)     / len(xg_for),     2),
+            'xg_against_avg': round(sum(xg_against) / len(xg_against), 2),
+            'form':           ' '.join(form),
+            'games':          len(played),
+        }
+    except Exception as e:
+        print(f"  xG fetch failed for {team}: {e}")
+        return None
 
 
 # ─── HTML helpers ─────────────────────────────────────────────────────────────
@@ -24,7 +194,7 @@ def find_stubs(html):
     """Return (home, away) for every stub fixture by searching backwards from the stub marker."""
     stubs = []
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
-        prefix = html[max(0, m.start() - 2000):m.start()]
+        prefix = html[max(0, m.start() - 5000):m.start()]
         home_matches = list(re.finditer(r"home:\s*'([^']+)'", prefix))
         away_matches = list(re.finditer(r"away:\s*'([^']+)'", prefix))
         if home_matches and away_matches:
@@ -35,7 +205,7 @@ def find_stubs(html):
 def get_fixture_meta(html, home, away):
     """Extract day, time, result by searching backwards from the stub marker."""
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
-        prefix = html[max(0, m.start() - 2000):m.start()]
+        prefix = html[max(0, m.start() - 5000):m.start()]
         home_m = list(re.finditer(r"home:\s*'([^']+)'", prefix))
         away_m = list(re.finditer(r"away:\s*'([^']+)'", prefix))
         if not home_m or not away_m:
@@ -120,7 +290,7 @@ def build_replacement(home, away, day, time_, result, analysis):
 def patch_fixture(html, home, away, replacement):
     """Replace the correct stub block by matching backwards from the stub marker."""
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
-        prefix = html[max(0, m.start() - 2000):m.start()]
+        prefix = html[max(0, m.start() - 5000):m.start()]
         home_m = list(re.finditer(r"home:\s*'([^']+)'", prefix))
         away_m = list(re.finditer(r"away:\s*'([^']+)'", prefix))
         if not home_m or not away_m:
@@ -129,7 +299,7 @@ def patch_fixture(html, home, away, replacement):
             continue
 
         # Find block start: scan backwards for the opening {
-        home_abs    = max(0, m.start() - 2000) + home_m[-1].start()
+        home_abs    = max(0, m.start() - 5000) + home_m[-1].start()
         block_start = html.rfind('{', 0, home_abs)
 
         # Find block end: count braces forward from block_start

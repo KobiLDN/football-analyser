@@ -12,7 +12,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Backlog
 
-- **Home win / draw / away win probability** — extend each fixture from a single draw score to three probabilities (home %, draw %, away %) that sum to 100. Display as a three-segment bar replacing the current draw mini-bar. Research pipeline and verdict tiers to be updated accordingly. Build in three steps: (1) restructure prompt + data output to homeWin/draw/awayWin first (no new sources); (2) add Understat xG last-6-games per team to prompt; (3) add Transfermarkt injury scrape per team. Sofascore skipped — unofficial API too fragile.
+- **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
 - **Team form dots (last 5)** — show W/D/L dots per team in the fixture row (green/amber/red). Fetch via Understat when step 2 above is built — no separate pipeline needed. Dots sit in the empty space of the fixture name column.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
@@ -23,7 +23,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
-- **v2.32** — Auto-marked 1 result (Arsenal 1-0 Burnley).
+- **v2.32** — Understat xG enrichment added to agent research pipeline (`understatapi`); all 36 unplayed fixtures re-researched with last-6 xG for/against and form per team.
 - **v2.31** — Renamed app to Football Analyser; column header renamed to Signal; README updated.
 - **v2.30** — Auto-fetched 30 upcoming fixture stubs.
 - **v2.28** — Merged 23 auto-marked results into fully-researched DEV fixture data; both analysis and scorelines now live in `index.html`.
