@@ -1,6 +1,6 @@
-# Draw Analyser
+# Football Analyser
 
-A football draw probability tool with deep-research analysis per fixture across European leagues and competitions.
+A football match analysis tool with AI-powered home/draw/away win probabilities and deep-research per fixture across European leagues and competitions.
 
 ## Live site
 
@@ -16,7 +16,7 @@ Each fixture is annotated with:
 - Confirmed team news (injuries, suspensions, key players)
 - Tactical context and motivation
 - Head-to-head history
-- Draw probability score (0-100) and verdict tier (Low / Moderate / Good / Strong)
+- Home / draw / away win probabilities and confidence verdict (Low / Moderate / Good / Strong)
 - Fair odds estimate, plus book odds and edge calculation when available
 
 ## Updating each gameweek
