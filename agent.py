@@ -1,4 +1,3 @@
-import datetime
 import json
 import re
 import requests
@@ -8,185 +7,6 @@ LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SEARXNG_URL  = "http://localhost:8888/search"
 MODEL        = "google/gemma-4-e4b"
 HTML_FILE    = "index.html"
-
-
-# ─── Understat xG ─────────────────────────────────────────────────────────────
-
-# Leagues Understat covers (matches index.html league ids)
-UNDERSTAT_LEAGUES = {'pl', 'laliga', 'seriea', 'bundesliga', 'ligue1'}
-
-# Map fixture short names → Understat URL slugs
-UNDERSTAT_TEAM_MAP = {
-    # Premier League
-    'Arsenal': 'Arsenal',
-    'Aston Villa': 'Aston_Villa',
-    'Bournemouth': 'Bournemouth',
-    'Brentford': 'Brentford',
-    'Brighton': 'Brighton',
-    'Chelsea': 'Chelsea',
-    'Crystal Palace': 'Crystal_Palace',
-    'Everton': 'Everton',
-    'Fulham': 'Fulham',
-    'Ipswich': 'Ipswich',
-    'Leicester': 'Leicester',
-    'Liverpool': 'Liverpool',
-    'Man City': 'Manchester_City',
-    'Man United': 'Manchester_United',
-    'Newcastle': 'Newcastle_United',
-    'Nottingham': 'Nottingham_Forest',
-    'Southampton': 'Southampton',
-    'Spurs': 'Tottenham',
-    'Sunderland': 'Sunderland',
-    'Tottenham': 'Tottenham',
-    'West Ham': 'West_Ham',
-    'Wolves': 'Wolverhampton_Wanderers',
-    # La Liga
-    'Alaves': 'Alaves',
-    'Athletic Club': 'Athletic_Club',
-    'Atletico Madrid': 'Atletico_Madrid',
-    'Barcelona': 'Barcelona',
-    'Betis': 'Real_Betis',
-    'Celta Vigo': 'Celta_Vigo',
-    'Espanol': 'Espanol',
-    'Getafe': 'Getafe',
-    'Girona': 'Girona',
-    'Las Palmas': 'Las_Palmas',
-    'Leganes': 'Leganes',
-    'Mallorca': 'Mallorca',
-    'Osasuna': 'Osasuna',
-    'Rayo Vallecano': 'Rayo_Vallecano',
-    'Real Betis': 'Real_Betis',
-    'Real Madrid': 'Real_Madrid',
-    'Real Sociedad': 'Real_Sociedad',
-    'Sevilla': 'Sevilla',
-    'Valencia': 'Valencia',
-    'Valladolid': 'Valladolid',
-    'Villarreal': 'Villarreal',
-    # Serie A
-    'AC Milan': 'AC_Milan',
-    'Atalanta': 'Atalanta',
-    'Bologna': 'Bologna',
-    'Cagliari': 'Cagliari',
-    'Como': 'Como',
-    'Empoli': 'Empoli',
-    'Fiorentina': 'Fiorentina',
-    'Genoa': 'Genoa',
-    'Inter Milan': 'Internazionale',
-    'Juventus': 'Juventus',
-    'Lazio': 'Lazio',
-    'Lecce': 'Lecce',
-    'Monza': 'Monza',
-    'Napoli': 'Napoli',
-    'Parma': 'Parma',
-    'Roma': 'Roma',
-    'Torino': 'Torino',
-    'Udinese': 'Udinese',
-    'Venezia': 'Venezia',
-    'Verona': 'Verona',
-    # Bundesliga
-    'Augsburg': 'Augsburg',
-    'Bayern Munich': 'Bayern_Munich',
-    'Bayer Leverkusen': 'Bayer_Leverkusen',
-    'Bochum': 'Bochum',
-    'Borussia Dortmund': 'Borussia_Dortmund',
-    'Borussia Monchengladbach': 'Borussia_Monchengladbach',
-    'Eintracht Frankfurt': 'Eintracht_Frankfurt',
-    'Freiburg': 'Freiburg',
-    'Heidenheim': 'Heidenheim',
-    'Hoffenheim': 'Hoffenheim',
-    'Holstein Kiel': 'Holstein_Kiel',
-    'Mainz': 'Mainz_05',
-    'RB Leipzig': 'RB_Leipzig',
-    'St. Pauli': 'St._Pauli',
-    'Stuttgart': 'Stuttgart',
-    'Union Berlin': 'Union_Berlin',
-    'Werder Bremen': 'Werder_Bremen',
-    'Wolfsburg': 'Wolfsburg',
-    # Ligue 1
-    'Angers': 'Angers',
-    'Auxerre': 'Auxerre',
-    'Brest': 'Brest',
-    'Le Havre': 'Le_Havre',
-    'Lens': 'Lens',
-    'Lille': 'Lille',
-    'Lyon': 'Lyon',
-    'Marseille': 'Marseille',
-    'Metz': 'Metz',
-    'Monaco': 'Monaco',
-    'Montpellier': 'Montpellier',
-    'Nantes': 'Nantes',
-    'Nice': 'Nice',
-    'PSG': 'Paris_Saint-Germain',
-    'Paris SG': 'Paris_Saint-Germain',
-    'Reims': 'Reims',
-    'Rennes': 'Rennes',
-    'Saint-Etienne': 'Saint-Etienne',
-    'Strasbourg': 'Strasbourg',
-    'Toulouse': 'Toulouse',
-}
-
-# Map index.html league display names → league ids
-LEAGUE_NAME_TO_ID = {
-    'Premier League':    'pl',
-    'La Liga':           'laliga',
-    'Serie A':           'seriea',
-    'Bundesliga':        'bundesliga',
-    'Ligue 1':           'ligue1',
-    'Champions League':  'ucl',
-    'Europa League':     'uel',
-    'Conference League': 'uecl',
-}
-
-
-def get_season_year():
-    """Return the Understat season start year (e.g. 2025 for the 2025-26 season)."""
-    now = datetime.datetime.now()
-    return now.year - 1 if now.month <= 7 else now.year
-
-
-def fetch_xg(team, league_id):
-    """
-    Fetch last-6 xG stats for a team from Understat.
-    Returns a dict with averages and form string, or None if unavailable.
-    """
-    if league_id not in UNDERSTAT_LEAGUES:
-        return None
-    slug = UNDERSTAT_TEAM_MAP.get(team)
-    if not slug:
-        return None
-
-    year = get_season_year()
-    url  = f"https://understat.com/team/{slug}/{year}"
-    try:
-        resp = requests.get(url, timeout=10, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-        })
-        resp.raise_for_status()
-
-        m = re.search(r"var datesData\s*=\s*JSON\.parse\('(.+?)'\)", resp.text)
-        if not m:
-            return None
-
-        raw  = m.group(1).encode('utf-8').decode('unicode_escape')
-        data = json.loads(raw)
-
-        played = [g for g in data if g.get('isResult')][-6:]
-        if not played:
-            return None
-
-        xg_for     = [float(g['xG'])  for g in played]
-        xg_against = [float(g['xGA']) for g in played]
-        form       = [g['result'].upper() for g in played]
-
-        return {
-            'xg_for_avg':     round(sum(xg_for)     / len(xg_for),     2),
-            'xg_against_avg': round(sum(xg_against) / len(xg_against), 2),
-            'form':           ' '.join(form),
-            'games':          len(played),
-        }
-    except Exception as e:
-        print(f"  xG fetch failed for {team}: {e}")
-        return None
 
 
 # ─── HTML helpers ─────────────────────────────────────────────────────────────
@@ -398,30 +218,12 @@ def fetch_news(home, away, max_results=8, full_text_limit=4):
 
 # ─── LM Studio ───────────────────────────────────────────────────────────────
 
-def build_prompt(home, away, competition, articles, home_xg=None, away_xg=None):
+def build_prompt(home, away, competition, articles):
     news = "\n".join(articles) if articles else "No live news available."
-
-    xg_block = ""
-    if home_xg or away_xg:
-        lines = ["\nxG STATS (last 6 league games):"]
-        if home_xg:
-            lines.append(
-                f"  {home}: xG for {home_xg['xg_for_avg']} avg | "
-                f"xG against {home_xg['xg_against_avg']} avg | "
-                f"Form: {home_xg['form']}"
-            )
-        if away_xg:
-            lines.append(
-                f"  {away}: xG for {away_xg['xg_for_avg']} avg | "
-                f"xG against {away_xg['xg_against_avg']} avg | "
-                f"Form: {away_xg['form']}"
-            )
-        xg_block = "\n".join(lines) + "\n"
-
     return f"""Analyse this fixture and estimate win probabilities.
 
 FIXTURE: {home} vs {away} — {competition}
-{xg_block}
+
 CURRENT NEWS:
 {news}
 
@@ -456,7 +258,6 @@ Verdict is based on the highest of the three probabilities (model confidence):
   Strong 65%+ — dominant favourite
 Factor scores: 50 = neutral, higher = more favourable for a draw.
 Use real player names from the news where available.
-When xG stats are provided, weight them heavily for formBalance and goalTendency.
 """
 
 
@@ -506,27 +307,14 @@ def run():
         html        = load_html()
         day, time_, result = get_fixture_meta(html, home, away)
         competition = get_league_for_fixture(html, home, away)
-        league_id   = LEAGUE_NAME_TO_ID.get(competition, '')
 
         print(f"  Fetching news...")
         articles = fetch_news(home, away)
         print(f"  {len(articles)} articles found")
 
-        print(f"  Fetching xG stats...")
-        home_xg = fetch_xg(home, league_id)
-        away_xg = fetch_xg(away, league_id)
-        if home_xg:
-            print(f"    {home}: xGF {home_xg['xg_for_avg']} | xGA {home_xg['xg_against_avg']} | {home_xg['form']}")
-        if away_xg:
-            print(f"    {away}: xGF {away_xg['xg_for_avg']} | xGA {away_xg['xg_against_avg']} | {away_xg['form']}")
-        if not home_xg and not away_xg:
-            print(f"    No xG data (UCL/UEL/UECL or unmapped team)")
-
         print(f"  Querying {MODEL}...")
         try:
-            analysis = parse_json(call_lmstudio(
-                build_prompt(home, away, competition, articles, home_xg, away_xg)
-            ))
+            analysis = parse_json(call_lmstudio(build_prompt(home, away, competition, articles)))
         except Exception as e:
             print(f"  FAILED: {e} — skipping\n")
             continue
