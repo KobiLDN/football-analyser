@@ -4,7 +4,7 @@ A football match analysis tool with AI-powered home/draw/away win probabilities 
 
 ## Live site
 
-https://kobildn.github.io/drawanalyser/
+https://kobildn.github.io/football-analyser/
 
 ## What it covers
 
