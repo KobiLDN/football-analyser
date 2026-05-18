@@ -87,18 +87,23 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .main { padding: 28px 32px; }
 .league-header {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
   margin-bottom: 24px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--border);
 }
+.league-header-left { display: flex; flex-direction: column; justify-content: center; }
 .league-title { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
 .league-name { font-size: 22px; font-weight: 700; }
 .league-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
-.league-stats { display: flex; gap: 24px; text-align: right; }
-.stat-val { font-size: 22px; font-weight: 700; color: var(--gold); }
-.stat-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+.league-stats { display: flex; align-items: stretch; }
+.stat-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0 28px; border-left: 1px solid var(--border); text-align: center; min-width: 110px;
+}
+.stat-val { font-size: 26px; font-weight: 700; color: var(--gold); line-height: 1; }
+.stat-label { font-size: 9px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px; }
 
 .day-label {
   font-size: 10px;
@@ -119,53 +124,55 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   margin-bottom: 7px;
   cursor: pointer;
   overflow: hidden;
-  max-width: 1280px;
 }
 .fixture:hover { border-color: var(--border2); }
 .fixture.open { border-color: var(--gold-dim); }
 
 .fixture-list-head {
   display: grid;
-  grid-template-columns: minmax(360px, 520px) 116px 92px 150px 96px 16px;
+  grid-template-columns: minmax(0, 1fr) 120px 100px 260px 110px 24px;
   align-items: end;
-  gap: 16px;
-  justify-content: start;
-  padding: 0 16px;
+  gap: 20px;
+  padding: 0 18px;
   margin: 0 0 10px;
-  max-width: 1280px;
 }
 .fixture-list-col {
   font-size: 10px;
   font-weight: 700;
-  color: var(--text3);
+  color: var(--text2);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+.fixture-list-col.fixture-col { color: var(--text2); }
 .fixture-list-col.metric,
 .fixture-list-col.signal,
 .fixture-list-col.research { text-align: center; }
 
 .fixture-row {
   display: grid;
-  grid-template-columns: minmax(360px, 520px) 116px 92px 150px 96px 16px;
+  grid-template-columns: minmax(0, 1fr) 120px 100px 260px 110px 24px;
   align-items: center;
-  gap: 16px;
-  justify-content: start;
-  padding: 13px 16px;
+  gap: 20px;
+  padding: 14px 18px;
 }
 .teams { font-size: 15px; font-weight: 600; }
-.fixture-tag-cell { min-height: 22px; display: flex; align-items: center; }
+.fixture-tag-cell { min-height: 22px; display: flex; align-items: center; justify-content: center; }
 .kick-time { font-size: 12px; color: var(--text2); margin-top: 3px; }
-.draw-probability-cell { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.draw-probability-cell { display: block; min-width: 0; }
+.legacy-prob { display: flex; align-items: center; justify-content: center; gap: 8px; }
 .pct-display { font-size: 20px; font-weight: 700; min-width: 48px; text-align: right; }
 .mini-bar-wrap { width: 70px; height: 3px; background: var(--border2); border-radius: 99px; overflow: hidden; }
 .mini-bar { height: 100%; }
-.prob-bar-wrap { min-width: 110px; }
-.prob-labels { display: flex; justify-content: space-between; font-size: 9px; font-weight: 600; margin-bottom: 3px; }
-.prob-label-h { color: var(--blue); }
-.prob-label-d { color: var(--amber); }
-.prob-label-a { color: #e05252; }
-.prob-bar { display: flex; height: 4px; border-radius: 99px; overflow: hidden; }
+.prob-bar-wrap { width: 100%; }
+.prob-cols { display: flex; margin-bottom: 7px; }
+.prob-col { display: flex; flex-direction: column; align-items: center; min-width: 0; gap: 2px; }
+.prob-col-label { font-size: 8px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; }
+.prob-col-pct { font-size: 13px; font-weight: 700; line-height: 1; }
+.prob-col-pct.leading { font-size: 17px; }
+.prob-col-pct.home { color: var(--blue); }
+.prob-col-pct.draw-pct { color: var(--amber); }
+.prob-col-pct.away { color: #e05252; }
+.prob-bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; width: 100%; }
 .prob-home { background: var(--blue); }
 .prob-draw { background: var(--amber); }
 .prob-away { background: #e05252; }
@@ -178,6 +185,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   border-radius: 3px;
   min-width: 68px;
   text-align: center;
+  justify-self: center;
 }
 .v-low    { color: var(--red);   background: #1c0505; border: 1px solid #3a1010; }
 .v-mod    { color: var(--amber); background: #1c1200; border: 1px solid #3a2800; }
@@ -279,7 +287,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   .factors-row { grid-template-columns: repeat(2, 1fr); }
   .deep-grid { grid-template-columns: 1fr; }
   .fixture-list-head { display: none; }
-  .fixture-row { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .fixture-row { grid-template-columns: minmax(0, 1fr) auto auto auto; }
   .fixture-tag-cell { display: none; }
   .mini-bar-wrap { display: none; }
   .draw-probability-cell { justify-content: flex-end; }
@@ -497,7 +505,7 @@ const LEAGUES = [
       {
         day: 'Monday 18 May',
         home: 'Arsenal', away: 'Burnley', time: '20:00',
-        result: null, drawProbability: 25, verdict: 'Low', fairOdds: '3.40–3.70',
+        result: null, homeWin: 62, draw: 22, awayWin: 16, verdict: 'Low', fairOdds: '3.40–3.70',
         factors: {
           formBalance:   { score: 60, detail: 'Arsenal is in peak form and highly motivated to secure the title/top spot, while Burnley\'s focus is purely on survival, suggesting a significant gap in current quality and momentum.' },
           drawRates:     { score: 35, detail: 'Historically, Arsenal dominates fixtures against lower-table sides like Burnley. The league context suggests an expectation of a clear winner rather than a stalemate.' },
@@ -2069,6 +2077,20 @@ function dayToTs(dayStr) {
   return new Date(2026, MONTHS[p[2]], parseInt(p[1])).getTime();
 }
 const todayTs = new Date(new Date().setHours(0,0,0,0)).getTime();
+const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function dateRangeLabel(fixtures) {
+  const dates = fixtures.map(f => dayToTs(f.day)).filter(Boolean);
+  if (!dates.length) return 'Upcoming Fixtures';
+  const min = new Date(Math.min(...dates));
+  const max = new Date(Math.max(...dates));
+  const d1 = min.getDate(), m1 = MONTH_NAMES[min.getMonth()], y1 = min.getFullYear();
+  const d2 = max.getDate(), m2 = MONTH_NAMES[max.getMonth()], y2 = max.getFullYear();
+  if (d1 === d2 && m1 === m2) return `${d1} ${m1} ${y1}`;
+  if (m1 === m2) return `${d1} – ${d2} ${m1} ${y1}`;
+  if (y1 === y2) return `${d1} ${m1} – ${d2} ${m2} ${y1}`;
+  return `${d1} ${m1} ${y1} – ${d2} ${m2} ${y2}`;
+}
 
 function parseFairMid(str) {
   if (!str) return null;
@@ -2159,21 +2181,22 @@ function renderAll() {
   const grouped = {};
   filtered.forEach(f => { if (!grouped[f.day]) grouped[f.day] = []; grouped[f.day].push(f); });
 
-  const upcoming    = filtered.filter(f => !f.result).length;
-  const topPick     = filtered.length ? Math.max(...filtered.map(f => f.draw ?? f.drawProbability)) : 0;
-  const strongPicks = filtered.filter(f => f.verdict === 'Strong' || f.verdict === 'Good').length;
+  const upcoming   = filtered.filter(f => !f.result).length;
+  const getLeading = f => f.homeWin !== undefined ? Math.max(f.homeWin, f.draw, f.awayWin) : (f.drawProbability || 0);
+  const highConf   = filtered.filter(f => !f.result && getLeading(f) >= 55).length;
+  const topConf    = filtered.length ? Math.max(...filtered.map(f => getLeading(f))) : 0;
 
   document.getElementById('main').innerHTML = `
     <div class="league-header">
-      <div>
+      <div class="league-header-left">
         <div class="league-title">All Competitions</div>
-        <div class="league-name">This Weekend</div>
+        <div class="league-name">${dateRangeLabel(filtered)}</div>
         <div class="league-sub">PL · La Liga · Serie A · Bundesliga · Ligue 1 · UCL · UEL · UECL</div>
       </div>
       <div class="league-stats">
-        <div><div class="stat-val">${upcoming}</div><div class="stat-label">Upcoming</div></div>
-        <div><div class="stat-val">${strongPicks}</div><div class="stat-label">Good/Strong picks</div></div>
-        <div><div class="stat-val">${topPick}%</div><div class="stat-label">Top pick</div></div>
+        <div class="stat-card"><div class="stat-val">${upcoming}</div><div class="stat-label">Upcoming</div></div>
+        <div class="stat-card"><div class="stat-val">${highConf}</div><div class="stat-label">High Confidence</div></div>
+        <div class="stat-card"><div class="stat-val">${topConf}%</div><div class="stat-label">Top Confidence</div></div>
       </div>
     </div>
     ${Object.keys(grouped).length ? renderFixtureListHead() : ''}
@@ -2197,21 +2220,22 @@ function renderMain() {
     grouped[f.day].push(f);
   });
 
-  const upcoming    = filtered.filter(f => !f.result).length;
-  const topPick     = filtered.length ? Math.max(...filtered.map(f => f.draw ?? f.drawProbability)) : 0;
-  const strongPicks = filtered.filter(f => f.verdict === 'Strong' || f.verdict === 'Good').length;
+  const upcoming   = filtered.filter(f => !f.result).length;
+  const getLeading = f => f.homeWin !== undefined ? Math.max(f.homeWin, f.draw, f.awayWin) : (f.drawProbability || 0);
+  const highConf   = filtered.filter(f => !f.result && getLeading(f) >= 55).length;
+  const topConf    = filtered.length ? Math.max(...filtered.map(f => getLeading(f))) : 0;
 
   document.getElementById('main').innerHTML = `
     <div class="league-header">
-      <div>
+      <div class="league-header-left">
         <div class="league-title">${league.country}</div>
         <div class="league-name">${league.name}</div>
         <div class="league-sub">${league.round} · Deep research updated 5 May 2026</div>
       </div>
       <div class="league-stats">
-        <div><div class="stat-val">${league.drawRate}%</div><div class="stat-label">League draw rate</div></div>
-        <div><div class="stat-val">${strongPicks}</div><div class="stat-label">Strong/Good picks</div></div>
-        <div><div class="stat-val">${topPick}%</div><div class="stat-label">Top pick</div></div>
+        <div class="stat-card"><div class="stat-val">${league.drawRate}%</div><div class="stat-label">League draw rate</div></div>
+        <div class="stat-card"><div class="stat-val">${highConf}</div><div class="stat-label">High Confidence</div></div>
+        <div class="stat-card"><div class="stat-val">${topConf}%</div><div class="stat-label">Top Confidence</div></div>
       </div>
     </div>
     ${Object.keys(grouped).length ? renderFixtureListHead() : ''}
@@ -2285,20 +2309,31 @@ function renderFixture(f, key, leagueName) {
         <div class="fixture-tag-cell">${researchBadge}</div>
         <div class="draw-probability-cell">
           ${f.homeWin !== undefined
-            ? `<div class="prob-bar-wrap">
-                <div class="prob-labels">
-                  <span class="prob-label-h">H ${f.homeWin}%</span>
-                  <span class="prob-label-d">D ${f.draw}%</span>
-                  <span class="prob-label-a">A ${f.awayWin}%</span>
+            ? (() => { const top = Math.max(f.homeWin, f.draw, f.awayWin); return `<div class="prob-bar-wrap">
+                <div class="prob-cols">
+                  <div class="prob-col" style="flex:${f.homeWin}">
+                    <span class="prob-col-label">${f.home}</span>
+                    <span class="prob-col-pct home${f.homeWin === top ? ' leading' : ''}">${f.homeWin}%</span>
+                  </div>
+                  <div class="prob-col" style="flex:${f.draw}">
+                    <span class="prob-col-label">Draw</span>
+                    <span class="prob-col-pct draw-pct${f.draw === top ? ' leading' : ''}">${f.draw}%</span>
+                  </div>
+                  <div class="prob-col" style="flex:${f.awayWin}">
+                    <span class="prob-col-label">${f.away}</span>
+                    <span class="prob-col-pct away${f.awayWin === top ? ' leading' : ''}">${f.awayWin}%</span>
+                  </div>
                 </div>
                 <div class="prob-bar">
-                  <div class="prob-home" style="width:${f.homeWin}%"></div>
-                  <div class="prob-draw" style="width:${f.draw}%"></div>
-                  <div class="prob-away" style="width:${f.awayWin}%"></div>
+                  <div class="prob-home" style="flex:${f.homeWin}"></div>
+                  <div class="prob-draw" style="flex:${f.draw}"></div>
+                  <div class="prob-away" style="flex:${f.awayWin}"></div>
                 </div>
+               </div>`; })()
+            : `<div class="legacy-prob">
+                 <div class="pct-display" style="color:${f.verdict==='Strong'?'var(--blue)':f.verdict==='Good'?'var(--green)':f.verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
+                 <div class="mini-bar-wrap"><div class="mini-bar ${bc}" style="width:${f.drawProbability}%"></div></div>
                </div>`
-            : `<div class="pct-display" style="color:${f.verdict==='Strong'?'var(--blue)':f.verdict==='Good'?'var(--green)':f.verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
-               <div class="mini-bar-wrap"><div class="mini-bar ${bc}" style="width:${f.drawProbability}%"></div></div>`
           }
         </div>
         <div class="vtag ${vc}">${f.verdict}</div>
