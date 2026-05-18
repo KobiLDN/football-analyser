@@ -23,6 +23,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.32** — Auto-marked 1 result (Arsenal 1-0 Burnley).
 - **v2.31** — Renamed app to Football Analyser; column header renamed to Signal; README updated.
 - **v2.30** — Auto-fetched 30 upcoming fixture stubs.
 - **v2.28** — Merged 23 auto-marked results into fully-researched DEV fixture data; both analysis and scorelines now live in `index.html`.
