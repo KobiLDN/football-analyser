@@ -22,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.30** — Auto-fetched 30 upcoming fixture stubs.
 - **v2.28** — Merged 23 auto-marked results into fully-researched DEV fixture data; both analysis and scorelines now live in `index.html`.
 - **v2.27** — Local AI research pipeline (`agent.py`) built using LM Studio (Gemma 4B) + SearXNG. Automatically fetches live news, analyses draw probability, and injects full fixture data into `index.html` for all stub fixtures across 5 leagues.
 - **v2.26** — Auto-marked 11 results (Man United 3-2 Nottingham; Brentford 2-2 Crystal Palace; Everton 1-3 Sunderland, +8 more).
