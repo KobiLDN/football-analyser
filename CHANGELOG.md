@@ -6,6 +6,7 @@ All notable changes to this repository are documented here — **newest first**.
 
 | Date · time (BST) | AI Name | Changed |
 |---|---|---|
+| 2026-05-18 12:00 BST | Claude (Claude Code) | Added backlog item for home/draw/away win probability extension to `FEATURES.md`; bumped topbar to `v2.29` (`index.html`). |
 | 2026-05-18 02:00 BST | Claude (Claude Code) | Merged 23 auto-marked results into fully-researched fixture data; bumped topbar to `v2.28` (`index.html`, `FEATURES.md`). |
 | 2026-05-18 01:00 BST | Claude (Claude Code) | Deep-researched all 38 Gameweek 36 stub fixtures across PL, La Liga, Serie A, Bundesliga, Ligue 1 using local LM Studio (Gemma 4B) + SearXNG news pipeline (`index.html`). Bumped topbar to `v2.27`. |
 | 2026-05-14 22:30 | Composer (Cursor) | Synced full `staging/` tree to repository root (`index.html`, `scripts/`, `.github/workflows/`, `README.md`, `CHANGELOG.md`, `FEATURES.md`, `AGENTS.md`). Topbar bumped to `v2.22` to match prior changelog entry. |
