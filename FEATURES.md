@@ -13,6 +13,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 ## Backlog
 
 - **Home win / draw / away win probability** — extend each fixture from a single draw score to three probabilities (home %, draw %, away %) that sum to 100. Display as a three-segment bar replacing the current draw mini-bar. Research pipeline and verdict tiers to be updated accordingly. Build in three steps: (1) restructure prompt + data output to homeWin/draw/awayWin first (no new sources); (2) add Understat xG last-6-games per team to prompt; (3) add Transfermarkt injury scrape per team. Sofascore skipped — unofficial API too fragile.
+- **Team form dots (last 5)** — show W/D/L dots per team in the fixture row (green/amber/red). Fetch via Understat when step 2 above is built — no separate pipeline needed. Dots sit in the empty space of the fixture name column.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
 - **CSV export** — download this weekend's picks as a spreadsheet.
