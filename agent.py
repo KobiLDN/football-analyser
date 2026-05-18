@@ -195,7 +195,7 @@ def find_stubs(html):
     """Return (home, away) for every stub fixture by searching backwards from the stub marker."""
     stubs = []
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
-        prefix = html[max(0, m.start() - 2000):m.start()]
+        prefix = html[max(0, m.start() - 5000):m.start()]
         home_matches = list(re.finditer(r"home:\s*'([^']+)'", prefix))
         away_matches = list(re.finditer(r"away:\s*'([^']+)'", prefix))
         if home_matches and away_matches:
@@ -206,7 +206,7 @@ def find_stubs(html):
 def get_fixture_meta(html, home, away):
     """Extract day, time, result by searching backwards from the stub marker."""
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
-        prefix = html[max(0, m.start() - 2000):m.start()]
+        prefix = html[max(0, m.start() - 5000):m.start()]
         home_m = list(re.finditer(r"home:\s*'([^']+)'", prefix))
         away_m = list(re.finditer(r"away:\s*'([^']+)'", prefix))
         if not home_m or not away_m:
@@ -291,7 +291,7 @@ def build_replacement(home, away, day, time_, result, analysis):
 def patch_fixture(html, home, away, replacement):
     """Replace the correct stub block by matching backwards from the stub marker."""
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
-        prefix = html[max(0, m.start() - 2000):m.start()]
+        prefix = html[max(0, m.start() - 5000):m.start()]
         home_m = list(re.finditer(r"home:\s*'([^']+)'", prefix))
         away_m = list(re.finditer(r"away:\s*'([^']+)'", prefix))
         if not home_m or not away_m:
@@ -300,7 +300,7 @@ def patch_fixture(html, home, away, replacement):
             continue
 
         # Find block start: scan backwards for the opening {
-        home_abs    = max(0, m.start() - 2000) + home_m[-1].start()
+        home_abs    = max(0, m.start() - 5000) + home_m[-1].start()
         block_start = html.rfind('{', 0, home_abs)
 
         # Find block end: count braces forward from block_start
