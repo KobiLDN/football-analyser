@@ -284,9 +284,9 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   .topbar { padding: 10px 16px; }
   .updated-stack { display: none; }
   .main { padding: 16px 12px; }
-  .sidebar { position: static; height: auto; display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 6px; padding: 10px 12px; border-right: none; border-bottom: 1px solid var(--border); }
+  .sidebar { position: static; height: auto; display: flex; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; gap: 6px; padding: 10px 12px; border-right: none; border-bottom: 1px solid var(--border); }
   .sidebar::-webkit-scrollbar { display: none; }
-  .sidebar-section { display: contents; }
+  .sidebar-section { display: flex; flex-wrap: nowrap; flex-shrink: 0; gap: 6px; }
   .sidebar-group-label { display: none; }
   .sidebar-item { border-left: none; border-radius: 4px; border: 1px solid var(--border); padding: 7px 12px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
   .league-header { flex-direction: column; gap: 14px; }
