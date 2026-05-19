@@ -22,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.37** — Collapsible day groups in the fixture list: click any date header to hide/show all fixtures for that day. Fixture count shown on the right, chevron rotates to indicate state. Useful for browsing past fixtures — minimise dates you've already reviewed. Bundled fixes: Past Fixtures toggle (which was silently breaking on a `ReferenceError` in the legacy-schema render branch) and the failing Auto-mark results workflow (three brittle regex anchors in `scripts/*.js`).
 - **v2.35** — Auto-marked 1 result (Chelsea 2-1 Tottenham).
 - **v2.36** — Game-day refresh (`refresh_today.py` + `refresh_today.bat`): targeted reset of fixtures playing within N days, then auto-runs the agent. Lets you incorporate the latest team news / probabilities on matchday in ~3–5 min instead of full week reset.
 - **v2.35** — Research pipeline hardening: scored news relevance filter (both-team priority, single-team cap), Understat name-alias resolver (fixes missing xG/form for long club names), prompt rules against fictional scorelines / wrong-opponent / guessed personnel, post-validation retry when analysis doesn't mention both teams.
