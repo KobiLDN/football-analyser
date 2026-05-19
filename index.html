@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -227,7 +227,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   padding-left: 10px; position: relative;
 }
 .deep-content li::before {
-  content: 'â€¢'; color: var(--text3);
+  content: '•'; color: var(--text3);
   position: absolute; left: 0;
 }
 .deep-content .out { color: var(--red); font-weight: 500; }
@@ -299,11 +299,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.31 Â· 2025â€“26</span></div>
+  <div class="logo">Football Analyser <span>v2.32 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
-      <div class="updated-tag">Page Â· 14 May 2026 22:30 BST</div>
-      <div class="updated-tag">Data Â· 18 May 2026 12:34 BST</div>
+      <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
+      <div class="updated-tag">Data · 18 May 2026 12:34 BST</div>
     </div>
     
   </div>
@@ -316,7 +316,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 
 <script>
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// DEEP RESEARCH DATA â€” Premier League GW36
+// DEEP RESEARCH DATA — Premier League GW36
 // Each fixture researched via news articles, injury
 // reports, team previews. Updated 5 May 2026.
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -332,30 +332,30 @@ const LEAGUES = [
       {
         day: 'Friday 15 May',
         home: 'Aston Villa', away: 'Liverpool', time: '20:00',
-        result: '4-2', drawProbability: 34, verdict: 'Moderate', fairOdds: '2.90â€“3.10',
+        result: '4-2', drawProbability: 34, verdict: 'Moderate', fairOdds: '2.90–3.10',
         factors: {
           formBalance:   { score: 55, detail: 'Villa took 1 point from last 3 league games (D1 L2), but won 4-0 in the Europa League. Liverpool drew 1-1 with Chelsea and lost 3-2 at Man Utd.' },
           drawRates:     { score: 70, detail: 'Recent meetings at Villa Park have been high-scoring draws: 3-3 and 2-2 in the previous two seasons.' },
           headToHead:    { score: 65, detail: 'Liverpool unbeaten in 11 vs Villa, but Villa Park encounters have consistently ended level.' },
           goalTendency:  { score: 60, detail: 'Both sides score freely but are leaking goals. Expect an open, high-scoring affair.' },
-          leagueContext: { score: 75, detail: 'Both on 59 points, fighting for Champions League qualification. Villa also have a Europa League final in 5 days â€” rotation likely.' }
+          leagueContext: { score: 75, detail: 'Both on 59 points, fighting for Champions League qualification. Villa also have a Europa League final in 5 days — rotation likely.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Boubacar Kamara â€” knee surgery (season-ending)' },
-              { tag: 'doubt', text: 'Amadou Onana â€” hamstring/muscle issue' },
-              { tag: 'doubt', text: 'Alysson â€” knee fitness concern' },
-              { tag: 'key', text: 'Europa League final vs Freiburg on May 20 â€” likely rotation' }
+              { tag: 'out', text: 'Boubacar Kamara — knee surgery (season-ending)' },
+              { tag: 'doubt', text: 'Amadou Onana — hamstring/muscle issue' },
+              { tag: 'doubt', text: 'Alysson — knee fitness concern' },
+              { tag: 'key', text: 'Europa League final vs Freiburg on May 20 — likely rotation' }
             ],
           away: [
-              { tag: 'out', text: 'Conor Bradley â€” knee surgery' },
-              { tag: 'out', text: 'Hugo Ekitike â€” ruptured Achilles' },
-              { tag: 'out', text: 'Giovanni Leoni â€” ACL injury' },
-              { tag: 'doubt', text: 'Mohamed Salah â€” minor muscle injury, may not start' },
-              { tag: 'doubt', text: 'Alisson Becker â€” hamstring, progressing but uncertain' },
-              { tag: 'doubt', text: 'Florian Wirtz â€” illness' },
-              { tag: 'doubt', text: 'Ibrahima KonatÃ© â€” cramp concern vs Chelsea' },
-              { tag: 'doubt', text: 'Wataru Endo â€” fitness doubt' },
+              { tag: 'out', text: 'Conor Bradley — knee surgery' },
+              { tag: 'out', text: 'Hugo Ekitike — ruptured Achilles' },
+              { tag: 'out', text: 'Giovanni Leoni — ACL injury' },
+              { tag: 'doubt', text: 'Mohamed Salah — minor muscle injury, may not start' },
+              { tag: 'doubt', text: 'Alisson Becker — hamstring, progressing but uncertain' },
+              { tag: 'doubt', text: 'Florian Wirtz — illness' },
+              { tag: 'doubt', text: 'Ibrahima Konaté — cramp concern vs Chelsea' },
+              { tag: 'doubt', text: 'Wataru Endo — fitness doubt' },
               { tag: 'key', text: 'Alexander Isak back in contention after Chelsea sub appearance' }
             ]
         },
@@ -366,7 +366,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Man United', away: 'Nottingham', time: '12:30',
-        result: '3-2', drawProbability: 33, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '3-2', drawProbability: 33, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Man United are in a four-game unbeaten run (W3 D1), while Nottingham Forest is described as \'in-form\' and looking to end the season on a high. This suggests both sides have decent form, but Man Utd\'s recent stability gives them an edge.' },
           drawRates:     { score: 50, detail: 'The news does not provide historical draw rate data for either team or fixture, making this factor neutral. However, the overall context of a \'rare pressure-free\' clash suggests caution from both sides.' },
@@ -376,12 +376,12 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Bruno Fernandes â€” Key playmaker aiming to match the all-time assist record.' },
-              { tag: 'out', text: 'Matthijs de Ligt â€” Underwent surgery and expected to return in 2026/27 (long-term absence).' }
+              { tag: 'key', text: 'Bruno Fernandes — Key playmaker aiming to match the all-time assist record.' },
+              { tag: 'out', text: 'Matthijs de Ligt — Underwent surgery and expected to return in 2026/27 (long-term absence).' }
             ],
           away: [
-              { tag: 'key', text: 'Chris Wood â€” Back at centre-forward for Forest.' },
-              { tag: 'key', text: 'Gibbs-White â€” Returns for the visitors after a facial injury.' }
+              { tag: 'key', text: 'Chris Wood — Back at centre-forward for Forest.' },
+              { tag: 'key', text: 'Gibbs-White — Returns for the visitors after a facial injury.' }
             ]
         },
         context: 'The fixture is characterized as a \'rare pressure-free\' Premier League clash. With Manchester United having already secured Champions League football, and Nottingham Forest being clear of relegation worries, both teams may approach the game with less intensity than usual. This low stakes environment increases the likelihood of tactical caution and potential draws.',
@@ -391,7 +391,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Brentford', away: 'Crystal Palace', time: '15:00',
-        result: '2-2', drawProbability: 33, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '2-2', drawProbability: 33, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Brentford have struggled recently (drawn five, lost two, won one in last eight), while Crystal Palace are coming off a 2-2 draw but boast an excellent defensive record and have secured safety.' },
           drawRates:     { score: 60, detail: 'The recent history includes a 2-2 draw between the two sides (mentioned in news), suggesting they can play cagey, low-scoring affairs. However, Brentford are unbeaten at home in six matches against Palace since 1957.' },
@@ -414,20 +414,20 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Everton', away: 'Sunderland', time: '15:00',
-        result: '1-3', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        result: '1-3', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 40, detail: 'Everton has been winless for five matches and concede at least twice in all of them. Sunderland is coming off four consecutive matches conceding goals but also showing resilience (e.g., the 3-1 win against Everton).' },
-          drawRates:     { score: 60, detail: 'Historically, David Moyes has faced RÃ©gis Le Bris on two occasions, recording only draws. Additionally, both teams have shown ability to fight back and secure points in high-stakes games.' },
+          drawRates:     { score: 60, detail: 'Historically, David Moyes has faced Régis Le Bris on two occasions, recording only draws. Additionally, both teams have shown ability to fight back and secure points in high-stakes games.' },
           headToHead:    { score: 75, detail: 'The historical record is heavily weighted towards draws (Moyes vs Le Bris/Sunderland). The last meeting ended with a 3-1 win for Sunderland at the Hill Dickinson Stadium.' },
           goalTendency:  { score: 65, detail: 'Both teams have shown high-scoring potential recently. Everton\'s recent matches have seen at least three goals scored in each of their last six games. Away from home, Sunderland are coming off three consecutive matches scoring goals.' },
           leagueContext: { score: 50, detail: 'The fixture is high-stakes as both teams are fighting for European qualification spots, adding pressure but also motivation to secure a result.' }
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Idrissa Gueye â€” Missed the last two games but could be back for the final game of the season.' }
+              { tag: 'doubt', text: 'Idrissa Gueye — Missed the last two games but could be back for the final game of the season.' }
             ],
           away: [
-              { tag: 'key', text: 'Omar Alderete â€” Sustained a \'small\' injury in the 3-1 win, but his status is key to Sunderland\'s defense.' }
+              { tag: 'key', text: 'Omar Alderete — Sustained a \'small\' injury in the 3-1 win, but his status is key to Sunderland\'s defense.' }
             ]
         },
         context: 'This fixture carries immense weight for both clubs aiming for European qualification. While Everton struggles with consistency and recent form, their home advantage remains a factor. However, Sunderland has proven they can secure crucial points on the road, capitalizing on opponent collapses (as seen in the 3-1 win at the Hill Dickinson Stadium). The historical draw record suggests parity, but both sides\' attacking flair makes predicting a low-scoring affair difficult.',
@@ -437,7 +437,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Leeds United', away: 'Brighton & Hove Albion', time: '15:00',
-        result: '1-0', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        result: '1-0', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 45, detail: 'Leeds\' recent form is strong (unbeaten streak mentioned), while Brighton has shown dominance but struggled to score recently (19 efforts on goal vs Leeds).' },
           drawRates:     { score: 30, detail: 'The historical context and current league positions suggest a winner will be determined, rather than a draw.' },
@@ -447,11 +447,11 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Gabriel Gudmundsson â€” calf injury concern' }
+              { tag: 'doubt', text: 'Gabriel Gudmundsson — calf injury concern' }
             ],
           away: [
-              { tag: 'out', text: 'Kaoru Mitoma â€” injured ankle (missed World Cup hopes)' },
-              { tag: 'doubt', text: 'Jordan Verruggen; Jayden Bogle â€” listed as potential absences/concerns' }
+              { tag: 'out', text: 'Kaoru Mitoma — injured ankle (missed World Cup hopes)' },
+              { tag: 'doubt', text: 'Jordan Verruggen; Jayden Bogle — listed as potential absences/concerns' }
             ]
         },
         context: 'The fixture is highly motivated for Brighton, who need a win to boost their Champions League hopes. Leeds, conversely, are already safe from relegation and can afford to play with more structure. The recent 1-0 victory by Leeds at home suggests they have the mental edge in this specific matchup.',
@@ -461,7 +461,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Wolverhampton', away: 'Fulham', time: '15:00',
-        result: '1-1', drawProbability: 38, verdict: 'Good', fairOdds: '3.20â€“3.50',
+        result: '1-1', drawProbability: 38, verdict: 'Good', fairOdds: '3.20–3.50',
         factors: {
           formBalance:   { score: 40, detail: 'Both teams are entering the fixture in poor form and struggling for momentum, suggesting an inability to decisively beat the opponent.' },
           drawRates:     { score: 85, detail: 'The most recent encounter between these two sides ended in a draw (1-1), setting a precedent for a cagey affair.' },
@@ -471,7 +471,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Jose SÃ¡ â€” Goalkeeper, crucial for organizing the defense during a relegation battle.' }
+              { tag: 'key', text: 'Jose Sá — Goalkeeper, crucial for organizing the defense during a relegation battle.' }
             ],
           away: []
         },
@@ -482,7 +482,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Newcastle', away: 'West Ham', time: '17:30',
-        result: '3-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '3-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Newcastle\'s form is erratic (dropping 27 points from winning positions), while West Ham needs a win to survive, suggesting high motivation but inconsistent performance from both sides.' },
           drawRates:     { score: 40, detail: 'The recent history and current league context suggest that while draws are possible, the desperation of West Ham (relegation fight) and Newcastle\'s home strength make a definitive result more likely than a draw.' },
@@ -492,10 +492,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Kieran Trippier (final start for Newcastle) â€” Returning defender despite leaving the club this summer, adding emotional weight to the match.' }
+              { tag: 'key', text: 'Kieran Trippier (final start for Newcastle) — Returning defender despite leaving the club this summer, adding emotional weight to the match.' }
             ],
           away: [
-              { tag: 'doubt', text: 'Unknown player â€” Suspected minor thigh injury in training, though West Ham is otherwise available for selection.' }
+              { tag: 'doubt', text: 'Unknown player — Suspected minor thigh injury in training, though West Ham is otherwise available for selection.' }
             ]
         },
         context: 'This fixture is defined by high stakes: West Ham needs a win to escape relegation fears, while Newcastle seeks stability and redemption after a disastrous season. The match will likely be cagey at times due to the desperation of the visitors, but both teams\' attacking flair suggests moments of open play. Eddie Howe\'s side must overcome their defensive lapses, while David Moyes\' men need maximum points.',
@@ -505,7 +505,7 @@ const LEAGUES = [
       {
         day: 'Monday 18 May',
         home: 'Arsenal', away: 'Burnley', time: '20:00',
-        result: '1-0', homeWin: 75, draw: 18, awayWin: 7, verdict: 'Strong', fairOdds: '1.20â€“1.35',
+        result: '1-0', homeWin: 75, draw: 18, awayWin: 7, verdict: 'Strong', fairOdds: '1.20–1.35',
         factors: {
           formBalance:   { score: 90, detail: 'Arsenal is in sublime form (L L W W W W) and boasts high xG stats (2.14 avg), indicating strong attacking output. Burnley\'s poor record (one win in last 27 top-flight outings) suggests a significant gap.' },
           drawRates:     { score: 30, detail: 'Given Arsenal\'s dominant form and the league context of a title push, draws are unlikely. Burnley has struggled to secure points against top sides.' },
@@ -530,7 +530,7 @@ const LEAGUES = [
       {
         day: 'Tuesday 19 May',
         home: 'Bournemouth', away: 'Man City', time: '19:30',
-        result: null, homeWin: 25, draw: 25, awayWin: 50, verdict: 'Good', fairOdds: '1.70â€“1.90',
+        result: null, homeWin: 25, draw: 25, awayWin: 50, verdict: 'Good', fairOdds: '1.70–1.90',
         factors: {
           formBalance:   { score: 85, detail: 'Man City\'s form (W W W D W W) is superior to Bournemouth\'s (D W W D W W). Crucially, Man City\'s xG for (2.7 avg) significantly outweighs Bournemouth\'s (1.96 avg), indicating a much higher expected offensive output.' },
           drawRates:     { score: 50, detail: 'The fixture is highly competitive in terms of league importance, but the disparity in squad quality and recent form suggests draws are less likely unless Man City faces unexpected resistance.' },
@@ -540,7 +540,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'doubt', text: 'Tyler Adams â€” Sustained possible MCL injury (potential impact on World Cup plans)' }
+            { tag: 'doubt', text: 'Tyler Adams — Sustained possible MCL injury (potential impact on World Cup plans)' }
           ],
           away: []
         },
@@ -551,13 +551,13 @@ const LEAGUES = [
       {
         day: 'Tuesday 19 May',
         home: 'Chelsea', away: 'Tottenham', time: '20:15',
-        result: null, homeWin: 30, draw: 35, awayWin: 35, verdict: 'Low', fairOdds: '3.20â€“3.60',
+        result: null, homeWin: 30, draw: 35, awayWin: 35, verdict: 'Low', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 40, detail: 'Chelsea\'s defense (1.62 xGA) and poor form (L L L L L D) are major concerns, while Tottenham shows slightly more stable attacking metrics (1.31 xG for).' },
           drawRates:     { score: 75, detail: 'The high stakes of a London derby combined with both teams being in precarious league positions suggests a cagey, highly contested match where the draw is a strong possibility.' },
           headToHead:    { score: 45, detail: 'Historically, Tottenham have struggled significantly away at Stamford Bridge, having lost each of their last five encounters against Chelsea.' },
           goalTendency:  { score: 60, detail: 'Both teams show signs of inconsistency in defense (Chelsea\'s high xGA), suggesting goals are possible, but the current form suggests caution over open attacking play.' },
-          leagueContext: { score: 70, detail: 'The match carries immense weight for both sidesâ€”European aspirations for Chelsea versus survival fears for Tottenhamâ€”elevating the tension and making a draw highly likely.' }
+          leagueContext: { score: 70, detail: 'The match carries immense weight for both sides—European aspirations for Chelsea versus survival fears for Tottenham—elevating the tension and making a draw highly likely.' }
         },
         teamNews: {
           home: [
@@ -575,7 +575,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Sunderland', away: 'Chelsea', time: '16:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10â€“2.40',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10–2.40',
         factors: {
           formBalance:   { score: 60, detail: 'Chelsea are in poor form (L L L L L D), while Sunderland\'s recent wins and motivation give them a slight edge despite inconsistent results.' },
           drawRates:     { score: 55, detail: 'Both teams show signs of inconsistency; however, the home advantage and Chelsea\'s current struggles make a draw less likely than expected.' },
@@ -598,7 +598,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Brighton & Hove Albion', away: 'Man United', time: '16:00',
-        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Moderate', fairOdds: '1.80â€“2.00',
+        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Moderate', fairOdds: '1.80–2.00',
         factors: {
           formBalance:   { score: 65, detail: 'Man United\'s recent form (L W W W D W) is inconsistent but shows strong winning streaks. Brighton\'s news focuses on past European hopes and a loss to Leeds, suggesting potential mental fragility.' },
           drawRates:     { score: 50, detail: 'No specific draw rate data was provided for this fixture, making it neutral.' },
@@ -608,10 +608,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'doubt', text: 'Benjamin Sesko â€” Availability is uncertain for the trip to Brighton.' }
+            { tag: 'doubt', text: 'Benjamin Sesko — Availability is uncertain for the trip to Brighton.' }
           ],
           away: [
-            { tag: 'key', text: 'Danny Welbeck â€” Signed on a one-year deal, adding depth and experience to the squad.' }
+            { tag: 'key', text: 'Danny Welbeck — Signed on a one-year deal, adding depth and experience to the squad.' }
           ]
         },
         context: 'Manchester United are expected to utilize their superior xG metrics (1.84 for) to dominate possession and create chances at home against Brighton. However, Brighton\'s recent history of being dominant but failing to score (as noted in the news) suggests they might struggle to convert opportunities, allowing Man United a pathway to victory if they can maintain composure.',
@@ -621,7 +621,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Crystal Palace', away: 'Arsenal', time: '16:00',
-        result: null, homeWin: 25, draw: 28, awayWin: 47, verdict: 'Moderate', fairOdds: '2.00â€“2.30',
+        result: null, homeWin: 25, draw: 28, awayWin: 47, verdict: 'Moderate', fairOdds: '2.00–2.30',
         factors: {
           formBalance:   { score: 65, detail: 'Arsenal\'s recent form (L L W W W W) is significantly superior to Crystal Palace\'s patchy run of results (D L L D L D).' },
           drawRates:     { score: 35, detail: 'The statistical disparity in xG metrics and current league context suggests a low probability for a stalemate.' },
@@ -631,7 +631,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'doubt', text: 'Chris Richards â€” Suffered an ankle injury in a recent match, though Glasner plans full strength.' }
+            { tag: 'doubt', text: 'Chris Richards — Suffered an ankle injury in a recent match, though Glasner plans full strength.' }
           ],
           away: []
         },
@@ -642,7 +642,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Burnley', away: 'Wolverhampton', time: '16:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '3.40â€“3.60',
+        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '3.40–3.60',
         factors: {
           formBalance:   { score: 55, detail: 'Wolverhampton\'s recent injury boosts suggest a more stable squad compared to Burnley, who are struggling with their league position and overall form.' },
           drawRates:     { score: 60, detail: 'The historical context of both teams suggests that matches between them often end in draws or low-scoring affairs, indicating a cautious approach from both sides.' },
@@ -665,7 +665,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Fulham', away: 'Newcastle', time: '16:00',
-        result: null, homeWin: 30, draw: 30, awayWin: 40, verdict: 'Moderate', fairOdds: '2.15â€“2.50',
+        result: null, homeWin: 30, draw: 30, awayWin: 40, verdict: 'Moderate', fairOdds: '2.15–2.50',
         factors: {
           formBalance:   { score: 65, detail: 'Newcastle shows superior recent form (L L L W D W) compared to Fulham\'s inconsistent run (L D W L L D). Newcastle also boasts a higher average xG for (1.78 vs 1.15).' },
           drawRates:     { score: 50, detail: 'The historical data and recent form do not strongly suggest an elevated draw rate, keeping the probability balanced.' },
@@ -675,18 +675,18 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Antonee Robinson â€” will miss the match due to a knee injury.' }
+            { tag: 'key', text: 'Antonee Robinson — will miss the match due to a knee injury.' }
           ],
           away: []
         },
         context: 'Newcastle enters this fixture with strong momentum, driven by their ambition for Champions League qualification and recent impressive form. Fulham, meanwhile, is struggling to maintain consistency in the league after disappointing cup exits. The match will likely be an open affair, with Newcastle\'s attacking quality being the primary threat against a potentially vulnerable Fulham defense.',
-        summary: 'Newcastle enters as slight favourites due to superior current form and historical head-to-head advantage. While Fulham has shown defensive weaknesses (high xG against), Newcastleâ€™s consistent high performance level gives them the edge, making this a moderate away win prediction.'
+        summary: 'Newcastle enters as slight favourites due to superior current form and historical head-to-head advantage. While Fulham has shown defensive weaknesses (high xG against), Newcastle’s consistent high performance level gives them the edge, making this a moderate away win prediction.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Liverpool', away: 'Brentford', time: '16:00',
-        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Good', fairOdds: '1.60â€“2.00',
+        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Good', fairOdds: '1.60–2.00',
         factors: {
           formBalance:   { score: 78, detail: 'Liverpool\'s recent form (W W W L D L) is superior to Brentford\'s (D D L W L D). Liverpool also show a significantly better average xG for (1.34 vs 1.73), suggesting higher offensive quality despite the mixed results.' },
           drawRates:     { score: 40, detail: 'Both teams have shown signs of inconsistency in their recent form, but Liverpool\'s overall attacking metrics and league standing give them an edge over maintaining a draw.' },
@@ -710,7 +710,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Man City', away: 'Aston Villa', time: '16:00',
-        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Good', fairOdds: '1.70â€“1.80',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Good', fairOdds: '1.70–1.80',
         factors: {
           formBalance:   { score: 85, detail: 'Man City\'s attacking metrics (2.7 xG for) significantly outweigh Aston Villa\'s output, giving them a clear edge in sustained performance and goal creation.' },
           drawRates:     { score: 60, detail: 'Both teams are top-tier Premier League sides playing in a high-stakes run-in. This suggests tactical caution and potential for a tight, low-scoring affair.' },
@@ -720,18 +720,18 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'doubt', text: 'Rodri â€” Potential fitness concerns noted ahead of cup fixtures, suggesting possible rotation risk.' }
+            { tag: 'doubt', text: 'Rodri — Potential fitness concerns noted ahead of cup fixtures, suggesting possible rotation risk.' }
           ],
           away: []
         },
-        context: 'This fixture pits Man City\'s elite attacking prowess, evidenced by their 2.7 xG average, against Aston Villaâ€™s resilient and organized away form. While the high stakes of the league run-in suggest a cagey affair (boosting draw probability), Man City\'s superior statistical output and home advantage give them the necessary edge to break down an otherwise solid Villa defense.',
-        summary: 'Man City enters this match as clear favorites due to their overwhelming attacking metrics and consistency. While Aston Villa remains dangerous enough to keep the game tight, Pep Guardiolaâ€™s side possesses the quality and firepower required to secure a crucial three points at home.'
+        context: 'This fixture pits Man City\'s elite attacking prowess, evidenced by their 2.7 xG average, against Aston Villa’s resilient and organized away form. While the high stakes of the league run-in suggest a cagey affair (boosting draw probability), Man City\'s superior statistical output and home advantage give them the necessary edge to break down an otherwise solid Villa defense.',
+        summary: 'Man City enters this match as clear favorites due to their overwhelming attacking metrics and consistency. While Aston Villa remains dangerous enough to keep the game tight, Pep Guardiola’s side possesses the quality and firepower required to secure a crucial three points at home.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'Nottingham', away: 'Bournemouth', time: '16:00',
-        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Moderate', fairOdds: '2.08â€“3.60',
+        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Moderate', fairOdds: '2.08–3.60',
         factors: {
           formBalance:   { score: 65, detail: 'Bournemouth (D W W D W W) show better recent form than Nottingham (D W W W D L). However, Nottingham\'s xG against (1.78) is higher than Bournemouth\'s (1.61), suggesting they concede more.' },
           drawRates:     { score: 50, detail: 'No specific draw rate data was provided for either team to give a definitive score.' },
@@ -754,7 +754,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Tottenham', away: 'Everton', time: '16:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10â€“2.30',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10–2.30',
         factors: {
           formBalance:   { score: 65, detail: 'Tottenham\'s recent form (L L D W W D) and balanced xG metrics suggest greater stability at home compared to Everton\'s poor defensive record.' },
           drawRates:     { score: 50, detail: 'Both teams are inconsistent in their last six games; the fixture is expected to be cagey but unpredictable, making a draw plausible.' },
@@ -767,13 +767,13 @@ const LEAGUES = [
           away: []
         },
         context: 'This fixture pits a stable, in-form Tottenham side against an Everton outfit that possesses attacking potential but suffers from significant defensive vulnerabilities (1.91 xG against). Spurs\' home advantage and the disparity in defensive metrics give them the edge, though Everton\'s ability to score at any time keeps the draw probability elevated.',
-        summary: 'Tottenham enters this match as slight favorites due to their superior form balance and Everton\'s concerning defensive statistics. While a win for the home side is most likely, Evertonâ€™s attacking threat means the game remains highly competitive.'
+        summary: 'Tottenham enters this match as slight favorites due to their superior form balance and Everton\'s concerning defensive statistics. While a win for the home side is most likely, Everton’s attacking threat means the game remains highly competitive.'
       },
 
       {
         day: 'Sunday 24 May',
         home: 'West Ham', away: 'Leeds United', time: '16:00',
-        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '3.20â€“3.60',
+        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 45, detail: 'West Ham\'s recent form (W D W L L L) is poor, while Leeds United\'s news mentions a slow start and injury issues, suggesting parity in current form.' },
           drawRates:     { score: 60, detail: 'The general body of the news suggests several draws (e.g., Newcastle vs Forest draw mentioned), indicating that this fixture might be cagey with both teams prioritizing defensive stability.' },
@@ -795,9 +795,9 @@ const LEAGUES = [
     ]
 },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // LA LIGA â€” Matchday 35
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // LA LIGA — Matchday 35
+  // ─────────────────────────────────
   {
     id: 'laliga',
     name: 'La Liga',
@@ -809,7 +809,7 @@ const LEAGUES = [
       {
         day: 'Thursday 14 May',
         home: 'Valencia', away: 'Rayo Vallecano', time: '19:00',
-        result: '1-1', drawProbability: 31, verdict: 'Moderate', fairOdds: '3.10â€“3.20',
+        result: '1-1', drawProbability: 31, verdict: 'Moderate', fairOdds: '3.10–3.20',
         factors: {
           formBalance:   { score: 60, detail: 'Valencia is inconsistent (12th), but Rayo (10th) is riding an impressive 6-game unbeaten streak.' },
           drawRates:     { score: 65, detail: 'Rayo has drawn frequently in their recent unbeaten run, including a 1-1 against Girona.' },
@@ -819,17 +819,17 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'JosÃ© Copete â€” meniscus injury' },
-              { tag: 'out', text: 'Dimitri Foulquier â€” unavailable' },
-              { tag: 'out', text: 'Thierry Correia â€” hamstring injury' },
-              { tag: 'out', text: 'Mouctar Diakhaby â€” injured' },
-              { tag: 'doubt', text: 'Diego LÃ³pez â€” picked up a knock vs Athletic Bilbao' },
-              { tag: 'doubt', text: 'Fran BeltrÃ¡n â€” availability uncertain' }
+              { tag: 'out', text: 'José Copete — meniscus injury' },
+              { tag: 'out', text: 'Dimitri Foulquier — unavailable' },
+              { tag: 'out', text: 'Thierry Correia — hamstring injury' },
+              { tag: 'out', text: 'Mouctar Diakhaby — injured' },
+              { tag: 'doubt', text: 'Diego López — picked up a knock vs Athletic Bilbao' },
+              { tag: 'doubt', text: 'Fran Beltrán — availability uncertain' }
             ],
           away: [
-              { tag: 'out', text: 'Diego Mendez â€” knee injury (season-ending)' },
-              { tag: 'out', text: 'Luiz Felipe â€” hamstring (season-ending)' },
-              { tag: 'out', text: 'Isi PalacÃ­n â€” 7-match suspension for improper conduct' },
+              { tag: 'out', text: 'Diego Mendez — knee injury (season-ending)' },
+              { tag: 'out', text: 'Luiz Felipe — hamstring (season-ending)' },
+              { tag: 'out', text: 'Isi Palacín — 7-match suspension for improper conduct' },
               { tag: 'key', text: '6-game unbeaten streak heading into this fixture' }
             ]
         },
@@ -840,7 +840,7 @@ const LEAGUES = [
       {
         day: 'Thursday 14 May',
         home: 'Girona', away: 'Real Sociedad', time: '20:00',
-        result: '1-1', drawProbability: 28, verdict: 'Low', fairOdds: '3.50â€“3.60',
+        result: '1-1', drawProbability: 28, verdict: 'Low', fairOdds: '3.50–3.60',
         factors: {
           formBalance:   { score: 40, detail: 'Both teams are in terrible form, each being winless in their last 5 La Liga matches.' },
           drawRates:     { score: 45, detail: 'Sociedad recently drew 2-2 with Betis, and Girona 1-1 with Rayo, but overall draw rates are average.' },
@@ -850,19 +850,19 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Marc-AndrÃ© ter Stegen â€” hamstring injury' },
-              { tag: 'out', text: 'Donny van de Beek â€” cruciate ligament injury' },
-              { tag: 'out', text: 'Cristian Portu â€” knee injury' },
-              { tag: 'out', text: 'Vladyslav Vanat â€” hamstring injury' },
-              { tag: 'out', text: 'Juan Carlos â€” cruciate ligament injury' },
+              { tag: 'out', text: 'Marc-André ter Stegen — hamstring injury' },
+              { tag: 'out', text: 'Donny van de Beek — cruciate ligament injury' },
+              { tag: 'out', text: 'Cristian Portu — knee injury' },
+              { tag: 'out', text: 'Vladyslav Vanat — hamstring injury' },
+              { tag: 'out', text: 'Juan Carlos — cruciate ligament injury' },
               { tag: 'key', text: 'Bryan Gil returns from one-match suspension' }
             ],
           away: [
-              { tag: 'out', text: 'Orri Ã“skarsson â€” suspended' },
-              { tag: 'out', text: 'Ãlvaro Odriozola â€” injury' },
-              { tag: 'out', text: 'Igor Zubeldia â€” hamstring injury' },
-              { tag: 'out', text: 'Jon Karrikaburu â€” thigh injury' },
-              { tag: 'doubt', text: 'Goncalo Guedes â€” fitness concern' },
+              { tag: 'out', text: 'Orri Óskarsson — suspended' },
+              { tag: 'out', text: 'Ãlvaro Odriozola — injury' },
+              { tag: 'out', text: 'Igor Zubeldia — hamstring injury' },
+              { tag: 'out', text: 'Jon Karrikaburu — thigh injury' },
+              { tag: 'doubt', text: 'Goncalo Guedes — fitness concern' },
               { tag: 'key', text: 'Jon Aramburu returns from suspension' }
             ]
         },
@@ -873,7 +873,7 @@ const LEAGUES = [
       {
         day: 'Thursday 14 May',
         home: 'Real Madrid', away: 'Real Oviedo', time: '21:30',
-        result: '2-0', drawProbability: 12, verdict: 'Low', fairOdds: '7.50â€“8.00',
+        result: '2-0', drawProbability: 12, verdict: 'Low', fairOdds: '7.50–8.00',
         factors: {
           formBalance:   { score: 20, detail: 'Madrid is 2nd in the table. Oviedo is dead last (20th) and completely winless in recent weeks.' },
           drawRates:     { score: 15, detail: 'Real Madrid rarely draws at home against bottom-table opposition.' },
@@ -883,10 +883,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Ferland Mendy â€” ongoing injury issues' },
+              { tag: 'doubt', text: 'Ferland Mendy — ongoing injury issues' },
               { tag: 'key', text: 'Dani Carvajal back in contention after toe injury recovery' },
-              { tag: 'key', text: 'Kylian MbappÃ© chasing the Pichichi Trophy (24 league goals)' },
-              { tag: 'key', text: 'Reported internal tension: Valverde and TchouamÃ©ni training altercation' }
+              { tag: 'key', text: 'Kylian Mbappé chasing the Pichichi Trophy (24 league goals)' },
+              { tag: 'key', text: 'Reported internal tension: Valverde and Tchouaméni training altercation' }
             ],
           away: [
               { tag: 'key', text: 'Mathematically relegated from La Liga' },
@@ -894,14 +894,14 @@ const LEAGUES = [
               { tag: 'key', text: 'Manager Guillermo Almada arrived in December, still rebuilding' }
             ]
         },
-        context: 'Real Madrid are reeling after a 2-0 defeat to Barcelona that confirmed a trophyless 2025â€“26 season. They will be desperate for a dominant home display. MbappÃ© is pushing hard for the Pichichi (Golden Boot), currently on 24 goals. Real Oviedo are already down and have been dreadful on the road. The only question is the margin of victory.',
-        summary: 'A massive mismatch at the BernabÃ©u. Real Madrid is looking for a dominant response, while Real Oviedo is mathematically relegated and struggles significantly on the road. A draw here would be a monumental shock.'
+        context: 'Real Madrid are reeling after a 2-0 defeat to Barcelona that confirmed a trophyless 2025–26 season. They will be desperate for a dominant home display. Mbappé is pushing hard for the Pichichi (Golden Boot), currently on 24 goals. Real Oviedo are already down and have been dreadful on the road. The only question is the margin of victory.',
+        summary: 'A massive mismatch at the Bernabéu. Real Madrid is looking for a dominant response, while Real Oviedo is mathematically relegated and struggles significantly on the road. A draw here would be a monumental shock.'
       },
 
       {
         day: 'Sunday 17 May',
         home: 'Athletic', away: 'Celta', time: '19:00',
-        result: '1-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '1-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Athletic are in poor form (two consecutive defeats, three losses in last four), while Celta have been scoring goals in the last four matches. This suggests a slight imbalance, but Athletic\'s home record is decent.' },
           drawRates:     { score: 65, detail: 'Both teams have shown signs of drawing recently (Athletic: one draw in last 17; Celta: one draw in last 12). Furthermore, the league context suggests a tight match where neither side is desperate for points.' },
@@ -924,56 +924,56 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Atleti', away: 'Girona', time: '19:00',
-        result: '1-0', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '1-0', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
-          formBalance:   { score: 65, detail: 'AtlÃ©tico Madrid is in good form, having returned to winning ways recently and aiming for successive victories. Girona\'s form is inconsistent, marked by defeats but also a recent draw against Mallorca.' },
+          formBalance:   { score: 65, detail: 'Atlético Madrid is in good form, having returned to winning ways recently and aiming for successive victories. Girona\'s form is inconsistent, marked by defeats but also a recent draw against Mallorca.' },
           drawRates:     { score: 40, detail: 'The league context suggests high stakes (relegation battle for Girona), which often leads to cautious play and draws. However, the fixture\'s importance might encourage attacking football.' },
-          headToHead:    { score: 35, detail: 'AtlÃ©tico Madrid has dominated recent encounters, having won their last four games against Girona, including a 3-0 victory in the reverse match.' },
+          headToHead:    { score: 35, detail: 'Atlético Madrid has dominated recent encounters, having won their last four games against Girona, including a 3-0 victory in the reverse match.' },
           goalTendency:  { score: 45, detail: 'Both teams are involved in high-stakes matches. While Atleti\'s attack is potent (Griezmann aiming for goals), Girona needs points to survive, potentially leading to a cagey affair.' },
           leagueContext: { score: 30, detail: 'The league context heavily favors the home side and established powerhouses like Atleti. Girona\'s primary focus is survival, but they are fighting against a top-tier opponent in a high-pressure finale.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'JosÃ© MarÃ­a GimÃ©nez â€” physical issues (confirmed absence)' },
-              { tag: 'out', text: 'Nahuel Molina â€” physical issues (confirmed absence)' }
+              { tag: 'out', text: 'José María Giménez — physical issues (confirmed absence)' },
+              { tag: 'out', text: 'Nahuel Molina — physical issues (confirmed absence)' }
             ],
           away: []
         },
-        context: 'This match is highly charged, serving as Antoine Griezmann\'s final home game for AtlÃ©tico Madrid. Atleti will be motivated to secure three points to end their season on a high note and solidify their standing in the top half of La Liga. Girona, meanwhile, faces immense pressure due to their relegation battle, making them tactically cautious but desperate for any point.',
-        summary: 'AtlÃ©tico Madrid enters this fixture as favorites, driven by home advantage and strong recent form, especially with Griezmann seeking a memorable farewell performance. While Girona\'s survival instincts might suggest caution, Atleti\'s superior attacking pedigree and head-to-head record give them the edge. The high stakes slightly temper the draw probability but do not negate it entirely.'
+        context: 'This match is highly charged, serving as Antoine Griezmann\'s final home game for Atlético Madrid. Atleti will be motivated to secure three points to end their season on a high note and solidify their standing in the top half of La Liga. Girona, meanwhile, faces immense pressure due to their relegation battle, making them tactically cautious but desperate for any point.',
+        summary: 'Atlético Madrid enters this fixture as favorites, driven by home advantage and strong recent form, especially with Griezmann seeking a memorable farewell performance. While Girona\'s survival instincts might suggest caution, Atleti\'s superior attacking pedigree and head-to-head record give them the edge. The high stakes slightly temper the draw probability but do not negate it entirely.'
       },
 
       {
         day: 'Sunday 17 May',
-        home: 'BarÃ§a', away: 'Real Betis', time: '19:00',
-        result: '3-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.60â€“3.90',
+        home: 'Barça', away: 'Real Betis', time: '19:00',
+        result: '3-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.60–3.90',
         factors: {
-          formBalance:   { score: 75, detail: 'Barcelona\'s home form is historically unmatched (18/18 wins), but the recent 1-0 defeat to AlavÃ©s suggests a slight dip in momentum. Real Betis enters with strong confidence and an unbeaten run since March 22nd.' },
-          drawRates:     { score: 60, detail: 'While BarÃ§a\'s home dominance usually dictates a win, Betis\'s current motivation (CL qualification) combined with Barcelona\'s need to rotate heavily after midweek losses makes the draw a very plausible outcome.' },
-          headToHead:    { score: 45, detail: 'Betis has struggled in recent meetings with BarÃ§a. However, their ability to perform away from home (24 points from 18 games) suggests they are capable of disrupting the status quo.' },
-          goalTendency:  { score: 65, detail: 'Both teams have high-scoring records in recent fixtures. BarÃ§a has scored 54 goals at home this season, indicating an open game is likely, which increases draw potential.' },
-          leagueContext: { score: 70, detail: 'The match carries immense weight: BarÃ§a chasing a historic perfect home record, and Betis solidifying their Champions League spot. This high-stakes environment often leads to tactical caution and draws.' }
+          formBalance:   { score: 75, detail: 'Barcelona\'s home form is historically unmatched (18/18 wins), but the recent 1-0 defeat to Alavés suggests a slight dip in momentum. Real Betis enters with strong confidence and an unbeaten run since March 22nd.' },
+          drawRates:     { score: 60, detail: 'While Barça\'s home dominance usually dictates a win, Betis\'s current motivation (CL qualification) combined with Barcelona\'s need to rotate heavily after midweek losses makes the draw a very plausible outcome.' },
+          headToHead:    { score: 45, detail: 'Betis has struggled in recent meetings with Barça. However, their ability to perform away from home (24 points from 18 games) suggests they are capable of disrupting the status quo.' },
+          goalTendency:  { score: 65, detail: 'Both teams have high-scoring records in recent fixtures. Barça has scored 54 goals at home this season, indicating an open game is likely, which increases draw potential.' },
+          leagueContext: { score: 70, detail: 'The match carries immense weight: Barça chasing a historic perfect home record, and Betis solidifying their Champions League spot. This high-stakes environment often leads to tactical caution and draws.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Lamine Yamal â€” Sidelined for the season due to a serious hamstring injury.' },
+              { tag: 'out', text: 'Lamine Yamal — Sidelined for the season due to a serious hamstring injury.' },
               { tag: 'key', text: 'Flick is expected to rotate heavily after midweek changes, potentially affecting overall squad cohesion.' }
             ],
           away: [
               { tag: 'none', text: 'No significant absences reported; Betis enters with high confidence following their recent league wins.' }
             ]
         },
-        context: 'This fixture is a clash between Barcelona\'s historical ambition and Real Betis\'s current momentum. Despite BarÃ§a being the overwhelming favorites at Camp Nou, the fact that Hansi Flick rotated heavily after their AlavÃ©s defeat, combined with key absences like Lamine Yamal and Frenkie de Jong, gives Betis a genuine chance to frustrate the champions. The match is expected to be tactically intense, favoring disciplined play over open attacking football.',
+        context: 'This fixture is a clash between Barcelona\'s historical ambition and Real Betis\'s current momentum. Despite Barça being the overwhelming favorites at Camp Nou, the fact that Hansi Flick rotated heavily after their Alavés defeat, combined with key absences like Lamine Yamal and Frenkie de Jong, gives Betis a genuine chance to frustrate the champions. The match is expected to be tactically intense, favoring disciplined play over open attacking football.',
         summary: 'Barcelona remains dominant at home, but recent rotation and injuries temper their perfect record quest. Real Betis enters highly motivated with strong away form, making them dangerous opponents. The high stakes and tactical nature of the fixture suggest a competitive match where a draw is a very realistic outcome.'
       },
 
       {
         day: 'Sunday 17 May',
         home: 'Elche', away: 'Getafe', time: '19:00',
-        result: '1-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '1-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Elche\'s strong home form (run of six without defeat) contrasts with Getafe\'s consistent away performance, suggesting a tight contest where neither side wants to risk their current standing.' },
-          drawRates:     { score: 70, detail: 'Given the high stakesâ€”Elche fighting relegation and Getafe chasing European spotsâ€”both teams are likely to prioritize defensive solidity over attacking flair, increasing draw probability.' },
+          drawRates:     { score: 70, detail: 'Given the high stakes—Elche fighting relegation and Getafe chasing European spots—both teams are likely to prioritize defensive solidity over attacking flair, increasing draw probability.' },
           headToHead:    { score: 55, detail: 'Getafe holds a historical advantage (7 wins in 14 meetings), but the current league context overrides past results, making tactical caution more likely than outright dominance.' },
           goalTendency:  { score: 60, detail: 'While Elche has been scoring goals at home, they are also on a run of five consecutive matches conceding goals. This vulnerability suggests both teams will adopt cautious, low-scoring tactics.' },
           leagueContext: { score: 95, detail: 'This is a matchday 37 fixture with relegation and European qualification hanging in the balance. The immense pressure guarantees tactical discipline and defensive focus from both sides.' }
@@ -989,7 +989,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Levante', away: 'Mallorca', time: '19:00',
-        result: '2-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '2-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Levante shows strong recent form at home (on a run of four consecutive wins and six consecutive matches without defeat), while Mallorca is in decent scoring form but has struggled for wins recently.' },
           drawRates:     { score: 40, detail: 'The historical data provided does not offer enough draw rate context to give a high score. The overall context suggests an open relegation battle rather than a low-scoring stalemate.' },
@@ -999,7 +999,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'IvÃ¡n Romero â€” suffered a muscle injury to his left posterior tibial (length of absence unknown)' }
+              { tag: 'out', text: 'Iván Romero — suffered a muscle injury to his left posterior tibial (length of absence unknown)' }
             ],
           away: []
         },
@@ -1010,7 +1010,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Rayo Vallecano', away: 'Villarreal', time: '19:00',
-        result: '2-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '2-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Rayo Vallecano has shown resilience, avoiding defeat in recent matches (though the specific run is not detailed for this fixture). Villarreal\'s form is mixed; while they have had strong periods (e.g., securing a top-four spot), their overall league performance can be inconsistent.' },
           drawRates:     { score: 70, detail: 'The provided news snippets highlight several draws involving Rayo Vallecano and Valencia/Barcelona, suggesting that low-scoring or drawn matches are common in this fixture\'s context. Historically, the draw has been a frequent outcome.' },
@@ -1020,7 +1020,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Nteka â€” Key player who scored the opening goal against Villarreal (implied context)' }
+              { tag: 'key', text: 'Nteka — Key player who scored the opening goal against Villarreal (implied context)' }
             ],
           away: []
         },
@@ -1031,7 +1031,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Real Sociedad', away: 'Valencia', time: '19:00',
-        result: '3-4', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '3-4', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Real Sociedad is struggling with form (five matches without a win), while Valencia has been unbeaten in two consecutive matches and only had one defeat in the last five games.' },
           drawRates:     { score: 60, detail: 'The historical head-to-head record shows limited draws (one draw recorded between Sergio Francisco vs Valencia). However, both teams have shown signs of drawing matches recently (Real Sociedad drew with Real Betis and Rayo Vallecano).' },
@@ -1041,41 +1041,41 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Ander Barrenetxea â€” left adductor longus injury; Igor Zubeldia â€” biceps femoris of the left leg injury.' }
+              { tag: 'out', text: 'Ander Barrenetxea — left adductor longus injury; Igor Zubeldia — biceps femoris of the left leg injury.' }
             ],
           away: [
-              { tag: 'key', text: 'JosÃ© Luis GayÃ  â€” confirmed injured, but his absence is noted as a key piece of news for Valencia.' }
+              { tag: 'key', text: 'José Luis Gayà — confirmed injured, but his absence is noted as a key piece of news for Valencia.' }
             ]
         },
-        context: 'This late-season clash at the Reale Arena sees Real Sociedad desperate to break their five-match winless streak. Despite recent struggles and significant personnel losses (Barrenetxea, Zubeldia), they are motivated by a positive final home performance. Valencia arrives with better current form but faces challenges with key players like JosÃ© Luis GayÃ  being unavailable.',
+        context: 'This late-season clash at the Reale Arena sees Real Sociedad desperate to break their five-match winless streak. Despite recent struggles and significant personnel losses (Barrenetxea, Zubeldia), they are motivated by a positive final home performance. Valencia arrives with better current form but faces challenges with key players like José Luis Gayà being unavailable.',
         summary: 'The draw probability is moderate due to Real Sociedad\'s desperation at home contrasting with Valencia\'s recent unbeaten run. Both teams exhibit attacking flair but also defensive inconsistencies, suggesting a tight, cagey affair where neither side can afford defeat.'
       },
 
       {
         day: 'Sunday 17 May',
-        home: 'Real Oviedo', away: 'AlavÃ©s', time: '19:00',
-        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        home: 'Real Oviedo', away: 'Alavés', time: '19:00',
+        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
-          formBalance:   { score: 45, detail: 'AlavÃ©s has won 40 points and is in a better league position (16th) than Oviedo (20th), suggesting superior current form and stability. However, both teams are coming off periods of inconsistency.' },
-          drawRates:     { score: 55, detail: 'The last meeting between the two ended in a draw (Facundo GarcÃ©s). Historically, this suggests a tendency towards cagey affairs, slightly favoring a stalemate.' },
-          headToHead:    { score: 40, detail: 'Luis CarriÃ³n faced AlavÃ©s three times with two draws and one defeat away from home. This indicates a slight historical draw bias, but the sample size is small.' },
-          goalTendency:  { score: 50, detail: 'The news does not provide enough recent goal data to establish a strong trend, though AlavÃ©s has scored in ten consecutive matches away from home while also conceding frequently.' },
+          formBalance:   { score: 45, detail: 'Alavés has won 40 points and is in a better league position (16th) than Oviedo (20th), suggesting superior current form and stability. However, both teams are coming off periods of inconsistency.' },
+          drawRates:     { score: 55, detail: 'The last meeting between the two ended in a draw (Facundo Garcés). Historically, this suggests a tendency towards cagey affairs, slightly favoring a stalemate.' },
+          headToHead:    { score: 40, detail: 'Luis Carrión faced Alavés three times with two draws and one defeat away from home. This indicates a slight historical draw bias, but the sample size is small.' },
+          goalTendency:  { score: 50, detail: 'The news does not provide enough recent goal data to establish a strong trend, though Alavés has scored in ten consecutive matches away from home while also conceding frequently.' },
           leagueContext: { score: 60, detail: 'Both teams are fighting for survival (Oviedo is bottom, but no one else is safe). High-stakes relegation battles often lead to cautious play and draws as points are paramount.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Santi Cazorla â€” Marking his final appearance at the Carlos Tartiere, providing emotional weight to the match.' }
+              { tag: 'key', text: 'Santi Cazorla — Marking his final appearance at the Carlos Tartiere, providing emotional weight to the match.' }
             ],
           away: []
         },
-        context: 'This fixture is characterized by high stakes due to the relegation battle in La Liga. Oviedo, despite being already relegated according to some reports, are fighting for pride at home, while AlavÃ©s arrives having secured a recent shock win against Barcelona. The league context suggests both sides will prioritize defensive solidity and securing a point over taking unnecessary risks.',
-        summary: 'The draw probability is moderate, driven primarily by the high stakes of the relegation battle which encourages cautious play. While Oviedo has historical home strengths (3 wins in last 16), AlavÃ©s\' recent positive form and superior league standing provide a counter-balance. Expect a tight, tactical match where both teams are wary of losing points.'
+        context: 'This fixture is characterized by high stakes due to the relegation battle in La Liga. Oviedo, despite being already relegated according to some reports, are fighting for pride at home, while Alavés arrives having secured a recent shock win against Barcelona. The league context suggests both sides will prioritize defensive solidity and securing a point over taking unnecessary risks.',
+        summary: 'The draw probability is moderate, driven primarily by the high stakes of the relegation battle which encourages cautious play. While Oviedo has historical home strengths (3 wins in last 16), Alavés\' recent positive form and superior league standing provide a counter-balance. Expect a tight, tactical match where both teams are wary of losing points.'
       },
 
       {
         day: 'Sunday 17 May',
         home: 'Osasuna', away: 'Espanyol', time: '19:00',
-        result: '1-2', drawProbability: 38, verdict: 'Good', fairOdds: '3.40â€“3.70',
+        result: '1-2', drawProbability: 38, verdict: 'Good', fairOdds: '3.40–3.70',
         factors: {
           formBalance:   { score: 35, detail: 'Osasuna enters with better form and a strong home record (9 wins). Espanyol, conversely, has suffered three consecutive losses, suggesting instability.' },
           drawRates:     { score: 75, detail: 'Given the high stakes of the final two games determining top-flight survival, both teams are expected to prioritize defensive solidity and avoid defeat over aggressive attacking play.' },
@@ -1085,7 +1085,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'VÃ­ctor MuÃ±oz â€” Recovered from calf injury and available for the clash against Espanyol.' }
+              { tag: 'key', text: 'Víctor Muñoz — Recovered from calf injury and available for the clash against Espanyol.' }
             ],
           away: []
         },
@@ -1096,7 +1096,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Sevilla FC', away: 'Real Madrid', time: '19:00',
-        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Sevilla is in excellent form with three consecutive wins and four wins in their last six matches, while Real Madrid\'s recent form is less clear, though they are positioned high in the table.' },
           drawRates:     { score: 30, detail: 'Historically, draws are not a highly favored outcome between these two sides, although Real Madrid has drawn twice in their last three matches overall.' },
@@ -1106,13 +1106,13 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Marcao â€” completely out (defensive option)' },
-              { tag: 'doubt', text: 'Midfielder (unnamed) â€” ongoing muscle injury' },
-              { tag: 'doubt', text: 'Forward (unnamed) â€” faces intensive late fitness test after a knock' }
+              { tag: 'out', text: 'Marcao — completely out (defensive option)' },
+              { tag: 'doubt', text: 'Midfielder (unnamed) — ongoing muscle injury' },
+              { tag: 'doubt', text: 'Forward (unnamed) — faces intensive late fitness test after a knock' }
             ],
           away: [
-              { tag: 'key', text: 'Lucien AgoumÃ© â€” returns directly to squad selection' },
-              { tag: 'doubt', text: 'Midfielder (unnamed) â€” partially resumed training after concussive head injury and will not be risked' }
+              { tag: 'key', text: 'Lucien Agoumé — returns directly to squad selection' },
+              { tag: 'doubt', text: 'Midfielder (unnamed) — partially resumed training after concussive head injury and will not be risked' }
             ]
         },
         context: 'Sevilla enters this fixture with immense home pressure, needing a win to secure their survival in La Liga. Despite having some key players sidelined, their recent form is excellent. Real Madrid, while leading the league table (second place), will be motivated by the rivalry and the chance to solidify their status against a desperate Sevilla side.',
@@ -1121,53 +1121,53 @@ const LEAGUES = [
 
       {
         day: 'Saturday 23 May',
-        home: 'AlavÃ©s', away: 'Rayo Vallecano', time: '21:00',
-        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Moderate', fairOdds: '2.05â€“3.60',
+        home: 'Alavés', away: 'Rayo Vallecano', time: '21:00',
+        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Moderate', fairOdds: '2.05–3.60',
         factors: {
-          formBalance:   { score: 65, detail: 'Rayo Vallecano\'s recent form (W D W D D W) shows inconsistency but a strong win streak is not evident. AlavÃ©s has no specific form data provided for comparison.' },
+          formBalance:   { score: 65, detail: 'Rayo Vallecano\'s recent form (W D W D D W) shows inconsistency but a strong win streak is not evident. Alavés has no specific form data provided for comparison.' },
           drawRates:     { score: 70, detail: 'The news snippets show several draws in the league (e.g., Barcelona-Rayo Vallecano 1-1 draw), suggesting a tendency towards balanced matches and point accumulation.' },
-          headToHead:    { score: 50, detail: 'No direct head-to-head data is available for AlavÃ©s vs Rayo Vallecano in the provided text. The general context suggests competitive league fixtures.' },
+          headToHead:    { score: 50, detail: 'No direct head-to-head data is available for Alavés vs Rayo Vallecano in the provided text. The general context suggests competitive league fixtures.' },
           goalTendency:  { score: 62, detail: 'Rayo Vallecano\'s xG stats (1.91 for / 1.36 against) indicate a strong attacking threat and solid defensive performance, giving them an edge in expected goals.' },
-          leagueContext: { score: 55, detail: 'Both teams are involved in the league drama (relegation/European race), suggesting high stakes. AlavÃ©s has been featured in relegation discussions while Rayo is mentioned alongside top clubs like Barcelona and Atletico.' }
+          leagueContext: { score: 55, detail: 'Both teams are involved in the league drama (relegation/European race), suggesting high stakes. Alavés has been featured in relegation discussions while Rayo is mentioned alongside top clubs like Barcelona and Atletico.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Jon Guridi â€” Was subbed off due to injury in the 82nd minute of Saturday\'s 1-1 draw versus Elche.' }
+            { tag: 'key', text: 'Jon Guridi — Was subbed off due to injury in the 82nd minute of Saturday\'s 1-1 draw versus Elche.' }
           ],
           away: []
         },
-        context: 'This fixture is set against a backdrop of intense league drama, with multiple teams fighting for survival or European spots. Rayo Vallecano enters with strong attacking metrics (xG for 1.91) suggesting they can dictate play and create chances. AlavÃ©s will rely on their home advantage and the pressure of the match to secure points.',
+        context: 'This fixture is set against a backdrop of intense league drama, with multiple teams fighting for survival or European spots. Rayo Vallecano enters with strong attacking metrics (xG for 1.91) suggesting they can dictate play and create chances. Alavés will rely on their home advantage and the pressure of the match to secure points.',
         summary: 'Rayo Vallecano possesses superior expected goal statistics, giving them a slight edge in attack. However, the high stakes and recent draw trends suggest this will be a tight contest. We anticipate a closely fought game with both teams fighting for crucial league points.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Real Betis', away: 'Levante', time: '21:00',
-        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Good', fairOdds: '1.40â€“1.65',
+        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Good', fairOdds: '1.40–1.65',
         factors: {
           formBalance:   { score: 85, detail: 'Barcelona boasts an incredible home record (18 wins in league matches), while Betis\'s form is inconsistent despite recent positive results.' },
-          drawRates:     { score: 30, detail: 'The massive disparity in current form and the historical dominance of BarÃ§a at Camp Nou make a draw unlikely unless Betis plays exceptionally well defensively.' },
+          drawRates:     { score: 30, detail: 'The massive disparity in current form and the historical dominance of Barça at Camp Nou make a draw unlikely unless Betis plays exceptionally well defensively.' },
           headToHead:    { score: 75, detail: 'While past results are mixed (1-1 at Camp Nou previously), Barcelona\'s current league form and dominance give them a significant edge in this fixture.' },
           goalTendency:  { score: 80, detail: 'Barcelona\'s ability to score heavily at home (54 goals scored) suggests high offensive pressure, making goal-scoring expected.' },
-          leagueContext: { score: 70, detail: 'BarÃ§a is aiming for a perfect season finish and has the squad depth and confidence to secure maximum points against a direct rival like Betis.' }
+          leagueContext: { score: 70, detail: 'Barça is aiming for a perfect season finish and has the squad depth and confidence to secure maximum points against a direct rival like Betis.' }
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Frenkie de Jong â€” Ruled out due to illness.' },
-            { tag: 'doubt', text: 'Lamine Yamal â€” Fitness status is a concern following previous injury reports.' }
+            { tag: 'out', text: 'Frenkie de Jong — Ruled out due to illness.' },
+            { tag: 'doubt', text: 'Lamine Yamal — Fitness status is a concern following previous injury reports.' }
           ],
           away: [
-            { tag: 'key', text: 'Manuel Pellegrini\'s side â€” Facing a massive selection crisis due to multiple injuries and disciplinary issues, limiting key players.' }
+            { tag: 'key', text: 'Manuel Pellegrini\'s side — Facing a massive selection crisis due to multiple injuries and disciplinary issues, limiting key players.' }
           ]
         },
-        context: 'Barcelona enters this match with immense confidence, having secured an almost flawless home record for the season. Their attacking firepower is unmatched at Camp Nou. Real Betis, while fighting hard for survival/European spots, faces significant squad depth issues and must overcome BarÃ§a\'s historical dominance and current peak form.',
+        context: 'Barcelona enters this match with immense confidence, having secured an almost flawless home record for the season. Their attacking firepower is unmatched at Camp Nou. Real Betis, while fighting hard for survival/European spots, faces significant squad depth issues and must overcome Barça\'s historical dominance and current peak form.',
         summary: 'Barcelona holds a clear advantage due to their spectacular home form and offensive output. Despite Betis being motivated, the combination of Barca\'s attacking strength and Betis\'s injury woes makes them strong favorites for a decisive victory.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Celta', away: 'Sevilla FC', time: '21:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '3.40â€“3.60',
+        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '3.40–3.60',
         factors: {
           formBalance:   { score: 55, detail: 'Celta\'s form is poor, having lost six of their last seven league games, while Sevilla\'s recent form isn\'t detailed but they are generally a strong side in La Liga.' },
           drawRates:     { score: 60, detail: 'Both teams have shown signs of resilience and ability to secure points even when not at their best, suggesting a potential draw outcome.' },
@@ -1190,7 +1190,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Espanyol', away: 'Real Sociedad', time: '21:00',
-        result: null, homeWin: 38, draw: 30, awayWin: 32, verdict: 'Low', fairOdds: '2.50â€“3.10',
+        result: null, homeWin: 38, draw: 30, awayWin: 32, verdict: 'Low', fairOdds: '2.50–3.10',
         factors: {
           formBalance:   { score: 45, detail: 'Real Sociedad\'s recent form (L D L D D L) is poor, while Espanyol\'s overall form data is mixed and drawn from multiple unrelated fixtures. The xG stats show Real Sociedad conceding 1.86 xG per game, suggesting defensive vulnerability.' },
           drawRates:     { score: 55, detail: 'The general body of news suggests a competitive fixture, with recent results for both teams showing draws or close outcomes, indicating difficulty in securing clean wins.' },
@@ -1213,7 +1213,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Getafe', away: 'Osasuna', time: '21:00',
-        result: null, homeWin: 38, draw: 27, awayWin: 35, verdict: 'Low', fairOdds: '2.40â€“3.10',
+        result: null, homeWin: 38, draw: 27, awayWin: 35, verdict: 'Low', fairOdds: '2.40–3.10',
         factors: {
           formBalance:   { score: 65, detail: 'Getafe (W L L D W L) show better recent form than Osasuna (L W L L L L), but both are inconsistent. Getafe\'s xG against (1.1) is lower than Osasuna\'s (1.49), suggesting they concede less pressure.' },
           drawRates:     { score: 50, detail: 'Both teams have shown mixed results in draws recently; Getafe drew in their last six games while Osasuna has drawn only once.' },
@@ -1226,8 +1226,8 @@ const LEAGUES = [
             { tag: 'key', text: 'No key players mentioned for Getafe.' }
           ],
           away: [
-            { tag: 'out', text: 'RaÃºl Moro (hamstring injury) is confirmed out of Osasuna\'s squad.' },
-            { tag: 'key', text: 'The news mentions RaÃºl GarcÃ­a de Haro returning to training, which is a boost for Osasuna.' }
+            { tag: 'out', text: 'Raúl Moro (hamstring injury) is confirmed out of Osasuna\'s squad.' },
+            { tag: 'key', text: 'The news mentions Raúl García de Haro returning to training, which is a boost for Osasuna.' }
           ]
         },
         context: 'This fixture pits Getafe against an attacking but inconsistent Osasuna. While Osasuna generates more expected goals (xG for 1.59), suggesting offensive firepower, Getafe\'s defensive metrics (xG against 1.1) are notably strong. The match is likely to be a tight affair, with both teams prioritizing tactical discipline over open play.',
@@ -1237,7 +1237,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Mallorca', away: 'Real Oviedo', time: '21:00',
-        result: null, homeWin: 38, draw: 28, awayWin: 34, verdict: 'Low', fairOdds: '2.50â€“3.10',
+        result: null, homeWin: 38, draw: 28, awayWin: 34, verdict: 'Low', fairOdds: '2.50–3.10',
         factors: {
           formBalance:   { score: 65, detail: 'Mallorca\'s recent form (D L W D L L) is poor, but their xG for (1.03) suggests they create chances, while xG against (1.64) indicates defensive struggles. Real Oviedo\'s general struggle in La Liga compared to Segunda playoffs adds uncertainty.' },
           drawRates:     { score: 75, detail: 'The historical data provided is heavily skewed towards Getafe vs Mallorca and other fixtures, not directly applicable to this specific match. However, the overall context suggests a tight battle with low scoring potential given both teams\' recent struggles.' },
@@ -1260,7 +1260,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Real Madrid', away: 'Athletic', time: '21:00',
-        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Good', fairOdds: '1.67â€“2.00',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Good', fairOdds: '1.67–2.00',
         factors: {
           formBalance:   { score: 85, detail: 'Real Madrid\'s recent form (W D W L W W) is strong, coupled with superior xG stats (1.31 for / 1.22 against), indicating consistent attacking threat and solid defense compared to Athletic.' },
           drawRates:     { score: 40, detail: 'The historical context suggests a competitive match, but Real Madrid\'s overall quality and recent form give them the edge over potential stalemates.' },
@@ -1270,11 +1270,11 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'VinÃ­cius Jr. â€” Expected to be available after avoiding serious injury scare vs Sevilla, maintaining key attacking threat.' }
+            { tag: 'key', text: 'Vinícius Jr. — Expected to be available after avoiding serious injury scare vs Sevilla, maintaining key attacking threat.' }
           ],
           away: [
-            { tag: 'out', text: 'Marcao â€” Completely out (Defensive option limitation).' },
-            { tag: 'doubt', text: 'Midfielder â€” Sidelined with an ongoing muscle injury.' }
+            { tag: 'out', text: 'Marcao — Completely out (Defensive option limitation).' },
+            { tag: 'doubt', text: 'Midfielder — Sidelined with an ongoing muscle injury.' }
           ]
         },
         context: 'Real Madrid enters this fixture boasting superior attacking metrics and squad depth, especially given the reported absences at Athletic. The narrative suggests Real Madrid is in a strong position to secure points against a struggling opponent, even if they are not currently challenging for silverware.',
@@ -1283,32 +1283,32 @@ const LEAGUES = [
 
       {
         day: 'Saturday 23 May',
-        home: 'Valencia', away: 'BarÃ§a', time: '21:00',
-        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Moderate', fairOdds: '1.78â€“2.00',
+        home: 'Valencia', away: 'Barça', time: '21:00',
+        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Moderate', fairOdds: '1.78–2.00',
         factors: {
-          formBalance:   { score: 65, detail: 'BarÃ§a\'s recent form (winning streaks mentioned in news) and overall star power give them an edge over Valencia\'s patchy form (D W L W D W).' },
+          formBalance:   { score: 65, detail: 'Barça\'s recent form (winning streaks mentioned in news) and overall star power give them an edge over Valencia\'s patchy form (D W L W D W).' },
           drawRates:     { score: 40, detail: 'The xG stats are close (1.49 vs 1.53), suggesting both teams can score and concede, making a draw plausible but not highly likely.' },
           headToHead:    { score: 50, detail: 'No direct head-to-head data was provided for this fixture, keeping the assessment neutral.' },
-          goalTendency:  { score: 60, detail: 'Valencia\'s xG against (1.53) is slightly higher than their xG for (1.49), indicating they concede goals, while BarÃ§a\'s overall attacking strength suggests they will find the net.' },
-          leagueContext: { score: 60, detail: 'BarÃ§a generally operates at a higher level and has major stars like Messi extending their commitment, giving them an advantage in league quality.' }
+          goalTendency:  { score: 60, detail: 'Valencia\'s xG against (1.53) is slightly higher than their xG for (1.49), indicating they concede goals, while Barça\'s overall attacking strength suggests they will find the net.' },
+          leagueContext: { score: 60, detail: 'Barça generally operates at a higher level and has major stars like Messi extending their commitment, giving them an advantage in league quality.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Valencia: The team relies on its home advantage at Mestalla, but key players like JosÃ© Luis GayÃ  are confirmed injured.' }
+            { tag: 'key', text: 'Valencia: The team relies on its home advantage at Mestalla, but key players like José Luis Gayà are confirmed injured.' }
           ],
           away: [
             { tag: 'doubt', text: 'FC Barcelona: Lamine Yamal suffered a serious injury and his World Cup availability is in doubt, which could impact the squad depth.' },
             { tag: 'key', text: 'FC Barcelona: The presence of stars like Messi (new contract extension) provides immense attacking firepower.' }
           ]
         },
-        context: 'This fixture is a clash between Valencia\'s home resilience and FC Barcelona\'s star-studded attack. While Valencia has shown moments of strength at Mestalla, BarÃ§aâ€™s superior squad depth, coupled with the threat of players like Messi, gives them the edge. The game will likely be open, featuring goals from both sides due to Valencia\'s defensive vulnerability (xG against 1.53).',
+        context: 'This fixture is a clash between Valencia\'s home resilience and FC Barcelona\'s star-studded attack. While Valencia has shown moments of strength at Mestalla, Barça’s superior squad depth, coupled with the threat of players like Messi, gives them the edge. The game will likely be open, featuring goals from both sides due to Valencia\'s defensive vulnerability (xG against 1.53).',
         summary: 'FC Barcelona enters this match as slight favorites due to their superior attacking talent and star power. Valencia remains dangerous at home but faces challenges with key injuries. Expect a high-scoring, competitive affair favoring the away side slightly.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Girona', away: 'Elche', time: '21:00',
-        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Good', fairOdds: '1.67â€“2.22',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Good', fairOdds: '1.67–2.22',
         factors: {
           formBalance:   { score: 70, detail: 'Girona\'s xG for (1.78) is significantly higher than their xG against (1.65), suggesting they create more chances than they concede on average. While their recent form (L L L D D L) is poor, the underlying metrics point to offensive potential.' },
           drawRates:     { score: 40, detail: 'The news provides limited draw rate data for either side specifically in this context, making it difficult to assess. However, Elche\'s home record suggests they can frustrate opponents.' },
@@ -1318,10 +1318,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Girona FC â€” High motivation due to relegation battle, playing at Montilivi in front of a sold-out crowd.' }
+            { tag: 'key', text: 'Girona FC — High motivation due to relegation battle, playing at Montilivi in front of a sold-out crowd.' }
           ],
           away: [
-            { tag: 'key', text: 'Elche CF â€” Must avoid defeat to secure La Liga survival; immense pressure on the away side.' }
+            { tag: 'key', text: 'Elche CF — Must avoid defeat to secure La Liga survival; immense pressure on the away side.' }
           ]
         },
         context: 'This fixture is a relegation six-pointer, making it arguably the most important matchday for both clubs. Girona\'s entire season hinges on securing three points here, while Elche must at least secure a draw to keep their top-flight status alive. The overwhelming pressure and high stakes are expected to drive Girona\'s performance, especially given their home advantage in what will be a cauldron of noise.',
@@ -1331,7 +1331,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Villarreal', away: 'Atleti', time: '21:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '1.80â€“2.10',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '1.80–2.10',
         factors: {
           formBalance:   { score: 65, detail: 'Villarreal\'s recent form (D W W D L L) is inconsistent but their xG for (1.79 avg) suggests strong attacking potential at home compared to Atleti\'s overall profile.' },
           drawRates:     { score: 55, detail: 'The fixture involves two teams with high stakes in the league and European qualification, often leading to cagey, balanced matches.' },
@@ -1341,7 +1341,7 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Ayoze Perez â€” Mentioned as a key contributor to Villarreal\'s strong form and scoring ability.' }
+            { tag: 'key', text: 'Ayoze Perez — Mentioned as a key contributor to Villarreal\'s strong form and scoring ability.' }
           ],
           away: []
         },
@@ -1351,9 +1351,9 @@ const LEAGUES = [
     ]
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // SERIE A â€” Matchday 36
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // SERIE A — Matchday 36
+  // ─────────────────────────────────
   {
     id: 'seriea',
     name: 'Serie A',
@@ -1365,7 +1365,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Roma', away: 'Lazio', time: '12:30',
-        result: '2-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '2-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Both teams are highly motivated due to the derby nature and European qualification stakes, but recent form is mixed; Roma had a big win last weekend, while Lazio is bouncing back from a Coppa Italia final defeat.' },
           drawRates:     { score: 60, detail: 'Derbies are historically cagey affairs. The high emotional intensity often leads to tight matches where draws are common, despite the current league pressures.' },
@@ -1375,11 +1375,11 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Manu KonÃ© â€” recurring muscular issues flared up again during final training.' }
+              { tag: 'doubt', text: 'Manu Koné — recurring muscular issues flared up again during final training.' }
             ],
           away: [
-              { tag: 'out', text: 'Mattia Zaccagni â€” missed the derby showdown due to a muscle problem.' },
-              { tag: 'key', text: 'Nicolo Rovella â€” set to return to the starting XI after an injury-ravaged season.' }
+              { tag: 'out', text: 'Mattia Zaccagni — missed the derby showdown due to a muscle problem.' },
+              { tag: 'key', text: 'Nicolo Rovella — set to return to the starting XI after an injury-ravaged season.' }
             ]
         },
         context: 'This Derby della Capitale is defined by extreme emotional stakes, as both Roma and Lazio are battling fiercely for European qualification spots. The league context dictates a cautious approach from both sides; any mistake could cost them dearly in the race for top-four finish. Despite the high tension, tactical discipline and defensive solidity will likely take precedence over open attacking play.',
@@ -1389,7 +1389,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Genoa', away: 'Milan', time: '12:30',
-        result: '1-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        result: '1-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 55, detail: 'Milan\'s form is inconsistent, having suffered back-to-back defeats recently (Sassuolo and Atalanta), suggesting potential instability. Genoa\'s recent results are mixed, but the fixture itself is highly competitive.' },
           drawRates:     { score: 45, detail: 'The news mentions a previous draw (Milan vs Genoa draw mentioned by Allegri) and a historical 0-0 draw for Genoa against Fiorentina, suggesting draws are possible but not guaranteed.' },
@@ -1399,20 +1399,20 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Maxwel Cornet â€” Could return in Milan fixture (Genoa)' }
+              { tag: 'key', text: 'Maxwel Cornet — Could return in Milan fixture (Genoa)' }
             ],
           away: [
-              { tag: 'out', text: 'Pervis EstupiÃ±Ã¡n, Alexis Saelemaekers, Rafael LeÃ£o â€” Suspended/missing key players for AC Milan.' }
+              { tag: 'out', text: 'Pervis Estupiñán, Alexis Saelemaekers, Rafael Leão — Suspended/missing key players for AC Milan.' }
             ]
         },
-        context: 'This Serie A clash is highly charged due to the race for Champions League spots. Milan, despite squad issues (suspensions of Pervis EstupiÃ±Ã¡n, Alexis Saelemaekers, and Rafael LeÃ£o), needs a result to maintain pressure on rivals. Genoa will be motivated to secure points at home, making it a tactical battle where both sides prioritize defensive solidity.',
+        context: 'This Serie A clash is highly charged due to the race for Champions League spots. Milan, despite squad issues (suspensions of Pervis Estupiñán, Alexis Saelemaekers, and Rafael Leão), needs a result to maintain pressure on rivals. Genoa will be motivated to secure points at home, making it a tactical battle where both sides prioritize defensive solidity.',
         summary: 'The fixture is set against the backdrop of intense league competition for European qualification. While Milan has star power but faces key suspensions, Genoa\'s motivation to earn a point at home keeps the draw probability moderate. Expect a tightly contested match with high stakes.'
       },
 
       {
         day: 'Sunday 17 May',
         home: 'Como 1907', away: 'Parma', time: '12:30',
-        result: '1-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '1-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Como showed recent signs of life with a top-flight win and an unbeaten run at home, while Parma\'s form is mixed, relying heavily on home results (Tardini) but showing vulnerability away.' },
           drawRates:     { score: 45, detail: 'The historical data provided shows a recent 1-1 draw between the two sides in October, suggesting parity, but overall context suggests both teams are fighting for survival rather than drawing points.' },
@@ -1422,10 +1422,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Alberto Moreno â€” Scored the opening goal against Parma in their last encounter, indicating current form and importance.' }
+              { tag: 'key', text: 'Alberto Moreno — Scored the opening goal against Parma in their last encounter, indicating current form and importance.' }
             ],
           away: [
-              { tag: 'doubt', text: 'Zion Suzuki â€” Suffered a serious hand injury that could keep him sidelined for around three months (general news regarding Parma).' }
+              { tag: 'doubt', text: 'Zion Suzuki — Suffered a serious hand injury that could keep him sidelined for around three months (general news regarding Parma).' }
             ]
         },
         context: 'This fixture pits two promoted sides against each other in a high-stakes battle for Serie A survival. Como, having shown recent attacking flair and home strength under Cesc Fabregas, will aim to build on their momentum. Parma, while showing resilience at home (Tardini), must overcome the psychological hurdle of losing the last encounter and dealing with key injuries like Suzuki\'s absence.',
@@ -1435,7 +1435,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Juventus', away: 'Fiorentina', time: '12:30',
-        result: '0-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '0-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Juventus is in excellent form with an impressive 11-match unbeaten streak and strong defensive records. Fiorentina\'s recent form has been inconsistent, though they secured safety last weekend.' },
           drawRates:     { score: 40, detail: 'Historically, Juventus dominates the fixture (82 wins in current Serie A format). While draws are possible, the historical dominance suggests a low draw probability compared to other factors.' },
@@ -1459,7 +1459,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'AC Pisa', away: 'Napoli', time: '12:30',
-        result: '0-3', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '0-3', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Napoli is in excellent form, securing a comfortable win (3-0) against an already relegated Pisa. Pisa has been struggling badly, losing seven consecutive league matches.' },
           drawRates:     { score: 45, detail: 'The fixture context suggests Napoli needs three points to secure Champions League qualification, giving them a strong motivation to win and minimizing the chance of a draw.' },
@@ -1482,7 +1482,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Inter', away: 'Verona', time: '15:00',
-        result: '1-1', drawProbability: 15, verdict: 'Low', fairOdds: '2.00â€“2.20',
+        result: '1-1', drawProbability: 15, verdict: 'Low', fairOdds: '2.00–2.20',
         factors: {
           formBalance:   { score: 40, detail: 'Inter Milan is at the peak of their season after securing both the Serie A title and Coppa Italia, while Hellas Verona has suffered relegation to Serie B, indicating a massive disparity in current form.' },
           drawRates:     { score: 25, detail: 'The league context suggests that Inter Milan is playing with little motivation to draw, having already achieved their primary goals. Hellas Verona\'s status as relegated side further diminishes the likelihood of a stalemate.' },
@@ -1507,7 +1507,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Atalanta', away: 'Bologna', time: '18:00',
-        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.50',
+        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.50',
         factors: {
           formBalance:   { score: 40, detail: 'Atalanta is coming off a win over AC Milan and has won in their last seven home league games, suggesting strong current form. Bologna\'s recent form is mixed, though they have shown resilience.' },
           drawRates:     { score: 35, detail: 'The historical draw rate between the two teams is not explicitly detailed, but both sides are highly motivated to secure European qualification, which often leads to open, high-stakes games rather than draws.' },
@@ -1530,7 +1530,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Cagliari', away: 'Torino', time: '20:45',
-        result: '2-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        result: '2-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 45, detail: 'Cagliari\'s recent form is mixed, showing a respectable 10 points in the last five games but also suffering significant defeats (e.g., to Udinese). Torino has had varying results, often linked to injury issues.' },
           drawRates:     { score: 55, detail: 'The fixture is played late in the season with high stakes for survival and league positioning, which often leads to cautious play and draws. However, both teams are heavily focused on their own objectives rather than a draw.' },
@@ -1546,14 +1546,14 @@ const LEAGUES = [
               { tag: 'key', text: 'Torino is dealing with a significant injury crisis, potentially missing players like Che Adams, Duvan Zapata, and Ardian Ismajli.' }
             ]
         },
-        context: 'This late-season match carries immense weight for both clubs\' Serie A status. Cagliari will be highly motivated to secure points at home, while Torino aims to solidify their position. The injury concerns on both sidesâ€”Cagliari losing key players like Idrissi and Mina, and Torino struggling with multiple absencesâ€”are the defining narrative. This suggests a potential tactical battle where caution might prevail over attacking flair.',
+        context: 'This late-season match carries immense weight for both clubs\' Serie A status. Cagliari will be highly motivated to secure points at home, while Torino aims to solidify their position. The injury concerns on both sides—Cagliari losing key players like Idrissi and Mina, and Torino struggling with multiple absences—are the defining narrative. This suggests a potential tactical battle where caution might prevail over attacking flair.',
         summary: 'The fixture is set up as a tense, high-stakes relegation scrap for Cagliari against an injury-plagued but ambitious Torino side. While the league context favors cautious play and draws (Moderate verdict), both teams\' significant personnel issues suggest that neither side can rely on their usual attacking strength, leading to a tight contest.'
       },
 
       {
         day: 'Sunday 17 May',
         home: 'Sassuolo', away: 'Lecce', time: '20:45',
-        result: '2-3', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        result: '2-3', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 45, detail: 'Sassuolo is noted for showing quality (e.g., 2-0 win over AC Milan), while Lecce has been inconsistent, recently winning only one league game and struggling with results.' },
           drawRates:     { score: 65, detail: 'Historically, the teams have drawn in at least one of their last 13 encounters mentioned. The general history suggests a tendency towards draws or low-scoring affairs.' },
@@ -1563,10 +1563,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Domenico Berardi â€” out until 2026 due to a medium level lesion of the flexor.' }
+              { tag: 'out', text: 'Domenico Berardi — out until 2026 due to a medium level lesion of the flexor.' }
             ],
           away: [
-              { tag: 'out', text: 'Medon Berisha â€” season over due to a serious injury, requiring surgery.' }
+              { tag: 'out', text: 'Medon Berisha — season over due to a serious injury, requiring surgery.' }
             ]
         },
         context: 'Sassuolo will be hampered by the long-term absence of key player Domenico Berardi. Lecce is also dealing with significant personnel issues, including the injury to Medon Berisha. Given that both teams are fighting for survival or stability in Serie A and have shown mixed recent form, a tactical battle where neither side wants to concede but needs points makes the draw a highly plausible outcome.',
@@ -1576,7 +1576,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Udinese', away: 'Cremonese', time: '20:45',
-        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.60',
+        result: '0-1', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 45, detail: 'Udinese\'s recent form is mixed, while Cremonese has shown flashes of strength (e.g., 3-0 win over Pisa) but also significant away struggles and scoring droughts.' },
           drawRates:     { score: 55, detail: 'The context suggests a highly competitive match between two mid-to-lower table sides fighting for survival/stability, which often leads to draws.' },
@@ -1586,10 +1586,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Nicolo Bertola â€” injury status confirmed, but expected return is mentioned.' }
+              { tag: 'doubt', text: 'Nicolo Bertola — injury status confirmed, but expected return is mentioned.' }
             ],
           away: [
-              { tag: 'out', text: 'Jamie Vardy and Martin Payero â€” confirmed out against Parma (though this fixture is different, it shows recent unavailability).' }
+              { tag: 'out', text: 'Jamie Vardy and Martin Payero — confirmed out against Parma (though this fixture is different, it shows recent unavailability).' }
             ]
         },
         context: 'This match is played in a high-stakes environment for Cremonese, who are fighting relegation. Udinese, while not desperate, will be motivated to secure points at home. Given the desperation of the away side and the general nature of these survival battles, the game is expected to be tactical, cautious, and hard-fought.',
@@ -1599,7 +1599,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Fiorentina', away: 'Atalanta', time: '15:00',
-        result: null, homeWin: 30, draw: 28, awayWin: 42, verdict: 'Low', fairOdds: '2.30â€“2.60',
+        result: null, homeWin: 30, draw: 28, awayWin: 42, verdict: 'Low', fairOdds: '2.30–2.60',
         factors: {
           formBalance:   { score: 45, detail: 'Fiorentina\'s form is patchy (W D D L D W), while Atalanta\'s recent run includes a loss but they have the significant boost of a new coach, Raffaele Palladino.' },
           drawRates:     { score: 60, detail: 'Fiorentina\'s high xG against (1.51) suggests defensive instability, increasing the likelihood that neither team can secure a clean sheet, leading to a draw or goals for both sides.' },
@@ -1622,7 +1622,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Milan', away: 'Cagliari', time: '15:00',
-        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.55â€“1.75',
+        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.55–1.75',
         factors: {
           formBalance:   { score: 75, detail: 'Milan is operating in a high-stakes title race context, suggesting superior recent form and depth compared to Cagliari\'s mixed results.' },
           drawRates:     { score: 40, detail: 'While Milan are favorites, Cagliari\'s resilience and the nature of Serie A often make draws possible, though unlikely given the disparity in quality.' },
@@ -1632,12 +1632,12 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Rafael Leao â€” Suspended for this fixture.' },
-            { tag: 'doubt', text: 'Samuele Ricci/Luka ModriÄ‡ â€” Carrying injuries, suggesting potential rotation or reduced impact.' }
+            { tag: 'key', text: 'Rafael Leao — Suspended for this fixture.' },
+            { tag: 'doubt', text: 'Samuele Ricci/Luka Modrić — Carrying injuries, suggesting potential rotation or reduced impact.' }
           ],
           away: [
-            { tag: 'out', text: 'Riyad Idrissi â€” Ruled out for 4-6 months with a serious knee injury.' },
-            { tag: 'doubt', text: 'Yerry Mina â€” Doubtful due to muscular injury, limiting defensive options.' }
+            { tag: 'out', text: 'Riyad Idrissi — Ruled out for 4-6 months with a serious knee injury.' },
+            { tag: 'doubt', text: 'Yerry Mina — Doubtful due to muscular injury, limiting defensive options.' }
           ]
         },
         context: 'Milan enters this match as strong title contenders playing at home, giving them a massive advantage in motivation and quality. Cagliari, meanwhile, is hampered by significant squad depth issues, including the long-term absence of Idrissi and potential doubts over Mina. The xG metrics for Cagliari confirm defensive vulnerability (1.46 xGA vs 1.35 xG), suggesting that Milan\'s attack will find gaps in the defense.',
@@ -1647,7 +1647,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Bologna', away: 'Inter', time: '15:00',
-        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Good', fairOdds: '1.80â€“2.10',
+        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Good', fairOdds: '1.80–2.10',
         factors: {
           formBalance:   { score: 35, detail: 'Inter Milan boasts incredible momentum, having won four consecutive top-flight games without conceding a goal and remaining unbeaten in 13 Serie A matches. Bologna\'s form (W L L D W W) is inconsistent.' },
           drawRates:     { score: 55, detail: 'While both teams are competitive, Inter\'s superior defensive record and attacking output suggest they will control the tempo, making a draw less likely than an away victory.' },
@@ -1670,7 +1670,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Torino', away: 'Juventus', time: '15:00',
-        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Moderate', fairOdds: '2.00â€“2.30',
+        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Moderate', fairOdds: '2.00–2.30',
         factors: {
           formBalance:   { score: 65, detail: 'Juventus shows superior defensive metrics (xG against 0.78) and has maintained a long unbeaten streak in the league, despite recent setbacks.' },
           drawRates:     { score: 55, detail: 'The Derby della Mole is highly competitive, suggesting tactical caution from both sides, but Juventus\'s defensive solidity makes draws less likely for them.' },
@@ -1680,12 +1680,12 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Che Adams â€” Cited multiple times as suffering injury setbacks.' },
-            { tag: 'doubt', text: 'Duvan Zapata â€” Reported with injuries, impacting the attack.' }
+            { tag: 'out', text: 'Che Adams — Cited multiple times as suffering injury setbacks.' },
+            { tag: 'doubt', text: 'Duvan Zapata — Reported with injuries, impacting the attack.' }
           ],
           away: [
-            { tag: 'out', text: 'Arkadiusz Milik â€” Has suffered multiple injury setbacks during his season.' },
-            { tag: 'key', text: 'Federico Gatti â€” Highly motivated to perform against former club, contributing to Juve\'s defensive structure.' }
+            { tag: 'out', text: 'Arkadiusz Milik — Has suffered multiple injury setbacks during his season.' },
+            { tag: 'key', text: 'Federico Gatti — Highly motivated to perform against former club, contributing to Juve\'s defensive structure.' }
           ]
         },
         context: 'This Derby della Mole is a clash of styles: Juventus relies on tactical discipline and superior defense (low xG against), while Torino must overcome significant injury issues. Despite the home advantage, Juventus\'s robust metrics and historical dominance in this fixture give them the edge, though the emotional intensity keeps Torino competitive.',
@@ -1695,7 +1695,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Verona', away: 'Roma', time: '15:00',
-        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Moderate', fairOdds: '1.75â€“2.00',
+        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Moderate', fairOdds: '1.75–2.00',
         factors: {
           formBalance:   { score: 65, detail: 'Roma shows significantly better form (W D W W W W) compared to Verona\'s poor run of results (L L D D L D). Roma also boasts superior xG metrics (2.0 for / 0.62 against vs 0.84 for / 1.63 against).' },
           drawRates:     { score: 55, detail: 'Both teams have shown signs of inconsistency in their recent fixtures, suggesting a potential for a draw, though Roma\'s attacking prowess gives them the edge.' },
@@ -1705,11 +1705,11 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Tomas Suslov â€” Serious injury (ACL tear) sustained on international duty.' }
+            { tag: 'out', text: 'Tomas Suslov — Serious injury (ACL tear) sustained on international duty.' }
           ],
           away: [
-            { tag: 'out', text: 'Tammy Abraham â€” Horror knee injury, potentially ruling him out for the rest of the year.' },
-            { tag: 'doubt', text: 'Manu KonÃ© â€” Muscular problems flared up in training (for Derby della Capitale).' }
+            { tag: 'out', text: 'Tammy Abraham — Horror knee injury, potentially ruling him out for the rest of the year.' },
+            { tag: 'doubt', text: 'Manu Koné — Muscular problems flared up in training (for Derby della Capitale).' }
           ]
         },
         context: 'Roma enters this match with high motivation, driven by the need to secure a top-four finish and build momentum for their upcoming derby against Lazio. While Verona has defensive issues suggested by their xG against average, Roma\'s attacking metrics (xG for 2.0) give them a clear edge. The absence of key players on both sides, particularly Suslov for Verona and Abraham for Roma, could level the playing field, but Roma\'s overall form and league ambition remain crucial factors.',
@@ -1719,10 +1719,10 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Lazio', away: 'AC Pisa', time: '15:00',
-        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '3.20â€“3.60',
+        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '3.20–3.60',
         factors: {
           formBalance:   { score: 45, detail: 'Lazio\'s recent form (L W D W L L) is poor, highlighted by a heavy loss to Inter Milan, which significantly undermines their current confidence and stability.' },
-          drawRates:     { score: 60, detail: 'Both teams have conflicting motivationsâ€”Lazio needing sharpness vs. Pisa potentially playing with nothing to lose, increasing the chance of a stalemate.' },
+          drawRates:     { score: 60, detail: 'Both teams have conflicting motivations—Lazio needing sharpness vs. Pisa potentially playing with nothing to lose, increasing the chance of a stalemate.' },
           headToHead:    { score: 50, detail: 'No direct head-to-head data is available for this fixture.' },
           goalTendency:  { score: 55, detail: 'Lazio\'s average xG against (1.22) suggests defensive vulnerability, while Pisa may prioritize low-scoring, cagey football away from home.' },
           leagueContext: { score: 60, detail: 'The match is played in a highly charged atmosphere for Lazio, who are dealing with owner protests and high expectations following major cup/title games.' }
@@ -1742,7 +1742,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Parma', away: 'Sassuolo', time: '15:00',
-        result: null, homeWin: 25, draw: 30, awayWin: 45, verdict: 'Moderate', fairOdds: '2.00â€“2.20',
+        result: null, homeWin: 25, draw: 30, awayWin: 45, verdict: 'Moderate', fairOdds: '2.00–2.20',
         factors: {
           formBalance:   { score: 45, detail: 'Parma\'s recent form (L L D L D D) is poor, and their xG against average (1.69) suggests significant defensive vulnerabilities that Sassuolo should exploit.' },
           drawRates:     { score: 55, detail: 'Serie A fixtures are notoriously difficult to predict, often leading to draws, especially when both teams lack momentum or confidence.' },
@@ -1765,7 +1765,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Napoli', away: 'Udinese', time: '15:00',
-        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Good', fairOdds: '1.60â€“2.00',
+        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Good', fairOdds: '1.60–2.00',
         factors: {
           formBalance:   { score: 78, detail: 'Napoli shows better attacking metrics (xG for 1.43) and a strong home record (won 20/28 last 28 home matches). Udinese\'s form is mixed but their xG for (1.66) suggests potential, though Napoli\'s overall stability at home gives them the edge.' },
           drawRates:     { score: 45, detail: 'Both teams have experienced draws recently (Napoli: goalless draw vs Como; Udinese form is mixed). However, given the disparity in current league standing and Napoli\'s attacking quality, a draw seems less likely than a win for the home side.' },
@@ -1775,10 +1775,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Kevin De Bruyne â€” Sustained serious thigh injury, ruled out for the rest of the year.' }
+            { tag: 'out', text: 'Kevin De Bruyne — Sustained serious thigh injury, ruled out for the rest of the year.' }
           ],
           away: [
-            { tag: 'out', text: 'Nicolo Zaniolo â€” Misses last two matches due to a back problem. Also dealing with multiple goalkeeping injuries.' }
+            { tag: 'out', text: 'Nicolo Zaniolo — Misses last two matches due to a back problem. Also dealing with multiple goalkeeping injuries.' }
           ]
         },
         context: 'Napoli enters this match highly motivated by their Champions League aspirations and boast strong home form, despite the major blow of losing Kevin De Bruyne. Udinese, meanwhile, is hampered by key defensive injuries (Zaniolo) and a general lack of consistent attacking output, making them vulnerable to Napoli\'s structured attack.',
@@ -1788,10 +1788,10 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Cremonese', away: 'Como 1907', time: '15:00',
-        result: null, homeWin: 30, draw: 28, awayWin: 42, verdict: 'Low', fairOdds: '2.30â€“3.60',
+        result: null, homeWin: 30, draw: 28, awayWin: 42, verdict: 'Low', fairOdds: '2.30–3.60',
         factors: {
           formBalance:   { score: 55, detail: 'Cremonese\'s away form is notably poor (multiple defeats cited), while Como has shown moments of strong defensive solidity and attacking capability despite a recent wobble.' },
-          drawRates:     { score: 60, detail: 'Given the high stakesâ€”survival for Cremonese versus European qualification for Comoâ€”the match is expected to be cagey and tightly contested, increasing draw probability.' },
+          drawRates:     { score: 60, detail: 'Given the high stakes—survival for Cremonese versus European qualification for Como—the match is expected to be cagey and tightly contested, increasing draw probability.' },
           headToHead:    { score: 50, detail: 'No direct recent head-to-head data between these two specific clubs was available in the provided news snippets.' },
           goalTendency:  { score: 65, detail: 'Both teams are highly motivated to secure points. While Como prioritizes defensive solidity, the desperation of Cremonese suggests they will push for goals at home.' },
           leagueContext: { score: 70, detail: 'The massive difference in objectives (relegation battle vs. Champions League aspirations) creates a highly charged and unpredictable fixture dynamic.' }
@@ -1811,7 +1811,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Lecce', away: 'Genoa', time: '15:00',
-        result: null, homeWin: 42, draw: 30, awayWin: 28, verdict: 'Low', fairOdds: '2.50â€“3.10',
+        result: null, homeWin: 42, draw: 30, awayWin: 28, verdict: 'Low', fairOdds: '2.50–3.10',
         factors: {
           formBalance:   { score: 45, detail: 'Lecce\'s recent form (L D D W L W) is inconsistent, while Genoa\'s (W W L D D L) shows a slight dip but includes two consecutive wins. The xG stats are similar for both teams (1.14 vs 1.15 for Lecce and 1.25 against), suggesting parity in offensive and defensive output.' },
           drawRates:     { score: 60, detail: 'The general context of the provided news snippets suggests many tight, low-scoring matches (e.g., Juventus vs Fiorentina, Lecce draws). Both teams are fighting for survival or mid-table safety, often leading to cautious play and increased draw probability.' },
@@ -1833,9 +1833,9 @@ const LEAGUES = [
     ]
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // BUNDESLIGA â€” Matchday 33
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // BUNDESLIGA — Matchday 33
+  // ─────────────────────────────────
   {
     id: 'bundesliga',
     name: 'Bundesliga',
@@ -1847,7 +1847,7 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'Bremen', away: 'Dortmund', time: '15:30',
-        result: '0-2', drawProbability: 22, verdict: 'Low', fairOdds: '4.20â€“4.50',
+        result: '0-2', drawProbability: 22, verdict: 'Low', fairOdds: '4.20–4.50',
         factors: {
           formBalance:   { score: 35, detail: 'Dortmund are 2nd and finishing strongly. Bremen are 15th, fighting to avoid the relegation playoff.' },
           drawRates:     { score: 40, detail: 'Dortmund have been decisive in results recently, with few draws.' },
@@ -1857,16 +1857,16 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Yukinari Sugawara â€” suspended (red card)' },
-              { tag: 'out', text: 'Mitchell Weiser â€” knee injury' },
-              { tag: 'out', text: 'Keke Topp â€” knee injury' },
-              { tag: 'out', text: 'Leonardo Bittencourt â€” injured' },
-              { tag: 'key', text: '15th place â€” fighting to avoid relegation playoff' }
+              { tag: 'out', text: 'Yukinari Sugawara — suspended (red card)' },
+              { tag: 'out', text: 'Mitchell Weiser — knee injury' },
+              { tag: 'out', text: 'Keke Topp — knee injury' },
+              { tag: 'out', text: 'Leonardo Bittencourt — injured' },
+              { tag: 'key', text: '15th place — fighting to avoid relegation playoff' }
             ],
           away: [
-              { tag: 'out', text: 'Emre Can â€” knee injury (captain)' },
-              { tag: 'out', text: 'Ramy Bensebaini â€” injury' },
-              { tag: 'key', text: '2nd place â€” looking to secure final position' }
+              { tag: 'out', text: 'Emre Can — knee injury (captain)' },
+              { tag: 'out', text: 'Ramy Bensebaini — injury' },
+              { tag: 'key', text: '2nd place — looking to secure final position' }
             ]
         },
         context: 'Final day drama. Bremen are 15th and need a result to avoid the relegation playoff. They are missing key players through suspension and injury. Dortmund are comfortable in 2nd but will want to finish on a high. The desperation factor slightly increases draw chances, but Dortmund\'s quality should prevail.',
@@ -1876,17 +1876,17 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'Heidenheim', away: 'Mainz', time: '15:30',
-        result: '0-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '0-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Both teams are in poor form. Heidenheim lost 3-1 to Koln last week.' },
           drawRates:     { score: 60, detail: 'Heidenheim have drawn frequently this season in tight, low-scoring games.' },
           headToHead:    { score: 55, detail: 'Competitive recent meetings between these two sides.' },
           goalTendency:  { score: 65, detail: 'Heidenheim play a defensive, low-block style. Low-scoring game expected.' },
-          leagueContext: { score: 70, detail: 'Heidenheim are 17th on 26 points â€” fighting for their Bundesliga life. Mainz are safe in mid-table.' }
+          leagueContext: { score: 70, detail: 'Heidenheim are 17th on 26 points — fighting for their Bundesliga life. Mainz are safe in mid-table.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: '17th place, 26 points â€” must win to have any chance of survival' },
+              { tag: 'key', text: '17th place, 26 points — must win to have any chance of survival' },
               { tag: 'key', text: 'Level on points with Wolfsburg (16th) and St. Pauli (18th)' }
             ],
           away: [
@@ -1900,7 +1900,7 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'Freiburg', away: 'RB Leipzig', time: '15:30',
-        result: '4-1', drawProbability: 24, verdict: 'Low', fairOdds: '3.80â€“4.20',
+        result: '4-1', drawProbability: 24, verdict: 'Low', fairOdds: '3.80–4.20',
         factors: {
           formBalance:   { score: 40, detail: 'Leipzig are 3rd with superior firepower. Freiburg are 7th with an inconsistent season.' },
           drawRates:     { score: 45, detail: 'Leipzig tend to be decisive in results, winning or losing rather than drawing.' },
@@ -1910,10 +1910,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: '7th place â€” final home game of the season' }
+              { tag: 'key', text: '7th place — final home game of the season' }
             ],
           away: [
-              { tag: 'key', text: '3rd place â€” looking to cement Champions League qualification' }
+              { tag: 'key', text: '3rd place — looking to cement Champions League qualification' }
             ]
         },
         context: 'Leipzig arrive in strong form and need to protect their 3rd-place finish. Their high-energy, proactive style and superior firepower make them favourites. Freiburg will want to give their home fans a good send-off but lack the consistency to trouble Leipzig.',
@@ -1923,7 +1923,7 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'Frankfurt', away: 'Stuttgart', time: '15:30',
-        result: '2-2', drawProbability: 28, verdict: 'Low', fairOdds: '3.40â€“3.60',
+        result: '2-2', drawProbability: 28, verdict: 'Low', fairOdds: '3.40–3.60',
         factors: {
           formBalance:   { score: 50, detail: 'Stuttgart are 4th and in form (beat Leverkusen 3-1). Frankfurt are 8th with 1 point from last 4.' },
           drawRates:     { score: 50, detail: 'Both sides have had mixed results; draws are possible but not dominant.' },
@@ -1933,11 +1933,11 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: '8th place â€” chasing Conference League qualification' },
+              { tag: 'key', text: '8th place — chasing Conference League qualification' },
               { tag: 'key', text: 'Only 1 point from last 4 league matches' }
             ],
           away: [
-              { tag: 'key', text: '4th place â€” must win to guarantee Champions League spot' },
+              { tag: 'key', text: '4th place — must win to guarantee Champions League spot' },
               { tag: 'key', text: 'In form: beat Leverkusen 3-1 last week' }
             ]
         },
@@ -1948,7 +1948,7 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'St. Pauli', away: 'Wolfsburg', time: '15:30',
-        result: '1-3', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.00â€“3.20',
+        result: '1-3', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.00–3.20',
         factors: {
           formBalance:   { score: 55, detail: 'Both teams are in the relegation zone, both desperate. Evenly poor form.' },
           drawRates:     { score: 60, detail: 'Tight, nervy relegation games frequently end in draws.' },
@@ -1958,22 +1958,22 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: '18th place, 26 points â€” currently in automatic relegation' },
+              { tag: 'key', text: '18th place, 26 points — currently in automatic relegation' },
               { tag: 'key', text: 'Level on points with Wolfsburg and Heidenheim' }
             ],
           away: [
-              { tag: 'key', text: '16th place, 26 points â€” currently in relegation playoff spot' },
+              { tag: 'key', text: '16th place, 26 points — currently in relegation playoff spot' },
               { tag: 'key', text: 'Level on points with St. Pauli and Heidenheim' }
             ]
         },
-        context: 'The ultimate relegation showdown. St. Pauli (18th) host Wolfsburg (16th) with both teams on 26 points alongside Heidenheim (17th). A draw could be catastrophic for both sides depending on Heidenheim\'s result. The tension and fear of losing will produce a very cagey, tight encounter â€” classic relegation draw territory.',
+        context: 'The ultimate relegation showdown. St. Pauli (18th) host Wolfsburg (16th) with both teams on 26 points alongside Heidenheim (17th). A draw could be catastrophic for both sides depending on Heidenheim\'s result. The tension and fear of losing will produce a very cagey, tight encounter — classic relegation draw territory.',
         summary: 'A relegation decider with both teams on 26 points. The fear factor and desperation create classic draw conditions. Both will be terrified of losing, making a cagey stalemate very plausible.'
       },
 
       {
         day: 'Saturday 16 May',
         home: 'Union Berlin', away: 'Augsburg', time: '15:30',
-        result: '4-0', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '4-0', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Union are in decent form at home. Augsburg are a solid mid-table side with nothing to play for.' },
           drawRates:     { score: 60, detail: 'Union Berlin are historically a draw-heavy team, especially at home.' },
@@ -1983,10 +1983,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Safe in mid-table â€” final home game of the season' }
+              { tag: 'key', text: 'Safe in mid-table — final home game of the season' }
             ],
           away: [
-              { tag: 'key', text: 'Safe in mid-table â€” nothing to play for' }
+              { tag: 'key', text: 'Safe in mid-table — nothing to play for' }
             ]
         },
         context: 'A mid-table dead rubber between two sides with nothing on the line. Union\'s defensive, organised approach consistently produces low-scoring affairs, and Augsburg lack the firepower to break them down. Classic end-of-season draw material.',
@@ -1996,7 +1996,7 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'Mönchengladbach', away: 'Hoffenheim', time: '15:30',
-        result: '4-0', homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '1.80â€“2.10',
+        result: '4-0', homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '1.80–2.10',
         factors: {
           formBalance:   { score: 60, detail: 'Hoffenheim is in better overall form (on a run of five consecutive matches unbeaten and scoring goals), while Gladbach\'s recent performance has been inconsistent despite being unbeaten at home since February.' },
           drawRates:     { score: 50, detail: 'The historical data suggests a balanced draw probability, though the current context of both teams needing points keeps the possibility open.' },
@@ -2013,13 +2013,13 @@ const LEAGUES = [
           ]
         },
         context: 'This fixture is characterized by high stakes ambition meeting pragmatic survival. Hoffenheim views this match as crucial for their Champions League aspirations, while Gladbach\'s focus might be more on securing a comfortable mid-table finish after already achieving safety. The recent internal tension within the Gladbach squad and key player departures could impact their cohesion, giving Hoffenheim a slight edge despite playing away.',
-        summary: 'Hoffenheim enters this match with superior momentum and clear European ambitions, while Borussia MÃ¶nchengladbach is motivated by its star player\'s final appearance for the club. The game is expected to be competitive, but Hoffenheimâ€™s current form gives them a marginal advantage.'
+        summary: 'Hoffenheim enters this match with superior momentum and clear European ambitions, while Borussia Mönchengladbach is motivated by its star player\'s final appearance for the club. The game is expected to be competitive, but Hoffenheim’s current form gives them a marginal advantage.'
       },
 
       {
         day: 'Saturday 16 May',
-        home: 'Bayern', away: '1. FC KÃ¶ln', time: '15:30',
-        result: '5-1', drawProbability: 10, verdict: 'Low', fairOdds: '8.00â€“9.00',
+        home: 'Bayern', away: '1. FC Köln', time: '15:30',
+        result: '5-1', drawProbability: 10, verdict: 'Low', fairOdds: '8.00–9.00',
         factors: {
           formBalance:   { score: 15, detail: 'Bayern are champions with 86 points and 117 goals. Koln are 14th with awful away form.' },
           drawRates:     { score: 15, detail: 'Bayern rarely draw at home, especially against weaker sides.' },
@@ -2029,11 +2029,11 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Alphonso Davies â€” hamstring (season-ending, CL semi-final injury)' },
-              { tag: 'key', text: 'Champions with 86 points and 117 goals â€” record-breaking season' }
+              { tag: 'out', text: 'Alphonso Davies — hamstring (season-ending, CL semi-final injury)' },
+              { tag: 'key', text: 'Champions with 86 points and 117 goals — record-breaking season' }
             ],
           away: [
-              { tag: 'key', text: '14th place, 32 points â€” safe but dreadful away form' },
+              { tag: 'key', text: '14th place, 32 points — safe but dreadful away form' },
               { tag: 'key', text: 'No away win since October 2025' }
             ]
         },
@@ -2044,7 +2044,7 @@ const LEAGUES = [
       {
         day: 'Saturday 16 May',
         home: 'Leverkusen', away: 'HSV', time: '15:30',
-        result: '1-1', drawProbability: 26, verdict: 'Low', fairOdds: '3.60â€“3.80',
+        result: '1-1', drawProbability: 26, verdict: 'Low', fairOdds: '3.60–3.80',
         factors: {
           formBalance:   { score: 45, detail: 'Leverkusen are 6th but lost 3-1 to Stuttgart last week. HSV are 11th and in good form (2 consecutive wins).' },
           drawRates:     { score: 50, detail: 'Both teams produce mixed results; draws are possible.' },
@@ -2054,25 +2054,25 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Nathan Tella â€” injury' },
-              { tag: 'out', text: 'Martin Terrier â€” injury' },
-              { tag: 'key', text: '6th place â€” slim top-4 hopes depend on other results' }
+              { tag: 'out', text: 'Nathan Tella — injury' },
+              { tag: 'out', text: 'Martin Terrier — injury' },
+              { tag: 'key', text: '6th place — slim top-4 hopes depend on other results' }
             ],
           away: [
-              { tag: 'key', text: '11th place â€” safe, playing relaxed football' },
+              { tag: 'key', text: '11th place — safe, playing relaxed football' },
               { tag: 'key', text: 'Back-to-back wins vs Frankfurt and Freiburg' },
               { tag: 'key', text: 'Counterattacking efficiency tied with Bayern as best in the league' }
             ]
         },
-        context: 'Leverkusen need a win for slim top-4 hopes but are coming off a 3-1 defeat. HSV are safe and dangerous â€” their counterattacking style (joint-best in the league with Bayern) makes them tricky opponents. A newly-promoted side playing with freedom against a pressured Leverkusen is a recipe for an upset or a draw.',
+        context: 'Leverkusen need a win for slim top-4 hopes but are coming off a 3-1 defeat. HSV are safe and dangerous — their counterattacking style (joint-best in the league with Bayern) makes them tricky opponents. A newly-promoted side playing with freedom against a pressured Leverkusen is a recipe for an upset or a draw.',
         summary: 'Leverkusen chase top-4 at home but are coming off a defeat. HSV are safe, in form, and dangerous on the counter. A draw is possible but Leverkusen\'s home advantage should just edge it.'
       }
     ]
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // LIGUE 1 â€” Matchday 33
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // LIGUE 1 — Matchday 33
+  // ─────────────────────────────────
   {
     id: 'ligue1',
     name: 'Ligue 1',
@@ -2084,7 +2084,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Lorient', away: 'Le Havre', time: '21:00',
-        result: '0-2', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '0-2', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 60, detail: 'Lorient is coming off a winless streak and has conceded many goals (38 in 18 fixtures), suggesting defensive instability. Le Havre\'s form is mixed; while they have won three straight matches recently, their away record is poor, and they are struggling with conceding goals.' },
           drawRates:     { score: 70, detail: 'Historically, the draw rate between these two teams suggests a tendency for stalemates. Furthermore, in recent encounters (Pantaloni vs Digard), draws have been recorded, indicating caution from both sides.' },
@@ -2107,7 +2107,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Nantes', away: 'Toulouse', time: '21:00',
-        result: '0-0', homeWin: 25, draw: 30, awayWin: 45, verdict: 'Moderate', fairOdds: '1.80â€“2.00',
+        result: '0-0', homeWin: 25, draw: 30, awayWin: 45, verdict: 'Moderate', fairOdds: '1.80–2.00',
         factors: {
           formBalance:   { score: 65, detail: 'Toulouse (W W) show significantly better recent form compared to Nantes\' poor run of results (D D L L W L). This is supported by their higher xG against average (1.85 vs 1.25).' },
           drawRates:     { score: 50, detail: 'The league context suggests a high-stakes final day match, often leading to cautious play or unpredictable outcomes, making the draw rate neutral.' },
@@ -2128,17 +2128,17 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Paris FC', away: 'PSG', time: '21:00',
-        result: '2-1', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '2-1', drawProbability: 35, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 60, detail: 'PSG are in excellent form (scoring goals in 14 consecutive matches and having 8 consecutive matches without defeat), while Paris FC\'s form is less consistent, with two defeats in their last 11 league fixtures.' },
-          drawRates:     { score: 75, detail: 'Historically, when these teams meet, the draw rate is high. Antoine KombouarÃ© has faced Luis Enrique on two occasions, recording only draws.' },
+          drawRates:     { score: 75, detail: 'Historically, when these teams meet, the draw rate is high. Antoine Kombouaré has faced Luis Enrique on two occasions, recording only draws.' },
           headToHead:    { score: 80, detail: 'The historical head-to-head record shows a strong tendency towards draws, with Paris FC and PSG having an equal number of wins (one each) in four matches. The narrative suggests no inherent advantage.' },
           goalTendency:  { score: 70, detail: 'PSG are scoring goals frequently away from home (26 consecutive matches), suggesting they can score even when traveling, but Paris FC\'s ability to keep a clean sheet is questionable given their recent struggles.' },
           leagueContext: { score: 50, detail: 'The match is played in the final matchday of the season. PSG are focused on celebrating and resting players for the Champions League final, while Paris FC is focused on securing safety/a good finish.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Defensive stability (unnamed player) â€” yellow card suspension. Key forward (unnamed player) â€” absence mentioned. Midfielder Julien LÃ³pez â€” out with back discomfort.' }
+              { tag: 'out', text: 'Defensive stability (unnamed player) — yellow card suspension. Key forward (unnamed player) — absence mentioned. Midfielder Julien López — out with back discomfort.' }
             ],
           away: [
               { tag: 'doubt', text: 'Luis Enrique is heavily rotating the squad to protect key players for the Champions League final.' }
@@ -2151,7 +2151,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Nice', away: 'FC Metz', time: '21:00',
-        result: '0-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10â€“3.40',
+        result: '0-0', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.10–3.40',
         factors: {
           formBalance:   { score: 55, detail: 'Nice\'s form is poor (7 wins, 10 draws, 16 defeats in 33 games), while Metz has lost three and drawn four of their last seven fixtures. This suggests a slight edge to the home side despite their overall league struggles.' },
           drawRates:     { score: 65, detail: 'The fixture is late in the season with both teams under pressure (Nice fighting relegation playoff spot), which often leads to cagey, low-scoring draws as stakes are high and caution prevails.' },
@@ -2161,10 +2161,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Hatem Ben Arfa â€” hamstring injury (4-5 weeks)' }
+              { tag: 'out', text: 'Hatem Ben Arfa — hamstring injury (4-5 weeks)' }
             ],
           away: [
-              { tag: 'out', text: 'Benjamin Stambouli â€” fracture in the ribs area (several weeks)' }
+              { tag: 'out', text: 'Benjamin Stambouli — fracture in the ribs area (several weeks)' }
             ]
         },
         context: 'The match is set against the backdrop of a desperate relegation scrap for both clubs. Nice, despite their recent poor form and key injury to Hatem Ben Arfa, must secure points to avoid the playoff spot. Metz, meanwhile, are fighting to escape Yo-Yo Club status. The high stakes and mutual desperation suggest that tactical caution will dominate, leading to a tight, low-scoring affair where draws are highly probable.',
@@ -2174,7 +2174,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Olympique Lyon', away: 'RC Lens', time: '21:00',
-        result: '0-4', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.50',
+        result: '0-4', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.50',
         factors: {
           formBalance:   { score: 65, detail: 'Lyon\'s recent form is mixed, but Lens has shown resilience despite a loss at home recently (Monaco). Lyon are at home and looking to build momentum.' },
           drawRates:     { score: 40, detail: 'The fixture history suggests competitive matches, but the current league context (both teams fighting for European spots) increases stakes, making draws less likely if one team feels they must win.' },
@@ -2184,10 +2184,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Ernest Nuamah â€” Returned from ACL injury in a recent 4-2 victory over Rennes, providing key attacking impetus.' }
+              { tag: 'key', text: 'Ernest Nuamah — Returned from ACL injury in a recent 4-2 victory over Rennes, providing key attacking impetus.' }
             ],
           away: [
-              { tag: 'doubt', text: 'Allan Saint-Maximin â€” Missed the Coupe de France tie due to a minor calf injury, potentially impacting Lens\' starting XI.' }
+              { tag: 'doubt', text: 'Allan Saint-Maximin — Missed the Coupe de France tie due to a minor calf injury, potentially impacting Lens\' starting XI.' }
             ]
         },
         context: 'This match is a crucial clash for European qualification. Lyon, at home, will be under immense pressure to secure a victory and solidify their Champions League hopes. RC Lens, while disappointed with their recent league result (Monaco draw), are equally motivated to earn maximum points. Given the high stakes and both teams\' attacking tendencies, the game is expected to be open, tactical, and goal-laden.',
@@ -2197,7 +2197,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Marseille', away: 'Stade Rennais', time: '21:00',
-        result: '3-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.40â€“3.70',
+        result: '3-1', drawProbability: 32, verdict: 'Moderate', fairOdds: '3.40–3.70',
         factors: {
           formBalance:   { score: 55, detail: 'Marseille boasts a strong home record at the Velodrome, while Rennes has shown they can play in high-scoring, dramatic matches, suggesting a balanced contest.' },
           drawRates:     { score: 70, detail: 'Both clubs are fighting fiercely for European spots (Europa League), which often leads to cautious, tactical performances where avoiding defeat is paramount.' },
@@ -2212,13 +2212,13 @@ const LEAGUES = [
           away: []
         },
         context: 'This fixture is defined by high stakes. Both Marseille and Stade Rennais are locked in a desperate battle for European qualification spots. While Marseille benefits from overwhelming historical dominance at home, the pressure of securing continental football often forces teams into tactical caution. Rennes will aim to exploit any perceived dip in OM\'s form or capitalize on set-piece opportunities.',
-        summary: 'The match is expected to be highly tense and cagey due to the critical European qualification race. Although Marseille holds a commanding historical advantage at home, the mutual desire to avoid defeatâ€”a hallmark of high-stakes league fixturesâ€”suggests that a draw remains a very plausible outcome.'
+        summary: 'The match is expected to be highly tense and cagey due to the critical European qualification race. Although Marseille holds a commanding historical advantage at home, the mutual desire to avoid defeat—a hallmark of high-stakes league fixtures—suggests that a draw remains a very plausible outcome.'
       },
 
       {
         day: 'Sunday 17 May',
         home: 'Lille', away: 'Auxerre', time: '21:00',
-        result: '0-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20â€“3.40',
+        result: '0-2', drawProbability: 30, verdict: 'Moderate', fairOdds: '3.20–3.40',
         factors: {
           formBalance:   { score: 65, detail: 'Auxerre is noted as one of only three teams to win their last two fixtures, suggesting good current form. However, Lille\'s recent unbeaten streak (13 matches) and strong defensive record suggest stability.' },
           drawRates:     { score: 50, detail: 'No specific historical draw rate data is provided for this fixture to assess the likelihood of a stalemate.' },
@@ -2231,7 +2231,7 @@ const LEAGUES = [
               { tag: 'key', text: 'No specific key players are mentioned as being unavailable or doubtful for Lille, but their overall strong form is noted.' }
             ],
           away: [
-              { tag: 'out', text: 'Oussama El-Azzouzi â€” Sidelined with a neck injury for at least a month.' }
+              { tag: 'out', text: 'Oussama El-Azzouzi — Sidelined with a neck injury for at least a month.' }
             ]
         },
         context: 'Lille enters this match under immense pressure to secure the third spot in Ligue 1 and guarantee Champions League qualification. Their strong defensive record (conceding only five goals) suggests they are well-prepared, while Auxerre, battling relegation, will be highly motivated to achieve a crucial point against a top side.',
@@ -2241,7 +2241,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Strasbourg', away: 'Monaco', time: '21:00',
-        result: '5-4', drawProbability: 42, verdict: 'Good', fairOdds: '3.50â€“3.80',
+        result: '5-4', drawProbability: 42, verdict: 'Good', fairOdds: '3.50–3.80',
         factors: {
           formBalance:   { score: 65, detail: 'Both teams are in desperate late-season form. Strasbourg\'s struggles at home and Monaco\'s need to maintain pace suggest a cautious approach from both sides.' },
           drawRates:     { score: 80, detail: 'The high stakes of the final matchday, coupled with the intense battle for European qualification spots, typically leads to tactical stalemates and draws in Ligue 1.' },
@@ -2251,10 +2251,10 @@ const LEAGUES = [
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'N/A â€” Strasbourg needs maximum points at home to salvage European hopes.' }
+              { tag: 'key', text: 'N/A — Strasbourg needs maximum points at home to salvage European hopes.' }
             ],
           away: [
-              { tag: 'out', text: 'Paul Pogba â€” Ruled out of the final match due to injury, slightly weakening Monaco\'s attacking depth.' }
+              { tag: 'out', text: 'Paul Pogba — Ruled out of the final match due to injury, slightly weakening Monaco\'s attacking depth.' }
             ]
         },
         context: 'This fixture is defined by desperation. Both Strasbourg and Monaco are fighting for every point in a tight race for European qualification spots. The late-season pressure means that tactical caution will dominate the narrative; neither team can afford to take unnecessary risks, leading to a highly contested, low-scoring affair where defensive organization trumps attacking flair.',
@@ -2264,7 +2264,7 @@ const LEAGUES = [
       {
         day: 'Sunday 17 May',
         home: 'Brest', away: 'Angers SCO', time: '21:00',
-        result: '1-1', drawProbability: 38, verdict: 'Good', fairOdds: '3.40â€“3.65',
+        result: '1-1', drawProbability: 38, verdict: 'Good', fairOdds: '3.40–3.65',
         factors: {
           formBalance:   { score: 55, detail: 'Brest is in severe poor form (seven-match winless streak) and struggling at home, while Angers has the buffer of guaranteed safety, leveling the playing field regarding immediate pressure.' },
           drawRates:     { score: 70, detail: 'As this is a final matchday with reduced stakes (Brest already secured Ligue 1 status; Angers is safe), both teams may prioritize securing at least a point rather than risking defeat.' },
@@ -2281,14 +2281,14 @@ const LEAGUES = [
             ]
         },
         context: 'This fixture is defined by low stakes. Brest, despite being Ligue 1 safe, are desperate for a win to restore confidence after an eight-match winless run and poor home form. Angers SCO, having secured their mid-table safety, will be content with any result that doesn\'t see them lose. This imbalance of motivation strongly favors a tactical draw.',
-        summary: 'The combination of Brestâ€™s severe slump in form and the low stakes for both sides suggests a cagey affair. Angers SCO\'s guaranteed safety provides a significant psychological edge, making a point-based stalemate highly probable.'
+        summary: 'The combination of Brest’s severe slump in form and the low stakes for both sides suggests a cagey affair. Angers SCO\'s guaranteed safety provides a significant psychological edge, making a point-based stalemate highly probable.'
       }
     ]
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // UEFA CHAMPIONS LEAGUE â€” Semi-Final 2nd Legs
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // UEFA CHAMPIONS LEAGUE — Semi-Final 2nd Legs
+  // ─────────────────────────────────
   {
     id: 'ucl',
     name: 'Champions League',
@@ -2298,9 +2298,9 @@ const LEAGUES = [
     fixtures: []
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // UEFA EUROPA LEAGUE â€” Semi-Final 2nd Legs
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // UEFA EUROPA LEAGUE — Semi-Final 2nd Legs
+  // ─────────────────────────────────
   {
     id: 'uel',
     name: 'Europa League',
@@ -2310,9 +2310,9 @@ const LEAGUES = [
     fixtures: []
   },
 
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-  // UEFA CONFERENCE LEAGUE â€” Semi-Final 2nd Legs
-  // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ─────────────────────────────────
+  // UEFA CONFERENCE LEAGUE — Semi-Final 2nd Legs
+  // ─────────────────────────────────
   {
     id: 'uecl',
     name: 'Conference League',
@@ -2362,14 +2362,14 @@ function dateRangeLabel(fixtures) {
   const d1 = min.getDate(), m1 = MONTH_NAMES[min.getMonth()], y1 = min.getFullYear();
   const d2 = max.getDate(), m2 = MONTH_NAMES[max.getMonth()], y2 = max.getFullYear();
   if (d1 === d2 && m1 === m2) return `${d1} ${m1} ${y1}`;
-  if (m1 === m2) return `${d1} â€“ ${d2} ${m1} ${y1}`;
-  if (y1 === y2) return `${d1} ${m1} â€“ ${d2} ${m2} ${y1}`;
-  return `${d1} ${m1} ${y1} â€“ ${d2} ${m2} ${y2}`;
+  if (m1 === m2) return `${d1} – ${d2} ${m1} ${y1}`;
+  if (y1 === y2) return `${d1} ${m1} – ${d2} ${m2} ${y1}`;
+  return `${d1} ${m1} ${y1} – ${d2} ${m2} ${y2}`;
 }
 
 function parseFairMid(str) {
   if (!str) return null;
-  const parts = str.split('â€“').map(s => parseFloat(s.trim()));
+  const parts = str.split('–').map(s => parseFloat(s.trim()));
   if (parts.length !== 2 || isNaN(parts[0]) || isNaN(parts[1])) return null;
   return (parts[0] + parts[1]) / 2;
 }
@@ -2419,7 +2419,7 @@ function renderSidebar() {
 function renderTeamNews(items) {
   if (!items || !items.length) return '<div class="deep-content"><em style="color:var(--text3);">No notable issues</em></div>';
   return `<ul class="deep-content">${items.map(i => `
-    <li><span class="${i.tag}">${i.tag === 'out' ? 'âŒ' : i.tag === 'doubt' ? 'âš ' : 'â˜…'}</span> ${i.text}</li>
+    <li><span class="${i.tag}">${i.tag === 'out' ? 'âŒ' : i.tag === 'doubt' ? '⚠' : '★'}</span> ${i.text}</li>
   `).join('')}</ul>`;
 }
 
@@ -2466,7 +2466,7 @@ function renderAll() {
       <div class="league-header-left">
         <div class="league-title">All Competitions</div>
         <div class="league-name">${dateRangeLabel(filtered)}</div>
-        <div class="league-sub">PL Â· La Liga Â· Serie A Â· Bundesliga Â· Ligue 1 Â· UCL Â· UEL Â· UECL</div>
+        <div class="league-sub">PL · La Liga · Serie A · Bundesliga · Ligue 1 · UCL · UEL · UECL</div>
       </div>
       <div class="league-stats">
         <div class="stat-card"><div class="stat-val">${upcoming}</div><div class="stat-label">Upcoming</div></div>
@@ -2478,7 +2478,7 @@ function renderAll() {
     ${Object.keys(grouped).length ? Object.entries(grouped).map(([day, fixtures]) => `
       <div class="day-label">${day}</div>
       ${fixtures.map((f, idx) => renderFixture(f, day + idx, f._leagueName)).join('')}
-    `).join('') : '<div class="no-fixtures">No upcoming fixtures â€” check back when the next gameweek is loaded.</div>'}
+    `).join('') : '<div class="no-fixtures">No upcoming fixtures — check back when the next gameweek is loaded.</div>'}
   `;
 }
 
@@ -2505,7 +2505,7 @@ function renderMain() {
       <div class="league-header-left">
         <div class="league-title">${league.country}</div>
         <div class="league-name">${league.name}</div>
-        <div class="league-sub">${league.round} Â· Deep research updated 5 May 2026</div>
+        <div class="league-sub">${league.round} · Deep research updated 5 May 2026</div>
       </div>
       <div class="league-stats">
         <div class="stat-card"><div class="stat-val">${league.drawRate}%</div><div class="stat-label">League draw rate</div></div>
@@ -2517,7 +2517,7 @@ function renderMain() {
     ${Object.keys(grouped).length ? Object.entries(grouped).map(([day, fixtures]) => `
       <div class="day-label">${day}</div>
       ${fixtures.map((f, idx) => renderFixture(f, day + idx)).join('')}
-    `).join('') : '<div class="no-fixtures">No upcoming fixtures â€” check back when the next gameweek is loaded.</div>'}
+    `).join('') : '<div class="no-fixtures">No upcoming fixtures — check back when the next gameweek is loaded.</div>'}
   `;
 }
 
@@ -2541,11 +2541,11 @@ function renderFixture(f, key, leagueName) {
   const teamNewsBlock = f.teamNews ? `
     <div class="deep-grid">
       <div class="deep-card">
-        <div class="deep-label">${f.home} â€” Team News</div>
+        <div class="deep-label">${f.home} — Team News</div>
         ${renderTeamNews(f.teamNews.home)}
       </div>
       <div class="deep-card">
-        <div class="deep-label">${f.away} â€” Team News</div>
+        <div class="deep-label">${f.away} — Team News</div>
         ${renderTeamNews(f.teamNews.away)}
       </div>
     </div>
@@ -2564,8 +2564,8 @@ function renderFixture(f, key, leagueName) {
   if (f.result) {
     if (f.result.includes('-')) {
       const [h, a] = f.result.split('-').map(Number);
-      const drawTag = h === a ? ' Â· <span class="draw-tag">DRAW</span>' : '';
-      bottomLine = `<div class="score-line">Final Score: ${h} â€“ ${a}${drawTag}</div>`;
+      const drawTag = h === a ? ' · <span class="draw-tag">DRAW</span>' : '';
+      bottomLine = `<div class="score-line">Final Score: ${h} – ${a}${drawTag}</div>`;
     } else {
       const label = f.result === 'draw' ? 'DRAW' : f.result === 'home' ? 'Home Win' : 'Away Win';
       bottomLine = `<div class="score-line">${label}</div>`;
@@ -2613,7 +2613,7 @@ function renderFixture(f, key, leagueName) {
           }
         </div>
         <div class="vtag ${vc}">${verdict}</div>
-        <div class="chevron">â–¼</div>
+        <div class="chevron">▼</div>
       </div>
       <div class="analysis">
         ${teamNewsBlock}
