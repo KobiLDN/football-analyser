@@ -22,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.35** — Auto-marked 1 result (Chelsea 2-1 Tottenham).
 - **v2.36** — Game-day refresh (`refresh_today.py` + `refresh_today.bat`): targeted reset of fixtures playing within N days, then auto-runs the agent. Lets you incorporate the latest team news / probabilities on matchday in ~3–5 min instead of full week reset.
 - **v2.35** — Research pipeline hardening: scored news relevance filter (both-team priority, single-team cap), Understat name-alias resolver (fixes missing xG/form for long club names), prompt rules against fictional scorelines / wrong-opponent / guessed personnel, post-validation retry when analysis doesn't mention both teams.
 - **v2.34** — Form dots (last 5 W/D/L) per team in fixture row; fetched from Understat via agent pipeline and stored as `homeForm`/`awayForm` on each fixture. Restored `import datetime` + `fetch_xg` calls in agent.
