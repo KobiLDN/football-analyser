@@ -13,16 +13,18 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 ## Backlog
 
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
-- **Team form dots (last 5)** — show W/D/L dots per team in the fixture row (green/amber/red). Fetch via Understat when step 2 above is built — no separate pipeline needed. Dots sit in the empty space of the fixture name column.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
 - **CSV export** — download this weekend's picks as a spreadsheet.
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
-- **Mobile UX polish** — tighter spacing on small screens, sticky verdict pill in the fixture row.
+- **Sticky verdict pill** — pin the outcome badge when scrolling long fixture analysis panels.
 - **Backtest mode** — toggle to show all past fixtures with their predicted vs actual outcomes for a season-long view.
 
 ## Done
 
+- **v2.35** — Research pipeline hardening: scored news relevance filter (both-team priority, single-team cap), Understat name-alias resolver (fixes missing xG/form for long club names), prompt rules against fictional scorelines / wrong-opponent / guessed personnel, post-validation retry when analysis doesn't mention both teams.
+- **v2.34** — Form dots (last 5 W/D/L) per team in fixture row; fetched from Understat via agent pipeline and stored as `homeForm`/`awayForm` on each fixture. Restored `import datetime` + `fetch_xg` calls in agent.
+- **v2.33** — Mobile responsive overhaul (scrollable sidebar, two-line team names, tighter layout). Verdict system reworked: badge now shows predicted outcome (Home Win / Draw / Away Win) + confidence (Low / Likely / Strong); `drawRates` replaced with `momentum`; agent prompt updated for general outcome prediction.
 - **v2.32** — Understat xG enrichment added to agent research pipeline (`understatapi`); all 36 unplayed fixtures re-researched with last-6 xG for/against and form per team.
 - **v2.31** — Renamed app to Football Analyser; column header renamed to Signal; README updated.
 - **v2.30** — Auto-fetched 30 upcoming fixture stubs.
