@@ -126,6 +126,41 @@ UNDERSTAT_TEAM_MAP = {
     'Toulouse': 'Toulouse',
 }
 
+# Full / alternate fixture display names → the short key already in
+# UNDERSTAT_TEAM_MAP. index.html uses official long names, the map uses
+# short ones, so the lookup silently failed (no xG / no form dots).
+UNDERSTAT_ALIASES = {
+    'Brighton & Hove Albion':   'Brighton',
+    'Wolverhampton':            'Wolves',
+    'Wolverhampton Wanderers':  'Wolves',
+    'Tottenham Hotspur':        'Tottenham',
+    'Nottingham Forest':        'Nottingham',
+    'West Ham United':          'West Ham',
+    'Newcastle United':         'Newcastle',
+    'Manchester United':        'Man United',
+    'Manchester City':          'Man City',
+    'AFC Bournemouth':          'Bournemouth',
+    'Ipswich Town':             'Ipswich',
+    'Leicester City':           'Leicester',
+    'Leeds United':             'Leeds',
+    'Leeds':                    'Leeds',
+}
+
+# Teams in UNDERSTAT_LEAGUES that the short map doesn't cover yet
+UNDERSTAT_TEAM_MAP['Leeds'] = 'Leeds'
+
+
+def understat_slug(team):
+    """Resolve a fixture display name to an Understat URL slug, trying
+    the direct map first, then known long-name aliases."""
+    if team in UNDERSTAT_TEAM_MAP:
+        return UNDERSTAT_TEAM_MAP[team]
+    alias = UNDERSTAT_ALIASES.get(team)
+    if alias and alias in UNDERSTAT_TEAM_MAP:
+        return UNDERSTAT_TEAM_MAP[alias]
+    return None
+
+
 # Map index.html league display names → league ids
 LEAGUE_NAME_TO_ID = {
     'Premier League':    'pl',
@@ -152,8 +187,9 @@ def fetch_xg(team, league_id):
     """
     if league_id not in UNDERSTAT_LEAGUES:
         return None
-    slug = UNDERSTAT_TEAM_MAP.get(team)
+    slug = understat_slug(team)
     if not slug:
+        print(f"  NOTE: no Understat slug for '{team}' — no xG/form")
         return None
 
     season = str(get_season_year())
@@ -359,25 +395,56 @@ def fetch_article_text(url, max_chars=1500):
         return ""
 
 
-def is_relevant(text, home, away):
-    """Return True if the article mentions at least one of the two teams."""
+# Clubs whose plain token ('united', 'city') is too generic and would
+# match a different club ("Leeds United" vs "Man United"). Match these
+# only by an explicit, distinctive phrase.
+TEAM_MATCH_PHRASES = {
+    'Man United':         ['man united', 'man utd', 'manchester united'],
+    'Manchester United':  ['man united', 'man utd', 'manchester united'],
+    'Man City':           ['man city', 'manchester city'],
+    'Manchester City':    ['man city', 'manchester city'],
+    'Leeds United':       ['leeds'],
+    'Leeds':              ['leeds'],
+    'Newcastle United':   ['newcastle'],
+    'Newcastle':          ['newcastle'],
+    'West Ham United':    ['west ham'],
+    'West Ham':           ['west ham'],
+    'Leicester City':     ['leicester'],
+    'Leicester':          ['leicester'],
+}
+
+
+def team_tokens(name):
+    """Distinctive lowercase phrases identifying a team. Uses an explicit
+    phrase list for ambiguous clubs, else significant tokens (len > 3
+    minus filler words that cause cross-club false matches)."""
+    if name in TEAM_MATCH_PHRASES:
+        return TEAM_MATCH_PHRASES[name]
+    stop = {'town', 'city', 'united', 'hove', 'albion', 'wanderers',
+            'hotspur', 'forest', 'real', 'club'}
+    toks = [w for w in re.split(r'[\s&.]+', name.lower()) if len(w) > 3]
+    sig = [w for w in toks if w not in stop]
+    return sig or toks  # never return empty
+
+
+def relevance_score(text, home, away):
+    """0 = mentions neither team, 1 = mentions one, 2 = mentions BOTH.
+    Both-team articles are about the actual fixture; single-team ones
+    are often about a different opponent (the contamination source)."""
     t = text.lower()
-    # Use first word of each team name to handle short refs (e.g. 'Brighton', 'United')
-    home_tokens = [w for w in home.lower().split() if len(w) > 3]
-    away_tokens = [w for w in away.lower().split() if len(w) > 3]
-    for token in home_tokens + away_tokens:
-        if token in t:
-            return True
-    return False
+    h = any(tok in t for tok in team_tokens(home))
+    a = any(tok in t for tok in team_tokens(away))
+    return (1 if h else 0) + (1 if a else 0)
 
 
-def fetch_news(home, away, max_results=8, full_text_limit=4):
+def fetch_news(home, away, max_results=8, full_text_limit=4,
+               max_single=3):
     queries = [
-        f"{home} {away} preview team news",
-        f"{home} injuries",
-        f"{away} injuries",
+        f"{home} vs {away} preview team news",
+        f"{home} team news injuries",
+        f"{away} team news injuries",
     ]
-    seen, articles, full_text_count = set(), [], 0
+    seen, scored, full_text_count = set(), [], 0
 
     for q in queries:
         try:
@@ -396,26 +463,34 @@ def fetch_news(home, away, max_results=8, full_text_limit=4):
                     body = fetch_article_text(url)
                     full_text_count += 1
                     if body:
-                        if is_relevant(body, home, away):
-                            articles.append(f"[{title}]\n{body}")
-                        elif is_relevant(title + ' ' + snippet, home, away):
-                            articles.append(f"- {title}: {snippet}")
+                        s = relevance_score(body, home, away)
+                        if s:
+                            scored.append((s, f"[{title}]\n{body}"))
                         continue
-                if (title or snippet) and is_relevant(title + ' ' + snippet, home, away):
-                    articles.append(f"- {title}: {snippet}")
+                if title or snippet:
+                    s = relevance_score(title + ' ' + snippet, home, away)
+                    if s:
+                        scored.append((s, f"- {title}: {snippet}"))
         except Exception as e:
             print(f"  SearXNG error: {e}")
 
-    # Fallback: if filter was too aggressive, return unfiltered snippets
+    both   = [a for s, a in scored if s == 2]
+    single = [a for s, a in scored if s == 1]
+    # Both-team articles first (about the real fixture), then a capped
+    # number of single-team ones so one opponent's news can't dominate.
+    articles = both + single[:max_single]
+    print(f"  relevance: {len(both)} both-team, "
+          f"{len(single)} single ({min(len(single), max_single)} kept)")
+
     if not articles:
-        print(f"  WARNING: relevance filter dropped all articles — using unfiltered snippets")
+        print(f"  WARNING: relevance filter dropped all — using raw snippets")
         for q in queries:
             try:
                 resp = requests.get(SEARXNG_URL, params={
                     "q": q, "format": "json", "categories": "news"
                 }, timeout=10)
                 resp.raise_for_status()
-                for r in resp.json().get("results", [])[:4]:
+                for r in resp.json().get("results", [])[:3]:
                     title   = r.get("title", "").strip()
                     snippet = r.get("content", "").strip()
                     if title or snippet:
@@ -432,7 +507,18 @@ def build_prompt(home, away, competition, articles):
     news = "\n".join(articles) if articles else "No live news available."
     return f"""Analyse this fixture and estimate win probabilities.
 
-FIXTURE: {home} vs {away} — {competition}
+FIXTURE: {home} (home) vs {away} (away) — {competition}
+
+CRITICAL RULES — read before anything else:
+- This exact match is {home} vs {away}. If a news article is about
+  {home} or {away} playing a DIFFERENT opponent, use it only for that
+  team's form/injuries — NEVER analyse the other opponent's match.
+- This match HAS NOT been played yet. Do NOT invent a scoreline,
+  goals, goalscorers, or match events. No "X scored an early goal".
+- Only name players or managers that appear explicitly in the news
+  below. Do not guess a manager's name or invent injuries.
+- Every factor detail, context and summary MUST be about {home}
+  versus {away} specifically — no other fixture.
 
 CURRENT NEWS:
 {news}
@@ -533,10 +619,30 @@ def run():
         print(f"  {len(articles)} articles found")
 
         print(f"  Querying {MODEL}...")
-        try:
-            analysis = parse_json(call_lmstudio(build_prompt(home, away, competition, articles)))
-        except Exception as e:
-            print(f"  FAILED: {e} — skipping\n")
+        analysis = None
+        for attempt in (1, 2):
+            try:
+                analysis = parse_json(call_lmstudio(
+                    build_prompt(home, away, competition, articles)))
+            except Exception as e:
+                print(f"  parse failed (attempt {attempt}): {e}")
+                analysis = None
+                continue
+            # Validate: context+summary must reference BOTH teams,
+            # else the model analysed the wrong fixture.
+            blob = (analysis.get('context', '') + ' ' +
+                    analysis.get('summary', '')).lower()
+            h_ok = any(t in blob for t in team_tokens(home))
+            a_ok = any(t in blob for t in team_tokens(away))
+            if h_ok and a_ok:
+                break
+            missing = home if not h_ok else away
+            print(f"  REJECTED (attempt {attempt}): analysis didn't "
+                  f"mention '{missing}' — wrong-fixture contamination")
+            analysis = None
+
+        if analysis is None:
+            print(f"  FAILED after 2 attempts — skipping\n")
             continue
 
         html = patch_fixture(html, home, away,

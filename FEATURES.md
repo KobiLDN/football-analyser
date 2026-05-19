@@ -22,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.35** — Research pipeline hardening: scored news relevance filter (both-team priority, single-team cap), Understat name-alias resolver (fixes missing xG/form for long club names), prompt rules against fictional scorelines / wrong-opponent / guessed personnel, post-validation retry when analysis doesn't mention both teams.
 - **v2.34** — Form dots (last 5 W/D/L) per team in fixture row; fetched from Understat via agent pipeline and stored as `homeForm`/`awayForm` on each fixture. Restored `import datetime` + `fetch_xg` calls in agent.
 - **v2.33** — Mobile responsive overhaul (scrollable sidebar, two-line team names, tighter layout). Verdict system reworked: badge now shows predicted outcome (Home Win / Draw / Away Win) + confidence (Low / Likely / Strong); `drawRates` replaced with `momentum`; agent prompt updated for general outcome prediction.
 - **v2.32** — Understat xG enrichment added to agent research pipeline (`understatapi`); all 36 unplayed fixtures re-researched with last-6 xG for/against and form per team.
