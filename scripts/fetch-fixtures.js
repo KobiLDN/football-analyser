@@ -164,11 +164,13 @@ function replaceFixtures(html, leagueId, newFixturesArray) {
 }
 
 function bumpVersion(html) {
-  const m = html.match(/<span>v(\d+)\.(\d+) · 2025–26<\/span>/);
+  // Tolerate either '·' (middle dot) or '–' (en dash) as separator
+  const m = html.match(/<span>v(\d+)\.(\d+) ([·–-]) 2025–26<\/span>/);
   if (!m) throw new Error('Could not find version in topbar');
   const next = `${m[1]}.${+m[2] + 1}`;
+  const sep = m[3];
   return {
-    html: html.replace(m[0], `<span>v${next} · 2025–26</span>`),
+    html: html.replace(m[0], `<span>v${next} ${sep} 2025–26</span>`),
     version: `v${next}`
   };
 }
