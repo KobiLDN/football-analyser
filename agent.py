@@ -1,3 +1,4 @@
+import datetime
 import json
 import re
 import requests
@@ -160,19 +161,21 @@ def fetch_xg(team, league_id):
         with UnderstatClient() as understat:
             matches = understat.team(team=slug).get_match_data(season=season)
 
-        played = [m for m in matches if m.get('isResult')][-6:]
-        if not played:
+        all_played = [m for m in matches if m.get('isResult')]
+        last6 = all_played[-6:]
+        last5 = all_played[-5:]
+        if not last6:
             return None
 
-        xg_for     = [float(m['xG'][m['side']]) for m in played]
-        xg_against = [float(m['xG']['a' if m['side'] == 'h' else 'h']) for m in played]
-        form       = [m['result'].upper() for m in played]
+        xg_for     = [float(m['xG'][m['side']]) for m in last6]
+        xg_against = [float(m['xG']['a' if m['side'] == 'h' else 'h']) for m in last6]
+        form       = [m['result'].upper() for m in last5]
 
         return {
             'xg_for_avg':     round(sum(xg_for)     / len(xg_for),     2),
             'xg_against_avg': round(sum(xg_against) / len(xg_against), 2),
-            'form':           ' '.join(form),
-            'games':          len(played),
+            'form':           ' '.join(form),   # last 5, oldest → newest
+            'games':          len(last6),
         }
     except Exception as e:
         print(f"  xG fetch failed for {team}: {e}")
@@ -251,7 +254,7 @@ def format_team_news(items):
     return "[\n" + ",\n".join(lines) + "\n          ]"
 
 
-def build_replacement(home, away, day, time_, result, analysis):
+def build_replacement(home, away, day, time_, result, analysis, home_form=None, away_form=None):
     hw      = analysis["homeWin"]
     d       = analysis["draw"]
     aw      = analysis["awayWin"]
@@ -266,11 +269,13 @@ def build_replacement(home, away, day, time_, result, analysis):
         return f"{{ score: {f[key]['score']}, detail: '{escape_js_string(f[key]['detail'])}' }}"
 
     result_str = f"'{result}'" if result else "null"
+    home_form_line = f"\n        homeForm: '{home_form}'," if home_form else ""
+    away_form_line = f"\n        awayForm: '{away_form}'," if away_form else ""
 
     return f"""{{
         day: '{day}',
         home: '{escape_js_string(home)}', away: '{escape_js_string(away)}', time: '{time_}',
-        result: {result_str}, homeWin: {hw}, draw: {d}, awayWin: {aw}, verdict: '{verdict}', fairOdds: '{odds}',
+        result: {result_str}, homeWin: {hw}, draw: {d}, awayWin: {aw}, verdict: '{verdict}', fairOdds: '{odds}',{home_form_line}{away_form_line}
         factors: {{
           formBalance:   {factor('formBalance')},
           momentum:      {factor('momentum')},
@@ -478,6 +483,16 @@ def run():
         day, time_, result = get_fixture_meta(html, home, away)
         competition = get_league_for_fixture(html, home, away)
 
+        league_id = LEAGUE_NAME_TO_ID.get(competition, '')
+        home_xg = fetch_xg(home, league_id)
+        away_xg = fetch_xg(away, league_id)
+        home_form = home_xg['form'] if home_xg else None
+        away_form = away_xg['form'] if away_xg else None
+        if home_xg:
+            print(f"  xG {home}: for={home_xg['xg_for_avg']} vs={home_xg['xg_against_avg']} form={home_form}")
+        if away_xg:
+            print(f"  xG {away}: for={away_xg['xg_for_avg']} vs={away_xg['xg_against_avg']} form={away_form}")
+
         print(f"  Fetching news...")
         articles = fetch_news(home, away)
         print(f"  {len(articles)} articles found")
@@ -490,7 +505,8 @@ def run():
             continue
 
         html = patch_fixture(html, home, away,
-                             build_replacement(home, away, day, time_, result, analysis))
+                             build_replacement(home, away, day, time_, result, analysis,
+                                               home_form=home_form, away_form=away_form))
         save_html(html)
         print(f"  Done — H:{analysis['homeWin']}% D:{analysis['draw']}% A:{analysis['awayWin']}% · {analysis['verdict']}\n")
 

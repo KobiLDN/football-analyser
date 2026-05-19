@@ -281,6 +281,15 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .score-line { font-size: 11px; color: var(--text2); letter-spacing: 0.04em; margin-top: 3px; }
 .score-line .draw-tag { color: var(--gold); font-weight: 700; }
 
+/* Form dots */
+.form-row { display: flex; align-items: center; gap: 5px; margin-top: 4px; }
+.form-group { display: flex; gap: 3px; align-items: center; }
+.form-sep { width: 1px; height: 9px; background: var(--border2); margin: 0 2px; flex-shrink: 0; }
+.form-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-w { background: var(--green); }
+.dot-d { background: var(--amber); }
+.dot-l { background: var(--red); }
+
 @media (max-width: 800px) {
   .layout { grid-template-columns: 1fr; }
   .topbar { padding: 10px 16px; }
@@ -317,7 +326,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.32 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.34 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
@@ -2550,6 +2559,15 @@ function renderMain() {
   `;
 }
 
+function renderFormDots(formStr) {
+  if (!formStr) return '';
+  return formStr.trim().split(/\s+/).slice(-5).map(r => {
+    const cls = r === 'W' ? 'dot-w' : r === 'D' ? 'dot-d' : 'dot-l';
+    const title = r === 'W' ? 'Win' : r === 'D' ? 'Draw' : 'Loss';
+    return `<span class="form-dot ${cls}" title="${title}"></span>`;
+  }).join('');
+}
+
 function renderFixture(f, key, leagueName) {
   const outcome = calcOutcome(f);
   const confidence = calcConfidence(f);
@@ -2590,6 +2608,10 @@ function renderFixture(f, key, leagueName) {
   const edge = calcEdge(f.fairOdds, f.bookOdds);
   const valueBadge = (f.bookOdds && edge !== null && edge >= 5) ? `<span class="value-badge">VALUE ${f.bookOdds.toFixed(2)}</span>` : (f.bookOdds && edge !== null && edge > 0) ? `<span class="value-badge" style="opacity:0.7;">EDGE ${f.bookOdds.toFixed(2)}</span>` : '';
 
+  const homeDots = renderFormDots(f.homeForm);
+  const awayDots = renderFormDots(f.awayForm);
+  const formRowHTML = (homeDots || awayDots) ? `<div class="form-row"><div class="form-group">${homeDots}</div>${homeDots && awayDots ? '<div class="form-sep"></div>' : ''}<div class="form-group">${awayDots}</div></div>` : '';
+
   let bottomLine;
   if (f.result) {
     if (f.result.includes('-')) {
@@ -2609,6 +2631,7 @@ function renderFixture(f, key, leagueName) {
       <div class="fixture-row">
         <div>
           <div class="teams"><span class="team-home">${f.home} vs</span><span class="team-away">${f.away}${valueBadge}</span></div>
+          ${formRowHTML}
           ${bottomLine}
         </div>
         <div class="fixture-tag-cell">${leagueTag}</div>
