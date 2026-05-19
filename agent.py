@@ -7,7 +7,7 @@ from understatapi import UnderstatClient
 
 LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SEARXNG_URL  = "http://localhost:8888/search"
-MODEL        = "google/gemma-4-e4b"
+MODEL        = "qwen/qwen3.5-9b"
 HTML_FILE    = "index.html"
 
 
@@ -356,6 +356,18 @@ def fetch_article_text(url, max_chars=1500):
         return ""
 
 
+def is_relevant(text, home, away):
+    """Return True if the article mentions at least one of the two teams."""
+    t = text.lower()
+    # Use first word of each team name to handle short refs (e.g. 'Brighton', 'United')
+    home_tokens = [w for w in home.lower().split() if len(w) > 3]
+    away_tokens = [w for w in away.lower().split() if len(w) > 3]
+    for token in home_tokens + away_tokens:
+        if token in t:
+            return True
+    return False
+
+
 def fetch_news(home, away, max_results=8, full_text_limit=4):
     queries = [
         f"{home} {away} preview team news",
@@ -381,12 +393,32 @@ def fetch_news(home, away, max_results=8, full_text_limit=4):
                     body = fetch_article_text(url)
                     full_text_count += 1
                     if body:
-                        articles.append(f"[{title}]\n{body}")
+                        if is_relevant(body, home, away):
+                            articles.append(f"[{title}]\n{body}")
+                        elif is_relevant(title + ' ' + snippet, home, away):
+                            articles.append(f"- {title}: {snippet}")
                         continue
-                if title or snippet:
+                if (title or snippet) and is_relevant(title + ' ' + snippet, home, away):
                     articles.append(f"- {title}: {snippet}")
         except Exception as e:
             print(f"  SearXNG error: {e}")
+
+    # Fallback: if filter was too aggressive, return unfiltered snippets
+    if not articles:
+        print(f"  WARNING: relevance filter dropped all articles — using unfiltered snippets")
+        for q in queries:
+            try:
+                resp = requests.get(SEARXNG_URL, params={
+                    "q": q, "format": "json", "categories": "news"
+                }, timeout=10)
+                resp.raise_for_status()
+                for r in resp.json().get("results", [])[:4]:
+                    title   = r.get("title", "").strip()
+                    snippet = r.get("content", "").strip()
+                    if title or snippet:
+                        articles.append(f"- {title}: {snippet}")
+            except Exception:
+                pass
 
     return articles
 
@@ -444,7 +476,7 @@ def call_lmstudio(prompt):
             {"role": "user",   "content": prompt}
         ],
         "temperature": 0.3,
-        "max_tokens": 3000
+        "max_tokens": 9000
     }, timeout=180)
     resp.raise_for_status()
     msg = resp.json()["choices"][0]["message"]
