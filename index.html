@@ -2696,7 +2696,7 @@ function renderFixture(f, key, leagueName) {
                 </div>
                </div>`; })()
             : `<div class="legacy-prob">
-                 <div class="pct-display" style="color:${verdict==='Strong'?'var(--blue)':verdict==='Good'?'var(--green)':verdict==='Moderate'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
+                 <div class="pct-display" style="color:${confidence==='Strong'?'var(--blue)':confidence==='Likely'?'var(--amber)':'var(--red)'}">${f.drawProbability}%</div>
                  <div class="mini-bar-wrap"><div class="mini-bar ${bc}" style="width:${f.drawProbability}%"></div></div>
                </div>`
           }
