@@ -207,7 +207,7 @@ const research = {
 
 // Now patch each fixture
 function loadLeagues(html) {
-  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);\s*\n\s*\n\s*\/\/ ═══/);
+  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);/);
   if (!m) throw new Error('Could not extract LEAGUES');
   return eval(m[1]);
 }

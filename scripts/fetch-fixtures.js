@@ -30,7 +30,7 @@ function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 function escapeJs(s) { return (s || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
 
 function loadLeagues(html) {
-  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);\s*\n\s*\n\s*\/\/ ═══/);
+  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);/);
   if (!m) throw new Error('Could not extract LEAGUES from index.html');
   return eval(m[1]);
 }
@@ -191,7 +191,7 @@ function addFeaturesEntry(features, version, totalAdded, totalPruned) {
   const msgPruned = totalPruned ? `Pruned ${totalPruned} old fixtures.` : '';
   const msg = [msgAdded, msgPruned].filter(Boolean).join(' ');
   const entry = `- **${version}** — ${msg}\n`;
-  return features.replace(/(## Done\n\n)/, `$1${entry}`);
+  return features.replace(/(## Done\r?\n\r?\n)/, `$1${entry}`);
 }
 
 function isTooOld(dayStr) {
