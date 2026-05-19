@@ -188,9 +188,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   justify-self: center;
 }
 .v-low    { color: var(--red);   background: #1c0505; border: 1px solid #3a1010; }
-.v-mod    { color: var(--amber); background: #1c1200; border: 1px solid #3a2800; }
-.v-good   { color: var(--green); background: #001508; border: 1px solid #002a10; }
+.v-likely { color: var(--amber); background: #1c1200; border: 1px solid #3a2800; }
 .v-strong { color: #ffffff;      background: #000e1c; border: 1px solid #001c38; }
+.vtag { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.vtag-outcome { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; }
+.vtag-confidence { font-size: 8px; letter-spacing: 0.06em; opacity: 0.75; }
 .bar-low    { background: var(--red); }
 .bar-mod    { background: var(--amber); }
 .bar-good   { background: var(--green); }
@@ -2346,21 +2348,32 @@ const LEAGUES = [
 let activeId = 'all';
 let showPast = false;
 
-function calcVerdict(f) {
+function calcOutcome(f) {
+  if (f.homeWin !== undefined) {
+    const top = Math.max(f.homeWin, f.draw, f.awayWin);
+    if (f.homeWin === top) return 'Home Win';
+    if (f.draw === top) return 'Draw';
+    return 'Away Win';
+  }
+  return 'Draw';
+}
+function calcConfidence(f) {
   if (f.homeWin !== undefined) {
     const top = Math.max(f.homeWin, f.draw, f.awayWin);
     if (top >= 65) return 'Strong';
-    if (top >= 55) return 'Good';
-    if (top >= 45) return 'Moderate';
+    if (top >= 50) return 'Likely';
     return 'Low';
   }
-  return f.verdict || 'Low';
+  const p = f.drawProbability || 0;
+  if (p >= 65) return 'Strong';
+  if (p >= 50) return 'Likely';
+  return 'Low';
 }
-function verdictClass(v) {
-  return { Low: 'v-low', Moderate: 'v-mod', Good: 'v-good', Strong: 'v-strong' }[v] || 'v-low';
+function verdictClass(confidence) {
+  return { Low: 'v-low', Likely: 'v-likely', Strong: 'v-strong' }[confidence] || 'v-low';
 }
-function barClass(v) {
-  return { Low: 'bar-low', Moderate: 'bar-mod', Good: 'bar-good', Strong: 'bar-strong' }[v] || 'bar-low';
+function barClass(confidence) {
+  return { Low: 'bar-low', Likely: 'bar-mod', Strong: 'bar-strong' }[confidence] || 'bar-low';
 }
 const MONTHS = {January:0,February:1,March:2,April:3,May:4,June:5,July:6,August:7,September:8,October:9,November:10,December:11};
 function dayToTs(dayStr) {
@@ -2538,11 +2551,12 @@ function renderMain() {
 }
 
 function renderFixture(f, key, leagueName) {
-  const verdict = calcVerdict(f);
-  const vc = verdictClass(verdict);
-  const bc = barClass(verdict);
+  const outcome = calcOutcome(f);
+  const confidence = calcConfidence(f);
+  const vc = verdictClass(confidence);
+  const bc = barClass(confidence);
   const factorNames = {
-    formBalance: 'Form balance', drawRates: 'Draw rates',
+    formBalance: 'Form balance', momentum: 'Momentum', drawRates: 'Momentum',
     headToHead: 'Head to head', goalTendency: 'Goal tendency', leagueContext: 'Context'
   };
   const factorsHTML = Object.entries(f.factors).map(([k, v]) => `
@@ -2628,7 +2642,7 @@ function renderFixture(f, key, leagueName) {
                </div>`
           }
         </div>
-        <div class="vtag ${vc}">${verdict}</div>
+        <div class="vtag ${vc}"><span class="vtag-outcome">${outcome}</span><span class="vtag-confidence">${confidence}</span></div>
         <div class="chevron">▼</div>
       </div>
       <div class="analysis">

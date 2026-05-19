@@ -273,7 +273,7 @@ def build_replacement(home, away, day, time_, result, analysis):
         result: {result_str}, homeWin: {hw}, draw: {d}, awayWin: {aw}, verdict: '{verdict}', fairOdds: '{odds}',
         factors: {{
           formBalance:   {factor('formBalance')},
-          drawRates:     {factor('drawRates')},
+          momentum:      {factor('momentum')},
           headToHead:    {factor('headToHead')},
           goalTendency:  {factor('goalTendency')},
           leagueContext: {factor('leagueContext')}
@@ -407,7 +407,7 @@ Return ONLY this JSON structure — no markdown, no code fences, no explanation:
   "fairOdds": "<e.g. 3.50–3.80>",
   "factors": {{
     "formBalance":   {{ "score": <0-100>, "detail": "<text>" }},
-    "drawRates":     {{ "score": <0-100>, "detail": "<text>" }},
+    "momentum":      {{ "score": <0-100>, "detail": "<text>" }},
     "headToHead":    {{ "score": <0-100>, "detail": "<text>" }},
     "goalTendency":  {{ "score": <0-100>, "detail": "<text>" }},
     "leagueContext": {{ "score": <0-100>, "detail": "<text>" }}
@@ -421,12 +421,12 @@ Return ONLY this JSON structure — no markdown, no code fences, no explanation:
 }}
 
 IMPORTANT: homeWin + draw + awayWin MUST sum to exactly 100.
-Verdict is based on the highest of the three probabilities (model confidence):
-  Low < 45% — no clear favourite, too close to call
-  Moderate 45-54% — slight lean but uncertain
-  Good 55-64% — one outcome clearly favoured
-  Strong 65%+ — dominant favourite
-Factor scores: 50 = neutral, higher = more favourable for a draw.
+Verdict is the confidence in whichever outcome has the highest probability:
+  Low    = highest outcome below 50% — too close to call
+  Likely = highest outcome 50-64% — one outcome favoured
+  Strong = highest outcome 65%+ — dominant favourite
+Factor scores: 50 = neutral; score each factor based on its impact on the most likely outcome.
+  momentum: which team has better recent form and momentum heading in.
 Use real player names from the news where available.
 """
 
