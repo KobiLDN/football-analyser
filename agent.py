@@ -7,7 +7,7 @@ from understatapi import UnderstatClient
 
 LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SEARXNG_URL  = "http://localhost:8888/search"
-MODEL        = "qwen/qwen3.5-9b"
+MODEL        = "qwen3.5-9b-claude-4.6-opus-reasoning-distilled-v2"
 HTML_FILE    = "index.html"
 
 
@@ -266,7 +266,10 @@ def build_replacement(home, away, day, time_, result, analysis, home_form=None, 
     summary = escape_js_string(analysis.get("summary", ""))
 
     def factor(key):
-        return f"{{ score: {f[key]['score']}, detail: '{escape_js_string(f[key]['detail'])}' }}"
+        v = f.get(key, {})
+        score  = v.get('score', 50)  if isinstance(v, dict) else 50
+        detail = v.get('detail', '') if isinstance(v, dict) else str(v)
+        return f"{{ score: {score}, detail: '{escape_js_string(detail)}' }}"
 
     result_str = f"'{result}'" if result else "null"
     home_form_line = f"\n        homeForm: '{home_form}'," if home_form else ""
@@ -476,7 +479,7 @@ def call_lmstudio(prompt):
             {"role": "user",   "content": prompt}
         ],
         "temperature": 0.3,
-        "max_tokens": 9000
+        "max_tokens": 10000
     }, timeout=180)
     resp.raise_for_status()
     msg = resp.json()["choices"][0]["message"]
