@@ -300,6 +300,9 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   .fixture-tag-cell { display: none; }
   .mini-bar-wrap { display: none; }
   .teams { font-size: 15px; }
+  .team-home { display: block; }
+  .team-away { display: block; }
+  .vtag { min-width: 90px; }
   .prob-col-label { display: none; }
   .prob-cols { gap: 6px; }
   .prob-col-pct.leading { font-size: 13px; }
@@ -2591,7 +2594,7 @@ function renderFixture(f, key, leagueName) {
     <div class="fixture" id="fix-${key}" onclick="toggleFixture('fix-${key}')">
       <div class="fixture-row">
         <div>
-          <div class="teams">${f.home} vs ${f.away}${valueBadge}</div>
+          <div class="teams"><span class="team-home">${f.home} vs</span><span class="team-away">${f.away}${valueBadge}</span></div>
           ${bottomLine}
         </div>
         <div class="fixture-tag-cell">${leagueTag}</div>
