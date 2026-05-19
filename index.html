@@ -284,9 +284,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   .topbar { padding: 10px 16px; }
   .updated-stack { display: none; }
   .main { padding: 16px 12px; }
-  .sidebar { position: static; height: auto; display: flex; flex-wrap: wrap; gap: 4px; padding: 12px; border-right: none; border-bottom: 1px solid var(--border); }
+  .sidebar { position: static; height: auto; display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 6px; padding: 10px 12px; border-right: none; border-bottom: 1px solid var(--border); }
+  .sidebar::-webkit-scrollbar { display: none; }
+  .sidebar-section { display: contents; }
   .sidebar-group-label { display: none; }
-  .sidebar-item { border-left: none; border-radius: 4px; border: 1px solid var(--border); padding: 7px 12px; font-size: 12px; }
+  .sidebar-item { border-left: none; border-radius: 4px; border: 1px solid var(--border); padding: 7px 12px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
   .league-header { flex-direction: column; gap: 14px; }
   .league-stats { border-top: 1px solid var(--border); padding-top: 14px; }
   .stat-card { min-width: 0; padding: 0 20px; }
@@ -299,6 +301,8 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   .mini-bar-wrap { display: none; }
   .teams { font-size: 15px; }
   .prob-col-label { display: none; }
+  .prob-cols { gap: 6px; }
+  .prob-col-pct.leading { font-size: 13px; }
   .draw-probability-cell { justify-content: flex-end; }
   .chevron { display: none; }
   .summary-grid { grid-template-columns: 1fr; }
