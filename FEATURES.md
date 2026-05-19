@@ -18,11 +18,12 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
 - **CSV export** — download this weekend's picks as a spreadsheet.
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
-- **Mobile UX polish** — tighter spacing on small screens, sticky verdict pill in the fixture row.
+- **Sticky verdict pill** — pin the outcome badge when scrolling long fixture analysis panels.
 - **Backtest mode** — toggle to show all past fixtures with their predicted vs actual outcomes for a season-long view.
 
 ## Done
 
+- **v2.33** — Mobile responsive overhaul (scrollable sidebar, two-line team names, tighter layout). Verdict system reworked: badge now shows predicted outcome (Home Win / Draw / Away Win) + confidence (Low / Likely / Strong); `drawRates` replaced with `momentum`; agent prompt updated for general outcome prediction.
 - **v2.32** — Understat xG enrichment added to agent research pipeline (`understatapi`); all 36 unplayed fixtures re-researched with last-6 xG for/against and form per team.
 - **v2.31** — Renamed app to Football Analyser; column header renamed to Signal; README updated.
 - **v2.30** — Auto-fetched 30 upcoming fixture stubs.

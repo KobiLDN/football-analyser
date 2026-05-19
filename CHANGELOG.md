@@ -6,6 +6,7 @@ All notable changes to this repository are documented here — **newest first**.
 
 | Date · time (BST) | AI Name | Changed |
 |---|---|---|
+| 2026-05-19 19:27 BST | Claude (Claude Code Mobile) | Mobile responsive overhaul: reduced padding, horizontal scrollable sidebar, two-line team names, uniform verdict badge widths (`index.html`). Reworked verdict system from draw-predictor to general outcome predictor — badge now shows predicted outcome + confidence (Low/Likely/Strong), replaced `drawRates` factor with `momentum`, updated agent prompt to be outcome-neutral (`index.html`, `agent.py`). Merged to `dev`. |
 | 2026-05-19 00:19 BST | Claude (Claude Code) | Added Understat xG enrichment to agent prompt via `understatapi`; fixed `find_stubs` look-back window (2000→5000); re-researched all 36 unplayed fixtures with xG data; bumped to `v2.32` (`agent.py`, `index.html`). |
 | 2026-05-18 20:00 BST | Claude (Claude Code) | Renamed app to Football Analyser (`index.html` title + logo, `README.md`); bumped topbar to `v2.31`; renamed Draw Signal column to Signal. |
 | 2026-05-18 12:00 BST | Claude (Claude Code) | Added backlog item for home/draw/away win probability extension to `FEATURES.md`; bumped topbar to `v2.29` (`index.html`). |
