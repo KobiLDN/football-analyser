@@ -21,7 +21,10 @@ const MONTHS = {
 function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 function loadLeagues(html) {
-  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);\s*\n\s*\n\s*\/\/ ═══/);
+  // Use the bare array terminator '\n];' — don't anchor on the
+  // following '// ═══' comment because those box-drawing chars got
+  // mangled during earlier encoding repair.
+  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);/);
   if (!m) throw new Error('Could not extract LEAGUES from index.html');
   return eval(m[1]);
 }
@@ -102,7 +105,7 @@ function addFeaturesEntry(features, version, marked) {
   const more = marked.length > 3 ? `, +${marked.length - 3} more` : '';
   const noun = marked.length === 1 ? 'result' : 'results';
   const entry = `- **${version}** — Auto-marked ${marked.length} ${noun} (${sample}${more}).\n`;
-  return features.replace(/(## Done\n\n)/, `$1${entry}`);
+  return features.replace(/(## Done\r?\n\r?\n)/, `$1${entry}`);
 }
 
 (async () => {

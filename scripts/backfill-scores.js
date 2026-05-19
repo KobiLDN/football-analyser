@@ -23,7 +23,7 @@ const MONTHS = {
 function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 function loadLeagues(html) {
-  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);\s*\n\s*\n\s*\/\/ ═══/);
+  const m = html.match(/const LEAGUES = (\[[\s\S]*?\n\]);/);
   if (!m) throw new Error('Could not extract LEAGUES from index.html');
   return eval(m[1]);
 }
@@ -99,7 +99,7 @@ function refreshDataTimestamp(html) {
 function addFeaturesEntry(features, version, count) {
   const noun = count === 1 ? 'result' : 'results';
   const entry = `- **${version}** — Backfilled ${count} legacy ${noun} with actual scorelines (replaced \`'home'\`/\`'draw'\`/\`'away'\` with \`'X-Y'\`).\n`;
-  return features.replace(/(## Done\n\n)/, `$1${entry}`);
+  return features.replace(/(## Done\r?\n\r?\n)/, `$1${entry}`);
 }
 
 (async () => {
