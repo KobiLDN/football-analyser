@@ -16,7 +16,8 @@ Each fixture is annotated with:
 - Confirmed team news (injuries, suspensions, key players)
 - Tactical context and motivation
 - Head-to-head history
-- Home / draw / away win probabilities and confidence verdict (Low / Moderate / Good / Strong)
+- Home / draw / away win probabilities and confidence verdict (Low / Likely / Strong)
+- Last-5 form dots per team (W/D/L) sourced from Understat xG data
 - Fair odds estimate, plus book odds and edge calculation when available
 
 ## Updating each gameweek
@@ -48,6 +49,22 @@ Manual fallback: edit the fixture object directly to set `result:` if the workfl
 ## Auto-fetching fixtures
 
 A third GitHub Action (`.github/workflows/fetch-fixtures.yml`) runs every Monday at 08:00 UTC and inserts stub fixtures for the coming week. Stubs have placeholder analysis (all factors set to 50, verdict "Low") — deep research is added manually afterwards. **Re-fetch preserves** any existing `teamNews`, `context`, and `bookOdds` on fixtures the script re-writes. Trigger it on demand via **Actions → Auto-fetch fixtures → Run workflow** (supports an optional `days_ahead` input, default 8).
+
+## Local AI research pipeline
+
+`agent.py` populates stub fixtures with deep research locally — no external API costs. It uses:
+
+- **LM Studio** serving a local LLM (winner: `qwen3.5-9b-claude-4.6-opus-reasoning-distilled-v2`)
+- **SearXNG** as a self-hosted meta-search for live news
+- **Understat** via the `understatapi` Python package for xG and form data
+
+Run `run_agent.bat` to research all `Pending deep research.` stubs in `index.html`. Run `reset_stubs.bat` first if you want to re-research already-populated fixtures.
+
+The pipeline is hardened against common LLM failure modes: a scored relevance filter prioritises articles mentioning *both* fixture teams (preventing wrong-opponent contamination), the prompt forbids inventing scorelines or guessing personnel, and a post-validation step retries any analysis that doesn't mention both teams.
+
+## Model benchmarking
+
+`bench.py` compares LLMs on identical cached news input and scores them on objective metrics: JSON validity, probabilities summing to 100, wrong-fixture contamination check, fictional-scoreline detection, schema completeness, and speed. Run `bench.bat` to sweep all configured models — results append to `bench_results.md`.
 
 ## Local development
 
