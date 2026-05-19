@@ -114,8 +114,28 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   margin-top: 22px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .day-label:first-child { margin-top: 0; }
+.day-label:hover { color: var(--gold); }
+.day-chevron {
+  display: inline-block;
+  font-size: 8px;
+  color: var(--text2);
+  transition: transform 0.15s ease;
+}
+.day-group.collapsed .day-chevron { transform: rotate(-90deg); }
+.day-group.collapsed .day-fixtures { display: none; }
+.day-count {
+  margin-left: auto;
+  font-size: 9px;
+  color: var(--text2);
+  letter-spacing: 0.06em;
+}
 
 .fixture {
   background: var(--surface);
@@ -2550,8 +2570,16 @@ function renderAll() {
     </div>
     ${Object.keys(grouped).length ? renderFixtureListHead() : ''}
     ${Object.keys(grouped).length ? Object.entries(grouped).map(([day, fixtures]) => `
-      <div class="day-label">${day}</div>
-      ${fixtures.map((f, idx) => renderFixture(f, day + idx, f._leagueName)).join('')}
+      <div class="day-group">
+        <div class="day-label" onclick="toggleDay(this)">
+          <span class="day-chevron">▼</span>
+          <span>${day}</span>
+          <span class="day-count">${fixtures.length} ${fixtures.length === 1 ? 'fixture' : 'fixtures'}</span>
+        </div>
+        <div class="day-fixtures">
+          ${fixtures.map((f, idx) => renderFixture(f, day + idx, f._leagueName)).join('')}
+        </div>
+      </div>
     `).join('') : '<div class="no-fixtures">No upcoming fixtures — check back when the next gameweek is loaded.</div>'}
   `;
 }
@@ -2589,8 +2617,16 @@ function renderMain() {
     </div>
     ${Object.keys(grouped).length ? renderFixtureListHead() : ''}
     ${Object.keys(grouped).length ? Object.entries(grouped).map(([day, fixtures]) => `
-      <div class="day-label">${day}</div>
-      ${fixtures.map((f, idx) => renderFixture(f, day + idx)).join('')}
+      <div class="day-group">
+        <div class="day-label" onclick="toggleDay(this)">
+          <span class="day-chevron">▼</span>
+          <span>${day}</span>
+          <span class="day-count">${fixtures.length} ${fixtures.length === 1 ? 'fixture' : 'fixtures'}</span>
+        </div>
+        <div class="day-fixtures">
+          ${fixtures.map((f, idx) => renderFixture(f, day + idx)).join('')}
+        </div>
+      </div>
     `).join('') : '<div class="no-fixtures">No upcoming fixtures — check back when the next gameweek is loaded.</div>'}
   `;
 }
@@ -2744,6 +2780,10 @@ function togglePast() {
   showPast = !showPast;
   renderSidebar();
   renderMain();
+}
+
+function toggleDay(el) {
+  el.closest('.day-group').classList.toggle('collapsed');
 }
 
 renderSidebar();
