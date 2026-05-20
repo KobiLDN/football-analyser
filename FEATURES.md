@@ -12,6 +12,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Backlog
 
+- **Fix form-dot aliases** — Burnley, Wolverhampton, Leeds United show no dots because their Understat slugs are missing/wrong in `agent.py` `UNDERSTAT_ALIASES`. Fix the dict entries and re-run the agent (or `refresh_today`) on those three fixtures to populate `homeForm`/`awayForm`.
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.

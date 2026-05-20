@@ -6,6 +6,7 @@ All notable changes to this repository are documented here — **newest first**.
 
 | Date · time (BST) | AI Name | Changed |
 |---|---|---|
+| 2026-05-20 16:00 BST | Claude (Claude Code Mobile) | Investigated missing form dots: 16 upcoming fixtures lack homeForm/awayForm. Two root causes — (1) non-Understat clubs (Serie B/playoff/promoted teams e.g. AC Pisa, Cremonese, Como, Levante, Real Oviedo) have no coverage; blank dots are correct for these. (2) Three PL clubs (Burnley, Wolverhampton, Leeds United) should have Understat data but their slugs are missing/wrong in `agent.py` UNDERSTAT_ALIASES — **desktop action needed**: fix aliases and re-run agent on those fixtures. No code changed. |
 | 2026-05-20 15:30 BST | Claude (Claude Code Mobile) | Manually marked missing result: Bournemouth 1-1 Man City (Haaland added-time equaliser; auto-mark missed it as API hadn't finalised score when cron ran). Bumped to `v2.39` (`index.html`, `FEATURES.md`). |
 | 2026-05-20 06:45 BST | Claude (Claude Code Mobile) | Auto-correct fixture dates/times in verify workflow — script now patches `index.html` directly on date/time mismatch and commits the fix; only "not found" errors still require manual review (`scripts/verify-fixtures.js`, `.github/workflows/verify-fixtures.yml`). |
 | 2026-05-20 15:30 BST | Claude (Claude Code, Opus 4.7) | Collapsible day groups (v2.37): each date header is clickable, chevron rotates, fixture count shown on the right. Hides/reveals all fixtures under that date. Default expanded (`index.html`). |
