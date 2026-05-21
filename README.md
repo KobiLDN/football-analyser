@@ -22,21 +22,11 @@ Each fixture is annotated with:
 
 ## Updating each gameweek
 
-Fixtures are now fetched automatically via the API through the `.github/workflows/fetch-fixtures.yml` GitHub Action. Do not add fixtures manually.
-
-Once fixtures are fetched, you can run AI tools to add deep research:
-
-```
-Research the upcoming gameweek fixtures listed in index.html. For each fixture:
-- Search for team news, injuries, form
-- Check H2H and motivation context
-- Update the factors and teamNews objects
-- Commit and push
-```
+Fixtures are fetched automatically via the API through the `.github/workflows/fetch-fixtures.yml` GitHub Action — do not add fixtures manually. Deep research is then populated by `agent.py` (see [Local AI research pipeline](#local-ai-research-pipeline) below) or by `refresh_today.bat` for game-day updates.
 
 ## Fixture verification
 
-A GitHub Action (`.github/workflows/verify-fixtures.yml`) runs daily and on push, comparing the `LEAGUES` array against ground truth from [football-data.org](https://www.football-data.org/). It flags wrong dates, wrong matchups, and missing fixtures so they can be corrected before kick-off.
+A GitHub Action (`.github/workflows/verify-fixtures.yml`) runs daily and on push, comparing the `LEAGUES` array against ground truth from [football-data.org](https://www.football-data.org/). **It now auto-corrects** date/time mismatches by patching `index.html` directly and committing the fix — only genuinely missing fixtures (wrong matchups, no API result) still require manual review.
 
 Requires `FOOTBALL_DATA_API_KEY` to be set as a repo secret.
 
@@ -58,9 +48,13 @@ A third GitHub Action (`.github/workflows/fetch-fixtures.yml`) runs every Monday
 - **SearXNG** as a self-hosted meta-search for live news
 - **Understat** via the `understatapi` Python package for xG and form data
 
-Run `run_agent.bat` to research all `Pending deep research.` stubs in `index.html`. Run `reset_stubs.bat` first if you want to re-research already-populated fixtures.
+Three entry points:
 
-The pipeline is hardened against common LLM failure modes: a scored relevance filter prioritises articles mentioning *both* fixture teams (preventing wrong-opponent contamination), the prompt forbids inventing scorelines or guessing personnel, and a post-validation step retries any analysis that doesn't mention both teams.
+- **`run_agent.bat`** — researches every `Pending deep research.` stub in `index.html`. Use after a Monday fetch when there are a lot of new stubs.
+- **`reset_stubs.bat`** — resets all unplayed fixtures back to stubs (useful before a full re-research with an updated model or prompt).
+- **`refresh_today.bat [days]`** — targeted reset of fixtures kicking off within N days (default 1 = today), then auto-runs the agent. Use on matchday morning to incorporate the latest team news and injury updates without re-researching the entire week (~3–5 min vs ~15+ min full).
+
+The pipeline is hardened against common LLM failure modes: a scored relevance filter prioritises articles mentioning *both* fixture teams (preventing wrong-opponent contamination), the prompt forbids inventing scorelines or guessing personnel, and a post-validation step retries any analysis that doesn't mention both teams. Team-name aliases (in `agent.py` `UNDERSTAT_ALIASES`) handle long club names like *Brighton & Hove Albion* → *Brighton*.
 
 ## Model benchmarking
 
