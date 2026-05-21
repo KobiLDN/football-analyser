@@ -12,7 +12,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Backlog
 
-- **Fix form-dot aliases** — Burnley, Wolverhampton, Leeds United show no dots because their Understat slugs are missing/wrong in `agent.py` `UNDERSTAT_ALIASES`. Fix the dict entries and re-run the agent (or `refresh_today`) on those three fixtures to populate `homeForm`/`awayForm`.
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
@@ -23,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.40** — Fixed missing form dots for Burnley vs Wolverhampton and West Ham vs Leeds United. Added `'Burnley': 'Burnley'` to `UNDERSTAT_TEAM_MAP` (Burnley was the only club genuinely missing — Wolves and Leeds already resolved correctly, their fixtures just predated the alias fix). Patched both fixtures' form fields directly with live Understat data.
 - **v2.39** — Auto-marked 1 result (Bournemouth 1-1 Man City).
 - **v2.38** — Verify workflow now auto-corrects fixture date/time mismatches directly in `index.html` and commits the fix; only genuinely missing fixtures still require manual review.
 - **v2.37** — Collapsible day groups in the fixture list: click any date header to hide/show all fixtures for that day. Fixture count shown on the right, chevron rotates to indicate state. Useful for browsing past fixtures — minimise dates you've already reviewed. Bundled fixes: Past Fixtures toggle (which was silently breaking on a `ReferenceError` in the legacy-schema render branch) and the failing Auto-mark results workflow (three brittle regex anchors in `scripts/*.js`).

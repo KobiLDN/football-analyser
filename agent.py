@@ -24,6 +24,7 @@ UNDERSTAT_TEAM_MAP = {
     'Bournemouth': 'Bournemouth',
     'Brentford': 'Brentford',
     'Brighton': 'Brighton',
+    'Burnley': 'Burnley',
     'Chelsea': 'Chelsea',
     'Crystal Palace': 'Crystal_Palace',
     'Everton': 'Everton',
