@@ -346,7 +346,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.39 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.40 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
@@ -721,6 +721,7 @@ const LEAGUES = [
         day: 'Sunday 24 May',
         home: 'Burnley', away: 'Wolverhampton', time: '16:00',
         result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90–3.20',
+        homeForm: 'L L L D L',
         awayForm: 'L L D L D',
         factors: {
           formBalance:   { score: 50, detail: 'No Wolverhampton form data available in provided news' },
@@ -850,6 +851,7 @@ const LEAGUES = [
         home: 'West Ham', away: 'Leeds United', time: '16:00',
         result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Moderate', fairOdds: '2.20–2.40',
         homeForm: 'D W L L L',
+        awayForm: 'W D W D W',
         factors: {
           formBalance:   { score: 52, detail: 'West Ham\'s recent 1-0 loss to Arsenal and 3-1 defeat at Newcastle shows vulnerability, while Leeds are fighting relegation but have shown resilience.' },
           momentum:      { score: 55, detail: 'West Ham are under immense pressure to avoid relegation, giving them a slight psychological edge despite recent poor results.' },
