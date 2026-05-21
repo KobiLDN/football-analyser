@@ -12,6 +12,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Backlog
 
+- **Fix form-dot aliases** — Burnley, Wolverhampton, Leeds United show no dots because their Understat slugs are missing/wrong in `agent.py` `UNDERSTAT_ALIASES`. Fix the dict entries and re-run the agent (or `refresh_today`) on those three fixtures to populate `homeForm`/`awayForm`.
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
 - **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
@@ -22,6 +23,8 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.39** — Auto-marked 1 result (Bournemouth 1-1 Man City).
+- **v2.38** — Verify workflow now auto-corrects fixture date/time mismatches directly in `index.html` and commits the fix; only genuinely missing fixtures still require manual review.
 - **v2.37** — Collapsible day groups in the fixture list: click any date header to hide/show all fixtures for that day. Fixture count shown on the right, chevron rotates to indicate state. Useful for browsing past fixtures — minimise dates you've already reviewed. Bundled fixes: Past Fixtures toggle (which was silently breaking on a `ReferenceError` in the legacy-schema render branch) and the failing Auto-mark results workflow (three brittle regex anchors in `scripts/*.js`).
 - **v2.35** — Auto-marked 1 result (Chelsea 2-1 Tottenham).
 - **v2.36** — Game-day refresh (`refresh_today.py` + `refresh_today.bat`): targeted reset of fixtures playing within N days, then auto-runs the agent. Lets you incorporate the latest team news / probabilities on matchday in ~3–5 min instead of full week reset.
