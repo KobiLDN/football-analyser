@@ -22,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.41** — Auto-marked 1 result (Fiorentina 1-1 Atalanta).
 - **v2.40** — Fixed missing form dots for Burnley vs Wolverhampton and West Ham vs Leeds United. Added `'Burnley': 'Burnley'` to `UNDERSTAT_TEAM_MAP` (Burnley was the only club genuinely missing — Wolves and Leeds already resolved correctly, their fixtures just predated the alias fix). Patched both fixtures' form fields directly with live Understat data.
 - **v2.39** — Auto-marked 1 result (Bournemouth 1-1 Man City).
 - **v2.38** — Verify workflow now auto-corrects fixture date/time mismatches directly in `index.html` and commits the fix; only genuinely missing fixtures still require manual review.
