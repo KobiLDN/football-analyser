@@ -44,6 +44,28 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .toggle-pill { font-size: 9px; padding: 2px 7px; border-radius: 99px; border: 1px solid var(--border2); color: var(--text3); letter-spacing: 0.08em; }
 .toggle-pill.on { color: var(--gold); border-color: var(--gold-dim); background: rgba(200, 168, 75, 0.08); }
 
+/* Past-fixtures chip group (mutually-exclusive) */
+.past-row { flex-direction: column; align-items: flex-start; gap: 6px; cursor: default; }
+.past-row:hover { background: transparent; color: var(--text2); }
+.past-chips { display: flex; gap: 4px; flex-wrap: wrap; }
+.past-chip {
+  font-size: 9px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  text-transform: uppercase;
+  user-select: none;
+}
+.past-chip:hover { border-color: var(--gold-dim); }
+.past-chip.on {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+  background: rgba(200, 168, 75, 0.12);
+}
+
 .layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 49px); }
 .sidebar {
   background: var(--surface);
@@ -2413,7 +2435,15 @@ const LEAGUES = [
 // RENDER
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 let activeId = 'all';
-let showPast = false;
+// 'off' | '2d' | 'week' | 'all'  — chip group, mutually exclusive
+let pastWindow = 'off';
+
+function pastCutoffTs() {
+  if (pastWindow === 'off')  return todayTs;                       // no past at all
+  if (pastWindow === 'all')  return -Infinity;                     // every past fixture
+  const days = pastWindow === '2d' ? 2 : 7;
+  return todayTs - days * 24 * 60 * 60 * 1000;
+}
 
 function calcOutcome(f) {
   if (f.homeWin !== undefined) {
@@ -2505,9 +2535,16 @@ function renderSidebar() {
   }).join('') + `
     <div class="sidebar-section">
       <div class="sidebar-group-label">Display</div>
-      <div class="sidebar-item" onclick="togglePast()">
+      <div class="sidebar-item past-row">
         <span>Past fixtures</span>
-        <span class="toggle-pill ${showPast ? 'on' : ''}">${showPast ? 'ON' : 'OFF'}</span>
+        <div class="past-chips">
+          ${['off','2d','week','all'].map(w => `
+            <span class="past-chip ${pastWindow === w ? 'on' : ''}"
+                  onclick="event.stopPropagation(); setPastWindow('${w}')">
+              ${w === 'off' ? 'Off' : w === '2d' ? '2d' : w === 'week' ? 'Week' : 'All'}
+            </span>
+          `).join('')}
+        </div>
       </div>
     </div>`;
 }
@@ -2541,7 +2578,8 @@ function renderAll() {
   });
 
   // Filter to today and forward (or include past if toggled), then sort
-  const filtered = showPast ? allFixtures.slice() : allFixtures.filter(f => dayToTs(f.day) >= todayTs);
+  const cutoff = pastCutoffTs();
+  const filtered = allFixtures.filter(f => dayToTs(f.day) >= cutoff);
   filtered.sort((a, b) => {
     const dd = dayToTs(a.day) - dayToTs(b.day);
     if (dd !== 0) return dd;
@@ -2591,7 +2629,8 @@ function renderMain() {
   const league = LEAGUES.find(l => l.id === activeId);
   if (!league) return;
 
-  const filtered = showPast ? league.fixtures.slice() : league.fixtures.filter(f => dayToTs(f.day) >= todayTs);
+  const cutoff = pastCutoffTs();
+  const filtered = league.fixtures.filter(f => dayToTs(f.day) >= cutoff);
 
   const grouped = {};
   filtered.forEach(f => {
@@ -2778,8 +2817,9 @@ function setLeague(id) {
   renderMain();
 }
 
-function togglePast() {
-  showPast = !showPast;
+function setPastWindow(w) {
+  if (!['off','2d','week','all'].includes(w)) return;
+  pastWindow = w;
   renderSidebar();
   renderMain();
 }
