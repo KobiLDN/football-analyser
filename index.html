@@ -2437,8 +2437,10 @@ const LEAGUES = [
 let activeId = 'all';
 // 'off' | '2d' | 'week' | 'all'  — chip group, mutually exclusive
 let pastWindow = 'off';
-// 'all' | 'strong' | 'likely' | 'low'  — chip group, mutually exclusive
-let signalFilter = 'all';
+// Multi-select Set. 'all' is a sentinel meaning "no filter".
+// Mutually exclusive with the tier chips: clicking a tier removes 'all',
+// clicking 'all' clears the tiers. Empty set auto-resets to {'all'}.
+let signalFilter = new Set(['all']);
 
 function pastCutoffTs() {
   if (pastWindow === 'off')  return todayTs;                       // no past at all
@@ -2448,9 +2450,9 @@ function pastCutoffTs() {
 }
 
 function passesSignal(f) {
-  if (signalFilter === 'all') return true;
+  if (signalFilter.has('all')) return true;
   const conf = calcConfidence(f).toLowerCase();   // 'strong' | 'likely' | 'low'
-  return conf === signalFilter;
+  return signalFilter.has(conf);
 }
 
 function calcOutcome(f) {
@@ -2558,8 +2560,8 @@ function renderSidebar() {
         <span>Signal</span>
         <div class="past-chips">
           ${[['all','All'],['strong','Strong'],['likely','Likely'],['low','Low']].map(([k,label]) => `
-            <span class="past-chip ${signalFilter === k ? 'on' : ''}"
-                  onclick="event.stopPropagation(); setSignalFilter('${k}')">${label}</span>
+            <span class="past-chip ${signalFilter.has(k) ? 'on' : ''}"
+                  onclick="event.stopPropagation(); toggleSignalFilter('${k}')">${label}</span>
           `).join('')}
         </div>
       </div>
@@ -2841,9 +2843,19 @@ function setPastWindow(w) {
   renderMain();
 }
 
-function setSignalFilter(s) {
+function toggleSignalFilter(s) {
   if (!['all','strong','likely','low'].includes(s)) return;
-  signalFilter = s;
+  if (s === 'all') {
+    // 'All' is exclusive: clear everything else, just keep 'all'
+    signalFilter = new Set(['all']);
+  } else {
+    // Toggling a tier auto-removes 'all'
+    signalFilter.delete('all');
+    if (signalFilter.has(s)) signalFilter.delete(s);
+    else                     signalFilter.add(s);
+    // Empty selection falls back to 'all' so something is always shown
+    if (signalFilter.size === 0) signalFilter.add('all');
+  }
   renderSidebar();
   renderMain();
 }
