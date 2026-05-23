@@ -2437,12 +2437,20 @@ const LEAGUES = [
 let activeId = 'all';
 // 'off' | '2d' | 'week' | 'all'  — chip group, mutually exclusive
 let pastWindow = 'off';
+// 'all' | 'strong' | 'likely' | 'low'  — chip group, mutually exclusive
+let signalFilter = 'all';
 
 function pastCutoffTs() {
   if (pastWindow === 'off')  return todayTs;                       // no past at all
   if (pastWindow === 'all')  return -Infinity;                     // every past fixture
   const days = pastWindow === '2d' ? 2 : 7;
   return todayTs - days * 24 * 60 * 60 * 1000;
+}
+
+function passesSignal(f) {
+  if (signalFilter === 'all') return true;
+  const conf = calcConfidence(f).toLowerCase();   // 'strong' | 'likely' | 'low'
+  return conf === signalFilter;
 }
 
 function calcOutcome(f) {
@@ -2546,6 +2554,15 @@ function renderSidebar() {
           `).join('')}
         </div>
       </div>
+      <div class="sidebar-item past-row">
+        <span>Signal</span>
+        <div class="past-chips">
+          ${[['all','All'],['strong','Strong'],['likely','Likely'],['low','Low']].map(([k,label]) => `
+            <span class="past-chip ${signalFilter === k ? 'on' : ''}"
+                  onclick="event.stopPropagation(); setSignalFilter('${k}')">${label}</span>
+          `).join('')}
+        </div>
+      </div>
     </div>`;
 }
 
@@ -2579,7 +2596,7 @@ function renderAll() {
 
   // Filter to today and forward (or include past if toggled), then sort
   const cutoff = pastCutoffTs();
-  const filtered = allFixtures.filter(f => dayToTs(f.day) >= cutoff);
+  const filtered = allFixtures.filter(f => dayToTs(f.day) >= cutoff && passesSignal(f));
   filtered.sort((a, b) => {
     const dd = dayToTs(a.day) - dayToTs(b.day);
     if (dd !== 0) return dd;
@@ -2630,7 +2647,7 @@ function renderMain() {
   if (!league) return;
 
   const cutoff = pastCutoffTs();
-  const filtered = league.fixtures.filter(f => dayToTs(f.day) >= cutoff);
+  const filtered = league.fixtures.filter(f => dayToTs(f.day) >= cutoff && passesSignal(f));
 
   const grouped = {};
   filtered.forEach(f => {
@@ -2820,6 +2837,13 @@ function setLeague(id) {
 function setPastWindow(w) {
   if (!['off','2d','week','all'].includes(w)) return;
   pastWindow = w;
+  renderSidebar();
+  renderMain();
+}
+
+function setSignalFilter(s) {
+  if (!['all','strong','likely','low'].includes(s)) return;
+  signalFilter = s;
   renderSidebar();
   renderMain();
 }
