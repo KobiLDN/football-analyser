@@ -368,7 +368,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.42 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.43 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
@@ -1232,176 +1232,180 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Alavés', away: 'Rayo Vallecano', time: '21:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '2.60–2.90',
+        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–3.90',
         awayForm: 'D W D D W',
         factors: {
-          formBalance:   { score: 45, detail: 'Both teams show inconsistent form; Alavés has been winless in three home games while Rayo Vallecano are unbeaten in last three league home matches' },
-          momentum:      { score: 42, detail: 'Rayo Vallecano enter with better recent momentum having avoided defeat in four of previous five home games; Alavés struggling to produce consistent top-flight performances' },
-          headToHead:    { score: 50, detail: 'Last meeting saw Alavés win 1-0 in March; Rayo won 2-0 in corresponding match during 2023-24 season; evenly balanced history' },
-          goalTendency:  { score: 58, detail: 'Both teams have shown attacking intent with Alavés scoring regularly at home while Rayo\'s Vedat Muriqi has been a key goal threat for the visitors' },
-          leagueContext: { score: 48, detail: 'Mid-table clash in La Liga; both teams fighting to avoid relegation pressure with important points on the line' }
+          formBalance:   { score: 68, detail: 'Rayo Vallecano shows superior away form with one defeat in last nine matches and three-match unbeaway run; Alavés has one home defeat in six but remains unbeaten at Mendizorroza. Rayo\'s edge in consistency slightly outweighs Alavés\' home advantage.' },
+          momentum:      { score: 72, detail: 'Rayo Vallecano carries significant momentum with an eight-match away unbeaten run and nine-match scoring streak. Alavés also on form but Rayo\'s consistency across multiple metrics provides the slight edge.' },
+          headToHead:    { score: 58, detail: 'Historical H2H shows Rayo holding advantage overall (46 meetings), though Alavés won their last meeting. Recent tactical battles suggest competitive encounters with no clear dominance pattern emerging recently.' },
+          goalTendency:  { score: 75, detail: 'Both teams are on scoring streaks and have demonstrated attacking intent throughout the season. Rayo\'s Conference League run and Alavés\' ability to produce results against top sides suggests an open, potentially high-scoring affair.' },
+          leagueContext: { score: 64, detail: 'Late-season context (Match Day 38) with both teams having meaningful objectives: Rayo pursuing European qualification while Alavés seeks comfort in their campaign. This competitive stakes environment typically produces tight but exciting matches.' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'This fixture presents a closely contested mid-table battle between two sides navigating La Liga\'s competitive landscape. Alavés will look to leverage their home advantage at the Estadio Mendizorroza, while Rayo Vallecano aim to extend their unbeaten run on home soil. Both teams have shown attacking capabilities but also defensive vulnerabilities that could make this an open contest.',
-        summary: 'A tightly balanced match between two mid-table sides with Alavés holding a slight edge at home but facing a well-motivated Rayo Vallecano side. The outcome remains uncertain given both teams\' inconsistent form and the competitive nature of La Liga football.'
+        context: 'This fixture represents a compelling late-season clash between two teams with contrasting objectives and form profiles. Rayo Vallecano arrives as the higher-ranked side (8th vs 13th) carrying significant away momentum, while Alavés looks to leverage their home fortress at Mendizorroza where they\'ve been solid defensively. The tactical battle will likely feature Rayo\'s fluid attacking system against Alavés\' organized defensive structure that has kept them competitive in La Liga this season.',
+        summary: 'Rayo Vallecano enters as slight favorites based on superior away form, higher league position, and consistent scoring record. However, Alavés\' home advantage and recent unbeaten run at Mendizorroza make this a closely contested fixture where the home side could cause an upset.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Real Betis', away: 'Levante', time: '21:00',
-        result: null, homeWin: 52, draw: 27, awayWin: 21, verdict: 'Likely', fairOdds: '1.90–2.10',
+        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Strong', fairOdds: '2.40–2.70',
         homeForm: 'D W D W L',
         factors: {
-          formBalance:   { score: 58, detail: 'Betis unbeaten since March with three wins in last five; Levante won five of six home games but have been inconsistent away from home' },
-          momentum:      { score: 62, detail: 'Betis riding high after Champions League qualification and strong form; Levante fighting relegation with mixed results including a comeback win against Osasuna' },
-          headToHead:    { score: 50, detail: 'No specific H2H data available in provided news for this fixture; previous encounters mentioned involve different opponents' },
-          goalTendency:  { score: 68, detail: 'Betis averaging strong home scoring (54 goals at home all season); Levante have shown attacking resilience but defensive vulnerabilities against top teams' },
-          leagueContext: { score: 72, detail: 'Betis playing as 5th-placed side with nothing to lose; Levante desperate for points in relegation battle adds urgency but also pressure' }
+          formBalance:   { score: 68, detail: 'Betis have been more consistent at home with a decade-long unbeaten run since December, while Levante show mixed away form with only one win in last eight games' },
+          momentum:      { score: 55, detail: 'Both teams have shown recent positive momentum - Betis ended Barcelona\'s dominance at home, Levante have three consecutive wins and unbeaten runs. Balance is relatively even.' },
+          headToHead:    { score: 72, detail: 'Betis hold significant historical advantage: won 28 of 53 meetings versus Levante\'s 15 wins. More recently, Betis have won five of six home games against Levante including the last three' },
+          goalTendency:  { score: 60, detail: 'Both teams have been scoring consistently - Betis nine consecutive home games with goals, Levante four consecutive away games finding the net. Expect a competitive match.' },
+          leagueContext: { score: 75, detail: 'High stakes for both: Betis fighting for European qualification while Levante face genuine relegation threat. This typically elevates performance and intensity' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'Real Betis enter this match as the clear favourites, having secured fifth place and Champions League qualification with strong home form under Flick. Levante, sitting just outside the relegation zone in 19th position, will need a result to keep their survival hopes alive but face a difficult away test against a team that has been consistent at home all season.',
-        summary: 'Betis are slight favourites at home having secured fifth place and shown strong form since March. Levante must fight for every point in the relegation battle but have demonstrated resilience with recent comeback victories.'
+        context: 'Real Betis host Levante at La Cartuja in a crucial final-day fixture where both sides have contrasting objectives - Betis seeking to cement their European qualification while Levante desperately need points to avoid relegation. The Chilean manager Manuel Pellegrini has overseen six consecutive top-seven finishes, and Betis have won five of their previous six home games against Levante including the last three encounters. Despite Betis\' recent seven-game unbeaten run ending with a 3-1 Barcelona defeat, they remain strong at La Cartuja having gone ten home league games without defeat since that match. Levante under Luis Castro have shown improvement since January but face an uphill battle away from Mestalla against a team fighting for European football.',
+        summary: 'Real Betis enter as clear favorites at home with superior league position, historical dominance over Levante, and strong home form. However, the high-stakes nature of this final-day fixture means Levante will be highly motivated in their relegation battle. Expect a competitive match where Betis\' home advantage should prevail but Levante\'s desperation could make this closer than the odds suggest.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Celta', away: 'Sevilla FC', time: '21:00',
-        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Low', fairOdds: '2.10–2.35',
+        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Moderate', fairOdds: '2.10–2.35',
         factors: {
-          formBalance:   { score: 52, detail: 'Celta struggling with poor form (lost last 5 games in all competitions), while Sevilla\'s current form is unknown from provided news' },
-          momentum:      { score: 48, detail: 'No clear momentum advantage identifiable; Celta on losing streak but no Sevilla data available' },
-          headToHead:    { score: 50, detail: 'No head-to-head information available in provided news sources' },
-          goalTendency:  { score: 62, detail: 'Both teams have shown attacking intent this season; La Liga fixtures typically produce goals' },
-          leagueContext: { score: 48, detail: 'Mid-table clash with limited stakes for European qualification; neither team fighting relegation or title race' }
+          formBalance:   { score: 45, detail: 'Celta sit 6th with 51 points while Sevilla are around 13th-14th with 43 points. However, Celta\'s home record is inconsistent (second-worst in division), which balances their league position advantage.' },
+          momentum:      { score: 40, detail: 'Celta have been inconsistent recently despite taking an early lead in their last match. Sevilla are coming off games without a win and lack motivation as they\'ve already secured safety.' },
+          headToHead:    { score: 50, detail: 'Historical data shows Celta have more wins (48) compared to Sevilla\'s 48 in Spanish League history. No specific recent H2H mentioned for this fixture.' },
+          goalTendency:  { score: 60, detail: 'Both teams show goal-scoring tendencies with Celta averaging 1.30 goals conceded per 90 and Sevilla having conceded in six consecutive games. Expect a moderately open match.' },
+          leagueContext: { score: 55, detail: 'Celta need three points to guarantee Europa League spot while Sevilla have safety secured with little left to play for beyond pride. This creates a slight home advantage factor for Celta.' }
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Iago Aspas — ruled out after aggravating ankle injury during Arsenal match' },
-            { tag: 'out', text: 'Javi Galán — out for remainder of season with high-grade ankle sprain' },
-            { tag: 'out', text: 'Nicolás González — sidelined with persistent thigh issues' },
-            { tag: 'doubt', text: 'Other forwards — considered major doubts due to fitness concerns' }
+            { tag: 'key', text: 'Williot Swedberg — scored early in last match, likely available' },
+            { tag: 'doubt', text: 'No specific injuries mentioned for Celta squad' }
           ],
-          away: []
+          away: [
+            { tag: 'key', text: 'Odysseas Vlachodimos — expected starting goalkeeper' },
+            { tag: 'out', text: 'No specific injury concerns explicitly stated for Sevilla' }
+          ]
         },
-        context: 'This La Liga fixture presents an interesting tactical challenge for both managers. Celta Vigo, despite their recent poor form and significant injury crisis in attack, will rely on home advantage at Balaídos. The absence of key players like Aspas and Galán severely limits their attacking options, forcing manager Claudio Giráldez to reshape his lineup around available squad members. Sevilla FC enters the match without specific information from the provided news, making this a challenging prediction scenario. Both teams operate in La Liga\'s competitive mid-table zone where consistency matters more than dramatic form swings.',
-        summary: 'Celta Vigo faces significant injury challenges with multiple key attackers ruled out, while Sevilla FC has no identifiable news in the provided sources. The match is essentially a tactical battle between two mid-table sides with limited European stakes and minimal pressure on either side.'
+        context: 'Celta Vigo enter this final La Liga match with a strong motivation to secure their Europa League qualification, having accumulated 51 points and sitting sixth in the table. Their home record at Estadio de Balaídos has been surprisingly inconsistent throughout the season, which could be exploited by Sevilla despite their lower league position. Sevilla FC arrive with safety already secured but lacking competitive urgency, as they\'ve already guaranteed their place in European football for next season.',
+        summary: 'Celta Vigo are slight favorites due to home advantage and higher league standing, though their inconsistent home form tempers expectations. Sevilla lack motivation having secured safety, while both teams show goal-scoring tendencies that could lead to an open match.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Espanyol', away: 'Real Sociedad', time: '21:00',
-        result: null, homeWin: 35, draw: 25, awayWin: 40, verdict: 'Low', fairOdds: '2.85–3.10',
+        result: null, homeWin: 38, draw: 29, awayWin: 33, verdict: 'Moderate', fairOdds: '2.60–2.75',
         awayForm: 'D L D D L',
         factors: {
-          formBalance:   { score: 60, detail: 'Real Sociedad on five-match winless run; Espanyol safe but form unclear from news' },
-          momentum:      { score: 55, detail: 'Espanyol playing at home with safety secured; Real Sociedad seeking to end poor away form' },
-          headToHead:    { score: 50, detail: 'No specific H2H data available for this fixture in news provided' },
-          goalTendency:  { score: 65, detail: 'Both teams have shown attacking intent; Real Sociedad concedes frequently at home' },
-          leagueContext: { score: 70, detail: 'Penultimate round with both sides safe - reduced pressure but competitive atmosphere expected' }
+          formBalance:   { score: 48, detail: 'Espanyol on back-to-back wins while Real Sociedad winless in seven games overall' },
+          momentum:      { score: 52, detail: 'Espanyol showing positive momentum at home; Real Sociedad struggling away with no win in seven matches' },
+          headToHead:    { score: 50, detail: 'No significant H2H data provided in news articles for this season' },
+          goalTendency:  { score: 62, detail: 'Espanyol concedes at home (1.46 G/90); Real Sociedad leak goals away; both teams likely to score' },
+          leagueContext: { score: 58, detail: 'Mid-table clash with Espanyol fighting for European spots and Real Sociedad in safe mid-table position' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'Espanyol hosts Real Sociedad in a La Liga fixture where both teams have secured their positions. Real Sociedad arrives on the back of a frustrating five-match winless streak across all competitions, having conceded multiple goals at home while maintaining decent away credentials (8 wins, 5 draws, 5 losses). Espanyol plays with reduced pressure as they are mathematically safe from relegation. The match lacks clear tactical advantages for either side based on available information.',
-        summary: 'Espanyol hosts Real Sociedad in a competitive La Liga fixture where both teams have secured their positions. Real Sociedad arrives seeking to end a five-match winless run, while Espanyol plays with reduced pressure as they are safe from relegation.'
+        context: 'Espanyol enters as slight home favourites given their back-to-back victories and stronger home record (7W-4D-7L at RCDE Stadium). Real Sociedad arrives winless in seven matches overall, having lost two of their last five outings. Both teams have identical points totals (45) but Espanyol\'s positive momentum combined with their reliable home form gives them a narrow edge. The match is expected to be competitive with both sides capable of scoring given their defensive vulnerabilities.',
+        summary: 'Espanyol slight favourites at home against winless Real Sociedad in a mid-table La Liga clash. Both teams have similar points totals but Espanyol\'s recent momentum and home advantage tips the balance slightly their way.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Getafe', away: 'Osasuna', time: '21:00',
-        result: null, homeWin: 42, draw: 28, awayWin: 30, verdict: 'Low', fairOdds: '2.35–2.65',
+        result: null, homeWin: 38, draw: 27, awayWin: 35, verdict: 'Low', fairOdds: '2.60–2.90',
         homeForm: 'L L D W L',
         awayForm: 'W L L L L',
         factors: {
-          formBalance:   { score: 52, detail: 'Getafe has been more consistent at home while Osasuna struggles away from El Sadar with just two wins in 17 league fixtures on the road' },
-          momentum:      { score: 48, detail: 'Osasuna won their last match against Athletic Bilbao but have lost three consecutive matches; Getafe\'s recent form is less clear from available news' },
-          headToHead:    { score: 50, detail: 'No specific head-to-head data for this fixture in the provided news; Osasuna beat Levante 2-0 earlier in season which is irrelevant to this match' },
-          goalTendency:  { score: 45, detail: 'Both teams have been involved in matches with goals conceded; Getafe\'s home defense has been solid while Osasuna concedes regularly away from home' },
-          leagueContext: { score: 60, detail: 'Match carries relegation implications as both teams are fighting for survival at the bottom of La Liga' }
+          formBalance:   { score: 48, detail: 'Getafe have poor home form (fourth-worst at Coliseum), while Osasuna lost four of last five matches including defeats to Atletico Madrid and Barcelona' },
+          momentum:      { score: 52, detail: 'Osasuna\'s recent run is concerning with multiple losses, but Getafe also struggled on home soil this season despite a Mallorca win earlier in the month' },
+          headToHead:    { score: 60, detail: 'Getafe holds superior head-to-head record over Celta Vigo for European qualification purposes, though direct H2H between these sides not specified in news' },
+          goalTendency:  { score: 55, detail: 'Both teams under pressure - Getafe fighting for Europa League spot while Osasuna battling relegation. High stakes may lead to cautious approach but potential for goals given league context' },
+          leagueContext: { score: 62, detail: 'Final gameweek of 2025-26 season with both teams having significant objectives - Getafe seeking European qualification and Osasuna avoiding relegation. This adds tactical importance but also pressure that could disrupt normal play' }
         },
         teamNews: {
           home: [],
-          away: []
+          away: [
+            { tag: 'out', text: 'Victor Munoz — injury' },
+            { tag: 'out', text: 'Iker Munoz — injury' }
+          ]
         },
-        context: 'Getafe will look to leverage their typically strong home record against Osasuna who have struggled significantly away from El Sadar this season. Both sides are in relegation battles, adding pressure to what could be a tight contest between two teams fighting for survival at the bottom of La Liga.',
-        summary: 'Based on limited news coverage about different fixtures involving these teams, Getafe appears slightly favored due to their home advantage against an Osasuna side that has struggled away from home. However, with no specific injury or lineup information for this particular match available in the provided news, confidence remains low.'
+        context: 'This La Liga fixture presents a tactical battle between two teams with contrasting objectives in the final matchday. Getafe, sitting seventh and managing to secure European qualification through their superior head-to-head record over Celta Vigo, faces Osasuna who are entrenched in a relegation battle at 16th place. The home side has struggled on their own pitch this season despite finishing well above the relegation zone, while Osasuna arrives having lost four of their last five matches including defeats to Atletico Madrid and Barcelona. Both managers will need to balance attacking intent with defensive caution given the high stakes for both clubs in what could be a tight, tactical affair.',
+        summary: 'Getafe host Osasuna at the Coliseum Alfonso Pérez in a final gameweek La Liga clash where Getafe aim to secure European qualification while Osasuna fight against relegation. The home side has struggled on their own pitch this season despite finishing seventh, while Osasuna arrive having lost four of their last five matches. Both teams carry significant pressure with key players unavailable through injury for the visitors.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Mallorca', away: 'Real Oviedo', time: '21:00',
-        result: null, homeWin: 38, draw: 29, awayWin: 33, verdict: 'Low', fairOdds: '2.60–2.85',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10–2.30',
         homeForm: 'L W D L L',
         factors: {
-          formBalance:   { score: 45, detail: 'Mallorca are in relegation trouble needing points at home; Real Oviedo\'s form not explicitly detailed but likely mid-table given they\'re not mentioned as desperate. Both teams have survival stakes.' },
-          momentum:      { score: 42, detail: 'Mallorca coming off away unbeaten run (no defeat in last six games); Real Oviedo\'s momentum unclear from provided sources. Home advantage at Son Moix provides slight edge to Mallorca.' },
-          headToHead:    { score: 50, detail: 'No specific head-to-head history between these two teams mentioned in the news articles. Neutral assumption applied as no data available for this specific pairing.' },
-          goalTendency:  { score: 48, detail: 'Mallorca have scored in nine consecutive games suggesting attacking intent; relegation battles often produce goals but also cautious play. Expect moderate goal expectation.' },
-          leagueContext: { score: 52, detail: 'Final matchday with five teams fighting relegation creates high stakes. Mallorca desperately needs victory to survive, while Real Oviedo likely has no pressure - this imbalance could affect home performance.' }
+          formBalance:   { score: 48, detail: 'Both teams in poor form - Mallorca with negative goal difference (-13), Real Oviedo already relegated but likely to play cautiously' },
+          momentum:      { score: 52, detail: 'Mallorca has home advantage and desperate motivation; Real Oviedo has nothing to lose psychologically but no incentive to attack' },
+          headToHead:    { score: 45, detail: 'No specific H2H data provided in news for this fixture; general La Liga context suggests competitive matches at this level' },
+          goalTendency:  { score: 60, detail: 'High probability of goals - Mallorca needs attacking output, Real Oviedo may defend conservatively but could concede under pressure' },
+          leagueContext: { score: 58, detail: 'Mallorca\'s final home game with survival stakes creates urgency; Real Oviedo already relegated adds psychological factor for visitors' }
         },
         teamNews: {
           home: [
-            { tag: 'doubt', text: 'Jan Salas — knee injury reported in recent team news' },
-            { tag: 'out', text: 'Muriqi — suspended per available information' }
+            { tag: 'key', text: 'Leo Roman — goalkeeper on Spain World Cup longlist, experienced presence in goal' },
+            { tag: 'doubt', text: 'Martin Demichelis — brought in to arrest defensive slide but team still dropping points' }
           ],
           away: []
         },
-        context: 'This La Liga final matchday fixture sees relegation-threatened Mallorca host Real Oviedo at Son Moix in a crucial survival battle. Mallorca must secure victory to maintain any hope of avoiding the drop, as they currently sit near the relegation zone with five teams still fighting for safety. The home side will need to overcome potential injury concerns including Jan Salas\' knee issue and Muriqi\'s suspension, while Real Oviedo arrives without apparent pressure but facing a desperate host team.',
-        summary: 'Mallorca face must-win conditions at home against relegation rivals Real Oviedo in La Liga\'s final matchday. The home side carries significant survival stakes with limited margin for error, though injury concerns and the need to perform under extreme pressure could level the playing field.'
+        context: 'Mallorca faces their final home fixture of the season with everything on the line for survival, while Real Oviedo arrives already relegated and without competitive incentive. The psychological dynamic heavily favors Mallorca who must attack to stay alive, whereas Real Oviedo may adopt a cautious approach knowing they have nothing to gain by losing. Home advantage combined with desperation creates a moderate edge for the hosts despite both teams\' poor overall form.',
+        summary: 'Mallorca needs a win in their final home game to keep survival hopes alive against already-relegated Real Oviedo who play without motivation. Mallorca\'s desperate need for points at Son Moix gives them a psychological advantage, though Real Oviedo\'s lack of incentive could make them defensively cautious. Expect a competitive match with goals likely given the high stakes for the hosts.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Real Madrid', away: 'Athletic', time: '21:00',
-        result: null, homeWin: 65, draw: 20, awayWin: 15, verdict: 'Strong', fairOdds: '1.45–1.55',
+        result: null, homeWin: 58, draw: 24, awayWin: 18, verdict: 'Moderate', fairOdds: '1.70–1.85',
         homeForm: 'D W L W W',
         factors: {
-          formBalance:   { score: 75, detail: 'Real Madrid have shown genuine quality with second-best attack and defense in La Liga (70 goals scored, 33 conceded), though inconsistent title challenge; Athletic Bilbao form unknown from provided news' },
-          momentum:      { score: 60, detail: 'Real Madrid coming off disappointing season without silverware but possess squad depth; no specific momentum data for Athletic available' },
-          headToHead:    { score: 50, detail: 'No head-to-head information provided in the news articles for this fixture' },
-          goalTendency:  { score: 70, detail: 'Real Madrid\'s strong attack (2nd best scoring record) suggests goal potential; Athletic typically defensive but home advantage may factor in' },
-          leagueContext: { score: 65, detail: 'La Liga mid-season context with Real Madrid seeking consistency after title hopes extinguished by Barcelona; Athletic likely fighting for European qualification' }
+          formBalance:   { score: 62, detail: 'Real Madrid secured second place but described as having a \'woeful campaign\' with dressing room issues; Athletic achieved their goals and finished strong' },
+          momentum:      { score: 45, detail: 'Both teams in final match of season with little to lose; Real Madrid has home advantage at Bernabéu' },
+          headToHead:    { score: 50, detail: 'No specific head-to-head data provided in news coverage for this fixture' },
+          goalTendency:  { score: 68, detail: 'Final matchday often sees more attacking play; Real Madrid\'s attack with Vinicius (22 goals) and Valverde returning suggests offensive intent' },
+          leagueContext: { score: 55, detail: 'La Liga final day with title already decided; home advantage at Bernabéu in hostile environment is significant factor' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'No specific injury news available from provided articles for this fixture' },
-            { tag: 'out', text: 'Note: News mentions Alvaro Arbeloa as manager but this appears to be an error in source text' }
+            { tag: 'doubt', text: 'Vinicius Jr — injury uncertainty despite 22 goals this season' },
+            { tag: 'out', text: 'Dani Carvajal and David Alaba — final games with club, confirmed departures' }
           ],
           away: []
         },
-        context: 'Real Madrid enters with their characteristic attacking prowess and squad depth, having established themselves as one of La Liga\'s elite sides despite a trophyless season. Athletic Bilbao traditionally plays a disciplined defensive style at home, but without specific form data from the provided news articles, Real Madrid\'s superior resources and second-best league record suggest they should prevail. The fixture lacks clear injury concerns for either side based on available information.',
-        summary: 'Real Madrid vs Athletic Bilbao presents an interesting tactical matchup between La Liga\'s attacking powerhouse and Athletic\'s disciplined defensive approach. While specific form data for Athletic is limited in the provided news, Real Madrid\'s consistent quality and strong league record point toward a home victory. The absence of confirmed injury concerns allows Los Blancos to field their strongest available lineup.'
+        context: 'Real Madrid host Athletic in a farewell match at the Bernabéu where Los Blancos bid goodbye to Dani Carvajal and David Alaba. The fixture carries emotional weight as manager Álvaro Arbeloa also takes his final match on the touchline. Real Madrid\'s attack features Vinicius Jr (22 goals) whose availability remains uncertain, while Federico Valverde returns from concussion protocol though may not start. Athletic will face a hostile Bernabéu environment in their final league fixture of the season.',
+        summary: 'Real Madrid welcome Athletic to the Bernabéu in La Liga\'s final matchday where Los Blancos bid farewell to departing players Carvajal and Alaba while manager Arbeloa takes his last game on the touchline. Vinicius Jr\'s injury uncertainty and Valverde\'s potential bench role are key variables for Real Madrid\'s attack, though home advantage at Bernabéu in a final match context should provide meaningful edge.'
       },
 
       {
         day: 'Saturday 23 May',
         home: 'Valencia', away: 'Barça', time: '21:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '2.80–3.10',
+        result: null, homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '3.80–4.20',
         homeForm: 'W L W D W',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available for either team in the provided news. Cannot assess relative momentum or consistency.' },
-          momentum:      { score: 48, detail: 'Valencia appears slightly favored due to Lamine Yamal\'s season-ending injury removing a key Barça attacker. However, this is speculative without confirmed team sheets.' },
-          headToHead:    { score: 50, detail: 'No head-to-head statistics provided in the news for Valencia vs Barça specifically.' },
-          goalTendency:  { score: 62, detail: 'Both teams typically play attacking football. Valencia\'s home advantage at Mestalla combined with Barça\'s need to score without Yamal suggests potential for goals.' },
-          leagueContext: { score: 50, detail: 'La Liga mid-season fixture with no clear relegation or title implications mentioned in the provided news.' }
+          formBalance:   { score: 75, detail: 'Barcelona finished as league champions with a perfect home record (19 wins). Valencia\'s form is unclear but they have nothing to play for in La Liga.' },
+          momentum:      { score: 80, detail: 'Barça went 12 matches unbeaten against Valencia this season. Recent H2H includes a 6-0 win at Johan Cruyff and a 2-1 victory at Mestalla last season.' },
+          headToHead:    { score: 85, detail: 'Barcelona dominated historically in this fixture with 12 consecutive matches unbeaten. Recent results show heavy victories including a 6-0 win and multiple clean sheets.' },
+          goalTendency:  { score: 70, detail: 'Barça conceded only 21 goals in 30 league games (0.7 per game). However, home advantage for Valencia could lead to a more open match than usual.' },
+          leagueContext: { score: 65, detail: 'Both teams have secured their season objectives with nothing left to play for in La Liga. This may reduce defensive intensity but Barcelona\'s attacking quality remains elite.' }
         },
         teamNews: {
-          home: [
-            { tag: 'key', text: 'No major injuries confirmed for Valencia specifically in this fixture' }
-          ],
+          home: [],
           away: [
-            { tag: 'out', text: 'Lamine Yamal — season-ending injury (confirmed in news)' }
+            { tag: 'key', text: 'Lewandowski — final appearance as a blaugrana before leaving the club in June' },
+            { tag: 'out', text: 'Player with hamstring injury — ruled out for rest of domestic season' },
+            { tag: 'out', text: 'Player with fractured foot — unavailable after surgery, will miss World Cup' }
           ]
         },
-        context: 'This Valencia vs Barça match presents an interesting tactical scenario with Lamine Yamal\'s season-ending injury being the primary known variable. Without confirmed team sheets or recent form data, both teams remain evenly matched on paper. Valencia will look to exploit home advantage at Mestalla while Barça must adapt their attacking strategy without their young winger. The absence of clear form indicators means this remains a closely contested fixture with minimal predictive certainty.',
-        summary: 'Valencia hosts an injured-Barça in a La Liga clash where Lamine Yamal\'s season-ending injury is the only confirmed team news. With no reliable form data available and both teams typically playing attacking football, this match rates as evenly balanced with slight home advantage for Valencia.'
+        context: 'Barça enter this final league match as defending champions with a perfect home record and overwhelming historical dominance in the fixture. Valencia faces their last game of the season at Mestalla against a team that has conceded just 21 goals all campaign but will be without key attackers including Lewandowski in his farewell appearance. The 12-match unbeaten run against Valencia under Flick, combined with Barcelona\'s elite attacking quality and home advantage, strongly favors an away win despite both sides having no league objectives remaining.',
+        summary: 'Barcelona are heavily favored to win their final league match at Mestalla given their perfect home record, historical dominance in the fixture (12 matches unbeaten), and superior finishing credentials. Valencia\'s lack of motivation with nothing left to play for contrasts with Barça\'s attacking prowess despite Lewandowski\'s absence in his farewell game.'
       },
 
       {
@@ -1717,28 +1721,21 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Milan', away: 'Cagliari', time: '20:45',
-        result: null, homeWin: 75, draw: 14, awayWin: 11, verdict: 'Strong', fairOdds: '1.30–1.45',
+        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Strong', fairOdds: '1.60–1.75',
         awayForm: 'L W D L W',
         factors: {
-          formBalance:   { score: 78, detail: 'Inter Milan sits at the top with 75 points while Cagliari struggles in 16th position with 33 points. The Nerazzurri have maintained their nine-point cushion at the summit.' },
-          momentum:      { score: 72, detail: 'Inter Milan is in red-hot form chasing a historic Scudetto win before age 50 for manager Chivu. Cagliari has shown mild improvement over past weeks but remains in relegation danger despite collecting 10 points from last five games.' },
-          headToHead:    { score: 65, detail: 'Cagliari striker Sebastiano Esposito faces former club Inter Milan at San Siro. Cagliari has struggled historically against top-tier opposition away from home.' },
-          goalTendency:  { score: 70, detail: 'Inter Milan looking to continue goalscoring form in April. Cagliari had best chances recently but conceded two goals to Udinese. Expect a competitive match with potential for goals.' },
-          leagueContext: { score: 82, detail: 'Inter Milan needs three points to all-but guarantee a 21st Scudetto heading into Coppa Italia semi-final. Cagliari fighting tooth and nail to stave off relegation with just six games remaining.' }
+          formBalance:   { score: 68, detail: 'Milan ended a three-game winless streak with a home victory, while Cagliari has been struggling in bottom-half form throughout the season' },
+          momentum:      { score: 72, detail: 'Milan\'s recent win shows positive momentum heading into this crucial final-day match, whereas Cagliari faces their relegation battle with minimal motivation' },
+          headToHead:    { score: 50, detail: 'No significant head-to-head advantage mentioned in the available news for this specific fixture' },
+          goalTendency:  { score: 65, detail: 'Milan\'s attacking form after ending their winless streak suggests goal-scoring capability, while Cagliari may be vulnerable defensively given their league position' },
+          leagueContext: { score: 78, detail: 'High stakes for Milan as they seek Champions League qualification on the final day; Cagliari has nothing to lose but also little incentive to push forward' }
         },
         teamNews: {
-          home: [
-            { tag: 'out', text: 'Captain sidelined with thigh strain' },
-            { tag: 'doubt', text: 'Lautaro Martinez — injury concerns' },
-            { tag: 'key', text: 'Yann Bisseck could return from injury' }
-          ],
-          away: [
-            { tag: 'out', text: 'Three first-team stars unavailable for Friday clash at San Siro' },
-            { tag: 'doubt', text: 'Leonardo Pavoletti — knee trouble, likely to start on bench if cleared' }
-          ]
+          home: [],
+          away: []
         },
-        context: 'Inter Milan enters as dominant favourites seeking to maintain their nine-point cushion at the Serie A summit while Cagliari fights for survival in 16th position. The Nerazzurri have been hampered by injury concerns including captain absence and Lautaro Martinez\'s fitness issues, but remain heavily favoured against a side struggling despite recent improvement. Manager Cristian Chivu aims to guide Inter toward a historic Scudetto before age 50 while Cagliari relies on compact defensive organisation at San Siro.',
-        summary: 'Inter Milan are strong favourites to secure three points in their title race chase as they host relegation-battling Cagliari at San Siro. The Nerazzurri sit comfortably atop the table with nine-point cushion while Cagliari struggles near the relegation zone despite collecting 10 points from last five games.'
+        context: 'Milan enters this fixture with significant motivation to secure a top-four finish and Champions League qualification, having just ended their winless streak at San Siro. Cagliari faces the Rossoneri as bottom-half opposition with minimal pressure on the result beyond pride. The home advantage at San Siro combined with Milan\'s improved form and high stakes creates a scenario where they are clear favorites to secure three points.',
+        summary: 'Milan enters this final-day clash as strong favorites against struggling Cagliari, looking to seal Champions League qualification after ending their winless streak. The home side has significant motivation while the Sardinians face a difficult away test with little incentive beyond pride.'
       },
 
       {
@@ -1804,22 +1801,22 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Verona', away: 'Roma', time: '20:45',
-        result: null, homeWin: 32, draw: 28, awayWin: 40, verdict: 'Likely', fairOdds: '3.10–3.50',
+        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–4.10',
         homeForm: 'L D D L D',
         awayForm: 'D W W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available in provided news; both teams\' current momentum unknown without match history' },
-          momentum:      { score: 45, detail: 'Verona has home advantage at Bentegodi but Roma\'s Champions League qualification push adds urgency to their performance' },
-          headToHead:    { score: 50, detail: 'No head-to-head statistics provided in news; historical record unavailable for this analysis' },
-          goalTendency:  { score: 60, detail: 'High-stakes final match with both teams having strong attacking intent; Bowie explicitly mentioned wanting to score another goal' },
-          leagueContext: { score: 75, detail: 'Champions League qualification decider at Verona\'s home ground creates maximum intensity and unpredictability for a Serie A finale' }
+          formBalance:   { score: 62, detail: 'Roma has won three straight league games under Gasperini with 11 goals scored in recent matches. Verona\'s form is less clear from the provided news, though they are playing their final match.' },
+          momentum:      { score: 58, detail: 'Roma carries significant momentum as Champions League qualification hangs on this result. Verona has nothing to play for in their final Serie A appearance.' },
+          headToHead:    { score: 45, detail: 'No specific head-to-head record provided in the news articles for this season. Roma\'s historical struggles against Italy\'s top clubs are mentioned generally but no specific data available.' },
+          goalTendency:  { score: 68, detail: 'High goal expectation - Roma needs a victory to secure qualification, Verona playing their final match with nothing at stake. Both teams likely to attack freely.' },
+          leagueContext: { score: 72, detail: 'Critical Serie A final day scenario where Roma must win to guarantee Champions League qualification. This adds significant motivation and urgency to the away side\'s performance.' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'This Champions League qualification decider presents a unique tactical scenario where Roma must secure victory at Verona\'s Bentegodi stadium to guarantee fourth place. Verona, playing with nothing to lose and potentially seeking a memorable home finale under Paolo Sammarco, faces a team that cannot afford defeat. The absence of injury concerns or confirmed lineup changes means both managers can field their strongest available sides in what promises to be an intense, high-stakes encounter.',
-        summary: 'Verona hosts Roma in Serie A\'s final match with Champions League qualification on the line for the away side. With no confirmed injuries or team news affecting either squad, this home-and-away decider presents balanced odds despite Verona\'s home advantage and Roma\'s desperate need to win.'
+        context: 'Roma enters this fixture under pressure, needing a victory to secure their first Champions League qualification since finishing fourth eight years ago. Manager Gian Piero Gasperini has guided his side to three consecutive league wins with an attacking style that has netted 11 goals in recent matches. Verona plays their final Serie A match at home with nothing to play for after being eliminated from European competition earlier in the season. The Bentegodi Stadium will host a high-stakes encounter where Roma\'s motivation contrasts sharply with Verona\'s lack of pressure, creating an interesting tactical dynamic.',
+        summary: 'Roma faces Verona on Serie A\'s final day needing victory to secure Champions League qualification while Gasperini\'s side has enjoyed three straight wins. Verona plays their last home match with no European ambitions remaining. The fixture carries significant stakes for Roma as they look to avoid a late-season collapse that could see them miss out on Europe despite their strong recent form.'
       },
 
       {

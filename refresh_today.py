@@ -121,14 +121,16 @@ def main():
     args = ap.parse_args()
 
     print(f"Game-day refresh: today + {args.days - 1} day(s) ahead\n")
-    n = reset_window(args.days)
-    if n == 0 and not args.no_research:
-        return
+    reset_window(args.days)
+
     if args.no_research:
         print("Skipping agent run (--no-research). Run run_agent.bat to research.")
         return
 
-    print("\nRunning agent on the reset stubs...")
+    # Always run the agent — it picks up every 'Pending deep research.'
+    # stub, including ones already in stub state from a previous run that
+    # didn't complete the research step.
+    print("\nRunning agent on any stubs (newly reset + pre-existing)...")
     agent_run()
 
 

@@ -21,6 +21,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.43** — Re-researched all 10 Saturday 23 May fixtures with fresh xG/form/news via the now-fixed `refresh_today.bat`.
 - **v2.42** — Sidebar Display filters: **Past fixtures** chip group (Off / 2d / Week / All — mutually exclusive) replacing the old binary toggle; **Signal** chip group (All / Strong / Likely / Low — multi-select, e.g. Strong + Likely combinable). Both filters compose via AND. Surfaces the weekend's best picks instantly.
 - **v2.41** — Auto-marked 1 result (Fiorentina 1-1 Atalanta).
 - **v2.40** — Fixed missing form dots for Burnley vs Wolverhampton and West Ham vs Leeds United. Added `'Burnley': 'Burnley'` to `UNDERSTAT_TEAM_MAP` (Burnley was the only club genuinely missing — Wolves and Leeds already resolved correctly, their fixtures just predated the alias fix). Patched both fixtures' form fields directly with live Understat data.
