@@ -14,7 +14,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Good/Moderate/Low) and show it in the header.
-- **Filter UI** — sidebar toggles to show only Strong/Good picks, or only fixtures with edge > 5%.
 - **CSV export** — download this weekend's picks as a spreadsheet.
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
 - **Sticky verdict pill** — pin the outcome badge when scrolling long fixture analysis panels.
@@ -22,6 +21,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.42** — Sidebar Display filters: **Past fixtures** chip group (Off / 2d / Week / All — mutually exclusive) replacing the old binary toggle; **Signal** chip group (All / Strong / Likely / Low — multi-select, e.g. Strong + Likely combinable). Both filters compose via AND. Surfaces the weekend's best picks instantly.
 - **v2.41** — Auto-marked 1 result (Fiorentina 1-1 Atalanta).
 - **v2.40** — Fixed missing form dots for Burnley vs Wolverhampton and West Ham vs Leeds United. Added `'Burnley': 'Burnley'` to `UNDERSTAT_TEAM_MAP` (Burnley was the only club genuinely missing — Wolves and Leeds already resolved correctly, their fixtures just predated the alias fix). Patched both fixtures' form fields directly with live Understat data.
 - **v2.39** — Auto-marked 1 result (Bournemouth 1-1 Man City).
