@@ -322,6 +322,14 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .edge-nil { color: var(--text3); }
 .score-line { font-size: 11px; color: var(--text2); letter-spacing: 0.04em; margin-top: 3px; }
 .score-line .draw-tag { color: var(--gold); font-weight: 700; }
+.live-link {
+  color: var(--text3);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  transition: opacity 0.15s, color 0.15s;
+}
+.live-link:hover { color: var(--gold); opacity: 1; }
 
 /* Form dots */
 .form-row { display: flex; align-items: center; gap: 5px; margin-top: 4px; }
@@ -2741,18 +2749,25 @@ function renderFixture(f, key, leagueName) {
   const awayDots = renderFormDots(f.awayForm);
   const formRowHTML = (homeDots || awayDots) ? `<div class="form-row"><div class="form-group">${homeDots}</div>${homeDots && awayDots ? '<div class="form-sep"></div>' : ''}<div class="form-group">${awayDots}</div></div>` : '';
 
+  // Google search link — opens "Home vs Away" results in a new tab.
+  // stopPropagation so the click doesn't toggle the fixture expand.
+  const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(f.home + ' vs ' + f.away)}`;
+  const linkLabel = f.result ? 'Match report' : 'Live';
+  const liveLink = ` · <a href="${searchUrl}" target="_blank" rel="noopener noreferrer"
+                          class="live-link" onclick="event.stopPropagation()">🔗 ${linkLabel}</a>`;
+
   let bottomLine;
   if (f.result) {
     if (f.result.includes('-')) {
       const [h, a] = f.result.split('-').map(Number);
       const drawTag = h === a ? ' · <span class="draw-tag">DRAW</span>' : '';
-      bottomLine = `<div class="score-line">Final Score: ${h} – ${a}${drawTag}</div>`;
+      bottomLine = `<div class="score-line">Final Score: ${h} – ${a}${drawTag}${liveLink}</div>`;
     } else {
       const label = f.result === 'draw' ? 'DRAW' : f.result === 'home' ? 'Home Win' : 'Away Win';
-      bottomLine = `<div class="score-line">${label}</div>`;
+      bottomLine = `<div class="score-line">${label}${liveLink}</div>`;
     }
   } else {
-    bottomLine = `<div class="kick-time">${f.time} kick-off</div>`;
+    bottomLine = `<div class="kick-time">${f.time} kick-off${liveLink}</div>`;
   }
 
   return `
