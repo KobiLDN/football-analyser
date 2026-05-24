@@ -22,7 +22,9 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
-- **v2.44** — Per-fixture Google search link: `🔗 Score` next to upcoming fixtures' kick-off time, `🔗 Match report` next to played fixtures' final score. Opens a Google search for "Home vs Away" in a new tab — handy for grabbing live score / lineups / news without leaving the page.
+- **v2.46** — Per-fixture Google search link: `🔗 Score` next to upcoming fixtures' kick-off time, `🔗 Match report` next to played fixtures' final score. Opens a Google search for "Home vs Away" in a new tab — handy for grabbing live score / lineups / news without leaving the page.
+- **v2.45** — Auto-marked 1 result (Parma 1-0 Sassuolo).
+- **v2.44** — Auto-marked 11 results (Alavés 1-2 Rayo Vallecano; Real Betis 2-1 Levante; Celta 1-0 Sevilla FC, +8 more).
 - **v2.43** — Re-researched all 10 Saturday 23 May fixtures with fresh xG/form/news via the now-fixed `refresh_today.bat`.
 - **v2.42** — Sidebar Display filters: **Past fixtures** chip group (Off / 2d / Week / All — mutually exclusive) replacing the old binary toggle; **Signal** chip group (All / Strong / Likely / Low — multi-select, e.g. Strong + Likely combinable). Both filters compose via AND. Surfaces the weekend's best picks instantly.
 - **v2.41** — Auto-marked 1 result (Fiorentina 1-1 Atalanta).

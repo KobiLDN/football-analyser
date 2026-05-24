@@ -376,11 +376,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.44 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.46 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
-      <div class="updated-tag">Data · 23 May 2026 00:10 BST</div>
+      <div class="updated-tag">Data · 24 May 2026 18:00 BST</div>
     </div>
     
   </div>
@@ -1240,7 +1240,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Alavés', away: 'Rayo Vallecano', time: '21:00',
-        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–3.90',
+        result: '1-2', homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–3.90',
         awayForm: 'D W D D W',
         factors: {
           formBalance:   { score: 68, detail: 'Rayo Vallecano shows superior away form with one defeat in last nine matches and three-match unbeaway run; Alavés has one home defeat in six but remains unbeaten at Mendizorroza. Rayo\'s edge in consistency slightly outweighs Alavés\' home advantage.' },
@@ -1260,7 +1260,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Real Betis', away: 'Levante', time: '21:00',
-        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Strong', fairOdds: '2.40–2.70',
+        result: '2-1', homeWin: 62, draw: 23, awayWin: 15, verdict: 'Strong', fairOdds: '2.40–2.70',
         homeForm: 'D W D W L',
         factors: {
           formBalance:   { score: 68, detail: 'Betis have been more consistent at home with a decade-long unbeaten run since December, while Levante show mixed away form with only one win in last eight games' },
@@ -1280,7 +1280,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Celta', away: 'Sevilla FC', time: '21:00',
-        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Moderate', fairOdds: '2.10–2.35',
+        result: '1-0', homeWin: 45, draw: 28, awayWin: 27, verdict: 'Moderate', fairOdds: '2.10–2.35',
         factors: {
           formBalance:   { score: 45, detail: 'Celta sit 6th with 51 points while Sevilla are around 13th-14th with 43 points. However, Celta\'s home record is inconsistent (second-worst in division), which balances their league position advantage.' },
           momentum:      { score: 40, detail: 'Celta have been inconsistent recently despite taking an early lead in their last match. Sevilla are coming off games without a win and lack motivation as they\'ve already secured safety.' },
@@ -1305,7 +1305,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Espanyol', away: 'Real Sociedad', time: '21:00',
-        result: null, homeWin: 38, draw: 29, awayWin: 33, verdict: 'Moderate', fairOdds: '2.60–2.75',
+        result: '1-1', homeWin: 38, draw: 29, awayWin: 33, verdict: 'Moderate', fairOdds: '2.60–2.75',
         awayForm: 'D L D D L',
         factors: {
           formBalance:   { score: 48, detail: 'Espanyol on back-to-back wins while Real Sociedad winless in seven games overall' },
@@ -1325,7 +1325,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Getafe', away: 'Osasuna', time: '21:00',
-        result: null, homeWin: 38, draw: 27, awayWin: 35, verdict: 'Low', fairOdds: '2.60–2.90',
+        result: '1-0', homeWin: 38, draw: 27, awayWin: 35, verdict: 'Low', fairOdds: '2.60–2.90',
         homeForm: 'L L D W L',
         awayForm: 'W L L L L',
         factors: {
@@ -1349,7 +1349,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Mallorca', away: 'Real Oviedo', time: '21:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10–2.30',
+        result: '3-0', homeWin: 45, draw: 30, awayWin: 25, verdict: 'Moderate', fairOdds: '2.10–2.30',
         homeForm: 'L W D L L',
         factors: {
           formBalance:   { score: 48, detail: 'Both teams in poor form - Mallorca with negative goal difference (-13), Real Oviedo already relegated but likely to play cautiously' },
@@ -1372,7 +1372,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Real Madrid', away: 'Athletic', time: '21:00',
-        result: null, homeWin: 58, draw: 24, awayWin: 18, verdict: 'Moderate', fairOdds: '1.70–1.85',
+        result: '4-2', homeWin: 58, draw: 24, awayWin: 18, verdict: 'Moderate', fairOdds: '1.70–1.85',
         homeForm: 'D W L W W',
         factors: {
           formBalance:   { score: 62, detail: 'Real Madrid secured second place but described as having a \'woeful campaign\' with dressing room issues; Athletic achieved their goals and finished strong' },
@@ -1395,7 +1395,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Valencia', away: 'Barça', time: '21:00',
-        result: null, homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '3.80–4.20',
+        result: '3-1', homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '3.80–4.20',
         homeForm: 'W L W D W',
         factors: {
           formBalance:   { score: 75, detail: 'Barcelona finished as league champions with a perfect home record (19 wins). Valencia\'s form is unclear but they have nothing to play for in La Liga.' },
@@ -1419,7 +1419,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Girona', away: 'Elche', time: '21:00',
-        result: null, homeWin: 42, draw: 30, awayWin: 28, verdict: 'Likely', fairOdds: '2.35–2.65',
+        result: '1-1', homeWin: 42, draw: 30, awayWin: 28, verdict: 'Likely', fairOdds: '2.35–2.65',
         homeForm: 'L L D D L',
         factors: {
           formBalance:   { score: 50, detail: 'Both teams are in relegation battles with equal desperation; no clear form advantage evident from news' },
@@ -1749,7 +1749,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Bologna', away: 'Inter', time: '18:00',
-        result: null, homeWin: 42, draw: 26, awayWin: 32, verdict: 'Low', fairOdds: '2.40–2.75',
+        result: '3-3', homeWin: 42, draw: 26, awayWin: 32, verdict: 'Low', fairOdds: '2.40–2.75',
         homeForm: 'L L D W W',
         factors: {
           formBalance:   { score: 58, detail: 'Bologna has been in exceptional form with back-to-back wins over Roma and Inter Milan, while Inter\'s title-winning run ended with a shock defeat at the Stadio Renato Dall\'Ara' },
@@ -1830,7 +1830,7 @@ const LEAGUES = [
       {
         day: 'Saturday 23 May',
         home: 'Lazio', away: 'AC Pisa', time: '20:45',
-        result: null, homeWin: 75, draw: 15, awayWin: 10, verdict: 'Strong', fairOdds: '1.35–1.42',
+        result: '2-1', homeWin: 75, draw: 15, awayWin: 10, verdict: 'Strong', fairOdds: '1.35–1.42',
         homeForm: 'W D W L L',
         factors: {
           formBalance:   { score: 62, detail: 'Lazio playing at home with injury concerns; AC Pisa under Antonio Conte but limited form data available for this specific matchup' },
@@ -1856,7 +1856,7 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Parma', away: 'Sassuolo', time: '15:00',
-        result: null, homeWin: 32, draw: 28, awayWin: 40, verdict: 'Low', fairOdds: '2.95–3.15',
+        result: '1-0', homeWin: 32, draw: 28, awayWin: 40, verdict: 'Low', fairOdds: '2.95–3.15',
         homeForm: 'L D L D D',
         factors: {
           formBalance:   { score: 50, detail: 'No current form data available for either team in the immediate period before this fixture from provided news sources.' },
