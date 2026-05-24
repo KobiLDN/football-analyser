@@ -2752,7 +2752,7 @@ function renderFixture(f, key, leagueName) {
   // Google search link — opens "Home vs Away" results in a new tab.
   // stopPropagation so the click doesn't toggle the fixture expand.
   const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(f.home + ' vs ' + f.away)}`;
-  const linkLabel = f.result ? 'Match report' : 'Live';
+  const linkLabel = f.result ? 'Match report' : 'Score';
   const liveLink = ` · <a href="${searchUrl}" target="_blank" rel="noopener noreferrer"
                           class="live-link" onclick="event.stopPropagation()">🔗 ${linkLabel}</a>`;
 
