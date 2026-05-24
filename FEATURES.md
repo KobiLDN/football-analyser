@@ -15,7 +15,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
 - **Per-fixture prediction-accuracy badge (GOAL / RED CARD)** — for fixtures that have a `result`, compare the predicted Signal (Strong/Likely outcome) against the actual outcome and stamp a ⚽ **GOAL** badge if the prediction was correct, 🟥 **RED CARD** if wrong. **Low** confidence picks get no badge (we said it was a coin-flip). Pure JS on top of existing data — no new workflow needed; renders at page load once auto-mark has filled in scorelines (typically 11pm BST nightly). Open design choices: badge position (new column to the right of Signal, or replacing the verdict pill on past fixtures); how to score draws when the predicted leading outcome was a non-draw.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Likely/Low) and show it in the header. (The aggregate twin of the per-fixture GOAL/RED CARD badge above.)
-- **Fixture hyperlink (Google search)** — each fixture row gets a small external-link icon that opens `https://www.google.com/search?q=Home+vs+Away` in a new tab. Google's results page shows live score, lineups, news preview at the top — works universally without per-fixture mapping. Need `event.stopPropagation()` on the link click so it doesn't toggle the analysis panel.
 - **CSV export** — download this weekend's picks as a spreadsheet.
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
 - **Sticky verdict pill** — pin the outcome badge when scrolling long fixture analysis panels.
@@ -23,6 +22,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.44** — Per-fixture Google search link: `🔗 Score` next to upcoming fixtures' kick-off time, `🔗 Match report` next to played fixtures' final score. Opens a Google search for "Home vs Away" in a new tab — handy for grabbing live score / lineups / news without leaving the page.
 - **v2.43** — Re-researched all 10 Saturday 23 May fixtures with fresh xG/form/news via the now-fixed `refresh_today.bat`.
 - **v2.42** — Sidebar Display filters: **Past fixtures** chip group (Off / 2d / Week / All — mutually exclusive) replacing the old binary toggle; **Signal** chip group (All / Strong / Likely / Low — multi-select, e.g. Strong + Likely combinable). Both filters compose via AND. Surfaces the weekend's best picks instantly.
 - **v2.41** — Auto-marked 1 result (Fiorentina 1-1 Atalanta).
