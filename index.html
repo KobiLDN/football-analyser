@@ -322,6 +322,18 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .edge-nil { color: var(--text3); }
 .score-line { font-size: 11px; color: var(--text2); letter-spacing: 0.04em; margin-top: 3px; }
 .score-line .draw-tag { color: var(--gold); font-weight: 700; }
+.score-line .home-tag { color: var(--blue); font-weight: 700; }
+.score-line .away-tag { color: #e05252;    font-weight: 700; }
+.acc-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  vertical-align: 1px;
+}
+.acc-hit  { color: var(--green); background: rgba(74, 158, 106, 0.12); border: 1px solid rgba(74, 158, 106, 0.35); }
+.acc-miss { color: var(--red);   background: rgba(201, 74, 74, 0.10);  border: 1px solid rgba(201, 74, 74, 0.30); }
 .live-link {
   color: var(--text3);
   text-decoration: none;
@@ -376,7 +388,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.46 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.47 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
@@ -2696,6 +2708,17 @@ function renderMain() {
   `;
 }
 
+// Returns 'hit' | 'miss' | null. Compares the predicted leading outcome
+// against the actual outcome. Low-confidence picks return null (no badge).
+function predictionAccuracy(f) {
+  if (!f.result || !f.result.includes('-')) return null;
+  const conf = calcConfidence(f);
+  if (conf === 'Low') return null;
+  const [h, a] = f.result.split('-').map(Number);
+  const actual = h > a ? 'Home Win' : h < a ? 'Away Win' : 'Draw';
+  return calcOutcome(f) === actual ? 'hit' : 'miss';
+}
+
 function renderFormDots(formStr) {
   if (!formStr) return '';
   return formStr.trim().split(/\s+/).slice(-5).map(r => {
@@ -2756,15 +2779,23 @@ function renderFixture(f, key, leagueName) {
   const liveLink = ` · <a href="${searchUrl}" target="_blank" rel="noopener noreferrer"
                           class="live-link" onclick="event.stopPropagation()">🔗 ${linkLabel}</a>`;
 
+  // Per-fixture HIT / MISS badge — Low confidence picks get no badge.
+  const acc = predictionAccuracy(f);
+  const accBadge = acc === 'hit'  ? ` · <span class="acc-badge acc-hit">✅ HIT</span>`
+                 : acc === 'miss' ? ` · <span class="acc-badge acc-miss">❌ MISS</span>`
+                 : '';
+
   let bottomLine;
   if (f.result) {
     if (f.result.includes('-')) {
       const [h, a] = f.result.split('-').map(Number);
-      const drawTag = h === a ? ' · <span class="draw-tag">DRAW</span>' : '';
-      bottomLine = `<div class="score-line">Final Score: ${h} – ${a}${drawTag}${liveLink}</div>`;
+      const outcomeCls = h === a ? 'draw-tag' : h > a ? 'home-tag' : 'away-tag';
+      const outcomeLbl = h === a ? 'Draw'     : h > a ? 'Home Win' : 'Away Win';
+      const outcomeTag = ` · <span class="${outcomeCls}">${outcomeLbl}</span>`;
+      bottomLine = `<div class="score-line">Final Score: ${h} – ${a}${outcomeTag}${accBadge}${liveLink}</div>`;
     } else {
       const label = f.result === 'draw' ? 'DRAW' : f.result === 'home' ? 'Home Win' : 'Away Win';
-      bottomLine = `<div class="score-line">${label}${liveLink}</div>`;
+      bottomLine = `<div class="score-line">${label}${accBadge}${liveLink}</div>`;
     }
   } else {
     bottomLine = `<div class="kick-time">${f.time} kick-off${liveLink}</div>`;

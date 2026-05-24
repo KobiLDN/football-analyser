@@ -13,7 +13,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 ## Backlog
 
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
-- **Per-fixture prediction-accuracy badge (GOAL / RED CARD)** — for fixtures that have a `result`, compare the predicted Signal (Strong/Likely outcome) against the actual outcome and stamp a ⚽ **GOAL** badge if the prediction was correct, 🟥 **RED CARD** if wrong. **Low** confidence picks get no badge (we said it was a coin-flip). Pure JS on top of existing data — no new workflow needed; renders at page load once auto-mark has filled in scorelines (typically 11pm BST nightly). Open design choices: badge position (new column to the right of Signal, or replacing the verdict pill on past fixtures); how to score draws when the predicted leading outcome was a non-draw.
 - **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Likely/Low) and show it in the header. (The aggregate twin of the per-fixture GOAL/RED CARD badge above.)
 - **CSV export** — download this weekend's picks as a spreadsheet.
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
@@ -22,6 +21,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.47** — Per-fixture HIT / MISS prediction badge + symmetric outcome tags. Past fixtures' score line now reads e.g. `Final Score: 4 – 2 · Home Win · ✅ HIT · 🔗 Match report`. Home Win in blue, Draw in gold, Away Win in red (matches the win-probability palette). Badge logic: highest-probability outcome matches actual → green ✅ HIT; mismatch → red ❌ MISS; Low-confidence picks get no badge (we agreed those are coin-flips).
 - **v2.46** — Per-fixture Google search link: `🔗 Score` next to upcoming fixtures' kick-off time, `🔗 Match report` next to played fixtures' final score. Opens a Google search for "Home vs Away" in a new tab — handy for grabbing live score / lineups / news without leaving the page.
 - **v2.45** — Auto-marked 1 result (Parma 1-0 Sassuolo).
 - **v2.44** — Auto-marked 11 results (Alavés 1-2 Rayo Vallecano; Real Betis 2-1 Levante; Celta 1-0 Sevilla FC, +8 more).
