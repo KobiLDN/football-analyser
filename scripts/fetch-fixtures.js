@@ -69,15 +69,36 @@ async function fetchScheduled(comp, dateFrom, dateTo) {
 
 function formatFixtureLiteral(f) {
   const rs = f.result === null ? 'null' : `'${escapeJs(f.result)}'`;
-  const dp = f.drawProbability ?? 25;
   const verd = f.verdict ? `'${escapeJs(f.verdict)}'` : "'Low'";
   const odds = f.fairOdds ? `'${escapeJs(f.fairOdds)}'` : "'4.00\u20134.50'";
 
-  const fb = f.factors?.formBalance || { score: 50, detail: 'Pending research.' };
-  const dr = f.factors?.drawRates || { score: 50, detail: 'Pending research.' };
-  const h2h = f.factors?.headToHead || { score: 50, detail: 'Pending research.' };
-  const gt = f.factors?.goalTendency || { score: 50, detail: 'Pending research.' };
-  const lc = f.factors?.leagueContext || { score: 50, detail: 'Pending research.' };
+  // Probability fields \u2014 emit new schema (homeWin/draw/awayWin) if any of
+  // them exist, otherwise fall back to legacy drawProbability so really old
+  // fixtures still serialize. Stub fixtures created by THIS script use the
+  // new schema with neutral 33/34/33.
+  const hasNew = f.homeWin !== undefined || f.draw !== undefined || f.awayWin !== undefined;
+  const probBlock = hasNew
+    ? `homeWin: ${f.homeWin ?? 33}, draw: ${f.draw ?? 34}, awayWin: ${f.awayWin ?? 33}`
+    : `drawProbability: ${f.drawProbability ?? 25}`;
+
+  // Optional form-dot fields (Understat-derived, last 5 W/D/L per team).
+  const homeFormBlock = f.homeForm ? `\n        homeForm: '${escapeJs(f.homeForm)}',` : '';
+  const awayFormBlock = f.awayForm ? `\n        awayForm: '${escapeJs(f.awayForm)}',` : '';
+
+  // Factor block \u2014 accept either the new 'momentum' name or the legacy
+  // 'drawRates' name, and emit whichever the fixture currently uses so we
+  // don't silently rename / lose data.
+  const fb  = f.factors?.formBalance    || { score: 50, detail: 'Pending research.' };
+  const mom = f.factors?.momentum;
+  const dr  = f.factors?.drawRates;
+  const h2h = f.factors?.headToHead     || { score: 50, detail: 'Pending research.' };
+  const gt  = f.factors?.goalTendency   || { score: 50, detail: 'Pending research.' };
+  const lc  = f.factors?.leagueContext  || { score: 50, detail: 'Pending research.' };
+
+  // Prefer momentum (new schema). Fall back to drawRates. Default if neither.
+  const tempo = mom || dr || { score: 50, detail: 'Pending research.' };
+  const tempoName = mom ? 'momentum' : (dr ? 'drawRates' : 'momentum');
+  const tempoLabel = tempoName === 'momentum' ? 'momentum:     ' : 'drawRates:    ';
 
   const sum = f.summary ? `'${escapeJs(f.summary)}'` : "'Pending deep research.'";
 
@@ -100,10 +121,10 @@ function formatFixtureLiteral(f) {
   return `      {
         day: '${escapeJs(f.day)}',
         home: '${escapeJs(f.home)}', away: '${escapeJs(f.away)}', time: '${f.time}',
-        result: ${rs}, drawProbability: ${dp}, verdict: ${verd}, fairOdds: ${odds},
+        result: ${rs}, ${probBlock}, verdict: ${verd}, fairOdds: ${odds},${homeFormBlock}${awayFormBlock}
         factors: {
           formBalance:   { score: ${fb.score}, detail: '${escapeJs(fb.detail)}' },
-          drawRates:     { score: ${dr.score}, detail: '${escapeJs(dr.detail)}' },
+          ${tempoLabel} { score: ${tempo.score}, detail: '${escapeJs(tempo.detail)}' },
           headToHead:    { score: ${h2h.score}, detail: '${escapeJs(h2h.detail)}' },
           goalTendency:  { score: ${gt.score}, detail: '${escapeJs(gt.detail)}' },
           leagueContext: { score: ${lc.score}, detail: '${escapeJs(lc.detail)}' }
