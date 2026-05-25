@@ -1,9 +1,12 @@
 name: Auto-fetch World Cup fixtures
 
 on:
-  # Once a week is enough — the fixture list is published in chunks
+  # Daily 09:00 UTC — picks up new fixture stubs AND live scores once the
+  # tournament starts (openfootball updates `score.ft` per match as results
+  # come in). Outside WC season the script no-ops cheaply when nothing
+  # changes, so leaving it daily year-round is fine.
   schedule:
-    - cron: '0 9 * * 1'   # Mondays 09:00 UTC, after the regular fetch-fixtures
+    - cron: '0 9 * * *'   # daily 09:00 UTC
   workflow_dispatch:
     inputs:
       season:
