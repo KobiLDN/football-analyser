@@ -141,21 +141,49 @@ def git(*args):
     return r.returncode, r.stdout.strip(), r.stderr.strip()
 
 
+def _autodetect_input():
+    """If research.json doesn't exist or a newer deepseek_json_*.json file
+    sits alongside it, return the path to use. DeepSeek's web app names
+    downloads like 'deepseek_json_20260525_8a6400.json', so once you drop
+    one in the repo folder the script picks it up automatically — no
+    rename needed."""
+    import glob
+    candidates = sorted(
+        glob.glob(os.path.join(REPO_ROOT, "deepseek_json_*.json")),
+        key=os.path.getmtime,
+        reverse=True,
+    )
+    if not candidates:
+        return JSON_FILE if os.path.exists(JSON_FILE) else None
+    newest_ds = candidates[0]
+    # Prefer the deepseek file if research.json doesn't exist, or if the
+    # deepseek file is newer than research.json (you just downloaded it).
+    if not os.path.exists(JSON_FILE):
+        return newest_ds
+    if os.path.getmtime(newest_ds) > os.path.getmtime(JSON_FILE):
+        return newest_ds
+    return JSON_FILE
+
+
 def main():
     no_push = "--no-push" in sys.argv
     dev_only = "--dev-only" in sys.argv
     dry_run = "--dry-run" in sys.argv
 
-    if not os.path.exists(JSON_FILE):
-        print(f"X {JSON_FILE} not found.")
-        print(f"  Paste DeepSeek's JSON into research.json, then re-run.")
+    input_path = _autodetect_input()
+    if input_path is None:
+        print(f"X No input found.")
+        print(f"  Either paste DeepSeek's JSON into research.json,")
+        print(f"  or drop a deepseek_json_*.json file in the repo folder.")
         sys.exit(1)
+    if input_path != JSON_FILE:
+        print(f"-> Using {os.path.basename(input_path)} (newer than research.json)")
 
-    with open(JSON_FILE, "r", encoding="utf-8") as f:
+    with open(input_path, "r", encoding="utf-8") as f:
         try:
             raw = json.load(f)
         except json.JSONDecodeError as e:
-            print(f"X research.json is not valid JSON: {e}")
+            print(f"X {os.path.basename(input_path)} is not valid JSON: {e}")
             sys.exit(1)
 
     # Accept either a single fixture object OR an array of them
@@ -263,13 +291,13 @@ def main():
     # Stop here if user only wanted dev (staging-only mode)
     if dev_only:
         print(f"(--dev-only given; not promoting to main / live)")
-        _archive_research_json()
+        _archive_research_json(input_path)
         return
 
     # If we're not on dev, skip the dev→main promotion (already on main, etc.)
     if current_branch != "dev":
         print(f"(current branch is '{current_branch}', not dev — skipping main merge)")
-        _archive_research_json()
+        _archive_research_json(input_path)
         return
 
     # Promote to main / live
@@ -308,19 +336,20 @@ def main():
 
     # Back to dev for the next session
     git("checkout", "dev")
-    _archive_research_json()
+    _archive_research_json(input_path)
 
 
-def _archive_research_json():
-    """Rename research.json so it can't accidentally be re-applied."""
-    if not os.path.exists(JSON_FILE):
+def _archive_research_json(path):
+    """Rename whichever input file we just applied so it can't be
+    accidentally re-applied. For deepseek_json_*.json files, rename to
+    *.applied alongside the original; for research.json, same idea."""
+    if not path or not os.path.exists(path):
         return
-    archive = JSON_FILE + ".applied"
-    # If a previous .applied exists, overwrite
+    archive = path + ".applied"
     if os.path.exists(archive):
         os.remove(archive)
-    os.rename(JSON_FILE, archive)
-    print(f"-> Archived research.json -> research.json.applied")
+    os.rename(path, archive)
+    print(f"-> Archived {os.path.basename(path)} -> {os.path.basename(archive)}")
 
 
 if __name__ == "__main__":
