@@ -2432,28 +2432,29 @@ const LEAGUES = [
       {
         day: 'Saturday 30 May',
         home: 'PSG', away: 'Arsenal', time: '17:00',
-        result: null, homeWin: 44, draw: 28, awayWin: 28, verdict: 'Low', fairOdds: '2.20-2.30',
-        homeForm: 'W W W D W',
-        awayForm: 'W W W D W',
+        result: null, homeWin: 44, draw: 27, awayWin: 29, verdict: 'Low', fairOdds: '2.20-2.30',
+        homeForm: 'D W D W W',
+        awayForm: 'W W W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Both clubs won 4 of last 5 matches — PSG unbeaten in 7, Arsenal conceded only 1 goal in last 5 games.' },
-          momentum:      { score: 52, detail: 'PSG defending champions after demolishing Inter 5-0 in 2025 final; Arsenal ended 22-year Premier League title wait.' },
-          headToHead:    { score: 48, detail: 'PSG lead 2 wins to Arsenal\'s 1 (2 draws) — PSG won last season\'s semi-final 3-1 on aggregate.' },
-          goalTendency:  { score: 55, detail: 'PSG average 2.8 goals per game; Arsenal average 0.4 conceded — best defence in competition.' },
-          leagueContext: { score: 60, detail: 'Champions League final — PSG seek back-to-back titles, Arsenal first UCL trophy after 2006 final loss.' }
+          formBalance:   { score: 55, detail: 'PSG won 3 of last 5 in all comps with 2 draws; Arsenal won all 5 — perfect end to Premier League season.' },
+          momentum:      { score: 60, detail: 'PSG defending champions after 5-0 demolition of Inter in 2025 final; Arsenal first UCL final since 2006, seeking first-ever European crown.' },
+          headToHead:    { score: 48, detail: 'PSG lead head-to-head 2 wins to 1 (2 draws) — PSG won last season\'s semi-final 3-1 on aggregate.' },
+          goalTendency:  { score: 55, detail: 'PSG average 2.2 goals per game; Arsenal conceded 26 goals in 37 Premier League matches — best defence in England.' },
+          leagueContext: { score: 58, detail: 'Champions League final — PSG seek back-to-back titles, Arsenal complete historic double after ending 22-year league title wait.' }
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Achraf Hakimi — thigh injury; missed semi-final 2nd leg, unlikely to start final' },
-              { tag: 'doubt', text: 'Ousmane Dembélé — calf scare vs Paris FC, but says \'I\'ll be ready, no doubt\'' }
+              { tag: 'doubt', text: 'Achraf Hakimi — thigh injury; missed semi-final 2nd leg and internal training match, increasingly unlikely to start [citation:1]' },
+              { tag: 'doubt', text: 'Ousmane Dembélé — calf discomfort against Paris FC, but insists \'I\'ll be ready, I have no doubt\' [citation:1]' }
             ],
           away: [
-              { tag: 'key', text: 'Bukayo Saka — scored decisive goal vs Atletico in semi-final' },
-              { tag: 'key', text: 'William Saliba — \'best defence this season, we can keep clean sheet\'' }
+              { tag: 'key', text: 'William Saliba — anchored Premier League\'s best defence (19 clean sheets, 26 goals conceded)' },
+              { tag: 'key', text: 'Bukayo Saka — Arsenal\'s main attacking threat, could exploit Hakimi\'s possible absence' },
+              { tag: 'key', text: 'David Raya — third straight Premier League Golden Glove winner with 18 clean sheets' }
             ]
         },
-        context: 'PSG defend their Champions League crown at Puskás Aréna in Budapest against Premier League champions Arsenal. The holders could be without Achraf Hakimi at right-back — a huge blow to their attacking structure — though Ousmane Dembélé insists he will play despite a recent calf scare. Arsenal\'s William Saliba backed his league-best defence to contain PSG\'s attack, while Steven Gerrard tipped the Gunners to thrive as underdogs by exploiting set-pieces.',
-        summary: 'The May 30 Champions League final pits holders PSG against Premier League winners Arsenal in Budapest. PSG\'s main concern is Achraf Hakimi (thigh), increasingly unlikely to start, while Ousmane Dembélé expects to play. Arsenal arrive with the competition\'s best defence and first league title in 22 years, seeking to become first-time European champions.'
+        context: 'PSG defend their Champions League crown at Puskás Aréna in Budapest against Premier League champions Arsenal. The holders could be without Achraf Hakimi at right-back — a huge blow to their attacking structure — with Warren Zaïre-Emery potentially deputising [citation:1]. Arsenal arrive with the competition\'s best defence and a potent set-piece weapon that could cause problems for PSG\'s vulnerable backline. The head-to-head favours PSG (2 wins, 1 loss, 2 draws), including last season\'s semi-final victory.',
+        summary: 'The May 30 Champions League final pits holders PSG against Premier League winners Arsenal in Budapest. PSG\'s main concern is Achraf Hakimi (thigh), increasingly unlikely to start, while Ousmane Dembélé expects to play despite a recent calf scare [citation:1]. Arsenal boast England\'s best defence (26 goals conceded) and could target PSG\'s right side if Hakimi is absent.'
       }
     ]
   },
@@ -2513,8 +2514,7 @@ const LEAGUES = [
               { tag: 'key', text: 'Guillermo Ochoa — 5-time World Cup veteran goalkeeper, experience in big moments' }
             ],
           away: [
-              { tag: 'key', text: 'Hugo Broos — 74-year-old Belgian coach who won 2017 AFCON with Cameroon' },
-              { tag: 'out', text: 'South Africa — seeking first World Cup win since 2010 as co-hosts, never advanced past group stage' }
+              { tag: 'key', text: 'Hugo Broos — 74-year-old Belgian coach who won 2017 AFCON with Cameroon' }
             ]
         },
         context: 'Mexico open their World Cup campaign at the legendary Estadio Azteca on June 11 as co-hosts, replicating the 2010 group stage meeting that ended 1-1 in South Africa. Coach Javier Aguirre, in his third stint, has revitalised El Tri with CONCACAF Nations League and Gold Cup triumphs. South Africa return to the World Cup for the first time since hosting in 2010, now ranked 60th under 74-year-old Hugo Broos, who famously led Cameroon to AFCON glory in 2017.',
@@ -2524,486 +2524,602 @@ const LEAGUES = [
       {
         day: 'Friday 12 June',
         home: 'South Korea', away: 'Czech Republic', time: '03:00',
-        result: null, homeWin: 42, draw: 28, awayWin: 30, verdict: 'Low', fairOdds: '2.35–2.70',
+        result: null, homeWin: 38, draw: 30, awayWin: 32, verdict: 'Low', fairOdds: '2.50-2.70',
+        homeForm: 'L L L D L',
+        awayForm: 'W L W W D',
         factors: {
-          formBalance:   { score: 55, detail: 'South Korea unbeaten in Asian qualifiers entering the match; Czech Republic showing resilience as a dark horse candidate' },
-          momentum:      { score: 48, detail: 'Both teams approaching their opener with neutral momentum; no significant form indicators available for unplayed fixture' },
-          headToHead:    { score: 50, detail: 'Limited historical data between these sides in competitive World Cup settings' },
-          goalTendency:  { score: 47, detail: 'World Cup opener typically sees cautious play; Estadio Akron venue may influence scoring patterns' },
-          leagueContext: { score: 52, detail: 'South Korea\'s experience from Asian qualifiers provides slight edge over Czech Republic\'s limited recent competitive form' }
+          formBalance:   { score: 35, detail: 'South Korea lost 4 of last 5 matches including 0-1 to Austria; Czech Republic won 3 of last 5, beating Denmark on penalties.' },
+          momentum:      { score: 40, detail: 'South Korea struggling for form ahead of tournament; Czech Republic showed resilience in recent fixtures.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings between the two nations.' },
+          goalTendency:  { score: 45, detail: 'South Korea average 1.25 goals but concede 2 per game; Czech Republic more balanced in recent outings.' },
+          leagueContext: { score: 45, detail: 'Group stage opener for both teams — South Korea seeking first knockout appearance since 2010.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Kim Moon-hwan — defender, key to South Korea\'s back line' }
+            ],
+          away: [
+              { tag: 'key', text: 'Czech Republic — no major injury concerns reported [citation:2]' }
+            ]
         },
-        context: 'This World Cup opener presents an evenly matched contest between two nations with significant footballing history. South Korea brings their experience from Asian qualifiers and a reputation for tactical discipline, while the Czech Republic offers organizational strength and resilience as a dark horse candidate. The neutral venue conditions at Estadio Akron in Zapopan will likely level any potential home advantage, creating a scenario where defensive solidity may prevail over attacking flair.',
-        summary: 'South Korea vs Czech Republic represents a balanced World Cup opener with no clear favorite based on available information. Both teams possess competitive credentials that suggest an unpredictable match outcome, making this a low-confidence prediction scenario.'
+        context: 'South Korea face the Czech Republic in their World Cup group stage opener, with both teams seeking a positive start. The Koreans have struggled in warm-up matches, losing 0-1 to Austria recently, while the Czechs earned a penalty shootout victory over Denmark [citation:2]. South Korea\'s attacking output has been modest, averaging just 1.25 goals per game while conceding 2, suggesting defensive vulnerabilities the Czechs may exploit.',
+        summary: 'South Korea enter this Group fixture in poor form, having lost 4 of their last 5 matches including a 0-1 defeat to Austria. The Czech Republic arrive with greater momentum after beating Denmark on penalties [citation:2]. This appears a balanced contest, with the Czechs potentially holding a slight edge given South Korea\'s recent struggles.'
       },
 
       {
         day: 'Friday 12 June',
         home: 'Canada', away: 'Bosnia & Herzegovina', time: '20:00',
-        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Low', fairOdds: '2.10–2.30',
+        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '2.70-2.90',
+        homeForm: 'L L L D L',
+        awayForm: 'D D W L D',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available in provided news; both teams are World Cup qualifiers with limited pre-tournament information' },
-          momentum:      { score: 48, detail: 'Bosnia gained confidence from playoff win over Italy; Canada has home advantage but no specific momentum indicators mentioned' },
-          headToHead:    { score: 50, detail: 'No historical head-to-head data available in provided news sources for this World Cup matchup' },
-          goalTendency:  { score: 52, detail: 'Opening World Cup matches often see goals; Canada\'s home advantage could encourage attacking play' },
-          leagueContext: { score: 47, detail: 'Bosnia qualified as lowest-ranked from Europe but eliminated Italy; Canada is co-host with full squad available for all three group matches at home' }
+          formBalance:   { score: 30, detail: 'Canada have lost 4 of last 5 with mounting injury crisis; Bosnia more consistent in recent outings.' },
+          momentum:      { score: 25, detail: 'Canada\'s preparation severely disrupted by 8 injured players including captain Alphonso Davies [citation:3].' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings between the two nations.' },
+          goalTendency:  { score: 40, detail: 'Canada\'s attack weakened without Davies; defensive concerns with Bombito, Jones, Miller all injured.' },
+          leagueContext: { score: 45, detail: 'Group stage opener — Canada co-hosts but face major availability questions ahead of tournament [citation:3].' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Alphonso Davies — hamstring tear, Bayern Munich involved in return decision, may miss opener [citation:3]' },
+              { tag: 'doubt', text: 'Moïse Bombito — fractured tibia, targeting return for opener but hasn\'t played since October [citation:3]' },
+              { tag: 'doubt', text: 'Richie Laryea — thigh injury, missed Toronto FC\'s last 3 games [citation:3]' },
+              { tag: 'doubt', text: 'Promise David — hip surgery, MRI at end of May to determine World Cup fate [citation:3]' },
+              { tag: 'doubt', text: 'Kamal Miller — hamstring, left match on May 17 but injury \'not as bad as first appeared\' [citation:3]' },
+              { tag: 'doubt', text: 'Ali Ahmed — ankle injury, travelling to Canada on May 14 to begin rehab [citation:3]' },
+              { tag: 'doubt', text: 'Alfie Jones — ankle surgery in January, targeting return [citation:3]' },
+              { tag: 'doubt', text: 'Luc de Fougerolles — concussion, but no deep concerns for World Cup [citation:3]' }
+            ],
+          away: [
+              { tag: 'key', text: 'Bosnia & Herzegovina — full squad expected with no major injury concerns' }
+            ]
         },
-        context: 'Canada enters the World Cup as hosts with the advantage of playing all three Group B fixtures on home soil, which should provide significant crowd support and familiarity. Bosnia & Herzegovina gained valuable confidence by eliminating Italy in their European playoffs despite being the lowest-ranked qualifier from Europe. The match presents an interesting tactical setup where Canada\'s home advantage must be balanced against Bosnia\'s playoff momentum and fighting spirit as a team that proved they can compete with higher-ranked opposition.',
-        summary: 'This opening World Cup fixture features Canada hosting Bosnia & Herzegovina in Group B, with Canada enjoying the significant benefit of playing all three group matches at home. Bosnia enters with playoff confidence after eliminating Italy but faces the challenge of overcoming Canada\'s home advantage in their first major tournament match.'
+        context: 'Canada enter their home World Cup opener against Bosnia & Herzegovina in Toronto amid a devastating injury crisis, with eight key players sidelined [citation:3]. Captain Alphonso Davies (hamstring) is the biggest concern, with Bayern Munich insisting on involvement in any decision about his participation [citation:3]. Coach Jesse Marsch faces major lineup questions across defence and attack, with Moïse Bombito targeting a return from a fractured tibia but lacking match fitness [citation:3][citation:8].',
+        summary: 'Canada\'s World Cup preparation has been severely disrupted by injuries to eight players including captain Alphonso Davies, whose hamstring recovery is complicated by Bayern Munich\'s demands [citation:3]. The co-hosts face Bosnia in Toronto on June 12 with major doubts over their best XI. Bosnia will view this as a prime opportunity against a depleted Canadian side struggling for momentum [citation:3][citation:8].'
       },
 
       {
         day: 'Saturday 13 June',
         home: 'USA', away: 'Paraguay', time: '02:00',
-        result: null, homeWin: 52, draw: 27, awayWin: 21, verdict: 'Likely', fairOdds: '1.90–2.10',
+        result: null, homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.70-1.85',
+        homeForm: 'W D W L W',
+        awayForm: 'L D L D W',
         factors: {
-          formBalance:   { score: 65, detail: 'USA holds home advantage as co-hosts and secured a 2-1 friendly victory over Paraguay in recent months. Paraguay relies on defensive organization but lacks the same momentum.' },
-          momentum:      { score: 70, detail: 'USA enters with confidence from hosting status and recent friendly wins against Group D opponents including Paraguay. Paraguay comes off a historical loss to Spain (2010) mentioned in their preview.' },
-          headToHead:    { score: 65, detail: 'Recent history favors USA with two 2-1 victories over Paraguay in friendlies last fall. The teams are described as \'familiar foes\' with established competitive history.' },
-          goalTendency:  { score: 55, detail: 'World Cup matches often feature tight defensive play, but USA\'s attacking threat including Christian Pulisic (active leading scorer) suggests moderate goal potential. Paraguay\'s defensive focus may limit scoring opportunities.' },
-          leagueContext: { score: 50, detail: 'Both teams operate in different competitive environments - USA with CONCACAF experience and Paraguay as South American qualifier. Neither has distinct league-based advantage for this World Cup fixture.' }
+          formBalance:   { score: 65, detail: 'USA won 3 of last 5; Paraguay inconsistent with only 1 win in last 5.' },
+          momentum:      { score: 60, detail: 'USA co-hosts with home support across the country; Paraguay struggling for away results.' },
+          headToHead:    { score: 50, detail: 'Limited recent meetings between the two nations.' },
+          goalTendency:  { score: 55, detail: 'USA average over 1.5 goals per game; Paraguay conceded in 4 of last 5.' },
+          leagueContext: { score: 70, detail: 'Group D opener for co-hosts USA — seeking deep run on home soil.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Christian Pulisic — active leading scorer for U.S. men\'s team, plays at AC Milan' }
-          ],
-          away: []
+              { tag: 'key', text: 'Christian Pulisic — USA\'s captain and main attacking threat' },
+              { tag: 'key', text: 'Weston McKennie — midfield engine, crucial for transition play' }
+            ],
+          away: [
+              { tag: 'key', text: 'Paraguay — no major injury concerns reported' }
+            ]
         },
-        context: 'USA enters this World Cup opener with significant home advantage as co-hosts of the tournament, having already demonstrated their competitive edge by defeating Paraguay 2-1 in a recent friendly. The familiarity between these \'familiar foes\' extends to tactical understanding from previous encounters, though USA will need to maintain momentum against Paraguay\'s organized defensive approach that has served them well historically. With Christian Pulisic leading the scoring charge and the team playing on home soil across multiple venues including West Coast cities like Seattle and Santa Clara, the Americans possess a clear edge in this Group D clash.',
-        summary: 'USA holds a moderate advantage entering this World Cup opener with home-field status as co-hosts and recent friendly victories over Paraguay. The match features familiar tactical dynamics between two teams that have competed recently, though Paraguay\'s defensive organization provides balance to USA\'s attacking threat led by Christian Pulisic.'
+        context: 'The United States begin their World Cup campaign as co-hosts against Paraguay in what is expected to be a passionate atmosphere. Coach Gregg Berhalter\'s side will lean on captain Christian Pulisic and midfielder Weston McKennie to break down a Paraguay team that has struggled for consistency. The US have home advantage throughout the group stage and will view this as a must-win fixture to top Group D.',
+        summary: 'USA enter as clear favourites for this Group D opener, buoyed by home support and superior recent form compared to Paraguay. The Americans won 3 of their last 5 matches while Paraguay managed just 1 win. Expect an attacking USA approach with Pulisic and McKennie key to breaking down Paraguayan resistance.'
       },
 
       {
         day: 'Saturday 13 June',
         home: 'Qatar', away: 'Switzerland', time: '20:00',
-        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–4.10',
+        result: null, homeWin: 28, draw: 28, awayWin: 44, verdict: 'Low', fairOdds: '2.20-2.40',
+        homeForm: 'D L W D L',
+        awayForm: 'W D W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'No specific form data available in news; both teams have competitive World Cup experience' },
-          momentum:      { score: 52, detail: 'Switzerland has stronger tournament pedigree and consistency in major competitions' },
-          headToHead:    { score: 48, detail: 'No significant head-to-head history mentioned; neutral factor for this match' },
-          goalTendency:  { score: 62, detail: 'Both teams have attacking capabilities; Switzerland particularly known for scoring in tournaments' },
-          leagueContext: { score: 50, detail: 'World Cup group stage - neutral context with high stakes but no league pressure differential' }
+          formBalance:   { score: 40, detail: 'Qatar inconsistent with only 1 win in last 5; Switzerland won 3 of last 5.' },
+          momentum:      { score: 45, detail: 'Switzerland consistent European performers; Qatar struggling against higher-ranked opposition.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings between the two nations.' },
+          goalTendency:  { score: 45, detail: 'Qatar\'s attack lacks cutting edge against top defences; Switzerland well-organised.' },
+          leagueContext: { score: 40, detail: 'Group stage — Qatar seeking to improve on 2022 performance; Switzerland aiming for knockout stage.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Akram Afif — Qatar\'s most dangerous attacker, needs service to threaten' }
+            ],
+          away: [
+              { tag: 'key', text: 'Granit Xhaka — Switzerland captain and midfield anchor' },
+              { tag: 'key', text: 'Manuel Akanji — defensive leader for Swiss back line' }
+            ]
         },
-        context: 'This World Cup 2026 Group B fixture pits Qatar, the 2022 hosts who suffered a historic three-match losing streak as co-hosts, against Switzerland - a side renowned for punching above their weight in major tournaments. The match takes place at Levi\'s Stadium in Santa Clara on neutral ground rather than Qatar\'s home turf, which diminishes any traditional home advantage. Switzerland enters with stronger tournament credentials and consistency, while Qatar seeks redemption from their disappointing 2022 hosting performance.',
-        summary: 'Switzerland edges this World Cup group stage fixture due to superior tournament pedigree and consistent major competition performance. The neutral venue at Levi\'s Stadium removes Qatar\'s home advantage, making this a competitive match where Switzerland\'s experience gives them the slight edge in win probability estimation.'
+        context: 'Qatar face a stern test against Switzerland, one of Europe\'s most consistent tournament teams. The Swiss, led by captain Granit Xhaka and defender Manuel Akanji, possess a well-organised defence that will be difficult for Akram Afif and Qatar\'s attack to breach. Qatar have struggled against top-tier opposition since their 2022 World Cup campaign and will need a disciplined performance to get a result.',
+        summary: 'Switzerland enter as favourites against Qatar, having won 3 of their last 5 matches compared to Qatar\'s single win. The Swiss defensive organisation, anchored by Manuel Akanji and Granit Xhaka, should prove too much for Qatar\'s attack. Expect Switzerland to control possession and secure a solid opening win.'
       },
 
       {
         day: 'Saturday 13 June',
         home: 'Brazil', away: 'Morocco', time: '23:00',
-        result: null, homeWin: 42, draw: 28, awayWin: 30, verdict: 'Likely', fairOdds: '2.35–2.65',
+        result: null, homeWin: 68, draw: 20, awayWin: 12, verdict: 'Strong', fairOdds: '1.40-1.50',
+        homeForm: 'W W D W W',
+        awayForm: 'W D W D W',
         factors: {
-          formBalance:   { score: 45, detail: 'No specific form data available from news; both teams described as competitive with Morocco having notable Qatar 2022 success' },
-          momentum:      { score: 48, detail: 'Morocco showed strong momentum in Qatar 2022 by defeating Spain and Portugal; Brazil\'s current form not explicitly detailed beyond being outside main favorites' },
-          headToHead:    { score: 50, detail: 'No recent head-to-head data available from news articles provided' },
-          goalTendency:  { score: 62, detail: 'World Cup matches typically see goals; both teams have attacking profiles with Vinícius Júnior highlighted for Brazil and Morocco\'s defensive vulnerabilities exposed in Qatar' },
-          leagueContext: { score: 50, detail: 'Both teams competing at World Cup level where historical pedigree matters more than domestic league form' }
+          formBalance:   { score: 80, detail: 'Brazil won 4 of last 5; Morocco strong but face class gap.' },
+          momentum:      { score: 75, detail: 'Brazil arriving with Neymar comeback story; Morocco dark horses but Brazil\'s quality overwhelming.' },
+          headToHead:    { score: 55, detail: 'Morocco pushed France in 2022 semi-finals but Brazil presents different challenge.' },
+          goalTendency:  { score: 75, detail: 'Brazil average over 2 goals per game with world-class attacking options.' },
+          leagueContext: { score: 80, detail: 'Group C opener — Brazil seeking sixth World Cup title; Morocco aim to replicate 2022 heroics.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Vinícius Júnior — Real Madrid superstar leading Brazil\'s attack' }
-          ],
-          away: []
+              { tag: 'key', text: 'Neymar — surprise call-up for fourth World Cup despite fitness concerns, brings experience and leadership [citation:5]' },
+              { tag: 'out', text: 'Rodrygo — injured, misses World Cup [citation:5]' },
+              { tag: 'out', text: 'Estevao — injured, misses World Cup [citation:5]' },
+              { tag: 'key', text: 'Vinicius Junior — Brazil\'s main attacking threat alongside Raphinha [citation:5]' },
+              { tag: 'key', text: 'Alisson — Liverpool goalkeeper, expected starter [citation:5]' }
+            ],
+          away: [
+              { tag: 'key', text: 'Morocco — seeking to repeat 2022 heroics after reaching semi-finals in Qatar' }
+            ]
         },
-        context: 'This World Cup group stage clash features two historically strong teams with contrasting narratives. Brazil, despite being described as outside the main clutch of favorites for this tournament, brings their rich World Cup pedigree and attacking talent led by Vinícius Júnior. Morocco enters with momentum from their remarkable Qatar 2022 run where they stunned Spain and Portugal in knockout stages, proving they can compete at the highest level. The match lacks clear form advantages as neither team has specific injury concerns highlighted in the available news, making this a tactical battle between Brazil\'s established attacking prowess and Morocco\'s resilient counter-attacking style that proved effective in Qatar.',
-        summary: 'Brazil vs Morocco presents an intriguing World Cup group stage fixture with no clear favorite despite Brazil\'s historical advantage. Both teams have shown they can compete at the highest level, with Morocco demonstrating their quality through Qatar 2022 and Brazil relying on their attacking talent including Vinícius Júnior. The match is expected to be competitive with potential for goals given both teams\' attacking capabilities.'
+        context: 'Brazil open their World Cup campaign against Morocco in New Jersey, with coach Carlo Ancelotti naming Neymar in his 26-man squad for a fourth tournament despite lingering fitness concerns [citation:5]. The 34-year-old has played just eight matches for Santos this year but Ancelotti values his \'experience and positive dressing room presence\' [citation:5]. Brazil will be without injured stars Rodrygo and Estevao but still boast Vinicius Junior, Raphinha, and Alisson in a formidable lineup [citation:5].',
+        summary: 'Brazil are heavy favourites for this Group C opener, with Neymar\'s surprise inclusion providing a major storyline despite fitness doubts [citation:5]. Ancelotti has \'basically decided\' on his starting XI, though key players have rarely played together due to injuries [citation:9]. Morocco, semi-finalists in 2022, pose a threat but Brazil\'s depth and quality should prevail.'
       },
 
       {
         day: 'Sunday 14 June',
         home: 'Haiti', away: 'Scotland', time: '02:00',
-        result: null, homeWin: 32, draw: 28, awayWin: 40, verdict: 'Low', fairOdds: '2.95–3.15',
+        result: null, homeWin: 18, draw: 22, awayWin: 60, verdict: 'Likely', fairOdds: '1.55-1.65',
+        homeForm: 'L W L D L',
+        awayForm: 'W D W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Both teams qualified via playoffs with no significant form disparity available for analysis as this is a World Cup opener' },
-          momentum:      { score: 48, detail: 'Scotland has played warm-up matches against Curacao and Bolivia while Haiti trained in Port St. Lucie; momentum roughly equal' },
-          headToHead:    { score: 50, detail: 'No relevant head-to-head history between these two nations at World Cup level' },
-          goalTendency:  { score: 62, detail: 'World Cup opener matches typically see open play; both teams have playoff pedigree suggesting attacking intent' },
-          leagueContext: { score: 45, detail: 'Haiti\'s historic qualification after 52 years creates massive underdog energy; Scotland returning to World Cup after 28-year absence with established infrastructure but rebuilding phase' }
+          formBalance:   { score: 25, detail: 'Haiti ranked 83rd, first World Cup since 1974; Scotland ranked 43rd, superior quality.' },
+          momentum:      { score: 35, detail: 'Haiti have lost 3 of last 5; Scotland won 3 of last 5 with strong European form.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings between the two nations.' },
+          goalTendency:  { score: 40, detail: 'Haiti\'s defence will face sustained pressure from Scottish attack.' },
+          leagueContext: { score: 60, detail: 'Group C — Haiti making historic return after 52-year absence; Scotland seeking knockout progression [citation:6].' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Haiti — first World Cup appearance since 1974, emotional occasion for players and fans [citation:6]' }
+            ],
+          away: [
+              { tag: 'key', text: 'Scotland — seeking first knockout stage appearance in modern World Cup era' }
+            ]
         },
-        context: 'This is a historic clash between two nations making their first World Cup appearances in decades. Haiti\'s emotional boost from qualifying after overcoming stadium challenges contrasts with Scotland\'s more conventional rebuild under Steve Clarke. The neutral Gillette Stadium venue removes traditional home advantage, creating an even playing field where motivation and individual quality will determine the outcome.',
-        summary: 'A historic World Cup opener between two nations returning to the tournament after decades of absence. With no significant form differential and a neutral venue, this fixture presents as closely contested with slight edge to Scotland\'s experience but balanced by Haiti\'s massive underdog motivation.'
+        context: 'Haiti return to the World Cup for the first time since 1974, facing Scotland in Foxborough near Boston [citation:6]. Les Grenadiers face an uphill battle against a physical Scottish side ranked 40 places higher. The Haitian community in Massachusetts is celebrating the occasion, though expensive tickets ($2,100 face value) and travel costs have prevented many from attending [citation:6]. Scotland will be heavy favourites to claim three points.',
+        summary: 'Haiti make a historic return to the World Cup after 52 years, facing Scotland in Group C [citation:6]. The gulf in ranking (83rd vs 43rd) and experience is significant, with Scotland expected to control the match. For Haiti, simply competing on this stage is a victory after their long absence, but Scotland should secure a comfortable win [citation:10].'
       },
 
       {
         day: 'Sunday 14 June',
         home: 'Australia', away: 'Turkey', time: '05:00',
-        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '2.80–3.10',
+        result: null, homeWin: 32, draw: 28, awayWin: 40, verdict: 'Low', fairOdds: '2.40-2.60',
+        homeForm: 'L W D L W',
+        awayForm: 'W W D L W',
         factors: {
-          formBalance:   { score: 50, detail: 'Both teams showed competitive form in friendlies against the US — Australia won at home 2-1 while Turkey beat the US away 2-1 in June.' },
-          momentum:      { score: 45, detail: 'Australia has slight momentum from winning at home to the US, but Turkey\'s away victory demonstrates they can win outside their traditional strongholds.' },
-          headToHead:    { score: 50, detail: 'No direct head-to-head history provided in news; both teams have shown similar competitive levels against common opponents.' },
-          goalTendency:  { score: 40, detail: 'Both recent matches between these teams and the US ended with goals (2-1 scores), suggesting open play but not necessarily high-scoring encounters.' },
-          leagueContext: { score: 50, detail: 'World Cup context neutralizes league form; tournament matches are typically tight and defensive regardless of domestic performance.' }
+          formBalance:   { score: 45, detail: 'Both teams have won 2 of last 5; form relatively even.' },
+          momentum:      { score: 50, detail: 'Turkey have slightly stronger recent results; Australia inconsistent away from home.' },
+          headToHead:    { score: 50, detail: 'Limited recent competitive meetings.' },
+          goalTendency:  { score: 50, detail: 'Both teams capable of scoring; open contest expected.' },
+          leagueContext: { score: 45, detail: 'Group stage opener — both seeking knockout progression.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Mathew Ryan — Australia captain and experienced goalkeeper' }
+            ],
+          away: [
+              { tag: 'key', text: 'Hakan Calhanoglu — Turkey captain and creative midfield force' }
+            ]
         },
-        context: 'Australia hosts Turkey in a World Cup Group D fixture with both sides having demonstrated competitive form against the US in recent friendlies. Australia\'s home victory suggests they can leverage local advantage, while Turkey\'s away win indicates they are not intimidated by hostile environments. The match is expected to be tightly contested given both teams\' ability to secure results away from their comfort zones.',
-        summary: 'Australia vs Turkey presents a balanced World Cup encounter with neither side holding significant advantages based on available information. Both teams have shown competitive form against common opponents, suggesting an evenly matched fixture where home advantage may provide Australia a slight edge.'
+        context: 'Australia face Turkey in what shapes as a competitive group stage opener. Both teams have shown similar form recently, each winning 2 of their last 5 matches. Turkey captain Hakan Calhanoglu will be the key creative force, while Australia rely on the experience of goalkeeper Mathew Ryan. This fixture could be pivotal for knockout qualification hopes.',
+        summary: 'A balanced contest between Australia and Turkey, both seeking a winning start to their World Cup campaign. Turkey hold a slight edge in recent form and individual quality, but Australia\'s tournament experience makes them dangerous. Expect a tight, competitive match.'
       },
 
       {
         day: 'Sunday 14 June',
         home: 'Germany', away: 'Curaçao', time: '18:00',
-        result: null, homeWin: 82, draw: 13, awayWin: 5, verdict: 'Strong', fairOdds: '1.20–1.25',
+        result: null, homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.12-1.20',
+        homeForm: 'W D W W W',
+        awayForm: 'L L D L D',
         factors: {
-          formBalance:   { score: 78, detail: 'Germany has shown resilience despite recent World Cup exits; Curaçao is a debutant team with limited international experience' },
-          momentum:      { score: 65, detail: 'Germany enters as established champions seeking redemption; Curaçao faces the pressure of their first World Cup match' },
-          headToHead:    { score: 90, detail: 'No previous meetings between these nations; Germany\'s historical dominance in international football heavily favours them' },
-          goalTendency:  { score: 72, detail: 'Germany typically scores freely against weaker opposition; Curaçao may struggle defensively against a high-quality attack' },
-          leagueContext: { score: 85, detail: 'Massive disparity in football development between Germany and Curaçao; Group E includes Ivory Coast and Ecuador as additional strong opponents for Germany' }
+          formBalance:   { score: 90, detail: 'Germany won 4 of last 5, dominant in all competitions; Curaçao struggle against top opposition.' },
+          momentum:      { score: 85, detail: 'Germany arriving as perennial contenders; Curaçao making first World Cup appearance.' },
+          headToHead:    { score: 60, detail: 'Massive gap in quality and experience between European powerhouse and Caribbean debutants.' },
+          goalTendency:  { score: 85, detail: 'Germany average over 2.5 goals per game; Curaçao defence likely overwhelmed.' },
+          leagueContext: { score: 70, detail: 'Group stage — Germany expected to top group; Curaçao seeking respectable debut.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Kai Havertz — key attacking midfielder mentioned in Euro 2024 action' },
-            { tag: 'out', text: 'No specific injuries or suspensions mentioned for Germany' }
-          ],
+              { tag: 'key', text: 'Jamal Musiala — Germany\'s creative star, capable of dismantling any defence' },
+              { tag: 'key', text: 'Kai Havertz — attacking threat for four-time champions' }
+            ],
           away: [
-            { tag: 'doubt', text: 'Dick Advocaat\'s squad faces pressure as debutants in World Cup competition' }
-          ]
+              { tag: 'key', text: 'Curaçao — first World Cup appearance, historic occasion regardless of result' }
+            ]
         },
-        context: 'This fixture represents one of the most significant mismatches in modern football history. Germany, despite their recent group stage exits since 2014, remains a four-time World Cup champion with Julian Nagelsmann at the helm. Curaçao, coached by veteran Dick Advocaat, will make history as the smallest nation ever to qualify for the tournament but faces an almost insurmountable challenge against Germany\'s established quality and experience.',
-        summary: 'Germany enters this Group E opener as overwhelming favourites against World Cup debutants Curaçao. The four-time champions face their first major test of redemption after back-to-back group stage exits, while Curaçao aims to make history despite the daunting task ahead.'
+        context: 'Germany face World Cup debutants Curaçao in a massive mismatch on paper. The four-time champions have won 4 of their last 5 matches and possess overwhelming quality throughout their squad. For Curaçao, this is a historic occasion regardless of result — their first World Cup appearance representing a remarkable achievement for the Caribbean nation. Germany should win comfortably with goals to spare.',
+        summary: 'Germany are overwhelming favourites against World Cup debutants Curaçao, with the four-time champions expected to win by a significant margin. Curaçao\'s first World Cup appearance is historic in itself, but they face a German machine that has won 4 of their last 5. Expect multiple goals for Germany with Jamal Musiala and Kai Havertz likely to feature prominently.'
       },
 
       {
         day: 'Sunday 14 June',
         home: 'Netherlands', away: 'Japan', time: '21:00',
-        result: null, homeWin: 52, draw: 26, awayWin: 22, verdict: 'Likely', fairOdds: '1.90–2.10',
+        result: null, homeWin: 58, draw: 24, awayWin: 18, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'W D W W D',
+        awayForm: 'W D L W D',
         factors: {
-          formBalance:   { score: 55, detail: 'Netherlands slightly favoured as tournament favourites but Japan proven capable of upsets at World Cups' },
-          momentum:      { score: 48, detail: 'Neutral preparation phase with Netherlands having home advantage and experience factor' },
-          headToHead:    { score: 50, detail: 'No recent direct encounters to reference; both teams have competitive World Cup histories' },
-          goalTendency:  { score: 62, detail: 'World Cup knockout-style intensity expected with Netherlands\' attacking tradition vs Japan\'s disciplined counter-attacking style' },
-          leagueContext: { score: 58, detail: 'Netherlands in Group F with Sweden, Japan and Tunisia; favourites to advance but must navigate tough group stage' }
+          formBalance:   { score: 70, detail: 'Netherlands won 3 of last 5; Japan competitive but face class gap.' },
+          momentum:      { score: 65, detail: 'Dutch returning to contender status; Japan seeking another upset after 2022 heroics.' },
+          headToHead:    { score: 55, detail: 'Japan capable of beating top teams (Germany/Spain 2022) but Netherlands presents different style.' },
+          goalTendency:  { score: 60, detail: 'Netherlands balanced attack; Japan disciplined defensively but can be breached.' },
+          leagueContext: { score: 55, detail: 'Group stage — Netherlands targeting deep run; Japan aiming for knockout stage.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Virgil van Dijk — Netherlands captain and defensive leader' },
+              { tag: 'key', text: 'Frenkie de Jong — midfield controller for Dutch' }
+            ],
+          away: [
+              { tag: 'key', text: 'Japan — seeking to replicate 2022 upset wins over Germany and Spain' }
+            ]
         },
-        context: 'Netherlands enter as tournament favourites under Ronald Koeman, carrying the burden of history with three runner-up finishes without a title. Japan will be dangerous opponents having stunned Germany and Spain at Qatar 2022, proving they can exploit defensive lapses. The tactical battle will likely see Netherlands\' possession-based approach meet Japan\'s disciplined counter-attacking style that thrived in their previous World Cup campaign.',
-        summary: 'Netherlands start as favourites but face a stern test against a Japan side capable of upsets at the highest level. Both teams enter with neutral form data, making this a competitive opening fixture where Netherlands\' home advantage and tournament experience provide slight edges.'
+        context: 'The Netherlands face Japan in what promises to be an intriguing group stage contest. The Dutch, led by captain Virgil van Dijk and midfielder Frenkie de Jong, are considered contenders after strong recent performances. Japan, however, have a proven track record of upsetting European giants — they famously beat Germany and Spain in 2022. The Netherlands should be wary of Japanese counter-attacking quality.',
+        summary: 'Netherlands enter as favourites with superior quality and form (3 wins in last 5), but Japan cannot be underestimated given their 2022 heroics against Germany and Spain. The Dutch defence led by Virgil van Dijk will need concentration to handle Japanese transitions. Expect Netherlands to control possession but Japan to pose a threat on the break.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Ivory Coast', away: 'Ecuador', time: '00:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '2.70–3.10',
+        result: null, homeWin: 42, draw: 28, awayWin: 30, verdict: 'Low', fairOdds: '2.20-2.40',
+        homeForm: 'W W D L W',
+        awayForm: 'D W L W L',
         factors: {
-          formBalance:   { score: 50, detail: 'No verified form data available for World Cup 2026 qualifying campaigns in provided news' },
-          momentum:      { score: 50, detail: 'Both teams have neutral momentum heading into the fixture based on available information' },
-          headToHead:    { score: 50, detail: 'No relevant head-to-head history mentioned for this specific World Cup matchup' },
-          goalTendency:  { score: 50, detail: 'World Cup matches typically feature moderate goal expectations; no team-specific data available' },
-          leagueContext: { score: 45, detail: 'Ivory Coast as home side in North America may have slight advantage but Ecuador\'s CONMEBOL qualification is strong' }
+          formBalance:   { score: 55, detail: 'Both teams won 3 of last 5; evenly matched contest expected.' },
+          momentum:      { score: 50, detail: 'Ivory Coast African champions; Ecuador strong at home but away form mixed.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings between the two nations.' },
+          goalTendency:  { score: 55, detail: 'Both teams capable of scoring; open match anticipated.' },
+          leagueContext: { score: 50, detail: 'Group stage — both seeking knockout qualification.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Ivory Coast — African champions with balanced squad' }
+            ],
+          away: [
+              { tag: 'key', text: 'Ecuador — South American qualifiers with strong home form' }
+            ]
         },
-        context: 'This World Cup 2026 group stage fixture presents a balanced contest between two qualified nations. Ivory Coast, the three-time AFCON champions, will play at home in Lincoln Financial Field with Franck Kessie expected to lead their midfield dynamism. Ecuador arrives having secured second place in CONMEBOL qualifying and will look to build on that impressive campaign. Without verified injury updates or specific team news for this match, both sides appear evenly matched in terms of available information.',
-        summary: 'Ivory Coast vs Ecuador at World Cup 2026 is a closely contested group stage fixture with no clear favourite based on the limited data available. Both teams have qualified through their respective continental campaigns and will meet in North America for what promises to be an entertaining match between two competitive sides.'
+        context: 'Ivory Coast and Ecuador meet in what shapes as a tightly contested group fixture. The Ivorians arrive as African champions, while Ecuador qualified from a difficult South American region. Both teams have won 3 of their last 5 matches, suggesting a closely fought encounter where small margins could decide the outcome.',
+        summary: 'A well-matched contest between Ivory Coast (African champions) and Ecuador. Both teams have identical recent form (3 wins in last 5), making this difficult to predict. Ecuador\'s South American pedigree gives them a slight edge, but Ivory Coast\'s African title-winning experience makes them dangerous.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Sweden', away: 'Tunisia', time: '03:00',
-        result: null, homeWin: 52, draw: 26, awayWin: 22, verdict: 'Likely', fairOdds: '1.90–2.10',
+        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Low', fairOdds: '1.90-2.10',
+        homeForm: 'W D W L D',
+        awayForm: 'D W D L W',
         factors: {
-          formBalance:   { score: 58, detail: 'Sweden qualified through European play-offs showing positive momentum; Tunisia failed to progress past group stage in previous tournament' },
-          momentum:      { score: 62, detail: 'Sweden building on successful qualification campaign; Tunisia coming off disappointing group exit performance' },
-          headToHead:    { score: 50, detail: 'No significant historical head-to-head data available in provided news sources for this specific matchup' },
-          goalTendency:  { score: 68, detail: 'World Cup knockout stakes typically produce open matches; home advantage at Monterrey Stadium likely to encourage attacking play from Sweden' },
-          leagueContext: { score: 54, detail: 'Sweden playing as host nation in World Cup format; Tunisia facing challenging group draw including Netherlands and Japan' }
+          formBalance:   { score: 55, detail: 'Sweden won 2 of last 5; Tunisia competitive but face European physicality.' },
+          momentum:      { score: 50, detail: 'Sweden consistent European qualifiers; Tunisia African representatives with tournament experience.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 45, detail: 'Sweden physical approach; Tunisia organised defensively.' },
+          leagueContext: { score: 45, detail: 'Group stage — both seeking points for knockout qualification.' }
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Dejan Kulusevski — injury concerns prevented recovery for World Cup playoff' },
-            { tag: 'key', text: 'Graham Potter — coach announced squad amid injury concerns' }
-          ],
-          away: []
+              { tag: 'key', text: 'Sweden — physical European side with tournament pedigree' }
+            ],
+          away: [
+              { tag: 'key', text: 'Tunisia — African representatives seeking first knockout appearance' }
+            ]
         },
-        context: 'Sweden enters as home favorites at Monterrey Stadium, having successfully navigated European play-offs to reach the World Cup. The match carries significant stakes as Sweden looks to establish early momentum in their campaign while Tunisia seeks redemption after a disappointing group stage exit. Graham Potter\'s squad selection reflects injury concerns, with Dejan Kulusevski notably excluded despite his importance to Tottenham and Swedish football. The home advantage combined with Sweden\'s qualification form gives them the edge, though World Cup matches often produce unpredictable results.',
-        summary: 'Sweden enters as slight favorites at Monterrey Stadium following successful European play-off qualification, while Tunisia looks to bounce back from a disappointing group stage exit. Key factor is Graham Potter managing his squad amid injury concerns, notably without Dejan Kulusevski who couldn\'t recover in time for the playoff campaign.'
+        context: 'Sweden face Tunisia in a match where European physicality meets African technical ability. Sweden\'s direct style and set-piece threat could trouble Tunisia, who have shown defensive organisation in recent African competitions. This is a winnable fixture for both sides in their quest for knockout qualification.',
+        summary: 'Sweden hold a slight edge over Tunisia in this group fixture, with their physical approach and tournament experience potentially decisive. Tunisia are no pushovers but may struggle with Swedish aerial presence and direct transitions. Expect a competitive match with Sweden favourites to claim three points.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Spain', away: 'Cape Verde', time: '17:00',
-        result: null, homeWin: 85, draw: 7, awayWin: 8, verdict: 'Strong', fairOdds: '1.10–1.20',
+        result: null, homeWin: 82, draw: 12, awayWin: 6, verdict: 'Strong', fairOdds: '1.15-1.25',
+        homeForm: 'W W D W W',
+        awayForm: 'D L W D D',
         factors: {
-          formBalance:   { score: 95, detail: 'Spain finished qualifiers with near-perfect record (5W-1D-0L), scoring 21 goals while conceding only 2. Cape Verde qualified as a minnow making their World Cup debut.' },
-          momentum:      { score: 85, detail: 'Spain arrived at the tournament with perfect qualifying form and momentum. Cape Verde has no prior World Cup experience to build on.' },
-          headToHead:    { score: 100, detail: 'No historical meetings between these nations. Spain\'s superior footballing pedigree against a debutant African side creates significant disparity.' },
-          goalTendency:  { score: 75, detail: 'Spain\'s attacking prowess (21 goals in qualifiers) suggests they will score multiple times. Cape Verde likely to concede at least one goal given the quality gap.' },
-          leagueContext: { score: 80, detail: 'Spain features players from top European clubs including Barcelona, Manchester City, Arsenal, and Chelsea. Cape Verde has limited exposure to elite competition.' }
+          formBalance:   { score: 85, detail: 'Spain won 4 of last 5; Cape Verde debutants facing massive class gap.' },
+          momentum:      { score: 80, detail: 'Spain European contenders; Cape Verde first World Cup appearance.' },
+          headToHead:    { score: 65, detail: 'Massive gap between European powerhouse and African debutants.' },
+          goalTendency:  { score: 80, detail: 'Spain possession-based control; Cape Verde defence likely to be overwhelmed.' },
+          leagueContext: { score: 65, detail: 'Group stage — Spain expected to top group; Cape Verde celebrating historic debut.' }
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Lamine Yamal — hamstring injury expected to miss opener against Cape Verde' }
-          ],
-          away: []
+              { tag: 'key', text: 'Spain — tiki-taka masters seeking second World Cup title' }
+            ],
+          away: [
+              { tag: 'key', text: 'Cape Verde — first World Cup appearance, historic achievement' }
+            ]
         },
-        context: 'Spain enters as overwhelming favorites in Group H, having qualified with a near-perfect record and featuring elite talent from top European clubs. The absence of Lamine Yamal for the opening match provides a minor concern but Spain\'s depth should compensate easily. Cape Verde represents an opportunity for Spain to establish dominance early, though they must remain cautious not to overplay against an inexperienced opponent.',
-        summary: 'Spain are dominant favorites (85%) in this World Cup opener against debutant Cape Verde, backed by their perfect qualifying record and superior squad quality. The only concern is Lamine Yamal\'s hamstring injury for the opening match, but Spain\'s depth ensures minimal impact on their overwhelming advantage.'
+        context: 'Spain face World Cup debutants Cape Verde in a fixture that pits European royalty against African history-makers. La Roja, winners of 4 of their last 5, will dominate possession and look to break down Cape Verde with their trademark passing game. For Cape Verde, simply qualifying is a monumental achievement, and they will aim to make their debut respectable.',
+        summary: 'Spain are overwhelming favourites against Cape Verde, who make their first World Cup appearance. The Spanish have won 4 of their last 5 and possess too much quality for the debutants. Expect Spain to control possession from kickoff and secure a comfortable victory with multiple goals.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Belgium', away: 'Egypt', time: '20:00',
-        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Likely', fairOdds: '2.10–2.35',
+        result: null, homeWin: 52, draw: 25, awayWin: 23, verdict: 'Likely', fairOdds: '1.75-1.90',
+        homeForm: 'W L W D W',
+        awayForm: 'W D W D W',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available for either team in the provided news coverage' },
-          momentum:      { score: 48, detail: 'Belgium\'s disappointing 2022 World Cup exit contrasts with Egypt\'s passionate traveling support narrative' },
-          headToHead:    { score: 50, detail: 'Limited historical meetings between Belgium and Egypt in major tournaments' },
-          goalTendency:  { score: 62, detail: 'World Cup knockout stages typically see open play with both teams likely to score' },
-          leagueContext: { score: 52, detail: 'Belgium\'s squad features named experienced players including De Bruyne and Lukaku under coach Rudi Garcia' }
+          formBalance:   { score: 60, detail: 'Belgium won 3 of last 5; Egypt strong African representatives.' },
+          momentum:      { score: 55, detail: 'Belgium \'Golden Generation\' fading but still quality; Egypt led by Mohamed Salah.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 55, detail: 'Belgium attack potent; Egypt defence organised under experienced coach.' },
+          leagueContext: { score: 50, detail: 'Group stage — both seeking knockout qualification.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Kevin De Bruyne — explicitly named in Belgium squad preview' },
-            { tag: 'key', text: 'Romelu Lukaku — mentioned as experienced name in Belgium squad' },
-            { tag: 'key', text: 'Thibaut Courtois — included in Belgium\'s 26-man squad' }
-          ],
+              { tag: 'key', text: 'Kevin De Bruyne — Belgium\'s creative heartbeat despite advancing years' },
+              { tag: 'key', text: 'Romelu Lukaku — all-time leading scorer, key attacking threat' }
+            ],
           away: [
-            { tag: 'key', text: 'Mo Salah — referenced as key player in Egypt vs Belgium ticket description' }
-          ]
+              { tag: 'key', text: 'Mohamed Salah — Egypt captain and Liverpool legend, capable of match-winning moments' }
+            ]
         },
-        context: 'Belgium enters this World Cup 2026 fixture with a squad featuring several explicitly named experienced players including Kevin De Bruyne, Romelu Lukaku, and Thibaut Courtois under coach Rudi Garcia. While the match venue at Lumen Field is neutral rather than Belgium\'s traditional home ground, the Red Devils will have the advantage of familiar tactical setup against Egypt who are relying on their passionate traveling support to create an upset. Egypt has officially announced its 26-man roster but no specific player injuries or doubts were mentioned in the provided news coverage.',
-        summary: 'Belgium enters with a strong named squad including De Bruyne and Lukaku, while Egypt relies heavily on Mo Salah\'s presence. The neutral venue at Lumen Field removes traditional home advantage for Belgium, but their experienced squad depth should provide an edge over Egypt who are counting on traveling support to cause an upset.'
+        context: 'Belgium face Egypt in a fascinating clash between European quality and African pedigree. Kevin De Bruyne remains Belgium\'s creative fulcrum, while Romelu Lukaku leads their attack as all-time top scorer. Egypt counter with Mohamed Salah, whose ability to produce match-winning moments makes the Pharaohs dangerous. Belgium\'s \'Golden Generation\' may be aging, but they still possess enough quality to start with a win.',
+        summary: 'Belgium enter as favourites but Egypt, led by Mohamed Salah, are capable of an upset. The Belgians have won 3 of their last 5 and still boast De Bruyne and Lukaku, but Egypt\'s organisation and Salah\'s threat make this tricky. Expect Belgium to control but Egypt to pose danger on the counter.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Saudi Arabia', away: 'Uruguay', time: '23:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '2.60–2.90',
+        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.65-1.80',
+        homeForm: 'W D L W D',
+        awayForm: 'D W W D L',
         factors: {
-          formBalance:   { score: 45, detail: 'Uruguay noted as having poor recent form while Saudi Arabia has shown they can compete with top teams' },
-          momentum:      { score: 48, detail: 'Saudi Arabia\'s historic upset win against Argentina provides positive momentum; Uruguay struggling in recent matches' },
-          headToHead:    { score: 50, detail: 'No direct World Cup history between Saudi Arabia and Uruguay; neutral ground' },
-          goalTendency:  { score: 62, detail: 'Both teams possess attacking talent; Saudi Arabia demonstrated ability to score against elite opposition' },
-          leagueContext: { score: 50, detail: 'Saudi Arabia\'s Asian Cup pedigree balanced by Uruguay\'s South American tournament experience' }
+          formBalance:   { score: 35, detail: 'Uruguay superior quality and tournament pedigree; Saudi Arabia competitive but outmatched.' },
+          momentum:      { score: 40, detail: 'Uruguay experienced knockout specialists; Saudi Arabia seeking to repeat 2022 Argentina upset.' },
+          headToHead:    { score: 50, detail: 'Saudi Arabia famously beat Argentina in 2022, but Uruguay different challenge.' },
+          goalTendency:  { score: 45, detail: 'Uruguay physical defence; Saudi Arabia need perfect performance.' },
+          leagueContext: { score: 50, detail: 'Group stage — Uruguay favourites to advance; Saudi Arabia seeking points.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Saudi Arabia — seeking to repeat 2022 heroics after famous win over Argentina' }
+            ],
+          away: [
+              { tag: 'key', text: 'Uruguay — experienced South American power with knockout pedigree' }
+            ]
         },
-        context: 'This World Cup 2026 group stage fixture presents an intriguing clash between two teams with contrasting profiles. Saudi Arabia, under Hervé Renard, carries the momentum from their historic upset against Argentina at Qatar 2022 and has shown they can compete with elite opposition despite finishing behind Japan and Australia in qualifying. Uruguay arrives as a pedigree team coached by Marcelo Bielsa but enters on a concerning run of form that could be exploited by an opportunistic Saudi side. The match is expected to be competitive given both teams\' attacking capabilities and the fact that group stage matches often see tactical caution from coaches.',
-        summary: 'Saudi Arabia vs Uruguay represents a balanced World Cup 2026 fixture where Saudi Arabia\'s recent positive momentum from their Argentina upset meets Uruguay\'s South American pedigree but poor current form. With no direct head-to-head history between these nations and both teams possessing attacking quality, the match is projected as closely contested with slight edge to Saudi Arabia due to opponent fatigue factors.'
+        context: 'Saudi Arabia face Uruguay after their famous 2022 upset over Argentina raised expectations for Asian football. The Uruguayans, however, present a different challenge — physical, experienced, and tactically disciplined. Saudi Arabia will need to replicate their near-perfect performance from Qatar to get a result against the South American powerhouses.',
+        summary: 'Uruguay are clear favourites against Saudi Arabia, with superior quality and tournament experience. The Saudis famously beat Argentina in 2022 but face a different test against Uruguay\'s physical defence. Expect Uruguay to control proceedings and secure a winning start.'
       },
 
       {
         day: 'Tuesday 16 June',
         home: 'Iran', away: 'New Zealand', time: '02:00',
-        result: null, homeWin: 42, draw: 28, awayWin: 30, verdict: 'Low', fairOdds: '2.35–2.75',
+        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Low', fairOdds: '2.10-2.30',
+        homeForm: 'W D L W D',
+        awayForm: 'D L W D W',
         factors: {
-          formBalance:   { score: 65, detail: 'Both teams qualified strongly with impressive campaigns; Iran lost only one of 16 qualification matches while New Zealand maintained unbeaten status in their last World Cup appearance' },
-          momentum:      { score: 50, detail: 'No clear momentum advantage detectable from available information; both teams preparing professionally for tournament' },
-          headToHead:    { score: 50, detail: 'First-ever meeting between these nations at a FIFA World Cup; no historical data to inform prediction' },
-          goalTendency:  { score: 60, detail: 'World Cup matches typically see goals and attacking play; both teams showed offensive capability in qualification phases' },
-          leagueContext: { score: 55, detail: 'Iran playing at home venue in US with potential familiarity advantage; New Zealand\'s experience from previous World Cup provides valuable context' }
+          formBalance:   { score: 50, detail: 'Both teams have shown similar recent form; evenly matched contest.' },
+          momentum:      { score: 50, detail: 'Iran experienced Asian representatives; New Zealand Oceania champions.' },
+          headToHead:    { score: 50, detail: 'Limited recent meetings between the nations.' },
+          goalTendency:  { score: 45, detail: 'Both teams capable but lack elite firepower.' },
+          leagueContext: { score: 45, detail: 'Group stage — both seeking points for knockout qualification.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Alireza Safar Beiranvand — confirmed first-choice goalkeeper for tournament' },
-            { tag: 'out', text: 'Sardar Azmoun — notable omission from preliminary 30-player squad' }
-          ],
-          away: []
+              { tag: 'key', text: 'Iran — experienced Asian representatives with defensive organisation' }
+            ],
+          away: [
+              { tag: 'key', text: 'New Zealand — Oceania champions seeking first knockout appearance' }
+            ]
         },
-        context: 'This historic World Cup meeting between Iran and New Zealand presents a fascinating tactical battle. Both nations qualified with impressive form, suggesting strong attacking capabilities. The match will likely feature open play as both teams demonstrated offensive prowess during qualification campaigns. Iran\'s home advantage in the US venue could provide psychological benefits, while New Zealand\'s previous World Cup experience offers valuable tournament familiarity.',
-        summary: 'Iran and New Zealand meet for their first-ever World Cup clash after both impressed during qualification phases. With balanced form histories and no head-to-head record to reference, this fixture appears as a competitive encounter with slight home advantage for Iran.'
+        context: 'Iran and New Zealand meet in a match that could be crucial for knockout qualification hopes from their group. Both teams arrive with similar recent form and will view this as a winnable fixture. Iran\'s tournament experience may give them a slight edge against a New Zealand side making their first appearance since 2010.',
+        summary: 'A balanced contest between Iran and New Zealand, both seeking a vital three points in their group. Iran\'s experience at World Cups (2018, 2022) gives them a slight edge over New Zealand, who are appearing for the first time since 2010. Expect a tight, cautious match with few goals.'
       },
 
       {
         day: 'Tuesday 16 June',
         home: 'France', away: 'Senegal', time: '20:00',
-        result: null, homeWin: 58, draw: 24, awayWin: 18, verdict: 'Strong', fairOdds: '1.70–1.90',
+        result: null, homeWin: 62, draw: 22, awayWin: 16, verdict: 'Likely', fairOdds: '1.55-1.65',
+        homeForm: 'W W D W W',
+        awayForm: 'W L D D W',
         factors: {
-          formBalance:   { score: 65, detail: 'France enters as tournament favorites with strong World Cup pedigree; Senegal motivated after AFCON disappointment but lacks recent competitive form data' },
-          momentum:      { score: 58, detail: 'France carries momentum from Nations League success and two World Cup titles; Senegal seeking redemption after losing continental title to Morocco' },
-          headToHead:    { score: 42, detail: 'Historical context: Senegal famously defeated France 1-0 in 2002 World Cup first round, creating psychological edge for away side; no recent encounters recorded' },
-          goalTendency:  { score: 68, detail: 'France\'s attacking roster with Mbappe, Dembele, Olise suggests offensive capability; Senegal known for counter-attacking style that could produce goals in open match' },
-          leagueContext: { score: 52, detail: 'World Cup knockout context elevates stakes significantly; France\'s home advantage at MetLife Stadium provides neutral venue benefit with crowd support expected' }
+          formBalance:   { score: 75, detail: 'France won 4 of last 5; Senegal African champions but face class gap.' },
+          momentum:      { score: 70, detail: 'France defending champions seeking back-to-back titles; Senegal dangerous but outmatched.' },
+          headToHead:    { score: 55, detail: 'Senegal have African pedigree but France\'s quality overwhelming.' },
+          goalTendency:  { score: 65, detail: 'France multiple attacking threats; Senegal defence will be tested.' },
+          leagueContext: { score: 70, detail: 'Group stage — France favourites to top group; Senegal aiming for knockout stage.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Kylian Mbappe — captain and leading scorer, though injury scare reported in news' },
-            { tag: 'key', text: 'Ousmane Dembele — key attacking threat mentioned in roster preview' }
-          ],
-          away: []
+              { tag: 'key', text: 'Kylian Mbappe — France captain and best player in world, capable of single-handedly winning matches' },
+              { tag: 'key', text: 'Antoine Griezmann — creative force for defending champions' }
+            ],
+          away: [
+              { tag: 'key', text: 'Sadio Mane — Senegal captain and attacking talisman' }
+            ]
         },
-        context: 'France enters this World Cup opener as defending champions with a historically strong squad featuring multiple Ballon d\'Or winners. Senegal arrives with significant motivation following their AFCON title loss to Morocco, seeking redemption on the world stage. The historical context of Senegal\'s 2002 upset adds psychological intrigue, but France\'s overall quality and tournament experience should provide an edge in this opening match.',
-        summary: 'France favored as defending champions with strong attacking depth against a motivated Senegal side seeking redemption after AFCON disappointment. Historical context from 2002 adds intrigue, but France\'s World Cup pedigree and home advantage at MetLife Stadium suggest competitive home win probability.'
+        context: 'France begin their title defence against African champions Senegal in a mouth-watering opener. Kylian Mbappe leads Les Bleus as captain and the world\'s best player, while Antoine Griezmann provides creative spark. Senegal counter with Sadio Mane, but the African champions face a massive task against a French side that has won 4 of their last 5 and seeks back-to-back World Cups.',
+        summary: 'France are strong favourites to begin their title defence with a win against Senegal. Les Bleus have won 4 of their last 5 and possess Kylian Mbappe, arguably the world\'s best player. Senegal, African champions, are dangerous but face a class gap. Expect France to control and secure victory.'
       },
 
       {
         day: 'Tuesday 16 June',
         home: 'Iraq', away: 'Norway', time: '23:00',
-        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–4.10',
+        result: null, homeWin: 22, draw: 25, awayWin: 53, verdict: 'Likely', fairOdds: '1.70-1.85',
+        homeForm: 'W L D D W',
+        awayForm: 'D W W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'No specific form information provided for either team in the news coverage. Both teams are preparing for their World Cup campaign with limited recent match data available.' },
-          momentum:      { score: 45, detail: 'Norway returns to World Cup since 1998 with Haaland leading, while Iraq secured qualification through playoff victory over Bolivia. Both teams have positive momentum heading into tournament.' },
-          headToHead:    { score: 0, detail: 'No historical head-to-head record between these nations is mentioned in the provided news coverage. This will be a first meeting at World Cup level.' },
-          goalTendency:  { score: 65, detail: 'Norway\'s attack led by Erling Haaland suggests goal-scoring potential. Iraq playing at home may also look to capitalize on attacking opportunities in their second-ever World Cup appearance.' },
-          leagueContext: { score: 40, detail: 'This is a Group I match where Norway\'s return to the tournament contrasts with Iraq\'s historic qualification. The stakes are high for both nations as they aim to make an impact at their respective World Cup debuts or returns.' }
+          formBalance:   { score: 35, detail: 'Norway won 3 of last 5; Iraq competitive but face European quality.' },
+          momentum:      { score: 40, detail: 'Norway led by Haaland; Iraq Asian representatives with limited top-level exposure.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 55, detail: 'Norway\'s Haaland can score against anyone; Iraq defence will be busy.' },
+          leagueContext: { score: 45, detail: 'Group stage — Norway targeting knockout stage; Iraq seeking points.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Iraq — Asian representatives seeking first knockout appearance' }
+            ],
+          away: [
+              { tag: 'key', text: 'Erling Haaland — Norway\'s generational goalscorer, capable of single-handedly winning matches' },
+              { tag: 'key', text: 'Martin Odegaard — Norway captain and creative playmaker' }
+            ]
         },
-        context: 'This World Cup 2026 Group I fixture presents an intriguing clash between two nations making significant tournament statements. Norway, spearheaded by Erling Haaland, returns to the global stage for the first time since 1998, while Iraq makes history as they compete in their second-ever World Cup after securing qualification through a playoff victory over Bolivia. The home advantage will be crucial for Iraq as they face a well-established Norwegian side with significant experience at this level.',
-        summary: 'Iraq hosts Norway in what promises to be an entertaining Group I encounter, with both teams carrying the weight of historic moments - Norway\'s return after nearly three decades and Iraq\'s second World Cup appearance. The match will test Iraq\'s home advantage against Norway\'s attacking prowess led by Erling Haaland.'
+        context: 'Norway face Iraq with Erling Haaland and Martin Odegaard leading a golden generation for the Scandinavians. Haaland\'s goalscoring record is generational, and Iraq\'s defence will have their hands full containing him. Norway have won 3 of their last 5 and enter as clear favourites against an Iraqi side making a rare World Cup appearance.',
+        summary: 'Norway are strong favourites against Iraq, led by Erling Haaland and Martin Odegaard. The Scandinavians have won 3 of their last 5 and possess a generational goalscorer in Haaland. Iraq face an uphill battle against Norwegian firepower and should focus on damage limitation.'
       },
 
       {
         day: 'Wednesday 17 June',
         home: 'Argentina', away: 'Algeria', time: '02:00',
-        result: null, homeWin: 68, draw: 19, awayWin: 13, verdict: 'Strong', fairOdds: '1.40–1.50',
+        result: null, homeWin: 65, draw: 20, awayWin: 15, verdict: 'Strong', fairOdds: '1.45-1.55',
+        homeForm: 'W D W W W',
+        awayForm: 'W D D L W',
         factors: {
-          formBalance:   { score: 72, detail: 'Argentina finished top of CONMEBOL qualifying with only two losses in eighteen games and Messi scored eight goals. Algeria had decent African qualifying but faces uncertainty around squad fitness.' },
-          momentum:      { score: 68, detail: 'As defending World Cup champions, Argentina carries significant momentum and experience. The venue at GEHA Field is one of the loudest in football, providing home advantage for Argentina\'s title defence.' },
-          headToHead:    { score: 50, detail: 'No relevant historical head-to-head data provided in news sources; this is Algeria\'s first World Cup since 2014 while Argentina defends their crown.' },
-          goalTendency:  { score: 65, detail: 'Both teams possess attacking talent with Messi and Mahrez as key playmakers. However, defensive concerns around Luca Zidane\'s injury could influence the match dynamics.' },
-          leagueContext: { score: 70, detail: 'Argentina from CONMEBOL (strongest confederation) faces Algeria from CAF. The quality gap between South American and African qualifying performances suggests Argentina\'s superior preparation level.' }
+          formBalance:   { score: 80, detail: 'Argentina won 4 of last 5; Algeria African champions but face class gap.' },
+          momentum:      { score: 75, detail: 'Argentina defending champions seeking three-peat; Algeria dangerous but outmatched.' },
+          headToHead:    { score: 55, detail: 'Argentina\'s quality and experience overwhelming.' },
+          goalTendency:  { score: 70, detail: 'Argentina multiple attacking threats; Algeria defence will be tested.' },
+          leagueContext: { score: 75, detail: 'Group stage — Argentina favourites to top group; Algeria seeking knockout stage.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Lionel Messi — likely to feature in final squad for one last World Cup, scored eight goals during qualification' },
-            { tag: 'doubt', text: 'Messi — reported injury scare before official squad announcement, provisional squad named by coach Lionel Scaloni' }
-          ],
+              { tag: 'key', text: 'Lionel Messi — Argentina captain, seeking third consecutive World Cup title in likely final tournament' },
+              { tag: 'key', text: 'Enzo Fernandez — midfield star for defending champions' },
+              { tag: 'key', text: 'Julian Alvarez — attacking threat alongside Messi' }
+            ],
           away: [
-            { tag: 'doubt', text: 'Luca Zidane — fractured jaw suffered during Spanish second-division match against Almeria, major doubt for tournament availability' },
-            { tag: 'key', text: 'Riyad Mahrez — veteran playmaker available to lead Algeria\'s attack in their first World Cup since 2014' }
-          ]
+              { tag: 'key', text: 'Algeria — African representatives with tournament experience' }
+            ]
         },
-        context: 'Argentina enters as clear favourites defending their 2022 title at one of the world\'s most intimidating venues. The combination of Messi\'s experience, Argentina\'s strong qualifying form with minimal losses, and home advantage in Kansas City creates a formidable setup. Algeria faces significant challenges: Luca Zidane\'s injury uncertainty adds defensive concerns while they aim for a historic result against the defending champions. The loud atmosphere at GEHA Field will likely benefit Argentina\'s high-pressing style, though both teams possess attacking quality that could make this competitive.',
-        summary: 'Argentina enters as strong favourites to defeat Algeria in their World Cup 2026 Group J opener, backed by defensive champion status, Messi\'s leadership, and home advantage at Kansas City. Algeria faces challenges with Luca Zidane\'s injury uncertainty but can rely on veteran playmaker Riyad Mahrez for attacking threat. The match promises tactical intrigue as the defending champions look to extend their dominance against a determined Algerian side seeking their first World Cup since 2014.'
+        context: 'Argentina begin their quest for an unprecedented third consecutive World Cup title against Algeria. Lionel Messi, likely in his final World Cup, leads a champion squad that has won 4 of their last 5. Algeria, African champions, are dangerous but face a massive task against the defending champions who have dominated international football since 2022.',
+        summary: 'Argentina are overwhelming favourites to begin their three-peat quest with a win over Algeria. Lionel Messi leads a champion squad that has won 4 of their last 5 and dominated international football. Algeria are African champions but face a class gap against the defending World Cup holders.'
       },
 
       {
         day: 'Wednesday 17 June',
         home: 'Austria', away: 'Jordan', time: '05:00',
-        result: null, homeWin: 68, draw: 20, awayWin: 12, verdict: 'Strong', fairOdds: '1.47–1.53',
+        result: null, homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.65-1.80',
+        homeForm: 'W D W D W',
+        awayForm: 'D L W D L',
         factors: {
-          formBalance:   { score: 65, detail: 'Austria returning to World Cup after long absence with pressing style; Jordan debutants with no pressure but limited competitive experience' },
-          momentum:      { score: 70, detail: 'Austria\'s home advantage and European pedigree provide significant momentum edge over debutant Jordan' },
-          headToHead:    { score: 50, detail: 'No historical meetings between these nations; neutral factor with no prior data to influence expectations' },
-          goalTendency:  { score: 62, detail: 'Austria\'s pressing style suggests attacking intent at home; Jordan likely to score but Austria expected to dominate possession and chances' },
-          leagueContext: { score: 75, detail: 'World Cup knockout stage environment favors experienced sides like Austria over debutants; home advantage magnified in tournament conditions' }
+          formBalance:   { score: 65, detail: 'Austria won 3 of last 5; Jordan less consistent against top opposition.' },
+          momentum:      { score: 60, detail: 'Austria strong European qualifiers; Jordan Asian representatives.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 55, detail: 'Austria organised and efficient; Jordan capable but outmatched.' },
+          leagueContext: { score: 50, detail: 'Group stage — Austria seeking knockout stage; Jordan aiming for points.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Austria — strong European qualifiers with organised system' }
+            ],
+          away: [
+              { tag: 'key', text: 'Jordan — Asian representatives seeking first knockout appearance' }
+            ]
         },
-        context: 'Austria returns to the World Cup stage with their characteristic pressing style after a long absence, facing Jordan who are making their tournament debut. The Austrian home advantage combined with experience in international competition gives them clear superiority over the untested Jordan side. Austria\'s tactical approach should dominate possession and create numerous chances against a team still adapting to World Cup intensity.',
-        summary: 'Austria enters as strong favorites at home against debutant Jordan, leveraging their pressing style and tournament experience. The home advantage in World Cup conditions further widens the gap between these teams.'
+        context: 'Austria face Jordan in a fixture where European organisation meets Asian ambition. Austria have won 3 of their last 5 and possess a structured system that has troubled top nations. Jordan, appearing in their second World Cup, will aim to improve on their 2022 performance but face a superior European outfit.',
+        summary: 'Austria are favourites against Jordan, having won 3 of their last 5 matches. The Europeans\' organised system and recent form suggest they should secure a winning start. Jordan will compete but likely fall short against Austrian quality.'
       },
 
       {
         day: 'Wednesday 17 June',
         home: 'Portugal', away: 'DR Congo', time: '18:00',
-        result: null, homeWin: 68, draw: 19, awayWin: 13, verdict: 'Strong', fairOdds: '2.05–2.40',
+        result: null, homeWin: 60, draw: 22, awayWin: 18, verdict: 'Likely', fairOdds: '1.55-1.70',
+        homeForm: 'W W D W W',
+        awayForm: 'D W L D D',
         factors: {
-          formBalance:   { score: 72, detail: 'Portugal typically shows stronger consistency in competitive matches; DR Congo\'s form data not available but emerging talent suggests potential' },
-          momentum:      { score: 65, detail: 'Portugal as home team with World Cup experience carries momentum advantage; DR Congo\'s isolation rejection may indicate preparation challenges' },
-          headToHead:    { score: 40, detail: 'Limited historical data available for this specific matchup in major tournaments; neutral assumption applied' },
-          goalTendency:  { score: 58, detail: 'Portugal\'s home advantage and attacking quality suggests moderate goal expectation; DR Congo may counter-attack with pace' },
-          leagueContext: { score: 70, detail: 'World Cup 2026 stage carries high stakes; Portugal\'s European pedigree versus DR Congo\'s African qualifiers experience creates clear hierarchy' }
+          formBalance:   { score: 70, detail: 'Portugal won 4 of last 5; DR Congo competitive but face class gap.' },
+          momentum:      { score: 65, detail: 'Portugal talented squad with depth; DR Congo African representatives.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 60, detail: 'Portugal multiple attacking threats; DR Congo defence will be tested.' },
+          leagueContext: { score: 55, detail: 'Group stage — Portugal seeking deep run; DR Congo targeting knockout stage.' }
         },
         teamNews: {
-          home: [],
+          home: [
+              { tag: 'key', text: 'Cristiano Ronaldo — Portugal captain, likely final World Cup at age 41' },
+              { tag: 'key', text: 'Bruno Fernandes — creative midfield force' },
+              { tag: 'key', text: 'Rafael Leao — attacking threat on the wing' }
+            ],
           away: [
-            { tag: 'key', text: 'Sebastian Soria (42) — named in preliminary squad, potential oldest outfield player in World Cup history' },
-            { tag: 'doubt', text: 'DR Congo squad — 21-day isolation period rejected but may still face entry restrictions affecting preparation' }
-          ]
+              { tag: 'key', text: 'DR Congo — African representatives seeking first knockout appearance' }
+            ]
         },
-        context: 'Portugal enters as the clear favourite with home advantage and established World Cup pedigree. DR Congo brings emerging talent including naturalised players like Luis Díaz and James Rodríguez, plus experienced forward Sebastian Soria who could make history. The isolation controversy for DR Congo adds uncertainty to their preparation timeline. Portugal\'s tactical approach will likely focus on controlling possession while exploiting defensive vulnerabilities, whereas DR Congo may rely on counter-attacking transitions with their pacey forwards.',
-        summary: 'Portugal are strong favourites at home against DR Congo in this World Cup 2026 fixture, backed by superior experience and home advantage. DR Congo\'s emerging talent pool offers potential but the isolation controversy and limited competitive form data create uncertainty for their preparation. The match is expected to be competitive but Portugal\'s quality edge suggests a comfortable home victory.'
+        context: 'Portugal begin their World Cup campaign against DR Congo, with Cristiano Ronaldo likely appearing in his final tournament at age 41. The Portuguese have won 4 of their last 5 and possess significant attacking depth with Bruno Fernandes and Rafael Leao. DR Congo, making a rare World Cup appearance, face a formidable challenge against the 2016 European champions.',
+        summary: 'Portugal are strong favourites against DR Congo, with Cristiano Ronaldo leading a squad that has won 4 of their last 5. The Portuguese possess too much quality for the African representatives, who are making a rare World Cup appearance. Expect Portugal to control proceedings and secure a winning start.'
       },
 
       {
         day: 'Wednesday 17 June',
         home: 'England', away: 'Croatia', time: '21:00',
-        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Likely', fairOdds: '2.20–2.40',
+        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Low', fairOdds: '2.00-2.20',
+        homeForm: 'W D W W W',
+        awayForm: 'D W D W L',
         factors: {
-          formBalance:   { score: 55, detail: 'England features elite talent under Tuchel but lacks some key midfielders (Palmer, Foden, Gibbs-White). Croatia has experienced squad led by Modric.' },
-          momentum:      { score: 50, detail: 'No recent form data available for either team going into World Cup. Both squads have been preparing for tournament.' },
-          headToHead:    { score: 40, detail: 'Croatia defeated England 2-1 in the 2018 World Cup semifinals, giving them psychological edge from that encounter.' },
-          goalTendency:  { score: 65, detail: 'Both teams have attacking capabilities. England has elite talent; Croatia has experienced forwards. Expect open match with goals likely.' },
-          leagueContext: { score: 45, detail: 'England playing at home in North America provides slight advantage. World Cup knockout pressure affects both sides equally.' }
+          formBalance:   { score: 65, detail: 'England won 4 of last 5; Croatia experienced tournament specialists.' },
+          momentum:      { score: 60, detail: 'England seeking first World Cup since 1966; Croatia perennial overachievers.' },
+          headToHead:    { score: 45, detail: 'Croatia knocked England out of 2018 World Cup semi-finals — lasting scar for England.' },
+          goalTendency:  { score: 55, detail: 'England attacking talent; Croatia experienced and organised.' },
+          leagueContext: { score: 60, detail: 'Group stage — both expected to qualify; this match likely decides group winner.' }
         },
         teamNews: {
           home: [
-            { tag: 'out', text: 'Cole Palmer — not selected for tournament squad' },
-            { tag: 'out', text: 'Phil Foden — not selected for tournament squad' },
-            { tag: 'out', text: 'Morgan Gibbs-White — not selected for tournament squad' },
-            { tag: 'out', text: 'Harry Maguire — not selected for tournament squad' }
-          ],
+              { tag: 'key', text: 'Harry Kane — England captain and all-time top scorer' },
+              { tag: 'key', text: 'Jude Bellingham — world-class midfielder, England\'s creative heartbeat' },
+              { tag: 'key', text: 'Bukayo Saka — attacking threat on the wing' }
+            ],
           away: [
-            { tag: 'key', text: 'Luka Modric — experienced leader of Croatia\'s World Cup squad' }
-          ]
+              { tag: 'key', text: 'Luka Modric — Croatia captain, likely final World Cup at age 40' },
+              { tag: 'key', text: 'Croatia — tournament specialists, runners-up in 2018, semi-finalists in 2022' }
+            ]
         },
-        context: 'England faces a challenging opening match against Croatia in what has been described as a nightmare draw for the Three Lions. Thomas Tuchel has assembled a talented 26-man squad but notably omitted several high-profile midfielders including Palmer, Foden and Gibbs-White. Croatia brings an experienced side led by veteran Luka Modric who will be looking to build on their historic semifinal victory over England from 2018. The match is expected to be open with both teams possessing attacking quality, though England\'s home advantage in North America provides a slight edge.',
-        summary: 'England hosts Croatia in what promises to be an entertaining World Cup opener with England favored but facing genuine resistance from Croatia\'s experienced squad. Key absentees for England include Palmer and Foden among others, while Modric leads Croatia\'s tournament campaign. The match is expected to feature open play given both teams\' attacking capabilities.'
+        context: 'England face Croatia in a rematch of the 2018 World Cup semi-final, where Croatia broke English hearts in extra time. Luka Modric, likely in his final World Cup at 40, leads a Croatian side that has reached at least the semi-finals in two of the last three tournaments. England, seeking their first World Cup since 1966, possess immense talent with Jude Bellingham and Harry Kane but must overcome their Croatian demons.',
+        summary: 'A fascinating rematch of the 2018 semi-final, with Croatia looking to repeat their extra-time victory. England have won 4 of their last 5 and possess world-class talent in Bellingham and Kane, but Croatia\'s tournament pedigree (runners-up 2018, semi-finals 2022) makes them dangerous. Expect a tight, tactical contest with small margins deciding the outcome.'
       },
 
       {
         day: 'Thursday 18 June',
         home: 'Ghana', away: 'Panama', time: '00:00',
-        result: null, homeWin: 35, draw: 28, awayWin: 37, verdict: 'Low', fairOdds: '2.70–3.10',
+        result: null, homeWin: 48, draw: 27, awayWin: 25, verdict: 'Low', fairOdds: '2.00-2.20',
+        homeForm: 'W L D W D',
+        awayForm: 'D L D L W',
         factors: {
-          formBalance:   { score: 45, detail: 'Ghana finished top of WCQ group but described as weakest team in many years; Panama emerging as regional force with improved status' },
-          momentum:      { score: 38, detail: 'Panama\'s rise vs Ghana\'s chaotic preparation and recent manager change create uncertainty for Black Stars' },
-          headToHead:    { score: 42, detail: 'Ghana historically stronger internationally but no specific H2H mentioned; neutral factor given both in opening matches' },
-          goalTendency:  { score: 35, detail: 'Opening World Cup match typically cautious with limited goals expected as teams test each other' },
-          leagueContext: { score: 48, detail: 'Ghana\'s squad includes European stars like Semenyo but team cohesion questioned; Panama building on regional success' }
+          formBalance:   { score: 55, detail: 'Ghana won 2 of last 5; Panama inconsistent but competitive.' },
+          momentum:      { score: 50, detail: 'Ghana African representatives with tournament experience; Panama seeking first knockout stage.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 50, detail: 'Both teams capable but lack elite firepower.' },
+          leagueContext: { score: 45, detail: 'Group stage — both seeking points for knockout qualification.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Mohammed Kudus — Ghana\'s attacking star and creative force' }
+            ],
+          away: [
+              { tag: 'key', text: 'Panama — CONCACAF representatives seeking first knockout appearance' }
+            ]
         },
-        context: 'This opening World Cup clash presents a fascinating contrast: Ghana, historically Africa\'s football powerhouse, faces significant uncertainty following their abrupt managerial change with Carlos Queiroz replacing Otto Addo just weeks before the tournament. Despite boasting individual talent including Antoine Semenyo and Jordan Ayew, the Black Stars are described as one of their weakest teams in years. Panama, meanwhile, has transformed from historical underdogs into a genuine regional force eager to establish themselves on the world stage. The neutral-ish venue at BMO Field with Ghana\'s passionate traveling support adds complexity, but both teams\' opening match status suggests cautious approaches that could limit scoring opportunities.',
-        summary: 'Ghana faces Panama in an intriguing World Cup opener where Ghana\'s individual talent must overcome recent managerial instability and team cohesion questions. Panama, having established themselves as a regional force, looks to capitalize on Ghana\'s transitional period. Expect a tight, potentially low-scoring opening match with slight edge to home advantage tempered by both teams\' cautious approach.'
+        context: 'Ghana face Panama in what could be a decisive group fixture for knockout qualification. Mohammed Kudus leads the Ghanaian attack, while Panama arrive as CONCACAF representatives seeking their first-ever knockout stage appearance. Both teams will view this as a winnable match and crucial for their hopes of advancing.',
+        summary: 'A balanced contest between Ghana and Panama, both seeking vital points in their group. Ghana possess Mohammed Kudus as a creative difference-maker, while Panama\'s CONCACAF pedigree makes them dangerous. Expect a competitive match where Ghana hold a slight edge.'
       },
 
       {
         day: 'Thursday 18 June',
         home: 'Uzbekistan', away: 'Colombia', time: '03:00',
-        result: null, homeWin: 28, draw: 27, awayWin: 45, verdict: 'Likely', fairOdds: '3.60–3.90',
+        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.65-1.80',
+        homeForm: 'D L D W L',
+        awayForm: 'W W D W L',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available for this future World Cup fixture; both teams will field best available squads' },
-          momentum:      { score: 45, detail: 'Colombia has greater international experience at highest level; Uzbekistan building momentum with maiden World Cup appearance' },
-          headToHead:    { score: 0, detail: 'No historical meetings between these nations in competitive football' },
-          goalTendency:  { score: 55, detail: 'World Cup group matches typically see goals from both sides; defensive intensity may vary based on tournament stage' },
-          leagueContext: { score: 40, detail: 'Colombia has stronger league pedigree (Categoría Primera); Uzbekistan\'s Super League is competitive but smaller in scale' }
+          formBalance:   { score: 35, detail: 'Colombia won 3 of last 5; Uzbekistan debutants facing class gap.' },
+          momentum:      { score: 40, detail: 'Colombia South American power; Uzbekistan first World Cup appearance.' },
+          headToHead:    { score: 50, detail: 'No recent competitive meetings.' },
+          goalTendency:  { score: 45, detail: 'Colombia attacking quality; Uzbekistan defence likely overwhelmed.' },
+          leagueContext: { score: 50, detail: 'Group stage — Colombia targeting knockout stage; Uzbekistan celebrating debut.' }
         },
         teamNews: {
           home: [
-            { tag: 'key', text: 'Shomurodov — headline squad player for maiden World Cup' },
-            { tag: 'key', text: 'Khusanov — key midfielder in Cannavaro\'s preliminary squad' },
-            { tag: 'key', text: 'Fayzullaev — important defender in 30-strong roster' }
-          ],
+              { tag: 'key', text: 'Uzbekistan — first World Cup appearance, historic achievement' }
+            ],
           away: [
-            { tag: 'key', text: 'Riquelme — experienced playmaker for Colombia\'s World Cup campaign' }
-          ]
+              { tag: 'key', text: 'Colombia — South American power with tournament pedigree' },
+              { tag: 'key', text: 'Luis Diaz — Colombia\'s attacking star and Liverpool winger' }
+            ]
         },
-        context: 'This Group K match represents Uzbekistan\'s historic first-ever World Cup appearance, with the White Wolves fielding a squad featuring emerging talents like Shomurodov and Khusanov. Colombia brings significant international experience to this tournament stage, having competed in multiple World Cups with established players who have honed their craft at the highest level. The home advantage will be crucial for Uzbekistan as they navigate group stage football, while Colombia\'s tactical discipline and individual quality should provide them an edge despite playing away from familiar surroundings.',
-        summary: 'Uzbekistan hosts Colombia in a Group K World Cup match marking the White Wolves\' maiden tournament appearance. Colombia enters with greater international experience but faces a determined home side eager to make their mark on soccer\'s biggest stage. The fixture promises competitive football as both teams aim for progression beyond the group phase.'
+        context: 'Colombia face World Cup debutants Uzbekistan, with the South Americans expecting a winning start. Luis Diaz leads Colombia\'s attack, while Uzbekistan celebrate their first-ever World Cup appearance after qualifying from Asia. The gap in quality and experience is significant, with Colombia having won 3 of their last 5 against Uzbekistan\'s limited top-level exposure.',
+        summary: 'Colombia are clear favourites against World Cup debutants Uzbekistan. The South Americans have won 3 of their last 5 and possess Luis Diaz as an attacking difference-maker. For Uzbekistan, simply appearing is historic, but Colombia should secure a comfortable victory.'
       },
 
       {
