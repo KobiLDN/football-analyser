@@ -28,7 +28,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 ### Data / analysis
 
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
-- **Prediction-accuracy tracker (header stat)** — "This week: 5/8 Strong picks landed (62%)" in the league/site header. The HIT/MISS per-fixture data is already there; just aggregate.
 - **Probability calibration tracker** — when model says "60% home win", how often does home actually win across the season? Plot calibration curve, surface confidence-bias.
 - **xG numbers in the analysis panel** — we already fetch them via Understat (currently only used to derive form dots). Show "Liverpool 2.14 / 1.61 xG" alongside form.
 - **Backtest mode** — toggle to show all past fixtures with predicted vs actual outcomes for a season-long view.
@@ -51,6 +50,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.54** — Hit Rate stat-card replaces Top Confidence in the league header. Aggregates HIT/MISS across all past graded fixtures (Low-confidence picks excluded — coin flips). Big % with `X of Y` fraction below. Stable across sidebar filter toggles. All Fixtures shows cross-competition rate; per-league views show that league's rate.
 - **v2.53** — `make_fixtures.bat` now also writes `fixtures_research_needed_prompt.txt` — a self-contained, ready-to-paste DeepSeek prompt with the fixtures, schema, and canonical team-name list all embedded. Eliminates the last manual editing step: copy → paste → save JSON → `apply_research.bat`.
 - **v2.52** — End-to-end DeepSeek research pipeline: `make_fixtures.bat` builds fixture batches → upload to DeepSeek `:online` → drop the returned `deepseek_json_*.json` in the repo → `apply_research.bat` auto-detects, validates atomic, applies, commits dev→main→live, archives. All 72 named-team World Cup fixtures researched this way (4 batches, zero Claude tokens used for the data).
 - **v2.51** — World Cup 2026 integration shipped end-to-end: `worldcup` league + new "International" sidebar group (`index.html`); `scripts/fetch-worldcup.js` pulls from public-domain `openfootball/worldcup.json` (no API key needed after API-Football's 2026 paywall blocked us); same script also marks results when openfootball publishes them, so no separate mark-worldcup workflow needed; `.github/workflows/fetch-worldcup.yml` runs Mondays 09:00 UTC and supports manual dispatch.
