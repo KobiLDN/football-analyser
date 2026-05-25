@@ -14,8 +14,8 @@ head-to-head, and pundit consensus. Then return ONLY this JSON object — no
 markdown, no prose around it, no code fence:
 
 {
-  "home": "<exact team name as on the site, e.g. 'Man United' not 'Manchester United'>",
-  "away": "<exact team name>",
+  "home": "<EXACT team name from the canonical list below — e.g. 'Man United' not 'Manchester United', 'PSG' not 'Paris Saint-Germain'>",
+  "away": "<EXACT team name from the canonical list below>",
   "day": "<Weekday DD Month, e.g. 'Sunday 24 May'>",
   "time": "<HH:MM UK time, e.g. '16:00'>",
   "result": "<X-Y if played, else null>",
@@ -62,3 +62,32 @@ If DeepSeek calls a team "Manchester United" but the site has "Man United",
 the apply step will fail with "Fixture not found". Either:
 - Tell DeepSeek the exact site name in the prompt
 - Or edit `research.json` before running the script
+
+---
+
+# Canonical team names (use these EXACTLY in the JSON)
+These match the team strings already in `index.html`. Using a different
+variant (e.g. 'Manchester United' instead of 'Man United') will cause
+`apply_research.py` to fail with 'Fixture not found'.
+
+### Premier League
+Arsenal, Aston Villa, Bournemouth, Brentford, Brighton & Hove Albion, Burnley, Chelsea, Crystal Palace, Everton, Fulham, Leeds United, Liverpool, Man City, Man United, Newcastle, Nottingham, Sunderland, Tottenham, West Ham, Wolverhampton
+
+### La Liga
+Alavés, Athletic, Atleti, Barça, Celta, Elche, Espanyol, Getafe, Girona, Levante, Mallorca, Osasuna, Rayo Vallecano, Real Betis, Real Madrid, Real Oviedo, Real Sociedad, Sevilla FC, Valencia, Villarreal
+
+### Serie A
+AC Pisa, Atalanta, Bologna, Cagliari, Como 1907, Cremonese, Fiorentina, Genoa, Inter, Juventus, Lazio, Lecce, Milan, Napoli, Parma, Roma, Sassuolo, Torino, Udinese, Verona
+
+### Bundesliga
+1. FC Köln, Augsburg, Bayern, Bremen, Dortmund, Frankfurt, Freiburg, HSV, Heidenheim, Hoffenheim, Leverkusen, Mainz, Mönchengladbach, RB Leipzig, St. Pauli, Stuttgart, Union Berlin, Wolfsburg
+
+### Ligue 1
+Angers SCO, Auxerre, Brest, FC Metz, Le Havre, Lille, Lorient, Marseille, Monaco, Nantes, Nice, Olympique Lyon, PSG, Paris FC, RC Lens, Stade Rennais, Strasbourg, Toulouse
+
+### Champions League
+Arsenal, PSG
+
+### World Cup 2026
+Algeria, Argentina, Australia, Austria, Belgium, Bosnia & Herzegovina, Brazil, Canada, Cape Verde, Colombia, Croatia, Curaçao, Czech Republic, DR Congo, Ecuador, Egypt, England, France, Germany, Ghana, Haiti, Iran, Iraq, Ivory Coast, Japan, Jordan, Mexico, Morocco, Netherlands, New Zealand, Norway, Panama, Paraguay, Portugal, Qatar, Saudi Arabia, Scotland, Senegal, South Africa, South Korea, Spain, Sweden, Switzerland, Tunisia, Turkey, USA, Uruguay, Uzbekistan
+
