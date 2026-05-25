@@ -4,5 +4,6 @@ merge_results.py
 run_agent.bat
 research.json
 research.json.applied
+fixtures.json
 __pycache__/
 bench_news_cache.json
