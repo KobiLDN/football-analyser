@@ -18,9 +18,13 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
 - **Sticky verdict pill** — pin the outcome badge when scrolling long fixture analysis panels.
 - **Backtest mode** — toggle to show all past fixtures with their predicted vs actual outcomes for a season-long view.
+- **World Cup — switch to daily re-fetch during the tournament** — `fetch-worldcup.yml` cron is currently Monday-only. Change to daily (or twice-daily) from ~1 June to mid-July so score updates from openfootball flow in as matches finish. Simplest: edit the cron to `0 9 * * *` (daily 09:00 UTC) before kickoff. Could revert to weekly after the final.
+- **World Cup — name resolution for knockout placeholders** — openfootball uses `W99` / `L101` placeholders for "winner/loser of match 99" until the bracket fills. Once a group ends, those should resolve to actual team names automatically on the next fetch. Verify behaviour mid-tournament; may need a manual nudge if openfootball lags.
+- **World Cup — agent research weakness for international fixtures** — `agent.py` uses Understat (club football only). National teams have no xG / form data, so research will rely on SearXNG news + LLM only. Quality will be lower than for domestic leagues. Consider a Transfermarkt international-team form scrape, or accept the gap and lean on `bookOdds` for these.
 
 ## Done
 
+- **v2.51** — World Cup 2026 integration shipped end-to-end: `worldcup` league + new "International" sidebar group (`index.html`); `scripts/fetch-worldcup.js` pulls from public-domain `openfootball/worldcup.json` (no API key needed after API-Football's 2026 paywall blocked us); same script also marks results when openfootball publishes them, so no separate mark-worldcup workflow needed; `.github/workflows/fetch-worldcup.yml` runs Mondays 09:00 UTC and supports manual dispatch.
 - **v2.50** — Auto-fetched 104 World Cup 2026 fixture stubs.
 - **v2.49** — Auto-fetched 1 upcoming fixture stubs.
 - **v2.48** — Auto-marked 17 results (Sunderland 2-1 Chelsea; Brighton & Hove Albion 0-3 Man United; Crystal Palace 1-2 Arsenal, +14 more).
