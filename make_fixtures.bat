@@ -1,8 +1,10 @@
 @echo off
 cd /d "G:\My Drive\coding\ai\football-analyser\football-analyserDEV"
 
-echo Build fixtures.json — a list of fixtures to upload to DeepSeek
-echo alongside research.template.md.
+echo Build fixtures.json + prompt.txt for a DeepSeek research batch.
+echo   prompt.txt is a ready-to-paste prompt with your fixtures, the
+echo   schema and the canonical team list all baked in — copy it
+echo   straight into DeepSeek (web search ON).
 echo.
 echo No args   = upcoming unplayed fixtures, next 7 days, all leagues, cap 20
 echo Args      = passed through to make_fixtures_list.py
