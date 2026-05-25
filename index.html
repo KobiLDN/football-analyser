@@ -2431,24 +2431,29 @@ const LEAGUES = [
 
       {
         day: 'Saturday 30 May',
-        home: 'PSG', away: 'Arsenal', time: '17:00',
-        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Low', fairOdds: '2.10–2.35',
+        home: 'PSG', away: 'Arsenal', time: '20:00',
+        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Low', fairOdds: '2.00-2.20',
+        homeForm: 'W W W D W',
+        awayForm: 'W W W D W',
         factors: {
-          formBalance:   { score: 65, detail: 'Arsenal\'s Premier League title win suggests strong form, while PSG\'s injury concerns (Dembele, Hakimi) create uncertainty' },
-          momentum:      { score: 70, detail: 'Arsenal on high after lifting Premier League trophy; PSG dealing with multiple injury concerns ahead of match' },
-          headToHead:    { score: 50, detail: 'No specific H2H data provided in news - treating as neutral' },
-          goalTendency:  { score: 68, detail: 'Champions League final typically sees attacking intent; PSG\'s home advantage vs Arsenal\'s title-winning form suggests goals likely' },
-          leagueContext: { score: 55, detail: 'PSG seeking back-to-back Champions League titles at home; Arsenal aiming for first continental trophy - high stakes match' }
+          formBalance:   { score: 50, detail: 'Both teams finished domestic seasons strongly — PSG cruised to Ligue 1 title, Arsenal won Premier League on final day.' },
+          momentum:      { score: 48, detail: 'PSG are holders and reached second consecutive final; Arsenal ended 22-year title wait but have less UCL final experience.' },
+          headToHead:    { score: 50, detail: 'Perfectly balanced — PSG won last season\'s semi-final 3-1 on aggregate; Arsenal won 2-0 in 2024 group stage. Overall: PSG 2 wins, Arsenal 2 wins, 3 draws.' },
+          goalTendency:  { score: 65, detail: 'Both teams averaged over 2 goals per game; PSG conceded in 3 of last 5; Arsenal scored in last 5 matches.' },
+          leagueContext: { score: 55, detail: 'Champions League final — PSG defending title, Arsenal seeking first-ever UCL trophy after 2006 final loss.' }
         },
         teamNews: {
           home: [
-            { tag: 'doubt', text: 'Ousmane Dembele — calf injury concern' },
-            { tag: 'doubt', text: 'Achraf Hakimi — injury update pending' }
-          ],
-          away: []
+              { tag: 'doubt', text: 'Achraf Hakimi — thigh injury sustained in semi-final first leg vs Bayern; not expected to start final, missed internal friendly' },
+              { tag: 'key', text: 'Ousmane Dembélé — calf tightness but declared \'Yes, I\'ll be there!\' on May 24; expected to start' }
+            ],
+          away: [
+              { tag: 'key', text: 'Bukayo Saka — Arsenal\'s main attacking threat, scored in 2024 win over PSG' },
+              { tag: 'key', text: 'Viktor Gyökeres — top Arsenal scorer in UCL, odds 3.3 to score' }
+            ]
         },
-        context: 'This Champions League final presents an intriguing clash between PSG\'s established European pedigree and Arsenal\'s emerging title-winning form. PSG faces the challenge of overcoming multiple injury concerns with key players like Dembele and Hakimi potentially unavailable, while Arsenal arrives on high momentum after securing their Premier League trophy. The home advantage for PSG at Paris City Hall contrasts with Arsenal\'s confidence from their recent domestic success.',
-        summary: 'PSG hosts Arsenal in a Champions League final where the French champions face injury concerns against a title-winning Gunners side. PSG seeks back-to-back European glory while Arsenal aims to add continental silverware to their Premier League trophy collection.'
+        context: 'Arsenal face PSG in Budapest seeking revenge for last season\'s semi-final exit (3-1 aggregate) and their first Champions League trophy. PSG defend their title as holders after demolishing Inter 5-0 in Munich last year. The French champions could be without Achraf Hakimi at right-back — a massive blow to their attacking structure — though Ousmane Dembélé has declared himself fit. Mikel Arteta\'s side arrive riding Premier League momentum, while Luis Enrique\'s PSG have experience on the biggest stage.',
+        summary: 'The Champions League final on May 30 pits holders PSG against Premier League winners Arsenal at Puskás Aréna. PSG\'s main injury concern is Achraf Hakimi (thigh), unlikely to start, while Ousmane Dembélé expects to play despite recent calf tightness. Head-to-head is perfectly balanced with two wins each, setting up an unpredictable final where PSG\'s experience meets Arsenal\'s hunger for a historic first European crown.'
       }
     ]
   },
