@@ -12,18 +12,47 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Backlog
 
+### Pipeline polish
+
+- **`make_fixtures.bat` writes `prompt.txt`** — alongside `fixtures.json`, output a copy-paste-ready prompt with the fixtures already embedded + schema + canonical names. Eliminates the last manual editing step before pasting into DeepSeek.
+- **Pre-commit hook** — run `node -e "loadLeagues(html)"` before any commit to catch schema breakage (would have prevented the v2.33-era `fetch-fixtures` regression that wiped data).
+- **Auto-research via OpenRouter** (`auto_research.py`) — replace the DeepSeek-web-chat copy/paste loop with a Python script that calls OpenRouter `deepseek/deepseek-v4-flash:online` directly. ~£0.50/month for the whole season. Fully hands-off.
+- **`scripts/README.md`** — one-line description per script (`agent.py`, `fetch-fixtures.js`, `apply_research.py`, etc.).
+
+### Site UX
+
+- **Search / filter by team name** — sidebar input → filter the fixture list as you type ("Real Madrid" → only Real Madrid matches).
+- **Compact list view toggle** — switch between expanded cards (current) and a one-line-per-fixture spreadsheet-style view for quick scanning.
+- **URL anchoring per fixture** — `?fixture=liverpool-brentford-may-24` so a specific prediction can be shared/bookmarked.
+- **Sort by leading probability / edge** — top picks first option in the fixture list.
+
+### Data / analysis
+
 - **Home win / draw / away win probability** — step (3) remaining: add Transfermarkt injury scrape per team to prompt. Steps (1) restructure to homeWin/draw/awayWin and (2) Understat xG enrichment are both done.
-- **Prediction-accuracy tracker** — for fixtures that have a `result`, compute hit-rate per verdict tier (Strong/Likely/Low) and show it in the header. (The aggregate twin of the per-fixture GOAL/RED CARD badge above.)
+- **Prediction-accuracy tracker (header stat)** — "This week: 5/8 Strong picks landed (62%)" in the league/site header. The HIT/MISS per-fixture data is already there; just aggregate.
+- **Probability calibration tracker** — when model says "60% home win", how often does home actually win across the season? Plot calibration curve, surface confidence-bias.
+- **xG numbers in the analysis panel** — we already fetch them via Understat (currently only used to derive form dots). Show "Liverpool 2.14 / 1.61 xG" alongside form.
+- **Backtest mode** — toggle to show all past fixtures with predicted vs actual outcomes for a season-long view.
 - **CSV export** — download this weekend's picks as a spreadsheet.
 - **Multi-bookmaker odds** — currently a single `bookOdds` field; support a few books and pick the best price.
+
+### Reliability / monitoring
+
+- **Discord / email webhook on workflow failures** — get pinged when `auto-mark`, `auto-fetch`, or `verify-fixtures` fails. Currently only know by manually opening Actions.
+- **Schema migration helper** — when we add a new fixture field (e.g. v2.33's `homeWin` rework), automate retrofitting old fixtures and updating serializers. Prevents the kind of cross-script breakage we hit at v2.33.
+
+### World Cup specific
+
+- **Name resolution for knockout placeholders** — openfootball uses `W99` / `L101` / `2A` placeholders until the bracket fills. Verify they auto-resolve mid-tournament; may need a manual nudge if openfootball lags. (`fetch-worldcup.yml` daily cron is already set up.)
+- **International fixture research quality** — `agent.py` uses Understat (club football only) so national teams have no xG / form data. DeepSeek bridges this for now via `apply_research.bat`, but a Transfermarkt international-team form scrape would let the local agent handle WC fixtures too.
+
+### Sticky misc
+
 - **Sticky verdict pill** — pin the outcome badge when scrolling long fixture analysis panels.
-- **Backtest mode** — toggle to show all past fixtures with their predicted vs actual outcomes for a season-long view.
-- **World Cup — switch to daily re-fetch during the tournament** — `fetch-worldcup.yml` cron is currently Monday-only. Change to daily (or twice-daily) from ~1 June to mid-July so score updates from openfootball flow in as matches finish. Simplest: edit the cron to `0 9 * * *` (daily 09:00 UTC) before kickoff. Could revert to weekly after the final.
-- **World Cup — name resolution for knockout placeholders** — openfootball uses `W99` / `L101` placeholders for "winner/loser of match 99" until the bracket fills. Once a group ends, those should resolve to actual team names automatically on the next fetch. Verify behaviour mid-tournament; may need a manual nudge if openfootball lags.
-- **World Cup — agent research weakness for international fixtures** — `agent.py` uses Understat (club football only). National teams have no xG / form data, so research will rely on SearXNG news + LLM only. Quality will be lower than for domestic leagues. Consider a Transfermarkt international-team form scrape, or accept the gap and lean on `bookOdds` for these.
 
 ## Done
 
+- **v2.52** — End-to-end DeepSeek research pipeline: `make_fixtures.bat` builds fixture batches → upload to DeepSeek `:online` → drop the returned `deepseek_json_*.json` in the repo → `apply_research.bat` auto-detects, validates atomic, applies, commits dev→main→live, archives. All 72 named-team World Cup fixtures researched this way (4 batches, zero Claude tokens used for the data).
 - **v2.51** — World Cup 2026 integration shipped end-to-end: `worldcup` league + new "International" sidebar group (`index.html`); `scripts/fetch-worldcup.js` pulls from public-domain `openfootball/worldcup.json` (no API key needed after API-Football's 2026 paywall blocked us); same script also marks results when openfootball publishes them, so no separate mark-worldcup workflow needed; `.github/workflows/fetch-worldcup.yml` runs Mondays 09:00 UTC and supports manual dispatch.
 - **v2.50** — Auto-fetched 104 World Cup 2026 fixture stubs.
 - **v2.49** — Auto-fetched 1 upcoming fixture stubs.
