@@ -4,6 +4,21 @@ Copy this into DeepSeek (web-search enabled), replacing `[HOME]`, `[AWAY]`, `[DA
 
 DeepSeek returns the JSON; paste it into `research.json` and run `apply_research.bat`.
 
+**Multiple fixtures in one go:** `research.json` can also be an array of
+fixtures, e.g.
+
+```json
+[
+  { ...fixture 1... },
+  { ...fixture 2... },
+  { ...fixture 3... }
+]
+```
+
+The script validates all of them first, then applies and commits in one go.
+Useful for "research this whole gameweek" — give DeepSeek a list and ask for
+a JSON array back.
+
 ---
 
 ```

@@ -153,19 +153,31 @@ def main():
 
     with open(JSON_FILE, "r", encoding="utf-8") as f:
         try:
-            data = json.load(f)
+            raw = json.load(f)
         except json.JSONDecodeError as e:
             print(f"X research.json is not valid JSON: {e}")
             sys.exit(1)
 
-    err = validate(data)
-    if err:
-        print(f"X Validation failed: {err}")
+    # Accept either a single fixture object OR an array of them
+    fixtures = raw if isinstance(raw, list) else [raw]
+    if not fixtures:
+        print(f"X research.json is an empty array.")
         sys.exit(1)
 
-    print(f"Applying: {data['home']} vs {data['away']} ({data['day']})")
-    print(f"  probs:  H {data['homeWin']}% / D {data['draw']}% / A {data['awayWin']}%  -  {data['verdict']}")
-    print(f"  news:   {len(data['teamNews']['home'])} home + {len(data['teamNews']['away'])} away items")
+    # Validate everything BEFORE touching the file (atomic). If any
+    # fixture fails validation, we abort with no side effects.
+    for i, d in enumerate(fixtures):
+        err = validate(d)
+        if err:
+            label = f"fixtures[{i}]" if isinstance(raw, list) else "fixture"
+            print(f"X Validation failed for {label}: {err}")
+            sys.exit(1)
+
+    print(f"Applying {len(fixtures)} fixture{'s' if len(fixtures) != 1 else ''}:")
+    for d in fixtures:
+        print(f"  - {d['home']} vs {d['away']} ({d['day']})  "
+              f"H {d['homeWin']}/D {d['draw']}/A {d['awayWin']} {d['verdict']}  "
+              f"news {len(d['teamNews']['home'])}+{len(d['teamNews']['away'])}")
 
     # Sync with origin first so we don't push a stale index.html on top
     # of bot commits (auto-mark, daily WC fetch, verify auto-correct).
@@ -181,27 +193,39 @@ def main():
     with open(HTML_FILE, "r", encoding="utf-8") as f:
         html = f.read()
 
-    start, end = find_fixture_block(html, data["home"], data["away"], data["day"])
-    if start is None:
-        print(f"X Fixture not found in index.html.")
-        print(f"  Looking for: day='{data['day']}', home='{data['home']}', away='{data['away']}'")
-        print(f"  Check the spelling matches the existing fixture exactly.")
+    # Pre-flight: confirm every fixture exists in index.html before any
+    # edits. If any are missing, abort.
+    missing = []
+    for d in fixtures:
+        start, end = find_fixture_block(html, d["home"], d["away"], d["day"])
+        if start is None:
+            missing.append(d)
+    if missing:
+        print(f"X {len(missing)} fixture(s) not found in index.html:")
+        for d in missing:
+            print(f"  - day='{d['day']}', home='{d['home']}', away='{d['away']}'")
+        print(f"  Check the spelling matches the existing fixtures exactly.")
         sys.exit(1)
 
-    new_block = build_block(data)
-
     if dry_run:
-        print(f"\n--- DRY RUN: would replace the following block ---")
-        print(html[start:end])
-        print(f"\n--- with: ---")
-        print(new_block)
+        for d in fixtures:
+            start, end = find_fixture_block(html, d["home"], d["away"], d["day"])
+            print(f"\n--- DRY RUN: would replace {d['home']} vs {d['away']} ---")
+            print(html[start:end])
+            print(f"\n--- with: ---")
+            print(build_block(d))
         return
 
-    html2 = html[:start] + new_block + html[end:]
-    with open(HTML_FILE, "w", encoding="utf-8") as f:
-        f.write(html2)
+    # Replace each fixture in-place. Re-find on each iteration because
+    # the offsets shift after the previous replacement.
+    for d in fixtures:
+        start, end = find_fixture_block(html, d["home"], d["away"], d["day"])
+        html = html[:start] + build_block(d) + html[end:]
 
-    print(f"OK Replaced fixture block in index.html")
+    with open(HTML_FILE, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    print(f"OK Replaced {len(fixtures)} fixture block(s) in index.html")
 
     if no_push:
         print("(--no-push given; not committing)")
@@ -214,7 +238,13 @@ def main():
 
     print(f"-> Committing on '{current_branch}'...")
     git("add", "index.html")
-    msg = f"data: research-backfill {data['home']} vs {data['away']} ({data['day']})"
+    if len(fixtures) == 1:
+        d0 = fixtures[0]
+        msg = f"data: research-backfill {d0['home']} vs {d0['away']} ({d0['day']})"
+    else:
+        first = fixtures[0]
+        msg = (f"data: research-backfill {len(fixtures)} fixtures "
+               f"({first['home']} vs {first['away']}, +{len(fixtures)-1} more)")
     rc, out, err = git("commit", "-m", msg)
     if rc != 0:
         if "nothing to commit" in (out + err).lower():
@@ -258,8 +288,12 @@ def main():
             git("checkout", "dev")
             sys.exit(1)
 
-    msg = f"Merge dev: research-backfill {data['home']} vs {data['away']}"
-    rc, out, err = git("merge", "dev", "--no-ff", "-m", msg)
+    if len(fixtures) == 1:
+        d0 = fixtures[0]
+        merge_msg = f"Merge dev: research-backfill {d0['home']} vs {d0['away']}"
+    else:
+        merge_msg = f"Merge dev: research-backfill {len(fixtures)} fixtures"
+    rc, out, err = git("merge", "dev", "--no-ff", "-m", merge_msg)
     if rc != 0:
         print(f"X Merge conflict on main. Resolve manually then push:")
         print(f"  git push origin main; git checkout dev")
