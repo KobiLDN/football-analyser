@@ -4,27 +4,32 @@ of (home, away, day, time, competition) ready to upload to DeepSeek
 alongside research.template.md.
 
 Default behaviour: every upcoming unplayed fixture in the next 7 days,
-across every league, capped at 20.
+across every league, capped at 20, skipping knockout placeholders.
 
 Flags:
-  --league <id>      only this league: pl, laliga, seriea, bundesliga,
-                     ligue1, ucl, uel, uecl, worldcup
-  --days <N>         only fixtures kicking off in the next N days
-                     (default 7; 0 = today only; -1 = no date filter)
-  --stubs-only       only fixtures whose summary is 'Pending deep research.'
-  --include-played   include fixtures that have a `result` set
-  --max <N>          cap the list at N entries (default 20)
-  --output <path>    output file (default fixtures.json)
+  --league <id>            only this league: pl, laliga, seriea, bundesliga,
+                           ligue1, ucl, uel, uecl, worldcup
+  --days <N>               only fixtures kicking off in the next N days
+                           (default 7; 0 = today only; -1 = no date filter)
+  --stubs-only             only fixtures whose summary is 'Pending deep research.'
+  --include-played         include fixtures that have a `result` set
+  --include-placeholders   include W99 / 2A / L101 names (off by default —
+                           DeepSeek can't research them)
+  --offset <N>             skip the first N matching fixtures (for batching)
+  --max <N>                cap the list at N entries (default 20)
+  --output <path>          output file (default fixtures.json)
 
-Examples:
-  # Upcoming PL fixtures in the next 7 days (default)
-  python make_fixtures_list.py --league pl
+Recommended batching workflow when DeepSeek truncates a large request:
 
-  # All World Cup stubs still needing research
-  python make_fixtures_list.py --league worldcup --stubs-only --days -1 --max 100
+  # First batch — uses --stubs-only so already-researched ones are excluded
+  python make_fixtures_list.py --league worldcup --stubs-only --days -1 --max 25
+  # ... upload to DeepSeek, paste into research.json, apply_research.bat ...
+  # Then for the next batch, run the same command again — fixtures you just
+  # applied are no longer stubs, so they're skipped automatically.
 
-  # Everything in the next 3 days
-  python make_fixtures_list.py --days 3 --max 50
+  # OR use --offset if you don't want --stubs-only to filter for you:
+  python make_fixtures_list.py --league worldcup --days -1 --max 25 --offset 25
+  python make_fixtures_list.py --league worldcup --days -1 --max 25 --offset 50
 """
 
 import argparse
@@ -119,11 +124,23 @@ def main():
                     help="only fixtures with 'Pending deep research.' summary")
     ap.add_argument("--include-played", action="store_true",
                     help="include fixtures that already have a result")
+    ap.add_argument("--include-placeholders", action="store_true",
+                    help="include knockout placeholders like W99 / 2A / L101 "
+                         "(skipped by default — DeepSeek can't research these)")
+    ap.add_argument("--offset",         type=int, default=0,
+                    help="skip the first N matching fixtures (for batching)")
     ap.add_argument("--max",            type=int, default=20, dest="max_n",
                     help="cap at N fixtures (default 20)")
     ap.add_argument("--output",         default=os.path.join(REPO_ROOT, "fixtures.json"),
                     help="output file (default fixtures.json)")
     args = ap.parse_args()
+
+
+    # Knockout-bracket placeholder names openfootball / similar use until
+    # the actual teams are known: W99, L102, 2A, 3B, 1C, R16W2 etc.
+    placeholder_re = re.compile(r"^[A-Z]?\d+[A-Z]?$|^R\d+[A-Z]\d*$")
+    def is_placeholder(team):
+        return bool(placeholder_re.match(team))
 
     if not os.path.exists(HTML_FILE):
         print(f"X index.html not found at {HTML_FILE}")
@@ -141,12 +158,18 @@ def main():
     cutoff = today + datetime.timedelta(days=args.days) if args.days >= 0 else None
 
     out = []
+    skipped_placeholders = 0
     for f in all_fixtures:
         if args.league and f["league_id"] != args.league:
             continue
         if not args.include_played and f["result"] is not None:
             continue
         if args.stubs_only and f["summary"] != "Pending deep research.":
+            continue
+        if not args.include_placeholders and (
+            is_placeholder(f["home"]) or is_placeholder(f["away"])
+        ):
+            skipped_placeholders += 1
             continue
         d = parse_day(f["day"])
         if d is None:
@@ -166,6 +189,18 @@ def main():
         d = parse_day(x["day"]) or datetime.date(9999, 1, 1)
         return (d.toordinal(), x["time"])
     out.sort(key=key)
+
+    # Apply --offset (skip first N) after sort, so batching is predictable
+    if args.offset > 0:
+        if args.offset >= len(out):
+            print(f"--offset {args.offset} skips past all {len(out)} matches.")
+            sys.exit(0)
+        print(f"  --offset {args.offset}: skipping first {args.offset} of {len(out)} matches")
+        out = out[args.offset:]
+
+    if skipped_placeholders:
+        print(f"  skipped {skipped_placeholders} knockout placeholder fixture(s) "
+              f"(W99/2A/L101 etc.) — use --include-placeholders to keep them")
 
     if len(out) > args.max_n:
         print(f"  trimming {len(out)} candidates down to --max {args.max_n}")
