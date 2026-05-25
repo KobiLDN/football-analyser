@@ -1,0 +1,42 @@
+name: Auto-fetch World Cup fixtures
+
+on:
+  # Once a week is enough — the fixture list is published in chunks
+  schedule:
+    - cron: '0 9 * * 1'   # Mondays 09:00 UTC, after the regular fetch-fixtures
+  workflow_dispatch:
+    inputs:
+      season:
+        description: 'World Cup season year (default: 2026)'
+        required: false
+        default: '2026'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch World Cup fixtures
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          WC_SEASON: ${{ github.event.inputs.season || '2026' }}
+        run: node scripts/fetch-worldcup.js
+      - name: Commit and push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          git add index.html FEATURES.md
+          git commit -m "auto-fetch: World Cup 2026 fixture stubs"
+          git push
