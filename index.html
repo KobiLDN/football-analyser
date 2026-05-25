@@ -807,22 +807,30 @@ const LEAGUES = [
       {
         day: 'Sunday 24 May',
         home: 'Liverpool', away: 'Brentford', time: '16:00',
-        result: '1-1', homeWin: 72, draw: 18, awayWin: 10, verdict: 'Strong', fairOdds: '1.45–1.55',
-        homeForm: 'W W L D L',
-        awayForm: 'D L W L D',
+        result: '1-1', homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.20-2.40',
+        homeForm: 'D L D L W',
+        awayForm: 'D D W L D',
         factors: {
-          formBalance:   { score: 75, detail: 'Liverpool typically show superior attacking output at Anfield; Brentford\'s away record in the Premier League has been inconsistent this season' },
-          momentum:      { score: 68, detail: 'Liverpool have maintained competitive form throughout the campaign while Brentford have shown vulnerability against top-six opposition' },
-          headToHead:    { score: 52, detail: 'Historical encounters at Anfield generally favour Liverpool; no significant recent advantage for either side in direct meetings' },
-          goalTendency:  { score: 70, detail: 'Liverpool\'s home attacking record suggests a high-scoring fixture with multiple goals likely' },
-          leagueContext: { score: 65, detail: 'Mid-table Brentford facing top-four Liverpool at Anfield; no major relegation battle implications for either side' }
+          formBalance:   { score: 45, detail: 'Liverpool won only 1 of last 5 (D2 L2); Brentford drew 3 of last 5, struggling for wins.' },
+          momentum:      { score: 40, detail: 'Liverpool dropped 11 points from winning positions at home this season; Brentford poor away (no win in 5 road games).' },
+          headToHead:    { score: 35, detail: 'Brentford won the reverse fixture 3-2, though Liverpool had won previous 4 home PL meetings without conceding.' },
+          goalTendency:  { score: 68, detail: 'Both teams averaged over 2.8 total goals per game; Liverpool\'s last 8 matches saw 3.38 total goals on average.' },
+          leagueContext: { score: 55, detail: 'Liverpool needed 1 point to secure 5th and UCL; Brentford still had slim European hopes.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Mohamed Salah — final game for club, emotional farewell, 93rd PL assist' },
+              { tag: 'key', text: 'Andy Robertson — final game for club' },
+              { tag: 'doubt', text: 'Jeremie Frimpong — missed Villa loss, major doubt' }
+            ],
+          away: [
+              { tag: 'out', text: 'Rico Henry — hamstring' },
+              { tag: 'out', text: 'Fabio Carvalho — ACL (former Liverpool)' },
+              { tag: 'out', text: 'Antoni Milambo — ACL' }
+            ]
         },
-        context: 'Liverpool\'s home advantage at Anfield combined with their attacking prowess typically creates a challenging environment for Brentford. The visitors will need to be defensively disciplined against Liverpool\'s usual high-pressing, possession-dominant style. Brentford\'s counter-attacking threat remains relevant but may struggle to find space in the final third against a well-organised Liverpool defence.',
-        summary: 'Liverpool are clear favourites at Anfield with strong home form and attacking quality giving them a significant edge over Brentford. The match is expected to be competitive but likely sees Liverpool controlling proceedings and creating numerous chances.'
+        context: 'Liverpool, needing just a point to secure Champions League football, faced an emotional final day with Mohamed Salah and Andy Robertson bidding farewell. Brentford arrived chasing a historic European berth, sitting 9th but within reach of 7th. The Bees\' poor away record against Liverpool (0 points in 4 PL visits to Anfield) was offset by their 3-2 win in the reverse fixture earlier in the season.',
+        summary: 'The match ended 1-1, with Salah providing a sublime outside-of-the-boot assist for Curtis Jones (58\'), before Kevin Schade levelled six minutes later from a deflected cross. The point secured 5th place and Champions League football for Liverpool, while Brentford finished 9th, missing out on Europe.'
       },
 
       {
