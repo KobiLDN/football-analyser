@@ -16,8 +16,18 @@ Workflow:
   After that, merge dev -> main yourself the usual way when you're ready
   to ship to live.
 
+By default the script:
+  1. git pull --rebase origin dev   (catch any bot commits)
+  2. edits index.html in place
+  3. commits + pushes to dev
+  4. checks out main, merges dev, pushes main (live)
+  5. switches back to dev
+  6. renames research.json -> research.json.applied so it won't get
+     accidentally re-applied next run
+
 Flags:
   --no-push       Edit index.html only; skip the commit + push step
+  --dev-only      Stop after pushing dev (don't merge to main / live)
   --dry-run       Show what would change, don't write anything
 """
 
@@ -133,6 +143,7 @@ def git(*args):
 
 def main():
     no_push = "--no-push" in sys.argv
+    dev_only = "--dev-only" in sys.argv
     dry_run = "--dry-run" in sys.argv
 
     if not os.path.exists(JSON_FILE):
@@ -155,6 +166,17 @@ def main():
     print(f"Applying: {data['home']} vs {data['away']} ({data['day']})")
     print(f"  probs:  H {data['homeWin']}% / D {data['draw']}% / A {data['awayWin']}%  -  {data['verdict']}")
     print(f"  news:   {len(data['teamNews']['home'])} home + {len(data['teamNews']['away'])} away items")
+
+    # Sync with origin first so we don't push a stale index.html on top
+    # of bot commits (auto-mark, daily WC fetch, verify auto-correct).
+    if not no_push and not dry_run:
+        rc, current_branch, _ = git("branch", "--show-current")
+        print(f"-> Syncing local '{current_branch}' with origin...")
+        rc, out, err = git("pull", "--rebase", "origin", current_branch)
+        if rc != 0:
+            print(f"X Pull --rebase failed: {err or out}")
+            print(f"  Resolve manually and re-run.")
+            sys.exit(1)
 
     with open(HTML_FILE, "r", encoding="utf-8") as f:
         html = f.read()
@@ -206,8 +228,65 @@ def main():
     if rc != 0:
         print(f"X Push failed: {err or out}")
         sys.exit(1)
+    print(f"OK Pushed to dev.")
 
-    print(f"OK Pushed. Live in ~1 min once GitHub Pages rebuilds.")
+    # Stop here if user only wanted dev (staging-only mode)
+    if dev_only:
+        print(f"(--dev-only given; not promoting to main / live)")
+        _archive_research_json()
+        return
+
+    # If we're not on dev, skip the dev→main promotion (already on main, etc.)
+    if current_branch != "dev":
+        print(f"(current branch is '{current_branch}', not dev — skipping main merge)")
+        _archive_research_json()
+        return
+
+    # Promote to main / live
+    print(f"-> Promoting to main (live)...")
+    rc, out, err = git("checkout", "main")
+    if rc != 0:
+        print(f"X Could not checkout main: {err or out}")
+        sys.exit(1)
+
+    rc, out, err = git("pull", "--ff-only", "origin", "main")
+    if rc != 0:
+        # Try non-FF pull-rebase in case main has diverged
+        rc, out, err = git("pull", "--rebase", "origin", "main")
+        if rc != 0:
+            print(f"X Could not pull main: {err or out}")
+            git("checkout", "dev")
+            sys.exit(1)
+
+    msg = f"Merge dev: research-backfill {data['home']} vs {data['away']}"
+    rc, out, err = git("merge", "dev", "--no-ff", "-m", msg)
+    if rc != 0:
+        print(f"X Merge conflict on main. Resolve manually then push:")
+        print(f"  git push origin main; git checkout dev")
+        sys.exit(1)
+
+    rc, out, err = git("push", "origin", "main")
+    if rc != 0:
+        print(f"X Push main failed: {err or out}")
+        git("checkout", "dev")
+        sys.exit(1)
+    print(f"OK Pushed to main. Live in ~1 min.")
+
+    # Back to dev for the next session
+    git("checkout", "dev")
+    _archive_research_json()
+
+
+def _archive_research_json():
+    """Rename research.json so it can't accidentally be re-applied."""
+    if not os.path.exists(JSON_FILE):
+        return
+    archive = JSON_FILE + ".applied"
+    # If a previous .applied exists, overwrite
+    if os.path.exists(archive):
+        os.remove(archive)
+    os.rename(JSON_FILE, archive)
+    print(f"-> Archived research.json -> research.json.applied")
 
 
 if __name__ == "__main__":
