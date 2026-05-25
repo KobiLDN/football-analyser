@@ -412,20 +412,32 @@ TEAM_MATCH_PHRASES = {
     'West Ham':           ['west ham'],
     'Leicester City':     ['leicester'],
     'Leicester':          ['leicester'],
+    # Short / abbreviated names whose token would otherwise be <4 chars
+    # and get filtered out (returning an empty token list → validator
+    # rejects every analysis).
+    'PSG':                ['psg', 'paris saint', 'paris sg'],
+    'Paris SG':           ['psg', 'paris saint', 'paris sg'],
+    'Paris Saint-Germain':['psg', 'paris saint', 'paris sg'],
+    'AC Milan':           ['ac milan', 'milan'],
+    'AC Pisa':            ['ac pisa', 'pisa'],
+    'Como 1907':          ['como'],
+    'RB Leipzig':         ['rb leipzig', 'leipzig'],
 }
 
 
 def team_tokens(name):
     """Distinctive lowercase phrases identifying a team. Uses an explicit
-    phrase list for ambiguous clubs, else significant tokens (len > 3
-    minus filler words that cause cross-club false matches)."""
+    phrase list for ambiguous or very-short names, else significant tokens
+    (len > 3 minus filler words that cause cross-club false matches).
+    Guarantees a non-empty list — the lowercased name itself is the final
+    fallback so the validator can always at least look for that."""
     if name in TEAM_MATCH_PHRASES:
         return TEAM_MATCH_PHRASES[name]
     stop = {'town', 'city', 'united', 'hove', 'albion', 'wanderers',
             'hotspur', 'forest', 'real', 'club'}
     toks = [w for w in re.split(r'[\s&.]+', name.lower()) if len(w) > 3]
     sig = [w for w in toks if w not in stop]
-    return sig or toks  # never return empty
+    return sig or toks or [name.lower()]  # never return empty
 
 
 def relevance_score(text, home, away):

@@ -2424,15 +2424,23 @@ const LEAGUES = [
       {
         day: 'Saturday 30 May',
         home: 'PSG', away: 'Arsenal', time: '17:00',
-        result: '', drawProbability: 25, verdict: 'Low', fairOdds: '4.00–4.50',
+        result: null, homeWin: 45, draw: 28, awayWin: 27, verdict: 'Low', fairOdds: '2.10–2.35',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Arsenal\'s Premier League title win suggests strong form, while PSG\'s injury concerns (Dembele, Hakimi) create uncertainty' },
+          momentum:      { score: 70, detail: 'Arsenal on high after lifting Premier League trophy; PSG dealing with multiple injury concerns ahead of match' },
+          headToHead:    { score: 50, detail: 'No specific H2H data provided in news - treating as neutral' },
+          goalTendency:  { score: 68, detail: 'Champions League final typically sees attacking intent; PSG\'s home advantage vs Arsenal\'s title-winning form suggests goals likely' },
+          leagueContext: { score: 55, detail: 'PSG seeking back-to-back Champions League titles at home; Arsenal aiming for first continental trophy - high stakes match' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+            { tag: 'doubt', text: 'Ousmane Dembele — calf injury concern' },
+            { tag: 'doubt', text: 'Achraf Hakimi — injury update pending' }
+          ],
+          away: []
+        },
+        context: 'This Champions League final presents an intriguing clash between PSG\'s established European pedigree and Arsenal\'s emerging title-winning form. PSG faces the challenge of overcoming multiple injury concerns with key players like Dembele and Hakimi potentially unavailable, while Arsenal arrives on high momentum after securing their Premier League trophy. The home advantage for PSG at Paris City Hall contrasts with Arsenal\'s confidence from their recent domestic success.',
+        summary: 'PSG hosts Arsenal in a Champions League final where the French champions face injury concerns against a title-winning Gunners side. PSG seeks back-to-back European glory while Arsenal aims to add continental silverware to their Premier League trophy collection.'
       }
     ]
   },
