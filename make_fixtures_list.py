@@ -221,17 +221,18 @@ def main():
         print(f"  - {x['day']:<22} {x['time']}  {x['home']} vs {x['away']}  [{x['competition']}]")
 
     # Build a ready-to-paste DeepSeek prompt with the fixtures embedded.
-    # User just copies prompt.txt and pastes into DeepSeek — no upload, no
+    # User just copies the file and pastes into DeepSeek — no upload, no
     # manual customisation, the schema + team-name list + fixtures are all
     # baked in.
-    prompt_path = os.path.join(REPO_ROOT, "prompt.txt")
+    prompt_path = os.path.join(REPO_ROOT, "fixtures_research_needed_prompt.txt")
     write_prompt_txt(prompt_path, out, html)
     print()
-    print(f"OK Wrote ready-to-paste prompt to {prompt_path}")
+    print(f"OK Wrote ready-to-paste prompt to {os.path.basename(prompt_path)}")
 
     print()
     print(f"Next steps:")
-    print(f"  1. Open prompt.txt, copy all -> paste into DeepSeek (web search ON)")
+    print(f"  1. Open fixtures_research_needed_prompt.txt, copy all")
+    print(f"     -> paste into DeepSeek (web search ON)")
     print(f"  2. Save the JSON DeepSeek returns into this repo folder")
     print(f"     (DeepSeek's default filename 'deepseek_json_*.json' is auto-detected)")
     print(f"  3. Double-click apply_research.bat -- done.")

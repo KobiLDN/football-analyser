@@ -5,7 +5,7 @@ run_agent.bat
 research.json
 research.json.applied
 fixtures.json
-prompt.txt
+fixtures_research_needed_prompt.txt
 deepseek_json_*.json
 deepseek_json_*.json.applied
 __pycache__/
