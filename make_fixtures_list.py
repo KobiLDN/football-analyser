@@ -220,13 +220,131 @@ def main():
     for x in out:
         print(f"  - {x['day']:<22} {x['time']}  {x['home']} vs {x['away']}  [{x['competition']}]")
 
+    # Build a ready-to-paste DeepSeek prompt with the fixtures embedded.
+    # User just copies prompt.txt and pastes into DeepSeek — no upload, no
+    # manual customisation, the schema + team-name list + fixtures are all
+    # baked in.
+    prompt_path = os.path.join(REPO_ROOT, "prompt.txt")
+    write_prompt_txt(prompt_path, out, html)
+    print()
+    print(f"OK Wrote ready-to-paste prompt to {prompt_path}")
+
     print()
     print(f"Next steps:")
-    print(f"  1. Upload {os.path.basename(args.output)} and research.template.md to DeepSeek")
-    print(f"  2. Ask: 'Research every fixture in fixtures.json using the schema in")
-    print(f"     research.template.md. Return a single JSON array of fixture objects.'")
-    print(f"  3. Paste the array into research.json")
-    print(f"  4. Double-click apply_research.bat")
+    print(f"  1. Open prompt.txt, copy all -> paste into DeepSeek (web search ON)")
+    print(f"  2. Save the JSON DeepSeek returns into this repo folder")
+    print(f"     (DeepSeek's default filename 'deepseek_json_*.json' is auto-detected)")
+    print(f"  3. Double-click apply_research.bat -- done.")
+
+
+def write_prompt_txt(path, fixtures, html):
+    """Write a self-contained DeepSeek prompt with fixtures + schema +
+    canonical team names already embedded. User just copies + pastes."""
+
+    # Build per-league canonical team list from the current index.html
+    id_positions = []
+    for lid, lname in LEAGUE_NAMES:
+        m = re.search(rf"id:\s*'{lid}'", html)
+        if m:
+            id_positions.append((m.start(), lid, lname))
+    id_positions.sort()
+    windows = []
+    for i, (pos, lid, lname) in enumerate(id_positions):
+        end = id_positions[i + 1][0] if i + 1 < len(id_positions) else len(html)
+        windows.append((lname, html[pos:end]))
+
+    # Wider placeholder filter for the team list — also catches slashed
+    # group cross-references like '3A/B/C/D/F' that openfootball uses
+    # for ranked-third-place playoff slots.
+    placeholder_re = re.compile(
+        r"^[A-Z]?\d+[A-Z]?$"           # W99, L101, 2A, 3B
+        r"|^R\d+[A-Z]\d*$"             # R16W2 etc.
+        r"|^\d+[A-Z](/[A-Z])+$"        # 3A/B/C/D/F
+    )
+    team_list_lines = []
+    for lname, block in windows:
+        teams = set()
+        for m in re.finditer(r"home:\s*'([^']+)',\s*away:\s*'([^']+)'", block):
+            teams.add(m.group(1))
+            teams.add(m.group(2))
+        real = {t for t in teams if not placeholder_re.match(t)}
+        if real:
+            team_list_lines.append(f"### {lname}")
+            team_list_lines.append(", ".join(sorted(real)))
+            team_list_lines.append("")
+
+    fixtures_block_lines = []
+    for i, f in enumerate(fixtures, 1):
+        fixtures_block_lines.append(
+            f"{i:>3}. {f['home']} vs {f['away']} — "
+            f"{f['day']}, {f['time']}, {f['competition']}"
+        )
+
+    prompt = f"""Research the football fixtures listed below. Use web search (must be ON)
+for each one: current team news, injuries, last 5 results form, head-to-head,
+and pundit consensus.
+
+FIXTURES TO RESEARCH ({len(fixtures)} total — use the EXACT home/away/day
+values as listed):
+
+{chr(10).join(fixtures_block_lines)}
+
+Return ONLY a single JSON array (no markdown, no code fence, no prose around it).
+Each fixture object must have this exact shape:
+
+{{
+  "home":     "<EXACT team name — see canonical list at the bottom>",
+  "away":     "<EXACT team name — see canonical list at the bottom>",
+  "day":      "<exact day from the list above, e.g. 'Saturday 30 May'>",
+  "time":     "<HH:MM UK time, as listed above>",
+  "result":   null,
+  "homeWin":  <integer 0-100>,
+  "draw":     <integer 0-100>,
+  "awayWin":  <integer 0-100>,
+  "verdict":  "<Low|Likely|Strong>",
+  "fairOdds": "<decimal odds range for the leading outcome, e.g. '2.10-2.30'>",
+  "homeForm": "<5 W/D/L space-separated, oldest first, e.g. 'W W L D L'>",
+  "awayForm": "<same format>",
+  "factors": {{
+    "formBalance":   {{ "score": <0-100>, "detail": "<one sentence>" }},
+    "momentum":      {{ "score": <0-100>, "detail": "<one sentence>" }},
+    "headToHead":    {{ "score": <0-100>, "detail": "<one sentence>" }},
+    "goalTendency":  {{ "score": <0-100>, "detail": "<one sentence>" }},
+    "leagueContext": {{ "score": <0-100>, "detail": "<one sentence>" }}
+  }},
+  "teamNews": {{
+    "home": [{{ "tag": "<out|doubt|key>", "text": "<Player — short reason>" }}],
+    "away": [{{ "tag": "<out|doubt|key>", "text": "<Player — short reason>" }}]
+  }},
+  "context":  "<2-4 sentence tactical / motivational paragraph with real player names>",
+  "summary":  "<2-3 sentence summary, real specifics not generic football tropes>"
+}}
+
+RULES:
+- homeWin + draw + awayWin MUST sum to exactly 100.
+- verdict: Strong if leading outcome ≥65%, Likely if 50-64%, Low if <50%.
+- If news is thin or contradictory, set verdict to Low and probabilities
+  close to 33/34/33. Do not pad with generic phrases.
+- 'tag' field MUST be exactly one of: out | doubt | key
+- 'out' = ruled out, 'doubt' = uncertain, 'key' = important player to watch.
+- Form string is OLDEST → NEWEST (5 results, single space between each W/D/L).
+- Use real player names from your web search — no placeholders.
+
+If your response would be too long, return as many complete fixtures as you can
+in one array. I'll ask you to continue with the rest after.
+
+---
+
+# Canonical team names
+
+Use these strings EXACTLY in the home / away fields. Variants like
+'Paris Saint-Germain' (instead of 'PSG') or 'Manchester United' (instead
+of 'Man United') will cause the apply step to fail.
+
+{chr(10).join(team_list_lines)}
+"""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(prompt)
 
 
 if __name__ == "__main__":
