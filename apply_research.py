@@ -277,6 +277,9 @@ def main():
     if rc != 0:
         if "nothing to commit" in (out + err).lower():
             print("(no changes to commit — file already matches the research)")
+            # Still archive: the data has already been applied to the
+            # repo, so we don't want to keep re-processing this file.
+            _archive_research_json(input_path)
             return
         print(f"X Commit failed: {err or out}")
         sys.exit(1)
