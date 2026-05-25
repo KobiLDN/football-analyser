@@ -21,6 +21,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.50** — Auto-fetched 104 World Cup 2026 fixture stubs.
 - **v2.49** — Auto-fetched 1 upcoming fixture stubs.
 - **v2.48** — Auto-marked 17 results (Sunderland 2-1 Chelsea; Brighton & Hove Albion 0-3 Man United; Crystal Palace 1-2 Arsenal, +14 more).
 - **v2.47** — Per-fixture HIT / MISS prediction badge + symmetric outcome tags. Past fixtures' score line now reads e.g. `Final Score: 4 – 2 · Home Win · ✅ HIT · 🔗 Match report`. Home Win in blue, Draw in gold, Away Win in red (matches the win-probability palette). Badge logic: highest-probability outcome matches actual → green ✅ HIT; mismatch → red ❌ MISS; Low-confidence picks get no badge (we agreed those are coin-flips).
