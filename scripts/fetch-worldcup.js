@@ -1,26 +1,20 @@
 #!/usr/bin/env node
 //
-// Auto-fetch FIFA World Cup 2026 fixtures from api-football.com
-// Mirrors fetch-fixtures.js but targets a different data source because
-// football-data.org's free tier does not include the World Cup.
+// Auto-fetch FIFA World Cup 2026 fixtures from openfootball/worldcup.json
+// (https://github.com/openfootball/worldcup.json) — free, public-domain,
+// no API key required. Maps openfootball's JSON shape to our fixture format
+// and merges into the 'worldcup' league in index.html.
 //
 // Env:
-//   API_FOOTBALL_KEY   — required (https://www.api-football.com/, free tier)
-//   WC_SEASON          — optional, default 2026
+//   WC_SEASON   — optional, default 2026 (controls which subdirectory to fetch)
 //
 
 const fs = require('fs');
 const path = require('path');
 
-const API_KEY = process.env.API_FOOTBALL_KEY;
-if (!API_KEY) {
-  console.error('API_FOOTBALL_KEY not set');
-  process.exit(2);
-}
-
-const SEASON    = parseInt(process.env.WC_SEASON || '2026', 10);
-const LEAGUE_ID = 1;                  // 1 = FIFA World Cup on api-football.com
-const TZ        = 'Europe/London';    // display timezone for kick-off times
+const SEASON     = parseInt(process.env.WC_SEASON || '2026', 10);
+const SOURCE_URL = `https://raw.githubusercontent.com/openfootball/worldcup.json/master/${SEASON}/worldcup.json`;
+const DISPLAY_TZ = 'Europe/London';   // kick-off times displayed in UK time
 
 const MONTHS = {
   January:0, February:1, March:2, April:3, May:4, June:5,
@@ -36,39 +30,50 @@ function loadLeagues(html) {
   return eval(m[1]);
 }
 
-function localParts(utcIso, tz) {
-  const d = new Date(utcIso);
+// Parse openfootball's "HH:MM UTC±N" and the date string into a real Date,
+// then format for display in DISPLAY_TZ. Examples:
+//   "2026-06-11" + "13:00 UTC-6"  →  Date(2026-06-11 13:00 UTC-6)
+//   "2026-06-11" + "20:00"        →  treat naïve as UTC
+function parseOpenfootballDate(dateStr, timeStr) {
+  // Match "HH:MM" optionally followed by " UTC±N" or " UTC±N:MM"
+  const m = (timeStr || '').match(/^(\d{1,2}):(\d{2})(?:\s*UTC([+-]\d{1,2})(?::?(\d{2}))?)?/);
+  if (!m) return null;
+  const [, hh, mm, tzH, tzM] = m;
+  const offsetMin = tzH ? (parseInt(tzH, 10) * 60 + (tzM ? parseInt(tzM, 10) : 0)) : 0;
+  // Build a UTC Date by subtracting the venue's offset from the local time.
+  // e.g. 13:00 UTC-6 → UTC is 13:00 + 6h = 19:00
+  const [y, mo, d] = dateStr.split('-').map(Number);
+  const utcMs = Date.UTC(y, mo - 1, d, parseInt(hh, 10), parseInt(mm, 10)) - offsetMin * 60 * 1000;
+  return new Date(utcMs);
+}
+
+function localParts(date, tz) {
   const fmt = new Intl.DateTimeFormat('en-GB', {
     timeZone: tz, weekday: 'long', day: 'numeric', month: 'long',
     hour: '2-digit', minute: '2-digit', hour12: false
-  }).formatToParts(d);
+  }).formatToParts(date);
   const get = t => fmt.find(p => p.type === t).value;
   return {
-    day: `${get('weekday')} ${get('day')} ${get('month')}`,
-    time: `${get('hour')}:${get('minute')}`
+    day:  `${get('weekday')} ${get('day')} ${get('month')}`,
+    time: `${get('hour')}:${get('minute')}`,
   };
 }
 
-async function fetchWorldCupFixtures() {
-  const url = `https://v3.football.api-sports.io/fixtures?league=${LEAGUE_ID}&season=${SEASON}`;
-  const r = await fetch(url, { headers: { 'x-apisports-key': API_KEY } });
+async function fetchOpenfootball() {
+  const r = await fetch(SOURCE_URL);
   if (!r.ok) throw new Error(`HTTP ${r.status}: ${await r.text()}`);
-  const j = await r.json();
-  if (j.errors && Object.keys(j.errors).length) {
-    throw new Error(`API errors: ${JSON.stringify(j.errors)}`);
-  }
-  return j.response || [];
+  return r.json();
 }
 
-// Build the JS object literal for a fixture stub. Uses the new schema
-// (homeWin/draw/awayWin) with a neutral 33/34/33 split, plus a momentum
-// factor — same format produced by fetch-fixtures.js post-fix so the
-// renderer + agent treat World Cup fixtures identically.
+// Stub format — matches the new schema (homeWin/draw/awayWin + momentum
+// factor) so renderer + agent treat World Cup fixtures identically to
+// domestic leagues. Neutral 33/34/33 placeholder until research runs.
 function formatFixtureLiteral(f) {
+  const resultStr = f.result === null ? 'null' : `'${escapeJs(f.result)}'`;
   return `      {
         day: '${escapeJs(f.day)}',
         home: '${escapeJs(f.home)}', away: '${escapeJs(f.away)}', time: '${f.time}',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: ${resultStr}, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
         factors: {
           formBalance:   { score: 50, detail: 'Pending research.' },
           momentum:      { score: 50, detail: 'Pending research.' },
@@ -80,8 +85,6 @@ function formatFixtureLiteral(f) {
       }`;
 }
 
-// Walk through HTML to find the closing ']' of the World Cup fixtures
-// array, with bracket counting that's aware of strings and escapes.
 function findFixturesClose(html, leagueId) {
   const idMatch = html.match(new RegExp(`id: '${escapeRegex(leagueId)}'`));
   if (!idMatch) return -1;
@@ -121,7 +124,6 @@ function replaceFixtures(html, leagueId, newFixturesArray) {
   const fixIdx = html.indexOf('fixtures: [', idMatch.index);
   if (fixIdx === -1) throw new Error(`Could not find fixtures array for ${leagueId}`);
   const startPos = fixIdx + 'fixtures: ['.length;
-
   const closeIdx = findFixturesClose(html, leagueId);
   if (closeIdx === -1) throw new Error(`Could not find close for ${leagueId}`);
 
@@ -153,78 +155,98 @@ function refreshDataTimestamp(html) {
   return html.replace(/<div class="updated-tag">Data · [^<]+<\/div>/, `<div class="updated-tag">Data · ${ts}</div>`);
 }
 
-function addFeaturesEntry(features, version, added) {
-  const entry = `- **${version}** — Auto-fetched ${added} World Cup 2026 fixture stubs.\n`;
+function addFeaturesEntry(features, version, added, marked) {
+  const parts = [];
+  if (added)  parts.push(`Auto-fetched ${added} World Cup ${SEASON} fixture stubs.`);
+  if (marked) parts.push(`Marked ${marked} World Cup result${marked === 1 ? '' : 's'}.`);
+  const msg = parts.join(' ');
+  if (!msg) return features;
+  const entry = `- **${version}** — ${msg}\n`;
   return features.replace(/(## Done\r?\n\r?\n)/, `$1${entry}`);
 }
 
 (async () => {
   const root = path.join(__dirname, '..');
-  const indexPath = path.join(root, 'index.html');
+  const indexPath    = path.join(root, 'index.html');
   const featuresPath = path.join(root, 'FEATURES.md');
 
-  let html = fs.readFileSync(indexPath, 'utf8');
+  let html     = fs.readFileSync(indexPath, 'utf8');
   let features = fs.readFileSync(featuresPath, 'utf8');
 
-  console.log(`Fetching World Cup ${SEASON} fixtures from api-football.com...`);
-  let apiFixtures;
+  console.log(`Fetching World Cup ${SEASON} fixtures from openfootball...`);
+  let json;
   try {
-    apiFixtures = await fetchWorldCupFixtures();
+    json = await fetchOpenfootball();
   } catch (e) {
     console.error(`✗ Fetch failed: ${e.message}`);
     process.exit(1);
   }
-  console.log(`  ${apiFixtures.length} fixtures returned from API`);
+  const apiMatches = json.matches || [];
+  console.log(`  ${apiMatches.length} matches returned`);
 
-  if (!apiFixtures.length) {
-    console.log('No fixtures available yet — schedule may not be published.');
+  if (!apiMatches.length) {
+    console.log('No fixtures available yet.');
     return;
   }
 
-  // Load existing World Cup fixtures so we can preserve any already
-  // researched / marked, and only ADD genuinely new ones.
+  // Existing data — preserve previously researched / marked fixtures
   const LEAGUES = loadLeagues(html);
   const wc = LEAGUES.find(l => l.id === 'worldcup');
   if (!wc) throw new Error("No 'worldcup' league found in index.html");
   const existing = wc.fixtures || [];
+  const byKey = new Map();
+  existing.forEach(f => byKey.set(`${f.home}|${f.away}|${f.day}`, f));
 
-  const seen = new Set(existing.map(f => `${f.home}|${f.away}|${f.day}`));
-  const mapped = apiFixtures
-    .filter(m => m.teams && m.teams.home && m.teams.away)
+  // Map openfootball matches to our format
+  const mapped = apiMatches
     .map(m => {
-      const { day, time } = localParts(m.fixture.date, TZ);
-      return {
-        day,
-        time,
-        home: m.teams.home.name,
-        away: m.teams.away.name,
-        result: null,
-      };
-    });
+      const date = parseOpenfootballDate(m.date, m.time);
+      if (!date) return null;
+      const { day, time } = localParts(date, DISPLAY_TZ);
+      const result = (m.score && m.score.ft && Array.isArray(m.score.ft))
+        ? `${m.score.ft[0]}-${m.score.ft[1]}`
+        : null;
+      return { day, time, home: m.team1, away: m.team2, result };
+    })
+    .filter(Boolean);
 
-  const fresh = mapped.filter(f => !seen.has(`${f.home}|${f.away}|${f.day}`));
-  console.log(`  ${fresh.length} new fixtures to insert (${mapped.length - fresh.length} already known)`);
+  let added = 0, marked = 0;
+  const combined = mapped.map(m => {
+    const key = `${m.home}|${m.away}|${m.day}`;
+    const prior = byKey.get(key);
+    if (!prior) {
+      added++;
+      return m;
+    }
+    // Preserve prior analysis fields; refresh only result if newly available
+    if (!prior.result && m.result) marked++;
+    return { ...prior, day: m.day, time: m.time, result: prior.result || m.result };
+  });
 
-  if (!fresh.length) {
-    console.log('Nothing to add.');
+  // Sort by date then time for tidy rendering
+  combined.sort((a, b) => {
+    const k = (f) => {
+      const p = f.day.split(' ');           // ["Thursday", "11", "June"]
+      return new Date(SEASON, MONTHS[p[2]] || 0, parseInt(p[1] || '1', 10),
+                      parseInt(f.time.split(':')[0] || '0', 10),
+                      parseInt(f.time.split(':')[1] || '0', 10)).getTime();
+    };
+    return k(a) - k(b);
+  });
+
+  console.log(`  ${added} new fixtures inserted, ${marked} previously-unplayed now have a score`);
+
+  if (added === 0 && marked === 0) {
+    console.log('Nothing to commit.');
     return;
   }
 
-  // Combine existing + new, sort by date for tidy rendering
-  const combined = [...existing, ...fresh].sort((a, b) => {
-    const da = `${a.day}T${a.time}`;
-    const db = `${b.day}T${b.time}`;
-    return da.localeCompare(db);
-  });
-
   html = replaceFixtures(html, 'worldcup', combined);
-
   const bumped = bumpVersion(html);
   html = refreshDataTimestamp(bumped.html);
-  features = addFeaturesEntry(features, bumped.version, fresh.length);
+  features = addFeaturesEntry(features, bumped.version, added, marked);
 
   fs.writeFileSync(indexPath, html);
   fs.writeFileSync(featuresPath, features);
-
-  console.log(`\nAdded ${fresh.length} stubs → ${bumped.version}`);
+  console.log(`\nSaved → ${bumped.version}`);
 })().catch(e => { console.error('Fatal:', e); process.exit(2); });
