@@ -2467,6 +2467,18 @@ const LEAGUES = [
     round: 'Semi-Final 2nd Legs',
     drawRate: 22,
     fixtures: []
+  },
+
+  // ─────────────────────────────────
+  // FIFA WORLD CUP 2026 — fixtures fetched via api-football.com
+  // ─────────────────────────────────
+  {
+    id: 'worldcup',
+    name: 'World Cup 2026',
+    country: 'FIFA',
+    round: 'Group Stage',
+    drawRate: 24,
+    fixtures: []
   }
 
 ];
@@ -2558,7 +2570,8 @@ function calcEdge(fairOddsStr, bookOdds) {
 function renderSidebar() {
   const groups = [
     { label: 'Domestic Leagues', ids: ['pl','laliga','seriea','bundesliga','ligue1'] },
-    { label: 'European',         ids: ['ucl','uel','uecl'] }
+    { label: 'European',         ids: ['ucl','uel','uecl'] },
+    { label: 'International',    ids: ['worldcup'] }
   ];
   const totalUpcoming = LEAGUES.reduce((n, l) => n + l.fixtures.filter(f => !f.result).length, 0);
   const sidebar = document.getElementById('sidebar');
