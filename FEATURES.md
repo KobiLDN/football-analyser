@@ -14,7 +14,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ### Pipeline polish
 
-- **`make_fixtures.bat` writes `prompt.txt`** — alongside `fixtures.json`, output a copy-paste-ready prompt with the fixtures already embedded + schema + canonical names. Eliminates the last manual editing step before pasting into DeepSeek.
 - **Pre-commit hook** — run `node -e "loadLeagues(html)"` before any commit to catch schema breakage (would have prevented the v2.33-era `fetch-fixtures` regression that wiped data).
 - **Auto-research via OpenRouter** (`auto_research.py`) — replace the DeepSeek-web-chat copy/paste loop with a Python script that calls OpenRouter `deepseek/deepseek-v4-flash:online` directly. ~£0.50/month for the whole season. Fully hands-off.
 - **`scripts/README.md`** — one-line description per script (`agent.py`, `fetch-fixtures.js`, `apply_research.py`, etc.).
@@ -52,6 +51,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.53** — `make_fixtures.bat` now also writes `fixtures_research_needed_prompt.txt` — a self-contained, ready-to-paste DeepSeek prompt with the fixtures, schema, and canonical team-name list all embedded. Eliminates the last manual editing step: copy → paste → save JSON → `apply_research.bat`.
 - **v2.52** — End-to-end DeepSeek research pipeline: `make_fixtures.bat` builds fixture batches → upload to DeepSeek `:online` → drop the returned `deepseek_json_*.json` in the repo → `apply_research.bat` auto-detects, validates atomic, applies, commits dev→main→live, archives. All 72 named-team World Cup fixtures researched this way (4 batches, zero Claude tokens used for the data).
 - **v2.51** — World Cup 2026 integration shipped end-to-end: `worldcup` league + new "International" sidebar group (`index.html`); `scripts/fetch-worldcup.js` pulls from public-domain `openfootball/worldcup.json` (no API key needed after API-Football's 2026 paywall blocked us); same script also marks results when openfootball publishes them, so no separate mark-worldcup workflow needed; `.github/workflows/fetch-worldcup.yml` runs Mondays 09:00 UTC and supports manual dispatch.
 - **v2.50** — Auto-fetched 104 World Cup 2026 fixture stubs.
