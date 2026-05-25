@@ -126,6 +126,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 }
 .stat-val { font-size: 26px; font-weight: 700; color: var(--gold); line-height: 1; }
 .stat-label { font-size: 9px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px; }
+.stat-sub { font-size: 11px; color: var(--text3); margin-top: 3px; letter-spacing: 0.02em; }
 
 .day-label {
   font-size: 10px;
@@ -388,7 +389,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.53 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.54 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 14 May 2026 22:30 BST</div>
@@ -5250,7 +5251,9 @@ function renderAll() {
   const upcoming   = filtered.filter(f => !f.result).length;
   const getLeading = f => f.homeWin !== undefined ? Math.max(f.homeWin, f.draw, f.awayWin) : (f.drawProbability || 0);
   const highConf   = filtered.filter(f => !f.result && getLeading(f) >= 55).length;
-  const topConf    = filtered.length ? Math.max(...filtered.map(f => getLeading(f))) : 0;
+  // Hit rate is computed from EVERY fixture across all leagues — independent
+  // of the past-window / signal sidebar filters so the stat is stable.
+  const hitRate    = calcHitRate(LEAGUES.flatMap(l => l.fixtures));
 
   document.getElementById('main').innerHTML = `
     <div class="league-header">
@@ -5262,7 +5265,11 @@ function renderAll() {
       <div class="league-stats">
         <div class="stat-card"><div class="stat-val">${upcoming}</div><div class="stat-label">Upcoming</div></div>
         <div class="stat-card"><div class="stat-val">${highConf}</div><div class="stat-label">High Confidence</div></div>
-        <div class="stat-card"><div class="stat-val">${topConf}%</div><div class="stat-label">Top Confidence</div></div>
+        <div class="stat-card">
+          <div class="stat-val">${hitRate ? hitRate.percent + '%' : '—'}</div>
+          <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
+          <div class="stat-label">Hit rate</div>
+        </div>
       </div>
     </div>
     ${Object.keys(grouped).length ? renderFixtureListHead() : ''}
@@ -5298,7 +5305,9 @@ function renderMain() {
   const upcoming   = filtered.filter(f => !f.result).length;
   const getLeading = f => f.homeWin !== undefined ? Math.max(f.homeWin, f.draw, f.awayWin) : (f.drawProbability || 0);
   const highConf   = filtered.filter(f => !f.result && getLeading(f) >= 55).length;
-  const topConf    = filtered.length ? Math.max(...filtered.map(f => getLeading(f))) : 0;
+  // Hit rate is computed from the league's full fixtures array — independent
+  // of the past-window / signal sidebar filters so the stat is stable.
+  const hitRate    = calcHitRate(league.fixtures);
 
   document.getElementById('main').innerHTML = `
     <div class="league-header">
@@ -5310,7 +5319,11 @@ function renderMain() {
       <div class="league-stats">
         <div class="stat-card"><div class="stat-val">${league.drawRate}%</div><div class="stat-label">League draw rate</div></div>
         <div class="stat-card"><div class="stat-val">${highConf}</div><div class="stat-label">High Confidence</div></div>
-        <div class="stat-card"><div class="stat-val">${topConf}%</div><div class="stat-label">Top Confidence</div></div>
+        <div class="stat-card">
+          <div class="stat-val">${hitRate ? hitRate.percent + '%' : '—'}</div>
+          <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
+          <div class="stat-label">Hit rate</div>
+        </div>
       </div>
     </div>
     ${Object.keys(grouped).length ? renderFixtureListHead() : ''}
@@ -5338,6 +5351,20 @@ function predictionAccuracy(f) {
   const [h, a] = f.result.split('-').map(Number);
   const actual = h > a ? 'Home Win' : h < a ? 'Away Win' : 'Draw';
   return calcOutcome(f) === actual ? 'hit' : 'miss';
+}
+
+// Aggregate hit / miss across a list of fixtures.
+// Returns { hits, misses, total, percent } or null when nothing graded.
+function calcHitRate(fixtures) {
+  let hits = 0, misses = 0;
+  for (const f of fixtures) {
+    const r = predictionAccuracy(f);
+    if (r === 'hit') hits++;
+    else if (r === 'miss') misses++;
+  }
+  const total = hits + misses;
+  if (total === 0) return null;
+  return { hits, misses, total, percent: Math.round((hits / total) * 100) };
 }
 
 function renderFormDots(formStr) {
