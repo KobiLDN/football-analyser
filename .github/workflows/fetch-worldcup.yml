@@ -26,7 +26,7 @@ jobs:
           node-version: '22'
       - name: Fetch World Cup fixtures
         env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          # Data source is openfootball/worldcup.json on GitHub — no auth needed
           WC_SEASON: ${{ github.event.inputs.season || '2026' }}
         run: node scripts/fetch-worldcup.js
       - name: Commit and push
