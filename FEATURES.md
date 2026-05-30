@@ -50,6 +50,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.55** — Auto-marked 1 result (PSG 5-4 Arsenal).
 - **v2.54** — Hit Rate stat-card replaces Top Confidence in the league header. Aggregates HIT/MISS across all past graded fixtures (Low-confidence picks excluded — coin flips). Big % with `X of Y` fraction below. Stable across sidebar filter toggles. All Fixtures shows cross-competition rate; per-league views show that league's rate.
 - **v2.53** — `make_fixtures.bat` now also writes `fixtures_research_needed_prompt.txt` — a self-contained, ready-to-paste DeepSeek prompt with the fixtures, schema, and canonical team-name list all embedded. Eliminates the last manual editing step: copy → paste → save JSON → `apply_research.bat`.
 - **v2.52** — End-to-end DeepSeek research pipeline: `make_fixtures.bat` builds fixture batches → upload to DeepSeek `:online` → drop the returned `deepseek_json_*.json` in the repo → `apply_research.bat` auto-detects, validates atomic, applies, commits dev→main→live, archives. All 72 named-team World Cup fixtures researched this way (4 batches, zero Claude tokens used for the data).
