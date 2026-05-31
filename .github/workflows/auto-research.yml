@@ -1,0 +1,87 @@
+name: Auto-research fixtures
+
+on:
+  # Run after the fetch workflows so stubs exist before we research them
+  workflow_run:
+    workflows:
+      - "Auto-fetch fixtures"
+      - "Auto-fetch World Cup fixtures"
+    types: [completed]
+  # Also allow manual trigger with optional overrides
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'League to research (blank = all)'
+        required: false
+        default: ''
+      days:
+        description: 'Days ahead to look for stubs (-1 = all pending)'
+        required: false
+        default: '7'
+      max:
+        description: 'Max fixtures per run'
+        required: false
+        default: '20'
+      offset:
+        description: 'Skip first N fixtures (for batching)'
+        required: false
+        default: '0'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    # On workflow_run: only proceed if the upstream workflow succeeded
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests understatapi
+
+      - name: Research stubs via OpenRouter
+        id: research
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          ARGS="--no-apply"
+          ARGS="$ARGS --days ${{ github.event.inputs.days || '7' }}"
+          ARGS="$ARGS --max ${{ github.event.inputs.max || '20' }}"
+          OFFSET="${{ github.event.inputs.offset || '0' }}"
+          if [ "$OFFSET" != "0" ]; then ARGS="$ARGS --offset $OFFSET"; fi
+          LEAGUE="${{ github.event.inputs.league }}"
+          if [ -n "$LEAGUE" ]; then ARGS="$ARGS --league $LEAGUE"; fi
+
+          python auto_research.py $ARGS
+
+      - name: Apply research to index.html
+        run: |
+          if [ ! -f research.json ]; then
+            echo "No stubs found — nothing to apply."
+            exit 0
+          fi
+          python apply_research.py --no-push
+
+      - name: Commit and push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          # Count how many fixtures were researched
+          COUNT=$(python -c "import json; d=json.load(open('research.json')); print(len(d))" 2>/dev/null || echo "?")
+          git add index.html
+          git commit -m "auto-research: ${COUNT} fixture(s) via OpenRouter"
+          git push
