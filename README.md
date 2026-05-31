@@ -22,7 +22,7 @@ Each fixture is annotated with:
 
 ## Updating each gameweek
 
-Fixtures are fetched automatically via the API through the `.github/workflows/fetch-fixtures.yml` GitHub Action — do not add fixtures manually. Deep research is then populated by `agent.py` (see [Local AI research pipeline](#local-ai-research-pipeline) below) or by `refresh_today.bat` for game-day updates.
+Fixtures are fetched automatically via the API through the `.github/workflows/fetch-fixtures.yml` GitHub Action — do not add fixtures manually. Deep research is then populated automatically by the `auto-research.yml` workflow (see [Automated research pipeline](#automated-research-pipeline) below), or locally via `refresh_today.bat` for game-day updates.
 
 ## Fixture verification
 
@@ -38,23 +38,30 @@ Manual fallback: edit the fixture object directly to set `result:` if the workfl
 
 ## Auto-fetching fixtures
 
-A third GitHub Action (`.github/workflows/fetch-fixtures.yml`) runs every Monday at 08:00 UTC and inserts stub fixtures for the coming week. Stubs have placeholder analysis (all factors set to 50, verdict "Low") — deep research is added manually afterwards. **Re-fetch preserves** any existing `teamNews`, `context`, and `bookOdds` on fixtures the script re-writes. Trigger it on demand via **Actions → Auto-fetch fixtures → Run workflow** (supports an optional `days_ahead` input, default 8).
+A third GitHub Action (`.github/workflows/fetch-fixtures.yml`) runs every Monday at 08:00 UTC and inserts stub fixtures for the coming week. Stubs have placeholder analysis (all factors set to 50, verdict "Low") — deep research is added automatically by the `auto-research.yml` workflow shortly after. **Re-fetch preserves** any existing `teamNews`, `context`, and `bookOdds` on fixtures the script re-writes. Trigger it on demand via **Actions → Auto-fetch fixtures → Run workflow** (supports an optional `days_ahead` input, default 8).
 
-## Local AI research pipeline
+## Automated research pipeline
 
-`agent.py` populates stub fixtures with deep research locally — no external API costs. It uses:
+`.github/workflows/auto-research.yml` triggers automatically after `fetch-fixtures.yml` and `fetch-worldcup.yml` complete. It:
 
-- **LM Studio** serving a local LLM (winner: `qwen3.5-9b-claude-4.6-opus-reasoning-distilled-v2`)
-- **SearXNG** as a self-hosted meta-search for live news
-- **Understat** via the `understatapi` Python package for xG and form data
+1. Runs `auto_research.py` which finds all stub fixtures and builds a research prompt
+2. Calls **OpenRouter** (`deepseek/deepseek-r1-0528:online`) — live web search for team news, injuries, form, head-to-head
+3. Parses the returned JSON array and writes `research.json`
+4. Applies the research to `index.html` and commits direct to main
 
-Three entry points:
+Requires `OPENROUTER_API_KEY` set as a GitHub Actions secret.
 
-- **`run_agent.bat`** — researches every `Pending deep research.` stub in `index.html`. Use after a Monday fetch when there are a lot of new stubs.
-- **`reset_stubs.bat`** — resets all unplayed fixtures back to stubs (useful before a full re-research with an updated model or prompt).
-- **`refresh_today.bat [days]`** — targeted reset of fixtures kicking off within N days (default 1 = today), then auto-runs the agent. Use on matchday morning to incorporate the latest team news and injury updates without re-researching the entire week (~3–5 min vs ~15+ min full).
+**Manual use:** double-click `auto_research.bat` to research stubs locally. Same flags as `make_fixtures.bat`:
 
-The pipeline is hardened against common LLM failure modes: a scored relevance filter prioritises articles mentioning *both* fixture teams (preventing wrong-opponent contamination), the prompt forbids inventing scorelines or guessing personnel, and a post-validation step retries any analysis that doesn't mention both teams. Team-name aliases (in `agent.py` `UNDERSTAT_ALIASES`) handle long club names like *Brighton & Hove Albion* → *Brighton*.
+```
+auto_research.bat                           # all leagues, next 7 days
+auto_research.bat --league worldcup         # World Cup only
+auto_research.bat --days -1 --max 25        # all stubs, first batch of 25
+auto_research.bat --days -1 --max 25 --offset 25   # second batch
+auto_research.bat --no-apply                # write research.json only, don't push
+```
+
+**Game-day refresh:** `refresh_today.bat [days]` resets fixtures kicking off within N days back to stubs and re-researches them with the latest news (~3–5 min). Default window is 2 days (today + tomorrow).
 
 ## Model benchmarking
 

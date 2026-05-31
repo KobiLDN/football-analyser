@@ -15,7 +15,6 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 ### Pipeline polish
 
 - **Pre-commit hook** — run `node -e "loadLeagues(html)"` before any commit to catch schema breakage (would have prevented the v2.33-era `fetch-fixtures` regression that wiped data).
-- **Auto-research via OpenRouter** (`auto_research.py`) — replace the DeepSeek-web-chat copy/paste loop with a Python script that calls OpenRouter `deepseek/deepseek-v4-flash:online` directly. ~£0.50/month for the whole season. Fully hands-off.
 - **`scripts/README.md`** — one-line description per script (`agent.py`, `fetch-fixtures.js`, `apply_research.py`, etc.).
 
 ### Site UX
@@ -50,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.56** — Fully automated fixture research: `auto_research.py` + `auto_research.bat` + `.github/workflows/auto-research.yml`. Calls OpenRouter (deepseek:online) after Monday's fetch workflow, researches all stubs, commits to main — zero manual steps. `OPENROUTER_API_KEY` stored as GitHub Actions secret.
 - **v2.55** — Auto-marked 1 result (PSG 5-4 Arsenal).
 - **v2.54** — Hit Rate stat-card replaces Top Confidence in the league header. Aggregates HIT/MISS across all past graded fixtures (Low-confidence picks excluded — coin flips). Big % with `X of Y` fraction below. Stable across sidebar filter toggles. All Fixtures shows cross-competition rate; per-league views show that league's rate.
 - **v2.53** — `make_fixtures.bat` now also writes `fixtures_research_needed_prompt.txt` — a self-contained, ready-to-paste DeepSeek prompt with the fixtures, schema, and canonical team-name list all embedded. Eliminates the last manual editing step: copy → paste → save JSON → `apply_research.bat`.
