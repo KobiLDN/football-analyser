@@ -41,7 +41,8 @@ When you commit a change, update these in the same commit:
 
 - Never commit API keys.
 - Keep secrets in GitHub Actions secrets.
-- `FOOTBALL_DATA_API_KEY` is required by fixture workflows.
+- `FOOTBALL_DATA_API_KEY` — required by fetch-fixtures, mark-results, verify-fixtures, backfill-scores workflows (football-data.org).
+- `OPENROUTER_API_KEY` — required by auto-research workflow (OpenRouter deepseek:online).
 
 ## Style and scope
 
