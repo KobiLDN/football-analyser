@@ -2868,15 +2868,32 @@ const LEAGUES = [
       {
         day: 'Monday 15 June',
         home: 'Saudi Arabia', away: 'Uruguay', time: '23:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.75-1.85',
+        homeForm: 'L L L W D',
+        awayForm: 'D D L D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 35, detail: 'Saudi Arabia\'s poor recent form contrasts with Uruguay\'s resilience in recent draws against Algeria and England.' },
+          momentum:      { score: 30, detail: 'Saudi Arabia\'s heavy losses to Serbia and Egypt dent confidence, while Uruguay showed defensive improvement against England.' },
+          headToHead:    { score: 60, detail: 'Uruguay won the teams\' last World Cup meeting 1-0 in 2018, though overall H2H is balanced with one win each.' },
+          goalTendency:  { score: 70, detail: 'Uruguay\'s midfield control should limit Saudi chances, with both teams scoring in only 2 of Saudi\'s last 5 matches.' },
+          leagueContext: { score: 75, detail: 'Uruguay\'s #17 FIFA ranking and knockout-stage expectations add pressure to win this Group H opener decisively.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Nawaf Al-Aqidi — muscle injury' },
+              { tag: 'key', text: 'Salem Al Dawsari — primary creative force' },
+              { tag: 'key', text: 'Firas Al Buraikan — main attacking threat' }
+            ],
+          away: [
+              { tag: 'out', text: 'José Giménez — physical discomfort' },
+              { tag: 'out', text: 'Ronald Araujo — muscle injury' },
+              { tag: 'out', text: 'Giorgian de Arrascaeta — broken collarbone' },
+              { tag: 'key', text: 'Federico Valverde — midfield engine' },
+              { tag: 'key', text: 'Darwin Núñez — primary goal threat' }
+            ]
+        },
+        context: 'Saudi Arabia will deploy a compact 4-3-3 under Georgios Donis, relying on counter-attacks through Al Dawsari and Al Buraikan to exploit Uruguay\'s depleted defense. Marcelo Bielsa\'s high-pressing Uruguay miss key defenders Araujo and Giménez, shifting responsibility to Valverde and Ugarte in midfield. The absence of playmaker de Arrascaeta may force Núñez to drop deeper, while Saudi goalkeeper Al-Aqidi\'s injury weakens their last line. Both teams seek momentum in Group H, with Uruguay aiming to validate their ranking and Saudi Arabia recalling their 2022 upset of Argentina.',
+        summary: 'Uruguay enter as favorites (FIFA #17 vs #61) despite missing three starters, with Valverde and Núñez expected to penetrate Saudi Arabia\'s vulnerable defense that conceded nine goals in five games. Saudi Arabia\'s recent form includes just one win (3-0 vs Puerto Rico) and heavy losses to Egypt (4-0) and Serbia. Pundits predict a 2-0 Uruguay win, citing their midfield control and Saudi Arabia\'s scoring struggles, though defensive absences could offer counter-attack opportunities.'
       },
 
       {
