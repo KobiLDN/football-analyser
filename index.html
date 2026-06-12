@@ -3042,15 +3042,33 @@ const LEAGUES = [
       {
         day: 'Wednesday 17 June',
         home: 'England', away: 'Croatia', time: '21:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 58, draw: 27, awayWin: 15, verdict: 'Likely', fairOdds: '1.70-1.75',
+        homeForm: 'W W L D W',
+        awayForm: 'W L L W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'England have 3 wins in their last 5 matches, while Croatia have lost 2 of their last 5.' },
+          momentum:      { score: 75, detail: 'England are on a 9-match winning streak at neutral venues with 7 consecutive clean sheets.' },
+          headToHead:    { score: 70, detail: 'England have won 3 of the last 5 encounters, including a 1-0 victory at EURO 2020.' },
+          goalTendency:  { score: 65, detail: 'England kept 11 clean sheets in 14 matches, while Croatia haven\'t kept a clean sheet in 6 games.' },
+          leagueContext: { score: 60, detail: 'World Cup opener with England\'s defensive solidity under Tuchel facing Croatia\'s transition threats.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Ben White — injury' },
+              { tag: 'out', text: 'Jack Grealish — injury' },
+              { tag: 'out', text: 'Jarrad Branthwaite — injury' },
+              { tag: 'doubt', text: 'Tino Livramento — injury' },
+              { tag: 'key', text: 'Bukayo Saka — chronic Achilles issue' },
+              { tag: 'key', text: 'Harry Kane — European Golden Shoe winner' }
+            ],
+          away: [
+              { tag: 'key', text: 'Luka Modrić — playing with protective mask' },
+              { tag: 'key', text: 'Joško Gvardiol — returned from injury' },
+              { tag: 'key', text: 'Dominik Livaković — experienced goalkeeper' }
+            ]
+        },
+        context: 'England deploy a possession-based system under Thomas Tuchel, leveraging Harry Kane\'s scoring prowess (61 goals for Bayern) and Bukayo Saka\'s creativity despite injury concerns. Croatia counter with veteran Luka Modrić orchestrating transitions and Joško Gvardiol stabilizing the defense after returning to training. The tactical clash centers on England\'s high press versus Croatia\'s midfield control.',
+        summary: 'England\'s defensive record (11 clean sheets in 14 matches) and Croatia\'s recent vulnerability (no clean sheet in 6 games) favor the Three Lions. Key battles: Modrić vs. England\'s midfield press, and Kane against Gvardiol. Historical dominance gives England edge in this World Cup opener.'
       },
 
       {
@@ -3079,15 +3097,24 @@ const LEAGUES = [
       {
         day: 'Thursday 18 June',
         home: 'Uzbekistan', away: 'Colombia', time: '03:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 30, draw: 35, awayWin: 35, verdict: 'Low', fairOdds: '2.80-2.90',
+        homeForm: 'U U U U U',
+        awayForm: 'U U U U U',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent form data; Uzbekistan lost once in 16 qualifiers, Colombia topped CONMEBOL group.' },
+          momentum:      { score: 55, detail: 'Colombia qualified ahead of Brazil/Uruguay; Uzbekistan\'s debutant confidence after strong Asian qualifiers.' },
+          headToHead:    { score: 50, detail: 'No significant head-to-head history between these teams.' },
+          goalTendency:  { score: 50, detail: 'Insufficient data; Colombia\'s attack vs. Uzbekistan\'s defensive resilience under Cannavaro.' },
+          leagueContext: { score: 60, detail: 'World Cup debutants Uzbekistan face Colombia\'s tournament experience in Group K opener.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Emerging talents — Cannavaro\'s tactical setup' }
+            ],
+          away: []
+        },
+        context: 'Uzbekistan, coached by World Cup winner Fabio Cannavaro, rely on defensive organization and emerging talents in their tournament debut. Colombia counter with CONMEBOL-proven attackers, having qualified ahead of Brazil and Uruguay. The match pits Uzbekistan\'s disciplined low block against Colombia\'s creative midfield transitions in Mexico City.',
+        summary: 'Colombia\'s superior pedigree gives slight edge, but Uzbekistan\'s 1-loss qualifying record and Cannavaro\'s tactical discipline suggest a tight contest. Key factor: Colombia\'s ability to break down organized defenses in their first World Cup appearance since 2014.'
       },
 
       {
