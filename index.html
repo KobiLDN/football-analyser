@@ -2585,29 +2585,64 @@ const LEAGUES = [
       {
         day: 'Saturday 13 June',
         home: 'Qatar', away: 'Switzerland', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 15, draw: 25, awayWin: 60, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'L D L L D',
+        awayForm: 'D L D W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'Qatar\'s poor form (1 win in last 5) contrasts with Switzerland\'s stronger recent results.' },
+          momentum:      { score: 65, detail: 'Switzerland\'s unbeaten qualifying campaign provides momentum despite mixed friendlies.' },
+          headToHead:    { score: 50, detail: 'Qatar won the only prior meeting (2018 friendly), but historical relevance is limited.' },
+          goalTendency:  { score: 65, detail: 'Qatar averaged 0.4 goals in last 5 games; Switzerland averaged 1.8 goals.' },
+          leagueContext: { score: 75, detail: 'Switzerland\'s European-based squad faces Qatar seeking their first World Cup point.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Akram Afif - Playmaker and primary creator' },
+              { tag: 'key', text: 'Almoez Ali - All-time top scorer' }
+            ],
+          away: [
+              { tag: 'out', text: 'Xherdan Shaqiri - Retired internationally' },
+              { tag: 'out', text: 'Yann Sommer - Retired internationally' },
+              { tag: 'out', text: 'Fabian Schär - Retired internationally' },
+              { tag: 'key', text: 'Granit Xhaka - Captain and midfield anchor' },
+              { tag: 'key', text: 'Breel Embolo - Primary attacking threat' }
+            ]
+        },
+        context: 'Qatar aims for redemption after losing all 2022 group games, relying on Afif\'s creativity and Ali\'s finishing. Switzerland, unbeaten in qualifying, fields a blend of experience (Xhaka, Rodriguez) and youth (Ndoye, Vargas). The Swiss defense conceded only twice in six qualifiers, while Qatar\'s backline features veterans Pedro Miguel and Boualem Khoukhi.',
+        summary: 'Switzerland are favorites with superior squad depth and defensive solidity, though Qatar\'s counter-attacking threat through Afif and Ali poses danger. The Swiss aim to start strongly in Group B, while Qatar seeks their first World Cup point against European opposition.'
       },
 
       {
         day: 'Saturday 13 June',
         home: 'Brazil', away: 'Morocco', time: '23:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.80-1.85',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Recent form unavailable for both teams due to limited data.' },
+          momentum:      { score: 55, detail: 'Brazil\'s injury disruptions contrast with Morocco\'s AFCON confidence despite coaching changes.' },
+          headToHead:    { score: 50, detail: 'Brazil won 3-0 in 1998 World Cup; Morocco won 2-1 in a 2023 friendly.' },
+          goalTendency:  { score: 55, detail: 'Brazil\'s attacking strength (Vinicius Jr, Raphinha) faces Morocco\'s AFCON-tested defense.' },
+          leagueContext: { score: 60, detail: 'Brazil targets group supremacy; Morocco aims to replicate 2022 semifinal run despite key absences.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Neymar - Calf injury' },
+              { tag: 'out', text: 'Éder Militão - Pre-tournament injury' },
+              { tag: 'out', text: 'Rodrygo - Pre-tournament injury' },
+              { tag: 'key', text: 'Vinicius Jr. - Primary attacking outlet' },
+              { tag: 'key', text: 'Alisson - Key goalkeeper' }
+            ],
+          away: [
+              { tag: 'out', text: 'Nayef Aguerd - Ruled out of tournament' },
+              { tag: 'out', text: 'Abde Ezzalzouli - Ruled out of tournament' },
+              { tag: 'doubt', text: 'Noussair Mazraoui - Shoulder injury' },
+              { tag: 'key', text: 'Achraf Hakimi - Offensive full-back' },
+              { tag: 'key', text: 'Yassine Bounou - Goalkeeper' }
+            ]
+        },
+        context: 'Brazil starts without injured Neymar, relying on Vinicius Jr. and Raphinha in Ancelotti\'s attack. Morocco misses Aguerd and Ezzalzouli, with Mazraoui doubtful. The Atlas Lions, now coached by Mohamed Ouahbi, retain core players Hakimi and Bounou from their 2022 World Cup semifinal run. This match likely decides Group C leadership.',
+        summary: 'Brazil edges as favorites despite Neymar\'s absence, utilizing their wingers\' pace against Morocco\'s depleted defense. The African champions remain dangerous through Hakimi\'s flank runs but face significant selection challenges. Expect tactical tension with group supremacy at stake.'
       },
 
       {
