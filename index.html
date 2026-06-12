@@ -4082,29 +4082,47 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'New Zealand', away: 'Belgium', time: '04:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.40-2.60',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'No recent form data available for either team.' },
+          momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
+          headToHead:    { score: 50, detail: 'No historical head-to-head records found.' },
+          goalTendency:  { score: 50, detail: 'Lack of recent matches prevents goal pattern analysis.' },
+          leagueContext: { score: 50, detail: 'Opening Group G match with both teams seeking early advantage.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: [
+              { tag: 'out', text: 'Zeno Debast - injury' }
+            ]
+        },
+        context: 'Belgium enters with a slight edge due to individual quality like Romelu Lukaku and Kevin De Bruyne, but Zeno Debast\'s absence tests defensive depth. New Zealand, with no injury concerns, will likely deploy a compact 5-4-1 formation, relying on Chris Wood\'s physicality in transition. Both teams prioritize avoiding early group-stage setbacks.',
+        summary: 'Belgium are favorites but face uncertainty without Debast. New Zealand\'s defensive organization under Darren Bazeley could frustrate opponents. The match may hinge on Belgium\'s ability to break down a disciplined low block early.'
       },
 
       {
         day: 'Saturday 27 June',
         home: 'Panama', away: 'England', time: '22:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 10, draw: 25, awayWin: 65, verdict: 'Strong', fairOdds: '1.48-1.60',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'No recent matches to evaluate form.' },
+          momentum:      { score: 50, detail: 'Insufficient data for momentum assessment.' },
+          headToHead:    { score: 80, detail: 'England won the only previous meeting 6-1 in 2018 World Cup.' },
+          goalTendency:  { score: 70, detail: 'Historical match featured high scoring (7 goals).' },
+          leagueContext: { score: 60, detail: 'England aims for top spot in Group L; Panama seeks upset.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Adalberto Carrasquilla - injury' }
+            ],
+          away: []
+        },
+        context: 'England\'s attacking trio of Harry Kane, Phil Foden, and Bukayo Saka is expected to dominate Panama\'s defense, weakened by Carrasquilla\'s absence. Panama will likely use a 4-5-1 setup focusing on containment, with Aníbal Godoy marshaling midfield. England must convert possession into goals early to avoid counter-attack risks.',
+        summary: 'England are heavy favorites given their 2018 demolition of Panama and Carrasquilla\'s injury. Expect high pressing from Jude Bellingham and Declan Rice to disrupt Panama\'s buildup. Key battle: Kane vs. Panama\'s center-back pairing of Andrés Andrade and Fidel Escobar.'
       },
 
       {
