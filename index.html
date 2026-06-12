@@ -2526,15 +2526,31 @@ const LEAGUES = [
       {
         day: 'Friday 12 June',
         home: 'Canada', away: 'Bosnia & Herzegovina', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 53, draw: 25, awayWin: 22, verdict: 'Likely', fairOdds: '1.85-1.90',
+        homeForm: 'D D W W D',
+        awayForm: 'L W D D D',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 75, detail: 'Canada are unbeaten in 8 matches with 6 clean sheets, while Bosnia have 1 win in their last 5.' },
+          momentum:      { score: 70, detail: 'Canada enter on an 8-match unbeaten run; Bosnia qualified via dramatic playoff comebacks.' },
+          headToHead:    { score: 50, detail: 'First-ever meeting between these nations.' },
+          goalTendency:  { score: 65, detail: 'Canada kept 6 clean sheets in 8 games; Bosnia scored in 10 straight qualifiers but conceded in 4 of last 5.' },
+          leagueContext: { score: 80, detail: 'Canada\'s historic home World Cup debut provides significant motivational advantage.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Alphonso Davies — hamstring strain' },
+              { tag: 'out', text: 'Marcelo Flores — ACL injury' },
+              { tag: 'doubt', text: 'Moise Bombito — tibia injury' },
+              { tag: 'key', text: 'Jonathan David — record goalscorer' }
+            ],
+          away: [
+              { tag: 'out', text: 'Haris Tabakovic — foot injury' },
+              { tag: 'doubt', text: 'Edin Dzeko — shoulder injury' },
+              { tag: 'key', text: 'Sead Kolasinac — veteran defender' }
+            ]
+        },
+        context: 'Canada seek their first World Cup win as co-hosts, deploying Jesse Marsch\'s high-press system without injured captain Alphonso Davies. Stephen Eustaquio captains the side, supporting attackers Jonathan David and Cyle Larin. Bosnia, led by Edin Dzeko (shoulder doubt), rely on set-piece threats and playoff resilience. Sergej Barbarez\'s side must compensate for Tabakovic\'s absence.',
+        summary: 'Canada (53% win probability) are favored for their historic home opener, leveraging an 8-match unbeaten streak. Bosnia\'s playoff heroics and Dzeko\'s potential return offer counter-threats. Key absences: Davies (hamstring) for Canada, Tabakovic (foot) for Bosnia.'
       },
 
       {
