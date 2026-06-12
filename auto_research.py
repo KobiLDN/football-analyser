@@ -230,6 +230,14 @@ def main():
         sys.exit(1)
 
     print(f"-> Parsed {len(data)} fixture(s) from response")
+
+    if not data:
+        print("WARNING: model returned an empty array — no fixtures to apply.")
+        with open(RAW_DUMP_FILE, "w", encoding="utf-8") as f:
+            f.write(raw)
+        print(f"  Raw response saved to {os.path.basename(RAW_DUMP_FILE)} for inspection.")
+        return
+
     for d in data:
         home = d.get("home", "?")
         away = d.get("away", "?")
