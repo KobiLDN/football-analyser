@@ -3180,15 +3180,25 @@ const LEAGUES = [
       {
         day: 'Thursday 18 June',
         home: 'Canada', away: 'Qatar', time: '23:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 50, draw: 30, awayWin: 20, verdict: 'Likely', fairOdds: '1.90-2.10',
+        homeForm: 'D W D D W',
+        awayForm: 'D L L D L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 80, detail: 'Canada unbeaten in last five matches, while Qatar lost four of their last five.' },
+          momentum:      { score: 70, detail: 'Canada won their last match against Bosnia, whereas Qatar lost to Switzerland.' },
+          headToHead:    { score: 60, detail: 'Canada won the only prior encounter 2-0 in a 2022 friendly.' },
+          goalTendency:  { score: 40, detail: 'Qatar failed to score in four of their last five matches, while Canada kept two clean sheets.' },
+          leagueContext: { score: 70, detail: 'Host nation Canada seeks first World Cup advancement with home crowd support at BC Place.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Alphonso Davies — injury' },
+              { tag: 'out', text: 'Moïse Bombito — muscle injury' }
+            ],
+          away: []
+        },
+        context: 'Canada faces Qatar at BC Place Vancouver without key defenders Alphonso Davies and Moïse Bombito due to injuries. Qatar arrives with no injury concerns but has struggled offensively, scoring just once in their last five matches. Jonathan David leads Canada\'s attack against Qatar\'s defense anchored by Bassam Al-Rawi. Both teams aim for their first World Cup group stage advancement.',
+        summary: 'Canada holds home advantage and superior form despite missing Davies and Bombito. Qatar\'s goal drought and poor recent record make them underdogs. Expect Canada to control possession but struggle for cutting edge without their star fullback.'
       },
 
       {
@@ -3222,15 +3232,22 @@ const LEAGUES = [
       {
         day: 'Friday 19 June',
         home: 'Scotland', away: 'Morocco', time: '23:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 20, draw: 20, awayWin: 60, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'W W L L W',
+        awayForm: 'D W W D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Morocco remains unbeaten in their last five matches, while Scotland lost twice.' },
+          momentum:      { score: 50, detail: 'Both teams won their most recent fixtures (Scotland 4-2, Morocco 3-0).' },
+          headToHead:    { score: 70, detail: 'Morocco won the only previous meeting 3-0 in a World Cup group stage match.' },
+          goalTendency:  { score: 70, detail: 'Pundits predict over 2.5 goals given both teams\' recent attacking output.' },
+          leagueContext: { score: 70, detail: 'Morocco\'s 2022 semifinal experience contrasts with Scotland\'s tournament inconsistency.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Scotland meets Morocco at Boston Stadium with both teams fielding full squads. Morocco\'s Achraf Hakimi anchors their defense under new coach Mohamed Ouahbi, while Scotland relies on Scott McTominay\'s midfield runs and Andrew Robertson\'s overlaps. Morocco\'s transition play featuring Bilal El Khannouss could exploit Scotland\'s high press in this Group C clash.',
+        summary: 'Morocco are strong favorites with superior talent and World Cup pedigree despite recent coaching changes. Scotland\'s physical approach and McTominay\'s form offer hope, but Morocco\'s defensive organization and Hakimi\'s flank dominance should prevail. Expect goals from counter-attacks.'
       },
 
       {
