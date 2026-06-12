@@ -2648,43 +2648,89 @@ const LEAGUES = [
       {
         day: 'Sunday 14 June',
         home: 'Haiti', away: 'Scotland', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.75-1.85',
+        homeForm: 'L W D L W',
+        awayForm: 'W W L L W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 40, detail: 'Scotland collected 9 points from their last 5 matches compared to Haiti\'s 7.' },
+          momentum:      { score: 40, detail: 'Scotland won two of their last three matches while Haiti managed one win in three.' },
+          headToHead:    { score: 50, detail: 'This is the first-ever meeting between the two nations.' },
+          goalTendency:  { score: 40, detail: 'Both teams scored in 3 of their last 5 matches, suggesting an open game.' },
+          leagueContext: { score: 40, detail: 'Scotland are ranked nearly 40 places above Haiti in FIFA rankings.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Duckens Nazon - record scorer (44 goals)' },
+              { tag: 'key', text: 'Wilson Isidor - Sunderland striker' },
+              { tag: 'key', text: 'Jean-Ricner Bellegarde - Wolves midfielder' }
+            ],
+          away: [
+              { tag: 'out', text: 'Billy Gilmour - knee injury' },
+              { tag: 'doubt', text: 'Scott McKenna - knock' },
+              { tag: 'key', text: 'John McGinn - Aston Villa midfielder' },
+              { tag: 'key', text: 'Lawrence Shankland - in form (3 goals, 1 assist in warm-ups)' }
+            ]
+        },
+        context: 'Haiti and Scotland both return to the World Cup after long absences, with Haiti making only their second appearance and Scotland their first since 1998. Haiti rely on attackers Duckens Nazon and Wilson Isidor, while Scotland look to John McGinn\'s creativity and Lawrence Shankland\'s finishing. Both know a win is crucial with group favorites Brazil and Morocco to follow.',
+        summary: 'Scotland\'s higher ranking and stronger recent form make them favorites. Expect an open game, but Scotland\'s quality should secure their first World Cup win since 1990, potentially by multiple goals.'
       },
 
       {
         day: 'Sunday 14 June',
         home: 'Australia', away: 'Turkey', time: '05:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 20, draw: 26, awayWin: 54, verdict: 'Likely', fairOdds: '1.80-1.90',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 40, detail: 'Turkey\'s technical superiority outweighs Australia\'s physical approach.' },
+          momentum:      { score: 40, detail: 'Turkey qualified through high-pressure playoffs; Australia lack creative rhythm without McGree.' },
+          headToHead:    { score: 45, detail: 'Limited historical data shows both teams scored in 1 of 2 meetings.' },
+          goalTendency:  { score: 70, detail: 'Turkey averaged 2 goals per game in qualifying; Australia conceded 6 in last 5 matches.' },
+          leagueContext: { score: 40, detail: 'Turkey\'s squad features elite talents like Güler and Çalhanoğlu; Australia rely on transitions.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Riley McGree - tournament injury' },
+              { tag: 'out', text: 'Martin Boyle - absence' },
+              { tag: 'out', text: 'Kye Rowles - absence' },
+              { tag: 'key', text: 'Mat Ryan - captain' },
+              { tag: 'key', text: 'Nestory Irankunda - pace threat' }
+            ],
+          away: [
+              { tag: 'key', text: 'Hakan Çalhanoğlu - captain and playmaker' },
+              { tag: 'key', text: 'Arda Güler - Real Madrid starlet' }
+            ]
+        },
+        context: 'Australia field 17 World Cup debutants but miss playmaker Riley McGree, forcing reliance on Nestory Irankunda\'s speed and Harry Souttar\'s aerial threat. Turkey, ending a 24-year absence, boast Arda Güler and Kenan Yıldız in a creative midfield. Captain Hakan Çalhanoğlu will dictate tempo against Australia\'s low block.',
+        summary: 'Turkey\'s technical quality makes them favorites, especially with Australia missing McGree. Expect Turkey to dominate possession and eventually break down the defense, though set pieces offer Australia hope.'
       },
 
       {
         day: 'Sunday 14 June',
         home: 'Germany', away: 'Curaçao', time: '18:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.15-1.20',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 90, detail: 'Germany won 9 consecutive matches; Curaçao lost 4-1 to Scotland recently.' },
+          momentum:      { score: 90, detail: 'Germany\'s winning streak includes dominant warm-up victories.' },
+          headToHead:    { score: 80, detail: 'No prior meetings, but Germany\'s pedigree dwarfs Curaçao\'s.' },
+          goalTendency:  { score: 85, detail: 'Germany scored 6 goals in two warm-ups; Curaçao conceded 4 to Scotland.' },
+          leagueContext: { score: 95, detail: 'Germany are top-tier contenders; Curaçao are World Cup debutants ranked 82nd.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Lennart Karl - training injury' },
+              { tag: 'key', text: 'Manuel Neuer - returning captain' },
+              { tag: 'key', text: 'Leroy Sané - expected right wing starter' }
+            ],
+          away: [
+              { tag: 'key', text: 'Leandro Bacuna - captain' },
+              { tag: 'key', text: 'Tahith Chong - Sheffield United attacker' }
+            ]
+        },
+        context: 'Germany seek redemption after two group-stage exits, starting against minnows Curaçao. Manuel Neuer returns in goal, while Leroy Sané leads the attack. Curaçao, featuring ex-Premier League players Bacuna and Chong, are tournament debutants with chaotic preparations under Dick Advocaat.',
+        summary: 'Germany\'s superior quality and momentum should overwhelm Curaçao. Expect a high-scoring victory, with Germany likely exploiting defensive vulnerabilities early.'
       },
 
       {
