@@ -2998,15 +2998,22 @@ const LEAGUES = [
       {
         day: 'Wednesday 17 June',
         home: 'Austria', away: 'Jordan', time: '05:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.70',
+        homeForm: 'W D W W W',
+        awayForm: 'W L D L L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 80, detail: 'Austria are unbeaten in five matches (W4, D1), while Jordan have only one win in their last five (W1, D1, L3).' },
+          momentum:      { score: 85, detail: 'Austria have won their last three matches, while Jordan are winless in three (D1, L2).' },
+          headToHead:    { score: 50, detail: 'No previous encounters between Austria and Jordan.' },
+          goalTendency:  { score: 60, detail: 'Austria kept three clean sheets in their last five, while Jordan conceded 11 goals in the same period.' },
+          leagueContext: { score: 55, detail: 'Both teams face a challenging Group J with Argentina and Algeria, making a positive start vital.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Austria, managed by Ralf Rangnick, employs a high-pressing system featuring Marcel Sabitzer and Marko Arnautović. Jordan, led by Jamal Sellami, relies on a disciplined 3-4-3 formation with Musa Al-Taamari and Yazan Al-Naimat. Both teams seek momentum in a group featuring Argentina and Algeria.',
+        summary: 'Austria\'s defensive solidity (three clean sheets in five games) contrasts with Jordan\'s struggles (11 goals conceded). With no historical meetings, Austria\'s form advantage and Jordan\'s World Cup inexperience could prove decisive. Key battle: Sabitzer\'s creativity vs. Al-Taamari\'s counter-attacking threat.'
       },
 
       {
@@ -3049,15 +3056,24 @@ const LEAGUES = [
       {
         day: 'Thursday 18 June',
         home: 'Ghana', away: 'Panama', time: '00:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 30, draw: 35, awayWin: 35, verdict: 'Low', fairOdds: '2.80-2.90',
+        homeForm: 'L L L L D',
+        awayForm: 'D W L W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 20, detail: 'Ghana are winless in seven matches (D1, L6), while Panama have two wins and two draws in their last five.' },
+          momentum:      { score: 50, detail: 'Ghana are winless in three (L2, D1), while Panama have one win and one draw in their last three.' },
+          headToHead:    { score: 50, detail: 'No previous meetings between Ghana and Panama.' },
+          goalTendency:  { score: 70, detail: 'Both teams scored in Panama\'s last five matches and three of Ghana\'s last five.' },
+          leagueContext: { score: 50, detail: 'Both underdogs in Group L with England and Croatia, needing points for progression hopes.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: [
+              { tag: 'out', text: 'Adalberto Carrasquilla - injury' }
+            ]
+        },
+        context: 'Ghana, missing Mohammed Kudus due to tactical adjustments, faces Panama without key midfielder Adalberto Carrasquilla. Panama\'s José Fajardo leads their attack against Ghana\'s defensive vulnerabilities. Both teams deploy aggressive midfields, with Panama favoring wide play through Éric Davis.',
+        summary: 'Panama\'s scoring consistency (goals in last five games) clashes with Ghana\'s defensive frailties (no clean sheet in seven). Carrasquilla\'s absence weakens Panama\'s midfield, but Ghana\'s winless streak tilts balance. Decisive factor: whether Ghana\'s Inaki Williams can exploit Panama\'s high defensive line.'
       },
 
       {
