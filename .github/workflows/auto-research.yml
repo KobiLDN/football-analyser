@@ -18,14 +18,10 @@ on:
         description: 'Days ahead to look for stubs (-1 = all pending)'
         required: false
         default: '7'
-      max:
-        description: 'Max fixtures per run'
+      batch_size:
+        description: 'Fixtures per OpenRouter call (default 20)'
         required: false
         default: '20'
-      offset:
-        description: 'Skip first N fixtures (for batching)'
-        required: false
-        default: '0'
 
 permissions:
   contents: write
@@ -49,39 +45,45 @@ jobs:
       - name: Install dependencies
         run: pip install requests understatapi
 
-      - name: Research stubs via OpenRouter
-        id: research
+      - name: Research all stubs in batches
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          ARGS="--no-apply"
-          ARGS="$ARGS --days ${{ github.event.inputs.days || '7' }}"
-          ARGS="$ARGS --max ${{ github.event.inputs.max || '20' }}"
-          OFFSET="${{ github.event.inputs.offset || '0' }}"
-          if [ "$OFFSET" != "0" ]; then ARGS="$ARGS --offset $OFFSET"; fi
-          LEAGUE="${{ github.event.inputs.league }}"
-          if [ -n "$LEAGUE" ]; then ARGS="$ARGS --league $LEAGUE"; fi
-
-          python auto_research.py $ARGS
-
-      - name: Apply research to index.html
-        run: |
-          if [ ! -f research.json ]; then
-            echo "No stubs found — nothing to apply."
-            exit 0
-          fi
-          python apply_research.py --no-push
-
-      - name: Commit and push
-        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if git diff --quiet; then
-            echo "No changes — nothing to commit."
-            exit 0
-          fi
-          # Count how many fixtures were researched
-          COUNT=$(python -c "import json; d=json.load(open('research.json')); print(len(d))" 2>/dev/null || echo "?")
-          git add index.html
-          git commit -m "auto-research: ${COUNT} fixture(s) via OpenRouter"
-          git push
+
+          DAYS="${{ github.event.inputs.days || '7' }}"
+          BATCH_SIZE="${{ github.event.inputs.batch_size || '20' }}"
+          LEAGUE="${{ github.event.inputs.league }}"
+
+          ARGS="--no-apply --days $DAYS --max $BATCH_SIZE"
+          if [ -n "$LEAGUE" ]; then ARGS="$ARGS --league $LEAGUE"; fi
+
+          BATCH=0
+          while true; do
+            BATCH=$((BATCH + 1))
+            echo ""
+            echo "=== Batch $BATCH ==="
+
+            python auto_research.py $ARGS
+
+            if [ ! -f research.json ]; then
+              echo "No more stubs — done after $((BATCH - 1)) batch(es)."
+              break
+            fi
+
+            python apply_research.py --no-push
+
+            if git diff --quiet; then
+              echo "No changes to index.html — stopping."
+              rm -f research.json
+              break
+            fi
+
+            COUNT=$(python -c "import json; d=json.load(open('research.json')); print(len(d))" 2>/dev/null || echo "?")
+            git add index.html
+            git commit -m "auto-research: batch $BATCH ($COUNT fixture(s) via OpenRouter)"
+            git push
+
+            rm -f research.json
+          done
