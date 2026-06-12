@@ -3788,29 +3788,46 @@ const LEAGUES = [
       {
         day: 'Thursday 25 June',
         home: 'Czech Republic', away: 'Mexico', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.75-1.90',
+        homeForm: 'D D W W L',
+        awayForm: 'D W W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'Mexico\'s form (4 wins, 1 draw) is superior to Czech Republic\'s (2 wins, 2 draws, 1 loss).' },
+          momentum:      { score: 80, detail: 'Mexico has won 4 consecutive matches while Czech Republic has only 2 wins in their last 5.' },
+          headToHead:    { score: 50, detail: 'No previous head-to-head encounters between these teams.' },
+          goalTendency:  { score: 75, detail: 'Mexico kept 4 clean sheets in their last 5 matches; Czech Republic conceded in 4 of their last 5.' },
+          leagueContext: { score: 70, detail: 'Mexico leads Group A with 3 points; Czech Republic sits bottom with 0 points after Matchday 1.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Jan Kuchta — muscle injury' },
+              { tag: 'out', text: 'T. Chorý — red card suspension' }
+            ],
+          away: []
+        },
+        context: 'Mexico\'s defensive solidity (4 clean sheets in 5 matches) faces a Czech attack missing key striker Jan Kuchta and suspended forward T. Chorý. Playing at Mexico City Stadium gives El Tri geographical advantage, while Czechia must improve set-piece defense after conceding multiple goals in recent matches. Midfield battles between Mexico\'s creative playmakers and Czechia\'s Tomas Souček could decide this tight Group A clash.',
+        summary: 'Mexico enters with momentum from 4 straight wins and a 2-0 opening victory, while Czech Republic struggles with attacking absences and a loss in their first match. Expect Mexico to control possession and leverage home support, with their defensive organization likely neutralizing Czechia\'s depleted frontline. A 1-0 or 2-0 Mexico win appears probable given current form and squad availability.'
       },
 
       {
         day: 'Thursday 25 June',
         home: 'South Africa', away: 'South Korea', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.80-3.10',
+        homeForm: '? ? ? ? L',
+        awayForm: '? ? ? ? W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent form data beyond South Korea\'s opening win and South Africa\'s loss.' },
+          momentum:      { score: 55, detail: 'South Korea won their first match 2-1; South Africa lost 0-2 in their opener.' },
+          headToHead:    { score: 50, detail: 'No significant head-to-head history available between these teams.' },
+          goalTendency:  { score: 55, detail: 'South Korea scored twice in their opener; South Africa failed to score and conceded twice.' },
+          leagueContext: { score: 60, detail: 'South Korea sits 2nd in Group A with 3 points; South Africa is bottom with 0 points.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Both teams enter with minimal performance data beyond Matchday 1 results. South Korea\'s attacking duo of Son Heung-min and Hwang Hee-chan must break down a Bafana Bafana defense that conceded twice in their opener. South Africa\'s Percy Tau remains their key creative threat but needs improved service. The venue (unconfirmed from World Cup stadium list) may influence tactical approaches in this must-not-lose Group A fixture.',
+        summary: 'Limited data makes this highly unpredictable. South Korea has slight momentum from their 2-1 opening win but showed defensive vulnerabilities. South Africa must improve attacking output after a goalless first match. Expect a cagey affair decided by individual moments, with set pieces potentially crucial for either side in this evenly matched contest.'
       },
 
       {
