@@ -19,9 +19,9 @@ on:
         required: false
         default: '7'
       batch_size:
-        description: 'Fixtures per OpenRouter call (default 20)'
+        description: 'Fixtures per OpenRouter call (default 5)'
         required: false
-        default: '20'
+        default: '5'
 
 permissions:
   contents: write
@@ -53,14 +53,15 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
           DAYS="${{ github.event.inputs.days || '7' }}"
-          BATCH_SIZE="${{ github.event.inputs.batch_size || '20' }}"
+          BATCH_SIZE="${{ github.event.inputs.batch_size || '5' }}"
           LEAGUE="${{ github.event.inputs.league }}"
 
           ARGS="--no-apply --days $DAYS --max $BATCH_SIZE"
           if [ -n "$LEAGUE" ]; then ARGS="$ARGS --league $LEAGUE"; fi
 
           BATCH=0
-          while true; do
+          MAX_BATCHES=30
+          while [ $BATCH -lt $MAX_BATCHES ]; do
             BATCH=$((BATCH + 1))
             echo ""
             echo "=== Batch $BATCH ==="

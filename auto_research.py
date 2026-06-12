@@ -117,16 +117,25 @@ def call_openrouter(prompt, model, api_key):
         ],
         "temperature": 0.3,
     }
-    print(f"-> Calling {model} ...")
-    resp = requests.post(OPENROUTER_URL, headers=headers, json=body, timeout=300)
-    resp.raise_for_status()
-    data = resp.json()
-    # Surface usage if available
-    usage = data.get("usage", {})
-    if usage:
-        print(f"   tokens — prompt: {usage.get('prompt_tokens','?')}  "
-              f"completion: {usage.get('completion_tokens','?')}")
-    return data["choices"][0]["message"]["content"].strip()
+    last_err = None
+    for attempt in (1, 2, 3):
+        try:
+            print(f"-> Calling {model} (attempt {attempt}) ...")
+            resp = requests.post(OPENROUTER_URL, headers=headers, json=body, timeout=300)
+            resp.raise_for_status()
+            data = resp.json()
+            usage = data.get("usage", {})
+            if usage:
+                print(f"   tokens — prompt: {usage.get('prompt_tokens','?')}  "
+                      f"completion: {usage.get('completion_tokens','?')}")
+            content = data["choices"][0]["message"]["content"].strip()
+            if content:
+                return content
+            last_err = "empty content in response"
+        except Exception as e:
+            last_err = e
+            print(f"   attempt {attempt} failed: {e}")
+    raise RuntimeError(f"OpenRouter failed after 3 attempts: {last_err}")
 
 
 # ─── response parsing ─────────────────────────────────────────────────────────
@@ -156,8 +165,9 @@ def main():
                     help="filter by league id (pl, laliga, worldcup, ...)")
     ap.add_argument("--days",     type=int, default=7,
                     help="fixtures within N days (default 7; -1 = no filter)")
-    ap.add_argument("--max",      type=int, default=20, dest="max_n",
-                    help="cap at N fixtures (default 20)")
+    ap.add_argument("--max",      type=int, default=5, dest="max_n",
+                    help="cap at N fixtures per call (default 5 — reasoning "
+                         "models rarely complete more in one response)")
     ap.add_argument("--offset",   type=int, default=0,
                     help="skip first N fixtures (for batching)")
     ap.add_argument("--model",    default=os.environ.get("OPENROUTER_MODEL", DEFAULT_MODEL),
