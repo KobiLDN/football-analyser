@@ -2899,43 +2899,76 @@ const LEAGUES = [
       {
         day: 'Tuesday 16 June',
         home: 'Iran', away: 'New Zealand', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'W L D D W',
+        awayForm: 'L L W L L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'Iran won 3 of last 5 matches while New Zealand lost 4.' },
+          momentum:      { score: 75, detail: 'Iran won last two games; New Zealand failed to score in last two.' },
+          headToHead:    { score: 50, detail: 'No significant head-to-head history available.' },
+          goalTendency:  { score: 65, detail: 'Iran scored 10 in last 5; New Zealand conceded 9 in last 4.' },
+          leagueContext: { score: 50, detail: 'World Cup group stage opener for both teams.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Mehdi Taremi - star striker returning to frontline' }
+            ],
+          away: [
+              { tag: 'key', text: 'Chris Wood - captain and focal presence upfront' },
+              { tag: 'key', text: 'Elijah Just - explosive pace on the wing' },
+              { tag: 'key', text: 'Sarpreet Singh - creativity in attacking setup' }
+            ]
+        },
+        context: 'Iran\'s settled squad under Amir Ghalenoei features Mehdi Taremi\'s return, boosting their attack. New Zealand relies on captain Chris Wood flanked by Elijah Just and Sarpreet Singh in a fluid system, with Liberato Cacace pushing forward from midfield. Both managers have kept starting XIs undisclosed ahead of this Group G clash at Los Angeles Stadium.',
+        summary: 'Iran enters with stronger form, including a 2-0 win over Mali, while New Zealand struggles defensively after four losses. Taremi\'s presence gives Iran tactical flexibility against a youthful All Whites side. Expect Iran to dominate possession but face pressure from New Zealand\'s counter-attacking pace.'
       },
 
       {
         day: 'Tuesday 16 June',
         home: 'France', away: 'Senegal', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Strong', fairOdds: '1.40-1.50',
+        homeForm: 'W W W L W',
+        awayForm: 'L L W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'France won 4 of last 5; Senegal won 3 but lost to USA recently.' },
+          momentum:      { score: 70, detail: 'France won last two matches; Senegal conceded late in 3-2 loss to USA.' },
+          headToHead:    { score: 45, detail: 'Senegal won 1-0 in 2002, but historical relevance is low.' },
+          goalTendency:  { score: 70, detail: 'France scored 12 in last 5; Senegal conceded 7 in same period.' },
+          leagueContext: { score: 50, detail: 'Group I opener with France as favorites.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Kylian Mbappé - captain despite minor injury concern' },
+              { tag: 'key', text: 'Ousmane Dembélé - Champions League winner in form' }
+            ],
+          away: []
+        },
+        context: 'France fields Mbappé as captain alongside Dembélé, fresh from PSG\'s Champions League win. Senegal\'s defense, which conceded only three goals in qualifying, faces its toughest test. Didier Deschamps may deploy Mbappé in a free role, while Senegal relies on disciplined shape and counter-attacks in this World Cup rematch.',
+        summary: 'France\'s firepower, including Mbappé\'s hat-trick pedigree from 2022, contrasts with Senegal\'s sturdy qualifying defense. Recent form favors Les Bleus after a 3-1 win over Northern Ireland. Senegal must contain France\'s wide threats to avoid a repeat of their 3-2 loss to the US.'
       },
 
       {
         day: 'Tuesday 16 June',
         home: 'Iraq', away: 'Norway', time: '23:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 15, draw: 25, awayWin: 60, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'L D W W L',
+        awayForm: 'D W D L W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Norway lost once in last five; Iraq lost twice.' },
+          momentum:      { score: 55, detail: 'Norway drew with Morocco; Iraq lost 0-2 to Venezuela.' },
+          headToHead:    { score: 50, detail: 'First senior meeting between nations.' },
+          goalTendency:  { score: 70, detail: 'Norway scored 9 in last 5; Iraq scored 4 in same span.' },
+          leagueContext: { score: 50, detail: 'Group I opener with Norway favored.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: [
+              { tag: 'key', text: 'Erling Haaland - primary striker and penalty taker' },
+              { tag: 'key', text: 'Martin Ødegaard - captain recently returned from injury' }
+            ]
+        },
+        context: 'Norway\'s Haaland makes his tournament debut alongside Ødegaard, who provides creativity after recovering from injury. Iraq\'s defensive approach, evidenced in a 1-1 draw with Spain, faces a stern test. Ståle Solbakken emphasizes Norway\'s attacking fluidity, while Iraq relies on counter-attacks and set pieces at Gillette Stadium.',
+        summary: 'Norway\'s firepower led by Haaland and Ødegaard is expected to overwhelm Iraq, who struggled offensively against Venezuela. Pundits tip a 2-0 Norway win. Iraq\'s playoff qualification heroics may not suffice against a side that scored four goals in June friendlies.'
       },
 
       {
