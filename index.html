@@ -2556,15 +2556,30 @@ const LEAGUES = [
       {
         day: 'Saturday 13 June',
         home: 'USA', away: 'Paraguay', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'W L L W L',
+        awayForm: 'W L W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 45, detail: 'Paraguay won 3 of last 5 matches versus USA\'s 2 wins, but both teams show defensive vulnerabilities.' },
+          momentum:      { score: 55, detail: 'USA\'s recent 3-2 win over Senegal contrasts with Paraguay\'s 2-1 victory over Argentina in qualifiers.' },
+          headToHead:    { score: 80, detail: 'USA won 4 of last 5 meetings, including a 2-1 victory in November 2025 with Balogun scoring.' },
+          goalTendency:  { score: 70, detail: '4 of USA\'s last 5 games had over 2.5 goals; both teams scored in 4 of those matches.' },
+          leagueContext: { score: 65, detail: 'Host advantage for USA offsets Paraguay\'s CONMEBOL-best defensive record (10 goals conceded in qualifiers).' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Chris Richards — recently returned from ankle injury' },
+              { tag: 'key', text: 'Christian Pulisic — AC Milan winger, ended club scoring slump' },
+              { tag: 'key', text: 'Tim Ream — poised to become oldest US World Cup player if selected' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Julio Enciso — minor quadriceps injury from Nicaragua friendly' },
+              { tag: 'key', text: 'Miguel Almirón — Newcastle winger for counter-attacks' },
+              { tag: 'key', text: 'Gustavo Gómez — captain anchoring Paraguay\'s defense' }
+            ]
+        },
+        context: 'USA deploys a 3-4-3 formation with Pulisic and McKennie driving attacks, while Balogun starts after his 8-game club scoring streak. Paraguay counters with Gómez and Alderete in a compact backline, relying on Almirón\'s pace. Home advantage at Los Angeles Stadium favors the US, but Paraguay\'s defensive discipline (CONMEBOL\'s stingiest) could frustrate their buildup play. Enciso\'s potential absence reduces Paraguay\'s creative spark.',
+        summary: 'USA enters as favorites with home support and head-to-head dominance, but Paraguay\'s defensive resilience makes this competitive. Key battles: Pulisic vs Gómez, and McKennie disrupting Bobadilla-Cubas midfield. Expect goals given both teams\' recent high-scoring trends and USA\'s 8-match clean sheet drought.'
       },
 
       {
