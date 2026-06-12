@@ -2736,15 +2736,32 @@ const LEAGUES = [
       {
         day: 'Sunday 14 June',
         home: 'Netherlands', away: 'Japan', time: '21:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 72, draw: 18, awayWin: 10, verdict: 'Strong', fairOdds: '1.35-1.45',
+        homeForm: 'W D W W D',
+        awayForm: 'W W W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 40, detail: 'Japan boast five consecutive wins without conceding, while Netherlands have two draws in their last five matches.' },
+          momentum:      { score: 30, detail: 'Japan arrive with six straight wins including victories over England and Brazil, contrasting Netherlands\' mixed friendly results.' },
+          headToHead:    { score: 80, detail: 'Netherlands remain unbeaten in three meetings (2 wins, 1 draw), including a 1-0 World Cup victory in 2010.' },
+          goalTendency:  { score: 60, detail: 'Netherlands scored 12 goals in their last five games, while Japan kept five consecutive clean sheets.' },
+          leagueContext: { score: 70, detail: 'Netherlands hold FIFA #7 ranking and Pot 1 seeding advantage over #18 Japan.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Jurrien Timber — injury' },
+              { tag: 'out', text: 'Xavi Simons — ACL injury' },
+              { tag: 'key', text: 'Virgil van Dijk — defensive anchor' },
+              { tag: 'key', text: 'Memphis Depay — fit and leading attack' }
+            ],
+          away: [
+              { tag: 'out', text: 'Kaoru Mitoma — hamstring injury' },
+              { tag: 'out', text: 'Takumi Minamino — injury' },
+              { tag: 'out', text: 'Wataru Endo — foot injury (retired)' },
+              { tag: 'key', text: 'Takefusa Kubo — primary creative outlet' }
+            ]
+        },
+        context: 'Netherlands deploy a 4-2-3-1 with Depay spearheading the attack, supported by Gakpo and De Jong in midfield. Japan\'s 3-4-2-1 relies on Kubo\'s creativity and Ueda\'s finishing, but lacks Mitoma\'s wing threat. Dutch possession dominance faces Japan\'s compact mid-block, with Dumfries\' overlapping runs testing Japan\'s reshuffled defense.',
+        summary: 'Netherlands favored due to Japan\'s critical absences (Mitoma, Endo) reducing counter-attack potency. Expect Dutch control through De Jong and goals from Gakpo/Depay, while Japan\'s best hope involves Kubo set-pieces or transitional moments against Virgil van Dijk\'s backline.'
       },
 
       {
