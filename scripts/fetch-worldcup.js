@@ -65,23 +65,50 @@ async function fetchOpenfootball() {
   return r.json();
 }
 
-// Stub format — matches the new schema (homeWin/draw/awayWin + momentum
-// factor) so renderer + agent treat World Cup fixtures identically to
-// domestic leagues. Neutral 33/34/33 placeholder until research runs.
+// Serialize a fixture, preserving existing research fields if present.
+// New stubs get neutral 33/34/33 placeholder values until auto-research runs.
 function formatFixtureLiteral(f) {
   const resultStr = f.result === null ? 'null' : `'${escapeJs(f.result)}'`;
+
+  const homeWin  = f.homeWin  ?? 33;
+  const draw     = f.draw     ?? 34;
+  const awayWin  = f.awayWin  ?? 33;
+  const verdict  = f.verdict  || 'Low';
+  const fairOdds = f.fairOdds || '3.00–3.40';
+
+  const homeFormBlock = f.homeForm ? `\n        homeForm: '${escapeJs(f.homeForm)}',` : '';
+  const awayFormBlock = f.awayForm ? `\n        awayForm: '${escapeJs(f.awayForm)}',` : '';
+
+  const fb  = f.factors?.formBalance   || { score: 50, detail: 'Pending deep research.' };
+  const mom = f.factors?.momentum      || { score: 50, detail: 'Pending deep research.' };
+  const h2h = f.factors?.headToHead    || { score: 50, detail: 'Pending deep research.' };
+  const gt  = f.factors?.goalTendency  || { score: 50, detail: 'Pending deep research.' };
+  const lc  = f.factors?.leagueContext || { score: 50, detail: 'Pending deep research.' };
+
+  const serializeItems = items => {
+    if (!items || !items.length) return '[]';
+    return `[\n${items.map(i => `              { tag: '${escapeJs(i.tag)}', text: '${escapeJs(i.text)}' }`).join(',\n')}\n            ]`;
+  };
+
+  const teamNewsBlock = f.teamNews
+    ? `,\n        teamNews: {\n          home: ${serializeItems(f.teamNews.home)},\n          away: ${serializeItems(f.teamNews.away)}\n        }`
+    : '';
+
+  const contextBlock = f.context ? `,\n        context: '${escapeJs(f.context)}'` : '';
+  const summary = f.summary ? `'${escapeJs(f.summary)}'` : "'Pending deep research.'";
+
   return `      {
         day: '${escapeJs(f.day)}',
         home: '${escapeJs(f.home)}', away: '${escapeJs(f.away)}', time: '${f.time}',
-        result: ${resultStr}, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: ${resultStr}, homeWin: ${homeWin}, draw: ${draw}, awayWin: ${awayWin}, verdict: '${escapeJs(verdict)}', fairOdds: '${escapeJs(fairOdds)}',${homeFormBlock}${awayFormBlock}
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
-        },
-        summary: 'Pending deep research.'
+          formBalance:   { score: ${fb.score}, detail: '${escapeJs(fb.detail)}' },
+          momentum:      { score: ${mom.score}, detail: '${escapeJs(mom.detail)}' },
+          headToHead:    { score: ${h2h.score}, detail: '${escapeJs(h2h.detail)}' },
+          goalTendency:  { score: ${gt.score}, detail: '${escapeJs(gt.detail)}' },
+          leagueContext: { score: ${lc.score}, detail: '${escapeJs(lc.detail)}' }
+        }${teamNewsBlock}${contextBlock},
+        summary: ${summary}
       }`;
 }
 
