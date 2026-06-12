@@ -2767,57 +2767,102 @@ const LEAGUES = [
       {
         day: 'Monday 15 June',
         home: 'Ivory Coast', away: 'Ecuador', time: '00:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.40-2.60',
+        homeForm: 'W W W L W',
+        awayForm: 'W W D D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 60, detail: 'Ivory Coast won 4 of their last 5 matches, but Ecuador are unbeaten in 19 games.' },
+          momentum:      { score: 45, detail: 'Ecuador\'s long unbeaten streak contrasts with Ivory Coast\'s recent loss to Egypt.' },
+          headToHead:    { score: 50, detail: 'No recent head-to-head record available for analysis.' },
+          goalTendency:  { score: 55, detail: 'Ivory Coast averages 2.4 goals scored, Ecuador 0.6 conceded per match recently.' },
+          leagueContext: { score: 60, detail: 'Critical Group E opener with both teams targeting second-place advancement.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Evan NDicka — injury' }
+            ],
+          away: [
+              { tag: 'key', text: 'Moisés Caicedo — midfield anchor' },
+              { tag: 'key', text: 'Enner Valencia — record goalscorer' }
+            ]
+        },
+        context: 'Ivory Coast\'s attacking depth with Elye Wahi and Simon Adingra faces Ecuador\'s defense anchored by Piero Hincapié and Moisés Caicedo. Evan NDicka\'s absence weakens Ivorian backline organization, while Ecuador\'s high-pressing style under Sebastian Beccacece aims to disrupt buildup play. Both teams view this as pivotal for Group E advancement behind Germany.',
+        summary: 'Ivory Coast brings potent attack but defensive vulnerability without NDicka. Ecuador counters with 19-match unbeaten streak and tournament-tested defensive structure. Expect tactical battle between Ivorian flair and Ecuadorian discipline in crucial opener.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Sweden', away: 'Tunisia', time: '03:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.57-1.77',
+        homeForm: 'D W W L D',
+        awayForm: 'D W D L L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 65, detail: 'Sweden earned 8 points from last 5 matches, Tunisia managed only 5 points.' },
+          momentum:      { score: 70, detail: 'Tunisia suffered 5-0 and 1-0 defeats in June friendlies, while Sweden showed resilience.' },
+          headToHead:    { score: 50, detail: 'No recent head-to-head encounters between these teams.' },
+          goalTendency:  { score: 60, detail: 'Sweden averaged 2.0 goals scored, Tunisia 0.4 goals scored in last 5 matches.' },
+          leagueContext: { score: 55, detail: 'Group stage opener with Sweden seeking strong start against offensively challenged Tunisia.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Alexander Isak — striker' },
+              { tag: 'key', text: 'Dejan Kulusevski — winger' }
+            ],
+          away: [
+              { tag: 'out', text: 'Wahbi Khazri — retired' }
+            ]
+        },
+        context: 'Sweden\'s attacking duo Alexander Isak and Dejan Kulusevski lead a fully fit squad against Tunisia, who lack creativity following Wahbi Khazri\'s retirement. Graham Potter\'s side leverages qualifying momentum, while Tunisia\'s defense crumbled in recent 5-0 loss to Belgium. Midfield control through Emil Forsberg will be key against Tunisia\'s compact setup.',
+        summary: 'Sweden holds significant advantage with in-form attackers and Tunisia\'s recent defensive struggles. Expect Sweden to dominate possession and exploit spaces behind defensive lines. Tunisia\'s goal drought (2 goals in 5 games) limits their threat against organized Swedish defense.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Spain', away: 'Cape Verde', time: '17:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 75, draw: 20, awayWin: 5, verdict: 'Strong', fairOdds: '1.23-1.43',
+        homeForm: 'W D D W D',
+        awayForm: 'W D L D D',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'Spain unbeaten in 30 regulation matches, Cape Verde winless in last four.' },
+          momentum:      { score: 80, detail: 'Spain\'s 30-match unbeaten run contrasts with Cape Verde\'s scoring struggles.' },
+          headToHead:    { score: 50, detail: 'No historical head-to-head record between these nations.' },
+          goalTendency:  { score: 55, detail: 'Spain averaged 1.8 goals scored, Cape Verde 1.4 goals scored in last five matches.' },
+          leagueContext: { score: 75, detail: 'Tournament favorites Spain face minnows Cape Verde in Group H opener.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Spain enters with full-strength squad as Luis de la Fuente aims to validate favorites status against defensive-minded Cape Verde. Expect possession dominance through Rodri and creative bursts from Lamine Yamal against a team that held Canada and Iran to goalless draws. Cape Verde\'s counter-attack reliance through Jovane Cabral faces Spain\'s organized high press.',
+        summary: 'Spain\'s unbeaten streak and defensive solidity (4 goals conceded in 5 games) make them overwhelming favorites. Cape Verde\'s defensive organization will be tested by Spain\'s possession-based system, with minimal attacking threat expected from the underdogs.'
       },
 
       {
         day: 'Monday 15 June',
         home: 'Belgium', away: 'Egypt', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 58, draw: 25, awayWin: 17, verdict: 'Likely', fairOdds: '1.62-1.82',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent form data for comprehensive comparison.' },
+          momentum:      { score: 50, detail: 'Limited recent match data available for both teams.' },
+          headToHead:    { score: 30, detail: 'Egypt won three of four historical meetings, including 2-1 victory in 2022.' },
+          goalTendency:  { score: 60, detail: 'Belgium scored 18 goals in last five matches, Egypt conceded only three.' },
+          leagueContext: { score: 55, detail: 'Group G opener with Belgium seeking statement win against defensively solid Egypt.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Romelu Lukaku — injury concern' },
+              { tag: 'doubt', text: 'Kevin De Bruyne — injury concern' },
+              { tag: 'key', text: 'Jérémy Doku — winger' }
+            ],
+          away: [
+              { tag: 'key', text: 'Mohamed Salah — forward' },
+              { tag: 'key', text: 'Omar Marmoush — forward' }
+            ]
+        },
+        context: 'Belgium\'s attacking power featuring Jérémy Doku and Leandro Trossard faces Egypt\'s compact defense organized by Mohamed Abdelmonem. Fitness concerns over Romelu Lukaku and Kevin De Bruyne may limit their involvement, while Egypt relies on Mohamed Salah\'s transition threat. Midfield battle between Amadou Onana and Ibrahim Adel could dictate tempo.',
+        summary: 'Belgium favored due to superior squad depth and scoring form, though Egypt\'s defensive record and historical H2H advantage pose challenges. Key questions around Lukaku/De Bruyne fitness versus Salah\'s explosiveness will determine outcome in potentially tight contest.'
       },
 
       {
