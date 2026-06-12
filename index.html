@@ -3473,15 +3473,26 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Uruguay', away: 'Cape Verde', time: '23:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.70',
+        homeForm: 'W D L D D',
+        awayForm: 'D D L D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Both teams show inconsistent form with 1 win each in their last 5 matches.' },
+          momentum:      { score: 45, detail: 'Cape Verde\'s recent 3-0 win over Serbia boosts confidence, while Uruguay drew two straight.' },
+          headToHead:    { score: 50, detail: 'No significant head-to-head history exists between these teams.' },
+          goalTendency:  { score: 60, detail: 'Uruguay\'s attack is expected to exploit Cape Verde\'s defensive vulnerabilities seen in the 4-2 loss to Chile.' },
+          leagueContext: { score: 70, detail: 'Uruguay\'s higher FIFA ranking (17th vs 69th) and tournament pedigree favor them despite injuries.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'José Giménez — Physical discomfort' },
+              { tag: 'out', text: 'Ronald Araujo — Muscle injury' },
+              { tag: 'out', text: 'Giorgian de Arrascaeta — Broken collarbone' }
+            ],
+          away: []
+        },
+        context: 'Uruguay faces key defensive absences with Giménez and Araujo injured, forcing tactical adjustments. Cape Verde, with no injuries, will rely on Vozinha\'s experience in goal. Marcelo Bielsa\'s side aims to target Cape Verde\'s exposed defensive gaps through Darwin Núñez, while Bubista\'s team seeks to capitalize on counter-attacks.',
+        summary: 'Uruguay\'s superior quality is tempered by injuries to three starters, but Cape Verde\'s defensive fragility (evident in recent 4-2 loss to Chile) offers opportunities. Expect Uruguay to control possession and test Cape Verde\'s backline, though the absence of playmaker de Arrascaeta may limit creativity. A narrow home win is anticipated.'
       },
 
       {
@@ -3529,15 +3540,22 @@ const LEAGUES = [
       {
         day: 'Tuesday 23 June',
         home: 'Norway', away: 'Senegal', time: '01:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 42, draw: 27, awayWin: 31, verdict: 'Low', fairOdds: '2.30-2.50',
+        homeForm: 'W W W L D',
+        awayForm: 'L W W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Norway won 3 of last 5; Senegal won 4 despite an AFCON final loss to Morocco.' },
+          momentum:      { score: 65, detail: 'Senegal\'s four consecutive wins showcase strong form, contrasting Norway\'s recent draw and loss.' },
+          headToHead:    { score: 50, detail: 'Minimal history: Senegal won a single friendly 2-1 in 2006.' },
+          goalTendency:  { score: 55, detail: 'Erling Haaland\'s 16 goals in qualifying highlight Norway\'s threat, but Senegal\'s pace counters effectively.' },
+          leagueContext: { score: 50, detail: 'High-stakes Group I clash for second place behind France amplifies tactical caution.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Norway leverages home advantage with Haaland and Ødegaard leading the attack against Senegal\'s high-press system orchestrated by Sadio Mané. Pape Thiaw\'s side uses Ismaïla Sarr\'s speed for transitions. Both teams prioritize avoiding defeat in this pivotal match for Group I qualification behind favorites France.',
+        summary: 'Pundits split between Norway win (2-1) and draw (1-1), reflecting Senegal\'s momentum versus Haaland\'s scoring prowess. Senegal\'s athleticism in midfield could disrupt Norway\'s buildup, but defensive gaps may be exploited by Ødegaard\'s creativity. A tense, low-scoring affair is likely with both teams wary of early mistakes.'
       },
 
       {
