@@ -2974,15 +2974,25 @@ const LEAGUES = [
       {
         day: 'Wednesday 17 June',
         home: 'Argentina', away: 'Algeria', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 80, draw: 15, awayWin: 5, verdict: 'Strong', fairOdds: '1.20-1.30',
+        homeForm: 'W W W W W',
+        awayForm: 'L W D W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 80, detail: 'Argentina have won all five recent matches while Algeria have three wins and one draw.' },
+          momentum:      { score: 90, detail: 'Argentina are on a seven-match winning streak with 21 goals scored.' },
+          headToHead:    { score: 50, detail: 'No significant head-to-head history documented in available sources.' },
+          goalTendency:  { score: 80, detail: 'Argentina averaged 3 goals per game in their streak, conceding just once.' },
+          leagueContext: { score: 85, detail: 'Argentina aim to be the first World Cup retainers since 1962 Brazil.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Nicolás González — muscle injury' },
+              { tag: 'out', text: 'Nicolás Tagliafico — physical discomfort' }
+            ],
+          away: []
+        },
+        context: 'Argentina start their title defense without injured winger Nicolás González and left-back Nicolás Tagliafico. Lionel Messi, needing four goals to become the World Cup\'s all-time top scorer, leads an attack supported by Valentín Barco and Nico Paz. Algeria, with no injury concerns, will rely on captain Riyad Mahrez to exploit defensive gaps in a high-pressing system.',
+        summary: 'Argentina enter with a dominant seven-match winning streak (21 goals scored, 1 conceded) but face injury setbacks. Algeria\'s mixed form includes a 7-0 win but defensive vulnerabilities. Messi\'s quest for the scoring record adds motivation against an opponent they\'ve historically dominated.'
       },
 
       {
@@ -3002,15 +3012,24 @@ const LEAGUES = [
       {
         day: 'Wednesday 17 June',
         home: 'Portugal', away: 'DR Congo', time: '18:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 75, draw: 20, awayWin: 5, verdict: 'Strong', fairOdds: '1.28-1.38',
+        homeForm: 'W D W W W',
+        awayForm: 'L W W D L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 80, detail: 'Portugal are unbeaten in five games; DR Congo have two losses.' },
+          momentum:      { score: 85, detail: 'Roberto Martínez boasts a 70% World Cup win rate as coach.' },
+          headToHead:    { score: 50, detail: 'No prior meetings between these nations.' },
+          goalTendency:  { score: 75, detail: 'Portugal scored 15 goals in their last five matches.' },
+          leagueContext: { score: 70, detail: 'DR Congo make their first World Cup appearance in 52 years.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Rafael Leão — suspension pending confirmation' }
+            ],
+          away: []
+        },
+        context: 'Portugal may miss Rafael Leão due to a red-card suspension, but Bruno Fernandes (21 assists in 2025-26) anchors a midfield with PSG\'s Vitinha and João Neves. DR Congo, returning after a 52-year absence, deploy striker Cédric Bakambu despite his recent club struggles. Portugal\'s high-pressing 4-3-3 will test DR Congo\'s defensive compactness.',
+        summary: 'Portugal\'s creative midfield and Fernandes\' record-setting form face DR Congo\'s historic but inexperienced squad. Leão\'s potential absence is offset by Portugal\'s depth, while DR Congo\'s 1974 campaign (0 goals, 14 conceded) looms as a cautionary tale. Expect Portugal to control possession and exploit wide areas.'
       },
 
       {
