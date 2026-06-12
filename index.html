@@ -3445,15 +3445,29 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Belgium', away: 'Iran', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.70-1.90',
+        homeForm: 'W W D W W',
+        awayForm: 'W D D L W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'Belgium are unbeaten in 13 matches with four wins in their last five, while Iran have two wins and two draws in their last five.' },
+          momentum:      { score: 75, detail: 'Belgium scored 20 goals in their last five games including 7-0 and 5-0 wins, showing strong attacking momentum.' },
+          headToHead:    { score: 50, detail: 'No previous competitive meetings between these teams.' },
+          goalTendency:  { score: 70, detail: 'Belgium kept four clean sheets in their last five matches while Iran scored just six goals in the same period.' },
+          leagueContext: { score: 60, detail: 'As Group G favorites, Belgium need a win to secure progression, while Iran may prioritize defensive solidity.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Romelu Lukaku — injury' },
+              { tag: 'out', text: 'Zeno Debast — injury' },
+              { tag: 'key', text: 'Kevin De Bruyne — creative midfield playmaker' },
+              { tag: 'key', text: 'Thibaut Courtois — world-class goalkeeper' }
+            ],
+          away: [
+              { tag: 'key', text: 'Mehdi Taremi — primary attacking threat' }
+            ]
+        },
+        context: 'Belgium will deploy a 4-2-3-1 formation with Lois Openda replacing the injured Lukaku upfront, supported by De Bruyne and Doku. Iran\'s 4-3-3 setup will focus on defensive organization with Taremi leading counter-attacks. This is a crucial Group G match where Belgium\'s possession dominance faces Iran\'s compact low block at SoFi Stadium.',
+        summary: 'Belgium are favored due to superior form and squad depth but miss key striker Lukaku. Iran\'s defensive resilience (two clean sheets in last five) could frustrate the Red Devils, though their limited attacking output makes an upset unlikely. Expect Belgium to control tempo through De Bruyne while Iran relies on Taremi\'s counters.'
       },
 
       {
