@@ -3120,29 +3120,61 @@ const LEAGUES = [
       {
         day: 'Thursday 18 June',
         home: 'Czech Republic', away: 'South Africa', time: '17:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.75',
+        homeForm: 'D D W W L',
+        awayForm: 'L D L D L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 70, detail: 'Czechia\'s solid form (2W, 2D, 1L) contrasts with South Africa\'s struggles (3L, 2D).' },
+          momentum:      { score: 65, detail: 'Czechia showed resilience in qualifiers, while South Africa is winless in five matches.' },
+          headToHead:    { score: 50, detail: 'No prior meetings between these nations.' },
+          goalTendency:  { score: 60, detail: 'Czechia\'s matches average 3.6 goals, but South Africa scored only 3 in their last 5.' },
+          leagueContext: { score: 70, detail: 'Both teams lost their openers, but Czechia\'s squad depth outweighs South Africa\'s suspensions.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Jan Kuchta - muscle injury' },
+              { tag: 'key', text: 'Patrik Schick - striker' },
+              { tag: 'key', text: 'Tomas Soucek - midfielder' },
+              { tag: 'key', text: 'Pavel Sulc - playmaker' }
+            ],
+          away: [
+              { tag: 'out', text: 'Sphephelo Sithole - suspension' },
+              { tag: 'out', text: 'Themba Zwane - suspension' },
+              { tag: 'key', text: 'Teboho Mokoena - midfielder' },
+              { tag: 'key', text: 'Relebohile Mofokeng - midfielder' },
+              { tag: 'key', text: 'Lyle Foster - striker' }
+            ]
+        },
+        context: 'Czech Republic, led by striker Patrik Schick and midfielder Tomas Soucek, seeks redemption after an opening loss to South Korea. South Africa faces midfield disruptions with Sphephelo Sithole and Themba Zwane suspended, relying on Teboho Mokoena\'s distribution and Lyle Foster\'s pressing. Playmaker Pavel Sulc will orchestrate Czech attacks against a depleted Bafana Bafana defense.',
+        summary: 'Czechia\'s attacking strength and set-piece threat (11 of 22 qualifying goals) clash with South Africa\'s goal drought and suspension woes. Expect Czech dominance, but Foster\'s pressing could exploit defensive gaps. A 2-1 home win is probable.'
       },
 
       {
         day: 'Thursday 18 June',
         home: 'Switzerland', away: 'Bosnia & Herzegovina', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 45, draw: 35, awayWin: 20, verdict: 'Low', fairOdds: '2.20-2.30',
+        homeForm: 'L D D W D',
+        awayForm: 'L D W D D',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Both teams have identical records (1W, 3D, 1L) in their last five matches.' },
+          momentum:      { score: 55, detail: 'Switzerland\'s 4-1 win over Jordan boosts confidence, but Bosnia held Italy to a draw.' },
+          headToHead:    { score: 40, detail: 'Bosnia won the only previous meeting 2-0 in a 2016 friendly.' },
+          goalTendency:  { score: 50, detail: 'Switzerland\'s games average 2.8 goals; Bosnia\'s average 1.6, with both teams scoring in 80% of matches.' },
+          leagueContext: { score: 50, detail: 'Group B is tight, but Bosnia\'s top-spot motivation counters Switzerland\'s home advantage.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Granit Xhaka - midfielder' },
+              { tag: 'key', text: 'Xherdan Shaqiri - forward' }
+            ],
+          away: [
+              { tag: 'key', text: 'Edin Dzeko - striker' },
+              { tag: 'key', text: 'Ermdin Demirovic - forward' },
+              { tag: 'key', text: 'Sead Kolasinac - defender' }
+            ]
+        },
+        context: 'Switzerland leans on Granit Xhaka\'s midfield control and Xherdan Shaqiri\'s creativity against Bosnia\'s veteran striker Edin Dzeko and defender Sead Kolasinac. Both teams drew their openers, with Switzerland\'s defensive vulnerabilities (7 goals conceded in 5 games) potentially exploited by Dzeko and Ermdin Demirovic\'s partnership.',
+        summary: 'Expect a cagey midfield battle with Bosnia\'s low-block defense challenging Switzerland\'s attack. Dzeko\'s experience could capitalize on set-pieces, but Shaqiri\'s flair may unlock a draw. A 1-1 stalemate aligns with both teams\' scoring trends.'
       },
 
       {
