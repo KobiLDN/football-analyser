@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.59** — Marked 3 World Cup results.
 - **v2.58** — Marked 2 World Cup results.
 - **v2.57** — Marked 2 World Cup results.
 - **v2.56** — Fully automated fixture research: `auto_research.py` + `auto_research.bat` + `.github/workflows/auto-research.yml`. Calls OpenRouter (deepseek:online) after Monday's fetch workflow, researches all stubs, commits to main — zero manual steps. `OPENROUTER_API_KEY` stored as GitHub Actions secret.
