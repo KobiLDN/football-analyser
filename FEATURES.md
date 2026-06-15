@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.60** — Marked 5 World Cup results.
 - **v2.59** — Marked 3 World Cup results.
 - **v2.58** — Marked 2 World Cup results.
 - **v2.57** — Marked 2 World Cup results.
