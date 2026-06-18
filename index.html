@@ -3105,24 +3105,33 @@ const LEAGUES = [
       {
         day: 'Thursday 18 June',
         home: 'Uzbekistan', away: 'Colombia', time: '03:00',
-        result: null, homeWin: 30, draw: 35, awayWin: 35, verdict: 'Low', fairOdds: '2.80-2.90',
-        homeForm: 'U U U U U',
-        awayForm: 'U U U U U',
+        result: null, homeWin: 20, draw: 27, awayWin: 53, verdict: 'Likely', fairOdds: '1.40-1.85',
+        homeForm: 'D W W L L',
+        awayForm: 'W L L W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data; Uzbekistan lost once in 16 qualifiers, Colombia topped CONMEBOL group.' },
-          momentum:      { score: 55, detail: 'Colombia qualified ahead of Brazil/Uruguay; Uzbekistan\'s debutant confidence after strong Asian qualifiers.' },
-          headToHead:    { score: 50, detail: 'No significant head-to-head history between these teams.' },
-          goalTendency:  { score: 50, detail: 'Insufficient data; Colombia\'s attack vs. Uzbekistan\'s defensive resilience under Cannavaro.' },
-          leagueContext: { score: 60, detail: 'World Cup debutants Uzbekistan face Colombia\'s tournament experience in Group K opener.' }
+          formBalance:   { score: 63, detail: 'Colombia collected 9 points from their last 5 matches, compared to Uzbekistan\'s 7.' },
+          momentum:      { score: 80, detail: 'Colombia enter with back-to-back wins, while Uzbekistan have lost their last two.' },
+          headToHead:    { score: 50, detail: 'The two nations have never met competitively before.' },
+          goalTendency:  { score: 60, detail: 'Both teams\' recent matches averaged 3 goals, and the xG for this match is 2.28.' },
+          leagueContext: { score: 80, detail: 'Colombia are Copa América finalists and World Cup regulars, while Uzbekistan are tournament debutants.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Emerging talents — Cannavaro\'s tactical setup' }
+              { tag: 'out', text: 'Ibrokhimkhalil Yuldoshev — ruled out' },
+              { tag: 'doubt', text: 'Jaloliddin Masharipov — significant doubt (creative outlet)' },
+              { tag: 'doubt', text: 'Aziz Ganiev — missed last friendly' },
+              { tag: 'doubt', text: 'Khojiakbar Alijonov — unclear status' },
+              { tag: 'key', text: 'Abdukodir Khusanov — Manchester City defender' },
+              { tag: 'key', text: 'Eldor Shomurodov — all-time top scorer' }
             ],
-          away: []
+          away: [
+              { tag: 'key', text: 'James Rodríguez — captain and playmaker' },
+              { tag: 'key', text: 'Luis Díaz — Bayern Munich winger' },
+              { tag: 'key', text: 'Luis Suárez — Sporting CP striker' }
+            ]
         },
-        context: 'Uzbekistan, coached by World Cup winner Fabio Cannavaro, rely on defensive organization and emerging talents in their tournament debut. Colombia counter with CONMEBOL-proven attackers, having qualified ahead of Brazil and Uruguay. The match pits Uzbekistan\'s disciplined low block against Colombia\'s creative midfield transitions in Mexico City.',
-        summary: 'Pending deep research.'
+        context: 'Uzbekistan deploy a defensive 3-4-3 under Fabio Cannavaro, relying on Khusanov\'s leadership and Shomurodov\'s counter-attacking threat. Colombia\'s 4-2-3-1 features Rodríguez orchestrating for Díaz and Suárez, with altitude at Estadio Azteca potentially impacting stamina. Absence of Masharipov weakens Uzbekistan\'s creativity against Colombia\'s superior technical quality.',
+        summary: 'Tournament debutants Uzbekistan face Colombia\'s potent attack led by Rodríguez and Díaz. Despite Cannavaro\'s defensive organization, Colombia\'s Copa América final momentum and superior firepower make them favorites. Predictions favor a multi-goal Colombian victory (1-3 or 0-2) given the gulf in tournament experience.'
       },
 
       {
