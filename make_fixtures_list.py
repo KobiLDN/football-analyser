@@ -335,6 +335,7 @@ RULES:
   close to 33/34/33. Do not pad with generic phrases.
 - 'tag' field MUST be exactly one of: out | doubt | key
 - 'out' = ruled out, 'doubt' = uncertain, 'key' = important player to watch.
+- For 'key' players in international tournaments, include their tournament goal/assist tally where known (e.g. "Mbappé — 3 goals this World Cup", "Saka — 2 goals, 1 assist this tournament").
 - Form string is OLDEST → NEWEST (5 results, single space between each W/D/L).
 - Use real player names from your web search — no placeholders.
 
