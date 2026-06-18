@@ -16,9 +16,10 @@ Run: python refresh_today.py [--days N]
 
 import argparse
 import datetime
+import os
 import re
-
-from agent import run as agent_run
+import subprocess
+import sys
 
 HTML_FILE = "index.html"
 STUB = "summary: 'Pending deep research.'"
@@ -124,14 +125,12 @@ def main():
     reset_window(args.days)
 
     if args.no_research:
-        print("Skipping agent run (--no-research). Run run_agent.bat to research.")
+        print("Skipping research. Run auto_research.py manually to research stubs.")
         return
 
-    # Always run the agent — it picks up every 'Pending deep research.'
-    # stub, including ones already in stub state from a previous run that
-    # didn't complete the research step.
-    print("\nRunning agent on any stubs (newly reset + pre-existing)...")
-    agent_run()
+    print("\nRunning auto_research.py on any stubs (newly reset + pre-existing)...")
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), "auto_research.py")
+    subprocess.run([sys.executable, script, "--days", str(args.days)], check=True)
 
 
 if __name__ == '__main__':

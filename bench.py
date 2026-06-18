@@ -25,7 +25,7 @@ import time
 
 import requests
 
-from agent import fetch_news, build_prompt, parse_json, team_tokens
+from agent import build_prompt, parse_json, team_tokens
 
 LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 NEWS_CACHE   = "bench_news_cache.json"
@@ -53,22 +53,16 @@ TEST_FIXTURES = [
 
 
 def get_cached_news():
-    """Fetch news once per fixture and cache it so all models see the
-    same input. Returns {"home|away": [articles]}."""
-    if os.path.exists(NEWS_CACHE):
-        with open(NEWS_CACHE, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    print("No news cache — fetching once for all test fixtures...")
-    cache = {}
-    for home, away, _ in TEST_FIXTURES:
-        key = f"{home}|{away}"
-        print(f"  fetching {home} vs {away}...")
-        cache[key] = fetch_news(home, away)
-    with open(NEWS_CACHE, "w", encoding="utf-8") as f:
-        json.dump(cache, f, indent=2, ensure_ascii=False)
-    print(f"Cached to {NEWS_CACHE}\n")
-    return cache
+    """Load cached news so all models see identical input.
+    To create/refresh the cache, manually populate bench_news_cache.json
+    with {"home|away": ["article text", ...]} entries for each TEST_FIXTURE."""
+    if not os.path.exists(NEWS_CACHE):
+        print(f"X {NEWS_CACHE} not found.")
+        print("  Create it manually with news snippets for each test fixture:")
+        print('  {"Liverpool|Brentford": ["article 1...", "article 2..."], ...}')
+        raise SystemExit(1)
+    with open(NEWS_CACHE, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 def call_model(model, prompt, timeout=240):

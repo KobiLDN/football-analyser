@@ -2,23 +2,17 @@ import datetime
 import json
 import re
 import requests
-from html.parser import HTMLParser
 from understatapi import UnderstatClient
 
 from team_intel import build_intel_block, is_international
 
-LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
-SEARXNG_URL  = "http://localhost:8888/search"
-MODEL        = "qwen3.5-9b-claude-4.6-opus-reasoning-distilled-v2"
-HTML_FILE    = "index.html"
+HTML_FILE = "index.html"
 
 
 # ─── Understat xG ─────────────────────────────────────────────────────────────
 
-# Leagues Understat covers (matches index.html league ids)
 UNDERSTAT_LEAGUES = {'pl', 'laliga', 'seriea', 'bundesliga', 'ligue1'}
 
-# Map fixture short names → Understat URL slugs
 UNDERSTAT_TEAM_MAP = {
     # Premier League
     'Arsenal': 'Arsenal',
@@ -129,9 +123,6 @@ UNDERSTAT_TEAM_MAP = {
     'Toulouse': 'Toulouse',
 }
 
-# Full / alternate fixture display names → the short key already in
-# UNDERSTAT_TEAM_MAP. index.html uses official long names, the map uses
-# short ones, so the lookup silently failed (no xG / no form dots).
 UNDERSTAT_ALIASES = {
     'Brighton & Hove Albion':   'Brighton',
     'Wolverhampton':            'Wolves',
@@ -149,22 +140,8 @@ UNDERSTAT_ALIASES = {
     'Leeds':                    'Leeds',
 }
 
-# Teams in UNDERSTAT_LEAGUES that the short map doesn't cover yet
 UNDERSTAT_TEAM_MAP['Leeds'] = 'Leeds'
 
-
-def understat_slug(team):
-    """Resolve a fixture display name to an Understat URL slug, trying
-    the direct map first, then known long-name aliases."""
-    if team in UNDERSTAT_TEAM_MAP:
-        return UNDERSTAT_TEAM_MAP[team]
-    alias = UNDERSTAT_ALIASES.get(team)
-    if alias and alias in UNDERSTAT_TEAM_MAP:
-        return UNDERSTAT_TEAM_MAP[alias]
-    return None
-
-
-# Map index.html league display names → league ids
 LEAGUE_NAME_TO_ID = {
     'Premier League':    'pl',
     'La Liga':           'laliga',
@@ -177,17 +154,21 @@ LEAGUE_NAME_TO_ID = {
 }
 
 
+def understat_slug(team):
+    if team in UNDERSTAT_TEAM_MAP:
+        return UNDERSTAT_TEAM_MAP[team]
+    alias = UNDERSTAT_ALIASES.get(team)
+    if alias and alias in UNDERSTAT_TEAM_MAP:
+        return UNDERSTAT_TEAM_MAP[alias]
+    return None
+
+
 def get_season_year():
-    """Return the Understat season start year (e.g. 2025 for the 2025-26 season)."""
     now = datetime.datetime.now()
     return now.year - 1 if now.month <= 7 else now.year
 
 
 def fetch_xg(team, league_id):
-    """
-    Fetch last-6 xG stats for a team from Understat via understatapi.
-    Returns a dict with averages and form string, or None if unavailable.
-    """
     if league_id not in UNDERSTAT_LEAGUES:
         return None
     slug = understat_slug(team)
@@ -213,7 +194,7 @@ def fetch_xg(team, league_id):
         return {
             'xg_for_avg':     round(sum(xg_for)     / len(xg_for),     2),
             'xg_against_avg': round(sum(xg_against) / len(xg_against), 2),
-            'form':           ' '.join(form),   # last 5, oldest → newest
+            'form':           ' '.join(form),
             'games':          len(last6),
         }
     except Exception as e:
@@ -233,7 +214,6 @@ def save_html(content):
 
 
 def find_stubs(html):
-    """Return (home, away) for every stub fixture by searching backwards from the stub marker."""
     stubs = []
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
         prefix = html[max(0, m.start() - 5000):m.start()]
@@ -245,7 +225,6 @@ def find_stubs(html):
 
 
 def get_fixture_meta(html, home, away):
-    """Extract day, time, result by searching backwards from the stub marker."""
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
         prefix = html[max(0, m.start() - 5000):m.start()]
         home_m = list(re.finditer(r"home:\s*'([^']+)'", prefix))
@@ -335,7 +314,6 @@ def build_replacement(home, away, day, time_, result, analysis, home_form=None, 
 
 
 def patch_fixture(html, home, away, replacement):
-    """Replace the correct stub block by matching backwards from the stub marker."""
     for m in re.finditer(r"summary:\s*'Pending deep research\.'", html):
         prefix = html[max(0, m.start() - 5000):m.start()]
         home_m = list(re.finditer(r"home:\s*'([^']+)'", prefix))
@@ -345,11 +323,9 @@ def patch_fixture(html, home, away, replacement):
         if home_m[-1].group(1) != home or away_m[-1].group(1) != away:
             continue
 
-        # Find block start: scan backwards for the opening {
         home_abs    = max(0, m.start() - 5000) + home_m[-1].start()
         block_start = html.rfind('{', 0, home_abs)
 
-        # Find block end: count braces forward from block_start
         depth = 0
         block_end = block_start
         for i in range(block_start, min(len(html), m.end() + 500)):
@@ -367,40 +343,9 @@ def patch_fixture(html, home, away, replacement):
     return html
 
 
-# ─── News fetching ────────────────────────────────────────────────────────────
+# ─── Prompt + JSON helpers (used by bench.py) ─────────────────────────────────
 
-def fetch_article_text(url, max_chars=1500):
-    try:
-        resp = requests.get(url, timeout=8, headers={"User-Agent": "Mozilla/5.0"})
-        resp.raise_for_status()
-
-        class TextExtractor(HTMLParser):
-            def __init__(self):
-                super().__init__()
-                self.chunks = []
-                self.skip   = False
-            def handle_starttag(self, tag, attrs):
-                if tag in ("script", "style", "nav", "header", "footer"):
-                    self.skip = True
-            def handle_endtag(self, tag):
-                if tag in ("script", "style", "nav", "header", "footer"):
-                    self.skip = False
-            def handle_data(self, data):
-                if not self.skip:
-                    t = data.strip()
-                    if len(t) > 40:
-                        self.chunks.append(t)
-
-        p = TextExtractor()
-        p.feed(resp.text)
-        return " ".join(p.chunks)[:max_chars]
-    except Exception:
-        return ""
-
-
-# Clubs whose plain token ('united', 'city') is too generic and would
-# match a different club ("Leeds United" vs "Man United"). Match these
-# only by an explicit, distinctive phrase.
+# Clubs whose plain token is too generic — match only by explicit phrase.
 TEAM_MATCH_PHRASES = {
     'Man United':         ['man united', 'man utd', 'manchester united'],
     'Manchester United':  ['man united', 'man utd', 'manchester united'],
@@ -414,9 +359,6 @@ TEAM_MATCH_PHRASES = {
     'West Ham':           ['west ham'],
     'Leicester City':     ['leicester'],
     'Leicester':          ['leicester'],
-    # Short / abbreviated names whose token would otherwise be <4 chars
-    # and get filtered out (returning an empty token list → validator
-    # rejects every analysis).
     'PSG':                ['psg', 'paris saint', 'paris sg'],
     'Paris SG':           ['psg', 'paris saint', 'paris sg'],
     'Paris Saint-Germain':['psg', 'paris saint', 'paris sg'],
@@ -428,95 +370,14 @@ TEAM_MATCH_PHRASES = {
 
 
 def team_tokens(name):
-    """Distinctive lowercase phrases identifying a team. Uses an explicit
-    phrase list for ambiguous or very-short names, else significant tokens
-    (len > 3 minus filler words that cause cross-club false matches).
-    Guarantees a non-empty list — the lowercased name itself is the final
-    fallback so the validator can always at least look for that."""
     if name in TEAM_MATCH_PHRASES:
         return TEAM_MATCH_PHRASES[name]
     stop = {'town', 'city', 'united', 'hove', 'albion', 'wanderers',
             'hotspur', 'forest', 'real', 'club'}
     toks = [w for w in re.split(r'[\s&.]+', name.lower()) if len(w) > 3]
     sig = [w for w in toks if w not in stop]
-    return sig or toks or [name.lower()]  # never return empty
+    return sig or toks or [name.lower()]
 
-
-def relevance_score(text, home, away):
-    """0 = mentions neither team, 1 = mentions one, 2 = mentions BOTH.
-    Both-team articles are about the actual fixture; single-team ones
-    are often about a different opponent (the contamination source)."""
-    t = text.lower()
-    h = any(tok in t for tok in team_tokens(home))
-    a = any(tok in t for tok in team_tokens(away))
-    return (1 if h else 0) + (1 if a else 0)
-
-
-def fetch_news(home, away, max_results=8, full_text_limit=4,
-               max_single=3):
-    queries = [
-        f"{home} vs {away} preview team news",
-        f"{home} team news injuries",
-        f"{away} team news injuries",
-    ]
-    seen, scored, full_text_count = set(), [], 0
-
-    for q in queries:
-        try:
-            resp = requests.get(SEARXNG_URL, params={
-                "q": q, "format": "json", "categories": "news"
-            }, timeout=10)
-            resp.raise_for_status()
-            for r in resp.json().get("results", [])[:max_results]:
-                url = r.get("url", "")
-                if url in seen:
-                    continue
-                seen.add(url)
-                title   = r.get("title", "").strip()
-                snippet = r.get("content", "").strip()
-                if full_text_count < full_text_limit:
-                    body = fetch_article_text(url)
-                    full_text_count += 1
-                    if body:
-                        s = relevance_score(body, home, away)
-                        if s:
-                            scored.append((s, f"[{title}]\n{body}"))
-                        continue
-                if title or snippet:
-                    s = relevance_score(title + ' ' + snippet, home, away)
-                    if s:
-                        scored.append((s, f"- {title}: {snippet}"))
-        except Exception as e:
-            print(f"  SearXNG error: {e}")
-
-    both   = [a for s, a in scored if s == 2]
-    single = [a for s, a in scored if s == 1]
-    # Both-team articles first (about the real fixture), then a capped
-    # number of single-team ones so one opponent's news can't dominate.
-    articles = both + single[:max_single]
-    print(f"  relevance: {len(both)} both-team, "
-          f"{len(single)} single ({min(len(single), max_single)} kept)")
-
-    if not articles:
-        print(f"  WARNING: relevance filter dropped all — using raw snippets")
-        for q in queries:
-            try:
-                resp = requests.get(SEARXNG_URL, params={
-                    "q": q, "format": "json", "categories": "news"
-                }, timeout=10)
-                resp.raise_for_status()
-                for r in resp.json().get("results", [])[:3]:
-                    title   = r.get("title", "").strip()
-                    snippet = r.get("content", "").strip()
-                    if title or snippet:
-                        articles.append(f"- {title}: {snippet}")
-            except Exception:
-                pass
-
-    return articles
-
-
-# ─── LM Studio ───────────────────────────────────────────────────────────────
 
 def build_prompt(home, away, competition, articles):
     news = "\n".join(articles) if articles else "No live news available."
@@ -526,7 +387,6 @@ def build_prompt(home, away, competition, articles):
 FIXTURE: {home} (home) vs {away} (away) — {competition}
 
 {intel_block}
-
 CRITICAL RULES — read before anything else:
 - This exact match is {home} vs {away}. If a news article is about
   {home} or {away} playing a DIFFERENT opponent, use it only for that
@@ -547,7 +407,7 @@ Return ONLY this JSON structure — no markdown, no code fences, no explanation:
   "homeWin": <integer 0-100>,
   "draw": <integer 0-100>,
   "awayWin": <integer 0-100>,
-  "verdict": "<Low|Moderate|Good|Strong>",
+  "verdict": "<Low|Likely|Strong>",
   "fairOdds": "<e.g. 3.50–3.80>",
   "factors": {{
     "formBalance":   {{ "score": <0-100>, "detail": "<text>" }},
@@ -570,24 +430,8 @@ Verdict is the confidence in whichever outcome has the highest probability:
   Likely = highest outcome 50-64% — one outcome favoured
   Strong = highest outcome 65%+ — dominant favourite
 Factor scores: 50 = neutral; score each factor based on its impact on the most likely outcome.
-  momentum: which team has better recent form and momentum heading in.
 Use real player names from the news where available.
 """
-
-
-def call_lmstudio(prompt):
-    resp = requests.post(LMSTUDIO_URL, json={
-        "model": MODEL,
-        "messages": [
-            {"role": "system", "content": "You are a football analyst. Return only valid JSON — no markdown, no code fences."},
-            {"role": "user",   "content": prompt}
-        ],
-        "temperature": 0.3,
-        "max_tokens": 10000
-    }, timeout=180)
-    resp.raise_for_status()
-    msg = resp.json()["choices"][0]["message"]
-    return msg.get("content", "").strip() or msg.get("reasoning_content", "").strip()
 
 
 def parse_json(raw):
@@ -600,77 +444,3 @@ def parse_json(raw):
     if m:
         raw = m.group(0)
     return json.loads(raw.strip())
-
-
-# ─── Main loop ────────────────────────────────────────────────────────────────
-
-def run():
-    html  = load_html()
-    stubs = find_stubs(html)
-    total = len(stubs)
-
-    if not stubs:
-        print("No stub fixtures found — nothing to do.")
-        return
-
-    print(f"Found {total} stub fixtures to research.\n")
-
-    for i, (home, away) in enumerate(stubs, 1):
-        print(f"[{i}/{total}] {home} vs {away}")
-
-        html        = load_html()
-        day, time_, result = get_fixture_meta(html, home, away)
-        competition = get_league_for_fixture(html, home, away)
-
-        league_id = LEAGUE_NAME_TO_ID.get(competition, '')
-        home_xg = fetch_xg(home, league_id)
-        away_xg = fetch_xg(away, league_id)
-        home_form = home_xg['form'] if home_xg else None
-        away_form = away_xg['form'] if away_xg else None
-        if home_xg:
-            print(f"  xG {home}: for={home_xg['xg_for_avg']} vs={home_xg['xg_against_avg']} form={home_form}")
-        if away_xg:
-            print(f"  xG {away}: for={away_xg['xg_for_avg']} vs={away_xg['xg_against_avg']} form={away_form}")
-
-        print(f"  Fetching news...")
-        articles = fetch_news(home, away)
-        print(f"  {len(articles)} articles found")
-
-        print(f"  Querying {MODEL}...")
-        analysis = None
-        for attempt in (1, 2):
-            try:
-                analysis = parse_json(call_lmstudio(
-                    build_prompt(home, away, competition, articles)))
-            except Exception as e:
-                print(f"  parse failed (attempt {attempt}): {e}")
-                analysis = None
-                continue
-            # Validate: context+summary must reference BOTH teams,
-            # else the model analysed the wrong fixture.
-            blob = (analysis.get('context', '') + ' ' +
-                    analysis.get('summary', '')).lower()
-            h_ok = any(t in blob for t in team_tokens(home))
-            a_ok = any(t in blob for t in team_tokens(away))
-            if h_ok and a_ok:
-                break
-            missing = home if not h_ok else away
-            print(f"  REJECTED (attempt {attempt}): analysis didn't "
-                  f"mention '{missing}' — wrong-fixture contamination")
-            analysis = None
-
-        if analysis is None:
-            print(f"  FAILED after 2 attempts — skipping\n")
-            continue
-
-        html = patch_fixture(html, home, away,
-                             build_replacement(home, away, day, time_, result, analysis,
-                                               home_form=home_form, away_form=away_form))
-        save_html(html)
-        print(f"  Done — H:{analysis['homeWin']}% D:{analysis['draw']}% A:{analysis['awayWin']}% · {analysis['verdict']}\n")
-
-    print("All fixtures researched.")
-
-
-if __name__ == "__main__":
-    run()
