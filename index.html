@@ -5052,9 +5052,9 @@ function renderFixture(f, key, leagueName) {
   const bc = barClass(confidence);
   const factorNames = {
     formBalance: 'Form balance', momentum: 'Momentum', drawRates: 'Momentum',
-    headToHead: 'Head to head', goalTendency: 'Goal tendency', leagueContext: 'Context'
+    goalTendency: 'Goal tendency', leagueContext: 'Context'
   };
-  const factorsHTML = Object.entries(f.factors).map(([k, v]) => `
+  const factorsHTML = Object.entries(f.factors).filter(([k]) => factorNames[k]).map(([k, v]) => `
     <div class="factor">
       <div class="fn">${factorNames[k] || k}</div>
       <div class="fbar-wrap"><div class="fbar" style="width:${v.score}%"></div></div>
@@ -5241,10 +5241,6 @@ renderMain();
     <div class="fmodal-row">
       <div class="fmodal-name">Momentum</div>
       <div class="fmodal-desc">Whether each team is trending up or down — winning streaks, improving performances, or a recent collapse heading into this game.</div>
-    </div>
-    <div class="fmodal-row">
-      <div class="fmodal-name">Head to head</div>
-      <div class="fmodal-desc">Historical record between these two teams. 50 = no clear pattern. Higher = the predicted winner has dominated previous meetings.</div>
     </div>
     <div class="fmodal-row">
       <div class="fmodal-name">Goal tendency</div>

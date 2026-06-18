@@ -300,7 +300,6 @@ def build_replacement(home, away, day, time_, result, analysis, home_form=None, 
         factors: {{
           formBalance:   {factor('formBalance')},
           momentum:      {factor('momentum')},
-          headToHead:    {factor('headToHead')},
           goalTendency:  {factor('goalTendency')},
           leagueContext: {factor('leagueContext')}
         }},
@@ -412,7 +411,6 @@ Return ONLY this JSON structure — no markdown, no code fences, no explanation:
   "factors": {{
     "formBalance":   {{ "score": <0-100>, "detail": "<text>" }},
     "momentum":      {{ "score": <0-100>, "detail": "<text>" }},
-    "headToHead":    {{ "score": <0-100>, "detail": "<text>" }},
     "goalTendency":  {{ "score": <0-100>, "detail": "<text>" }},
     "leagueContext": {{ "score": <0-100>, "detail": "<text>" }}
   }},

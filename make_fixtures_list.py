@@ -289,7 +289,7 @@ def write_prompt_txt(path, fixtures, html):
                     fixtures_block_lines.append(f"     {line}")
 
     prompt = f"""Research the football fixtures listed below. Use web search (must be ON)
-for each one: current team news, injuries, last 5 results form, head-to-head,
+for each one: current team news, injuries, last 5 results form,
 and pundit consensus.
 
 FIXTURES TO RESEARCH ({len(fixtures)} total — use the EXACT home/away/day
@@ -316,7 +316,6 @@ Each fixture object must have this exact shape:
   "factors": {{
     "formBalance":   {{ "score": <0-100>, "detail": "<one sentence>" }},
     "momentum":      {{ "score": <0-100>, "detail": "<one sentence>" }},
-    "headToHead":    {{ "score": <0-100>, "detail": "<one sentence>" }},
     "goalTendency":  {{ "score": <0-100>, "detail": "<one sentence>" }},
     "leagueContext": {{ "score": <0-100>, "detail": "<one sentence>" }}
   }},
