@@ -29,6 +29,7 @@ Football Analyser task board. Move cards left → right as work progresses.
 
 ### World Cup
 - **Knockout placeholder resolution** — verify `W99` / `L101` / `2A` placeholders auto-resolve mid-tournament as openfootball updates; may need a manual nudge if it lags
+- **Refresh FIFA rankings in `team_intel.py`** — rankings are hardcoded as of the 2026 WC seeding; update before each major tournament (next: Euros 2028 cycle)
 
 ---
 
