@@ -287,11 +287,15 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   padding: 10px 11px;
   min-width: 0;
 }
-.fn { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+.fn { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
 .fbar-wrap { height: 3px; background: var(--border2); border-radius: 99px; overflow: hidden; margin-bottom: 6px; }
 .fbar { height: 100%; background: var(--gold); }
 .fnum { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
 .fdetail { font-size: 11px; color: var(--text2); line-height: 1.5; }
+.ftip { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 50%; background: var(--border2); color: var(--text3); font-size: 9px; cursor: help; flex-shrink: 0; text-transform: none; letter-spacing: 0; font-weight: 600; }
+.ftip-popup { display: none; position: absolute; left: 0; top: 18px; z-index: 200; background: var(--surface); border: 1px solid var(--border); border-radius: 5px; padding: 9px 11px; font-size: 11px; color: var(--text2); line-height: 1.5; width: 210px; box-shadow: 0 6px 20px rgba(0,0,0,0.4); pointer-events: none; }
+.ftip:hover .ftip-popup, .ftip:focus .ftip-popup { display: block; }
+.ftip:focus { outline: none; box-shadow: 0 0 0 2px var(--gold); }
 
 .summary-grid { display: grid; grid-template-columns: 1fr 140px; gap: 16px; align-items: start; }
 .summary-text { font-size: 14px; color: var(--text2); line-height: 1.7; min-width: 0; overflow-wrap: anywhere; }
@@ -5041,14 +5045,26 @@ function renderFixture(f, key, leagueName) {
     formBalance: 'Form balance', momentum: 'Momentum', drawRates: 'Momentum',
     headToHead: 'Head to head', goalTendency: 'Goal tendency', leagueContext: 'Context'
   };
-  const factorsHTML = Object.entries(f.factors).map(([k, v]) => `
+  const factorTips = {
+    formBalance: 'Compares each team\'s recent results (last 5 games). Higher = the stronger side has a clear form edge going in.',
+    momentum:    'Whether each team is trending up or down. Accounts for winning streaks and improving or declining performances.',
+    drawRates:   'Whether each team is trending up or down. Accounts for winning streaks and improving or declining performances.',
+    headToHead:  'Historical record between these two teams. Higher = the favourite has dominated previous meetings.',
+    goalTendency:'Goals scored and conceded patterns. Reflects attacking threat and defensive vulnerability on each side.',
+    leagueContext:'Match importance, league position, tournament stage, and situational factors — rotation risk, cup pressure, etc.',
+  };
+  const factorsHTML = Object.entries(f.factors).map(([k, v]) => {
+    const tip = factorTips[k];
+    const tipHTML = tip ? `<span class="ftip" tabindex="0">?<span class="ftip-popup">${tip}</span></span>` : '';
+    return `
     <div class="factor">
-      <div class="fn">${factorNames[k] || k}</div>
+      <div class="fn">${factorNames[k] || k}${tipHTML}</div>
       <div class="fbar-wrap"><div class="fbar" style="width:${v.score}%"></div></div>
       <div class="fnum">${v.score}</div>
       <div class="fdetail">${v.detail}</div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   const teamNewsBlock = f.teamNews ? `
     <div class="deep-grid">
