@@ -5,6 +5,8 @@ import requests
 from html.parser import HTMLParser
 from understatapi import UnderstatClient
 
+from team_intel import build_intel_block, is_international
+
 LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 SEARXNG_URL  = "http://localhost:8888/search"
 MODEL        = "qwen3.5-9b-claude-4.6-opus-reasoning-distilled-v2"
@@ -518,9 +520,12 @@ def fetch_news(home, away, max_results=8, full_text_limit=4,
 
 def build_prompt(home, away, competition, articles):
     news = "\n".join(articles) if articles else "No live news available."
+    intel_block = build_intel_block(home, away) if is_international(competition) else ''
     return f"""Analyse this fixture and estimate win probabilities.
 
 FIXTURE: {home} (home) vs {away} (away) — {competition}
+
+{intel_block}
 
 CRITICAL RULES — read before anything else:
 - This exact match is {home} vs {away}. If a news article is about

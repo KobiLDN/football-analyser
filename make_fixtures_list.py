@@ -39,6 +39,8 @@ import os
 import re
 import sys
 
+from team_intel import build_intel_block, is_international
+
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 HTML_FILE = os.path.join(REPO_ROOT, "index.html")
 
@@ -280,6 +282,11 @@ def write_prompt_txt(path, fixtures, html):
             f"{i:>3}. {f['home']} vs {f['away']} — "
             f"{f['day']}, {f['time']}, {f['competition']}"
         )
+        if is_international(f['competition']):
+            intel = build_intel_block(f['home'], f['away'])
+            if intel:
+                for line in intel.strip().splitlines():
+                    fixtures_block_lines.append(f"     {line}")
 
     prompt = f"""Research the football fixtures listed below. Use web search (must be ON)
 for each one: current team news, injuries, last 5 results form, head-to-head,
