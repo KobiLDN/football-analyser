@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.66** — Marked 1 World Cup result.
 - **v2.65** — Marked 4 World Cup results.
 - **v2.63** — Score updates now 4× daily (2am + 8am BST added for World Cup overnight kick-offs). `team_intel.py`: FIFA rankings + WC history + continental tournament history (UEFA Euro, AFCON, Copa América, AFC Asian Cup, Gold Cup, OFC Nations Cup) for all 48 WC 2026 teams — auto-injected into research prompts for international fixtures. SearXNG + LM Studio removed from pipeline; `refresh_today.py` now uses OpenRouter. Daily 11am BST auto-research cron added. New midnight BST refresh workflow catches late team news before kickoff. `KANBAN.md` task board created.
 - **v2.62** — Marked 4 World Cup results.
