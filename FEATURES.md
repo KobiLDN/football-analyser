@@ -41,7 +41,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 ### World Cup specific
 
 - **Name resolution for knockout placeholders** — openfootball uses `W99` / `L101` / `2A` placeholders until the bracket fills. Verify they auto-resolve mid-tournament; may need a manual nudge if openfootball lags. (`fetch-worldcup.yml` daily cron is already set up.)
-- **International fixture research quality** — `agent.py` uses Understat (club football only) so national teams have no xG / form data. DeepSeek bridges this for now via `apply_research.bat`, but a Transfermarkt international-team form scrape would let the local agent handle WC fixtures too.
+- **International fixture research quality** — national teams have no Understat xG / form data. Partially addressed: `team_intel.py` now injects FIFA rankings + tournament history into prompts. Remaining: Transfermarkt international-team form scrape for live pre-tournament form.
 
 ### Sticky misc
 
@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.63** — Score updates now 4× daily (2am + 8am BST added for World Cup overnight kick-offs). `team_intel.py`: FIFA rankings + WC history + continental tournament history (UEFA Euro, AFCON, Copa América, AFC Asian Cup, Gold Cup, OFC Nations Cup) for all 48 WC 2026 teams — auto-injected into research prompts for international fixtures. SearXNG + LM Studio removed from pipeline; `refresh_today.py` now uses OpenRouter. Daily 11am BST auto-research cron added. New midnight BST refresh workflow catches late team news before kickoff. `KANBAN.md` task board created.
 - **v2.62** — Marked 4 World Cup results.
 - **v2.61** — Marked 4 World Cup results.
 - **v2.60** — Marked 5 World Cup results.

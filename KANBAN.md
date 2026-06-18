@@ -40,7 +40,7 @@ Football Analyser task board. Move cards left → right as work progresses.
   2. Raise "Likely" threshold from 50% → 55% (borderline calls fall to Low / ungraded)
   3. Decide whether predicted draws should count toward hit rate or be excluded
 
-- **Housekeeping (this session)** — CHANGELOG.md, FEATURES.md Done section, and version bump (v2.62 → v2.63) not yet updated for today's changes
+- **Housekeeping** — CHANGELOG.md, FEATURES.md, README.md, and version bump updated for this session ✓
 
 ---
 
@@ -50,6 +50,9 @@ Football Analyser task board. Move cards left → right as work progresses.
 - **Score update schedule** — added 2am and 8am BST runs to `mark-results.yml` to catch World Cup overnight kick-offs (00:00–05:00 BST). Was missing a full night's worth of results
 - **International team intel** — `team_intel.py`: FIFA rankings + World Cup history + continental tournament history (UEFA Euro, Copa América, AFCON, AFC Asian Cup, Gold Cup, OFC Nations Cup) for all 48 WC 2026 teams. Auto-injected into research prompts for international fixtures
 - **SearXNG removed** — stripped from `agent.py` (fetch_news, fetch_article_text, call_lmstudio, run()). `refresh_today.py` now calls `auto_research.py` (OpenRouter) via subprocess instead of the old local LM Studio agent. `bench.py` updated to require news cache rather than fetching via SearXNG
+- **Daily auto-research cron** — `auto-research.yml` now runs at 11am BST daily. Mid-tournament placeholder fixtures (W99 → real team) get researched same day instead of waiting until Monday
+- **Midnight refresh workflow** — `refresh-tonight.yml` resets today/tomorrow's fixtures to stubs at midnight BST and re-researches via OpenRouter. Catches late injuries, lineup leaks, and suspension confirmations before kickoff
+- **KANBAN.md** — task board created with Backlog / In Progress / Done columns
 
 ### Recent (v2.56–v2.62)
 - **v2.62–v2.57** — Auto-marked World Cup group stage results

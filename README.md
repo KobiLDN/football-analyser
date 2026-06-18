@@ -8,7 +8,7 @@ https://kobildn.github.io/football-analyser/
 
 ## What it covers
 
-Eight competitions: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Champions League, Europa League, Conference League.
+Nine competitions: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Champions League, Europa League, Conference League, and World Cup 2026.
 
 Each fixture is annotated with:
 
@@ -32,7 +32,7 @@ Requires `FOOTBALL_DATA_API_KEY` to be set as a repo secret.
 
 ## Marking results
 
-A second GitHub Action (`.github/workflows/mark-results.yml`) runs at **5pm BST on Thursday–Sunday** and at **11pm BST every day**, queries football-data.org for finished matches, and writes scorelines into the `result` field in the `LEAGUES` array — then auto-commits as `github-actions[bot]`. The toggle in the sidebar's Display section lets you flip between "upcoming only" and "include past fixtures" so you can see final scores (and draw tags) once they're populated.
+A second GitHub Action (`.github/workflows/mark-results.yml`) runs at **5pm BST on Thursday–Sunday**, **11pm BST daily**, **2am BST daily** (catches 22:00–23:00 kick-offs finishing after midnight), and **8am BST daily** (catches World Cup overnight kick-offs 00:00–05:00 BST), queries football-data.org for finished matches, and writes scorelines into the `result` field in the `LEAGUES` array — then auto-commits as `github-actions[bot]`. The toggle in the sidebar's Display section lets you flip between "upcoming only" and "include past fixtures" so you can see final scores (and draw tags) once they're populated.
 
 Manual fallback: edit the fixture object directly to set `result:` if the workflow misses one.
 
@@ -42,7 +42,7 @@ A third GitHub Action (`.github/workflows/fetch-fixtures.yml`) runs every Monday
 
 ## Automated research pipeline
 
-`.github/workflows/auto-research.yml` triggers automatically after `fetch-fixtures.yml` and `fetch-worldcup.yml` complete. It:
+`.github/workflows/auto-research.yml` runs **daily at 11am BST** and also triggers automatically after `fetch-fixtures.yml` and `fetch-worldcup.yml` complete. It:
 
 1. Runs `auto_research.py` which finds all stub fixtures and builds a research prompt
 2. Calls **OpenRouter** (`deepseek/deepseek-r1-0528:online`) — live web search for team news, injuries, form, head-to-head
@@ -61,7 +61,15 @@ auto_research.bat --days -1 --max 25 --offset 25   # second batch
 auto_research.bat --no-apply                # write research.json only, don't push
 ```
 
-**Game-day refresh:** `refresh_today.bat [days]` resets fixtures kicking off within N days back to stubs and re-researches them with the latest news (~3–5 min). Default window is 2 days (today + tomorrow).
+**Game-day refresh:** `refresh_today.bat [days]` resets fixtures kicking off within N days back to stubs and re-researches them via OpenRouter (~3–5 min). Default window is 2 days (today + tomorrow). The nightly `refresh-tonight.yml` workflow does this automatically at midnight BST.
+
+## Nightly fixture refresh
+
+`.github/workflows/refresh-tonight.yml` runs every night at **midnight BST**. It resets fixtures kicking off today or tomorrow back to stubs, then re-researches them via OpenRouter — so late injury announcements, lineup leaks, or suspension confirmations are reflected before kickoff. Can also be triggered manually via **Actions → Midnight refresh → Run workflow** with an optional `days` input.
+
+## International fixture intel
+
+`team_intel.py` holds FIFA rankings and continental tournament history (World Cup, UEFA Euro, Copa América, AFCON, AFC Asian Cup, Gold Cup, OFC Nations Cup) for all 48 World Cup 2026 teams. This data is automatically injected into the research prompt for any international fixture, giving the model a calibrated baseline to work from instead of relying on web search alone.
 
 ## Model benchmarking
 
