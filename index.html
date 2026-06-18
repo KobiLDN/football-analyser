@@ -389,7 +389,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.63 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.64 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
@@ -4734,12 +4734,12 @@ function calcConfidence(f) {
   if (f.homeWin !== undefined) {
     const top = Math.max(f.homeWin, f.draw, f.awayWin);
     if (top >= 65) return 'Strong';
-    if (top >= 50) return 'Likely';
+    if (top >= 55) return 'Likely';
     return 'Low';
   }
   const p = f.drawProbability || 0;
   if (p >= 65) return 'Strong';
-  if (p >= 50) return 'Likely';
+  if (p >= 55) return 'Likely';
   return 'Low';
 }
 function verdictClass(confidence) {
@@ -4896,6 +4896,7 @@ function renderAll() {
         <div class="stat-card">
           <div class="stat-val">${hitRate ? hitRate.percent + '%' : '—'}</div>
           <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
+          ${hitRate && (hitRate.strongTotal || hitRate.likelyTotal) ? `<div class="stat-sub" style="font-size:9px;opacity:0.75">Strong ${hitRate.strongPct !== null ? hitRate.strongPct + '%' : '—'} · Likely ${hitRate.likelyPct !== null ? hitRate.likelyPct + '%' : '—'}</div>` : ''}
           <div class="stat-label">Hit rate</div>
         </div>
       </div>
@@ -4950,6 +4951,7 @@ function renderMain() {
         <div class="stat-card">
           <div class="stat-val">${hitRate ? hitRate.percent + '%' : '—'}</div>
           <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
+          ${hitRate && (hitRate.strongTotal || hitRate.likelyTotal) ? `<div class="stat-sub" style="font-size:9px;opacity:0.75">Strong ${hitRate.strongPct !== null ? hitRate.strongPct + '%' : '—'} · Likely ${hitRate.likelyPct !== null ? hitRate.likelyPct + '%' : '—'}</div>` : ''}
           <div class="stat-label">Hit rate</div>
         </div>
       </div>
@@ -4982,17 +4984,26 @@ function predictionAccuracy(f) {
 }
 
 // Aggregate hit / miss across a list of fixtures.
-// Returns { hits, misses, total, percent } or null when nothing graded.
+// Returns { hits, misses, total, percent, strongHits, strongTotal, strongPct, likelyHits, likelyTotal, likelyPct }
+// or null when nothing graded.
 function calcHitRate(fixtures) {
   let hits = 0, misses = 0;
+  let strongHits = 0, strongTotal = 0, likelyHits = 0, likelyTotal = 0;
   for (const f of fixtures) {
     const r = predictionAccuracy(f);
-    if (r === 'hit') hits++;
-    else if (r === 'miss') misses++;
+    if (r !== 'hit' && r !== 'miss') continue;
+    const conf = calcConfidence(f);
+    if (r === 'hit') hits++; else misses++;
+    if (conf === 'Strong') { if (r === 'hit') strongHits++; strongTotal++; }
+    else if (conf === 'Likely') { if (r === 'hit') likelyHits++; likelyTotal++; }
   }
   const total = hits + misses;
   if (total === 0) return null;
-  return { hits, misses, total, percent: Math.round((hits / total) * 100) };
+  return {
+    hits, misses, total, percent: Math.round((hits / total) * 100),
+    strongHits, strongTotal, strongPct: strongTotal ? Math.round((strongHits / strongTotal) * 100) : null,
+    likelyHits, likelyTotal, likelyPct: likelyTotal ? Math.round((likelyHits / likelyTotal) * 100) : null,
+  };
 }
 
 function renderFormDots(formStr) {
