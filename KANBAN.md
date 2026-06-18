@@ -26,6 +26,8 @@ Football Analyser task board. Move cards left → right as work progresses.
 - **xG numbers in the analysis panel** — Understat xG is fetched but only used for form dots; show "Liverpool 2.14 / 1.61 xG" in the panel too
 - **Multi-bookmaker odds** — support a few books and pick the best price instead of a single `fairOdds` field
 - **Transfermarkt injury scrape** — add to prompt as step 3 of the probability pipeline (steps 1 + 2 done)
+- **Tournament scorer data in team news** — add one line to research prompt: include goal/assist tally for key players mentioned in team news (e.g. "Mbappé — likely to start, 3 goals this tournament")
+- **⏳ WAITING: fifaindex.com squad data** — user to drop all 48 WC team pages (MHTML files) into a local folder. Parser ready to extract team OVR/ATK/MID/DEF + starting XI player names/positions/OVR and inject into `team_intel.py`. Individual team page URL format: `https://fifaindex.com/teams/1335-france`
 
 ### World Cup
 - **Knockout placeholder resolution** — verify `W99` / `L101` / `2A` placeholders auto-resolve mid-tournament as openfootball updates; may need a manual nudge if it lags
@@ -35,12 +37,7 @@ Football Analyser task board. Move cards left → right as work progresses.
 
 ## 🔄 In Progress
 
-- **Hit rate improvements** — currently at 54%. Three levers identified:
-  1. Split hit rate display: show Strong picks % separately from Likely picks %
-  2. Raise "Likely" threshold from 50% → 55% (borderline calls fall to Low / ungraded)
-  3. Decide whether predicted draws should count toward hit rate or be excluded
-
-- **Housekeeping** — CHANGELOG.md, FEATURES.md, README.md, and version bump updated for this session ✓
+*(nothing active right now)*
 
 ---
 
