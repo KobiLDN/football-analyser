@@ -292,10 +292,19 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .fbar { height: 100%; background: var(--gold); }
 .fnum { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
 .fdetail { font-size: 11px; color: var(--text2); line-height: 1.5; }
-.ftip { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 50%; background: var(--border2); color: var(--text3); font-size: 9px; cursor: help; flex-shrink: 0; text-transform: none; letter-spacing: 0; font-weight: 600; }
-.ftip-popup { display: none; position: absolute; left: 0; top: 18px; z-index: 200; background: var(--surface); border: 1px solid var(--border); border-radius: 5px; padding: 9px 11px; font-size: 11px; color: var(--text2); line-height: 1.5; width: 210px; box-shadow: 0 6px 20px rgba(0,0,0,0.4); pointer-events: none; }
-.ftip:hover .ftip-popup, .ftip:focus .ftip-popup { display: block; }
-.ftip:focus { outline: none; box-shadow: 0 0 0 2px var(--gold); }
+.factors-explain { font-size: 10px; color: var(--text3); margin-bottom: 8px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; background: none; border: none; padding: 0; font-family: inherit; letter-spacing: 0.02em; }
+.factors-explain:hover { color: var(--text2); }
+.fmodal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; }
+.fmodal-overlay.open { display: flex; align-items: flex-end; justify-content: center; }
+@media (min-width: 600px) { .fmodal-overlay.open { align-items: center; } }
+.fmodal { background: var(--surface); border-radius: 12px 12px 0 0; padding: 20px; width: 100%; max-width: 480px; max-height: 80vh; overflow-y: auto; }
+@media (min-width: 600px) { .fmodal { border-radius: 10px; } }
+.fmodal-title { font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+.fmodal-close { float: right; background: none; border: none; color: var(--text3); font-size: 20px; cursor: pointer; line-height: 1; padding: 0; margin-top: -2px; }
+.fmodal-row { margin-bottom: 14px; }
+.fmodal-row:last-child { margin-bottom: 0; }
+.fmodal-name { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 3px; }
+.fmodal-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
 
 .summary-grid { display: grid; grid-template-columns: 1fr 140px; gap: 16px; align-items: start; }
 .summary-text { font-size: 14px; color: var(--text2); line-height: 1.7; min-width: 0; overflow-wrap: anywhere; }
@@ -5045,26 +5054,14 @@ function renderFixture(f, key, leagueName) {
     formBalance: 'Form balance', momentum: 'Momentum', drawRates: 'Momentum',
     headToHead: 'Head to head', goalTendency: 'Goal tendency', leagueContext: 'Context'
   };
-  const factorTips = {
-    formBalance: 'Compares each team\'s recent results (last 5 games). Higher = the stronger side has a clear form edge going in.',
-    momentum:    'Whether each team is trending up or down. Accounts for winning streaks and improving or declining performances.',
-    drawRates:   'Whether each team is trending up or down. Accounts for winning streaks and improving or declining performances.',
-    headToHead:  'Historical record between these two teams. Higher = the favourite has dominated previous meetings.',
-    goalTendency:'Goals scored and conceded patterns. Reflects attacking threat and defensive vulnerability on each side.',
-    leagueContext:'Match importance, league position, tournament stage, and situational factors — rotation risk, cup pressure, etc.',
-  };
-  const factorsHTML = Object.entries(f.factors).map(([k, v]) => {
-    const tip = factorTips[k];
-    const tipHTML = tip ? `<span class="ftip" tabindex="0">?<span class="ftip-popup">${tip}</span></span>` : '';
-    return `
+  const factorsHTML = Object.entries(f.factors).map(([k, v]) => `
     <div class="factor">
-      <div class="fn">${factorNames[k] || k}${tipHTML}</div>
+      <div class="fn">${factorNames[k] || k}</div>
       <div class="fbar-wrap"><div class="fbar" style="width:${v.score}%"></div></div>
       <div class="fnum">${v.score}</div>
       <div class="fdetail">${v.detail}</div>
     </div>
-  `;
-  }).join('');
+  `).join('');
 
   const teamNewsBlock = f.teamNews ? `
     <div class="deep-grid">
@@ -5165,6 +5162,7 @@ function renderFixture(f, key, leagueName) {
       </div>
       <div class="analysis">
         ${teamNewsBlock}
+        <button class="factors-explain" onclick="document.getElementById('factor-modal').classList.add('open')">What do these scores mean?</button>
         <div class="factors-row">${factorsHTML}</div>
         <div class="summary-grid">
           <div class="summary-text">${f.summary}</div>
@@ -5230,6 +5228,34 @@ function toggleDay(el) {
 renderSidebar();
 renderMain();
 </script>
+
+<div id="factor-modal" class="fmodal-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="fmodal">
+    <div class="fmodal-title">What do the factor scores mean?
+      <button class="fmodal-close" onclick="document.getElementById('factor-modal').classList.remove('open')">×</button>
+    </div>
+    <div class="fmodal-row">
+      <div class="fmodal-name">Form balance</div>
+      <div class="fmodal-desc">Compares each team's recent results (last 5 games). 50 = evenly matched. Higher = the stronger side has a clear form edge going in.</div>
+    </div>
+    <div class="fmodal-row">
+      <div class="fmodal-name">Momentum</div>
+      <div class="fmodal-desc">Whether each team is trending up or down — winning streaks, improving performances, or a recent collapse heading into this game.</div>
+    </div>
+    <div class="fmodal-row">
+      <div class="fmodal-name">Head to head</div>
+      <div class="fmodal-desc">Historical record between these two teams. 50 = no clear pattern. Higher = the predicted winner has dominated previous meetings.</div>
+    </div>
+    <div class="fmodal-row">
+      <div class="fmodal-name">Goal tendency</div>
+      <div class="fmodal-desc">Goals scored and conceded patterns. Reflects attacking threat and defensive vulnerability — useful for spotting high-scoring or tight games.</div>
+    </div>
+    <div class="fmodal-row">
+      <div class="fmodal-name">Context</div>
+      <div class="fmodal-desc">Match importance, league position, tournament stage, and situational factors — rotation risk, cup pressure, must-win scenarios, etc.</div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
