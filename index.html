@@ -365,6 +365,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .dot-w { background: var(--green); }
 .dot-d { background: var(--amber); }
 .dot-l { background: var(--red); }
+.dot-u { background: var(--text3); opacity: 0.35; }
 
 @media (max-width: 800px) {
   .layout { grid-template-columns: 1fr; }
@@ -5037,8 +5038,8 @@ function calcHitRate(fixtures) {
 function renderFormDots(formStr) {
   if (!formStr) return '';
   return formStr.trim().split(/\s+/).slice(-5).map(r => {
-    const cls = r === 'W' ? 'dot-w' : r === 'D' ? 'dot-d' : 'dot-l';
-    const title = r === 'W' ? 'Win' : r === 'D' ? 'Draw' : 'Loss';
+    const cls = r === 'W' ? 'dot-w' : r === 'D' ? 'dot-d' : r === 'L' ? 'dot-l' : 'dot-u';
+    const title = r === 'W' ? 'Win' : r === 'D' ? 'Draw' : r === 'L' ? 'Loss' : 'Unknown';
     return `<span class="form-dot ${cls}" title="${title}"></span>`;
   }).join('');
 }
