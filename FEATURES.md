@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.71** — WC form dots for all 48 teams (verified WC results + pre-tournament qualifiers/friendlies). Unknown `?` dots now grey instead of red. Hit rate now includes Low-confidence picks. Head to Head factor removed from pipeline. Likely threshold raised to 55%. Strong/Likely split shown in hit rate stat card. Factor score modal for mobile. fetch-worldcup.yml runs every 3 hours.
 - **v2.70** — Marked 1 World Cup result.
 - **v2.69** — Marked 1 World Cup result.
 - **v2.68** — Marked 1 World Cup result.

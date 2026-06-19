@@ -43,6 +43,16 @@ Football Analyser task board. Move cards left → right as work progresses.
 
 ## ✅ Done
 
+### This session (v2.64–v2.71 — 2026-06-19)
+- **WC form dots for all 48 teams** — sourced from verified WC results + pre-tournament qualifiers/friendlies via Grok/DeepSeek/web search. Cross-checked every WC result against our own data before applying
+- **Unknown form dots now grey** — `?` entries previously rendered red (falling through to `dot-l`). Added `dot-u` class (faint grey) so missing data is visually neutral
+- **Hit rate includes Low picks** — removed `if (conf === 'Low') return null` from `predictionAccuracy()`. All correct predictions now count as hits regardless of confidence tier
+- **Removed Head to Head factor** — dropped from prompt schemas (`make_fixtures_list.py`, `agent.py`), `factorNames` map, factor modal, and rendering. Old fixtures with stored `headToHead` data silently skipped via `.filter()`
+- **Likely threshold raised 50%→55%** — `calcConfidence()` now requires ≥55% leading probability for Likely (was 50%)
+- **Strong/Likely split in hit rate stat card** — stat card sub-line shows `Strong X% · Likely X%` breakdown alongside overall hit rate
+- **Factor score modal** — replaced CSS hover tooltips (broken on mobile) with a bottom-sheet modal ("What do these scores mean?") triggered by a button above the factors row
+- **fetch-worldcup.yml every 3 hours** — replaced single 09:00 UTC run with 8 runs from 06:00 BST to catch overnight WC results
+
 ### This session (v2.63 — 2026-06-18)
 - **Score update schedule** — added 2am and 8am BST runs to `mark-results.yml` to catch World Cup overnight kick-offs (00:00–05:00 BST). Was missing a full night's worth of results
 - **International team intel** — `team_intel.py`: FIFA rankings + World Cup history + continental tournament history (UEFA Euro, Copa América, AFCON, AFC Asian Cup, Gold Cup, OFC Nations Cup) for all 48 WC 2026 teams. Auto-injected into research prompts for international fixtures
