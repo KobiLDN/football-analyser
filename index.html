@@ -5003,11 +5003,9 @@ function renderMain() {
 }
 
 // Returns 'hit' | 'miss' | null. Compares the predicted leading outcome
-// against the actual outcome. Low-confidence picks return null (no badge).
+// against the actual outcome. Returns null only when no result yet.
 function predictionAccuracy(f) {
   if (!f.result || !f.result.includes('-')) return null;
-  const conf = calcConfidence(f);
-  if (conf === 'Low') return null;
   const [h, a] = f.result.split('-').map(Number);
   const actual = h > a ? 'Home Win' : h < a ? 'Away Win' : 'Draw';
   return calcOutcome(f) === actual ? 'hit' : 'miss';
