@@ -9,7 +9,7 @@ Pipeline:
   2. Sends the prompt to OpenRouter (deepseek:online — live web search)
   3. Parses the returned JSON array
   4. Writes research.json
-  5. Calls apply_research.py to commit dev → main → live
+  5. Calls apply_research.py to commit and push to main (live)
 
 Flags:
   --league <id>    filter by league: pl, laliga, seriea, bundesliga,
