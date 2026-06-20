@@ -1,33 +1,18 @@
 """
-Apply DeepSeek-researched fixture analysis from research.json into index.html.
+Apply researched fixture analysis from research.json into index.html.
 
 Workflow:
-  1. Ask DeepSeek (with web search) to research a fixture using the prompt
-     in research.template.json. It returns a JSON object matching the
-     fixture schema.
-  2. Paste that JSON into ./research.json
-  3. Double-click apply_research.bat (or run `python apply_research.py`)
-  4. This script:
+  1. OpenRouter (or manual paste) produces research.json
+  2. Double-click apply_research.bat (or run `python apply_research.py`)
+  3. This script:
        - Validates the JSON
        - Finds the matching fixture in index.html (by home + away + day)
        - Replaces just that fixture's block
-       - git add / commit / push to the current branch (usually dev)
-
-  After that, merge dev -> main yourself the usual way when you're ready
-  to ship to live.
-
-By default the script:
-  1. git pull --rebase origin dev   (catch any bot commits)
-  2. edits index.html in place
-  3. commits + pushes to dev
-  4. checks out main, merges dev, pushes main (live)
-  5. switches back to dev
-  6. renames research.json -> research.json.applied so it won't get
-     accidentally re-applied next run
+       - git add / commit / push to main (live)
+       - renames research.json -> research.json.applied
 
 Flags:
   --no-push       Edit index.html only; skip the commit + push step
-  --dev-only      Stop after pushing dev (don't merge to main / live)
   --dry-run       Show what would change, don't write anything
 """
 
@@ -71,7 +56,6 @@ def build_block(d):
         factors: {{
           formBalance:   {{ score: {f['formBalance']['score']}, detail: '{esc(f['formBalance']['detail'])}' }},
           momentum:      {{ score: {f['momentum']['score']}, detail: '{esc(f['momentum']['detail'])}' }},
-          headToHead:    {{ score: {f['headToHead']['score']}, detail: '{esc(f['headToHead']['detail'])}' }},
           goalTendency:  {{ score: {f['goalTendency']['score']}, detail: '{esc(f['goalTendency']['detail'])}' }},
           leagueContext: {{ score: {f['leagueContext']['score']}, detail: '{esc(f['leagueContext']['detail'])}' }}
         }},
@@ -95,7 +79,7 @@ def validate(d):
         return f"homeWin + draw + awayWin must equal 100 (got {s})"
     if d["verdict"] not in ("Low", "Likely", "Strong"):
         return f"verdict must be Low | Likely | Strong (got '{d['verdict']}')"
-    required_factors = ["formBalance", "momentum", "headToHead", "goalTendency", "leagueContext"]
+    required_factors = ["formBalance", "momentum", "goalTendency", "leagueContext"]
     for k in required_factors:
         if k not in d["factors"]:
             return f"Missing factor: '{k}'"
@@ -167,7 +151,6 @@ def _autodetect_input():
 
 def main():
     no_push = "--no-push" in sys.argv
-    dev_only = "--dev-only" in sys.argv
     dry_run = "--dry-run" in sys.argv
 
     input_path = _autodetect_input()
@@ -289,56 +272,7 @@ def main():
     if rc != 0:
         print(f"X Push failed: {err or out}")
         sys.exit(1)
-    print(f"OK Pushed to dev.")
-
-    # Stop here if user only wanted dev (staging-only mode)
-    if dev_only:
-        print(f"(--dev-only given; not promoting to main / live)")
-        _archive_research_json(input_path)
-        return
-
-    # If we're not on dev, skip the dev→main promotion (already on main, etc.)
-    if current_branch != "dev":
-        print(f"(current branch is '{current_branch}', not dev — skipping main merge)")
-        _archive_research_json(input_path)
-        return
-
-    # Promote to main / live
-    print(f"-> Promoting to main (live)...")
-    rc, out, err = git("checkout", "main")
-    if rc != 0:
-        print(f"X Could not checkout main: {err or out}")
-        sys.exit(1)
-
-    rc, out, err = git("pull", "--ff-only", "origin", "main")
-    if rc != 0:
-        # Try non-FF pull-rebase in case main has diverged
-        rc, out, err = git("pull", "--rebase", "origin", "main")
-        if rc != 0:
-            print(f"X Could not pull main: {err or out}")
-            git("checkout", "dev")
-            sys.exit(1)
-
-    if len(fixtures) == 1:
-        d0 = fixtures[0]
-        merge_msg = f"Merge dev: research-backfill {d0['home']} vs {d0['away']}"
-    else:
-        merge_msg = f"Merge dev: research-backfill {len(fixtures)} fixtures"
-    rc, out, err = git("merge", "dev", "--no-ff", "-m", merge_msg)
-    if rc != 0:
-        print(f"X Merge conflict on main. Resolve manually then push:")
-        print(f"  git push origin main; git checkout dev")
-        sys.exit(1)
-
-    rc, out, err = git("push", "origin", "main")
-    if rc != 0:
-        print(f"X Push main failed: {err or out}")
-        git("checkout", "dev")
-        sys.exit(1)
     print(f"OK Pushed to main. Live in ~1 min.")
-
-    # Back to dev for the next session
-    git("checkout", "dev")
     _archive_research_json(input_path)
 
 

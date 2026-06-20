@@ -1,5 +1,5 @@
 @echo off
-cd /d "G:\My Drive\coding\ai\football-analyser\football-analyserDEV"
+cd /d "G:\My Drive\coding\ai\football-analyser"
 
 echo Game-day refresh: resets unplayed fixtures kicking off in the
 echo next 2 days (today + tomorrow by default), then re-researches

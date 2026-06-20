@@ -1,5 +1,5 @@
 @echo off
-cd /d "G:\My Drive\coding\ai\football-analyser\football-analyserDEV"
+cd /d "G:\My Drive\coding\ai\football-analyser"
 
 echo Build fixtures.json + fixtures_research_needed_prompt.txt for a
 echo DeepSeek research batch. The prompt file is ready to paste:

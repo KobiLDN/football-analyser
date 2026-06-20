@@ -1,10 +1,10 @@
 @echo off
-cd /d "G:\My Drive\coding\ai\football-analyser\football-analyserDEV"
+cd /d "G:\My Drive\coding\ai\football-analyser"
 
 echo Auto-research fixture stubs via OpenRouter (deepseek:online).
 echo Requires OPENROUTER_API_KEY — set in your shell or in a .env file.
 echo.
-echo No args   = stubs in next 7 days, all leagues, cap 20
+echo No args   = stubs in next 7 days, all leagues, cap 5
 echo.
 echo Examples:
 echo   auto_research.bat --league pl
