@@ -8,8 +8,8 @@ on:
     - cron: '0 22 * * *'
     # Daily 2am BST (01:00 UTC) — catches late kickoffs (22:00-23:00) finished after midnight
     - cron: '0 1 * * *'
-    # Daily 8am BST (07:00 UTC) — catches overnight kickoffs (00:00-05:00 BST)
-    - cron: '0 7 * * *'
+    # Daily 6am BST (05:00 UTC) — catches overnight kickoffs (00:00-05:00 BST)
+    - cron: '0 5 * * *'
   workflow_dispatch:
 
 permissions:
