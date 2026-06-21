@@ -403,11 +403,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.74 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.75 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 21 Jun 2026 01:03 BST</div>
+      <div class="updated-tag">Data · 21 Jun 2026 07:56 BST</div>
     </div>
     
   </div>
@@ -3408,12 +3408,13 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Ecuador', away: 'Curaçao', time: '01:00',
-        result: null, homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.15-1.20',
+        result: '0-0', homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.15-1.20',
         homeForm: 'D D W W L',
         awayForm: 'L L L W L',
         factors: {
           formBalance:   { score: 80, detail: 'Ecuador earned 8 points from their last 5 matches, while Curaçao managed only 3.' },
           momentum:      { score: 70, detail: 'Ecuador showed resilience in a narrow loss to Ivory Coast, contrasting Curaçao\'s 7-1 collapse against Germany.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'Moderate goals expected (2-3) due to Ecuador\'s attacking intent and Curaçao\'s defensive fragility.' },
           leagueContext: { score: 90, detail: 'Ecuador\'s World Cup experience and higher FIFA ranking (#44 vs #82) provide a significant advantage.' }
         },
@@ -3436,12 +3437,13 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Tunisia', away: 'Japan', time: '05:00',
-        result: null, homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '1.50-1.60',
+        result: '0-4', homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '1.50-1.60',
         homeForm: 'L L L L L',
         awayForm: 'W W W W D',
         factors: {
           formBalance:   { score: 20, detail: 'Tunisia have lost their last five matches including a 5-0 friendly defeat to Belgium and 5-1 World Cup loss to Sweden, while Japan are unbeaten in five with four wins and a draw against the Netherlands.' },
           momentum:      { score: 25, detail: 'Tunisia\'s managerial chaos after sacking Sabri Lamouchi contrasts with Japan\'s momentum from a dramatic 89th-minute equalizer against the Netherlands.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'Tunisia conceded 10 goals in two matches while Japan scored twice against the Netherlands and haven\'t kept a clean sheet in 11 consecutive World Cup games.' },
           leagueContext: { score: 75, detail: 'Japan (FIFA #18) have reached the knockout stage in three of the last four World Cups, while Tunisia (FIFA #30) have never advanced beyond the group stage in six previous attempts.' }
         },
@@ -3470,6 +3472,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Spain are unbeaten in five matches (W2, D3) while Saudi Arabia have only one win in their last five (L2, D2, W1).' },
           momentum:      { score: 65, detail: 'Spain\'s return of key attackers Yamal and Williams boosts momentum despite a slow start, while Saudi Arabia gained confidence from holding Uruguay.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 40, detail: 'Spain have scored more than once in only two of their last five, but the return of key attackers may improve that; Saudi Arabia have scored in three of their last five.' },
           leagueContext: { score: 90, detail: 'Spain, ranked 8th and reigning European champions, are heavy favorites against 55th-ranked Saudi Arabia, who reached the last 16 in 2022.' }
         },
@@ -3497,6 +3500,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Both teams show strong recent form with Belgium taking 11 points and Iran 10 from their last five matches.' },
           momentum:      { score: 50, detail: 'Belgium are unbeaten in 14 matches while Iran are undefeated in their last four outings.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'High-scoring trends with both sides averaging 3.6 goals per game across their last five fixtures.' },
           leagueContext: { score: 70, detail: 'Belgium\'s FIFA ranking (#9) and World Cup pedigree contrast with Iran\'s historical group-stage exits.' }
         },
@@ -3524,6 +3528,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 45, detail: 'Uruguay winless in five matches contrasts with Cape Verde\'s three-game unbeaten run including a Spain draw.' },
           momentum:      { score: 35, detail: 'Cape Verde\'s heroic Spain result boosts confidence while Uruguay struggles for attacking fluency.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 35, detail: 'Low-scoring pattern expected with Uruguay averaging 0.6 goals in last five and Cape Verde\'s defensive resilience.' },
           leagueContext: { score: 70, detail: 'Two-time champions Uruguay expected to advance despite facing World Cup debutants with strong recent AFCON pedigree.' }
         },
@@ -3552,6 +3557,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Egypt have taken 8 points from their last 5 matches compared to New Zealand\'s 4.' },
           momentum:      { score: 60, detail: 'Egypt are unbeaten in their last three matches (W2, D1), including a draw against Belgium, while New Zealand ended a long winless run with a win over Chile and a draw against Iran.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 55, detail: 'Egypt have conceded only 3 goals in their last 5 matches, while New Zealand have conceded 9 in the same period.' },
           leagueContext: { score: 80, detail: 'Egypt are ranked 61 places higher than New Zealand and have a far more successful history in international football.' }
         },
@@ -3578,6 +3584,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 85, detail: 'Argentina have won their last 8 matches including a dominant 3-0 opener, while Austria are unbeaten in 6 but labored against minnows.' },
           momentum:      { score: 90, detail: 'Messi\'s record-equalling hat-trick against Algeria has galvanized the champions, contrasting with Austria\'s unconvincing 3-1 win over debutants Jordan.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Argentina scored 15 goals in their last 5 matches, while Austria conceded in 3 of their last 5 despite facing weaker opposition.' },
           leagueContext: { score: 95, detail: 'Reigning champions Argentina boast vastly superior tournament pedigree, while Austria are making their first World Cup appearance since 1998.' }
         },
