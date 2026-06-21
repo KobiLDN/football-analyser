@@ -1,110 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Football Analyser</title>
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/components.css">
 <style>
-:root {
-  --bg: #0a0a0a;
-  --surface: #141414;
-  --surface2: #1a1a1a;
-  --border: #242424;
-  --border2: #303030;
-  --text: #e2e2e2;
-  --text2: #888;
-  --text3: #fff;
-  --gold: #c8a84b;
-  --gold-dim: #7a6228;
-  --green: #4a9e6a;
-  --amber: #c9792a;
-  --red: #c94a4a;
-  --blue: #4a7ec9;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; overflow-x: hidden; }
-
-.topbar {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.logo { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
-.logo span { color: var(--text3); font-weight: 400; margin-left: 10px; letter-spacing: 0.05em; }
-.depth-badge { font-size: 10px; padding: 3px 10px; border: 1px solid var(--gold-dim); border-radius: 3px; color: var(--gold); letter-spacing: 0.1em; }
-.topbar-right { display: flex; align-items: center; gap: 14px; }
-.updated-stack { display: flex; flex-direction: column; gap: 2px; align-items: flex-end; }
-.updated-tag { font-size: 10px; color: var(--text2); letter-spacing: 0.05em; text-transform: uppercase; }
-.toggle-pill { font-size: 9px; padding: 2px 7px; border-radius: 99px; border: 1px solid var(--border2); color: var(--text3); letter-spacing: 0.08em; }
-.toggle-pill.on { color: var(--gold); border-color: var(--gold-dim); background: rgba(200, 168, 75, 0.08); }
-
-/* Past-fixtures chip group (mutually-exclusive) */
-.past-row { flex-direction: column; align-items: flex-start; gap: 6px; cursor: default; }
-.past-row:hover { background: transparent; color: var(--text2); }
-.past-chips { display: flex; gap: 4px; flex-wrap: wrap; }
-.past-chip {
-  font-size: 9px;
-  padding: 3px 9px;
-  border-radius: 99px;
-  border: 1px solid var(--border2);
-  color: var(--text3);
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  text-transform: uppercase;
-  user-select: none;
-}
-.past-chip:hover { border-color: var(--gold-dim); }
-.past-chip.on {
-  color: var(--gold);
-  border-color: var(--gold-dim);
-  background: rgba(200, 168, 75, 0.12);
-}
-
-.layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 49px); }
-.sidebar {
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 20px 0;
-  position: sticky;
-  top: 49px;
-  height: calc(100vh - 49px);
-  overflow-y: auto;
-}
-.sidebar-section { margin-bottom: 6px; }
-.sidebar-group-label {
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text3);
-  padding: 10px 20px 6px;
-}
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 9px 20px;
-  cursor: pointer;
-  font-size: 13px;
-  color: var(--text2);
-  border-left: 2px solid transparent;
-}
-.sidebar-item:hover { background: var(--surface2); color: var(--text); }
-.sidebar-item.active { background: var(--surface2); color: var(--gold); border-left-color: var(--gold); }
-.sidebar-badge {
-  font-size: 10px;
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  border-radius: 3px;
-  padding: 1px 6px;
-  color: var(--text3);
-}
 
 .main { padding: 28px 32px; }
 .league-header {
@@ -116,20 +18,20 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   border-bottom: 1px solid var(--border);
 }
 .league-header-left { display: flex; flex-direction: column; justify-content: center; }
-.league-title { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
-.league-name { font-size: 22px; font-weight: 700; }
-.league-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.league-title { font-size: var(--fs-xs); color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+.league-name { font-size: var(--fs-xl); font-weight: 700; }
+.league-sub { font-size: var(--fs-sm); color: var(--text2); margin-top: 2px; }
 .league-stats { display: flex; align-items: stretch; }
 .stat-card {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  padding: 0 28px; border-left: 1px solid var(--border); text-align: center; min-width: 110px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 12px 28px 8px; border-left: 1px solid var(--border); text-align: center; min-width: 110px;
 }
-.stat-val { font-size: 26px; font-weight: 700; color: var(--gold); line-height: 1; }
-.stat-label { font-size: 9px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px; }
-.stat-sub { font-size: 11px; color: var(--text3); margin-top: 3px; letter-spacing: 0.02em; }
+.stat-val { font-size: var(--fs-2xl); font-weight: 700; color: var(--gold); line-height: 1; }
+.stat-label { font-size: var(--fs-xs); color: var(--text2); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 5px; }
+.stat-sub { font-size: var(--fs-xs); color: var(--text3); margin-top: 3px; letter-spacing: 0.02em; }
 
 .day-label {
-  font-size: 10px;
+  font-size: var(--fs-xs);
   color: var(--text3);
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -147,7 +49,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .day-label:hover { color: var(--gold); }
 .day-chevron {
   display: inline-block;
-  font-size: 8px;
+  font-size: var(--fs-xs);
   color: var(--text2);
   transition: transform 0.15s ease;
 }
@@ -155,7 +57,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .day-group.collapsed .day-fixtures { display: none; }
 .day-count {
   margin-left: auto;
-  font-size: 9px;
+  font-size: var(--fs-xs);
   color: var(--text2);
   letter-spacing: 0.06em;
 }
@@ -180,7 +82,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   margin: 0 0 10px;
 }
 .fixture-list-col {
-  font-size: 10px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--text2);
   text-transform: uppercase;
@@ -198,29 +100,29 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   gap: 20px;
   padding: 14px 18px;
 }
-.teams { font-size: 19px; font-weight: 600; }
+.teams { font-size: var(--fs-lg); font-weight: 600; }
 .fixture-tag-cell { min-height: 22px; display: flex; align-items: center; justify-content: center; }
-.kick-time { font-size: 13px; color: var(--text2); margin-top: 4px; }
+.kick-time { font-size: var(--fs-base); color: var(--text2); margin-top: 4px; }
 .draw-probability-cell { display: block; min-width: 0; }
 .legacy-prob { display: flex; align-items: center; justify-content: center; gap: 8px; }
-.pct-display { font-size: 20px; font-weight: 700; min-width: 48px; text-align: right; }
+.pct-display { font-size: var(--fs-lg); font-weight: 700; min-width: 48px; text-align: right; }
 .mini-bar-wrap { width: 70px; height: 3px; background: var(--border2); border-radius: 99px; overflow: hidden; }
 .mini-bar { height: 100%; }
 .prob-bar-wrap { width: 100%; }
 .prob-cols { display: flex; margin-bottom: 7px; }
 .prob-col { display: flex; flex-direction: column; align-items: center; min-width: 0; gap: 2px; }
-.prob-col-label { font-size: 8px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; }
-.prob-col-pct { font-size: 13px; font-weight: 700; line-height: 1; }
-.prob-col-pct.leading { font-size: 17px; }
-.prob-col-pct.home { color: var(--blue); }
-.prob-col-pct.draw-pct { color: var(--amber); }
-.prob-col-pct.away { color: #e05252; }
+.prob-col-label { font-size: var(--fs-xs); color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; text-align: center; }
+.prob-col-pct { font-size: var(--fs-base); font-weight: 700; line-height: 1; }
+.prob-col-pct.leading { font-size: var(--fs-lg); }
+.prob-col-pct.home { color: var(--green); }
+.prob-col-pct.draw-pct { color: var(--draw); }
+.prob-col-pct.away { color: var(--red); }
 .prob-bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; width: 100%; }
-.prob-home { background: var(--blue); }
-.prob-draw { background: var(--amber); }
-.prob-away { background: #e05252; }
+.prob-home { background: var(--green); }
+.prob-draw { background: var(--draw); }
+.prob-away { background: var(--red); }
 .vtag {
-  font-size: 10px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -230,17 +132,17 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   text-align: center;
   justify-self: center;
 }
-.v-low    { color: var(--red);   background: #1c0505; border: 1px solid #3a1010; }
-.v-likely { color: var(--amber); background: #1c1200; border: 1px solid #3a2800; }
-.v-strong { color: #ffffff;      background: #000e1c; border: 1px solid #001c38; }
+.v-low    { color: var(--red);        background: var(--v-low-bg);    border: 1px solid var(--v-low-brd); }
+.v-likely { color: var(--amber);      background: var(--v-likely-bg); border: 1px solid var(--v-likely-brd); }
+.v-strong { color: var(--v-strong-c); background: var(--v-strong-bg); border: 1px solid var(--v-strong-brd); }
 .vtag { display: flex; flex-direction: column; align-items: center; gap: 1px; }
-.vtag-outcome { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; }
-.vtag-confidence { font-size: 8px; letter-spacing: 0.06em; opacity: 0.75; }
+.vtag-outcome { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.07em; }
+.vtag-confidence { font-size: var(--fs-xs); letter-spacing: 0.06em; opacity: 0.75; }
 .bar-low    { background: var(--red); }
 .bar-mod    { background: var(--amber); }
 .bar-good   { background: var(--green); }
 .bar-strong { background: var(--blue);  }
-.chevron { font-size: 11px; color: var(--text3); margin-left: 2px; text-align: center; }
+.chevron { font-size: var(--fs-xs); color: var(--text3); margin-left: 2px; text-align: center; }
 .fixture.open .chevron { transform: rotate(180deg); }
 
 .analysis {
@@ -261,14 +163,14 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   min-width: 0;
 }
 .deep-label {
-  font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: var(--fs-xs); color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em;
   margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
 }
 .deep-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
-.deep-content { font-size: 13px; color: var(--text); line-height: 1.6; overflow-wrap: anywhere; }
+.deep-content { font-size: var(--fs-base); color: var(--text); line-height: 1.6; overflow-wrap: anywhere; }
 .deep-content ul { list-style: none; padding: 0; }
 .deep-content li {
-  font-size: 12px; color: var(--text2); padding: 3px 0;
+  font-size: var(--fs-sm); color: var(--text2); padding: 3px 0;
   padding-left: 10px; position: relative;
 }
 .deep-content li::before {
@@ -287,59 +189,48 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   padding: 10px 11px;
   min-width: 0;
 }
-.fn { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+.fn { font-size: var(--fs-xs); color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
 .fbar-wrap { height: 3px; background: var(--border2); border-radius: 99px; overflow: hidden; margin-bottom: 6px; }
 .fbar { height: 100%; background: var(--gold); }
-.fnum { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-.fdetail { font-size: 11px; color: var(--text2); line-height: 1.5; }
-.factors-explain { font-size: 10px; color: var(--text3); margin-bottom: 8px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; background: none; border: none; padding: 0; font-family: inherit; letter-spacing: 0.02em; }
+.fnum { font-size: var(--fs-md); font-weight: 700; margin-bottom: 4px; }
+.fdetail { font-size: var(--fs-xs); color: var(--text2); line-height: 1.5; }
+.factors-explain { font-size: var(--fs-xs); color: var(--text3); margin-bottom: 8px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; background: none; border: none; padding: 0; font-family: inherit; letter-spacing: 0.02em; }
 .factors-explain:hover { color: var(--text2); }
-.fmodal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; }
-.fmodal-overlay.open { display: flex; align-items: flex-end; justify-content: center; }
-@media (min-width: 600px) { .fmodal-overlay.open { align-items: center; } }
-.fmodal { background: var(--surface); border-radius: 12px 12px 0 0; padding: 20px; width: 100%; max-width: 480px; max-height: 80vh; overflow-y: auto; }
-@media (min-width: 600px) { .fmodal { border-radius: 10px; } }
-.fmodal-title { font-size: 13px; font-weight: 700; margin-bottom: 16px; }
-.fmodal-close { float: right; background: none; border: none; color: var(--text3); font-size: 20px; cursor: pointer; line-height: 1; padding: 0; margin-top: -2px; }
-.fmodal-row { margin-bottom: 14px; }
-.fmodal-row:last-child { margin-bottom: 0; }
-.fmodal-name { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 3px; }
-.fmodal-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
 
 .summary-grid { display: grid; grid-template-columns: 1fr 140px; gap: 16px; align-items: start; }
-.summary-text { font-size: 14px; color: var(--text2); line-height: 1.7; min-width: 0; overflow-wrap: anywhere; }
+.summary-text { font-size: var(--fs-md); color: var(--text2); line-height: 1.7; min-width: 0; overflow-wrap: anywhere; }
 .odds-box {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 4px; padding: 12px; text-align: center;
 }
-.odds-lbl { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+.odds-lbl { font-size: var(--fs-xs); color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
 .fair-odds-lbl { color: #fff; }
-.odds-val { font-size: 17px; font-weight: 700; color: var(--gold); }
-.odds-sub { font-size: 10px; color: var(--text3); margin-top: 3px; }
+.odds-val { font-size: var(--fs-lg); font-weight: 700; color: var(--gold); }
+.odds-sub { font-size: var(--fs-xs); color: var(--text3); margin-top: 3px; }
 
 .research-tag {
-  display: inline-block; font-size: 9px; padding: 2px 6px;
+  display: inline-block; font-size: var(--fs-xs); padding: 2px 6px;
   background: rgba(74, 126, 201, 0.1); border: 1px solid rgba(74, 126, 201, 0.3);
   color: var(--blue); border-radius: 3px; letter-spacing: 0.05em;
   vertical-align: middle;
 }
-.result-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
-.league-tag { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 3px; vertical-align: middle; background: #1a1a2e; color: #6a8fc8; border: 1px solid #2a3a5a; letter-spacing: 0.04em; }
-.value-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-left: 6px; vertical-align: middle; background: #001a08; color: var(--green); border: 1px solid #003018; letter-spacing: 0.08em; animation: pulse-value 2s ease-in-out infinite; }
+.result-badge { font-size: var(--fs-xs); font-weight: 700; padding: 2px 7px; border-radius: 3px; margin-left: 8px; vertical-align: middle; }
+.league-tag { font-size: var(--fs-xs); font-weight: 600; padding: 2px 7px; border-radius: 3px; vertical-align: middle; background: var(--ltag-bg); color: var(--ltag-c); border: 1px solid var(--ltag-brd); letter-spacing: 0.04em; }
+.value-badge { font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-left: 6px; vertical-align: middle; background: var(--vbadge-bg); color: var(--green); border: 1px solid var(--vbadge-brd); letter-spacing: 0.08em; animation: pulse-value 2s ease-in-out infinite; }
 @keyframes pulse-value { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
 .book-row { display: flex; gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
 .book-cell { flex: 1; }
-.book-lbl { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-.book-num { font-size: 16px; font-weight: 700; }
+.book-lbl { font-size: var(--fs-xs); color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+.book-num { font-size: var(--fs-md); font-weight: 700; }
 .edge-pos { color: var(--green); }
 .edge-neg { color: var(--red); }
 .edge-nil { color: var(--text3); }
-.score-line { font-size: 11px; color: var(--text2); letter-spacing: 0.04em; margin-top: 3px; }
-.score-line .draw-tag { color: var(--gold); font-weight: 700; }
-.score-line .home-tag { color: var(--blue); font-weight: 700; }
-.score-line .away-tag { color: #e05252;    font-weight: 700; }
+.score-line { font-size: var(--fs-xs); color: var(--text2); letter-spacing: 0.04em; margin-top: 3px; }
+.score-line .draw-tag { color: var(--draw);  font-weight: 700; }
+.score-line .home-tag { color: var(--green); font-weight: 700; }
+.score-line .away-tag { color: var(--red);   font-weight: 700; }
 .acc-badge {
-  font-size: 9px;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.08em;
   padding: 1px 6px;
@@ -368,15 +259,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
 .dot-u { background: var(--text3); opacity: 0.35; }
 
 @media (max-width: 800px) {
-  .layout { grid-template-columns: 1fr; }
-  .topbar { padding: 10px 16px; }
-  .updated-stack { display: none; }
   .main { padding: 16px 12px; }
-  .sidebar { position: static; height: auto; display: flex; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; gap: 6px; padding: 10px 12px; border-right: none; border-bottom: 1px solid var(--border); }
-  .sidebar::-webkit-scrollbar { display: none; }
-  .sidebar-section { display: flex; flex-wrap: nowrap; flex-shrink: 0; gap: 6px; }
-  .sidebar-group-label { display: none; }
-  .sidebar-item { border-left: none; border-radius: 4px; border: 1px solid var(--border); padding: 7px 12px; font-size: 12px; white-space: nowrap; flex-shrink: 0; }
   .league-header { flex-direction: column; gap: 14px; }
   .league-stats { border-top: 1px solid var(--border); padding-top: 14px; }
   .stat-card { min-width: 0; padding: 0 20px; }
@@ -387,13 +270,13 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
   .fixture-row { grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; padding: 12px; }
   .fixture-tag-cell { display: none; }
   .mini-bar-wrap { display: none; }
-  .teams { font-size: 15px; }
+  .teams { font-size: var(--fs-md); }
   .team-home { display: block; }
   .team-away { display: block; }
   .vtag { min-width: 90px; }
   .prob-col-label { display: none; }
   .prob-cols { gap: 6px; }
-  .prob-col-pct.leading { font-size: 13px; }
+  .prob-col-pct.leading { font-size: var(--fs-base); }
   .draw-probability-cell { justify-content: flex-end; }
   .chevron { display: none; }
   .summary-grid { grid-template-columns: 1fr; }
@@ -409,7 +292,11 @@ body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', syste
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
       <div class="updated-tag">Data · 21 Jun 2026 07:56 BST</div>
     </div>
-    
+    <div class="theme-row">
+      <div class="t-btn" data-tv="light">Light</div>
+      <div class="t-btn active" data-tv="dark">Dark</div>
+      <div class="t-btn" data-tv="system">Auto</div>
+    </div>
   </div>
 </div>
 
@@ -4760,7 +4647,7 @@ const LEAGUES = [
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // RENDER
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-let activeId = 'all';
+let activeId = 'worldcup';
 // 'off' | '2d' | 'week' | 'all'  — chip group, mutually exclusive
 let pastWindow = 'off';
 // Multi-select Set. 'all' is a sentinel meaning "no filter".
@@ -4841,58 +4728,66 @@ function calcEdge(fairOddsStr, bookOdds) {
   return ((bookOdds / mid) - 1) * 100;
 }
 
+const LEAGUE_COLOURS = {
+  pl:'#7c3aed', laliga:'#dc2626', seriea:'#1d4ed8', bundesliga:'#ca8a04',
+  ligue1:'#065f46', ucl:'#1e3a8a', uel:'#b45309', uecl:'#0d6e3e', worldcup:'#0f4c81'
+};
+const WC_HOST_NATIONS = new Set(['USA', 'Canada', 'Mexico']);
+function isNeutralVenue(f) {
+  return f._leagueId === 'worldcup' && !WC_HOST_NATIONS.has(f.home);
+}
+
 function renderSidebar() {
   const groups = [
-    { label: 'Domestic Leagues', ids: ['pl','laliga','seriea','bundesliga','ligue1'] },
-    { label: 'European',         ids: ['ucl','uel','uecl'] },
-    { label: 'International',    ids: ['worldcup'] }
+    { label: 'International', ids: ['worldcup'] },
+    { label: 'Domestic',      ids: ['pl','laliga','seriea','bundesliga','ligue1'] },
+    { label: 'European',      ids: ['ucl','uel','uecl'] }
   ];
-  const totalUpcoming = LEAGUES.reduce((n, l) => n + l.fixtures.filter(f => !f.result).length, 0);
-  const sidebar = document.getElementById('sidebar');
-  sidebar.innerHTML = `
-    <div class="sidebar-section">
-      <div class="sidebar-item ${activeId === 'all' ? 'active' : ''}" onclick="setLeague('all')" style="font-weight:600;">
-        <span>All Fixtures</span>
-        <span class="sidebar-badge">${totalUpcoming}</span>
-      </div>
-    </div>` +
-  groups.map(g => {
+  const totalUp = LEAGUES.reduce((n, l) => n + l.fixtures.filter(f => !f.result).length, 0);
+
+  let html =
+    `<div class="sb-section">
+       <div class="sb-label">Leagues</div>
+       <div class="sb-item${activeId === 'all' ? ' active' : ''}" onclick="setLeague('all')">
+         <div class="sb-txt">All Leagues</div>
+         <div class="sb-count">${totalUp}</div>
+       </div>
+     </div>`;
+
+  groups.forEach(g => {
     const items = LEAGUES.filter(l => g.ids.includes(l.id));
-    if (!items.length) return '';
-    return `
-      <div class="sidebar-section">
-        <div class="sidebar-group-label">${g.label}</div>
-        ${items.map(l => `
-          <div class="sidebar-item ${l.id === activeId ? 'active' : ''}" onclick="setLeague('${l.id}')">
-            <span>${l.name}</span>
-            <span class="sidebar-badge">${l.fixtures.length}</span>
-          </div>
-        `).join('')}
+    if (!items.length) return;
+    html += `<div class="sb-section"><div class="sb-label">${g.label}</div>`;
+    items.forEach(l => {
+      const c = LEAGUE_COLOURS[l.id] || '#1a5cff';
+      html += `<div class="sb-item${l.id === activeId ? ' active' : ''}" onclick="setLeague('${l.id}')">
+        <div class="sb-badge-dot" style="background:${c}"></div>
+        <div class="sb-txt">${l.name}</div>
+        <div class="sb-count">${l.fixtures.length}</div>
       </div>`;
-  }).join('') + `
-    <div class="sidebar-section">
-      <div class="sidebar-group-label">Display</div>
-      <div class="sidebar-item past-row">
-        <span>Past fixtures</span>
-        <div class="past-chips">
-          ${['off','2d','week','all'].map(w => `
-            <span class="past-chip ${pastWindow === w ? 'on' : ''}"
-                  onclick="event.stopPropagation(); setPastWindow('${w}')">
-              ${w === 'off' ? 'Off' : w === '2d' ? '2d' : w === 'week' ? 'Week' : 'All'}
-            </span>
-          `).join('')}
-        </div>
-      </div>
-      <div class="sidebar-item past-row">
-        <span>Signal</span>
-        <div class="past-chips">
-          ${[['all','All'],['strong','Strong'],['likely','Likely'],['low','Low']].map(([k,label]) => `
-            <span class="past-chip ${signalFilter.has(k) ? 'on' : ''}"
-                  onclick="event.stopPropagation(); toggleSignalFilter('${k}')">${label}</span>
-          `).join('')}
-        </div>
-      </div>
+    });
+    html += `</div>`;
+  });
+
+  html += `<div class="sb-divider"></div>
+    <div class="sb-section">
+      <div class="sb-label">Past Fixtures</div>
+      ${[['off','Off'],['2d','2 days'],['week','This week'],['all','All time']].map(([k,lbl]) =>
+        `<div class="sb-item${pastWindow === k ? ' active' : ''}" onclick="setPastWindow('${k}')">
+           <div class="sb-txt">${lbl}</div>
+         </div>`).join('')}
+    </div>
+    <div class="sb-divider"></div>
+    <div class="sb-section">
+      <div class="sb-label">Signal</div>
+      ${[['all','All','sig-all'],['strong','Strong','sig-g'],['likely','Likely','sig-am'],['low','Low','sig-no']].map(([k,lbl,dc]) =>
+        `<div class="sb-item${signalFilter.has(k) ? ' active' : ''}" onclick="toggleSignalFilter('${k}')">
+           <div class="sb-badge-dot ${dc}"></div>
+           <div class="sb-txt">${lbl}</div>
+         </div>`).join('')}
     </div>`;
+
+  document.getElementById('sidebar').innerHTML = html;
 }
 
 function renderTeamNews(items) {
@@ -4955,9 +4850,9 @@ function renderAll() {
         <div class="stat-card"><div class="stat-val">${highConf}</div><div class="stat-label">High Confidence</div></div>
         <div class="stat-card">
           <div class="stat-val">${hitRate ? hitRate.percent + '%' : '—'}</div>
-          <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
-          ${hitRate && (hitRate.strongTotal || hitRate.likelyTotal) ? `<div class="stat-sub" style="font-size:9px;opacity:0.75">Strong ${hitRate.strongPct !== null ? hitRate.strongPct + '%' : '—'} · Likely ${hitRate.likelyPct !== null ? hitRate.likelyPct + '%' : '—'}</div>` : ''}
           <div class="stat-label">Hit rate</div>
+          <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
+          ${hitRate && (hitRate.strongTotal || hitRate.likelyTotal) ? `<div class="stat-sub" style="font-size:var(--fs-xs);opacity:0.75">Strong ${hitRate.strongPct !== null ? hitRate.strongPct + '%' : '—'} · Likely ${hitRate.likelyPct !== null ? hitRate.likelyPct + '%' : '—'}</div>` : ''}
         </div>
       </div>
     </div>
@@ -5010,9 +4905,9 @@ function renderMain() {
         <div class="stat-card"><div class="stat-val">${highConf}</div><div class="stat-label">High Confidence</div></div>
         <div class="stat-card">
           <div class="stat-val">${hitRate ? hitRate.percent + '%' : '—'}</div>
-          <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
-          ${hitRate && (hitRate.strongTotal || hitRate.likelyTotal) ? `<div class="stat-sub" style="font-size:9px;opacity:0.75">Strong ${hitRate.strongPct !== null ? hitRate.strongPct + '%' : '—'} · Likely ${hitRate.likelyPct !== null ? hitRate.likelyPct + '%' : '—'}</div>` : ''}
           <div class="stat-label">Hit rate</div>
+          <div class="stat-sub">${hitRate ? `${hitRate.hits} of ${hitRate.total}` : 'no graded picks yet'}</div>
+          ${hitRate && (hitRate.strongTotal || hitRate.likelyTotal) ? `<div class="stat-sub" style="font-size:var(--fs-xs);opacity:0.75">Strong ${hitRate.strongPct !== null ? hitRate.strongPct + '%' : '—'} · Likely ${hitRate.likelyPct !== null ? hitRate.likelyPct + '%' : '—'}</div>` : ''}
         </div>
       </div>
     </div>
@@ -5104,7 +4999,7 @@ function renderFixture(f, key, leagueName) {
     </div>
     ${f.context ? `<div class="deep-card" style="margin-bottom:16px;">
       <div class="deep-label">Context & Tactical Read</div>
-      <div class="deep-content" style="font-size:12px;line-height:1.7;">${f.context}</div>
+      <div class="deep-content" style="font-size:var(--fs-sm);line-height:1.7;">${f.context}</div>
     </div>` : ''}
   ` : '';
 
@@ -5255,6 +5150,39 @@ function toggleDay(el) {
 
 renderSidebar();
 renderMain();
+
+// Theme toggle
+(function() {
+  const PREF_KEY = 'fa-theme';
+  const html = document.documentElement;
+  const mq = window.matchMedia('(prefers-color-scheme: light)');
+
+  function applyTheme(mode) {
+    if (mode === 'system') {
+      html.dataset.theme = mq.matches ? 'light' : 'dark';
+    } else {
+      html.dataset.theme = mode;
+    }
+    document.querySelectorAll('.t-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.tv === mode);
+    });
+  }
+
+  let current = localStorage.getItem(PREF_KEY) || 'dark';
+  applyTheme(current);
+
+  document.querySelectorAll('.t-btn').forEach(function(b) {
+    b.addEventListener('click', function() {
+      current = this.dataset.tv;
+      localStorage.setItem(PREF_KEY, current);
+      applyTheme(current);
+    });
+  });
+
+  mq.addEventListener('change', function() {
+    if (current === 'system') applyTheme('system');
+  });
+})();
 </script>
 
 <div id="factor-modal" class="fmodal-overlay" onclick="if(event.target===this)this.classList.remove('open')">
