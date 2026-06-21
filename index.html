@@ -4737,6 +4737,8 @@ const LEAGUE_COLOURS = {
   ligue1:'#065f46', ucl:'#1e3a8a', uel:'#b45309', uecl:'#0d6e3e', worldcup:'#0f4c81'
 };
 const WC_HOST_NATIONS = new Set(['USA', 'Canada', 'Mexico']);
+// Stamp _leagueId on every fixture once at parse time so isNeutralVenue works everywhere
+LEAGUES.forEach(league => { league.fixtures.forEach(f => { f._leagueId = league.id; }); });
 function isNeutralVenue(f) {
   return f._leagueId === 'worldcup' && !WC_HOST_NATIONS.has(f.home);
 }
@@ -5033,8 +5035,9 @@ function renderFixture(f, key, leagueName) {
   if (f.result) {
     if (f.result.includes('-')) {
       const [h, a] = f.result.split('-').map(Number);
+      const neutral = isNeutralVenue(f);
       const outcomeCls = h === a ? 'draw-tag' : h > a ? 'home-tag' : 'away-tag';
-      const outcomeLbl = h === a ? 'Draw'     : h > a ? 'Home Win' : 'Away Win';
+      const outcomeLbl = h === a ? 'Draw' : h > a ? (neutral ? f.home + ' Win' : 'Home Win') : (neutral ? f.away + ' Win' : 'Away Win');
       const outcomeTag = ` · <span class="${outcomeCls}">${outcomeLbl}</span>`;
       bottomLine = `<div class="score-line">Final Score: ${h} – ${a}${outcomeTag}${accBadge}${liveLink}</div>`;
     } else {
