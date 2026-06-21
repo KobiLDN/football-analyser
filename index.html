@@ -3408,22 +3408,29 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Ecuador', away: 'Curaçao', time: '01:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        result: null, homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.15-1.20',
         homeForm: 'D D W W L',
-        awayForm: 'L L L L',
+        awayForm: 'L L L W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data on recent team performance.' },
-          momentum:      { score: 50, detail: 'Tournament opener creates unpredictable conditions.' },
-          headToHead:    { score: 50, detail: 'No historical matchup information available.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unknown without form data.' },
-          leagueContext: { score: 50, detail: 'Group E underdogs seeking early advantage.' }
+          formBalance:   { score: 80, detail: 'Ecuador earned 8 points from their last 5 matches, while Curaçao managed only 3.' },
+          momentum:      { score: 70, detail: 'Ecuador showed resilience in a narrow loss to Ivory Coast, contrasting Curaçao\'s 7-1 collapse against Germany.' },
+          goalTendency:  { score: 60, detail: 'Moderate goals expected (2-3) due to Ecuador\'s attacking intent and Curaçao\'s defensive fragility.' },
+          leagueContext: { score: 90, detail: 'Ecuador\'s World Cup experience and higher FIFA ranking (#44 vs #82) provide a significant advantage.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Kendry Paez — recovering from knock' },
+              { tag: 'key', text: 'Enner Valencia — captain, 49 international goals' },
+              { tag: 'key', text: 'Moisés Caicedo — midfield anchor' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Kenji Gorre — fitness test' },
+              { tag: 'key', text: 'Juninho Bacuna — creative midfielder' },
+              { tag: 'key', text: 'Tahith Chong — winger, fouled 8 times in opener' }
+            ]
         },
-        context: 'Both teams aim to capitalize on their World Cup opener. Ecuador may leverage higher FIFA ranking, while Curaçao relies on collective organization. Tactical approaches remain unclear without recent performance data.',
-        summary: 'Limited information available. Expected to be competitive with both sides prioritizing defensive stability. Outcome likely hinges on individual moments rather than established form.'
+        context: 'Ecuador must win to stay alive after a last-minute loss to Ivory Coast, with Moisés Caicedo and Willian Pacho controlling midfield and Enner Valencia leading the attack. Curaçao, reeling from a 7-1 defeat to Germany, will deploy counter-attacks via Tahith Chong and the Bacuna brothers but face defensive vulnerabilities. Both teams have no major injuries, with Ecuador likely starting Nilson Angulo over Alan Minda.',
+        summary: 'Ecuador are overwhelming favorites (85% win probability) after a narrow defeat to Ivory Coast ended their 19-game unbeaten run. Curaçao conceded 7 goals in their World Cup debut against Germany despite Livano Comenencia\'s historic equalizer. Ecuador\'s quality in distribution and Curaçao\'s defensive fragility suggest a controlled home victory.'
       },
 
       {
@@ -3444,7 +3451,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Tunisia\'s physical approach meets Japan\'s technical style in a balanced matchup. Both teams lack visible form data, making tactical predictions difficult. Set pieces and transition moments could prove decisive.',
-        summary: 'Evenly matched on paper without performance history. Japan\'s organization versus Tunisia\'s athleticism suggests a tense encounter. Draw appears plausible given the absence of clear favorites.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3470,7 +3477,7 @@ const LEAGUES = [
             ]
         },
         context: 'Spain\'s possession-based system features young stars Yamal and Williams against Hervé Renard\'s compact Saudi Arabia. Expect relentless Spanish pressure with Al-Dawsari leading counter-attacks. Center-backs Cubarsí and Huijsen must stay alert to transitions in Atlanta\'s Mercedes-Benz Stadium.',
-        summary: 'Spain heavily favored with superior technical quality. Key question: whether Saudi Arabia can replicate their 2022 defensive resilience. Spain\'s wingers should unlock defenses, but Al-Dawsari remains a counter-attacking danger.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3498,7 +3505,7 @@ const LEAGUES = [
             ]
         },
         context: 'Belgium will deploy a 4-2-3-1 formation with Lois Openda replacing the injured Lukaku upfront, supported by De Bruyne and Doku. Iran\'s 4-3-3 setup will focus on defensive organization with Taremi leading counter-attacks. This is a crucial Group G match where Belgium\'s possession dominance faces Iran\'s compact low block at SoFi Stadium.',
-        summary: 'Belgium are favored due to superior form and squad depth but miss key striker Lukaku. Iran\'s defensive resilience (two clean sheets in last five) could frustrate the Red Devils, though their limited attacking output makes an upset unlikely. Expect Belgium to control tempo through De Bruyne while Iran relies on Taremi\'s counters.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3523,7 +3530,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Uruguay faces key defensive absences with Giménez and Araujo injured, forcing tactical adjustments. Cape Verde, with no injuries, will rely on Vozinha\'s experience in goal. Marcelo Bielsa\'s side aims to target Cape Verde\'s exposed defensive gaps through Darwin Núñez, while Bubista\'s team seeks to capitalize on counter-attacks.',
-        summary: 'Uruguay\'s superior quality is tempered by injuries to three starters, but Cape Verde\'s defensive fragility (evident in recent 4-2 loss to Chile) offers opportunities. Expect Uruguay to control possession and test Cape Verde\'s backline, though the absence of playmaker de Arrascaeta may limit creativity. A narrow home win is anticipated.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3549,7 +3556,7 @@ const LEAGUES = [
             ]
         },
         context: 'New Zealand will miss midfielder Joe Bell, weakening their transition play against Egypt\'s organized defense. Egypt\'s absent defenders Mahdi Soliman and Mohamed Abdelmonem create vulnerability, but Mohamed Salah\'s attacking threat remains potent. The Pharaohs\' recent defensive solidity (2 clean sheets in last 4) contrasts with New Zealand\'s scoring drought.',
-        summary: 'Egypt enters as favorite despite defensive absences, leveraging Salah\'s threat against New Zealand\'s struggling attack. New Zealand\'s midfield gap without Joe Bell may limit their ability to control tempo. Egypt\'s unbeaten run and prior H2H victory provide psychological edge in Group G opener.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3573,7 +3580,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Argentina misses winger Nicolás González and left-back Nicolás Tagliafico, testing their depth against Austria\'s physical approach. Lionel Messi will lead an attack that scored 12 goals in 5 games, facing David Alaba\'s disciplined backline. Austria\'s unbeaten run includes wins over Germany and Sweden, but they face their toughest test yet.',
-        summary: 'Argentina remains strong favorite despite absentees, with Messi driving a perfect-form attack. Austria\'s defensive organization will be challenged by Argentina\'s relentless pressure. Expect Argentina to dominate possession in Dallas, leveraging set-piece opportunities against Austria\'s physical setup.'
+        summary: 'Pending deep research.'
       },
 
       {
