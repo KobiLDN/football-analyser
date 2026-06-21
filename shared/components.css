@@ -26,6 +26,7 @@
 .toggle-pill.on { color: var(--gold); border-color: var(--gold-dim); background: rgba(200, 168, 75, 0.08); }
 
 /* ── Layout grid ── */
+.layout-wrap { max-width: 1280px; margin: 0 auto; }
 .layout { display: grid; grid-template-columns: 190px 1fr; min-height: calc(100vh - 49px); }
 
 /* ── Sidebar ── */
