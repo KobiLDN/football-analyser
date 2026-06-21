@@ -177,6 +177,8 @@
   content: '•'; color: var(--text3);
   position: absolute; left: 0;
 }
+.deep-content li:has(.key, .out, .doubt) { padding-left: 0; }
+.deep-content li:has(.key, .out, .doubt)::before { display: none; }
 .deep-content .out { color: var(--red); font-weight: 500; }
 .deep-content .doubt { color: var(--amber); font-weight: 500; }
 .deep-content .key { color: var(--gold); font-weight: 500; }
