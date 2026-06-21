@@ -3436,22 +3436,29 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Tunisia', away: 'Japan', time: '05:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: 'D W W W L',
-        awayForm: 'D W W W D',
+        result: null, homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '1.50-1.60',
+        homeForm: 'L L L L L',
+        awayForm: 'W W W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent match data for either team.' },
-          momentum:      { score: 50, detail: 'Opening match reduces predictability.' },
-          headToHead:    { score: 50, detail: 'Historical encounters not documented in sources.' },
-          goalTendency:  { score: 50, detail: 'Goal expectations unclear without form trends.' },
-          leagueContext: { score: 55, detail: 'Group stage clash with knockout implications.' }
+          formBalance:   { score: 20, detail: 'Tunisia have lost their last five matches including a 5-0 friendly defeat to Belgium and 5-1 World Cup loss to Sweden, while Japan are unbeaten in five with four wins and a draw against the Netherlands.' },
+          momentum:      { score: 25, detail: 'Tunisia\'s managerial chaos after sacking Sabri Lamouchi contrasts with Japan\'s momentum from a dramatic 89th-minute equalizer against the Netherlands.' },
+          goalTendency:  { score: 85, detail: 'Tunisia conceded 10 goals in two matches while Japan scored twice against the Netherlands and haven\'t kept a clean sheet in 11 consecutive World Cup games.' },
+          leagueContext: { score: 75, detail: 'Japan (FIFA #18) have reached the knockout stage in three of the last four World Cups, while Tunisia (FIFA #30) have never advanced beyond the group stage in six previous attempts.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Hannibal Mejbri — expected in advanced midfield role' },
+              { tag: 'key', text: 'Firas Chaouat — 6 international goals, likely starter' },
+              { tag: 'doubt', text: 'Abdelmouhib Chamakh — may be dropped after errors vs Sweden' }
+            ],
+          away: [
+              { tag: 'out', text: 'Takefusa Kubo — knee injury' },
+              { tag: 'key', text: 'Daichi Kamada — 1 goal this World Cup' },
+              { tag: 'key', text: 'Ayase Ueda — starting striker' }
+            ]
         },
-        context: 'Tunisia\'s physical approach meets Japan\'s technical style in a balanced matchup. Both teams lack visible form data, making tactical predictions difficult. Set pieces and transition moments could prove decisive.',
-        summary: 'Pending deep research.'
+        context: 'Tunisia debut new manager Hervé Renard after sacking Sabri Lamouchi following their 5-1 defeat to Sweden, likely switching to a 4-2-3-1 with Hannibal Mejbri supporting striker Firas Chaouat. Japan must replace injured creator Takefusa Kubo, potentially moving Ritsu Doan forward alongside Ayase Ueda and Daizen Maeda in a 3-4-2-1. The Samurai Blue aim to capitalize on defensive vulnerabilities exposed by Sweden, while Tunisia seek Renard\'s trademark organizational boost after conceding 10 goals in two matches.',
+        summary: 'Japan are heavy favorites after their 2-2 draw with the Netherlands, with pundits unanimously predicting a 2-0 to 3-1 victory. Tunisia\'s defensive disorganization under a new manager makes containing Japan\'s dynamic attack unlikely, especially with Kubo\'s absence mitigated by Kamada\'s form. Japan\'s superior tournament pedigree and attacking depth should overwhelm a Tunisian side that suffered the World Cup\'s second-heaviest opening defeat.'
       },
 
       {
