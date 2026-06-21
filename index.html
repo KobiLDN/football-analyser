@@ -286,11 +286,11 @@
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.73 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.75 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 20 Jun 2026 07:27 BST</div>
+      <div class="updated-tag">Data · 21 Jun 2026 07:56 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -3245,7 +3245,7 @@ const LEAGUES = [
       {
         day: 'Saturday 20 June',
         home: 'Netherlands', away: 'Sweden', time: '18:00',
-        result: null, homeWin: 50, draw: 30, awayWin: 20, verdict: 'Likely', fairOdds: '1.90-2.10',
+        result: '5-1', homeWin: 50, draw: 30, awayWin: 20, verdict: 'Likely', fairOdds: '1.90-2.10',
         homeForm: 'W D L W D',
         awayForm: 'W D W W W',
         factors: {
@@ -3268,7 +3268,7 @@ const LEAGUES = [
       {
         day: 'Saturday 20 June',
         home: 'Germany', away: 'Ivory Coast', time: '21:00',
-        result: null, homeWin: 70, draw: 7, awayWin: 23, verdict: 'Strong', fairOdds: '1.40-1.45',
+        result: '2-1', homeWin: 70, draw: 7, awayWin: 23, verdict: 'Strong', fairOdds: '1.40-1.45',
         homeForm: 'W W W W',
         awayForm: 'W W W W',
         factors: {
@@ -3295,172 +3295,201 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Ecuador', away: 'Curaçao', time: '01:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        result: '0-0', homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.15-1.20',
         homeForm: 'D D W W L',
-        awayForm: 'L L L L',
+        awayForm: 'L L L W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data on recent team performance.' },
-          momentum:      { score: 50, detail: 'Tournament opener creates unpredictable conditions.' },
-          headToHead:    { score: 50, detail: 'No historical matchup information available.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unknown without form data.' },
-          leagueContext: { score: 50, detail: 'Group E underdogs seeking early advantage.' }
+          formBalance:   { score: 80, detail: 'Ecuador earned 8 points from their last 5 matches, while Curaçao managed only 3.' },
+          momentum:      { score: 70, detail: 'Ecuador showed resilience in a narrow loss to Ivory Coast, contrasting Curaçao\'s 7-1 collapse against Germany.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 60, detail: 'Moderate goals expected (2-3) due to Ecuador\'s attacking intent and Curaçao\'s defensive fragility.' },
+          leagueContext: { score: 90, detail: 'Ecuador\'s World Cup experience and higher FIFA ranking (#44 vs #82) provide a significant advantage.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Kendry Paez — recovering from knock' },
+              { tag: 'key', text: 'Enner Valencia — captain, 49 international goals' },
+              { tag: 'key', text: 'Moisés Caicedo — midfield anchor' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Kenji Gorre — fitness test' },
+              { tag: 'key', text: 'Juninho Bacuna — creative midfielder' },
+              { tag: 'key', text: 'Tahith Chong — winger, fouled 8 times in opener' }
+            ]
         },
-        context: 'Both teams aim to capitalize on their World Cup opener. Ecuador may leverage higher FIFA ranking, while Curaçao relies on collective organization. Tactical approaches remain unclear without recent performance data.',
-        summary: 'Limited information available. Expected to be competitive with both sides prioritizing defensive stability. Outcome likely hinges on individual moments rather than established form.'
+        context: 'Ecuador must win to stay alive after a last-minute loss to Ivory Coast, with Moisés Caicedo and Willian Pacho controlling midfield and Enner Valencia leading the attack. Curaçao, reeling from a 7-1 defeat to Germany, will deploy counter-attacks via Tahith Chong and the Bacuna brothers but face defensive vulnerabilities. Both teams have no major injuries, with Ecuador likely starting Nilson Angulo over Alan Minda.',
+        summary: 'Ecuador are overwhelming favorites (85% win probability) after a narrow defeat to Ivory Coast ended their 19-game unbeaten run. Curaçao conceded 7 goals in their World Cup debut against Germany despite Livano Comenencia\'s historic equalizer. Ecuador\'s quality in distribution and Curaçao\'s defensive fragility suggest a controlled home victory.'
       },
 
       {
         day: 'Sunday 21 June',
         home: 'Tunisia', away: 'Japan', time: '05:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: 'D W W W L',
-        awayForm: 'D W W W D',
+        result: '0-4', homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '1.50-1.60',
+        homeForm: 'L L L L L',
+        awayForm: 'W W W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent match data for either team.' },
-          momentum:      { score: 50, detail: 'Opening match reduces predictability.' },
-          headToHead:    { score: 50, detail: 'Historical encounters not documented in sources.' },
-          goalTendency:  { score: 50, detail: 'Goal expectations unclear without form trends.' },
-          leagueContext: { score: 55, detail: 'Group stage clash with knockout implications.' }
+          formBalance:   { score: 20, detail: 'Tunisia have lost their last five matches including a 5-0 friendly defeat to Belgium and 5-1 World Cup loss to Sweden, while Japan are unbeaten in five with four wins and a draw against the Netherlands.' },
+          momentum:      { score: 25, detail: 'Tunisia\'s managerial chaos after sacking Sabri Lamouchi contrasts with Japan\'s momentum from a dramatic 89th-minute equalizer against the Netherlands.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 85, detail: 'Tunisia conceded 10 goals in two matches while Japan scored twice against the Netherlands and haven\'t kept a clean sheet in 11 consecutive World Cup games.' },
+          leagueContext: { score: 75, detail: 'Japan (FIFA #18) have reached the knockout stage in three of the last four World Cups, while Tunisia (FIFA #30) have never advanced beyond the group stage in six previous attempts.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Hannibal Mejbri — expected in advanced midfield role' },
+              { tag: 'key', text: 'Firas Chaouat — 6 international goals, likely starter' },
+              { tag: 'doubt', text: 'Abdelmouhib Chamakh — may be dropped after errors vs Sweden' }
+            ],
+          away: [
+              { tag: 'out', text: 'Takefusa Kubo — knee injury' },
+              { tag: 'key', text: 'Daichi Kamada — 1 goal this World Cup' },
+              { tag: 'key', text: 'Ayase Ueda — starting striker' }
+            ]
         },
-        context: 'Tunisia\'s physical approach meets Japan\'s technical style in a balanced matchup. Both teams lack visible form data, making tactical predictions difficult. Set pieces and transition moments could prove decisive.',
-        summary: 'Evenly matched on paper without performance history. Japan\'s organization versus Tunisia\'s athleticism suggests a tense encounter. Draw appears plausible given the absence of clear favorites.'
+        context: 'Tunisia debut new manager Hervé Renard after sacking Sabri Lamouchi following their 5-1 defeat to Sweden, likely switching to a 4-2-3-1 with Hannibal Mejbri supporting striker Firas Chaouat. Japan must replace injured creator Takefusa Kubo, potentially moving Ritsu Doan forward alongside Ayase Ueda and Daizen Maeda in a 3-4-2-1. The Samurai Blue aim to capitalize on defensive vulnerabilities exposed by Sweden, while Tunisia seek Renard\'s trademark organizational boost after conceding 10 goals in two matches.',
+        summary: 'Japan are heavy favorites after their 2-2 draw with the Netherlands, with pundits unanimously predicting a 2-0 to 3-1 victory. Tunisia\'s defensive disorganization under a new manager makes containing Japan\'s dynamic attack unlikely, especially with Kubo\'s absence mitigated by Kamada\'s form. Japan\'s superior tournament pedigree and attacking depth should overwhelm a Tunisian side that suffered the World Cup\'s second-heaviest opening defeat.'
       },
 
       {
         day: 'Sunday 21 June',
         home: 'Spain', away: 'Saudi Arabia', time: '17:00',
-        result: null, homeWin: 80, draw: 15, awayWin: 5, verdict: 'Strong', fairOdds: '1.23-1.27',
-        homeForm: 'W D W W D',
-        awayForm: 'D W W W D',
+        result: null, homeWin: 87, draw: 9, awayWin: 4, verdict: 'Strong', fairOdds: '1.15-1.18',
+        homeForm: 'W D D W D',
+        awayForm: 'L L W D D',
         factors: {
-          formBalance:   { score: 85, detail: 'Reigning Euro 2024 champions with consistent high-level performances.' },
-          momentum:      { score: 80, detail: 'Strong tournament pedigree under Luis de la Fuente.' },
-          headToHead:    { score: 70, detail: 'Spain\'s technical edge outweighs Saudi Arabia\'s 2022 Argentina upset.' },
-          goalTendency:  { score: 65, detail: 'Spain\'s possession dominance against Saudi Arabia\'s low-block counters.' },
-          leagueContext: { score: 75, detail: 'Tournament favorites facing defensive underdogs.' }
+          formBalance:   { score: 70, detail: 'Spain are unbeaten in five matches (W2, D3) while Saudi Arabia have only one win in their last five (L2, D2, W1).' },
+          momentum:      { score: 65, detail: 'Spain\'s return of key attackers Yamal and Williams boosts momentum despite a slow start, while Saudi Arabia gained confidence from holding Uruguay.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 40, detail: 'Spain have scored more than once in only two of their last five, but the return of key attackers may improve that; Saudi Arabia have scored in three of their last five.' },
+          leagueContext: { score: 90, detail: 'Spain, ranked 8th and reigning European champions, are heavy favorites against 55th-ranked Saudi Arabia, who reached the last 16 in 2022.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Lamine Yamal - Dynamic winger' },
-              { tag: 'key', text: 'Rodri - Midfield controller' }
+              { tag: 'out', text: 'Victor Munoz — muscle strain' },
+              { tag: 'key', text: 'Lamine Yamal — 0 goals, 0 assists this tournament (returning from hamstring)' },
+              { tag: 'key', text: 'Nico Williams — returning from fitness issue' }
             ],
           away: [
-              { tag: 'key', text: 'Salem Al-Dawsari - Primary attacking threat' }
+              { tag: 'doubt', text: 'Nawaf Al-Aqidi — hamstring injury' },
+              { tag: 'key', text: 'Salem Al Dawsari — 0 goals, 0 assists this tournament' }
             ]
         },
-        context: 'Spain\'s possession-based system features young stars Yamal and Williams against Hervé Renard\'s compact Saudi Arabia. Expect relentless Spanish pressure with Al-Dawsari leading counter-attacks. Center-backs Cubarsí and Huijsen must stay alert to transitions in Atlanta\'s Mercedes-Benz Stadium.',
-        summary: 'Spain heavily favored with superior technical quality. Key question: whether Saudi Arabia can replicate their 2022 defensive resilience. Spain\'s wingers should unlock defenses, but Al-Dawsari remains a counter-attacking danger.'
+        context: 'Spain were held to a shock 0-0 draw by World Cup debutants Cape Verde in their opener despite dominating possession, with the return of wingers Lamine Yamal and Nico Williams from fitness issues expected to boost their attack. Saudi Arabia earned a credible 1-1 draw against Uruguay in their first match, with coach Georgios Donis praising the psychological boost. Spain have won all three previous meetings, including a 1-0 victory at the 2006 World Cup.',
+        summary: 'Pundits predict a comfortable Spain win (Opta: 86.7% probability) with Yamal and Williams returning to the starting lineup. Expect Spain to control possession and create more chances than against Cape Verde, but Saudi Arabia\'s organized defense may keep the scoreline respectable. Key battles: Yamal vs Saudi right-back Saud Abdulhamid.'
       },
 
       {
         day: 'Sunday 21 June',
         home: 'Belgium', away: 'Iran', time: '20:00',
-        result: null, homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.70-1.90',
-        homeForm: 'W W W W D',
-        awayForm: 'D W W W D',
+        result: null, homeWin: 66, draw: 19, awayWin: 15, verdict: 'Strong', fairOdds: '1.50-1.55',
+        homeForm: 'D W W W D',
+        awayForm: 'L W W W D',
         factors: {
-          formBalance:   { score: 70, detail: 'Belgium are unbeaten in 13 matches with four wins in their last five, while Iran have two wins and two draws in their last five.' },
-          momentum:      { score: 75, detail: 'Belgium scored 20 goals in their last five games including 7-0 and 5-0 wins, showing strong attacking momentum.' },
-          headToHead:    { score: 50, detail: 'No previous competitive meetings between these teams.' },
-          goalTendency:  { score: 70, detail: 'Belgium kept four clean sheets in their last five matches while Iran scored just six goals in the same period.' },
-          leagueContext: { score: 60, detail: 'As Group G favorites, Belgium need a win to secure progression, while Iran may prioritize defensive solidity.' }
+          formBalance:   { score: 50, detail: 'Both teams show strong recent form with Belgium taking 11 points and Iran 10 from their last five matches.' },
+          momentum:      { score: 50, detail: 'Belgium are unbeaten in 14 matches while Iran are undefeated in their last four outings.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 80, detail: 'High-scoring trends with both sides averaging 3.6 goals per game across their last five fixtures.' },
+          leagueContext: { score: 70, detail: 'Belgium\'s FIFA ranking (#9) and World Cup pedigree contrast with Iran\'s historical group-stage exits.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Romelu Lukaku — injury' },
-              { tag: 'out', text: 'Zeno Debast — injury' },
-              { tag: 'key', text: 'Kevin De Bruyne — creative midfield playmaker' },
-              { tag: 'key', text: 'Thibaut Courtois — world-class goalkeeper' }
+              { tag: 'out', text: 'Zeno Debast — leg injury' },
+              { tag: 'out', text: 'Jeremy Doku — illness' },
+              { tag: 'key', text: 'Romelu Lukaku — forced equalizer off bench in opener' }
             ],
           away: [
-              { tag: 'key', text: 'Mehdi Taremi — primary attacking threat' }
+              { tag: 'doubt', text: 'Saman Ghoddos — ankle issue' },
+              { tag: 'key', text: 'Ramin Rezaeian — goal and assist in opener (oldest WC player to do so)' }
             ]
         },
-        context: 'Belgium will deploy a 4-2-3-1 formation with Lois Openda replacing the injured Lukaku upfront, supported by De Bruyne and Doku. Iran\'s 4-3-3 setup will focus on defensive organization with Taremi leading counter-attacks. This is a crucial Group G match where Belgium\'s possession dominance faces Iran\'s compact low block at SoFi Stadium.',
-        summary: 'Belgium are favored due to superior form and squad depth but miss key striker Lukaku. Iran\'s defensive resilience (two clean sheets in last five) could frustrate the Red Devils, though their limited attacking output makes an upset unlikely. Expect Belgium to control tempo through De Bruyne while Iran relies on Taremi\'s counters.'
+        context: 'Belgium\'s aging core struggled in a 1-1 draw against Egypt, relying on Romelu Lukaku\'s impact off the bench to force an own goal. Iran showed resilience by twice coming from behind to draw 2-2 with New Zealand, highlighted by Ramin Rezaeian\'s historic goal-assist performance at age 36. With knockout qualification at stake, manager Rudi Garcia may start Lukaku to break down Iran\'s low block, while Mehdi Taremi leads Iran\'s attack alongside Dennis Eckert.',
+        summary: 'Belgium are favored (66% win probability per Opta) despite unconvincing opener, needing Lukaku\'s physical presence against Iran\'s compact defense. Iran\'s Rezaeian poses a creative threat but their 1-win record against European WC opponents remains a concern. Key absences include Doku (illness) for Belgium and Ghoddos (ankle) for Iran.'
       },
 
       {
         day: 'Sunday 21 June',
         home: 'Uruguay', away: 'Cape Verde', time: '23:00',
-        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.70',
-        homeForm: 'W D W W D',
-        awayForm: 'D W W W D',
+        result: null, homeWin: 67, draw: 21, awayWin: 12, verdict: 'Strong', fairOdds: '1.45-1.55',
+        homeForm: 'D L D D D',
+        awayForm: 'D L W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Both teams show inconsistent form with 1 win each in their last 5 matches.' },
-          momentum:      { score: 45, detail: 'Cape Verde\'s recent 3-0 win over Serbia boosts confidence, while Uruguay drew two straight.' },
-          headToHead:    { score: 50, detail: 'No significant head-to-head history exists between these teams.' },
-          goalTendency:  { score: 60, detail: 'Uruguay\'s attack is expected to exploit Cape Verde\'s defensive vulnerabilities seen in the 4-2 loss to Chile.' },
-          leagueContext: { score: 70, detail: 'Uruguay\'s higher FIFA ranking (17th vs 69th) and tournament pedigree favor them despite injuries.' }
+          formBalance:   { score: 45, detail: 'Uruguay winless in five matches contrasts with Cape Verde\'s three-game unbeaten run including a Spain draw.' },
+          momentum:      { score: 35, detail: 'Cape Verde\'s heroic Spain result boosts confidence while Uruguay struggles for attacking fluency.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 35, detail: 'Low-scoring pattern expected with Uruguay averaging 0.6 goals in last five and Cape Verde\'s defensive resilience.' },
+          leagueContext: { score: 70, detail: 'Two-time champions Uruguay expected to advance despite facing World Cup debutants with strong recent AFCON pedigree.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'José Giménez — Physical discomfort' },
-              { tag: 'out', text: 'Ronald Araujo — Muscle injury' },
-              { tag: 'out', text: 'Giorgian de Arrascaeta — Broken collarbone' }
+              { tag: 'out', text: 'Ronald Araujo — calf injury' },
+              { tag: 'out', text: 'Giorgian de Arrascaeta — calf injury' },
+              { tag: 'key', text: 'Federico Valverde — primary creative force' },
+              { tag: 'key', text: 'Darwin Nunez — 13 international goals' }
             ],
-          away: []
+          away: [
+              { tag: 'key', text: 'Vozinha — clean sheet vs Spain at age 40' },
+              { tag: 'key', text: 'Ryan Mendes — 22 international goals' }
+            ]
         },
-        context: 'Uruguay faces key defensive absences with Giménez and Araujo injured, forcing tactical adjustments. Cape Verde, with no injuries, will rely on Vozinha\'s experience in goal. Marcelo Bielsa\'s side aims to target Cape Verde\'s exposed defensive gaps through Darwin Núñez, while Bubista\'s team seeks to capitalize on counter-attacks.',
-        summary: 'Uruguay\'s superior quality is tempered by injuries to three starters, but Cape Verde\'s defensive fragility (evident in recent 4-2 loss to Chile) offers opportunities. Expect Uruguay to control possession and test Cape Verde\'s backline, though the absence of playmaker de Arrascaeta may limit creativity. A narrow home win is anticipated.'
+        context: 'Uruguay miss Araujo (defense) and De Arrascaeta (creativity), forcing Caceres into central defense and increasing Valverde\'s playmaking burden. Cape Verde deploy a compact 4-5-1 with Vozinha in goal after his Spain heroics, using Mendes and Monteiro as counter-attacking outlets. Both teams have one Group H point, making this pivotal for knockout stage ambitions. Bielsa\'s high-pressing system must break down a side that conceded just 0.63 xG against Spain.',
+        summary: 'Uruguay face defensive reshuffle without injured Araujo while Cape Verde build on historic Spain draw. Valverde and Nunez must unlock a resilient low block that frustrated European champions. Despite Uruguay\'s favoritism (67% win probability), Cape Verde\'s organization suggests another tight contest after five straight Uruguayan draws.'
       },
 
       {
         day: 'Monday 22 June',
         home: 'New Zealand', away: 'Egypt', time: '02:00',
-        result: null, homeWin: 20, draw: 30, awayWin: 50, verdict: 'Likely', fairOdds: '1.90-2.10',
-        homeForm: 'D W D W D',
-        awayForm: 'D W W W D',
+        result: null, homeWin: 20, draw: 30, awayWin: 50, verdict: 'Likely', fairOdds: '1.85-2.00',
+        homeForm: 'L L L W D',
+        awayForm: 'W D W L D',
         factors: {
-          formBalance:   { score: 30, detail: 'New Zealand lost 4 of last 5 matches while Egypt is unbeaten in 4.' },
-          momentum:      { score: 20, detail: 'Egypt has 2 wins and 2 draws in last 4 games; New Zealand lost last 2.' },
-          headToHead:    { score: 20, detail: 'Egypt won the only previous meeting 1-0 in March 2024.' },
-          goalTendency:  { score: 30, detail: 'New Zealand failed to score in last 2 matches; Egypt kept 3 clean sheets in 5 games.' },
-          leagueContext: { score: 50, detail: 'Both teams start World Cup campaign in Group G with Belgium and Iran.' }
+          formBalance:   { score: 70, detail: 'Egypt have taken 8 points from their last 5 matches compared to New Zealand\'s 4.' },
+          momentum:      { score: 60, detail: 'Egypt are unbeaten in their last three matches (W2, D1), including a draw against Belgium, while New Zealand ended a long winless run with a win over Chile and a draw against Iran.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 55, detail: 'Egypt have conceded only 3 goals in their last 5 matches, while New Zealand have conceded 9 in the same period.' },
+          leagueContext: { score: 80, detail: 'Egypt are ranked 61 places higher than New Zealand and have a far more successful history in international football.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Joe Bell (injury)' }
+              { tag: 'out', text: 'Matt Garbett — hamstring injury' },
+              { tag: 'key', text: 'Chris Wood — 2 assists this World Cup' },
+              { tag: 'key', text: 'Elijah Just — 2 goals this World Cup' }
             ],
           away: [
-              { tag: 'out', text: 'Mahdi Soliman (injury)' },
-              { tag: 'out', text: 'Mohamed Abdelmonem (injury)' }
+              { tag: 'key', text: 'Mohamed Salah — 1 assist this World Cup' }
             ]
         },
-        context: 'New Zealand will miss midfielder Joe Bell, weakening their transition play against Egypt\'s organized defense. Egypt\'s absent defenders Mahdi Soliman and Mohamed Abdelmonem create vulnerability, but Mohamed Salah\'s attacking threat remains potent. The Pharaohs\' recent defensive solidity (2 clean sheets in last 4) contrasts with New Zealand\'s scoring drought.',
-        summary: 'Egypt enters as favorite despite defensive absences, leveraging Salah\'s threat against New Zealand\'s struggling attack. New Zealand\'s midfield gap without Joe Bell may limit their ability to control tempo. Egypt\'s unbeaten run and prior H2H victory provide psychological edge in Group G opener.'
+        context: 'New Zealand manager Darren Bazeley must decide whether to stick with the same attacking setup that produced two goals against Iran or make adjustments to break down Egypt\'s low block. Star striker Chris Wood, who provided two assists in the opener, will lead the line, while Elijah Just is expected to start after his brace. Egypt, led by Mohamed Salah, will look to exploit New Zealand\'s defensive vulnerabilities seen against Iran. The Pharaohs are expected to field a narrow attacking formation with Salah and Omar Marmoush up front.',
+        summary: 'New Zealand come into the match with momentum from their 2-2 draw against Iran, but face an Egypt side that held Belgium to a 1-1 draw. The All Whites will be without midfielder Matt Garbett (hamstring), but key attackers Wood and Just are fit. Egypt have no major injury concerns and will rely on Salah to create chances. Pundits tip Egypt to win a close contest.'
       },
 
       {
         day: 'Monday 22 June',
         home: 'Argentina', away: 'Austria', time: '18:00',
-        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Strong', fairOdds: '1.40-1.45',
+        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.57-1.62',
         homeForm: 'W W W W W',
         awayForm: 'D W W W W',
         factors: {
-          formBalance:   { score: 80, detail: 'Argentina won all last 5 matches; Austria has 4 wins and 1 draw.' },
-          momentum:      { score: 75, detail: 'Argentina scored 12 goals in 5 games; Austria conceded in 2 of last 3.' },
-          headToHead:    { score: 50, detail: 'No significant head-to-head history between the teams.' },
-          goalTendency:  { score: 80, detail: 'Argentina kept 4 clean sheets in 5 matches; Austria scored in 4 of 5.' },
-          leagueContext: { score: 65, detail: 'Defending champions Argentina start Group J campaign; Austria seeks upset.' }
+          formBalance:   { score: 85, detail: 'Argentina have won their last 8 matches including a dominant 3-0 opener, while Austria are unbeaten in 6 but labored against minnows.' },
+          momentum:      { score: 90, detail: 'Messi\'s record-equalling hat-trick against Algeria has galvanized the champions, contrasting with Austria\'s unconvincing 3-1 win over debutants Jordan.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 75, detail: 'Argentina scored 15 goals in their last 5 matches, while Austria conceded in 3 of their last 5 despite facing weaker opposition.' },
+          leagueContext: { score: 95, detail: 'Reigning champions Argentina boast vastly superior tournament pedigree, while Austria are making their first World Cup appearance since 1998.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Nicolás González (injury)' },
-              { tag: 'out', text: 'Nicolás Tagliafico (injury)' }
+              { tag: 'out', text: 'Gonzalo Montiel — muscle injury' },
+              { tag: 'key', text: 'Lionel Messi — 3 goals this World Cup' },
+              { tag: 'key', text: 'Emiliano Martinez — clean sheet in opener' }
             ],
-          away: []
+          away: [
+              { tag: 'out', text: 'Christoph Baumgartner — thigh injury' },
+              { tag: 'doubt', text: 'Stefan Posch — broken jaw' },
+              { tag: 'key', text: 'Marko Arnautovic — 1 goal this World Cup' },
+              { tag: 'key', text: 'David Alaba — defensive leader' }
+            ]
         },
-        context: 'Argentina misses winger Nicolás González and left-back Nicolás Tagliafico, testing their depth against Austria\'s physical approach. Lionel Messi will lead an attack that scored 12 goals in 5 games, facing David Alaba\'s disciplined backline. Austria\'s unbeaten run includes wins over Germany and Sweden, but they face their toughest test yet.',
-        summary: 'Argentina remains strong favorite despite absentees, with Messi driving a perfect-form attack. Austria\'s defensive organization will be challenged by Argentina\'s relentless pressure. Expect Argentina to dominate possession in Dallas, leveraging set-piece opportunities against Austria\'s physical setup.'
+        context: 'Argentina\'s 3-0 demolition of Algeria featured a Messi hat-trick that tied Miroslav Klose\'s World Cup scoring record (16 goals), with the 38-year-old now poised to make history. Austria needed an own goal and late Arnautovic penalty to overcome Jordan 3-1, exposing vulnerabilities Rangnick must address. Scaloni may retain his Premier League center-back pairing of Romero and Martinez, while Rangnick faces a striker dilemma between Kalajdzic and impactful substitute Arnautovic.',
+        summary: 'Argentina are overwhelming favorites after Messi\'s record-chasing hat-trick, with pundits predicting a 2-0 or 2-1 victory given their eight-match winning streak. Austria\'s high-pressing system faces its sternest test without injured forward Baumgartner, needing Alaba to organize a defense that struggled against World Cup debutants Jordan. Messi is heavily backed to score first (10/3 odds) and become the tournament\'s outright top scorer.'
       },
 
       {
