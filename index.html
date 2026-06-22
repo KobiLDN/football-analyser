@@ -3555,45 +3555,48 @@ const LEAGUES = [
       {
         day: 'Tuesday 23 June',
         home: 'Jordan', away: 'Algeria', time: '04:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'D L L L L',
+        result: null, homeWin: 20, draw: 20, awayWin: 60, verdict: 'Likely', fairOdds: '1.60-1.70',
+        homeForm: 'D D L L L',
         awayForm: 'W D W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
-          momentum:      { score: 50, detail: 'No discernible momentum trends available.' },
-          headToHead:    { score: 50, detail: 'No historical encounters recorded.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unclear without recent match data.' },
-          leagueContext: { score: 50, detail: 'Group J opener with both teams seeking early advantage.' }
+          formBalance:   { score: 90, detail: 'Algeria have won three of their last five matches, while Jordan are winless in five with three losses.' },
+          momentum:      { score: 70, detail: 'Algeria come in with better pre-tournament form, but both teams lost their World Cup openers.' },
+          goalTendency:  { score: 80, detail: 'Jordan have conceded 2+ goals in six consecutive games, while Algeria scored 12 goals in their five matches prior to the World Cup.' },
+          leagueContext: { score: 75, detail: 'Algeria have greater World Cup pedigree and squad depth, while Jordan are debutants despite being reigning Asian champions.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Abdallah Nasib — injury from Austria match' },
+              { tag: 'key', text: 'Ali Olwan — 1 goal this World Cup' },
+              { tag: 'key', text: 'Musa Al Taamari — 24 international goals' }
+            ],
+          away: [
+              { tag: 'key', text: 'Mohamed Amoura — 10 goals in qualifying' },
+              { tag: 'key', text: 'Riyad Mahrez — captain, likely starter after bench role' }
+            ]
         },
-        context: 'Jordan will rely on Mousa Al-Tamari\'s creativity against Algeria\'s experienced Riyad Mahrez. Algeria\'s defensive organization under Aïssa Mandi will be tested by Jordan\'s counter-attacking approach. Both teams prioritize starting their World Cup campaign positively in this balanced encounter.',
-        summary: 'Pending deep research.'
+        context: 'Both teams lost their openers: Jordan 3-1 to Austria (with Olwan scoring their historic first World Cup goal) and Algeria 3-0 to Argentina. Algeria may start Mahrez and Amoura for attacking impetus, while Jordan could replace injured Nasib in their three-man defense. Olwan and Al Taamari lead Jordan\'s attack against Algeria\'s width from Ait-Nouri and Belghali.',
+        summary: 'Algeria are favored due to superior talent and Jordan\'s defensive frailties (conceding 2+ goals in six straight). Pundits predict a 1-2 or 1-3 Algeria win, leveraging Mahrez\'s creativity and Amoura\'s finishing against Jordan\'s vulnerable backline. The result could eliminate Jordan from knockout contention.'
       },
 
       {
         day: 'Tuesday 23 June',
         home: 'Portugal', away: 'Uzbekistan', time: '18:00',
-        result: null, homeWin: 85, draw: 10, awayWin: 5, verdict: 'Strong', fairOdds: '1.15-1.25',
-        homeForm: 'D W W W D',
-        awayForm: 'W D L L L',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 90, detail: 'Portugal unbeaten in last five matches including four wins.' },
-          momentum:      { score: 85, detail: 'Portugal scoring 15 goals in last five games shows attacking momentum.' },
-          headToHead:    { score: 50, detail: 'No previous competitive meetings between these teams.' },
-          goalTendency:  { score: 80, detail: 'Portugal averaged 3+ goals per game in recent wins.' },
-          leagueContext: { score: 70, detail: 'Portugal favored to top Group K against debutants Uzbekistan.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent form data available for both teams.' },
+          momentum:      { score: 50, detail: 'No discernible momentum trends due to lack of match data.' },
+          goalTendency:  { score: 50, detail: 'Goal patterns unclear without recent scoring/defensive records.' },
+          leagueContext: { score: 80, detail: 'Portugal are top-10 ranked with World Cup pedigree, while Uzbekistan are debutants.' }
         },
         teamNews: {
           home: [],
-          away: [
-              { tag: 'out', text: 'Jaloliddin Masharipov (injury)' }
-            ]
+          away: []
         },
-        context: 'Cristiano Ronaldo leads Portugal\'s attack against an Uzbek defense missing key winger Masharipov. Bernardo Silva will orchestrate midfield against Uzbekistan\'s compact setup. Portugal\'s defensive solidity with Rúben Dias minimizes Uzbekistan\'s counter-attack threats.',
-        summary: 'Pending deep research.'
+        context: 'Portugal enter as heavy favorites but face uncertainty without specific lineup or injury updates. Uzbekistan\'s World Cup debut adds unpredictability, though their Asian Cup quarter-final experience may help organization. Cristiano Ronaldo remains Portugal\'s focal point if selected, while Uzbekistan will rely on counter-attacks through speed on the wings.',
+        summary: 'Limited data makes this match highly unpredictable. Portugal\'s superior ranking and experience suggest an edge, but Uzbekistan\'s tournament debut could inspire an upset. The draw is marginally favored due to unknowns, with odds reflecting the balanced probabilities.'
       },
 
       {
