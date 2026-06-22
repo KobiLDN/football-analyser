@@ -3499,22 +3499,30 @@ const LEAGUES = [
       {
         day: 'Monday 22 June',
         home: 'France', away: 'Iraq', time: '22:00',
-        result: null, homeWin: 75, draw: 15, awayWin: 10, verdict: 'Strong', fairOdds: '1.30-1.35',
-        homeForm: 'W W D D W',
-        awayForm: 'W L W W L',
+        result: null, homeWin: 89, draw: 8, awayWin: 3, verdict: 'Strong', fairOdds: '1.12-1.14',
+        homeForm: 'W W L W W',
+        awayForm: 'W W D L L',
         factors: {
-          formBalance:   { score: 80, detail: 'France won 4 of last 5; Iraq has 2 wins and 1 draw in same period.' },
-          momentum:      { score: 85, detail: 'France is on a 3-match winning streak; Iraq lost 2 of last 3.' },
-          headToHead:    { score: 50, detail: 'No notable head-to-head encounters between France and Iraq.' },
-          goalTendency:  { score: 70, detail: 'France scored 10 goals in 5 games; Iraq failed to score in 3 of 5.' },
-          leagueContext: { score: 80, detail: 'France aims for strong Group I start; Iraq faces toughest opponent first.' }
+          formBalance:   { score: 90, detail: 'France have won four of their last five matches, while Iraq have only one win in their last five.' },
+          momentum:      { score: 95, detail: 'France started their World Cup campaign with a convincing 3-1 win over Senegal, while Iraq were thrashed 4-1 by Norway.' },
+          goalTendency:  { score: 85, detail: 'France scored 3+ goals in three of their last four wins, and Iraq conceded four goals in their tournament opener.' },
+          leagueContext: { score: 95, detail: 'France are two-time World Cup champions and FIFA #2, while Iraq (#63) are making their first World Cup appearance since 1986.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'William Saliba — minor injury but expected to play' },
+              { tag: 'doubt', text: 'Malo Gusto — ankle knock but trained fully' },
+              { tag: 'key', text: 'Kylian Mbappé — 2 goals this World Cup' },
+              { tag: 'key', text: 'Michael Olise — 1 assist, Player of the Match vs Senegal' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Ali Jasim — neck issue, game-time decision' },
+              { tag: 'doubt', text: 'Jalal Hassan — fitness concern, may be benched' },
+              { tag: 'key', text: 'Aymen Hussein — 1 goal this World Cup' }
+            ]
         },
-        context: 'France fields a full-strength squad with Kylian Mbappé leading an attack that scored 10 goals in 5 matches. Iraq\'s defensive approach will focus on containing Griezmann\'s creativity through midfield congestion. Les Bleus\' high press could exploit Iraq\'s vulnerability to turnovers, as seen in recent losses to Oman and Uzbekistan.',
-        summary: 'Pending deep research.'
+        context: 'France will start Lucas Digne, Manu Koné, and Bradley Barcola in a 4-2-3-1 formation, with Mbappé leading the line supported by Olise and Dembélé. Iraq will deploy a compact 4-4-2, relying on counter-attacks through Aymen Hussein and Ali Al-Hamadi. France can secure last-32 qualification with a win, while Iraq must avoid defeat to maintain knockout stage hopes after their heavy loss to Norway.',
+        summary: 'France opened with a 3-1 win over Senegal where Mbappé scored twice, while Iraq lost 4-1 to Norway despite Aymen Hussein\'s goal. Les Bleus are expected to dominate possession and exploit Iraq\'s defensive vulnerabilities, with Opta giving France an 88.5% win probability. Iraq\'s first World Cup in 40 years risks early elimination if defeated.'
       },
 
       {
