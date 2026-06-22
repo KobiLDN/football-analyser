@@ -288,11 +288,11 @@
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.79 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.80 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 21 Jun 2026 22:23 BST</div>
+      <div class="updated-tag">Data · 22 Jun 2026 08:31 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -3413,7 +3413,7 @@ const LEAGUES = [
       {
         day: 'Sunday 21 June',
         home: 'Uruguay', away: 'Cape Verde', time: '23:00',
-        result: null, homeWin: 67, draw: 21, awayWin: 12, verdict: 'Strong', fairOdds: '1.45-1.55',
+        result: '2-2', homeWin: 67, draw: 21, awayWin: 12, verdict: 'Strong', fairOdds: '1.45-1.55',
         homeForm: 'D L D D D',
         awayForm: 'D L W W D',
         factors: {
@@ -3442,12 +3442,13 @@ const LEAGUES = [
       {
         day: 'Monday 22 June',
         home: 'New Zealand', away: 'Egypt', time: '02:00',
-        result: null, homeWin: 18, draw: 25, awayWin: 57, verdict: 'Likely', fairOdds: '1.65-1.80',
+        result: '1-3', homeWin: 18, draw: 25, awayWin: 57, verdict: 'Likely', fairOdds: '1.65-1.80',
         homeForm: 'L L L W D',
         awayForm: 'D L W W D',
         factors: {
           formBalance:   { score: 30, detail: 'Egypt have lost just once in five matches versus New Zealand\'s three defeats in their last five.' },
           momentum:      { score: 70, detail: 'Egypt are unbeaten in three matches including a draw against Belgium, while New Zealand ended a losing streak with their Iran result.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'Egypt conceded only twice in six games; New Zealand kept one clean sheet in their last twelve matches.' },
           leagueContext: { score: 80, detail: 'Egypt are ranked 61 places higher and have seven AFCON titles versus New Zealand\'s OFC dominance.' }
         },
@@ -3475,6 +3476,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Argentina have won their last eight matches including a 3-0 win over Algeria, while Austria are unbeaten in six but drew against weaker opposition.' },
           momentum:      { score: 75, detail: 'Messi\'s hat-trick against Algeria extends his scoring streak, while Austria needed an own goal to break Jordan\'s resistance before Arnautović\'s late penalty.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'Argentina kept a clean sheet against Algeria and could become the first team since 2002 to score 3+ goals in four straight World Cup matches, while Austria rely heavily on set-pieces (7 of last 10 WC goals).' },
           leagueContext: { score: 80, detail: 'Defending champions Argentina (#1 FIFA) won Copa América 2024, while Austria (#25 FIFA) reached Euro 2024 quarters but haven\'t advanced past WC group stages since 1990.' }
         },
@@ -3505,6 +3507,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'France have won four of their last five matches, while Iraq have only one win in their last five.' },
           momentum:      { score: 95, detail: 'France started their World Cup campaign with a convincing 3-1 win over Senegal, while Iraq were thrashed 4-1 by Norway.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'France scored 3+ goals in three of their last four wins, and Iraq conceded four goals in their tournament opener.' },
           leagueContext: { score: 95, detail: 'France are two-time World Cup champions and FIFA #2, while Iraq (#63) are making their first World Cup appearance since 1986.' }
         },
@@ -3534,6 +3537,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Norway are unbeaten in four matches (W2 D2) including a 4-1 win over Iraq, while Senegal have one win in five.' },
           momentum:      { score: 90, detail: 'Norway have won 11 consecutive competitive matches, scoring 50 goals during this streak.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Both teams scored in seven of Norway\'s last eight games, and three of Senegal\'s last four matches had over 3.5 goals.' },
           leagueContext: { score: 85, detail: 'Norway can qualify with a win, while Senegal must avoid defeat to keep knockout hopes alive.' }
         },
@@ -3561,6 +3565,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Algeria have won three of their last five matches, while Jordan are winless in five with three losses.' },
           momentum:      { score: 70, detail: 'Algeria come in with better pre-tournament form, but both teams lost their World Cup openers.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Jordan have conceded 2+ goals in six consecutive games, while Algeria scored 12 goals in their five matches prior to the World Cup.' },
           leagueContext: { score: 75, detail: 'Algeria have greater World Cup pedigree and squad depth, while Jordan are debutants despite being reigning Asian champions.' }
         },
@@ -3588,6 +3593,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data available for both teams.' },
           momentum:      { score: 50, detail: 'No discernible momentum trends due to lack of match data.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal patterns unclear without recent scoring/defensive records.' },
           leagueContext: { score: 80, detail: 'Portugal are top-10 ranked with World Cup pedigree, while Uzbekistan are debutants.' }
         },
