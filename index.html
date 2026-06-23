@@ -3693,45 +3693,52 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Bosnia & Herzegovina', away: 'Qatar', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: 'D D D D D',
-        awayForm: 'L D D L',
+        result: null, homeWin: 35, draw: 35, awayWin: 30, verdict: 'Low', fairOdds: '2.80-3.00',
+        homeForm: 'D D D D L',
+        awayForm: 'L L D D L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data to compare recent form.' },
-          momentum:      { score: 50, detail: 'No recent match data available for assessment.' },
-          headToHead:    { score: 50, detail: 'No historical head-to-head records found.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unavailable for both teams.' },
-          leagueContext: { score: 50, detail: 'Group B opener with Switzerland and Canada next.' }
+          formBalance:   { score: 55, detail: 'Bosnia have drawn four of their last five, while Qatar have lost three of their last five.' },
+          momentum:      { score: 50, detail: 'Both teams suffered heavy defeats in their last match (4-1 vs Switzerland for Bosnia, 6-0 vs Canada for Qatar).' },
+          goalTendency:  { score: 60, detail: 'Both teams conceded 10+ goals combined in their last two World Cup matches.' },
+          leagueContext: { score: 50, detail: 'Both teams need victory to have any chance of advancing as best third-placed teams.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Tarik Muharemovic — suspension' }
+            ],
+          away: [
+              { tag: 'out', text: 'Homam Al-Amin — suspension' },
+              { tag: 'out', text: 'Assim Madibo — suspension' }
+            ]
         },
-        context: 'Edin Džeko leads Bosnia\'s attack, leveraging aerial strength. Qatar relies on Almoez Ali\'s mobility and Akram Afif\'s creativity. Both teams aim for early group momentum in this evenly matched fixture.',
-        summary: 'Pending deep research.'
+        context: 'Bosnia must rebuild their defense without suspended center-back Tarik Muharemovic after a 4-1 collapse against Switzerland. Qatar faces similar disruption with two suspensions following their 6-0 thrashing by Canada. Both teams have scored exactly one goal in four consecutive competitive matches before their recent defeats. With elimination looming, coaches Sergej Barbarez and Julen Lopetegui must solve defensive crises while pushing for goals.',
+        summary: 'Both teams enter with shattered confidence after heavy Matchday 2 defeats and multiple suspensions. Bosnia\'s four consecutive draws before the Switzerland loss show resilience but lack cutting edge. Qatar\'s eight-match winless streak includes conceding seven goals in two World Cup games. The suspensions compound existing defensive vulnerabilities for both sides.'
       },
 
       {
         day: 'Wednesday 24 June',
         home: 'Scotland', away: 'Brazil', time: '23:00',
         result: null, homeWin: 10, draw: 20, awayWin: 70, verdict: 'Strong', fairOdds: '1.40-1.45',
-        homeForm: 'D W W W W',
-        awayForm: 'L W W W D',
+        homeForm: 'L W W W L',
+        awayForm: 'W W W D W',
         factors: {
-          formBalance:   { score: 35, detail: 'Scotland has 3 wins in last 5; Brazil has 3 wins and 1 draw.' },
-          momentum:      { score: 30, detail: 'Scotland lost 2 of last 5; Brazil lost only once.' },
-          headToHead:    { score: 80, detail: 'Brazil won 4 of 5 historical meetings, including a 2-0 win in 2020.' },
-          goalTendency:  { score: 70, detail: 'Brazil scored 13 goals in last 5 matches; Scotland conceded 8.' },
-          leagueContext: { score: 65, detail: 'Brazil leads Group C favorites despite Neymar\'s absence.' }
+          formBalance:   { score: 85, detail: 'Brazil are unbeaten in five matches (4W, 1D), while Scotland lost two of their last five.' },
+          momentum:      { score: 80, detail: 'Brazil scored 9 goals in two group games; Scotland managed zero shots on target against Morocco.' },
+          goalTendency:  { score: 75, detail: 'Brazil averaged 3 goals per game in their last five matches.' },
+          leagueContext: { score: 90, detail: 'Brazil have won 4 of 5 historical meetings; Scotland have never advanced beyond a World Cup group stage.' }
         },
         teamNews: {
-          home: [],
+          home: [
+              { tag: 'out', text: 'Kieran Tierney — injury' }
+            ],
           away: [
-              { tag: 'out', text: 'Neymar — calf injury' }
+              { tag: 'out', text: 'Raphinha — hamstring injury' },
+              { tag: 'key', text: 'Neymar — returning from calf injury' },
+              { tag: 'key', text: 'Vinicius Junior — 6 goal involvements in 6 career WC matches' }
             ]
         },
-        context: 'Scotland uses John McGinn\'s energy and Andy Robertson\'s overlaps. Brazil counters with Vinícius Júnior\'s dribbling and Rodrygo\'s finishing. Neymar\'s absence shifts creativity to Lucas Paquetá, while Scotland focuses on defensive compactness.',
-        summary: 'Pending deep research.'
+        context: 'Scotland must cope without Kieran Tierney against Brazil\'s potent attack featuring Vinicius Junior (6 goal involvements in 6 WC apps) and returning Neymar. Brazil haven\'t conceded a first-half shot since facing Scotland in 1990 – a record they maintained against Haiti. Steve Clarke\'s side set a national cap record (609) against Morocco but failed to register a shot on target. Matheus Cunha\'s brace against Haiti strengthens Brazil\'s attacking options.',
+        summary: 'Brazil are heavy favorites given historical dominance (4W, 1D vs Scotland) and attacking firepower led by Vinicius Junior. Scotland\'s defensive record is concerning after conceding the earliest World Cup goal in their history (70 seconds vs Morocco) and losing Tierney. Brazil\'s return of Neymar compounds Scotland\'s task as they seek their first-ever knockout stage progression.'
       },
 
       {
