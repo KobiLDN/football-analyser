@@ -259,6 +259,7 @@
 .dot-d { background: var(--amber); }
 .dot-l { background: var(--red); }
 .dot-u { background: var(--text3); opacity: 0.35; }
+.wc-rank { font-size: 0.72em; opacity: 0.55; font-weight: 400; margin-left: 2px; }
 
 @media (max-width: 800px) {
   .main { padding: 16px 12px; }
@@ -4873,6 +4874,23 @@ const LEAGUE_COLOURS = {
   ligue1:'#065f46', ucl:'#1e3a8a', uel:'#b45309', uecl:'#0d6e3e', worldcup:'#0f4c81'
 };
 const WC_HOST_NATIONS = new Set(['USA', 'Canada', 'Mexico']);
+const WC_RANKS = {
+  'Argentina': 1, 'France': 2, 'Brazil': 5, 'England': 5, 'Portugal': 6,
+  'Netherlands': 7, 'Spain': 8, 'Belgium': 9, 'Croatia': 10, 'USA': 11,
+  'Colombia': 12, 'Germany': 12, 'Morocco': 13, 'Mexico': 15, 'Uruguay': 16,
+  'Japan': 18, 'Switzerland': 20, 'Senegal': 20, 'South Korea': 22,
+  'Austria': 25, 'Iran': 25, 'Australia': 25, 'Sweden': 26, 'Turkey': 28,
+  'Tunisia': 30, 'Czech Republic': 35, 'Egypt': 35, 'Qatar': 35,
+  'Norway': 38, 'Canada': 40, 'Scotland': 40, 'Ecuador': 44, 'Algeria': 45,
+  'Ivory Coast': 48, 'DR Congo': 52, 'Saudi Arabia': 55, 'South Africa': 58,
+  'Ghana': 60, 'Paraguay': 62, 'Iraq': 63, 'Bosnia & Herzegovina': 65,
+  'Uzbekistan': 65, 'Panama': 75, 'Cape Verde': 80, 'Curaçao': 82,
+  'Jordan': 87, 'New Zealand': 96, 'Haiti': 103,
+};
+function wcRankBadge(team) {
+  const r = WC_RANKS[team];
+  return r ? ` <span class="wc-rank">#${r}</span>` : '';
+}
 // Stamp _leagueId on every fixture once at parse time so isNeutralVenue works everywhere
 LEAGUES.forEach(league => { league.fixtures.forEach(f => { f._leagueId = league.id; }); });
 function isNeutralVenue(f) {
@@ -5188,7 +5206,7 @@ function renderFixture(f, key, leagueName) {
     <div class="fixture" id="fix-${key}" onclick="toggleFixture('fix-${key}')">
       <div class="fixture-row">
         <div>
-          <div class="teams"><span class="team-home">${f.home} vs</span> <span class="team-away">${f.away}${valueBadge}</span></div>
+          <div class="teams"><span class="team-home">${f.home}${f._leagueId === 'worldcup' ? wcRankBadge(f.home) : ''} vs</span> <span class="team-away">${f.away}${f._leagueId === 'worldcup' ? wcRankBadge(f.away) : ''}${valueBadge}</span></div>
           ${formRowHTML}
           ${bottomLine}
         </div>
