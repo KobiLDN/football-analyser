@@ -288,11 +288,11 @@
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.82 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.83 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 22 Jun 2026 21:00 BST</div>
+      <div class="updated-tag">Data · 23 Jun 2026 07:13 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -3501,7 +3501,7 @@ const LEAGUES = [
       {
         day: 'Monday 22 June',
         home: 'France', away: 'Iraq', time: '22:00',
-        result: null, homeWin: 89, draw: 8, awayWin: 3, verdict: 'Strong', fairOdds: '1.12-1.14',
+        result: '3-0', homeWin: 89, draw: 8, awayWin: 3, verdict: 'Strong', fairOdds: '1.12-1.14',
         homeForm: 'W W L W W',
         awayForm: 'W W D L L',
         factors: {
@@ -3531,12 +3531,13 @@ const LEAGUES = [
       {
         day: 'Tuesday 23 June',
         home: 'Norway', away: 'Senegal', time: '01:00',
-        result: null, homeWin: 45, draw: 25, awayWin: 30, verdict: 'Low', fairOdds: '2.20-2.25',
+        result: '3-2', homeWin: 45, draw: 25, awayWin: 30, verdict: 'Low', fairOdds: '2.20-2.25',
         homeForm: 'L D W D W',
         awayForm: 'W W L D L',
         factors: {
           formBalance:   { score: 70, detail: 'Norway have taken 8 points from their last 5 matches compared to Senegal\'s 7, showing slightly better consistency.' },
           momentum:      { score: 80, detail: 'Norway\'s 11-match competitive winning streak, including a 4-1 World Cup opening win, contrasts with Senegal\'s back-to-back winless games.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'Both teams scored in 7 of Norway\'s last 8 matches, while 3 of Senegal\'s last 4 games featured over 3.5 goals.' },
           leagueContext: { score: 60, detail: 'Senegal (FIFA #20) are ranked higher than Norway (#38) and have more recent World Cup experience, including a 2022 Round of 16 appearance.' }
         },
@@ -3557,12 +3558,13 @@ const LEAGUES = [
       {
         day: 'Tuesday 23 June',
         home: 'Jordan', away: 'Algeria', time: '04:00',
-        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.80-2.00',
+        result: '1-2', homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.80-2.00',
         homeForm: 'D D L L L',
         awayForm: 'L W W W L',
         factors: {
           formBalance:   { score: 30, detail: 'Jordan are winless in six matches, while Algeria won three of their last five.' },
           momentum:      { score: 70, detail: 'Algeria\'s attacking momentum is high with 12 goals in five games, contrasting Jordan\'s defensive struggles.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Jordan conceded 2+ goals in six consecutive matches; Algeria scored 12 in their last five.' },
           leagueContext: { score: 65, detail: 'Algeria\'s higher FIFA ranking (#45 vs #87) and World Cup experience favor them.' }
         },
@@ -3590,6 +3592,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No recent form data available for either team.' },
           momentum:      { score: 50, detail: 'Insufficient data to assess momentum.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal patterns unknown without match history.' },
           leagueContext: { score: 75, detail: 'Portugal (#6 FIFA) are heavy favorites over debutants Uzbekistan (#65).' }
         },
@@ -3610,6 +3613,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Recent results unavailable for analysis.' },
           momentum:      { score: 50, detail: 'Momentum unclear without performance data.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal trends not established.' },
           leagueContext: { score: 70, detail: 'England (#5 FIFA) have superior tournament history, but Ghana (#60) are four-time AFCON champions.' }
         },
@@ -3630,6 +3634,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient data to evaluate form.' },
           momentum:      { score: 50, detail: 'Momentum assessment requires recent performances.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal data unavailable for both teams.' },
           leagueContext: { score: 65, detail: 'Croatia (#10 FIFA) are recent World Cup semifinalists; Panama (#75) lack similar pedigree.' }
         },
@@ -3650,6 +3655,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No recent match data for form comparison.' },
           momentum:      { score: 50, detail: 'Momentum unmeasurable without results.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Scoring/conceding patterns unknown.' },
           leagueContext: { score: 60, detail: 'Colombia (#12 FIFA) are Copa América finalists; DR Congo (#52) return to World Cup after 52 years.' }
         },
@@ -3670,6 +3676,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 57, detail: 'Both teams show solid recent form, with Switzerland averaging 1.6 points and Canada 1.8 points over their last five matches.' },
           momentum:      { score: 80, detail: 'Each team is unbeaten in their last three games and enters with momentum from decisive wins (Switzerland 4-1 vs Bosnia, Canada 6-0 vs Qatar).' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 57, detail: 'Model projects 2.27 total goals (SUI: 1.35, CAN: 0.92), though Switzerland averages 4.2 goals in their last five while Canada averages 2.4.' },
           leagueContext: { score: 50, detail: 'Switzerland\'s World Cup experience (#20 FIFA) balances Canada\'s co-host advantage (#40 FIFA) in Vancouver\'s decisive Group B clash.' }
         },
@@ -3699,6 +3706,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 55, detail: 'Bosnia have drawn four of their last five, while Qatar have lost three of their last five.' },
           momentum:      { score: 50, detail: 'Both teams suffered heavy defeats in their last match (4-1 vs Switzerland for Bosnia, 6-0 vs Canada for Qatar).' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'Both teams conceded 10+ goals combined in their last two World Cup matches.' },
           leagueContext: { score: 50, detail: 'Both teams need victory to have any chance of advancing as best third-placed teams.' }
         },
@@ -3724,6 +3732,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 85, detail: 'Brazil are unbeaten in five matches (4W, 1D), while Scotland lost two of their last five.' },
           momentum:      { score: 80, detail: 'Brazil scored 9 goals in two group games; Scotland managed zero shots on target against Morocco.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Brazil averaged 3 goals per game in their last five matches.' },
           leagueContext: { score: 90, detail: 'Brazil have won 4 of 5 historical meetings; Scotland have never advanced beyond a World Cup group stage.' }
         },
