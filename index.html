@@ -3664,25 +3664,30 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Switzerland', away: 'Canada', time: '20:00',
-        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.45-2.55',
-        homeForm: 'W D W D D',
-        awayForm: 'D D D W',
+        result: null, homeWin: 46, draw: 29, awayWin: 25, verdict: 'Low', fairOdds: '2.10-2.30',
+        homeForm: 'L W D D W',
+        awayForm: 'D W D D W',
         factors: {
-          formBalance:   { score: 45, detail: 'Switzerland has 1 win in last 5; Canada has 2 wins and 3 draws.' },
-          momentum:      { score: 40, detail: 'Switzerland winless in 3 matches; Canada unbeaten in 5.' },
-          headToHead:    { score: 50, detail: 'No recent head-to-head encounters available.' },
-          goalTendency:  { score: 50, detail: 'Switzerland averaged 3.2 goals per game recently; Canada averaged 1.8.' },
-          leagueContext: { score: 50, detail: 'Group B opener with Bosnia & Herzegovina and Qatar awaiting.' }
+          formBalance:   { score: 57, detail: 'Both teams show solid recent form, with Switzerland averaging 1.6 points and Canada 1.8 points over their last five matches.' },
+          momentum:      { score: 80, detail: 'Each team is unbeaten in their last three games and enters with momentum from decisive wins (Switzerland 4-1 vs Bosnia, Canada 6-0 vs Qatar).' },
+          goalTendency:  { score: 57, detail: 'Model projects 2.27 total goals (SUI: 1.35, CAN: 0.92), though Switzerland averages 4.2 goals in their last five while Canada averages 2.4.' },
+          leagueContext: { score: 50, detail: 'Switzerland\'s World Cup experience (#20 FIFA) balances Canada\'s co-host advantage (#40 FIFA) in Vancouver\'s decisive Group B clash.' }
         },
         teamNews: {
-          home: [],
+          home: [
+              { tag: 'key', text: 'Granit Xhaka — captain and midfield orchestrator' },
+              { tag: 'key', text: 'Johan Manzambi — 2 goals this World Cup' },
+              { tag: 'key', text: 'Manuel Akanji — defensive anchor' }
+            ],
           away: [
-              { tag: 'out', text: 'Alphonso Davies — injury' },
-              { tag: 'out', text: 'Moïse Bombito — muscle injury' }
+              { tag: 'out', text: 'Ismael Kone — tournament-ending leg injury' },
+              { tag: 'out', text: 'Marcelo Flores — ruled out' },
+              { tag: 'key', text: 'Alphonso Davies — pace and creativity on the wing' },
+              { tag: 'key', text: 'Jonathan David — 3 goals this World Cup' }
             ]
         },
-        context: 'Switzerland uses Granit Xhaka\'s midfield control and Breel Embolo\'s physicality. Canada, missing Davies, depends on Jonathan David\'s movement. Vancouver\'s home advantage is offset by key absences, forcing tactical adjustments.',
-        summary: 'Pending deep research.'
+        context: 'Top spot in Group B hinges on this Vancouver showdown. Switzerland\'s attack, fueled by Xhaka\'s midfield control and Manzambi\'s breakout form (2 goals), faces Canada\'s high-press system under Marsch. The hosts counter with Davies\' dynamism and David\'s clinical finishing (hat-trick vs Qatar), backed by a defense with 7 clean sheets in 10 games. BC Place\'s crowd amplifies Canada\'s home-cohost advantage.',
+        summary: 'Switzerland\'s potent attack (10 goals in 5 games) tests Canada\'s stalwart defense (0.4 goals conceded avg). Both enter unbeaten in three, with SUI drawing Qatar 1-1 before routing Bosnia 4-1, while CAN drew Bosnia 1-1 then crushed Qatar 6-0. Models project a 1-1 stalemate, leaving Group B qualification open.'
       },
 
       {
