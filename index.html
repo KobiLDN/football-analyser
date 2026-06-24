@@ -3794,22 +3794,28 @@ const LEAGUES = [
       {
         day: 'Thursday 25 June',
         home: 'South Africa', away: 'South Korea', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.80-3.10',
-        homeForm: 'L D W L D',
-        awayForm: 'L W W W L',
+        result: null, homeWin: 15, draw: 25, awayWin: 60, verdict: 'Likely', fairOdds: '1.65-1.75',
+        homeForm: 'D D W L D',
+        awayForm: 'L L W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data beyond South Korea\'s opening win and South Africa\'s loss.' },
-          momentum:      { score: 55, detail: 'South Korea won their first match 2-1; South Africa lost 0-2 in their opener.' },
-          headToHead:    { score: 50, detail: 'No significant head-to-head history available between these teams.' },
-          goalTendency:  { score: 55, detail: 'South Korea scored twice in their opener; South Africa failed to score and conceded twice.' },
-          leagueContext: { score: 60, detail: 'South Korea sits 2nd in Group A with 3 points; South Africa is bottom with 0 points.' }
+          formBalance:   { score: 40, detail: 'South Africa winless in 6 matches contrasts South Korea\'s mixed form but superior FIFA ranking.' },
+          momentum:      { score: 65, detail: 'South Korea showed attacking threat against Mexico despite loss, while South Africa rely on defensive resilience.' },
+          goalTendency:  { score: 70, detail: 'South Africa scored once in two WC matches; South Korea netted 3 goals including comeback win vs Czech Republic.' },
+          leagueContext: { score: 75, detail: 'South Korea\'s tournament experience and counter-attack strength via Son Heung-min suits must-win pressure on South Africa.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Teboho Mokoena — suspended (yellow cards)' },
+              { tag: 'out', text: 'Themba Zwane — suspended (red card)' },
+              { tag: 'key', text: 'Sphephelo Sithole — returns from suspension to anchor midfield' }
+            ],
+          away: [
+              { tag: 'key', text: 'Son Heung-min — Tottenham star leading attack' },
+              { tag: 'key', text: 'Kim Min-jae — Bayern defender anchoring back three' }
+            ]
         },
-        context: 'Both teams enter with minimal performance data beyond Matchday 1 results. South Korea\'s attacking duo of Son Heung-min and Hwang Hee-chan must break down a Bafana Bafana defense that conceded twice in their opener. South Africa\'s Percy Tau remains their key creative threat but needs improved service. The venue (unconfirmed from World Cup stadium list) may influence tactical approaches in this must-not-lose Group A fixture.',
-        summary: 'Pending deep research.'
+        context: 'South Africa must win to advance but miss suspended midfielders Mokoena (penalty scorer) and Zwane, forcing Hugo Broos to start Sithole alongside Mbatha. South Korea need only a draw and will deploy Son Heung-min and Lee Kang-in to exploit spaces as Bafana Bafana push forward. Kim Min-jae marshals a settled Korean defense against Makgopa and Appollis.',
+        summary: 'South Korea favored due to superior firepower and South Africa\'s midfield absences, with pundits predicting a 1-0 away win. Son Heung-min is tipped to decide the match as South Africa\'s defensive approach clashes with must-win urgency. The Taegeuk Warriors aim to control transitions while Bafana Bafana risk exposure at Estadio BBVA.'
       },
 
       {
