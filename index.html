@@ -3683,129 +3683,112 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Switzerland', away: 'Canada', time: '20:00',
-        result: null, homeWin: 46, draw: 29, awayWin: 25, verdict: 'Low', fairOdds: '2.10-2.30',
-        homeForm: 'L W D D W',
-        awayForm: 'D W D D W',
+        result: null, homeWin: 42, draw: 28, awayWin: 30, verdict: 'Low', fairOdds: '2.10',
+        homeForm: 'W L W D W',
+        awayForm: 'L L L L W',
         factors: {
-          formBalance:   { score: 57, detail: 'Both teams show solid recent form, with Switzerland averaging 1.6 points and Canada 1.8 points over their last five matches.' },
-          momentum:      { score: 80, detail: 'Each team is unbeaten in their last three games and enters with momentum from decisive wins (Switzerland 4-1 vs Bosnia, Canada 6-0 vs Qatar).' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 57, detail: 'Model projects 2.27 total goals (SUI: 1.35, CAN: 0.92), though Switzerland averages 4.2 goals in their last five while Canada averages 2.4.' },
-          leagueContext: { score: 50, detail: 'Switzerland\'s World Cup experience (#20 FIFA) balances Canada\'s co-host advantage (#40 FIFA) in Vancouver\'s decisive Group B clash.' }
+          formBalance:   { score: 70, detail: 'Switzerland won 3 of last 5 World Cup group games (D1, L1) while Canada lost 4 of last 5 (W1).' },
+          momentum:      { score: 65, detail: 'Switzerland scored 4 late goals vs Bosnia; Canada\'s 6-0 win over Qatar featured two red cards against opponents.' },
+          goalTendency:  { score: 75, detail: 'Both teams scored 4+ goals in last matches (SUI 4-1 BIH, CAN 6-0 QAT).' },
+          leagueContext: { score: 60, detail: 'Switzerland (FIFA #20) unbeaten vs CONCACAF teams at World Cups; Canada (FIFA #40) seeks first group win vs UEFA opponent.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Granit Xhaka — captain and midfield orchestrator' },
-              { tag: 'key', text: 'Johan Manzambi — 2 goals this World Cup' },
-              { tag: 'key', text: 'Manuel Akanji — defensive anchor' }
+              { tag: 'doubt', text: 'Miro Muheim — calf injury' },
+              { tag: 'key', text: 'Granit Xhaka — 1 goal this World Cup' },
+              { tag: 'key', text: 'Ruben Vargas — 1 goal, 1 assist this World Cup' },
+              { tag: 'key', text: 'Johan Manzambi — 2 goals this World Cup' }
             ],
           away: [
-              { tag: 'out', text: 'Ismael Kone — tournament-ending leg injury' },
-              { tag: 'out', text: 'Marcelo Flores — ruled out' },
-              { tag: 'key', text: 'Alphonso Davies — pace and creativity on the wing' },
+              { tag: 'out', text: 'Ismaël Koné — broken leg' },
+              { tag: 'out', text: 'Alfie Jones — ankle injury' },
+              { tag: 'doubt', text: 'Stephen Eustaquio — undisclosed injury' },
+              { tag: 'doubt', text: 'Alphonso Davies — hamstring recovery' },
               { tag: 'key', text: 'Jonathan David — 3 goals this World Cup' }
             ]
         },
-        context: 'Top spot in Group B hinges on this Vancouver showdown. Switzerland\'s attack, fueled by Xhaka\'s midfield control and Manzambi\'s breakout form (2 goals), faces Canada\'s high-press system under Marsch. The hosts counter with Davies\' dynamism and David\'s clinical finishing (hat-trick vs Qatar), backed by a defense with 7 clean sheets in 10 games. BC Place\'s crowd amplifies Canada\'s home-cohost advantage.',
-        summary: 'Pending deep research.'
+        context: 'Top spot in Group B is at stake with both teams on four points. Switzerland\'s 4-1 comeback win over Bosnia featured late goals from Xhaka, Vargas, and substitute Manzambi. Canada\'s 6-0 victory against Qatar saw David\'s hat-trick but cost Koné to a broken leg. Davies may return off the bench after hamstring issues. Switzerland\'s 3-5-2 faces Canada\'s aggressive 4-4-2 press.',
+        summary: 'Opta supercomputer favors Switzerland slightly (42% win probability) due to superior tournament experience and attacking depth. Canada\'s defensive vulnerability without Koné and Eustaquio\'s uncertainty offset home advantage. Key battle: David vs Akanji; watch Manzambi\'s potential start after impactful substitute performances.'
       },
 
       {
         day: 'Wednesday 24 June',
         home: 'Bosnia & Herzegovina', away: 'Qatar', time: '20:00',
-        result: null, homeWin: 35, draw: 35, awayWin: 30, verdict: 'Low', fairOdds: '2.80-3.00',
-        homeForm: 'D D D D L',
-        awayForm: 'L L D D L',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 55, detail: 'Bosnia have drawn four of their last five, while Qatar have lost three of their last five.' },
-          momentum:      { score: 50, detail: 'Both teams suffered heavy defeats in their last match (4-1 vs Switzerland for Bosnia, 6-0 vs Canada for Qatar).' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 60, detail: 'Both teams conceded 10+ goals combined in their last two World Cup matches.' },
-          leagueContext: { score: 50, detail: 'Both teams need victory to have any chance of advancing as best third-placed teams.' }
-        },
-        teamNews: {
-          home: [
-              { tag: 'out', text: 'Tarik Muharemovic — suspension' }
-            ],
-          away: [
-              { tag: 'out', text: 'Homam Al-Amin — suspension' },
-              { tag: 'out', text: 'Assim Madibo — suspension' }
-            ]
-        },
-        context: 'Bosnia must rebuild their defense without suspended center-back Tarik Muharemovic after a 4-1 collapse against Switzerland. Qatar faces similar disruption with two suspensions following their 6-0 thrashing by Canada. Both teams have scored exactly one goal in four consecutive competitive matches before their recent defeats. With elimination looming, coaches Sergej Barbarez and Julen Lopetegui must solve defensive crises while pushing for goals.',
-        summary: 'Pending deep research.'
-      },
-
-      {
-        day: 'Wednesday 24 June',
-        home: 'Scotland', away: 'Brazil', time: '23:00',
-        result: null, homeWin: 10, draw: 20, awayWin: 70, verdict: 'Strong', fairOdds: '1.40-1.45',
-        homeForm: 'L W W W L',
-        awayForm: 'W W W D W',
-        factors: {
-          formBalance:   { score: 85, detail: 'Brazil are unbeaten in five matches (4W, 1D), while Scotland lost two of their last five.' },
-          momentum:      { score: 80, detail: 'Brazil scored 9 goals in two group games; Scotland managed zero shots on target against Morocco.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 75, detail: 'Brazil averaged 3 goals per game in their last five matches.' },
-          leagueContext: { score: 90, detail: 'Brazil have won 4 of 5 historical meetings; Scotland have never advanced beyond a World Cup group stage.' }
-        },
-        teamNews: {
-          home: [
-              { tag: 'out', text: 'Kieran Tierney — injury' }
-            ],
-          away: [
-              { tag: 'out', text: 'Raphinha — hamstring injury' },
-              { tag: 'key', text: 'Neymar — returning from calf injury' },
-              { tag: 'key', text: 'Vinicius Junior — 6 goal involvements in 6 career WC matches' }
-            ]
-        },
-        context: 'Scotland must cope without Kieran Tierney against Brazil\'s potent attack featuring Vinicius Junior (6 goal involvements in 6 WC apps) and returning Neymar. Brazil haven\'t conceded a first-half shot since facing Scotland in 1990 – a record they maintained against Haiti. Steve Clarke\'s side set a national cap record (609) against Morocco but failed to register a shot on target. Matheus Cunha\'s brace against Haiti strengthens Brazil\'s attacking options.',
-        summary: 'Pending deep research.'
-      },
-
-      {
-        day: 'Wednesday 24 June',
-        home: 'Morocco', away: 'Haiti', time: '23:00',
-        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.50-1.55',
-        homeForm: 'W W W D D',
-        awayForm: 'L D W W L',
-        factors: {
-          formBalance:   { score: 65, detail: 'Morocco has 3 wins and 2 draws in last 5; Haiti has 2 wins and 1 draw.' },
-          momentum:      { score: 70, detail: 'Morocco unbeaten in last 5; Haiti lost twice recently.' },
-          headToHead:    { score: 50, detail: 'No prior matches between these teams.' },
-          goalTendency:  { score: 60, detail: 'Morocco kept 3 clean sheets in last 5; Haiti scored 8 goals.' },
-          leagueContext: { score: 60, detail: 'Morocco aims for top of Group C alongside Brazil.' }
+          formBalance:   { score: 50, detail: 'No data available' },
+          momentum:      { score: 50, detail: 'No data available' },
+          goalTendency:  { score: 50, detail: 'No data available' },
+          leagueContext: { score: 50, detail: 'No data available' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'Morocco features Achraf Hakimi\'s flank runs and Hakim Ziyech\'s playmaking. Haiti depends on Duckens Nazon\'s physicality and defensive discipline. Atlanta\'s heat favors Morocco\'s technical control against Haiti\'s counter-attacks.',
-        summary: 'Pending deep research.'
+        context: 'No detailed information available from web search.',
+        summary: 'No detailed information available.'
+      },
+
+      {
+        day: 'Wednesday 24 June',
+        home: 'Scotland', away: 'Brazil', time: '23:00',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
+        factors: {
+          formBalance:   { score: 50, detail: 'No data available' },
+          momentum:      { score: 50, detail: 'No data available' },
+          goalTendency:  { score: 50, detail: 'No data available' },
+          leagueContext: { score: 50, detail: 'No data available' }
+        },
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'No detailed information available from web search.',
+        summary: 'No detailed information available.'
+      },
+
+      {
+        day: 'Wednesday 24 June',
+        home: 'Morocco', away: 'Haiti', time: '23:00',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
+        factors: {
+          formBalance:   { score: 50, detail: 'No data available' },
+          momentum:      { score: 50, detail: 'No data available' },
+          goalTendency:  { score: 50, detail: 'No data available' },
+          leagueContext: { score: 50, detail: 'No data available' }
+        },
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'No detailed information available from web search.',
+        summary: 'No detailed information available.'
       },
 
       {
         day: 'Thursday 25 June',
         home: 'Czech Republic', away: 'Mexico', time: '02:00',
-        result: null, homeWin: 20, draw: 25, awayWin: 55, verdict: 'Likely', fairOdds: '1.75-1.90',
-        homeForm: 'D W W L D',
-        awayForm: 'D W W W W',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 70, detail: 'Mexico\'s form (4 wins, 1 draw) is superior to Czech Republic\'s (2 wins, 2 draws, 1 loss).' },
-          momentum:      { score: 80, detail: 'Mexico has won 4 consecutive matches while Czech Republic has only 2 wins in their last 5.' },
-          headToHead:    { score: 50, detail: 'No previous head-to-head encounters between these teams.' },
-          goalTendency:  { score: 75, detail: 'Mexico kept 4 clean sheets in their last 5 matches; Czech Republic conceded in 4 of their last 5.' },
-          leagueContext: { score: 70, detail: 'Mexico leads Group A with 3 points; Czech Republic sits bottom with 0 points after Matchday 1.' }
+          formBalance:   { score: 50, detail: 'No data available' },
+          momentum:      { score: 50, detail: 'No data available' },
+          goalTendency:  { score: 50, detail: 'No data available' },
+          leagueContext: { score: 50, detail: 'No data available' }
         },
         teamNews: {
-          home: [
-              { tag: 'out', text: 'Jan Kuchta — muscle injury' },
-              { tag: 'out', text: 'T. Chorý — red card suspension' }
-            ],
+          home: [],
           away: []
         },
-        context: 'Mexico\'s defensive solidity (4 clean sheets in 5 matches) faces a Czech attack missing key striker Jan Kuchta and suspended forward T. Chorý. Playing at Mexico City Stadium gives El Tri geographical advantage, while Czechia must improve set-piece defense after conceding multiple goals in recent matches. Midfield battles between Mexico\'s creative playmakers and Czechia\'s Tomas Souček could decide this tight Group A clash.',
-        summary: 'Pending deep research.'
+        context: 'No detailed information available from web search.',
+        summary: 'No detailed information available.'
       },
 
       {
