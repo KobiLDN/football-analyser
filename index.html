@@ -288,11 +288,11 @@
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.85 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.86 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 24 Jun 2026 00:53 BST</div>
+      <div class="updated-tag">Data · 24 Jun 2026 07:12 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -3628,12 +3628,13 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Panama', away: 'Croatia', time: '00:00',
-        result: null, homeWin: 15, draw: 22, awayWin: 63, verdict: 'Likely', fairOdds: '1.48-1.57',
+        result: '0-1', homeWin: 15, draw: 22, awayWin: 63, verdict: 'Likely', fairOdds: '1.48-1.57',
         homeForm: 'W W D L L',
         awayForm: 'W D W W L',
         factors: {
           formBalance:   { score: 40, detail: 'Panama\'s mixed recent form (2W, 1D, 2L) contrasts with Croatia\'s stronger results (3W, 1D, 1L).' },
           momentum:      { score: 30, detail: 'Panama\'s morale is low after a stoppage-time loss to Ghana, while Croatia\'s experience aids resilience.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Both teams lack clean sheets recently (Panama: 8 games, Croatia: 7 games), indicating high scoring potential.' },
           leagueContext: { score: 20, detail: 'Croatia\'s World Cup pedigree (2018 finalists, 2022 semi-finalists) vastly outweighs Panama\'s limited tournament history.' }
         },
@@ -3655,12 +3656,13 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Colombia', away: 'DR Congo', time: '03:00',
-        result: null, homeWin: 61, draw: 24, awayWin: 15, verdict: 'Likely', fairOdds: '1.56-1.72',
+        result: '1-0', homeWin: 61, draw: 24, awayWin: 15, verdict: 'Likely', fairOdds: '1.56-1.72',
         homeForm: 'L L W W W',
         awayForm: 'W W D L D',
         factors: {
           formBalance:   { score: 70, detail: 'Colombia have won their last three matches including their World Cup opener, while DR Congo have drawn two of their last three.' },
           momentum:      { score: 75, detail: 'Colombia carry momentum from three consecutive wins, while DR Congo gained confidence from holding Portugal to a draw.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Colombia scored 17 goals in their last seven World Cup group matches, while DR Congo scored once in their opener.' },
           leagueContext: { score: 85, detail: 'Colombia are ranked 40 places higher and have reached the knockout stages in the last two World Cups, while DR Congo are making only their second appearance.' }
         },
@@ -3689,6 +3691,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Switzerland won 3 of last 5 World Cup group games (D1, L1) while Canada lost 4 of last 5 (W1).' },
           momentum:      { score: 65, detail: 'Switzerland scored 4 late goals vs Bosnia; Canada\'s 6-0 win over Qatar featured two red cards against opponents.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Both teams scored 4+ goals in last matches (SUI 4-1 BIH, CAN 6-0 QAT).' },
           leagueContext: { score: 60, detail: 'Switzerland (FIFA #20) unbeaten vs CONCACAF teams at World Cups; Canada (FIFA #40) seeks first group win vs UEFA opponent.' }
         },
@@ -3720,6 +3723,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No data available' },
           momentum:      { score: 50, detail: 'No data available' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No data available' },
           leagueContext: { score: 50, detail: 'No data available' }
         },
@@ -3740,6 +3744,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No data available' },
           momentum:      { score: 50, detail: 'No data available' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No data available' },
           leagueContext: { score: 50, detail: 'No data available' }
         },
@@ -3760,6 +3765,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No data available' },
           momentum:      { score: 50, detail: 'No data available' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No data available' },
           leagueContext: { score: 50, detail: 'No data available' }
         },
@@ -3780,6 +3786,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No data available' },
           momentum:      { score: 50, detail: 'No data available' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No data available' },
           leagueContext: { score: 50, detail: 'No data available' }
         },
@@ -3800,6 +3807,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 40, detail: 'South Africa winless in 6 matches contrasts South Korea\'s mixed form but superior FIFA ranking.' },
           momentum:      { score: 65, detail: 'South Korea showed attacking threat against Mexico despite loss, while South Africa rely on defensive resilience.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'South Africa scored once in two WC matches; South Korea netted 3 goals including comeback win vs Czech Republic.' },
           leagueContext: { score: 75, detail: 'South Korea\'s tournament experience and counter-attack strength via Son Heung-min suits must-win pressure on South Africa.' }
         },
@@ -3827,6 +3835,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 85, detail: 'Ivory Coast have won four of their last five matches, while Curaçao have lost four and drawn one in the same period.' },
           momentum:      { score: 75, detail: 'Ivory Coast narrowly lost to Germany despite leading, while Curaçao gained confidence from a historic draw against Ecuador.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Curaçao conceded 18 goals in their last five matches, with 11 of their last 15 conceded goals coming in second halves.' },
           leagueContext: { score: 80, detail: 'Ivory Coast are reigning AFCON champions with World Cup experience, while Curaçao are debutants and the smallest nation to qualify.' }
         },
