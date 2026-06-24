@@ -3655,22 +3655,29 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Colombia', away: 'DR Congo', time: '03:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'L L L L L',
-        awayForm: 'L L L L L',
+        result: null, homeWin: 61, draw: 24, awayWin: 15, verdict: 'Likely', fairOdds: '1.56-1.72',
+        homeForm: 'L L W W W',
+        awayForm: 'W W D L D',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent match data for form comparison.' },
-          momentum:      { score: 50, detail: 'Momentum unmeasurable without results.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Scoring/conceding patterns unknown.' },
-          leagueContext: { score: 60, detail: 'Colombia (#12 FIFA) are Copa América finalists; DR Congo (#52) return to World Cup after 52 years.' }
+          formBalance:   { score: 70, detail: 'Colombia have won their last three matches including their World Cup opener, while DR Congo have drawn two of their last three.' },
+          momentum:      { score: 75, detail: 'Colombia carry momentum from three consecutive wins, while DR Congo gained confidence from holding Portugal to a draw.' },
+          goalTendency:  { score: 80, detail: 'Colombia scored 17 goals in their last seven World Cup group matches, while DR Congo scored once in their opener.' },
+          leagueContext: { score: 85, detail: 'Colombia are ranked 40 places higher and have reached the knockout stages in the last two World Cups, while DR Congo are making only their second appearance.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Luis Díaz — 1 goal, 1 assist this World Cup' },
+              { tag: 'key', text: 'James Rodríguez — creative playmaker' },
+              { tag: 'key', text: 'Luis Suárez — 28 goals for Sporting CP in 2025-26' }
+            ],
+          away: [
+              { tag: 'out', text: 'Théo Bongonda — injury' },
+              { tag: 'key', text: 'Yoane Wissa — 1 goal this World Cup' },
+              { tag: 'key', text: 'Chancel Mbemba — booked vs Portugal, risks suspension' }
+            ]
         },
-        context: 'Colombia\'s Luis Díaz leads the attack against DR Congo\'s physical defense. DR Congo, AFCON semifinalists, rely on set-pieces and transitions. Colombia\'s technical quality faces a disciplined but less experienced opponent.',
-        summary: 'Pending deep research.'
+        context: 'Colombia opened with a 3-1 win over Uzbekistan, while DR Congo drew 1-1 with Portugal. This is the first meeting between the nations. Colombia\'s attack features Luis Díaz and James Rodríguez supporting striker Luis Suárez. DR Congo rely on Yoane Wissa\'s pace and Chancel Mbemba\'s defensive leadership.',
+        summary: 'Colombia\'s superior attacking quality and World Cup experience make them favorites. DR Congo\'s defensive resilience against Portugal indicates potential for a tight match, but Colombia\'s firepower should prevail. A win would secure Colombia\'s knockout stage place.'
       },
 
       {
