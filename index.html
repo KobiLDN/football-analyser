@@ -3628,22 +3628,28 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Panama', away: 'Croatia', time: '00:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'L L L L L',
-        awayForm: 'L L L L L',
+        result: null, homeWin: 15, draw: 22, awayWin: 63, verdict: 'Likely', fairOdds: '1.48-1.57',
+        homeForm: 'W W D L L',
+        awayForm: 'W D W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data to evaluate form.' },
-          momentum:      { score: 50, detail: 'Momentum assessment requires recent performances.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal data unavailable for both teams.' },
-          leagueContext: { score: 65, detail: 'Croatia (#10 FIFA) are recent World Cup semifinalists; Panama (#75) lack similar pedigree.' }
+          formBalance:   { score: 40, detail: 'Panama\'s mixed recent form (2W, 1D, 2L) contrasts with Croatia\'s stronger results (3W, 1D, 1L).' },
+          momentum:      { score: 30, detail: 'Panama\'s morale is low after a stoppage-time loss to Ghana, while Croatia\'s experience aids resilience.' },
+          goalTendency:  { score: 80, detail: 'Both teams lack clean sheets recently (Panama: 8 games, Croatia: 7 games), indicating high scoring potential.' },
+          leagueContext: { score: 20, detail: 'Croatia\'s World Cup pedigree (2018 finalists, 2022 semi-finalists) vastly outweighs Panama\'s limited tournament history.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Adalberto Carrasquilla — groin injury' },
+              { tag: 'key', text: 'Yoel Bárcenas — defensive anchor (106 caps)' },
+              { tag: 'key', text: 'Cecilio Waterman — target striker' }
+            ],
+          away: [
+              { tag: 'key', text: 'Luka Modrić — 200th cap, midfield control' },
+              { tag: 'key', text: 'Ivan Perišić — 2 assists this tournament' }
+            ]
         },
-        context: 'Panama\'s defensive setup challenges Croatia\'s midfield maestros Modrić and Kovačić. Croatia aims to control tempo, while Panama seeks counters. Croatia\'s experience contrasts Panama\'s 2018 group-stage exit.',
-        summary: 'Croatia favored technically, but Panama\'s resilience could frustrate. No injury updates. Tactical focus: Croatia\'s midfield dominance vs Panama\'s compact defense.'
+        context: 'Both teams lost their openers (Panama 0-1 to Ghana, Croatia 2-4 to England) and need victory to advance. Panama\'s compact 3-4-3 relies on Waterman\'s hold-up play and Bárcenas\' defensive work rate, but Carrasquilla\'s absence weakens creativity. Croatia\'s midfield trio (Modrić, Kovačić, Pasalić) will dominate possession, with Perišić and Musa exploiting Panama\'s high press. Modrić\'s 200th cap adds motivation for Croatia\'s golden generation.',
+        summary: 'Croatia\'s experienced core (Modrić, Perišić) is favored against Panama\'s resilient but limited squad. Predictions lean toward a 2-1 or 2-0 Croatia win, with goals expected from Musa and Kramarić as Panama\'s defensive organization falters late. Panama\'s wait for a first World Cup point likely continues despite a spirited effort.'
       },
 
       {
@@ -3664,7 +3670,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Colombia\'s Luis Díaz leads the attack against DR Congo\'s physical defense. DR Congo, AFCON semifinalists, rely on set-pieces and transitions. Colombia\'s technical quality faces a disciplined but less experienced opponent.',
-        summary: 'Colombia slight favorites due to ranking and Copa América form. DR Congo\'s tournament return adds unpredictability. No injury reports. Key: Colombia\'s creativity vs Congo\'s defensive organization.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3694,7 +3700,7 @@ const LEAGUES = [
             ]
         },
         context: 'Top spot in Group B hinges on this Vancouver showdown. Switzerland\'s attack, fueled by Xhaka\'s midfield control and Manzambi\'s breakout form (2 goals), faces Canada\'s high-press system under Marsch. The hosts counter with Davies\' dynamism and David\'s clinical finishing (hat-trick vs Qatar), backed by a defense with 7 clean sheets in 10 games. BC Place\'s crowd amplifies Canada\'s home-cohost advantage.',
-        summary: 'Switzerland\'s potent attack (10 goals in 5 games) tests Canada\'s stalwart defense (0.4 goals conceded avg). Both enter unbeaten in three, with SUI drawing Qatar 1-1 before routing Bosnia 4-1, while CAN drew Bosnia 1-1 then crushed Qatar 6-0. Models project a 1-1 stalemate, leaving Group B qualification open.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3720,7 +3726,7 @@ const LEAGUES = [
             ]
         },
         context: 'Bosnia must rebuild their defense without suspended center-back Tarik Muharemovic after a 4-1 collapse against Switzerland. Qatar faces similar disruption with two suspensions following their 6-0 thrashing by Canada. Both teams have scored exactly one goal in four consecutive competitive matches before their recent defeats. With elimination looming, coaches Sergej Barbarez and Julen Lopetegui must solve defensive crises while pushing for goals.',
-        summary: 'Both teams enter with shattered confidence after heavy Matchday 2 defeats and multiple suspensions. Bosnia\'s four consecutive draws before the Switzerland loss show resilience but lack cutting edge. Qatar\'s eight-match winless streak includes conceding seven goals in two World Cup games. The suspensions compound existing defensive vulnerabilities for both sides.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3747,7 +3753,7 @@ const LEAGUES = [
             ]
         },
         context: 'Scotland must cope without Kieran Tierney against Brazil\'s potent attack featuring Vinicius Junior (6 goal involvements in 6 WC apps) and returning Neymar. Brazil haven\'t conceded a first-half shot since facing Scotland in 1990 – a record they maintained against Haiti. Steve Clarke\'s side set a national cap record (609) against Morocco but failed to register a shot on target. Matheus Cunha\'s brace against Haiti strengthens Brazil\'s attacking options.',
-        summary: 'Brazil are heavy favorites given historical dominance (4W, 1D vs Scotland) and attacking firepower led by Vinicius Junior. Scotland\'s defensive record is concerning after conceding the earliest World Cup goal in their history (70 seconds vs Morocco) and losing Tierney. Brazil\'s return of Neymar compounds Scotland\'s task as they seek their first-ever knockout stage progression.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3768,7 +3774,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Morocco features Achraf Hakimi\'s flank runs and Hakim Ziyech\'s playmaking. Haiti depends on Duckens Nazon\'s physicality and defensive discipline. Atlanta\'s heat favors Morocco\'s technical control against Haiti\'s counter-attacks.',
-        summary: 'Morocco\'s defense (3 clean sheets in 5 games) faces Haiti\'s inconsistent attack. Ziyech and Hakimi provide creativity, while Haiti relies on set pieces. Expect Morocco\'s possession dominance to break down Haiti\'s low block.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3792,7 +3798,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Mexico\'s defensive solidity (4 clean sheets in 5 matches) faces a Czech attack missing key striker Jan Kuchta and suspended forward T. Chorý. Playing at Mexico City Stadium gives El Tri geographical advantage, while Czechia must improve set-piece defense after conceding multiple goals in recent matches. Midfield battles between Mexico\'s creative playmakers and Czechia\'s Tomas Souček could decide this tight Group A clash.',
-        summary: 'Mexico enters with momentum from 4 straight wins and a 2-0 opening victory, while Czech Republic struggles with attacking absences and a loss in their first match. Expect Mexico to control possession and leverage home support, with their defensive organization likely neutralizing Czechia\'s depleted frontline. A 1-0 or 2-0 Mexico win appears probable given current form and squad availability.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3813,7 +3819,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Both teams enter with minimal performance data beyond Matchday 1 results. South Korea\'s attacking duo of Son Heung-min and Hwang Hee-chan must break down a Bafana Bafana defense that conceded twice in their opener. South Africa\'s Percy Tau remains their key creative threat but needs improved service. The venue (unconfirmed from World Cup stadium list) may influence tactical approaches in this must-not-lose Group A fixture.',
-        summary: 'Limited data makes this highly unpredictable. South Korea has slight momentum from their 2-1 opening win but showed defensive vulnerabilities. South Africa must improve attacking output after a goalless first match. Expect a cagey affair decided by individual moments, with set pieces potentially crucial for either side in this evenly matched contest.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3836,7 +3842,7 @@ const LEAGUES = [
             ]
         },
         context: 'Ivory Coast relies on midfield control from Franck Kessié and Seko Fofana, with Amad Diallo providing attacking width. Curaçao\'s hopes rest on Rangelo Janga\'s counter-attacking threat. The Elephants must win to boost knockout stage chances while Curaçao aims to capitalize on set-piece opportunities.',
-        summary: 'Ivory Coast holds 72.5% market probability due to superior firepower and midfield control. Curaçao\'s best chance involves defensive discipline and exploiting set pieces through Janga. NDicka\'s absence is Ivory Coast\'s only squad concern.'
+        summary: 'Pending deep research.'
       },
 
       {
