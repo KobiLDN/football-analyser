@@ -3821,24 +3821,29 @@ const LEAGUES = [
       {
         day: 'Thursday 25 June',
         home: 'Curaçao', away: 'Ivory Coast', time: '21:00',
-        result: null, homeWin: 10, draw: 18, awayWin: 72, verdict: 'Strong', fairOdds: '1.35-1.42',
-        homeForm: 'L L L L',
-        awayForm: 'W W W W',
+        result: null, homeWin: 15, draw: 20, awayWin: 65, verdict: 'Strong', fairOdds: '1.50-1.60',
+        homeForm: 'L L L L D',
+        awayForm: 'W W W W L',
         factors: {
-          formBalance:   { score: 30, detail: 'Ivory Coast has superior squad depth with European-based professionals.' },
-          momentum:      { score: 65, detail: 'Market shows strong confidence in Ivory Coast with stable 72.5% win probability.' },
-          headToHead:    { score: 50, detail: 'No recent encounters; first World Cup meeting between these teams.' },
-          goalTendency:  { score: 70, detail: 'Ivory Coast\'s attacking quality expected to dominate against Curaçao\'s defensive setup.' },
-          leagueContext: { score: 80, detail: 'Ivory Coast must win to advance from Group E; Curaçao seeks historic upset.' }
+          formBalance:   { score: 85, detail: 'Ivory Coast have won four of their last five matches, while Curaçao have lost four and drawn one in the same period.' },
+          momentum:      { score: 75, detail: 'Ivory Coast narrowly lost to Germany despite leading, while Curaçao gained confidence from a historic draw against Ecuador.' },
+          goalTendency:  { score: 70, detail: 'Curaçao conceded 18 goals in their last five matches, with 11 of their last 15 conceded goals coming in second halves.' },
+          leagueContext: { score: 80, detail: 'Ivory Coast are reigning AFCON champions with World Cup experience, while Curaçao are debutants and the smallest nation to qualify.' }
         },
         teamNews: {
-          home: [],
+          home: [
+              { tag: 'doubt', text: 'Jurgen Locadia — knock' },
+              { tag: 'key', text: 'Eloy Room — goalkeeper, 15 saves vs Ecuador' },
+              { tag: 'key', text: 'Leandro Bacuna — midfielder, 3 assists in qualifying' }
+            ],
           away: [
-              { tag: 'out', text: 'Evan NDicka — injury' }
+              { tag: 'out', text: 'Wilfried Singo — hamstring injury' },
+              { tag: 'key', text: 'Amad Diallo — 1 goal this World Cup' },
+              { tag: 'key', text: 'Franck Kessie — 1 goal this World Cup' }
             ]
         },
-        context: 'Ivory Coast relies on midfield control from Franck Kessié and Seko Fofana, with Amad Diallo providing attacking width. Curaçao\'s hopes rest on Rangelo Janga\'s counter-attacking threat. The Elephants must win to boost knockout stage chances while Curaçao aims to capitalize on set-piece opportunities.',
-        summary: 'Pending deep research.'
+        context: 'Curaçao will likely deploy a defensive 5-2-3 formation anchored by Eloy Room after his record 15-save performance against Ecuador. Ivory Coast need a win to secure knockout qualification and will rely on Amad Diallo\'s dribbling and Franck Kessie\'s midfield control. Wilfried Singo\'s absence weakens their defense, but Yan Diomande\'s wing play (4.3 successful dribbles per 90 in Bundesliga) poses a threat.',
+        summary: 'Curaçao\'s defensive resilience against Ecuador (0-0) contrasts with their 7-1 loss to Germany, while Ivory Coast narrowly lost to Germany after leading. The Elephants dominate recent form with four wins in five games and need victory to advance. Expect Curaçao to focus on containment through Room and Bacuna, but Ivory Coast\'s superior firepower should prevail.'
       },
 
       {
