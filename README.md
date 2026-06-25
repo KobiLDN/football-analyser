@@ -6,6 +6,12 @@ A football match analysis tool with AI-powered home/draw/away win probabilities 
 
 https://kobildn.github.io/football-analyser/
 
+## Staging site
+
+https://football-analyser.pages.dev (Cloudflare Pages, deploys from `main`)
+
+Branch previews: `https://claude-football-cloud-kmaint.football-analyser.pages.dev` — auto-updates on every push to `claude/football-cloud-kmaint`.
+
 ## What it covers
 
 Nine competitions: Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Champions League, Europa League, Conference League, and World Cup 2026.
@@ -15,9 +21,9 @@ Each fixture is annotated with:
 - Recent form and league position
 - Confirmed team news (injuries, suspensions, key players)
 - Tactical context and motivation
-- Head-to-head history
 - Home / draw / away win probabilities and confidence verdict (Low / Likely / Strong)
 - Last-5 form dots per team (W/D/L) sourced from Understat xG data
+- FIFA rankings beside team names on World Cup fixtures
 - Fair odds estimate, plus book odds and edge calculation when available
 
 ## Updating each gameweek
@@ -32,7 +38,7 @@ Requires `FOOTBALL_DATA_API_KEY` to be set as a repo secret.
 
 ## Marking results
 
-A second GitHub Action (`.github/workflows/mark-results.yml`) runs at **5pm BST on Thursday–Sunday**, **11pm BST daily**, **2am BST daily** (catches 22:00–23:00 kick-offs finishing after midnight), and **8am BST daily** (catches World Cup overnight kick-offs 00:00–05:00 BST), queries football-data.org for finished matches, and writes scorelines into the `result` field in the `LEAGUES` array — then auto-commits as `github-actions[bot]`. The toggle in the sidebar's Display section lets you flip between "upcoming only" and "include past fixtures" so you can see final scores (and draw tags) once they're populated.
+A second GitHub Action (`.github/workflows/mark-results.yml`) runs at **5pm BST on Thursday–Sunday**, **11pm BST daily**, **2am BST daily** (catches 22:00–23:00 kick-offs finishing after midnight), and **6am BST daily** (catches World Cup overnight kick-offs 00:00–05:00 BST), queries football-data.org for finished matches, and writes scorelines into the `result` field in the `LEAGUES` array — then auto-commits as `github-actions[bot]`. The toggle in the sidebar's Display section lets you flip between "upcoming only" and "include past fixtures" so you can see final scores (and draw tags) once they're populated.
 
 Manual fallback: edit the fixture object directly to set `result:` if the workflow misses one.
 
