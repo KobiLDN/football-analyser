@@ -3947,22 +3947,34 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Turkey', away: 'USA', time: '03:00',
-        result: null, homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.40-2.60',
-        homeForm: 'W D W W L',
-        awayForm: 'W W W',
+        result: null, homeWin: 29, draw: 23, awayWin: 48, verdict: 'Low', fairOdds: '2.05-2.10',
+        homeForm: 'W W W L L',
+        awayForm: 'L W L W W',
         factors: {
-          formBalance:   { score: 55, detail: 'Turkey overcame European playoffs; USA has home advantage.' },
-          momentum:      { score: 50, detail: 'No probability indicators found; first World Cup meeting.' },
-          headToHead:    { score: 50, detail: 'No historical matches between these nations.' },
-          goalTendency:  { score: 50, detail: 'Goal expectations unquantified without data.' },
-          leagueContext: { score: 75, detail: 'Group D finale with knockout stage implications for both teams.' }
+          formBalance:   { score: 35, detail: 'Turkey have lost both group matches without scoring, while USA won both with 6 goals.' },
+          momentum:      { score: 20, detail: 'USA secured group supremacy with consecutive wins, while Turkey are eliminated after two defeats.' },
+          goalTendency:  { score: 25, detail: 'Turkey failed to convert 32 shots vs Paraguay; USA scored 6 goals in two matches.' },
+          leagueContext: { score: 65, detail: 'USA (ranked #11) have advanced from the last three World Cup groups; Turkey (#28) are winless in their return after 24 years.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Yunus Akgün (injury)' },
+              { tag: 'key', text: 'Hakan Çalhanoglu (22 goals for Turkey)' },
+              { tag: 'key', text: 'Arda Güler (created 3 chances vs Paraguay)' },
+              { tag: 'key', text: 'Ugurcan Cakir (clean sheet record chase)' }
+            ],
+          away: [
+              { tag: 'out', text: 'Cristian Roldan (injury)' },
+              { tag: 'doubt', text: 'Christian Pulisic (calf)' },
+              { tag: 'doubt', text: 'Tyler Adams (yellow card accumulation)' },
+              { tag: 'doubt', text: 'Folarin Balogun (yellow card accumulation)' },
+              { tag: 'doubt', text: 'Chris Richards (yellow card accumulation)' },
+              { tag: 'doubt', text: 'Antonee Robinson (yellow card accumulation)' },
+              { tag: 'key', text: 'Folarin Balogun (2 goals this World Cup)' }
+            ]
         },
-        context: 'Turkey\'s playoff-hardened squad faces US host-nation pressure at Los Angeles Stadium. Winner likely faces third-place team in knockouts. Tactical focus unknown but US expected to leverage home support.',
-        summary: 'Pending deep research.'
+        context: 'Turkey, eliminated after losses to Australia (2-0) and Paraguay (1-0), aim to avoid a third straight World Cup defeat for the first time since Euro 2020. The USA, having secured top spot with wins over Paraguay (4-1) and Australia (2-0), may rest Pulisic (calf) and yellow-card risks like Balogun. Vincenzo Montella retains Turkey\'s creative core of Güler and Çalhanoglu, while Pochettino could start Wright and Reyna in rotated US lineup.',
+        summary: 'USA (48% win probability) are favored despite potential rotation, having scored six goals in two matches. Turkey, without a tournament goal, rely on Güler and Çalhanoglu to break their drought. The sides last met in June 2025, with Turkey winning 2-1 via goals from Güler and Aktürkoglu after McGlynn\'s early strike.'
       },
 
       {
