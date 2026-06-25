@@ -3774,28 +3774,36 @@ const LEAGUES = [
           away: []
         },
         context: 'No detailed information available from web search.',
-        summary: 'No detailed information available.'
+        summary: 'Pending deep research.'
       },
 
       {
         day: 'Thursday 25 June',
         home: 'Czech Republic', away: 'Mexico', time: '02:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 24, draw: 25, awayWin: 51, verdict: 'Likely', fairOdds: '1.89-1.95',
+        homeForm: 'D D W W L',
+        awayForm: 'W D W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'No data available' },
-          momentum:      { score: 50, detail: 'No data available' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'No data available' },
-          leagueContext: { score: 50, detail: 'No data available' }
+          formBalance:   { score: 53, detail: 'Czechia have mixed form (2W/2D/1L), while Mexico are strong with 4 wins and 1 draw in their last five.' },
+          momentum:      { score: 40, detail: 'Czechia dropped points from winning positions in both group games, while Mexico are unbeaten in 10 matches with consecutive clean sheets.' },
+          goalTendency:  { score: 30, detail: 'Mexico kept clean sheets in 8 of their last 10 games, contrasting Czechia\'s trend of both teams scoring in their last 6 matches.' },
+          leagueContext: { score: 70, detail: 'Mexico (FIFA #15) are hosts with consistent World Cup advancement history, while Czechia (FIFA #35) last progressed beyond groups in 2006.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'David Jurasek — thigh injury (tournament over)' },
+              { tag: 'key', text: 'Patrik Schick — key striker' },
+              { tag: 'key', text: 'Ladislav Krejci — captain, 1 goal this tournament' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Raul Jimenez — possible rest' },
+              { tag: 'key', text: 'Santiago Gimenez — expected starter in attack' },
+              { tag: 'key', text: 'Cesar Montes — returning from suspension' },
+              { tag: 'key', text: 'Luis Romo — 1 goal this tournament' }
+            ]
         },
-        context: 'No detailed information available from web search.',
-        summary: 'No detailed information available.'
+        context: 'Mexico have already qualified and may rotate players like Jimenez, with Gimenez likely starting. Czechia must win to advance after surrendering leads against South Korea and South Africa. Expect a 3-4-3 formation from Czechia relying on Schick and Krejci, while Mexico\'s defensive solidity (0 goals conceded) faces a desperate attacking push. Top spot in Group A is at stake for Mexico.',
+        summary: 'Czechia need victory to progress but face a Mexico defense yet to concede this tournament. Hosts likely rotate key players but maintain strong defensive organization. Set-pieces remain Czechia\'s primary threat, while Mexico\'s counter-attacks could exploit defensive vulnerabilities late in the match.'
       },
 
       {
@@ -3823,7 +3831,7 @@ const LEAGUES = [
             ]
         },
         context: 'South Africa must win to advance but miss suspended midfielders Mokoena (penalty scorer) and Zwane, forcing Hugo Broos to start Sithole alongside Mbatha. South Korea need only a draw and will deploy Son Heung-min and Lee Kang-in to exploit spaces as Bafana Bafana push forward. Kim Min-jae marshals a settled Korean defense against Makgopa and Appollis.',
-        summary: 'South Korea favored due to superior firepower and South Africa\'s midfield absences, with pundits predicting a 1-0 away win. Son Heung-min is tipped to decide the match as South Africa\'s defensive approach clashes with must-win urgency. The Taegeuk Warriors aim to control transitions while Bafana Bafana risk exposure at Estadio BBVA.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3852,7 +3860,7 @@ const LEAGUES = [
             ]
         },
         context: 'Curaçao will likely deploy a defensive 5-2-3 formation anchored by Eloy Room after his record 15-save performance against Ecuador. Ivory Coast need a win to secure knockout qualification and will rely on Amad Diallo\'s dribbling and Franck Kessie\'s midfield control. Wilfried Singo\'s absence weakens their defense, but Yan Diomande\'s wing play (4.3 successful dribbles per 90 in Bundesliga) poses a threat.',
-        summary: 'Curaçao\'s defensive resilience against Ecuador (0-0) contrasts with their 7-1 loss to Germany, while Ivory Coast narrowly lost to Germany after leading. The Elephants dominate recent form with four wins in five games and need victory to advance. Expect Curaçao to focus on containment through Room and Bacuna, but Ivory Coast\'s superior firepower should prevail.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3873,7 +3881,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Germany\'s lineup features Raum and Anton in defense with Nübel in goal. Ecuador counters with Estupiñán\'s flank runs. The match hinges on Germany\'s ability to break Ecuador\'s compact defensive block through midfield creativity.',
-        summary: 'Germany holds slight edge (47% win probability) but faces resilient Ecuador defense. Model predicts 1-2 outcome. Both squads at full strength with no injury concerns reported.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3894,7 +3902,7 @@ const LEAGUES = [
           away: []
         },
         context: 'No tactical details available. Both teams likely field strongest XIs given World Cup context. Japan\'s technical approach may contrast Sweden\'s physical style.',
-        summary: 'Insufficient data for analysis. Probabilities set evenly with low confidence verdict. No injury reports or form patterns found in search results.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3915,7 +3923,7 @@ const LEAGUES = [
           away: []
         },
         context: 'No specific player tactics or motivational factors identified. Netherlands typically employs possession-based football while Tunisia may prioritize defensive solidity.',
-        summary: 'Data unavailable for reliable assessment. Default probabilities reflect high uncertainty. No squad news or form sequences located in search.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3936,7 +3944,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Turkey\'s playoff-hardened squad faces US host-nation pressure at Los Angeles Stadium. Winner likely faces third-place team in knockouts. Tactical focus unknown but US expected to leverage home support.',
-        summary: 'Group D decider with Turkey emerging from playoffs. USA\'s home advantage balanced against Turkey\'s resilience. No injury reports or form data available.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3959,7 +3967,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Paraguay relies on defensive structure with Miguel Almirón as creative fulcrum, but misses injured striker Julio Enciso. Australia fields in-form attackers like Nestory Irankunda and Riley McGree after scoring 5 against Curacao. Both teams need points in Group D, with Australia aiming to exploit Paraguay\'s vulnerability against organized sides shown in recent losses to Morocco and Mexico.',
-        summary: 'Australia carries momentum from 5-1 and 1-0 friendly wins, while Paraguay\'s Enciso absence weakens their attack. The Socceroos\' recent defensive solidity contrasts with Paraguay\'s mixed results against top-tier opponents. Pundits predict a narrow Australia victory in this crucial group-stage clash.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3984,7 +3992,7 @@ const LEAGUES = [
             ]
         },
         context: 'Norway deploys Haaland as the focal point in a 4-3-3 formation, leveraging his physicality against France\'s high defensive line. France counters with Mbappé\'s explosive pace on the left, supported by Nkunku\'s creativity and Thuram\'s midfield control. Both teams prioritize attacking transitions, setting up potential duels between Haaland and Konaté/Hernández in the box.',
-        summary: 'France enters as statistical favorites (51% win probability) based on superior form and ranking, though Norway\'s potent attack led by Haaland poses significant threat. Expect tactical battles in midfield between Berge and Thuram, with France likely edging a 2-1 victory through Mbappé\'s finishing and secondary contributions from Olise or Dembélé.'
+        summary: 'Pending deep research.'
       },
 
       {
