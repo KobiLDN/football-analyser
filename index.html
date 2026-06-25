@@ -288,11 +288,11 @@
 <body>
 
 <div class="topbar">
-  <div class="logo">Football Analyser <span>v2.87 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.88 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 24 Jun 2026 22:38 BST</div>
+      <div class="updated-tag">Data · 25 Jun 2026 07:13 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -3738,7 +3738,7 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Scotland', away: 'Brazil', time: '23:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
+        result: '0-3', homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
         homeForm: '? ? ? ? ?',
         awayForm: '? ? ? ? ?',
         factors: {
@@ -3759,7 +3759,7 @@ const LEAGUES = [
       {
         day: 'Wednesday 24 June',
         home: 'Morocco', away: 'Haiti', time: '23:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
+        result: '4-2', homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: 'N/A',
         homeForm: '? ? ? ? ?',
         awayForm: '? ? ? ? ?',
         factors: {
@@ -3780,12 +3780,13 @@ const LEAGUES = [
       {
         day: 'Thursday 25 June',
         home: 'Czech Republic', away: 'Mexico', time: '02:00',
-        result: null, homeWin: 24, draw: 25, awayWin: 51, verdict: 'Likely', fairOdds: '1.89-1.95',
+        result: '0-3', homeWin: 24, draw: 25, awayWin: 51, verdict: 'Likely', fairOdds: '1.89-1.95',
         homeForm: 'D D W W L',
         awayForm: 'W D W W W',
         factors: {
           formBalance:   { score: 53, detail: 'Czechia have mixed form (2W/2D/1L), while Mexico are strong with 4 wins and 1 draw in their last five.' },
           momentum:      { score: 40, detail: 'Czechia dropped points from winning positions in both group games, while Mexico are unbeaten in 10 matches with consecutive clean sheets.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 30, detail: 'Mexico kept clean sheets in 8 of their last 10 games, contrasting Czechia\'s trend of both teams scoring in their last 6 matches.' },
           leagueContext: { score: 70, detail: 'Mexico (FIFA #15) are hosts with consistent World Cup advancement history, while Czechia (FIFA #35) last progressed beyond groups in 2006.' }
         },
@@ -3809,12 +3810,13 @@ const LEAGUES = [
       {
         day: 'Thursday 25 June',
         home: 'South Africa', away: 'South Korea', time: '02:00',
-        result: null, homeWin: 20, draw: 24, awayWin: 56, verdict: 'Likely', fairOdds: '1.75-1.80',
+        result: '1-0', homeWin: 20, draw: 24, awayWin: 56, verdict: 'Likely', fairOdds: '1.75-1.80',
         homeForm: 'L L L L D',
         awayForm: 'W W W W L',
         factors: {
           formBalance:   { score: 80, detail: 'South Africa are winless in seven matches, while South Korea had won four straight before their narrow loss to Mexico.' },
           momentum:      { score: 65, detail: 'South Africa showed spirit to come back against Czechia, but South Korea\'s overall performances have been stronger despite the Mexico defeat.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 40, detail: 'South Korea kept 15 clean sheets in their last 17 internationals, but both teams scored in their World Cup opener against Czechia.' },
           leagueContext: { score: 75, detail: 'Ranked 22nd globally, South Korea have reached three consecutive World Cup knockouts, while 58th-ranked South Africa last advanced from groups in 2002.' }
         },
@@ -3843,6 +3845,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Ivory Coast have won four of their last five matches while Curaçao have lost four of their last five.' },
           momentum:      { score: 85, detail: 'Ivory Coast\'s AFCON triumph and competitive performance against Germany provide strong momentum despite their last-minute loss.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Ivory Coast have scored in 91% of World Cup matches historically, while Curaçao conceded 18 goals in their last five games.' },
           leagueContext: { score: 80, detail: 'Reigning AFCON champions Ivory Coast have World Cup experience, while debutants Curaçao are FIFA\'s lowest-ranked knockout hopefuls.' }
         },
@@ -3872,6 +3875,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 80, detail: 'Germany have won their last five matches while Ecuador have only two wins in their last five.' },
           momentum:      { score: 75, detail: 'Germany\'s dramatic late win over Ivory Coast boosts morale, contrasting with Ecuador\'s frustration after failing to score against Curaçao.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Ecuador\'s attacking urgency and Germany\'s potent attack (9 goals in 2 games) suggest an open match.' },
           leagueContext: { score: 70, detail: 'Germany\'s historical World Cup success and higher FIFA ranking give them an edge over Ecuador, who rarely progress beyond group stages.' }
         },
@@ -3898,6 +3902,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 80, detail: 'Japan are unbeaten in their last five matches (W4, D1), while Sweden have lost two of their last five (W2, D1, L2).' },
           momentum:      { score: 70, detail: 'Japan come off a 4-0 thrashing of Tunisia, while Sweden were hammered 5-1 by the Netherlands in their last outing.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Both teams average over 2 goals per game recently, with Sweden conceding 6 goals in their two World Cup matches.' },
           leagueContext: { score: 60, detail: 'Japan (FIFA #18) have reached the last 16 in three consecutive World Cups, while Sweden (FIFA #26) missed Euro 2024 qualification.' }
         },
@@ -3926,6 +3931,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Tunisia have lost four of their last five matches, while the Netherlands are unbeaten in their last three.' },
           momentum:      { score: 95, detail: 'The Netherlands are riding high after a 5-1 demolition of Sweden, while Tunisia are reeling from consecutive heavy losses and a managerial sacking.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'Tunisia have leaked 9 goals in two World Cup games, while the Netherlands put five past Sweden in their last match.' },
           leagueContext: { score: 90, detail: 'The Netherlands, unbeaten in 14 World Cup matches (excluding shootouts), are heavy favorites against a Tunisia side already eliminated.' }
         },
@@ -3953,6 +3959,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 35, detail: 'Turkey have lost both group matches without scoring, while USA won both with 6 goals.' },
           momentum:      { score: 20, detail: 'USA secured group supremacy with consecutive wins, while Turkey are eliminated after two defeats.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 25, detail: 'Turkey failed to convert 32 shots vs Paraguay; USA scored 6 goals in two matches.' },
           leagueContext: { score: 65, detail: 'USA (ranked #11) have advanced from the last three World Cup groups; Turkey (#28) are winless in their return after 24 years.' }
         },
@@ -3986,6 +3993,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 55, detail: 'Paraguay won 3 of last 5, Australia won 2.' },
           momentum:      { score: 60, detail: 'Paraguay coming off win vs Turkey, Australia lost to USA.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 45, detail: 'Both conceded 4+ goals in a match this tournament.' },
           leagueContext: { score: 50, detail: 'Equal points; Paraguay\'s GD advantage offsets Australia\'s FIFA ranking.' }
         },
@@ -4014,6 +4022,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 40, detail: 'Norway\'s historical WC struggles contrast France\'s consistency.' },
           momentum:      { score: 50, detail: 'Unknown recent form; France typically elevates in tournaments.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'France\'s attacking depth led by Mbappé poses constant threat.' },
           leagueContext: { score: 70, detail: 'Reigning champions France dominate head-to-heads and tournament pedigree.' }
         },
@@ -4447,6 +4456,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'USA won 3 of their last 5 matches including key World Cup group stage victories over Paraguay and Australia.' },
           momentum:      { score: 80, detail: 'USA are on a three-match winning streak after defeating Turkey 2-1 in their final group game.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'USA averaged 2.5 goals per game in the group stage, while third-place qualifiers typically concede more.' },
           leagueContext: { score: 75, detail: 'As group winners with home advantage, USA face a third-place finisher who advanced with mixed results.' }
         },
