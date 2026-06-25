@@ -3920,22 +3920,28 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Tunisia', away: 'Netherlands', time: '00:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'D W W W L',
-        awayForm: 'W D L W D',
+        result: null, homeWin: 5, draw: 12, awayWin: 83, verdict: 'Strong', fairOdds: '1.18-1.22',
+        homeForm: 'W L L L L',
+        awayForm: 'D L W D W',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent performance data available.' },
-          momentum:      { score: 50, detail: 'Lack of market or statistical indicators.' },
-          headToHead:    { score: 50, detail: 'Head-to-head records not found in search.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unverifiable without data.' },
-          leagueContext: { score: 50, detail: 'Group stage context unclear from available sources.' }
+          formBalance:   { score: 90, detail: 'Tunisia have lost four of their last five matches, while the Netherlands are unbeaten in their last three.' },
+          momentum:      { score: 95, detail: 'The Netherlands are riding high after a 5-1 demolition of Sweden, while Tunisia are reeling from consecutive heavy losses and a managerial sacking.' },
+          goalTendency:  { score: 85, detail: 'Tunisia have leaked 9 goals in two World Cup games, while the Netherlands put five past Sweden in their last match.' },
+          leagueContext: { score: 90, detail: 'The Netherlands, unbeaten in 14 World Cup matches (excluding shootouts), are heavy favorites against a Tunisia side already eliminated.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Hannibal Mejbri — creative spark in midfield' },
+              { tag: 'key', text: 'Ellyes Skhiri — captain and midfield anchor' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Brian Brobbey — hamstring injury' },
+              { tag: 'key', text: 'Cody Gakpo — 2 goals this tournament' },
+              { tag: 'key', text: 'Memphis Depay — likely starter, attacking focal point' }
+            ]
         },
-        context: 'No specific player tactics or motivational factors identified. Netherlands typically employs possession-based football while Tunisia may prioritize defensive solidity.',
-        summary: 'Pending deep research.'
+        context: 'The Netherlands, led by Memphis Depay and in-form Cody Gakpo, are expected to dominate possession and attack through the flanks, particularly with Denzel Dumfries overlapping on the right. Tunisia, under interim coach Hervé Renard, will likely sit deep in a 3-4-2-1 and rely on counter-attacks through Hannibal Mejbri. With top spot in Group F at stake, the Dutch are highly motivated, while Tunisia aim to salvage pride after conceding nine goals in two matches.',
+        summary: 'Netherlands are overwhelming favorites to win and secure top spot in Group F, with Opta\'s supercomputer giving them an 83% chance. Tunisia, already eliminated, are in disarray after sacking their manager and suffering two heavy defeats. Expect the Dutch to control the game through Frenkie de Jong\'s midfield and win comfortably, with Gakpo and Depay the main threats.'
       },
 
       {
