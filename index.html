@@ -259,7 +259,10 @@
 .dot-d { background: var(--amber); }
 .dot-l { background: var(--red); }
 .dot-u { background: var(--text3); opacity: 0.35; }
-.wc-rank-label { display: block; font-size: var(--fs-xs); opacity: 0.55; font-weight: 400; margin-top: 1px; }
+.teams-wc { display: flex; align-items: flex-start; gap: 6px; }
+.teams-wc .team-home, .teams-wc .team-away { display: inline-flex; flex-direction: column; }
+.teams-wc .team-vs { padding-top: 2px; }
+.wc-rank-label { font-size: var(--fs-xs); opacity: 0.55; font-weight: 400; margin-top: 1px; }
 
 @media (max-width: 800px) {
   .main { padding: 16px 12px; }
@@ -5221,10 +5224,14 @@ function renderFixture(f, key, leagueName) {
     <div class="fixture" id="fix-${key}" onclick="toggleFixture('fix-${key}')">
       <div class="fixture-row">
         <div>
-          <div class="teams">
-            <span class="team-home">${f.home} vs${f._leagueId === 'worldcup' ? wcRankLabel(f.home) : ''}</span>
-            <span class="team-away">${f.away}${valueBadge}${f._leagueId === 'worldcup' ? wcRankLabel(f.away) : ''}</span>
-          </div>
+          ${f._leagueId === 'worldcup'
+            ? `<div class="teams teams-wc">
+                <span class="team-home">${f.home}${wcRankLabel(f.home)}</span>
+                <span class="team-vs">vs</span>
+                <span class="team-away">${f.away}${valueBadge}${wcRankLabel(f.away)}</span>
+               </div>`
+            : `<div class="teams"><span class="team-home">${f.home} vs</span> <span class="team-away">${f.away}${valueBadge}</span></div>`
+          }
           ${formRowHTML}
           ${bottomLine}
         </div>
