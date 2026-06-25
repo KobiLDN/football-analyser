@@ -3866,22 +3866,27 @@ const LEAGUES = [
       {
         day: 'Thursday 25 June',
         home: 'Ecuador', away: 'Germany', time: '21:00',
-        result: null, homeWin: 25, draw: 28, awayWin: 47, verdict: 'Low', fairOdds: '2.10-2.15',
-        homeForm: 'D D W W L',
-        awayForm: 'W W W W',
+        result: null, homeWin: 28, draw: 23, awayWin: 49, verdict: 'Low', fairOdds: '1.73-2.05',
+        homeForm: 'D W W L D',
+        awayForm: 'W W W W W',
         factors: {
-          formBalance:   { score: 55, detail: 'Germany favored but Ecuador\'s physicality poses challenge.' },
-          momentum:      { score: 60, detail: 'Statistical model gives Germany 47% win probability with high variance.' },
-          headToHead:    { score: 50, detail: 'No significant historical meetings at World Cup level.' },
-          goalTendency:  { score: 65, detail: 'Expected goals model predicts 1-2 scoreline favoring Germany.' },
-          leagueContext: { score: 70, detail: 'Germany leads Group E but needs points to secure advancement.' }
+          formBalance:   { score: 80, detail: 'Germany have won their last five matches while Ecuador have only two wins in their last five.' },
+          momentum:      { score: 75, detail: 'Germany\'s dramatic late win over Ivory Coast boosts morale, contrasting with Ecuador\'s frustration after failing to score against Curaçao.' },
+          goalTendency:  { score: 70, detail: 'Ecuador\'s attacking urgency and Germany\'s potent attack (9 goals in 2 games) suggest an open match.' },
+          leagueContext: { score: 70, detail: 'Germany\'s historical World Cup success and higher FIFA ranking give them an edge over Ecuador, who rarely progress beyond group stages.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Enner Valencia - captain, 0 goals this tournament' },
+              { tag: 'key', text: 'Moises Caicedo - midfield anchor, 0 goals/assists' }
+            ],
+          away: [
+              { tag: 'out', text: 'Nico Schlotterbeck - ankle injury' },
+              { tag: 'key', text: 'Deniz Undav - 3 goals, 2 assists this World Cup' }
+            ]
         },
-        context: 'Germany\'s lineup features Raum and Anton in defense with Nübel in goal. Ecuador counters with Estupiñán\'s flank runs. The match hinges on Germany\'s ability to break Ecuador\'s compact defensive block through midfield creativity.',
-        summary: 'Pending deep research.'
+        context: 'Ecuador must win to advance, forcing them to abandon defensive solidity and commit men forward. Germany, already group winners, will rotate with in-form Deniz Undav likely starting. Ecuador\'s attack (16 shots on target, 0 goals) faces Germany\'s high-scoring offense, while their defense must contain Undav\'s clinical finishing.',
+        summary: 'Ecuador\'s knockout hopes require victory against group leaders Germany, but their attack has been wasteful with 0 goals in two matches. Julian Nagelsmann may rest starters but Germany\'s depth is strong, with Undav averaging a goal involvement every 11 minutes. Despite Ecuador\'s defensive qualifying record, Germany\'s attacking form makes them favorites in an open game.'
       },
 
       {
