@@ -3892,22 +3892,29 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Japan', away: 'Sweden', time: '00:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'D W W W D',
-        awayForm: 'W D W W W',
+        result: null, homeWin: 52, draw: 26, awayWin: 22, verdict: 'Likely', fairOdds: '1.85-1.95',
+        homeForm: 'W W W D W',
+        awayForm: 'W L D W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data for form assessment.' },
-          momentum:      { score: 50, detail: 'No market or statistical indicators available.' },
-          headToHead:    { score: 50, detail: 'Historical data unavailable in search results.' },
-          goalTendency:  { score: 50, detail: 'No goal trend analysis possible.' },
-          leagueContext: { score: 50, detail: 'Group stage implications unknown without standings data.' }
+          formBalance:   { score: 80, detail: 'Japan are unbeaten in their last five matches (W4, D1), while Sweden have lost two of their last five (W2, D1, L2).' },
+          momentum:      { score: 70, detail: 'Japan come off a 4-0 thrashing of Tunisia, while Sweden were hammered 5-1 by the Netherlands in their last outing.' },
+          goalTendency:  { score: 75, detail: 'Both teams average over 2 goals per game recently, with Sweden conceding 6 goals in their two World Cup matches.' },
+          leagueContext: { score: 60, detail: 'Japan (FIFA #18) have reached the last 16 in three consecutive World Cups, while Sweden (FIFA #26) missed Euro 2024 qualification.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Kamada — 2 goals this World Cup' },
+              { tag: 'key', text: 'Ueda — 2 goals this World Cup' },
+              { tag: 'key', text: 'Endo — midfield anchor' }
+            ],
+          away: [
+              { tag: 'key', text: 'Gyokeres — 1 goal this World Cup' },
+              { tag: 'key', text: 'Isak — 1 goal, 2 assists this World Cup' },
+              { tag: 'key', text: 'Ayari — 2 goals this World Cup' }
+            ]
         },
-        context: 'No tactical details available. Both teams likely field strongest XIs given World Cup context. Japan\'s technical approach may contrast Sweden\'s physical style.',
-        summary: 'Pending deep research.'
+        context: 'Japan\'s 3-4-3 formation relies on Endo\'s midfield control and Kubo\'s creativity, with in-form attackers Kamada and Ueda posing constant threats. Sweden must fix defensive vulnerabilities exposed in their 5-1 loss to the Netherlands, while leveraging Gyokeres and Isak\'s attacking partnership. A win secures Japan\'s top spot in Group F, whereas Sweden need victory to guarantee knockout qualification.',
+        summary: 'Japan are favorites after a 4-0 win over Tunisia and resilient draw against Netherlands, showcasing defensive organization. Sweden\'s heavy defeat to the Netherlands raises concerns about their backline stability despite strong attacking options. The Opta supercomputer gives Japan a 51.9% win probability, with key battles in midfield between Endo and Sweden\'s Bergvall.'
       },
 
       {
