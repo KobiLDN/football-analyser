@@ -259,7 +259,8 @@
 .dot-d { background: var(--amber); }
 .dot-l { background: var(--red); }
 .dot-u { background: var(--text3); opacity: 0.35; }
-.wc-rank { font-size: 0.72em; opacity: 0.55; font-weight: 400; margin-left: 2px; }
+.wc-ranks-row { display: flex; gap: 1rem; margin-top: 2px; }
+.wc-rank-label { font-size: var(--fs-xs); opacity: 0.55; font-weight: 400; min-width: 0; }
 
 @media (max-width: 800px) {
   .main { padding: 16px 12px; }
@@ -4902,9 +4903,9 @@ const WC_RANKS = {
   'Uzbekistan': 65, 'Panama': 75, 'Cape Verde': 80, 'Curaçao': 82,
   'Jordan': 87, 'New Zealand': 96, 'Haiti': 103,
 };
-function wcRankBadge(team) {
+function wcRankLabel(team) {
   const r = WC_RANKS[team];
-  return r ? ` <span class="wc-rank">#${r}</span>` : '';
+  return `<span class="wc-rank-label">${r ? `FIFA rank <strong>#${r}</strong>` : ''}</span>`;
 }
 // Stamp _leagueId on every fixture once at parse time so isNeutralVenue works everywhere
 LEAGUES.forEach(league => { league.fixtures.forEach(f => { f._leagueId = league.id; }); });
@@ -5221,7 +5222,8 @@ function renderFixture(f, key, leagueName) {
     <div class="fixture" id="fix-${key}" onclick="toggleFixture('fix-${key}')">
       <div class="fixture-row">
         <div>
-          <div class="teams"><span class="team-home">${f.home}${f._leagueId === 'worldcup' ? wcRankBadge(f.home) : ''} vs</span> <span class="team-away">${f.away}${f._leagueId === 'worldcup' ? wcRankBadge(f.away) : ''}${valueBadge}</span></div>
+          <div class="teams"><span class="team-home">${f.home} vs</span> <span class="team-away">${f.away}${valueBadge}</span></div>
+          ${f._leagueId === 'worldcup' ? `<div class="wc-ranks-row">${wcRankLabel(f.home)}${wcRankLabel(f.away)}</div>` : ''}
           ${formRowHTML}
           ${bottomLine}
         </div>
