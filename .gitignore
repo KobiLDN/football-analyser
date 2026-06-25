@@ -10,3 +10,10 @@ deepseek_json_*.json
 deepseek_json_*.json.applied
 __pycache__/
 bench_news_cache.json
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
