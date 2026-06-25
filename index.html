@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -259,8 +259,7 @@
 .dot-d { background: var(--amber); }
 .dot-l { background: var(--red); }
 .dot-u { background: var(--text3); opacity: 0.35; }
-.wc-ranks-row { display: flex; gap: 1rem; margin-top: 2px; }
-.wc-rank-label { font-size: var(--fs-xs); opacity: 0.55; font-weight: 400; min-width: 0; }
+.wc-rank-label { display: block; font-size: var(--fs-xs); opacity: 0.55; font-weight: 400; margin-top: 1px; }
 
 @media (max-width: 800px) {
   .main { padding: 16px 12px; }
@@ -5222,8 +5221,10 @@ function renderFixture(f, key, leagueName) {
     <div class="fixture" id="fix-${key}" onclick="toggleFixture('fix-${key}')">
       <div class="fixture-row">
         <div>
-          <div class="teams"><span class="team-home">${f.home} vs</span> <span class="team-away">${f.away}${valueBadge}</span></div>
-          ${f._leagueId === 'worldcup' ? `<div class="wc-ranks-row">${wcRankLabel(f.home)}${wcRankLabel(f.away)}</div>` : ''}
+          <div class="teams">
+            <span class="team-home">${f.home} vs${f._leagueId === 'worldcup' ? wcRankLabel(f.home) : ''}</span>
+            <span class="team-away">${f.away}${valueBadge}${f._leagueId === 'worldcup' ? wcRankLabel(f.away) : ''}</span>
+          </div>
           ${formRowHTML}
           ${bottomLine}
         </div>
@@ -5346,7 +5347,7 @@ renderMain();
     });
   }
 
-  let current = localStorage.getItem(PREF_KEY) || 'dark';
+  let current = localStorage.getItem(PREF_KEY) || 'light';
   applyTheme(current);
 
   document.querySelectorAll('.t-btn').forEach(function(b) {
