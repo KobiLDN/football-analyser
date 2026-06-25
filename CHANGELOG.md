@@ -6,6 +6,7 @@ All notable changes to this repository are documented here — **newest first**.
 
 | Date · time (BST) | AI Name | Platform | Changed |
 |---|---|---|---|
+| 2026-06-25 BST | Claude (Claude Code, Sonnet 4.6) | CI/Remote | v2.91: FIFA rank redesigned — shown below each team name in aligned columns using `.teams-wc` flex layout; `vs` extracted as separate element; light mode now default (was dark); dev branch renamed to `dev` for cleaner Cloudflare staging URL (`index.html`). |
 | 2026-06-25 BST | Claude (Claude Code, Sonnet 4.6) | CI/Remote | v2.89: FIFA rankings shown beside team names on World Cup fixtures — `WC_RANKS` JS lookup object for all 48 teams, `wcRankBadge()` helper, `.wc-rank` CSS (muted, small). Only renders on `worldcup` fixtures, domestic leagues unaffected. Cloudflare Pages staging configured with branch preview deployments (`index.html`, `shared/tokens.css`). |
 | 2026-06-21 BST | Claude (Claude Code, Sonnet 4.6) | Desktop | v2.77: fix WC result labels — non-host-nation World Cup games now show winning team name (e.g. "Japan Win") instead of "Home Win"/"Away Win"; stamp `_leagueId` on fixtures at parse time so `isNeutralVenue()` works in both render paths; USA/Canada/Mexico as home team correctly keep "Home Win" (`index.html`). |
 | 2026-06-21 BST | Claude (Claude Code, Sonnet 4.6) | Desktop | v2.77: fix double bullet in team news — `li::before` was adding a `•` on top of ★/⚠/❌ icon spans; suppressed via `:has(.key,.out,.doubt)` (`index.html`). |

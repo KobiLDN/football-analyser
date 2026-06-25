@@ -23,7 +23,7 @@ Each fixture is annotated with:
 - Tactical context and motivation
 - Home / draw / away win probabilities and confidence verdict (Low / Likely / Strong)
 - Last-5 form dots per team (W/D/L) sourced from Understat xG data
-- FIFA rankings beside team names on World Cup fixtures
+- FIFA rankings shown below each team name on World Cup fixtures (e.g. `Czech Republic vs Mexico / FIFA rank #35  FIFA rank #15`)
 - Fair odds estimate, plus book odds and edge calculation when available
 
 ## Updating each gameweek

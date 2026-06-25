@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.91** — FIFA rank redesigned: shown below each team name in aligned columns (`Czech Republic vs Mexico / FIFA rank #35  FIFA rank #15`). Light mode set as default. Branch renamed to `dev` for cleaner Cloudflare staging URL ([dev.football-analyser.pages.dev](https://dev.football-analyser.pages.dev)).
 - **v2.90** — Auto-fetched 4 World Cup 2026 fixture stubs.
 - **v2.89** — FIFA rankings shown beside team names on World Cup fixtures (`France #2 vs Morocco #13`). `WC_RANKS` JS lookup for all 48 teams; `wcRankBadge()` helper; `.wc-rank` CSS class (muted, small). Domestic fixtures unaffected. Cloudflare Pages staging set up for branch preview deployments.
 - **v2.88** — Marked 4 World Cup results.
