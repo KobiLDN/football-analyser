@@ -3901,30 +3901,34 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Japan', away: 'Sweden', time: '00:00',
-        result: null, homeWin: 52, draw: 26, awayWin: 22, verdict: 'Likely', fairOdds: '1.85-1.95',
+        result: null, homeWin: 53, draw: 25, awayWin: 22, verdict: 'Likely', fairOdds: '1.85-1.85',
         homeForm: 'W W W D W',
         awayForm: 'W L D W L',
         factors: {
-          formBalance:   { score: 80, detail: 'Japan are unbeaten in their last five matches (W4, D1), while Sweden have lost two of their last five (W2, D1, L2).' },
-          momentum:      { score: 70, detail: 'Japan come off a 4-0 thrashing of Tunisia, while Sweden were hammered 5-1 by the Netherlands in their last outing.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 75, detail: 'Both teams average over 2 goals per game recently, with Sweden conceding 6 goals in their two World Cup matches.' },
-          leagueContext: { score: 60, detail: 'Japan (FIFA #18) have reached the last 16 in three consecutive World Cups, while Sweden (FIFA #26) missed Euro 2024 qualification.' }
+          formBalance:   { score: 80, detail: 'Japan are unbeaten in nine matches including wins over England and Brazil, while Sweden have lost two of their last five.' },
+          momentum:      { score: 75, detail: 'Japan\'s 4-0 win over Tunisia contrasts with Sweden\'s 5-1 loss to the Netherlands, exposing defensive frailties.' },
+          goalTendency:  { score: 70, detail: 'Japan scored 6 goals in 2 games; Sweden conceded 6 in 2 matches, with both teams scoring in 8 of Sweden\'s last 8 games.' },
+          leagueContext: { score: 60, detail: 'Japan\'s higher FIFA ranking (#18 vs #26) and consistent World Cup progression give them an edge over Sweden\'s historically strong but recently inconsistent side.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Kamada — 2 goals this World Cup' },
-              { tag: 'key', text: 'Ueda — 2 goals this World Cup' },
-              { tag: 'key', text: 'Endo — midfield anchor' }
+              { tag: 'out', text: 'Wataru Endo — missed tournament (injury)' },
+              { tag: 'out', text: 'Takumi Minamino — injury' },
+              { tag: 'out', text: 'Kaoru Mitoma — injury' },
+              { tag: 'doubt', text: 'Takefusa Kubo — knee injury' },
+              { tag: 'doubt', text: 'Shuto Machino — illness' },
+              { tag: 'key', text: 'Ayase Ueda — 2 goals this World Cup' },
+              { tag: 'key', text: 'Daichi Kamada — 2 goals this World Cup' },
+              { tag: 'key', text: 'Junya Ito — 1 goal this World Cup' }
             ],
           away: [
-              { tag: 'key', text: 'Gyokeres — 1 goal this World Cup' },
-              { tag: 'key', text: 'Isak — 1 goal, 2 assists this World Cup' },
-              { tag: 'key', text: 'Ayari — 2 goals this World Cup' }
+              { tag: 'key', text: 'Alexander Isak — creative hub' },
+              { tag: 'key', text: 'Viktor Gyokeres' },
+              { tag: 'key', text: 'Anthony Elanga — 1 goal this World Cup' }
             ]
         },
-        context: 'Japan\'s 3-4-3 formation relies on Endo\'s midfield control and Kubo\'s creativity, with in-form attackers Kamada and Ueda posing constant threats. Sweden must fix defensive vulnerabilities exposed in their 5-1 loss to the Netherlands, while leveraging Gyokeres and Isak\'s attacking partnership. A win secures Japan\'s top spot in Group F, whereas Sweden need victory to guarantee knockout qualification.',
-        summary: 'Japan are favorites after a 4-0 win over Tunisia and resilient draw against Netherlands, showcasing defensive organization. Sweden\'s heavy defeat to the Netherlands raises concerns about their backline stability despite strong attacking options. The Opta supercomputer gives Japan a 51.9% win probability, with key battles in midfield between Endo and Sweden\'s Bergvall.'
+        context: 'Japan\'s 3-4-3 formation leverages Ayase Ueda\'s finishing and Daichi Kamada\'s creativity, while Sweden\'s 3-1-4-2 relies on Alexander Isak and Viktor Gyokeres\' physicality. Anthony Elanga\'s pace at right wing-back could exploit Japan\'s flanks. Japan needs only a draw to guarantee advancement, while Sweden must shore up a defense that conceded five goals to the Netherlands.',
+        summary: 'Japan are favorites at AT&T Stadium after scoring six goals in two games and maintaining a nine-match unbeaten streak. Sweden\'s defensive vulnerabilities—no clean sheets in 13 matches—contrast with Japan\'s balanced attack. Key absences (Endo, Kubo) are mitigated by Ueda\'s form, while Elanga offers Sweden\'s best counter-attacking threat.'
       },
 
       {
@@ -3952,7 +3956,7 @@ const LEAGUES = [
             ]
         },
         context: 'The Netherlands, led by Memphis Depay and in-form Cody Gakpo, are expected to dominate possession and attack through the flanks, particularly with Denzel Dumfries overlapping on the right. Tunisia, under interim coach Hervé Renard, will likely sit deep in a 3-4-2-1 and rely on counter-attacks through Hannibal Mejbri. With top spot in Group F at stake, the Dutch are highly motivated, while Tunisia aim to salvage pride after conceding nine goals in two matches.',
-        summary: 'Netherlands are overwhelming favorites to win and secure top spot in Group F, with Opta\'s supercomputer giving them an 83% chance. Tunisia, already eliminated, are in disarray after sacking their manager and suffering two heavy defeats. Expect the Dutch to control the game through Frenkie de Jong\'s midfield and win comfortably, with Gakpo and Depay the main threats.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -3986,7 +3990,7 @@ const LEAGUES = [
             ]
         },
         context: 'Turkey, eliminated after losses to Australia (2-0) and Paraguay (1-0), aim to avoid a third straight World Cup defeat for the first time since Euro 2020. The USA, having secured top spot with wins over Paraguay (4-1) and Australia (2-0), may rest Pulisic (calf) and yellow-card risks like Balogun. Vincenzo Montella retains Turkey\'s creative core of Güler and Çalhanoglu, while Pochettino could start Wright and Reyna in rotated US lineup.',
-        summary: 'USA (48% win probability) are favored despite potential rotation, having scored six goals in two matches. Turkey, without a tournament goal, rely on Güler and Çalhanoglu to break their drought. The sides last met in June 2025, with Turkey winning 2-1 via goals from Güler and Aktürkoglu after McGlynn\'s early strike.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4015,7 +4019,7 @@ const LEAGUES = [
             ]
         },
         context: 'Paraguay\'s superior goal difference (-2 vs Australia\'s -4) means a draw likely secures second place. Without suspended playmaker Almirón, they\'ll rely on Enciso\'s creativity and Galarza\'s pressing. Australia must avoid defeat to advance and may start Irankunda and Volpato to boost attack after Leckie\'s injury.',
-        summary: 'Paraguay\'s resilient 1-0 win over Turkey (despite 32 shots conceded) contrasts with Australia\'s 2-0 loss to USA. Expect Paraguay to control possession through Cubas and Enciso, while Australia counters with Irankunda\'s pace. Defensive vulnerabilities on both sides could lead to goals.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4040,7 +4044,7 @@ const LEAGUES = [
             ]
         },
         context: 'Norway faces elimination needing a result against world champions France. Haaland must penetrate a defense that conceded minimally in qualifiers. France\'s Mbappé looks to add to his tournament tally, with midfield control through Griezmann key to unlocking Norway\'s compact shape.',
-        summary: 'France\'s tournament experience and attacking firepower make them favorites, but Norway\'s Haaland can exploit transitions. Expect France to dominate possession, while Norway relies on set pieces and counters. The absence of key players is unknown, but France\'s depth should prevail.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4064,7 +4068,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Senegal\'s 4-3-3 features Mané cutting inside from the left, Jackson leading the line, and Sarr providing width. Their high press targets Iraq\'s defensive vulnerabilities. Iraq, missing creative midfielders, will rely on counter-attacks but lack experience against top-tier opposition.',
-        summary: 'Senegal\'s physicality and attacking firepower should overwhelm Iraq. Mané\'s movement and Jackson\'s finishing will test Iraq\'s defense, while Senegal\'s midfield control limits scoring chances. Expect set-piece dominance from Senegal to capitalize on Iraq\'s aerial weaknesses.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4087,7 +4091,7 @@ const LEAGUES = [
             ]
         },
         context: 'Cape Verde\'s compact 4-4-2 aims to neutralize Saudi Arabia\'s wing play. Saudi Arabia misses first-choice goalkeeper Al-Aqidi, weakening their defense. Both teams prioritize defensive stability, with Cape Verde using quick transitions and Saudi Arabia relying on set-piece execution.',
-        summary: 'Limited data makes this unpredictable. Cape Verde\'s squad depth could exploit Saudi Arabia\'s goalkeeper absence, but Saudi Arabia\'s structured defense may force a stalemate. Key battles will emerge in midfield duels and aerial challenges.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4108,7 +4112,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Uruguay\'s physical 4-3-1-2 formation targets direct attacks through Valverde and Núñez, testing Spain\'s high defensive line. Spain\'s possession-based system focuses on midfield control via Pedri and Gavi. Tactical battle hinges on Uruguay disrupting Spain\'s buildup versus Spain breaking Uruguay\'s compact block.',
-        summary: 'Spain\'s technical superiority faces Uruguay\'s defensive resilience. Expect midfield congestion with few clear chances. Set pieces and counter-attacks will be decisive, but data scarcity makes outcome highly uncertain.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4134,7 +4138,7 @@ const LEAGUES = [
             ]
         },
         context: 'Egypt\'s 4-3-3 leverages Salah\'s cutting inside from the right and Marmoush\'s central runs. Iran\'s defensive 5-4-1 relies on Taremi\'s hold-up play and quick transitions. Egypt must break Iran\'s low block while managing Taremi\'s aerial threat during set pieces.',
-        summary: 'Egypt\'s attacking quality should prevail with Salah and Marmoush testing Iran\'s defense. Iran\'s conservative approach may limit goals, but Egypt\'s recent form and home-continent advantage make them favorites. Expect Egypt to control possession and create chances through wide areas.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4157,7 +4161,7 @@ const LEAGUES = [
             ]
         },
         context: 'Belgium enters with a slight edge due to individual quality like Romelu Lukaku and Kevin De Bruyne, but Zeno Debast\'s absence tests defensive depth. New Zealand, with no injury concerns, will likely deploy a compact 5-4-1 formation, relying on Chris Wood\'s physicality in transition. Both teams prioritize avoiding early group-stage setbacks.',
-        summary: 'Belgium are favorites but face uncertainty without Debast. New Zealand\'s defensive organization under Darren Bazeley could frustrate opponents. The match may hinge on Belgium\'s ability to break down a disciplined low block early.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4180,7 +4184,7 @@ const LEAGUES = [
           away: []
         },
         context: 'England\'s attacking trio of Harry Kane, Phil Foden, and Bukayo Saka is expected to dominate Panama\'s defense, weakened by Carrasquilla\'s absence. Panama will likely use a 4-5-1 setup focusing on containment, with Aníbal Godoy marshaling midfield. England must convert possession into goals early to avoid counter-attack risks.',
-        summary: 'England are heavy favorites given their 2018 demolition of Panama and Carrasquilla\'s injury. Expect high pressing from Jude Bellingham and Declan Rice to disrupt Panama\'s buildup. Key battle: Kane vs. Panama\'s center-back pairing of Andrés Andrade and Fidel Escobar.'
+        summary: 'Pending deep research.'
       },
 
       {
