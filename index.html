@@ -293,11 +293,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.92 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.93 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 26 Jun 2026 01:06 BST</div>
+      <div class="updated-tag">Data · 26 Jun 2026 07:16 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -3901,12 +3901,13 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Japan', away: 'Sweden', time: '00:00',
-        result: null, homeWin: 53, draw: 25, awayWin: 22, verdict: 'Likely', fairOdds: '1.85-1.85',
+        result: '1-1', homeWin: 53, draw: 25, awayWin: 22, verdict: 'Likely', fairOdds: '1.85-1.85',
         homeForm: 'W W W D W',
         awayForm: 'W L D W L',
         factors: {
           formBalance:   { score: 80, detail: 'Japan are unbeaten in nine matches including wins over England and Brazil, while Sweden have lost two of their last five.' },
           momentum:      { score: 75, detail: 'Japan\'s 4-0 win over Tunisia contrasts with Sweden\'s 5-1 loss to the Netherlands, exposing defensive frailties.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Japan scored 6 goals in 2 games; Sweden conceded 6 in 2 matches, with both teams scoring in 8 of Sweden\'s last 8 games.' },
           leagueContext: { score: 60, detail: 'Japan\'s higher FIFA ranking (#18 vs #26) and consistent World Cup progression give them an edge over Sweden\'s historically strong but recently inconsistent side.' }
         },
@@ -3934,12 +3935,13 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Tunisia', away: 'Netherlands', time: '00:00',
-        result: null, homeWin: 5, draw: 15, awayWin: 80, verdict: 'Strong', fairOdds: '1.20-1.30',
+        result: '1-3', homeWin: 5, draw: 15, awayWin: 80, verdict: 'Strong', fairOdds: '1.20-1.30',
         homeForm: 'L L L L L',
         awayForm: 'W W D W W',
         factors: {
           formBalance:   { score: 10, detail: 'Tunisia have lost their last four matches including 5-1 to Sweden and 4-0 to Japan, while Netherlands are unbeaten with a 5-1 win over Sweden.' },
           momentum:      { score: 15, detail: 'Tunisia are eliminated after conceding 9 goals in two matches, while Netherlands are building momentum after a dominant attacking display against Sweden.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'Netherlands average 3.5 goals per World Cup game; Tunisia concede 4.5 per match and have shipped 14 goals in their last three outings.' },
           leagueContext: { score: 90, detail: 'Netherlands need a point to guarantee knockout qualification and top spot in Group F, while Tunisia play only for pride after early elimination.' }
         },
@@ -3961,12 +3963,13 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Turkey', away: 'USA', time: '03:00',
-        result: null, homeWin: 35, draw: 25, awayWin: 40, verdict: 'Low', fairOdds: '2.40-2.60',
+        result: '3-2', homeWin: 35, draw: 25, awayWin: 40, verdict: 'Low', fairOdds: '2.40-2.60',
         homeForm: 'L L L L L',
         awayForm: 'W W W W W',
         factors: {
           formBalance:   { score: 20, detail: 'Turkey have lost their last five matches including friendlies, while USA are on a five-match winning streak.' },
           momentum:      { score: 15, detail: 'Turkey are eliminated with zero points and no goals, while USA have secured top spot with two dominant wins.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Both teams scored in all five previous meetings, but Turkey have 62 shots without a goal this tournament.' },
           leagueContext: { score: 30, detail: 'As co-hosts with stronger recent World Cup pedigree (#11 FIFA rank), USA hold advantage over Turkey (#28) despite kit designation.' }
         },
@@ -3992,12 +3995,13 @@ const LEAGUES = [
       {
         day: 'Friday 26 June',
         home: 'Paraguay', away: 'Australia', time: '03:00',
-        result: null, homeWin: 33, draw: 42, awayWin: 25, verdict: 'Low', fairOdds: '2.25-2.38',
+        result: '0-0', homeWin: 33, draw: 42, awayWin: 25, verdict: 'Low', fairOdds: '2.25-2.38',
         homeForm: 'L W',
         awayForm: 'W L',
         factors: {
           formBalance:   { score: 50, detail: 'Both teams have identical group stage results (win-loss) and face identical qualification stakes.' },
           momentum:      { score: 55, detail: 'Paraguay gained confidence from a resilient 10-man win over Turkey, while Australia seeks rebound after USA loss.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Defensive prioritization from both sides (5-4-1 vs 4-4-2) and 5 of Australia\'s last 6 games under 2.5 goals suggest low scoring.' },
           leagueContext: { score: 90, detail: 'High-stakes World Cup decider where a draw sends both through, incentivizing caution.' }
         },
@@ -4026,6 +4030,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Both teams have won their last two World Cup matches but showed defensive vulnerabilities in recent games.' },
           momentum:      { score: 55, detail: 'France\'s superior squad depth offsets Norway\'s attacking momentum led by Haaland.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Both teams scored 7+ goals in two group games, with Norway conceding in every match.' },
           leagueContext: { score: 80, detail: 'France (#2 FIFA) are two-time champions and 2022 finalists, while Norway (#38) last reached knockouts in 1998.' }
         },
@@ -4052,6 +4057,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 30, detail: 'Both teams have poor recent form with only one win each in their last five matches.' },
           momentum:      { score: 60, detail: 'Senegal showed attacking promise despite losses to top teams, while Iraq failed to score in their last two games.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'High-scoring games likely as both defenses are vulnerable, averaging 3.5+ total goals per World Cup match.' },
           leagueContext: { score: 70, detail: 'Senegal (FIFA #20) are African champions with World Cup pedigree, while Iraq (FIFA #63) lack knockout-stage experience.' }
         },
@@ -4079,6 +4085,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Cape Verde are unbeaten in five matches (W2 D3) while Saudi Arabia have one win in their last five (D2 L2).' },
           momentum:      { score: 75, detail: 'Cape Verde\'s resilient draws against Spain and Uruguay boost morale, contrasting Saudi Arabia\'s 4-0 thrashing by Spain.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'Saudi Arabia\'s defensive frailty (49 shots faced in two games) and attacking urgency may create opportunities, with over 2.5 goals in five of their last seven.' },
           leagueContext: { score: 80, detail: 'Saudi Arabia must win to advance, forcing an open game, while Cape Verde can progress with a draw but seek victory to secure knockout qualification.' }
         },
@@ -4107,6 +4114,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 30, detail: 'Uruguay are winless in their last 5 matches, contrasting sharply with Spain\'s unbeaten run of 12 games including 2 wins in their last 5.' },
           momentum:      { score: 80, detail: 'Spain gained significant momentum with a 4-0 thrashing of Saudi Arabia, while Uruguay struggled in a 2-2 draw against Cape Verde.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'Uruguay conceded in both group matches (3 goals total), while Spain scored 4 against Saudi Arabia but were held goalless by Cape Verde.' },
           leagueContext: { score: 70, detail: 'Reigning Euro 2024 champions Spain (FIFA #8) hold a significant pedigree advantage over Uruguay (FIFA #16), who haven\'t advanced past World Cup quarter-finals since 2010.' }
         },
@@ -4137,6 +4145,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 60, detail: 'Egypt have won two of their last five including a 3-1 World Cup win over New Zealand, while Iran have just one win in five.' },
           momentum:      { score: 65, detail: 'Egypt\'s comeback 3-1 victory against New Zealand contrasts with Iran\'s goalless draw against ten-man Belgium.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'Egypt scored four goals in two group matches, while Iran managed only two set-piece goals in open play.' },
           leagueContext: { score: 55, detail: 'Egypt are already through and need only a draw to top Group G, while Iran require at least a point for possible advancement.' }
         },
@@ -4164,6 +4173,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data; both teams show mixed results in World Cup group stage.' },
           momentum:      { score: 50, detail: 'Limited match-specific insights; New Zealand earned one point while Belgium drew twice.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No clear goal trend available; Belgium kept one clean sheet, New Zealand conceded four goals.' },
           leagueContext: { score: 50, detail: 'New Zealand (FIFA #96) must win to advance, while Belgium (FIFA #9) need victory to avoid third-place dependency.' }
         },
@@ -4184,6 +4194,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data; both teams\' World Cup performances lack clear patterns.' },
           momentum:      { score: 50, detail: 'No specific momentum indicators; England are favorites but Panama resilient in CONCACAF.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal data unavailable; England possess attacking stars, Panama focus on defensive organization.' },
           leagueContext: { score: 50, detail: 'Panama (FIFA #75) play for pride, while England (FIFA #5) aim to secure group supremacy with key players rested.' }
         },
@@ -4541,6 +4552,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 60, detail: 'Switzerland won 2 of their last 5 matches but conceded in 4 consecutive games before the World Cup.' },
           momentum:      { score: 70, detail: 'Switzerland scored 5 goals in their last two group matches, including a 4-1 win over Bosnia.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Switzerland\'s last 4 matches averaged 3.5 total goals, with both teams scoring in 3 of them.' },
           leagueContext: { score: 65, detail: 'Switzerland reached the quarterfinals in 3 of their last 4 major tournaments but face unknown knockout opponents.' }
         },
