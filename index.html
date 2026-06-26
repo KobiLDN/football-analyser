@@ -259,9 +259,8 @@
 .dot-d { background: var(--amber); }
 .dot-l { background: var(--red); }
 .dot-u { background: var(--text3); opacity: 0.35; }
-.teams-wc { display: flex; align-items: baseline; gap: 6px; }
-.teams-wc .team-home, .teams-wc .team-away { display: inline-flex; flex-direction: column; }
-.wc-rank-label { font-size: var(--fs-xs); opacity: 0.55; font-weight: 400; margin-top: 1px; }
+.wc-rank-inline { font-size: 0.78em; font-weight: 400; opacity: 0.6; }
+.wc-ranking-label { font-size: var(--fs-xs); opacity: 0.5; font-weight: 400; margin-top: 1px; }
 
 @media (max-width: 800px) {
   .main { padding: 16px 12px; }
@@ -4972,9 +4971,9 @@ const WC_RANKS = {
   'Uzbekistan': 65, 'Panama': 75, 'Cape Verde': 80, 'Curaçao': 82,
   'Jordan': 87, 'New Zealand': 96, 'Haiti': 103,
 };
-function wcRankLabel(team) {
+function wcRankInline(team) {
   const r = WC_RANKS[team];
-  return `<span class="wc-rank-label">${r ? `FIFA rank <strong>#${r}</strong>` : ''}</span>`;
+  return r ? ` <span class="wc-rank-inline">(#${r})</span>` : '';
 }
 // Stamp _leagueId on every fixture once at parse time so isNeutralVenue works everywhere
 LEAGUES.forEach(league => { league.fixtures.forEach(f => { f._leagueId = league.id; }); });
@@ -5292,11 +5291,8 @@ function renderFixture(f, key, leagueName) {
       <div class="fixture-row">
         <div>
           ${f._leagueId === 'worldcup'
-            ? `<div class="teams teams-wc">
-                <span class="team-home">${f.home}${wcRankLabel(f.home)}</span>
-                <span class="team-vs">vs</span>
-                <span class="team-away">${f.away}${valueBadge}${wcRankLabel(f.away)}</span>
-               </div>`
+            ? `<div class="teams"><span class="team-home">${f.home}${wcRankInline(f.home)} vs</span> <span class="team-away">${f.away}${wcRankInline(f.away)}${valueBadge}</span></div>
+               <div class="wc-ranking-label"># FIFA Rankings</div>`
             : `<div class="teams"><span class="team-home">${f.home} vs</span> <span class="team-away">${f.away}${valueBadge}</span></div>`
           }
           ${formRowHTML}
