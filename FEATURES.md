@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.94** — Auto-fetched 4 World Cup 2026 fixture stubs.
 - **v2.93** — Marked 4 World Cup results.
 - **v2.92** — Marked 2 World Cup results.
 - **v2.91** — FIFA rank redesigned: shown below each team name in aligned columns (`Czech Republic vs Mexico / FIFA rank #35  FIFA rank #15`). Light mode set as default. Branch renamed to `dev` for cleaner Cloudflare staging URL ([dev.football-analyser.pages.dev](https://dev.football-analyser.pages.dev)).
