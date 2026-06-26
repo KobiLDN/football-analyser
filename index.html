@@ -4358,15 +4358,30 @@ const LEAGUES = [
       {
         day: 'Monday 29 June',
         home: 'Brazil', away: 'Japan', time: '18:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.00-2.50',
+        homeForm: 'W ? ? ? ?',
+        awayForm: 'W W W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 35, detail: 'Japan enter with six consecutive wins including a victory over Brazil, while Brazil\'s recent form lacks verifiable data beyond a single friendly win.' },
+          momentum:      { score: 70, detail: 'Japan\'s unbeaten streak against elite opponents like England and Brazil provides significant psychological advantage.' },
+          goalTendency:  { score: 60, detail: 'Japan kept five straight clean sheets pre-tournament, but Brazil\'s attacking depth with Vinicius Junior poses a threat.' },
+          leagueContext: { score: 65, detail: 'Brazil\'s historical dominance (5 World Cups) contrasts with Japan\'s rising status as giant-slayers in recent tournaments.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Neymar — calf injury' },
+              { tag: 'out', text: 'Wesley — injury from Egypt friendly' },
+              { tag: 'key', text: 'Vinicius Junior — primary attacking threat' }
+            ],
+          away: [
+              { tag: 'out', text: 'Wataru Endo — foot injury (retired)' },
+              { tag: 'out', text: 'Kaoru Mitoma — injury' },
+              { tag: 'out', text: 'Takumi Minamino — injury' },
+              { tag: 'key', text: 'Takefusa Kubo — creative hub with qualifying contributions' }
+            ]
+        },
+        context: 'Brazil, led by Carlo Ancelotti, must compensate for Neymar\'s absence by leveraging Vinicius Junior\'s dynamism and midfield control from Casemiro. Japan, missing Endo and Mitoma, will deploy Take Kubo and Junya Ito behind Ayase Ueda, replicating their high-pressing system that unsettled England. The tactical clash centers on Japan\'s organized defense against Brazil\'s transitional speed. Motivational edges include Japan\'s recent friendly win over Brazil and their quest for a first World Cup quarter-final.',
+        summary: 'Japan\'s defensive solidity (five straight clean sheets) and giant-killing form challenge a Brazil side missing Neymar. Carlo Ancelotti\'s tactical setup prioritizes Vinicius Junior\'s explosiveness, but Japan\'s cohesive unit under Moriyasu aims to exploit midfield gaps. Recent history favors Japan after their pre-tournament victory, making Brazil\'s higher ranking less decisive.'
       },
 
       {
@@ -4399,15 +4414,32 @@ const LEAGUES = [
       {
         day: 'Tuesday 30 June',
         home: 'Netherlands', away: 'Morocco', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 45, draw: 35, awayWin: 20, verdict: 'Low', fairOdds: '2.10-2.40',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Both teams lack recent verifiable results, though Morocco\'s 2022 World Cup run and Netherlands\' Euro 2024 semi-final suggest resilience.' },
+          momentum:      { score: 55, detail: 'Morocco\'s historic 2022 semi-final run provides confidence, but Netherlands\' tournament pedigree offers counterbalance.' },
+          goalTendency:  { score: 40, detail: 'Netherlands miss creative force Xavi Simons, while Morocco\'s absent defenders Aguerd and Mazraoui (doubt) may force cautious approaches.' },
+          leagueContext: { score: 60, detail: 'Netherlands rank higher (#7) with three World Cup finals, but Morocco (#13) reached the 2022 semi-finals and beat Brazil in a recent friendly.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Jurrien Timber — injury' },
+              { tag: 'out', text: 'Xavi Simons — injury' },
+              { tag: 'out', text: 'Matthijs de Ligt — injury' },
+              { tag: 'doubt', text: 'Bart Verbruggen — hip injury' },
+              { tag: 'key', text: 'Memphis Depay — all-time top scorer, fit after thigh issue' }
+            ],
+          away: [
+              { tag: 'out', text: 'Nayef Aguerd — injury' },
+              { tag: 'out', text: 'Abdi Ezzalzouli — injury' },
+              { tag: 'doubt', text: 'Noussair Mazraoui — shoulder injury' },
+              { tag: 'key', text: 'Achraf Hakimi — attacking full-back, pivotal in transitions' }
+            ]
+        },
+        context: 'Netherlands grapple with defensive absences (Timber, de Ligt) and creative loss Xavi Simons, relying on Virgil van Dijk\'s leadership and Memphis Depay\'s resurgence. Morocco, without Aguerd and possibly Mazraoui, will use Hakimi\'s flank dominance and Brahim Diaz\'s playmaking. Koeman\'s side must disrupt Morocco\'s compact shape, while the Atlas Lions aim to replicate their 2022 counter-attacking success. Key battles include Frenkie de Jong versus Sofyan Amrabat in midfield.',
+        summary: 'Injury-hit Netherlands face Morocco\'s robust defense, weakened by Aguerd\'s absence and Mazraoui\'s doubt. Memphis Depay\'s fitness boosts Oranje\'s attack, but Hakimi\'s wing threat for Morocco could exploit defensive gaps. The 2022 semi-finalists\' tactical discipline contrasts with Dutch reliance on individual quality, setting up a tight contest with limited scoring chances expected.'
       },
 
       {
