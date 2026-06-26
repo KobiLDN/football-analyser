@@ -4523,15 +4523,26 @@ const LEAGUES = [
       {
         day: 'Friday 3 July',
         home: 'Switzerland', away: '3E/F/G/I/J', time: '04:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.00-3.50',
+        homeForm: 'D W L W L',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 60, detail: 'Switzerland won 2 of their last 5 matches but conceded in 4 consecutive games before the World Cup.' },
+          momentum:      { score: 70, detail: 'Switzerland scored 5 goals in their last two group matches, including a 4-1 win over Bosnia.' },
+          goalTendency:  { score: 75, detail: 'Switzerland\'s last 4 matches averaged 3.5 total goals, with both teams scoring in 3 of them.' },
+          leagueContext: { score: 65, detail: 'Switzerland reached the quarterfinals in 3 of their last 4 major tournaments but face unknown knockout opponents.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Miro Muheim — calf injury' },
+              { tag: 'key', text: 'Granit Xhaka — 1 goal this tournament' },
+              { tag: 'key', text: 'Breel Embolo — 1 goal this tournament' },
+              { tag: 'key', text: 'Johan Manzambi — 2 goals this tournament' }
+            ],
+          away: []
+        },
+        context: 'Switzerland face an unknown third-place opponent after finishing second in Group B with 5 points. Murat Yakin\'s side showed attacking versatility with goals from Xhaka, Embolo, and super-sub Manzambi, but defensive concerns remain after conceding in 4 straight matches. The Nati typically deploy a 4-3-1-2 formation leveraging Akanji\'s buildup and Xhaka\'s midfield control.',
+        summary: 'Switzerland advance with momentum after a 4-1 win over Bosnia where all goals came after the 70th minute, but face tactical uncertainty against an unconfirmed opponent. Key absences include Muheim (calf), while Manzambi\'s emergence adds bench firepower. The Swiss have lost just 1 of their last 9 World Cup group games but enter unfamiliar knockout territory.'
       },
 
       {
