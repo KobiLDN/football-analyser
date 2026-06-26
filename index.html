@@ -4101,22 +4101,31 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'Uruguay', away: 'Spain', time: '01:00',
-        result: null, homeWin: 30, draw: 45, awayWin: 25, verdict: 'Low', fairOdds: '2.20-2.40',
-        homeForm: 'W D W W D',
-        awayForm: 'W D W W D',
+        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.40-2.60',
+        homeForm: 'L D D D D',
+        awayForm: 'D D W D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data to compare recent team form.' },
-          momentum:      { score: 50, detail: 'No verifiable pre-tournament momentum indicators.' },
-          headToHead:    { score: 50, detail: 'Head-to-head analysis unavailable for recent encounters.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns indeterminable without recent match data.' },
-          leagueContext: { score: 60, detail: 'Group H favorites clash increases tactical caution early.' }
+          formBalance:   { score: 30, detail: 'Uruguay are winless in their last 5 matches, contrasting sharply with Spain\'s unbeaten run of 12 games including 2 wins in their last 5.' },
+          momentum:      { score: 80, detail: 'Spain gained significant momentum with a 4-0 thrashing of Saudi Arabia, while Uruguay struggled in a 2-2 draw against Cape Verde.' },
+          goalTendency:  { score: 65, detail: 'Uruguay conceded in both group matches (3 goals total), while Spain scored 4 against Saudi Arabia but were held goalless by Cape Verde.' },
+          leagueContext: { score: 70, detail: 'Reigning Euro 2024 champions Spain (FIFA #8) hold a significant pedigree advantage over Uruguay (FIFA #16), who haven\'t advanced past World Cup quarter-finals since 2010.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Ronald Araujo — calf injury' },
+              { tag: 'out', text: 'Giorgian de Arrascaeta — calf injury' },
+              { tag: 'key', text: 'Federico Valverde — midfield engine driving Uruguay\'s play' },
+              { tag: 'key', text: 'Maxi Araújo — standout winger with consistent attacking threat' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Victor Munoz — injury concern' },
+              { tag: 'key', text: 'Lamine Yamal — scored vs Saudi Arabia, managing hamstring (unlikely 90 mins)' },
+              { tag: 'key', text: 'Mikel Oyarzabal — 2 goals this tournament, leading Spain\'s attack' },
+              { tag: 'key', text: 'Nico Williams — expected to start after impactful substitute appearances' }
+            ]
         },
-        context: 'Uruguay\'s physical 4-3-1-2 formation targets direct attacks through Valverde and Núñez, testing Spain\'s high defensive line. Spain\'s possession-based system focuses on midfield control via Pedri and Gavi. Tactical battle hinges on Uruguay disrupting Spain\'s buildup versus Spain breaking Uruguay\'s compact block.',
-        summary: 'Pending deep research.'
+        context: 'Uruguay must win to advance, likely starting Darwin Nunez centrally with Canobbio and Maxi Araújo wide. Spain only need a draw to top Group H and may rotate with Nico Williams joining Yamal and Oyarzabal in attack. Bielsa\'s high-intensity approach clashes with De la Fuente\'s possession-based system, where Rodri and Pedri control midfield tempo. Key absences for Uruguay (Araujo, De Arrascaeta) weaken their defense and creativity.',
+        summary: 'Spain edge predictions despite Yamal\'s fitness concerns, with sources forecasting a 2-1 win (Sports Mole) citing superior midfield control from Rodri/Pedri and Oyarzabal\'s scoring form. Uruguay\'s winless streak (6 games) and defensive vulnerabilities without Araujo contrast with Spain\'s 4-0 momentum boost against Saudi Arabia. A draw eliminates Uruguay unless Cape Verde lose heavily.'
       },
 
       {
