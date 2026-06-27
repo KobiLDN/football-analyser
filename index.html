@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.95 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.96 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 26 Jun 2026 22:24 BST</div>
+      <div class="updated-tag">Data · 27 Jun 2026 06:57 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4077,12 +4077,13 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'Cape Verde', away: 'Saudi Arabia', time: '01:00',
-        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.45-2.55',
+        result: '0-0', homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.45-2.55',
         homeForm: 'L D W D D',
         awayForm: 'L W D D L',
         factors: {
           formBalance:   { score: 70, detail: 'Cape Verde are unbeaten in their last 5 matches (W1 D3 L1) while Saudi Arabia have won only once in their last 5 (W1 D2 L2).' },
           momentum:      { score: 75, detail: 'Cape Verde\'s resilient draws against former world champions Spain and Uruguay have boosted confidence, while Saudi Arabia are reeling from a 4-0 loss to Spain.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'Saudi Arabia conceded 5 goals in 2 matches and must attack to qualify, potentially leaving space for Cape Verde\'s counter-attacks.' },
           leagueContext: { score: 65, detail: 'Cape Verde can progress with a draw due to goal difference rules, while Saudi Arabia must win to have any knockout stage chance.' }
         },
@@ -4106,12 +4107,13 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'Uruguay', away: 'Spain', time: '01:00',
-        result: null, homeWin: 16, draw: 22, awayWin: 62, verdict: 'Likely', fairOdds: '1.60-1.62',
+        result: '0-1', homeWin: 16, draw: 22, awayWin: 62, verdict: 'Likely', fairOdds: '1.60-1.62',
         homeForm: 'L D D D D',
         awayForm: 'L W D D W',
         factors: {
           formBalance:   { score: 30, detail: 'Uruguay are winless in five matches (D4, L1), while Spain have two wins and two draws in their last five.' },
           momentum:      { score: 20, detail: 'Spain are coming off a 4-0 win over Saudi Arabia, while Uruguay were held by Cape Verde in their last match.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 30, detail: 'Uruguay have conceded 9 goals in their last 5 matches, while Spain have kept 4 clean sheets in that period and conceded only once.' },
           leagueContext: { score: 40, detail: 'Spain are the reigning European champions and ranked 8th in the world, while Uruguay (16th) have struggled to progress beyond the group stage in recent World Cups.' }
         },
@@ -4135,12 +4137,13 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'Egypt', away: 'Iran', time: '04:00',
-        result: null, homeWin: 44, draw: 31, awayWin: 25, verdict: 'Low', fairOdds: '2.25-2.30',
+        result: '1-1', homeWin: 44, draw: 31, awayWin: 25, verdict: 'Low', fairOdds: '2.25-2.30',
         homeForm: 'D W L D W',
         awayForm: 'W W W D D',
         factors: {
           formBalance:   { score: 60, detail: 'Iran have taken 11 points from their last 5 matches compared to Egypt\'s 8, showing stronger overall recent form.' },
           momentum:      { score: 67, detail: 'Egypt have collected 4 points from their last 2 World Cup matches, outperforming Iran\'s 2 points in the same period.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 45, detail: 'Egypt\'s group matches averaged 3.0 total goals while Iran\'s averaged 2.0, indicating moderate scoring expectations.' },
           leagueContext: { score: 55, detail: 'Egypt need only a draw to advance to their first World Cup knockout stage in 92 years, while Iran must win to progress.' }
         },
@@ -4163,12 +4166,13 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'New Zealand', away: 'Belgium', time: '04:00',
-        result: null, homeWin: 5, draw: 15, awayWin: 80, verdict: 'Strong', fairOdds: '1.20-1.30',
+        result: '1-5', homeWin: 5, draw: 15, awayWin: 80, verdict: 'Strong', fairOdds: '1.20-1.30',
         homeForm: 'W L L D L',
         awayForm: 'D W W D D',
         factors: {
           formBalance:   { score: 20, detail: 'New Zealand\'s poor form (1W, 1D, 3L in last 5) contrasts sharply with Belgium\'s unbeaten streak (15 matches).' },
           momentum:      { score: 25, detail: 'Belgium have momentum from consecutive clean sheets while New Zealand collapsed after leading Egypt.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 30, detail: 'New Zealand conceded 12 goals in 5 games; Belgium kept 3 clean sheets but scored only twice this tournament.' },
           leagueContext: { score: 10, detail: 'Belgium (FIFA #9) are heavy favorites against lowest-ranked tournament side New Zealand (FIFA #96).' }
         },
@@ -4198,6 +4202,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 85, detail: 'England have lost just once in their last five matches while Panama have only one win.' },
           momentum:      { score: 90, detail: 'England are unbeaten in the tournament with a win and draw, while Panama lost both group games.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Panama failed to score in their last two World Cup matches, while England netted four against Croatia.' },
           leagueContext: { score: 95, detail: 'England (FIFA #5) boast vastly superior tournament pedigree compared to Panama (FIFA #75).' }
         },
@@ -4224,6 +4229,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
           momentum:      { score: 50, detail: 'Tournament performance context unavailable for assessment.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No goal trend data accessible for either side.' },
           leagueContext: { score: 60, detail: 'Croatia (FIFA #10) have stronger World Cup pedigree than Ghana (FIFA #60), but both are competitive.' }
         },
@@ -4244,6 +4250,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Recent performance data unavailable for both teams.' },
           momentum:      { score: 50, detail: 'Tournament form insights lacking for assessment.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No accessible goal pattern information.' },
           leagueContext: { score: 55, detail: 'Portugal (FIFA #6) slightly edge Colombia (FIFA #12) in rankings, but both are strong tournament performers.' }
         },
@@ -4264,6 +4271,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No recent form data available for evaluation.' },
           momentum:      { score: 50, detail: 'Tournament performance context inaccessible.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal trend information unavailable for both sides.' },
           leagueContext: { score: 52, detail: 'DR Congo (FIFA #52) have stronger continental pedigree, but Uzbekistan (FIFA #65) are Asian Cup regulars.' }
         },
@@ -4284,6 +4292,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient form data for both teams.' },
           momentum:      { score: 50, detail: 'Tournament momentum metrics unavailable.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No accessible goal pattern information.' },
           leagueContext: { score: 60, detail: 'Austria (FIFA #25) rank higher than Algeria (FIFA #45) and recently reached Euro QFs.' }
         },
@@ -4304,6 +4313,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 15, detail: 'Jordan are winless in five matches with four losses, while Argentina have five consecutive wins including two World Cup victories.' },
           momentum:      { score: 90, detail: 'Argentina have secured Group J with two dominant wins, while Jordan are eliminated after consecutive defeats.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'Argentina kept clean sheets in both World Cup matches, while Jordan conceded five goals across their two games.' },
           leagueContext: { score: 95, detail: 'World #1 Argentina are defending champions facing World Cup debutants Jordan ranked 87th, with a 72% win probability predicted.' }
         },
