@@ -4163,22 +4163,30 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'New Zealand', away: 'Belgium', time: '04:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'D D D D D',
-        awayForm: 'D D D D D',
+        result: null, homeWin: 5, draw: 15, awayWin: 80, verdict: 'Strong', fairOdds: '1.20-1.30',
+        homeForm: 'W L L D L',
+        awayForm: 'D W W D D',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data; both teams show mixed results in World Cup group stage.' },
-          momentum:      { score: 50, detail: 'Limited match-specific insights; New Zealand earned one point while Belgium drew twice.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'No clear goal trend available; Belgium kept one clean sheet, New Zealand conceded four goals.' },
-          leagueContext: { score: 50, detail: 'New Zealand (FIFA #96) must win to advance, while Belgium (FIFA #9) need victory to avoid third-place dependency.' }
+          formBalance:   { score: 20, detail: 'New Zealand\'s poor form (1W, 1D, 3L in last 5) contrasts sharply with Belgium\'s unbeaten streak (15 matches).' },
+          momentum:      { score: 25, detail: 'Belgium have momentum from consecutive clean sheets while New Zealand collapsed after leading Egypt.' },
+          goalTendency:  { score: 30, detail: 'New Zealand conceded 12 goals in 5 games; Belgium kept 3 clean sheets but scored only twice this tournament.' },
+          leagueContext: { score: 10, detail: 'Belgium (FIFA #9) are heavy favorites against lowest-ranked tournament side New Zealand (FIFA #96).' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Elijah Just — 2 goals this World Cup' },
+              { tag: 'key', text: 'Chris Wood — primary striker threat' }
+            ],
+          away: [
+              { tag: 'out', text: 'Nathan Ngoy — suspended (red card)' },
+              { tag: 'out', text: 'Zeno Debast — leg injury' },
+              { tag: 'doubt', text: 'Romelu Lukaku — fitness concerns' },
+              { tag: 'doubt', text: 'Jérémy Doku — illness recovery' },
+              { tag: 'key', text: 'Kevin De Bruyne — playmaker' }
+            ]
         },
-        context: 'New Zealand, with one point, must win to have any chance of advancing as Group G underdogs. Belgium, on two points, require a victory to secure knockout qualification without relying on other results. The All Whites will likely deploy a defensive setup against Belgium\'s superior technical quality, with Romelu Lukaku leading the attack. Belgium\'s midfield control through Kevin De Bruyne will be crucial to break down New Zealand\'s low block.',
-        summary: 'Pending deep research.'
+        context: 'New Zealand must win to advance after surrendering a lead against Egypt, exposing defensive fragility. Belgium requires victory to progress and will likely start Lukaku/Doku despite fitness concerns, with Arthur Theate replacing suspended Ngoy. The All Whites\' high defensive line risks exploitation by De Bruyne\'s creativity, while Belgium\'s attack seeks its first open-play goal this tournament.',
+        summary: 'New Zealand\'s leaky defense (5 goals conceded in 2 games) faces a Belgium side yet to score from open play. Pundits unanimously predict a Belgium win (0-2, 0-3 consensus) despite their attacking struggles. Key absences in Belgium\'s defense increase vulnerability, but their superior quality should prevail in this must-win clash.'
       },
 
       {
