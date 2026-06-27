@@ -4201,121 +4201,107 @@ const LEAGUES = [
       {
         day: 'Saturday 27 June',
         home: 'Panama', away: 'England', time: '22:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: 'D D D D D',
-        awayForm: 'D D D D D',
+        result: null, homeWin: 5, draw: 15, awayWin: 80, verdict: 'Strong', fairOdds: '1.20-1.30',
+        homeForm: 'L W D L L',
+        awayForm: 'L W W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data; both teams\' World Cup performances lack clear patterns.' },
-          momentum:      { score: 50, detail: 'No specific momentum indicators; England are favorites but Panama resilient in CONCACAF.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal data unavailable; England possess attacking stars, Panama focus on defensive organization.' },
-          leagueContext: { score: 50, detail: 'Panama (FIFA #75) play for pride, while England (FIFA #5) aim to secure group supremacy with key players rested.' }
+          formBalance:   { score: 85, detail: 'England have lost just once in their last five matches while Panama have only one win.' },
+          momentum:      { score: 90, detail: 'England are unbeaten in the tournament with a win and draw, while Panama lost both group games.' },
+          goalTendency:  { score: 75, detail: 'Panama failed to score in their last two World Cup matches, while England netted four against Croatia.' },
+          leagueContext: { score: 95, detail: 'England (FIFA #5) boast vastly superior tournament pedigree compared to Panama (FIFA #75).' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Adalberto Carrasquilla — injury' }
+            ],
+          away: [
+              { tag: 'out', text: 'Reece James — hamstring injury' },
+              { tag: 'doubt', text: 'Declan Rice — nerve pain' },
+              { tag: 'key', text: 'Harry Kane — 2 goals this World Cup' }
+            ]
         },
-        context: 'Panama, eliminated after two losses, seek a historic World Cup result against group leaders England. England need a point to guarantee top spot and may rotate stars like Harry Kane and Jude Bellingham. Panama\'s compact 5-4-1 will challenge England\'s creative players, while set pieces remain their primary threat. England\'s width play through Bukayo Saka could exploit Panama\'s defensive gaps.',
-        summary: 'Pending deep research.'
+        context: 'Panama are eliminated after two losses and field a weakened midfield without Carrasquilla. England need a win to secure top spot but face defensive issues with James out and Rice doubtful. Tuchel may rotate cautiously, relying on Kane who scored a hat-trick against Panama in 2018. Panama\'s winless World Cup streak (5 losses) looks likely to extend against England\'s superior firepower.',
+        summary: 'England are heavy favorites against an eliminated Panama side missing key midfielder Carrasquilla. The Three Lions, despite defensive absences (James out, Rice doubtful), have Kane in form and need victory to secure group leadership. Panama\'s winless World Cup run should continue given their defensive fragility and lack of goals.'
       },
 
       {
         day: 'Saturday 27 June',
         home: 'Croatia', away: 'Ghana', time: '22:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.10-2.30',
-        homeForm: 'W W L W L',
-        awayForm: 'L L L D W',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available for either team.' },
-          momentum:      { score: 50, detail: 'Insufficient data to assess momentum trends.' },
-          headToHead:    { score: 50, detail: 'No historical encounters recorded between these teams.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unavailable for both squads.' },
-          leagueContext: { score: 55, detail: 'World Cup group stage intensifies knockout implications.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
+          momentum:      { score: 50, detail: 'Tournament performance context unavailable for assessment.' },
+          goalTendency:  { score: 50, detail: 'No goal trend data accessible for either side.' },
+          leagueContext: { score: 60, detail: 'Croatia (FIFA #10) have stronger World Cup pedigree than Ghana (FIFA #60), but both are competitive.' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'Croatia\'s midfield trio of Luka Modrić, Mateo Kovačić, and Marcelo Brozović aims to control tempo against Ghana\'s physicality led by Thomas Partey. Ghana relies on Mohammed Kudus\' transitions, while Croatia seeks to exploit set-piece vulnerabilities. Both teams prioritize defensive structure in this Group L opener.',
-        summary: 'Pending deep research.'
+        context: 'Both teams remain in knockout stage contention, needing points to advance. Croatia\'s midfield experience faces Ghana\'s physicality, with Modrić likely orchestrating play. Ghana\'s Ayew brothers provide attacking threat, while Croatia rely on Perišić\'s width. The match could pivot on set-piece execution given both teams\' aerial strength.',
+        summary: 'Crucial Group L clash with both sides fighting for progression. Croatia\'s tournament experience slightly edges Ghana\'s AFCON pedigree, but insufficient data prevents clear forecasting. Key battles in midfield may decide this evenly matched contest.'
       },
 
       {
         day: 'Sunday 28 June',
         home: 'Colombia', away: 'Portugal', time: '00:30',
-        result: null, homeWin: 25, draw: 30, awayWin: 45, verdict: 'Low', fairOdds: '2.10-2.30',
-        homeForm: 'L L W W W',
-        awayForm: 'D W W W D',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Recent results unavailable for both teams.' },
-          momentum:      { score: 55, detail: 'Portugal\'s attacking depth provides slight psychological edge.' },
-          headToHead:    { score: 50, detail: 'No prior competitive meetings between these nations.' },
-          goalTendency:  { score: 70, detail: 'Portugal\'s Fernandes/Leão and Colombia\'s Díaz drive high-scoring potential.' },
-          leagueContext: { score: 60, detail: 'Group K leadership implications amplify attacking intent.' }
-        },
-        teamNews: {
-          home: [
-              { tag: 'key', text: 'Luis Díaz — primary attacking threat' },
-              { tag: 'doubt', text: 'James Rodríguez — selection uncertainty' }
-            ],
-          away: [
-              { tag: 'key', text: 'Bruno Fernandes — creative captain' },
-              { tag: 'key', text: 'Rafael Leão — wide dynamism' }
-            ]
-        },
-        context: 'Portugal\'s Bruno Fernandes orchestrates attacks with Bernardo Silva and Leão, targeting spaces behind Colombia\'s high line. Colombia counters through Luis Díaz\'s dribbling and Richard Ríos\' midfield surges. Portugal\'s defensive duo Rúben Dias and António Silva must contain Díaz\'s flank movements.',
-        summary: 'Pending deep research.'
-      },
-
-      {
-        day: 'Sunday 28 June',
-        home: 'DR Congo', away: 'Uzbekistan', time: '00:30',
-        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.40-2.60',
-        homeForm: 'W W D L D',
-        awayForm: 'W D L L L',
-        factors: {
-          formBalance:   { score: 55, detail: 'DR Congo\'s physical robustness noted in preparations.' },
-          momentum:      { score: 45, detail: 'Uzbekistan\'s injury crisis disrupts tactical cohesion.' },
-          headToHead:    { score: 50, detail: 'First-ever meeting between these teams.' },
-          goalTendency:  { score: 40, detail: 'Injuries may reduce Uzbekistan\'s attacking output.' },
-          leagueContext: { score: 65, detail: 'Critical for advancement in tight group.' }
-        },
-        teamNews: {
-          home: [
-              { tag: 'out', text: 'Rocky Bushiri — injury' },
-              { tag: 'key', text: 'Yoane Wissa — attacking form' },
-              { tag: 'key', text: 'Chancel Mbemba — defensive stability' }
-            ],
-          away: [
-              { tag: 'out', text: 'Jaloliddin Masharipov — ACL injury' },
-              { tag: 'doubt', text: 'Azizjon Ganiev — knock' },
-              { tag: 'out', text: 'Husniddin Alikulov — sidelined' },
-              { tag: 'key', text: 'Eldor Shomurodov — captain' }
-            ]
-        },
-        context: 'Uzbekistan\'s inaugural World Cup campaign hampered by Masharipov\'s absence, forcing Eldor Shomurodov to carry creative burden. DR Congo leverages Yoane Wissa\'s pace and Mbemba\'s defensive organization. Artificial turf at Mercedes-Benz Stadium adds unpredictability to transitions.',
-        summary: 'Pending deep research.'
-      },
-
-      {
-        day: 'Sunday 28 June',
-        home: 'Algeria', away: 'Austria', time: '03:00',
-        result: null, homeWin: 35, draw: 33, awayWin: 32, verdict: 'Low', fairOdds: '2.80-3.00',
-        homeForm: 'W D W W L',
-        awayForm: 'D W W W W',
-        factors: {
-          formBalance:   { score: 50, detail: 'No recent performance data available.' },
-          momentum:      { score: 50, detail: 'Insufficient information to determine psychological edge.' },
-          headToHead:    { score: 50, detail: 'No historical encounters between these teams.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unknown for both squads.' },
-          leagueContext: { score: 55, detail: 'Group stage implications magnify tactical caution.' }
+          formBalance:   { score: 50, detail: 'Recent performance data unavailable for both teams.' },
+          momentum:      { score: 50, detail: 'Tournament form insights lacking for assessment.' },
+          goalTendency:  { score: 50, detail: 'No accessible goal pattern information.' },
+          leagueContext: { score: 55, detail: 'Portugal (FIFA #6) slightly edge Colombia (FIFA #12) in rankings, but both are strong tournament performers.' }
         },
         teamNews: {
           home: [],
           away: []
         },
-        context: 'Algeria\'s pressing structure challenges Austria\'s build-up patterns. Austria relies on midfield controller Konrad Laimer to bypass Algeria\'s aggressive front line. Both teams prioritize defensive solidity with overlapping fullbacks providing width.',
-        summary: 'Pending deep research.'
+        context: 'High-stakes Group K encounter featuring Colombia\'s dynamic attack led by Díaz against Portugal\'s experienced core anchored by Ronaldo. Colombia\'s high press tests Portugal\'s buildup play, while Fernandes\' creativity could unlock Colombia\'s defense. Both teams prioritize avoiding defensive errors in this knockout-stage decider.',
+        summary: 'Evenly matched contest between two top-12 FIFA teams. Colombia\'s Copa América final momentum meets Portugal\'s Euro-tested squad. Ronaldo\'s leadership faces Díaz\'s flair, but absent team news prevents confident prediction.'
+      },
+
+      {
+        day: 'Sunday 28 June',
+        home: 'DR Congo', away: 'Uzbekistan', time: '00:30',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
+        factors: {
+          formBalance:   { score: 50, detail: 'No recent form data available for evaluation.' },
+          momentum:      { score: 50, detail: 'Tournament performance context inaccessible.' },
+          goalTendency:  { score: 50, detail: 'Goal trend information unavailable for both sides.' },
+          leagueContext: { score: 52, detail: 'DR Congo (FIFA #52) have stronger continental pedigree, but Uzbekistan (FIFA #65) are Asian Cup regulars.' }
+        },
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Historic matchup between DR Congo (first WC since 1974) and debutants Uzbekistan. DR Congo rely on Bakambu\'s finishing against Uzbekistan\'s organized defense. Midfield battles between Congo\'s Tshibamba and Uzbekistan\'s Shukurov could dictate tempo. Both teams seek their first World Cup points amid low-scoring tournament trends.',
+        summary: 'Unpredictable clash between World Cup returnees and newcomers. DR Congo\'s AFCON experience slightly favors them, but Uzbekistan\'s disciplined structure poses challenges. Limited data results in neutral probability distribution.'
+      },
+
+      {
+        day: 'Sunday 28 June',
+        home: 'Algeria', away: 'Austria', time: '03:00',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
+        factors: {
+          formBalance:   { score: 50, detail: 'Insufficient form data for both teams.' },
+          momentum:      { score: 50, detail: 'Tournament momentum metrics unavailable.' },
+          goalTendency:  { score: 50, detail: 'No accessible goal pattern information.' },
+          leagueContext: { score: 60, detail: 'Austria (FIFA #25) rank higher than Algeria (FIFA #45) and recently reached Euro QFs.' }
+        },
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'Austria\'s pressing system led by Sabitzer meets Algeria\'s counter-attacking threat via Mahrez. Algeria\'s AFCON-winning experience contrasts Austria\'s cohesive Euro 2024 run. Set pieces prove critical with Alaba\'s delivery testing Algeria\'s aerial defense. Both teams seek midfield control through Baumgartner and Bennacer.',
+        summary: 'Austria\'s higher ranking and recent Euro success provide slight edge, but Algeria\'s 2019 AFCON title demonstrates tournament capability. Mahrez\'s creativity against Alaba\'s leadership defines this clash, though absent team news prevents confident outcome prediction.'
       },
 
       {
