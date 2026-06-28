@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.99 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.100 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 28 Jun 2026 09:21 BST</div>
+      <div class="updated-tag">Data · 28 Jun 2026 22:11 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4347,7 +4347,7 @@ const LEAGUES = [
       {
         day: 'Sunday 28 June',
         home: 'South Africa', away: 'Canada', time: '20:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '?',
+        result: '0-1', homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '?',
         homeForm: '? ? ? ? ?',
         awayForm: '? ? ? ? ?',
         factors: {
@@ -4401,6 +4401,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Germany won 4 of last 5 matches; Paraguay lost 1 and drew 1 in group stage.' },
           momentum:      { score: 65, detail: 'Germany\'s attack created 10 goals in 3 games; Paraguay scored only twice.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 30, detail: 'Under 3.5 goals expected as Paraguay conceded 4 goals once but kept clean sheet vs Turkey.' },
           leagueContext: { score: 85, detail: 'Germany are 4-time World Cup champions; Paraguay\'s best is quarter-finals.' }
         },
@@ -4459,6 +4460,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent data; Ivory Coast beat Ecuador but lost to Germany.' },
           momentum:      { score: 50, detail: 'Ivory Coast won AFCON 2023; Norway lacks tournament experience since 1998.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Unknown scoring patterns; Norway\'s Haaland absent due to qualification failure.' },
           leagueContext: { score: 55, detail: 'Ivory Coast are 3-time AFCON champions; Norway\'s best WC result was 1938 quarter-finals.' }
         },
@@ -4481,6 +4483,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 65, detail: 'France reached 2022 WC final; Sweden missed last three major tournaments.' },
           momentum:      { score: 70, detail: 'France\'s tournament pedigree outweighs Sweden\'s inconsistent qualifying form.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'France scored 8 goals in 2022 group stage; Sweden conceded in 7 of last 10 WC matches.' },
           leagueContext: { score: 75, detail: 'France are reigning Olympic silver medalists; Sweden\'s best WC was 1958 runner-up.' }
         },
@@ -4501,6 +4504,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Ecuador beat Germany in groups; Mexico\'s recent Gold Cup form is strong.' },
           momentum:      { score: 55, detail: 'Ecuador\'s comeback win vs Germany boosts confidence; Mexico consistently reaches Gold Cup finals.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 45, detail: 'Both teams average 1-2 goals per game historically; Ecuador conceded 4 to US in qualifiers.' },
           leagueContext: { score: 60, detail: 'Mexico are 12-time Gold Cup champions; Ecuador\'s best Copa América is semi-finals.' }
         },
@@ -4521,6 +4525,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 80, detail: 'England reached last two Euro finals; DR Congo\'s only WC was 1974 group stage.' },
           momentum:      { score: 85, detail: 'England\'s squad depth and recent finals experience vastly exceeds DR Congo\'s.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'England scored 13 in Euro 2024 qualifiers; DR Congo conceded in 8 of last 10 AFCON matches.' },
           leagueContext: { score: 90, detail: 'England are 1966 World Cup champions; DR Congo\'s best is 1974 group stage as Zaire.' }
         },
@@ -4541,6 +4546,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 40, detail: 'Belgium\'s two group-stage draws against lower-ranked opponents (Egypt, Iran) reveal attacking inefficiency despite strong pre-tournament form.' },
           momentum:      { score: 35, detail: 'Low momentum after unconvincing group stage, compounded by Doku\'s absence and Lukaku\'s fitness struggles.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 30, detail: 'Scored just once in two group matches, with Lukaku\'s fitness and Doku\'s availability directly impacting goal threat.' },
           leagueContext: { score: 55, detail: 'Belgium (FIFA #9) has higher ranking than Senegal (#20) but underperformed recent tournaments, while Senegal are AFCON champions.' }
         },
@@ -4569,6 +4575,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient data for both teams\' recent form.' },
           momentum:      { score: 50, detail: 'No tournament performance metrics available.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal patterns unclear without match data.' },
           leagueContext: { score: 60, detail: 'USA (FIFA #11) holds ranking advantage over Bosnia (#65), who lack major tournament experience.' }
         },
@@ -4591,6 +4598,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Current tournament form unknown for both sides.' },
           momentum:      { score: 50, detail: 'No discernible momentum without recent results.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal data unavailable for assessment.' },
           leagueContext: { score: 55, detail: 'Spain (FIFA #8, Euro 2024 champions) favored over Austria (#25), though Austria reached Euro 2024 quarterfinals.' }
         },
@@ -4615,6 +4623,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Recent performance data unavailable for both teams.' },
           momentum:      { score: 50, detail: 'Momentum unmeasurable without group-stage results.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Insufficient goal trend information.' },
           leagueContext: { score: 52, detail: 'Portugal (FIFA #6) and Croatia (#10) have similar rankings, with Croatia reaching 2022 World Cup semifinals.' }
         },
@@ -4639,6 +4648,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No group-stage form available for analysis.' },
           momentum:      { score: 50, detail: 'Momentum cannot be assessed without results.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal patterns unverified due to data gaps.' },
           leagueContext: { score: 58, detail: 'Switzerland (FIFA #20) edges Algeria (#45) in rankings, with superior recent tournament consistency including 2022 World Cup quarterfinals.' }
         },
@@ -4663,6 +4673,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 60, detail: 'Australia has 8 points from last 5 matches (2W, 2D, 1L) compared to Egypt\'s 5 points (1W, 2D, 2L).' },
           momentum:      { score: 55, detail: 'Australia is unbeaten in their last 4 matches including draws against Belgium and Iran.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 55, detail: 'Australia scored 4 goals in group stage versus Egypt\'s 3, with both conceding 2 and 3 respectively.' },
           leagueContext: { score: 60, detail: 'Australia has more World Cup knockout experience (3rd appearance) compared to Egypt\'s debut at this stage.' }
         },
@@ -4690,6 +4701,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent data for both teams.' },
           momentum:      { score: 50, detail: 'No discernible momentum indicators available.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal metrics unavailable for both sides.' },
           leagueContext: { score: 50, detail: 'Tournament context shows Argentina as defending champions versus debutants Cape Verde.' }
         },
@@ -4710,6 +4722,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent data for both teams.' },
           momentum:      { score: 50, detail: 'No discernible momentum indicators available.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal metrics unavailable for both sides.' },
           leagueContext: { score: 50, detail: 'Colombia reached 2024 Copa América final while Ghana last made World Cup quarter-finals in 2010.' }
         },
