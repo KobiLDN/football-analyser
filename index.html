@@ -4535,71 +4535,123 @@ const LEAGUES = [
       {
         day: 'Wednesday 1 July',
         home: 'Belgium', away: 'Senegal', time: '21:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.10-2.30',
+        homeForm: 'W W D D ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 40, detail: 'Belgium\'s two group-stage draws against lower-ranked opponents (Egypt, Iran) reveal attacking inefficiency despite strong pre-tournament form.' },
+          momentum:      { score: 35, detail: 'Low momentum after unconvincing group stage, compounded by Doku\'s absence and Lukaku\'s fitness struggles.' },
+          goalTendency:  { score: 30, detail: 'Scored just once in two group matches, with Lukaku\'s fitness and Doku\'s availability directly impacting goal threat.' },
+          leagueContext: { score: 55, detail: 'Belgium (FIFA #9) has higher ranking than Senegal (#20) but underperformed recent tournaments, while Senegal are AFCON champions.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Zeno Debast — thigh injury (targeting knockout return)' },
+              { tag: 'doubt', text: 'Jeremy Doku — respiratory infection recovery' },
+              { tag: 'doubt', text: 'Romelu Lukaku — fitness concerns' },
+              { tag: 'key', text: 'Kevin De Bruyne — creative anchor' },
+              { tag: 'key', text: 'Charles De Ketelaere — 2 goals in qualifying' }
+            ],
+          away: [
+              { tag: 'key', text: 'Sadio Mané' }
+            ]
+        },
+        context: 'Belgium scraped through Group G with two draws, missing Doku for both matches due to illness and personal reasons. Garcia\'s 4-2-3-1 relies on De Bruyne\'s creativity, but Lukaku\'s fitness casts doubt on the striker role—likely forcing De Ketelaere to lead the line. Senegal\'s physicality will test Belgium\'s defense, already weakened by Debast\'s absence. Doku\'s potential return could provide needed width against Senegal\'s compact shape.',
+        summary: 'Belgium\'s attack remains disjointed, managing one goal in two games without Doku. De Ketelaere may start as false nine if Lukaku is unfit. Senegal\'s counter-attacking threat, led by Mané, exploits Belgium\'s high defensive line. With key players doubtful and minimal goal output, Belgium\'s progression hinges on individual brilliance rather than cohesive play.'
       },
 
       {
         day: 'Thursday 2 July',
         home: 'USA', away: 'Bosnia & Herzegovina', time: '01:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Insufficient data for both teams\' recent form.' },
+          momentum:      { score: 50, detail: 'No tournament performance metrics available.' },
+          goalTendency:  { score: 50, detail: 'Goal patterns unclear without match data.' },
+          leagueContext: { score: 60, detail: 'USA (FIFA #11) holds ranking advantage over Bosnia (#65), who lack major tournament experience.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Christian Pulisic' }
+            ],
+          away: []
+        },
+        context: 'USA leverages home advantage with greater tournament pedigree, while Bosnia & Herzegovina make their first World Cup appearance since 2014. Pulisic spearheads the US attack against Bosnia\'s likely defensive setup. Expect midfield battles to dictate tempo as Bosnia aims to disrupt the hosts\' rhythm.',
+        summary: 'Limited team news available. USA\'s higher ranking and home support offer slight edge, but Bosnia\'s organization could frustrate attackers. Match likely decided by individual moments in tight midfield contest.'
       },
 
       {
         day: 'Thursday 2 July',
         home: 'Spain', away: 'Austria', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Current tournament form unknown for both sides.' },
+          momentum:      { score: 50, detail: 'No discernible momentum without recent results.' },
+          goalTendency:  { score: 50, detail: 'Goal data unavailable for assessment.' },
+          leagueContext: { score: 55, detail: 'Spain (FIFA #8, Euro 2024 champions) favored over Austria (#25), though Austria reached Euro 2024 quarterfinals.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Pedri' }
+            ],
+          away: [
+              { tag: 'key', text: 'David Alaba' }
+            ]
+        },
+        context: 'Spain\'s possession-based system clashes with Austria\'s disciplined midfield under Rangnick. Pedri\'s creativity faces Alaba\'s leadership in Austria\'s defense. Austria\'s counter-pressing could disrupt Spain\'s buildup, requiring width to break compact lines.',
+        summary: 'Spain\'s technical superiority meets Austria\'s tactical organization. Key duel: Pedri vs Alaba in midfield transitions. Outcome hinges on Spain\'s efficiency in final third against Austria\'s resilient Euro 2024-proven structure.'
       },
 
       {
         day: 'Friday 3 July',
         home: 'Portugal', away: 'Croatia', time: '00:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Recent performance data unavailable for both teams.' },
+          momentum:      { score: 50, detail: 'Momentum unmeasurable without group-stage results.' },
+          goalTendency:  { score: 50, detail: 'Insufficient goal trend information.' },
+          leagueContext: { score: 52, detail: 'Portugal (FIFA #6) and Croatia (#10) have similar rankings, with Croatia reaching 2022 World Cup semifinals.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Cristiano Ronaldo' }
+            ],
+          away: [
+              { tag: 'key', text: 'Luka Modrić' }
+            ]
+        },
+        context: 'Portugal\'s attacking flair, led by Ronaldo, confronts Croatia\'s experienced midfield anchored by Modrić. Croatia\'s tournament pedigree includes recent deep runs, while Portugal relies on individual brilliance. Midfield control will be critical in this clash of generations.',
+        summary: 'Battleground centers on Modrić\'s distribution against Portugal\'s forward press. Croatia\'s tournament experience offsets Portugal\'s star power. Expect tactical chess match with limited chances deciding outcome.'
       },
 
       {
         day: 'Friday 3 July',
         home: 'Switzerland', away: 'Algeria', time: '04:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'No group-stage form available for analysis.' },
+          momentum:      { score: 50, detail: 'Momentum cannot be assessed without results.' },
+          goalTendency:  { score: 50, detail: 'Goal patterns unverified due to data gaps.' },
+          leagueContext: { score: 58, detail: 'Switzerland (FIFA #20) edges Algeria (#45) in rankings, with superior recent tournament consistency including 2022 World Cup quarterfinals.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Granit Xhaka' }
+            ],
+          away: [
+              { tag: 'key', text: 'Riyad Mahrez' }
+            ]
+        },
+        context: 'Switzerland\'s structured defense faces Algeria\'s pace-driven attack led by Mahrez. Xhaka\'s midfield control will be vital against Algeria\'s transitions. Algeria\'s AFCON-winning experience tests Switzerland\'s tournament discipline.',
+        summary: 'Switzerland\'s organization meets Algeria\'s individual flair. Key matchup: Xhaka\'s distribution vs Mahrez\'s dribbling. Set pieces and counter-attacks likely determine this evenly balanced contest.'
       },
 
       {
