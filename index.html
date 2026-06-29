@@ -4423,56 +4423,51 @@ const LEAGUES = [
       {
         day: 'Tuesday 30 June',
         home: 'Netherlands', away: 'Morocco', time: '02:00',
-        result: null, homeWin: 45, draw: 35, awayWin: 20, verdict: 'Low', fairOdds: '2.10-2.40',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.40-2.60',
+        homeForm: 'W D D W W',
+        awayForm: 'W W D W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Both teams lack recent verifiable results, though Morocco\'s 2022 World Cup run and Netherlands\' Euro 2024 semi-final suggest resilience.' },
-          momentum:      { score: 55, detail: 'Morocco\'s historic 2022 semi-final run provides confidence, but Netherlands\' tournament pedigree offers counterbalance.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 40, detail: 'Netherlands miss creative force Xavi Simons, while Morocco\'s absent defenders Aguerd and Mazraoui (doubt) may force cautious approaches.' },
-          leagueContext: { score: 60, detail: 'Netherlands rank higher (#7) with three World Cup finals, but Morocco (#13) reached the 2022 semi-finals and beat Brazil in a recent friendly.' }
+          formBalance:   { score: 45, detail: 'Morocco have won 4 of their last 5 matches, while Netherlands have 3 wins and 2 draws, giving Morocco a slight edge.' },
+          momentum:      { score: 50, detail: 'Both teams enter with strong group-stage performances, each earning 7 points and scoring 10+ goals collectively.' },
+          goalTendency:  { score: 75, detail: 'Netherlands overperformed xG by +4.4 in the group stage, while Morocco scored 6 goals across 3 matches, indicating high attacking output.' },
+          leagueContext: { score: 55, detail: 'Netherlands (FIFA #7) have greater historical pedigree, but Morocco (FIFA #13) reached the 2022 semifinals and held Brazil to a draw this tournament.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Jurrien Timber — injury' },
-              { tag: 'out', text: 'Xavi Simons — injury' },
-              { tag: 'out', text: 'Matthijs de Ligt — injury' },
-              { tag: 'doubt', text: 'Bart Verbruggen — hip injury' },
-              { tag: 'key', text: 'Memphis Depay — all-time top scorer, fit after thigh issue' }
+              { tag: 'out', text: 'Jurriën Timber — out of tournament' },
+              { tag: 'doubt', text: 'Quinten Timber — concussion' },
+              { tag: 'key', text: 'Brian Brobbey — starting striker after fitness clearance' },
+              { tag: 'key', text: 'Cody Gakpo — primary attacking threat' }
             ],
           away: [
               { tag: 'out', text: 'Nayef Aguerd — injury' },
-              { tag: 'out', text: 'Abdi Ezzalzouli — injury' },
-              { tag: 'doubt', text: 'Noussair Mazraoui — shoulder injury' },
-              { tag: 'key', text: 'Achraf Hakimi — attacking full-back, pivotal in transitions' }
+              { tag: 'out', text: 'Abde Ezzalzouli — injury' },
+              { tag: 'key', text: 'Ismael Saibari — 3 goals this World Cup' },
+              { tag: 'key', text: 'Achraf Hakimi — starting right-back' }
             ]
         },
-        context: 'Netherlands grapple with defensive absences (Timber, de Ligt) and creative loss Xavi Simons, relying on Virgil van Dijk\'s leadership and Memphis Depay\'s resurgence. Morocco, without Aguerd and possibly Mazraoui, will use Hakimi\'s flank dominance and Brahim Diaz\'s playmaking. Koeman\'s side must disrupt Morocco\'s compact shape, while the Atlas Lions aim to replicate their 2022 counter-attacking success. Key battles include Frenkie de Jong versus Sofyan Amrabat in midfield.',
-        summary: 'Pending deep research.'
+        context: 'Netherlands switch to Micky van de Ven at left-back, replacing Nathan Ake, while Morocco reintroduce Noussair Mazraoui and Azzedine Ounahi after rotation. Brian Brobbey leads the Dutch attack with support from Cody Gakpo, while Morocco\'s Ismael Saibari (3 goals) tests a Dutch defense missing Jurriën Timber. Morocco\'s high press troubled Brazil earlier, but their depleted defense (without Aguerd) faces Netherlands\' overperforming attack.',
+        summary: 'A tactical clash between Netherlands\' efficient attack (10 group-stage goals) and Morocco\'s press, which disrupted Brazil. Key absences in defense for both sides (Timber for Netherlands, Aguerd for Morocco) may open scoring chances. Pundits are divided, with some predicting a Morocco upset via Saibari\'s form.'
       },
 
       {
         day: 'Tuesday 30 June',
         home: 'Ivory Coast', away: 'Norway', time: '18:00',
-        result: null, homeWin: 40, draw: 35, awayWin: 25, verdict: 'Low', fairOdds: '2.40-2.60',
-        homeForm: 'L W ? ? ?',
+        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: '? ? ? ? ?',
         awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent data; Ivory Coast beat Ecuador but lost to Germany.' },
-          momentum:      { score: 50, detail: 'Ivory Coast won AFCON 2023; Norway lacks tournament experience since 1998.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Unknown scoring patterns; Norway\'s Haaland absent due to qualification failure.' },
-          leagueContext: { score: 55, detail: 'Ivory Coast are 3-time AFCON champions; Norway\'s best WC result was 1938 quarter-finals.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent match data to assess form balance for either team.' },
+          momentum:      { score: 50, detail: 'Both teams advanced from their groups but lack available performance metrics for momentum evaluation.' },
+          goalTendency:  { score: 50, detail: 'No goal data available from recent matches to indicate attacking or defensive trends.' },
+          leagueContext: { score: 50, detail: 'Ivory Coast are reigning AFCON champions but rank lower (FIFA #48) than Norway (#38), who are making their first World Cup appearance since 1998.' }
         },
         teamNews: {
-          home: [
-              { tag: 'key', text: 'Amad Diallo — scored 90th-minute winner vs Ecuador' }
-            ],
+          home: [],
           away: []
         },
-        context: 'Ivory Coast relies on momentum from Amad Diallo\'s late winner against Ecuador, though they\'ve never won multiple World Cup matches in one tournament. Norway returns to the World Cup after 28 years but lacks recent knockout experience. Tactical approach uncertain given limited head-to-head history and sparse tournament data for both sides.',
-        summary: 'Pending deep research.'
+        context: 'Ivory Coast, reigning AFCON champions, face Norway in their first World Cup knockout match since 1998. Norway\'s historical best is a 1938 quarter-final, while Ivory Coast has never progressed beyond the group stage. Tactical setups are unknown due to limited team news.',
+        summary: 'A matchup with minimal available data. Ivory Coast\'s continental success contrasts with Norway\'s higher FIFA ranking, but absent injury reports and recent form make predictions speculative. The draw is marginally favored given the balanced context.'
       },
 
       {
