@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.103 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.104 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 30 Jun 2026 01:00 BST</div>
+      <div class="updated-tag">Data · 30 Jun 2026 07:18 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4416,12 +4416,13 @@ const LEAGUES = [
       {
         day: 'Tuesday 30 June',
         home: 'Netherlands', away: 'Morocco', time: '02:00',
-        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '2.80-2.90',
+        result: '1-1', homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '2.80-2.90',
         homeForm: 'L W D W W',
         awayForm: 'W D D W W',
         factors: {
           formBalance:   { score: 45, detail: 'Morocco are unbeaten in their last five (W3, D2) while Netherlands have one loss in their last five (W3, D1, L1).' },
           momentum:      { score: 50, detail: 'Both teams enter with back-to-back World Cup wins, though Morocco drew against Brazil earlier in the tournament.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Netherlands and Morocco averaged 3.6 and 3.2 goals per game respectively in their last five matches.' },
           leagueContext: { score: 55, detail: 'Netherlands (FIFA #7) have stronger historical pedigree, but Morocco (FIFA #13) reached the 2022 semi-finals and held Brazil to a draw.' }
         },
@@ -4450,6 +4451,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
           momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
           leagueContext: { score: 50, detail: 'Ivory Coast (FIFA #48) are AFCON champions but lack World Cup success; Norway (FIFA #38) last qualified in 1998.' }
         },
@@ -4470,6 +4472,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
           momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
           leagueContext: { score: 50, detail: 'France (FIFA #2) are two-time World Cup winners; Sweden (FIFA #26) were runners-up in 1958 but missed recent Euros.' }
         },
@@ -4490,6 +4493,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
           momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
           leagueContext: { score: 50, detail: 'Mexico (FIFA #15) are Gold Cup regulars; Ecuador (FIFA #44) reached the 2006 Round of 16 but lack consistency.' }
         },
@@ -4510,6 +4514,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
           momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
           leagueContext: { score: 50, detail: 'England (FIFA #5) are Euro 2024 runners-up; DR Congo (FIFA #52) last qualified in 1974 but reached the 2023 AFCON semi-finals.' }
         },
