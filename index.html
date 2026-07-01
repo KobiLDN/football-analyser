@@ -4523,51 +4523,50 @@ const LEAGUES = [
       {
         day: 'Wednesday 1 July',
         home: 'England', away: 'DR Congo', time: '17:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 74, draw: 15, awayWin: 11, verdict: 'Strong', fairOdds: '1.35-1.40',
+        homeForm: 'W W W D W',
+        awayForm: 'W D L W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
-          momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
-          leagueContext: { score: 50, detail: 'England (FIFA #5) are Euro 2024 runners-up; DR Congo (FIFA #52) last qualified in 1974 but reached the 2023 AFCON semi-finals.' }
+          formBalance:   { score: 70, detail: 'England won 3 of last 5 including group wins vs Croatia/Panama, DR Congo mixed with win vs Uzbekistan but loss to Colombia.' },
+          momentum:      { score: 65, detail: 'England unbeaten in group stage, DR Congo gained confidence from Portugal draw and first WC win since 1974.' },
+          goalTendency:  { score: 75, detail: 'Kane/Bellingham combined for 5 goals; DR Congo\'s Wissa scored 2 vs Uzbekistan but conceded 3 in group stage.' },
+          leagueContext: { score: 80, detail: 'England\'s Premier League stars (Ranked #5) face DR Congo (Ranked #52) in first WC knockout for Leopards since 1974.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Reece James — hamstring' },
+              { tag: 'doubt', text: 'Jarell Quansah — ankle injury' },
+              { tag: 'key', text: 'Harry Kane — 3 goals this tournament' },
+              { tag: 'key', text: 'Jude Bellingham — 2 goals this tournament' },
+              { tag: 'key', text: 'Declan Rice — returning midfielder' }
+            ],
+          away: [
+              { tag: 'key', text: 'Yoane Wissa — 2 goals this tournament' },
+              { tag: 'key', text: 'Cedric Bakambu — veteran striker' }
+            ]
         },
-        context: 'England, with stars like Kane and Bellingham, seek to leverage their Euro 2024 final experience. DR Congo, AFCON 2023 semi-finalists, face their first World Cup knockout match since 1974. No injury reports available.',
-        summary: 'Pending deep research.'
+        context: 'England topped Group L with 7 points but struggled offensively in 0-0 draw vs Ghana. DR Congo finished 3rd in Group K, earning historic draw vs Portugal and first WC win since 1974 vs Uzbekistan. England\'s Declan Rice returns to midfield, while Djed Spence replaces injured Reece James at right-back. DR Congo rely on Premier League talents Wissa (Brentford) and Wan-Bissaka (Man United) for counter-attacks.',
+        summary: 'England favored with 74% win probability per Opta. Kane/Bellingham lead attack; Rice stabilizes midfield. DR Congo\'s physicality and Wissa\'s pace threaten counters. Expect England possession dominance but potential resistance from motivated underdogs.'
       },
 
       {
         day: 'Wednesday 1 July',
         home: 'Belgium', away: 'Senegal', time: '21:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.10-2.30',
-        homeForm: 'W W D D ?',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
         awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 40, detail: 'Belgium\'s two group-stage draws against lower-ranked opponents (Egypt, Iran) reveal attacking inefficiency despite strong pre-tournament form.' },
-          momentum:      { score: 35, detail: 'Low momentum after unconvincing group stage, compounded by Doku\'s absence and Lukaku\'s fitness struggles.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 30, detail: 'Scored just once in two group matches, with Lukaku\'s fitness and Doku\'s availability directly impacting goal threat.' },
-          leagueContext: { score: 55, detail: 'Belgium (FIFA #9) has higher ranking than Senegal (#20) but underperformed recent tournaments, while Senegal are AFCON champions.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent data for both teams\' form analysis.' },
+          momentum:      { score: 50, detail: 'No specific tournament performance metrics available.' },
+          goalTendency:  { score: 50, detail: 'Lack of goal-scoring/conceding data from group stage.' },
+          leagueContext: { score: 50, detail: 'Belgium (Ranked #9) are 2018 semifinalists; Senegal (Ranked #20) are AFCON champions.' }
         },
         teamNews: {
-          home: [
-              { tag: 'out', text: 'Zeno Debast — thigh injury (targeting knockout return)' },
-              { tag: 'doubt', text: 'Jeremy Doku — respiratory infection recovery' },
-              { tag: 'doubt', text: 'Romelu Lukaku — fitness concerns' },
-              { tag: 'key', text: 'Kevin De Bruyne — creative anchor' },
-              { tag: 'key', text: 'Charles De Ketelaere — 2 goals in qualifying' }
-            ],
-          away: [
-              { tag: 'key', text: 'Sadio Mané' }
-            ]
+          home: [],
+          away: []
         },
-        context: 'Belgium scraped through Group G with two draws, missing Doku for both matches due to illness and personal reasons. Garcia\'s 4-2-3-1 relies on De Bruyne\'s creativity, but Lukaku\'s fitness casts doubt on the striker role—likely forcing De Ketelaere to lead the line. Senegal\'s physicality will test Belgium\'s defense, already weakened by Debast\'s absence. Doku\'s potential return could provide needed width against Senegal\'s compact shape.',
-        summary: 'Pending deep research.'
+        context: 'Belgium reached 2018 semifinals but face Senegal\'s AFCON-winning squad. Senegal\'s Sadio Mané and Belgium\'s Kevin De Bruyne headline talent. Tactical setups unclear without recent match data.',
+        summary: 'Evenly matched per probabilities (34-33-33). Senegal\'s athleticism challenges Belgium\'s aging core. Outcome hinges on key duels and tournament experience.'
       },
 
       {
@@ -4577,20 +4576,17 @@ const LEAGUES = [
         homeForm: '? ? ? ? ?',
         awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data for both teams\' recent form.' },
-          momentum:      { score: 50, detail: 'No tournament performance metrics available.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal patterns unclear without match data.' },
-          leagueContext: { score: 60, detail: 'USA (FIFA #11) holds ranking advantage over Bosnia (#65), who lack major tournament experience.' }
+          formBalance:   { score: 50, detail: 'No recent result data available for assessment.' },
+          momentum:      { score: 50, detail: 'Tournament form insights unavailable for both sides.' },
+          goalTendency:  { score: 50, detail: 'Lack of group stage scoring/conceding statistics.' },
+          leagueContext: { score: 50, detail: 'USA (Ranked #11) host as Gold Cup champions; Bosnia (Ranked #65) make rare WC knockout appearance.' }
         },
         teamNews: {
-          home: [
-              { tag: 'key', text: 'Christian Pulisic' }
-            ],
+          home: [],
           away: []
         },
-        context: 'USA leverages home advantage with greater tournament pedigree, while Bosnia & Herzegovina make their first World Cup appearance since 2014. Pulisic spearheads the US attack against Bosnia\'s likely defensive setup. Expect midfield battles to dictate tempo as Bosnia aims to disrupt the hosts\' rhythm.',
-        summary: 'Pending deep research.'
+        context: 'USA leverages home advantage with 7 Gold Cup titles. Bosnia\'s Džeko leads attack in their second WC appearance. Tactical approaches unconfirmed without team news.',
+        summary: 'Balanced probabilities (34-33-33). USA\'s youth and home support vs Bosnia\'s physicality. Set pieces and individual brilliance may decide tight contest.'
       },
 
       {
