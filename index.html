@@ -4732,15 +4732,30 @@ const LEAGUES = [
       {
         day: 'Saturday 4 July',
         home: 'Canada', away: 'Morocco', time: '18:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 25, draw: 40, awayWin: 35, verdict: 'Low', fairOdds: '2.40-2.60',
+        homeForm: 'L W ? ? W',
+        awayForm: 'D W W D ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 40, detail: 'Morocco are unbeaten in their last four matches while Canada have inconsistent form with two wins and one loss in their last three confirmed games.' },
+          momentum:      { score: 80, detail: 'Both teams carry strong momentum: Canada from a historic knockout win over South Africa, and Morocco after a dramatic penalty shootout victory against the Netherlands.' },
+          goalTendency:  { score: 70, detail: 'Canada scored 7 goals in 3 matches (including a 6-0 win) while Morocco netted 7 in 4 games, though both showed defensive vulnerabilities.' },
+          leagueContext: { score: 30, detail: 'Morocco (FIFA #13, 2022 semi-finalists) possess far deeper tournament experience than Canada (FIFA #40, first-ever knockout appearance).' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Ismaël Koné — broken leg from Qatar match' },
+              { tag: 'doubt', text: 'Alphonso Davies — managing sharpness after injury layoff' },
+              { tag: 'key', text: 'Stephen Eustáquio — 1 goal this World Cup, midfield organizer' },
+              { tag: 'key', text: 'Jonathan David — 3 goals this World Cup (hat-trick vs Qatar)' }
+            ],
+          away: [
+              { tag: 'key', text: 'Yassine Bounou — penalty shootout hero vs Netherlands' },
+              { tag: 'key', text: 'Achraf Hakimi — captain with set-piece and attacking threat' },
+              { tag: 'key', text: 'Ismael Saibari — 4 goals this World Cup, versatile attacker' }
+            ]
+        },
+        context: 'Canada must rebuild their midfield without Ismaël Koné, relying on Stephen Eustáquio and Nathan Saliba, while Alphonso Davies\' fitness dictates tactical flexibility on the left. Morocco, unbeaten in the tournament, leverage Yassine Bounou\'s penalty expertise and Ismael Saibari\'s scoring form. Key battles include Davies (if fit) against Hakimi and Canada\'s transition game versus Morocco\'s layered attack. Fatigue may affect Morocco after 120 minutes plus penalties against the Netherlands.',
+        summary: 'Canada face their biggest men\'s match in history but miss Koné and may use Davies cautiously. Morocco, seasoned in knockouts after eliminating the Netherlands, rely on Saibari\'s goals and Bounou\'s shootout prowess. Tactical balance hinges on Davies\' availability and Canada avoiding a penalty showdown with Bounou.'
       },
 
       {
