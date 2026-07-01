@@ -4770,29 +4770,55 @@ const LEAGUES = [
       {
         day: 'Saturday 4 July',
         home: 'Paraguay', away: 'France', time: '22:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 10, draw: 20, awayWin: 70, verdict: 'Strong', fairOdds: '1.40-1.45',
+        homeForm: 'L W D W L',
+        awayForm: 'W L W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 85, detail: 'France have won 4 of their last 5 matches including three consecutive 3+ goal World Cup wins.' },
+          momentum:      { score: 90, detail: 'Les Bleus are united emotionally after Didier Deschamps\' return from his mother\'s funeral, with players dedicating performances to him.' },
+          goalTendency:  { score: 95, detail: 'France are the first team to score 3+ goals in five straight World Cup matches, with Mbappé netting 6 tournament goals.' },
+          leagueContext: { score: 80, detail: 'France (2x World Cup finalists) have vastly superior tournament pedigree to Paraguay (2010 quarter-finalists).' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Miguel Almirón — muscle strain' },
+              { tag: 'key', text: 'Julio Enciso — creative playmaker' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'William Saliba — back issues' },
+              { tag: 'key', text: 'Kylian Mbappé — 6 goals this World Cup' },
+              { tag: 'key', text: 'Michael Olise — 5 assists this tournament' }
+            ]
+        },
+        context: 'France\'s attacking trio of Mbappé, Olise, and Barcola has been devastating, with Olise creating width and Mbappé finishing clinically. Paraguay will likely deploy a low block, relying on counter-attacks through Enciso. Deschamps may rotate Saliba due to back concerns, potentially starting Konaté alongside Upamecano. French midfielders Tchouaméni and Kanté will control tempo to unlock Paraguay\'s defense.',
+        summary: 'France enter this last-16 match having dismantled Sweden 3-0 with Mbappé scoring twice to lead the Golden Boot race. Paraguay face tactical challenges containing France\'s speed, particularly on transitions. Les Bleus\' collective strength and emotional unity under Deschamps make them overwhelming favorites to progress.'
       },
 
       {
         day: 'Sunday 5 July',
         home: 'Brazil', away: 'Norway', time: '21:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.50-1.60',
+        homeForm: 'W W D L W',
+        awayForm: 'D W D W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 70, detail: 'Brazil won their group comfortably while Norway lost to France in their final group match.' },
+          momentum:      { score: 75, detail: 'Brazil\'s attacking depth contrasts with Norway\'s injury concerns, particularly in defense.' },
+          goalTendency:  { score: 65, detail: 'Brazil averaged 2.5 goals per group game; Norway conceded multiple goals against top opponents.' },
+          leagueContext: { score: 90, detail: 'Brazil (9x Copa América champions) have far greater knockout-stage experience than Norway (first knockout appearance since 1998).' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Casemiro — ankle knock' },
+              { tag: 'key', text: 'Vinicius Jr — 3 goals this tournament' }
+            ],
+          away: [
+              { tag: 'out', text: 'Julian Ryerson — thigh injury' },
+              { tag: 'doubt', text: 'Fredrik Aursnes — fatigue' },
+              { tag: 'key', text: 'Erling Haaland — 5 goals this World Cup' }
+            ]
+        },
+        context: 'Norway will miss Ryerson\'s defensive solidity at right-back, forcing Pedersen into the lineup against Brazil\'s Vinicius Jr. Haaland remains Norway\'s primary threat but faces Brazil\'s organized center-backs Marquinhos and Militão. Brazil may rest Casemiro, with Guimarães ready to anchor midfield. Norway\'s Ødegaard must create chances under pressure to service Haaland.',
+        summary: 'Brazil\'s defensive organization will be tested by Haaland, who scored 5 group-stage goals. Norway\'s compromised right flank without Ryerson gives Vinicius Jr a clear advantage. The Seleção\'s superior squad depth and Norway\'s injury issues tilt this firmly toward the five-time champions.'
       },
 
       {
