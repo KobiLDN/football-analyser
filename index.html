@@ -4496,22 +4496,28 @@ const LEAGUES = [
       {
         day: 'Wednesday 1 July',
         home: 'Mexico', away: 'Ecuador', time: '02:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.25-2.50',
+        homeForm: 'W W W D W',
+        awayForm: 'W D L D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
-          momentum:      { score: 50, detail: 'Insufficient data to assess current momentum.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
-          leagueContext: { score: 50, detail: 'Mexico (FIFA #15) are Gold Cup regulars; Ecuador (FIFA #44) reached the 2006 Round of 16 but lack consistency.' }
+          formBalance:   { score: 70, detail: 'Mexico won all group matches with clean sheets, while Ecuador had mixed results (W1 D1 L1).' },
+          momentum:      { score: 60, detail: 'Mexico carries home-crowd energy from three wins, but Ecuador gained confidence beating Germany.' },
+          goalTendency:  { score: 45, detail: 'Both defenses excel (Mexico: 0 GA, Ecuador: 2 GA in groups), with 7 of Ecuador\'s last 8 games having ≤1 goal.' },
+          leagueContext: { score: 75, detail: 'Mexico holds historical edge (8W-3L-5D H2H) and home advantage at Estadio Azteca, but Ecuador upset Group E winners Germany.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Raul Jimenez — 2 goals this tournament' },
+              { tag: 'key', text: 'Julian Quinones — 2 goals this tournament' }
+            ],
+          away: [
+              { tag: 'key', text: 'Enner Valencia — veteran striker' },
+              { tag: 'key', text: 'Gonzalo Plata — scored winner vs Germany' },
+              { tag: 'key', text: 'Moises Caicedo — anchoring midfield' }
+            ]
         },
-        context: 'Mexico frequently advance to World Cup knockouts but struggle beyond the Round of 16. Ecuador\'s best run was in 2006. Both face altitude in Mexico City, but no specific team news is available.',
-        summary: 'A balanced CONMEBOL vs CONCACAF clash with minimal data. Mexico\'s home advantage may be neutralized by altitude, but Ecuador\'s tournament form is unconfirmed.'
+        context: 'Mexico employs a disciplined mid-block and high press, led by Raul Jimenez and Julian Quinones upfront, with a defense that conceded zero goals in the group stage. Ecuador counters with a compact low-block anchored by Piero Hincapie and Willian Pacho, relying on transitions through Enner Valencia and Gonzalo Plata. Both teams prioritize defensive solidity, with Ecuador allowing just five goals in 18 qualifiers and Mexico recording three straight clean sheets. The Azteca\'s hostile atmosphere adds pressure, but Ecuador\'s win over Germany proves their giant-killing capability.',
+        summary: 'Mexico\'s home advantage and flawless group defense make them slight favorites, but Ecuador\'s physicality and recent upset over Germany create a high-stakes stalemate. Expect a low-scoring battle decided by individual moments, with set pieces and transitions critical. Both teams\' defensive records suggest under 2.5 goals is likely.'
       },
 
       {
@@ -4532,7 +4538,7 @@ const LEAGUES = [
           away: []
         },
         context: 'England, with stars like Kane and Bellingham, seek to leverage their Euro 2024 final experience. DR Congo, AFCON 2023 semi-finalists, face their first World Cup knockout match since 1974. No injury reports available.',
-        summary: 'England are heavy favorites on ranking, but DR Congo\'s AFCON run shows resilience. Lack of team news and form data reduces confidence in predictions.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4561,7 +4567,7 @@ const LEAGUES = [
             ]
         },
         context: 'Belgium scraped through Group G with two draws, missing Doku for both matches due to illness and personal reasons. Garcia\'s 4-2-3-1 relies on De Bruyne\'s creativity, but Lukaku\'s fitness casts doubt on the striker role—likely forcing De Ketelaere to lead the line. Senegal\'s physicality will test Belgium\'s defense, already weakened by Debast\'s absence. Doku\'s potential return could provide needed width against Senegal\'s compact shape.',
-        summary: 'Belgium\'s attack remains disjointed, managing one goal in two games without Doku. De Ketelaere may start as false nine if Lukaku is unfit. Senegal\'s counter-attacking threat, led by Mané, exploits Belgium\'s high defensive line. With key players doubtful and minimal goal output, Belgium\'s progression hinges on individual brilliance rather than cohesive play.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4584,7 +4590,7 @@ const LEAGUES = [
           away: []
         },
         context: 'USA leverages home advantage with greater tournament pedigree, while Bosnia & Herzegovina make their first World Cup appearance since 2014. Pulisic spearheads the US attack against Bosnia\'s likely defensive setup. Expect midfield battles to dictate tempo as Bosnia aims to disrupt the hosts\' rhythm.',
-        summary: 'Limited team news available. USA\'s higher ranking and home support offer slight edge, but Bosnia\'s organization could frustrate attackers. Match likely decided by individual moments in tight midfield contest.'
+        summary: 'Pending deep research.'
       },
 
       {
