@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.106 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.107 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 01 Jul 2026 01:03 BST</div>
+      <div class="updated-tag">Data · 01 Jul 2026 09:49 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4487,12 +4487,13 @@ const LEAGUES = [
       {
         day: 'Wednesday 1 July',
         home: 'Mexico', away: 'Ecuador', time: '02:00',
-        result: null, homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.25-2.50',
+        result: '2-0', homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.25-2.50',
         homeForm: 'W W W D W',
         awayForm: 'W D L D W',
         factors: {
           formBalance:   { score: 70, detail: 'Mexico won all group matches with clean sheets, while Ecuador had mixed results (W1 D1 L1).' },
           momentum:      { score: 60, detail: 'Mexico carries home-crowd energy from three wins, but Ecuador gained confidence beating Germany.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 45, detail: 'Both defenses excel (Mexico: 0 GA, Ecuador: 2 GA in groups), with 7 of Ecuador\'s last 8 games having ≤1 goal.' },
           leagueContext: { score: 75, detail: 'Mexico holds historical edge (8W-3L-5D H2H) and home advantage at Estadio Azteca, but Ecuador upset Group E winners Germany.' }
         },
@@ -4520,6 +4521,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'England won 3 of last 5 including group wins vs Croatia/Panama, DR Congo mixed with win vs Uzbekistan but loss to Colombia.' },
           momentum:      { score: 65, detail: 'England unbeaten in group stage, DR Congo gained confidence from Portugal draw and first WC win since 1974.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Kane/Bellingham combined for 5 goals; DR Congo\'s Wissa scored 2 vs Uzbekistan but conceded 3 in group stage.' },
           leagueContext: { score: 80, detail: 'England\'s Premier League stars (Ranked #5) face DR Congo (Ranked #52) in first WC knockout for Leopards since 1974.' }
         },
@@ -4549,6 +4551,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent data for both teams\' form analysis.' },
           momentum:      { score: 50, detail: 'No specific tournament performance metrics available.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Lack of goal-scoring/conceding data from group stage.' },
           leagueContext: { score: 50, detail: 'Belgium (Ranked #9) are 2018 semifinalists; Senegal (Ranked #20) are AFCON champions.' }
         },
@@ -4569,6 +4572,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'No recent result data available for assessment.' },
           momentum:      { score: 50, detail: 'Tournament form insights unavailable for both sides.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Lack of group stage scoring/conceding statistics.' },
           leagueContext: { score: 50, detail: 'USA (Ranked #11) host as Gold Cup champions; Bosnia (Ranked #65) make rare WC knockout appearance.' }
         },
@@ -4727,7 +4731,7 @@ const LEAGUES = [
 
       {
         day: 'Saturday 4 July',
-        home: 'Canada', away: 'W75', time: '18:00',
+        home: 'Canada', away: 'Morocco', time: '18:00',
         result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
         factors: {
           formBalance:   { score: 50, detail: 'Pending deep research.' },
@@ -4741,28 +4745,28 @@ const LEAGUES = [
 
       {
         day: 'Saturday 4 July',
-        home: 'W74', away: 'W77', time: '22:00',
+        home: 'Paraguay', away: 'France', time: '22:00',
         result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Pending deep research.' },
+          momentum:      { score: 50, detail: 'Pending deep research.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 50, detail: 'Pending deep research.' },
+          leagueContext: { score: 50, detail: 'Pending deep research.' }
         },
         summary: 'Pending deep research.'
       },
 
       {
         day: 'Sunday 5 July',
-        home: 'W76', away: 'W78', time: '21:00',
+        home: 'Brazil', away: 'Norway', time: '21:00',
         result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending research.' },
-          momentum:      { score: 50, detail: 'Pending research.' },
-          headToHead:    { score: 50, detail: 'Pending research.' },
-          goalTendency:  { score: 50, detail: 'Pending research.' },
-          leagueContext: { score: 50, detail: 'Pending research.' }
+          formBalance:   { score: 50, detail: 'Pending deep research.' },
+          momentum:      { score: 50, detail: 'Pending deep research.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
+          goalTendency:  { score: 50, detail: 'Pending deep research.' },
+          leagueContext: { score: 50, detail: 'Pending deep research.' }
         },
         summary: 'Pending deep research.'
       },
