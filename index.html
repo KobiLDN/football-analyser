@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.112 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.113 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 02 Jul 2026 09:11 BST</div>
+      <div class="updated-tag">Data · 02 Jul 2026 22:17 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4598,7 +4598,7 @@ const LEAGUES = [
       {
         day: 'Thursday 2 July',
         home: 'Spain', away: 'Austria', time: '20:00',
-        result: null, homeWin: 71, draw: 17, awayWin: 12, verdict: 'Strong', fairOdds: '1.40-1.42',
+        result: '3-0', homeWin: 71, draw: 17, awayWin: 12, verdict: 'Strong', fairOdds: '1.40-1.42',
         homeForm: 'W W D W W',
         awayForm: 'W D L W D',
         factors: {
@@ -4849,6 +4849,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Mexico has 5 straight wins including clean sheets, England has 4 wins and 1 draw.' },
           momentum:      { score: 65, detail: 'Mexico\'s defense faced only 6 shots on target in 4 games; England conceded against DR Congo.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'Julián Quiñones has 3 goals for Mexico; Harry Kane has 2 goals this tournament.' },
           leagueContext: { score: 60, detail: 'Mexico unbeaten in 10 World Cup home games; England has knockout experience but defensive injuries.' }
         },
@@ -4890,6 +4891,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient recent match data for both teams.' },
           momentum:      { score: 50, detail: 'Both advanced to round of 16 but current form unclear.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'No goal-scoring data available for this tournament phase.' },
           leagueContext: { score: 50, detail: 'USA has home advantage; Belgium has higher FIFA ranking (#9 vs #11).' }
         },
