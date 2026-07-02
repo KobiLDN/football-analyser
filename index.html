@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.110 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.111 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 02 Jul 2026 01:04 BST</div>
+      <div class="updated-tag">Data · 02 Jul 2026 07:04 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4575,12 +4575,13 @@ const LEAGUES = [
       {
         day: 'Thursday 2 July',
         home: 'USA', away: 'Bosnia & Herzegovina', time: '01:00',
-        result: null, homeWin: 67, draw: 18, awayWin: 15, verdict: 'Strong', fairOdds: '1.45-1.50',
+        result: '2-0', homeWin: 67, draw: 18, awayWin: 15, verdict: 'Strong', fairOdds: '1.45-1.50',
         homeForm: '? ? W W L',
         awayForm: '? ? D L W',
         factors: {
           formBalance:   { score: 70, detail: 'USA won their first two group matches before rotating players in a loss to Türkiye, while Bosnia had inconsistent group results with one win.' },
           momentum:      { score: 65, detail: 'USA regain Christian Pulisic from injury and have Folarin Balogun in form, while Bosnia gained confidence from a must-win victory over Qatar.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Both teams average 2+ goals per game this tournament, with USA scoring 6 and Bosnia 5 across three matches, but both defenses are vulnerable.' },
           leagueContext: { score: 60, detail: 'As co-hosts, USA have home advantage but a poor knockout history (1 win in 8), while Bosnia make their first World Cup knockout appearance.' }
         },
@@ -4612,6 +4613,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Spain are unbeaten in 34 matches with 4 wins in their last 5, while Austria have just 2 wins in their last 5.' },
           momentum:      { score: 95, detail: 'Spain have kept 4 consecutive World Cup clean sheets and topped their group comfortably, while Austria needed a 96th-minute equalizer to advance.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 85, detail: 'Spain haven\'t conceded a goal this tournament, whereas Austria have no clean sheets in 12 straight World Cup matches.' },
           leagueContext: { score: 80, detail: 'Reigning European champions Spain (FIFA #8) boast vastly superior tournament pedigree compared to Austria (FIFA #25), making their first knockout appearance since 1954.' }
         },
@@ -4642,6 +4644,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Croatia have better recent results (4 wins in 5) but Portugal are unbeaten in 8 matches.' },
           momentum:      { score: 61, detail: 'Croatia won their last two group games while Portugal drew two of their last three.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Both teams averaged over 1.6 goals per game in the group stage, with Portugal scoring 6 and Croatia 5.' },
           leagueContext: { score: 55, detail: 'Portugal hold a strong historical advantage (7 wins in 10 meetings) but Croatia reached the final and third place in the last two World Cups.' }
         },
@@ -4668,6 +4671,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Switzerland are unbeaten in 17 matches with four wins in their last five, while Algeria have one loss in their recent form.' },
           momentum:      { score: 80, detail: 'Switzerland topped Group B with 7 points, including a decisive win over Canada, while Algeria advanced as a third-placed team with defensive vulnerabilities.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Both teams scored in 8 of Switzerland\'s last 9 matches, and Algeria conceded 7 goals in the group stage—the worst among all teams.' },
           leagueContext: { score: 80, detail: 'Switzerland have reached the knockout stage in three consecutive World Cups, contrasting with Algeria\'s single last-16 appearance in 2014.' }
         },
@@ -4696,6 +4700,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Both teams showed resilience in group stages but lack dominant form, with Australia recording one win and Egypt remaining unbeaten.' },
           momentum:      { score: 45, detail: 'Egypt carries psychological edge from first World Cup win but faces injury crisis, while Australia seeks historic knockout breakthrough.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 40, detail: 'Defensive setups likely given Australia\'s two clean sheets and Egypt\'s injury-depleted attack, though Marmoush remains a threat.' },
           leagueContext: { score: 60, detail: 'Australia\'s recent AFC Asian Cup final experience contrasts with Egypt\'s AFCON pedigree, but both lack deep World Cup runs.' }
         },
