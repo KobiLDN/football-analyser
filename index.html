@@ -4597,26 +4597,31 @@ const LEAGUES = [
       {
         day: 'Thursday 2 July',
         home: 'Spain', away: 'Austria', time: '20:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 71, draw: 17, awayWin: 12, verdict: 'Strong', fairOdds: '1.40-1.42',
+        homeForm: 'W W D W W',
+        awayForm: 'W D L W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Current tournament form unknown for both sides.' },
-          momentum:      { score: 50, detail: 'No discernible momentum without recent results.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal data unavailable for assessment.' },
-          leagueContext: { score: 55, detail: 'Spain (FIFA #8, Euro 2024 champions) favored over Austria (#25), though Austria reached Euro 2024 quarterfinals.' }
+          formBalance:   { score: 90, detail: 'Spain are unbeaten in 34 matches with 4 wins in their last 5, while Austria have just 2 wins in their last 5.' },
+          momentum:      { score: 95, detail: 'Spain have kept 4 consecutive World Cup clean sheets and topped their group comfortably, while Austria needed a 96th-minute equalizer to advance.' },
+          goalTendency:  { score: 85, detail: 'Spain haven\'t conceded a goal this tournament, whereas Austria have no clean sheets in 12 straight World Cup matches.' },
+          leagueContext: { score: 80, detail: 'Reigning European champions Spain (FIFA #8) boast vastly superior tournament pedigree compared to Austria (FIFA #25), making their first knockout appearance since 1954.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Pedri' }
+              { tag: 'out', text: 'Yeremy Pino — shoulder injury' },
+              { tag: 'out', text: 'Nico Williams — adductor injury' },
+              { tag: 'doubt', text: 'Victor Munoz — thigh injury' },
+              { tag: 'key', text: 'Lamine Yamal — 1 goal, 1 assist this World Cup' },
+              { tag: 'key', text: 'Alex Baena — scored winner vs Uruguay' }
             ],
           away: [
-              { tag: 'key', text: 'David Alaba' }
+              { tag: 'doubt', text: 'Marko Arnautovic — knee discomfort' },
+              { tag: 'doubt', text: 'David Alaba — knee discomfort' },
+              { tag: 'key', text: 'Sasa Kalajdzic — last-gasp equalizer vs Algeria' }
             ]
         },
-        context: 'Spain\'s possession-based system clashes with Austria\'s disciplined midfield under Rangnick. Pedri\'s creativity faces Alaba\'s leadership in Austria\'s defense. Austria\'s counter-pressing could disrupt Spain\'s buildup, requiring width to break compact lines.',
-        summary: 'Pending deep research.'
+        context: 'Spain will deploy Rodri and Pedri to control midfield, with Lamine Yamal providing width. Austria\'s high-press system under Rangnick relies on Sabitzer\'s creativity, but defensive vulnerabilities persist. Arnautovic\'s potential absence would force Gregoritsch into a target role. Spain can set a national record with a 35th unbeaten game if they avoid defeat.',
+        summary: 'Spain\'s tournament-best defense (0 goals conceded) faces Austria\'s leaky backline (6 goals allowed). Key absences in Spain\'s attack are offset by Yamal\'s dynamism and Baena\'s form. Austria\'s knockout hopes hinge on Arnautovic\'s fitness after their dramatic group-stage escape. Opta\'s supercomputer gives Spain a 71% win probability.'
       },
 
       {
