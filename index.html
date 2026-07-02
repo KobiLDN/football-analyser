@@ -4566,22 +4566,32 @@ const LEAGUES = [
       {
         day: 'Thursday 2 July',
         home: 'USA', away: 'Bosnia & Herzegovina', time: '01:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 67, draw: 18, awayWin: 15, verdict: 'Strong', fairOdds: '1.45-1.50',
+        homeForm: '? ? W W L',
+        awayForm: '? ? D L W',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent result data available for assessment.' },
-          momentum:      { score: 50, detail: 'Tournament form insights unavailable for both sides.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Lack of group stage scoring/conceding statistics.' },
-          leagueContext: { score: 50, detail: 'USA (Ranked #11) host as Gold Cup champions; Bosnia (Ranked #65) make rare WC knockout appearance.' }
+          formBalance:   { score: 70, detail: 'USA won their first two group matches before rotating players in a loss to Türkiye, while Bosnia had inconsistent group results with one win.' },
+          momentum:      { score: 65, detail: 'USA regain Christian Pulisic from injury and have Folarin Balogun in form, while Bosnia gained confidence from a must-win victory over Qatar.' },
+          goalTendency:  { score: 75, detail: 'Both teams average 2+ goals per game this tournament, with USA scoring 6 and Bosnia 5 across three matches, but both defenses are vulnerable.' },
+          leagueContext: { score: 60, detail: 'As co-hosts, USA have home advantage but a poor knockout history (1 win in 8), while Bosnia make their first World Cup knockout appearance.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Christian Roldan — muscle injury' },
+              { tag: 'doubt', text: 'Auston Trusty — ankle injury' },
+              { tag: 'doubt', text: 'Mark McKenzie — foot issue' },
+              { tag: 'key', text: 'Christian Pulisic — returning from calf injury' },
+              { tag: 'key', text: 'Folarin Balogun — 2 goals this tournament' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Amar Dedic — thigh problem' },
+              { tag: 'key', text: 'Edin Dzeko — captain and all-time top scorer' },
+              { tag: 'key', text: 'Ermin Mahmic — 2 goals as a substitute' },
+              { tag: 'key', text: 'Esmir Bajraktarevic — dangerous winger' }
+            ]
         },
-        context: 'USA leverages home advantage with 7 Gold Cup titles. Bosnia\'s Džeko leads attack in their second WC appearance. Tactical approaches unconfirmed without team news.',
-        summary: 'Balanced probabilities (34-33-33). USA\'s youth and home support vs Bosnia\'s physicality. Set pieces and individual brilliance may decide tight contest.'
+        context: 'USA start Christian Pulisic, recovered from a calf injury, alongside in-form striker Folarin Balogun (2 goals). Bosnia counter with veteran Edin Dzeko and super-sub Ermin Mahmic (2 goals), leveraging their tournament-high physicality with three corner goals. The hosts must overcome a poor knockout record (1 win in 8), while Bosnia\'s defense has never kept a World Cup clean sheet in six matches. Set pieces will be critical, with Bosnia averaging 6-foot-1 height.',
+        summary: 'USA are strong favorites (67.5% win probability) with Pulisic returning and Balogun threatening to become the third American with 3+ World Cup goals. Bosnia rely on physicality and set pieces but have defensive vulnerabilities, failing to keep a clean sheet in all six World Cup appearances. Expect an open game: both teams scored 5+ goals in the group stage.'
       },
 
       {
@@ -4606,7 +4616,7 @@ const LEAGUES = [
             ]
         },
         context: 'Spain\'s possession-based system clashes with Austria\'s disciplined midfield under Rangnick. Pedri\'s creativity faces Alaba\'s leadership in Austria\'s defense. Austria\'s counter-pressing could disrupt Spain\'s buildup, requiring width to break compact lines.',
-        summary: 'Spain\'s technical superiority meets Austria\'s tactical organization. Key duel: Pedri vs Alaba in midfield transitions. Outcome hinges on Spain\'s efficiency in final third against Austria\'s resilient Euro 2024-proven structure.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4631,7 +4641,7 @@ const LEAGUES = [
             ]
         },
         context: 'Portugal\'s attacking flair, led by Ronaldo, confronts Croatia\'s experienced midfield anchored by Modrić. Croatia\'s tournament pedigree includes recent deep runs, while Portugal relies on individual brilliance. Midfield control will be critical in this clash of generations.',
-        summary: 'Battleground centers on Modrić\'s distribution against Portugal\'s forward press. Croatia\'s tournament experience offsets Portugal\'s star power. Expect tactical chess match with limited chances deciding outcome.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4656,7 +4666,7 @@ const LEAGUES = [
             ]
         },
         context: 'Switzerland\'s structured defense faces Algeria\'s pace-driven attack led by Mahrez. Xhaka\'s midfield control will be vital against Algeria\'s transitions. Algeria\'s AFCON-winning experience tests Switzerland\'s tournament discipline.',
-        summary: 'Switzerland\'s organization meets Algeria\'s individual flair. Key matchup: Xhaka\'s distribution vs Mahrez\'s dribbling. Set pieces and counter-attacks likely determine this evenly balanced contest.'
+        summary: 'Pending deep research.'
       },
 
       {
@@ -4684,7 +4694,7 @@ const LEAGUES = [
             ]
         },
         context: 'Australia advanced after a 0-0 draw against Paraguay with Behich starting in defense. Egypt progressed despite Salah\'s injury concern against Iran, where he was substituted in the 57th minute with knee issues. Australia\'s defensive solidity (two clean sheets) faces Egypt\'s counter-attack style, potentially without their talisman Salah. Key matchup involves Behich containing Egypt\'s wing threats.',
-        summary: 'Australia seeks redemption for their 2010 3-0 loss to Egypt amid Salah\'s fitness doubts. The Socceroos\' organized defense (unbeaten in group stage) contrasts with Egypt\'s reliance on set-pieces and transitional play. Venue: Dallas Stadium; historical significance marks Australia\'s third-ever knockout appearance versus Egypt\'s debut.'
+        summary: 'Pending deep research.'
       },
 
       {
