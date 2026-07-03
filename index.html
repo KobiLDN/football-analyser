@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.113 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.114 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 02 Jul 2026 22:17 BST</div>
+      <div class="updated-tag">Data · 03 Jul 2026 06:59 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4629,12 +4629,13 @@ const LEAGUES = [
       {
         day: 'Friday 3 July',
         home: 'Portugal', away: 'Croatia', time: '00:00',
-        result: null, homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.78-1.83',
+        result: '2-1', homeWin: 55, draw: 25, awayWin: 20, verdict: 'Likely', fairOdds: '1.78-1.83',
         homeForm: 'D L D W D',
         awayForm: 'D W L W W',
         factors: {
           formBalance:   { score: 40, detail: 'Croatia have taken 10 points from their last 5 matches compared to Portugal\'s 6.' },
           momentum:      { score: 40, detail: 'Croatia are on a two-match winning streak, while Portugal have drawn two of their last three.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'Portugal conceded only once in the group stage, while Croatia let in 5 goals including 4 against England.' },
           leagueContext: { score: 50, detail: 'Portugal are higher-ranked (#6 vs #10), but Croatia have reached the semifinals or better in three of the last four World Cups.' }
         },
@@ -4653,12 +4654,13 @@ const LEAGUES = [
       {
         day: 'Friday 3 July',
         home: 'Switzerland', away: 'Algeria', time: '04:00',
-        result: null, homeWin: 56, draw: 26, awayWin: 18, verdict: 'Likely', fairOdds: '2.10-2.10',
+        result: '2-0', homeWin: 56, draw: 26, awayWin: 18, verdict: 'Likely', fairOdds: '2.10-2.10',
         homeForm: 'D W W W W',
         awayForm: 'W D L W D',
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient data on pre-tournament form, but Switzerland remained unbeaten in the group stage while Algeria conceded seven goals.' },
           momentum:      { score: 70, detail: 'Switzerland topped Group B with two wins and a draw, while Algeria advanced as a best third-placed team with one win and a draw.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'Algeria conceded seven goals in the group stage (joint-worst), but both teams scored in two of Switzerland\'s three matches.' },
           leagueContext: { score: 65, detail: 'Switzerland (FIFA #20) has reached four consecutive World Cup knockouts, while Algeria (FIFA #45) last advanced in 2014.' }
         },
@@ -4686,6 +4688,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 65, detail: 'Egypt are unbeaten in their last five matches (3 wins, 2 draws), while Australia have 3 wins, 1 draw, and 1 loss.' },
           momentum:      { score: 60, detail: 'Egypt enter unbeaten from a tough group (5 points vs Belgium/Iran/NZ), while Australia advanced despite a loss to USA.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 55, detail: 'Egypt scored 5 goals in the group stage (conceding 3) compared to Australia\'s 2 goals (conceding 2).' },
           leagueContext: { score: 50, detail: 'Australia reached the 2022 World Cup R16 and 2023 Asian Cup final, but Egypt boast 7 AFCON titles despite no WC knockout since 1934.' }
         },
@@ -4716,6 +4719,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Argentina have won their last five matches including three group-stage victories, while Cape Verde are unbeaten in five with three draws.' },
           momentum:      { score: 85, detail: 'Argentina scored eight goals in the group stage led by Messi\'s six goals, while Cape Verde gained confidence from draws against Spain and Uruguay.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Argentina averaged 2.67 goals per group game and kept two clean sheets, while Cape Verde conceded only two goals with two shutouts.' },
           leagueContext: { score: 95, detail: 'Defending champions Argentina (FIFA #1) face tournament debutants Cape Verde (FIFA #80), the largest ranking gap in the knockout stage.' }
         },
