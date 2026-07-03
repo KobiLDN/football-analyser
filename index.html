@@ -4719,22 +4719,28 @@ const LEAGUES = [
       {
         day: 'Friday 3 July',
         home: 'Argentina', away: 'Cape Verde', time: '23:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        result: null, homeWin: 62, draw: 23, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.65',
         homeForm: 'W W W W W',
-        awayForm: 'W D L W D',
+        awayForm: 'W W D D D',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent data for both teams.' },
-          momentum:      { score: 50, detail: 'No discernible momentum indicators available.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal metrics unavailable for both sides.' },
-          leagueContext: { score: 50, detail: 'Tournament context shows Argentina as defending champions versus debutants Cape Verde.' }
+          formBalance:   { score: 90, detail: 'Argentina have won their last five matches including three group-stage victories, while Cape Verde are unbeaten in five with three draws.' },
+          momentum:      { score: 85, detail: 'Argentina scored eight goals in the group stage led by Messi\'s six goals, while Cape Verde gained confidence from draws against Spain and Uruguay.' },
+          goalTendency:  { score: 70, detail: 'Argentina averaged 2.67 goals per group game and kept two clean sheets, while Cape Verde conceded only two goals with two shutouts.' },
+          leagueContext: { score: 95, detail: 'Defending champions Argentina (FIFA #1) face tournament debutants Cape Verde (FIFA #80), the largest ranking gap in the knockout stage.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'out', text: 'Gonzalo Montiel — hamstring injury' },
+              { tag: 'key', text: 'Lionel Messi — 6 goals this World Cup' },
+              { tag: 'key', text: 'Lautaro Martinez — starting striker' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Telmo Arcanjo — hamstring injury' },
+              { tag: 'key', text: 'Vozinha — two clean sheets this World Cup' }
+            ]
         },
-        context: 'Argentina enters as reigning World Cup champions and top-ranked FIFA team, while Cape Verde makes their tournament debut after surprising group stage advancement. Lionel Messi leads Argentina\'s attack against Cape Verde\'s compact defensive structure. Tactical focus will be on Argentina\'s possession dominance versus Cape Verde\'s counter-attacking resilience.',
-        summary: 'Pending deep research.'
+        context: 'Argentina will restore Messi, Mac Allister, and Martínez after rotation against Jordan, with Facundo Medina potentially starting at left-back. Cape Verde assistant coach Humberto Bettencourt confirmed they won\'t man-mark Messi but will focus on defensive organization and exploiting spaces. Captain Diney Borges has vowed to \'do the impossible\' against the holders, while goalkeeper Vozinha aims to become the fourth keeper over 40 to keep a World Cup clean sheet.',
+        summary: 'Argentina are heavy favorites with Messi scoring in seven consecutive World Cup appearances, but Cape Verde\'s defensive resilience (two clean sheets in group stage) could make this tighter than expected. The Blue Sharks are the first debutants since 2002 to go unbeaten in the group stage, though Argentina\'s attacking quality and tournament experience should prevail. Key battles include Lautaro Martínez against Cape Verde\'s center-back pairing and Messi\'s set-piece threat versus Vozinha\'s positioning.'
       },
 
       {
