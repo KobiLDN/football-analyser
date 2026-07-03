@@ -4750,22 +4750,31 @@ const LEAGUES = [
       {
         day: 'Saturday 4 July',
         home: 'Colombia', away: 'Ghana', time: '02:30',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: 'W W D W W',
-        awayForm: 'L W D W L',
+        result: null, homeWin: 65, draw: 21, awayWin: 14, verdict: 'Strong', fairOdds: '1.54-1.60',
+        homeForm: 'W W W W D',
+        awayForm: 'W D L W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient recent data for both teams.' },
-          momentum:      { score: 50, detail: 'No discernible momentum indicators available.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal metrics unavailable for both sides.' },
-          leagueContext: { score: 50, detail: 'Colombia reached 2024 Copa América final while Ghana last made World Cup quarter-finals in 2010.' }
+          formBalance:   { score: 80, detail: 'Colombia have won eight of their last nine matches, while Ghana have one win, one draw, and one loss in their last three.' },
+          momentum:      { score: 75, detail: 'Colombia topped Group K with seven points, while Ghana qualified as a third-place team with four points.' },
+          goalTendency:  { score: 70, detail: 'Colombia scored four goals and conceded one in the group stage, creating numerous chances, while Ghana scored twice and relied on defensive solidity.' },
+          leagueContext: { score: 65, detail: 'Colombia are ranked 12th in the world and reached the quarter-finals in 2014, while Ghana are ranked 60th and have been inconsistent.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Luis Diaz — Liverpool winger' },
+              { tag: 'key', text: 'James Rodriguez — playmaker' },
+              { tag: 'key', text: 'Luis Suarez — Sporting Lisbon striker' }
+            ],
+          away: [
+              { tag: 'out', text: 'Mohammed Kudus — Tottenham, injured' },
+              { tag: 'doubt', text: 'Antoine Semenyo — ankle issue' },
+              { tag: 'doubt', text: 'Lawrence Ati Zigi — fitness' },
+              { tag: 'key', text: 'Thomas Partey — Villarreal midfielder' },
+              { tag: 'key', text: 'Jordan Ayew — 34 goals for Ghana' }
+            ]
         },
-        context: 'Colombia, Copa América 2024 runners-up, face Ghana\'s Black Stars who historically reached World Cup quarter-finals. Expect Colombia\'s technical midfield to challenge Ghana\'s physicality and pace. Both teams advanced from tough groups but lack specific performance data for assessment.',
-        summary: 'Pending deep research.'
+        context: 'Colombia\'s attacking trio of Diaz, Suarez, and Rodriguez will look to break down Ghana\'s low block, which held England to a goalless draw. Ghana will rely on counter-attacks with Ayew and Semenyo, but defensive errors against Croatia are a concern. Colombia\'s midfield duo of Lerma and Arias provides balance, while Ghana\'s Partey will be key in disrupting play.',
+        summary: 'Colombia are strong favorites having topped Group K and boasting an eight-match unbeaten run. Ghana\'s defensive resilience was evident against England, but their lack of goals and injuries to key players make an upset unlikely. Expect a tight match decided by Colombia\'s attacking quality.'
       },
 
       {
