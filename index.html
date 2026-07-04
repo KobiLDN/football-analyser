@@ -4933,15 +4933,27 @@ const LEAGUES = [
       {
         day: 'Tuesday 7 July',
         home: 'Argentina', away: 'Egypt', time: '17:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Strong', fairOdds: '1.40-1.45',
+        homeForm: 'W W W W W',
+        awayForm: 'D W D L W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 80, detail: 'Argentina won all three group matches while Egypt\'s form is less consistent.' },
+          momentum:      { score: 85, detail: 'Argentina have momentum with three consecutive wins and eight goals scored in the group stage.' },
+          goalTendency:  { score: 75, detail: 'Argentina averaged nearly 3 goals per game in the group stage, while Egypt relies on defensive discipline.' },
+          leagueContext: { score: 90, detail: 'The gulf in FIFA rankings (#1 vs #35) and Argentina\'s status as defending champions gives them a significant edge.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'out', text: 'Gonzalo Montiel — hamstring injury' },
+              { tag: 'key', text: 'Lionel Messi — 6 goals this World Cup' },
+              { tag: 'key', text: 'Lautaro Martinez — starting striker' }
+            ],
+          away: [
+              { tag: 'key', text: 'Mohamed Salah — Egypt\'s primary attacking threat' }
+            ]
+        },
+        context: 'Argentina deploy a 4-4-2 formation with Messi and Lautaro Martínez leading the attack, supported by Enzo Fernández and Alexis Mac Allister in midfield. Egypt, known for defensive solidity with seven AFCON titles, will likely sit deep and counter through Mohamed Salah. Argentina must break down a disciplined block, while Egypt aims to replicate their group-stage resilience against higher-ranked opponents. The winner advances to face Australia or Colombia in the quarter-finals.',
+        summary: 'Argentina are heavy favorites after winning all group games, with Messi scoring six goals. Egypt\'s knockout hopes hinge on defensive organization and Salah\'s counter-attacks. Expect Argentina to dominate possession, but Egypt\'s tournament experience could make this tighter than rankings suggest.'
       },
 
       {
