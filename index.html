@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.118 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.119 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 31 May 2026 20:00 BST</div>
-      <div class="updated-tag">Data · 04 Jul 2026 13:10 BST</div>
+      <div class="updated-tag">Data · 04 Jul 2026 22:07 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4770,7 +4770,7 @@ const LEAGUES = [
       {
         day: 'Saturday 4 July',
         home: 'Canada', away: 'Morocco', time: '18:00',
-        result: null, homeWin: 22, draw: 26, awayWin: 52, verdict: 'Likely', fairOdds: '1.85-1.95',
+        result: '0-3', homeWin: 22, draw: 26, awayWin: 52, verdict: 'Likely', fairOdds: '1.85-1.95',
         homeForm: 'W D L W W',
         awayForm: 'W W D D W',
         factors: {
@@ -4930,6 +4930,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 80, detail: 'Argentina won all three group matches while Egypt\'s form is less consistent.' },
           momentum:      { score: 85, detail: 'Argentina have momentum with three consecutive wins and eight goals scored in the group stage.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Argentina averaged nearly 3 goals per game in the group stage, while Egypt relies on defensive discipline.' },
           leagueContext: { score: 90, detail: 'The gulf in FIFA rankings (#1 vs #35) and Argentina\'s status as defending champions gives them a significant edge.' }
         },
@@ -4956,6 +4957,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Both teams are unbeaten in the tournament with identical 3W-1D-0L records in their last 4 matches.' },
           momentum:      { score: 55, detail: 'Switzerland carries momentum from 4 consecutive wins, while Colombia has won 3 of their last 4.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Both teams average over 2 goals per game (Switzerland: 9 goals in 4 matches, Colombia: 9 goals in 4 matches).' },
           leagueContext: { score: 45, detail: 'Colombia\'s higher FIFA ranking (#12 vs #20) and recent Copa América final appearance provide a slight edge.' }
         },
