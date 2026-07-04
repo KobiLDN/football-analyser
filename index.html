@@ -4950,15 +4950,25 @@ const LEAGUES = [
       {
         day: 'Tuesday 7 July',
         home: 'Switzerland', away: 'Colombia', time: '21:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 35, draw: 30, awayWin: 35, verdict: 'Low', fairOdds: '2.12-2.85',
+        homeForm: 'D W W W W',
+        awayForm: 'W W D W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Both teams are unbeaten in the tournament with identical 3W-1D-0L records in their last 4 matches.' },
+          momentum:      { score: 55, detail: 'Switzerland carries momentum from 4 consecutive wins, while Colombia has won 3 of their last 4.' },
+          goalTendency:  { score: 70, detail: 'Both teams average over 2 goals per game (Switzerland: 9 goals in 4 matches, Colombia: 9 goals in 4 matches).' },
+          leagueContext: { score: 45, detail: 'Colombia\'s higher FIFA ranking (#12 vs #20) and recent Copa América final appearance provide a slight edge.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'doubt', text: 'Silvan Widmer — hip injury' }
+            ],
+          away: [
+              { tag: 'out', text: 'Jhon Córdoba — groin injury' }
+            ]
+        },
+        context: 'Switzerland\'s defensive solidity (3 goals conceded in 4 matches) faces Colombia\'s attacking depth led by James Rodríguez. Murat Yakin may start Luca Jaquez if Widmer remains unfit, while Colombia must replace the injured target man Córdoba. Both teams favor possession football, but Colombia\'s wider creative options could test Switzerland\'s compact shape in Vancouver\'s BC Place.',
+        summary: 'Colombia enters as market favorites (odds 2.12) despite Córdoba\'s absence, while Switzerland relies on Shaqiri\'s tournament experience. Both sides are unbeaten with matching 9-3 goal differentials. The tactical battle hinges on Colombia breaking Switzerland\'s defensive block and exploiting Widmer\'s potential absence.'
       },
 
       {
