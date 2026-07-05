@@ -1,4 +1,4 @@
-name: "fetch-worldcup [World Cup]"
+name: fetch-worldcup
 
 on:
   # Every 3 hours starting 06:00 BST — picks up new fixture stubs AND live
