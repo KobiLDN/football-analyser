@@ -21,7 +21,7 @@ import os
 import re
 import subprocess
 import sys
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
 
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 HTML_FILE = os.path.join(REPO_ROOT, "index.html")
@@ -251,6 +251,17 @@ def main():
         )
     if affected_leagues:
         print(f"  researchDate → '{today}' for: {', '.join(sorted(affected_leagues))}")
+
+    # Stamp the Data timestamp in the top bar
+    bst = timezone(timedelta(hours=1))
+    now_bst = datetime.now(bst)
+    data_stamp = now_bst.strftime('%-d %b %Y %H:%M BST')
+    html = re.sub(
+        r"(Data · )\d+ \w+ \d{4} \d{2}:\d{2} BST",
+        rf"\g<1>{data_stamp}",
+        html
+    )
+    print(f"  Data timestamp → '{data_stamp}'")
 
     with open(HTML_FILE, "w", encoding="utf-8") as f:
         f.write(html)
