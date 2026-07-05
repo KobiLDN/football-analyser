@@ -9,7 +9,7 @@ on:
   workflow_run:
     workflows:
       - "fetch-fixtures"
-      - "fetch-worldcup"
+      - "fetch-worldcup [World Cup]"
     types: [completed]
   # Also allow manual trigger with optional overrides
   workflow_dispatch:
