@@ -1,4 +1,4 @@
-name: refresh-worldcup [World Cup]
+name: "refresh-worldcup [World Cup]"
 
 on:
   # 07:00 UTC = 08:00 BST — re-research upcoming WC fixtures each morning
