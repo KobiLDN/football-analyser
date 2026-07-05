@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 05 Jul 2026 22:11 BST</div>
+      <div class="updated-tag">Data · 5 Jul 2026 22:15 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4996,15 +4996,29 @@ const LEAGUES = [
       {
         day: 'Thursday 9 July',
         home: 'France', away: 'Morocco', time: '21:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.70',
+        homeForm: 'W W W W W',
+        awayForm: 'D W W D W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 80, detail: 'France boast a perfect five wins in their last five, while Morocco are unbeaten but with two draws.' },
+          momentum:      { score: 75, detail: 'France have scored 13 goals in four matches and have tournament-leading scorers, while Morocco face fitness doubts for key attackers.' },
+          goalTendency:  { score: 40, detail: 'France\'s high-scoring attack (13 goals) meets Morocco\'s solid defense (only 3 goals conceded in 5 matches), suggesting a moderate goal tally.' },
+          leagueContext: { score: 70, detail: 'As two-time defending finalists with deeper knockout experience, France\'s pedigree in high-stakes matches gives them an edge over Morocco\'s emerging status.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Kylian Mbappé — 7 goals this World Cup' },
+              { tag: 'key', text: 'Michael Olise — 5 assists this World Cup' }
+            ],
+          away: [
+              { tag: 'doubt', text: 'Ismael Saibari — hamstring injury' },
+              { tag: 'doubt', text: 'Nayef Aguerd — muscle fatigue' },
+              { tag: 'key', text: 'Azzedine Ounahi — 2 goals vs Canada' },
+              { tag: 'key', text: 'Achraf Hakimi — defensive/attacking threat' }
+            ]
+        },
+        context: 'This rematch of the 2022 semi-final features Morocco targeting France\'s right flank through Abde Ezzalzouli and Nouassir Mazraoui to exploit Jules Koundé. France will rely on Michael Olise\'s creativity in half-spaces to break Morocco\'s low block, avoiding over-dependence on Mbappé\'s speed. Key duels include Mbappé vs Hakimi (PSG teammates) and Sofyan Amrabat\'s potential double-teaming to force France central. Morocco\'s physical resilience after eliminating the Netherlands on penalties contrasts with France\'s conservative approach against Paraguay.',
+        summary: 'France enter with a 100% record and Mbappé\'s Golden Boot-leading form, but Morocco\'s 34-match unbeaten run and Achraf Hakimi\'s defensive discipline pose challenges. The absence of Morocco\'s top scorer Ismael Saibari (hamstring) significantly weakens their attack, while France\'s midfield conservatism aims to protect Adrien Rabiot. Tactical battles center on flank overloads and Olise\'s chance creation against Morocco\'s compact defense.'
       },
 
       {
