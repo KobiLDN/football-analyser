@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.95** — Dynamic researchDate per league: `researchDate` field on all 9 league objects, template renders it live, `apply_research.py` stamps on each run. Issue tracking migrated from GitHub Projects to GitHub Issues (#21–#40) with `ui`/`infrastructure`/`data`/`analytics`/`bug` labels.
 - **v2.120** — Marked 1 World Cup result.
 - **v2.119** — Marked 1 World Cup result.
 - **v2.118** — Auto-fetched 2 World Cup 2026 fixture stubs.

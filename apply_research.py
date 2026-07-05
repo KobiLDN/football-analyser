@@ -21,6 +21,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import date
 
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
 HTML_FILE = os.path.join(REPO_ROOT, "index.html")
@@ -229,9 +230,27 @@ def main():
 
     # Replace each fixture in-place. Re-find on each iteration because
     # the offsets shift after the previous replacement.
+    affected_leagues = set()
     for d in fixtures:
         start, end = find_fixture_block(html, d["home"], d["away"], d["day"])
+        # Detect which league this fixture belongs to (nearest id: before it)
+        league_id = None
+        for m in re.finditer(r"id: '(\w+)'", html[:start]):
+            league_id = m.group(1)
+        if league_id:
+            affected_leagues.add(league_id)
         html = html[:start] + build_block(d) + html[end:]
+
+    # Stamp researchDate on affected leagues
+    today = date.today().strftime('%-d %b %Y')
+    for lid in affected_leagues:
+        html = re.sub(
+            rf"(id:\s*'{re.escape(lid)}'[\s\S]{{0,400}}?researchDate:\s*')[^']+(')",
+            rf"\g<1>{today}\g<2>",
+            html
+        )
+    if affected_leagues:
+        print(f"  researchDate → '{today}' for: {', '.join(sorted(affected_leagues))}")
 
     with open(HTML_FILE, "w", encoding="utf-8") as f:
         f.write(html)
