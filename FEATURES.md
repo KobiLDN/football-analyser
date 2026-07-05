@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.122** — Daily WC research refresh: new `refresh-worldcup.yml` runs at 08:00 BST daily, re-researching all upcoming WC fixtures (not just stubs) to capture overnight injuries and squad news. `--force` flag added to `auto_research.py`. Offset-based batching prevents infinite loops; graceful error handling skips bad DeepSeek responses instead of crashing. All workflow display names renamed to match filenames; WC workflows tagged `[World Cup]`. `apply_research.py` now auto-stamps the Data topbar timestamp on every research apply.
 - **v2.95** — Dynamic researchDate per league: `researchDate` field on all 9 league objects, template renders it live, `apply_research.py` stamps on each run. Issue tracking migrated from GitHub Projects to GitHub Issues (#21–#40) with `ui`/`infrastructure`/`data`/`analytics`/`bug` labels.
 - **v2.120** — Marked 1 World Cup result.
 - **v2.119** — Marked 1 World Cup result.
