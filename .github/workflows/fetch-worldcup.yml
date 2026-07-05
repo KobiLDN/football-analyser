@@ -1,4 +1,4 @@
-name: Auto-fetch World Cup fixtures
+name: fetch-worldcup
 
 on:
   # Every 3 hours starting 06:00 BST — picks up new fixture stubs AND live

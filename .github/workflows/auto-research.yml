@@ -1,4 +1,4 @@
-name: Auto-research fixtures
+name: auto-research
 
 on:
   # Daily at 10:00 UTC (11am BST) — picks up any new stubs from placeholder
@@ -8,8 +8,8 @@ on:
   # Run after the fetch workflows so stubs exist before we research them
   workflow_run:
     workflows:
-      - "Auto-fetch fixtures"
-      - "Auto-fetch World Cup fixtures"
+      - "fetch-fixtures"
+      - "fetch-worldcup"
     types: [completed]
   # Also allow manual trigger with optional overrides
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Verify fixtures
+name: verify-fixtures
 
 on:
   push:

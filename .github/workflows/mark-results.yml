@@ -1,4 +1,4 @@
-name: Auto-mark results
+name: mark-results
 
 on:
   schedule:

@@ -1,4 +1,4 @@
-name: Auto-fetch fixtures
+name: fetch-fixtures
 
 on:
   schedule:
