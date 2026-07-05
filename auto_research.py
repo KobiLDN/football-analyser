@@ -176,6 +176,9 @@ def main():
                     help="write research.json but don't push live")
     ap.add_argument("--dry-run",  action="store_true",
                     help="show prompt, skip API call")
+    ap.add_argument("--force",    action="store_true",
+                    help="re-research all upcoming fixtures, not just stubs "
+                         "(useful for daily WC refresh to pick up new injuries)")
     args = ap.parse_args()
 
     api_key = os.environ.get("OPENROUTER_API_KEY")
@@ -187,10 +190,11 @@ def main():
 
     # Build args for make_fixtures_list.py
     fixture_args = [
-        "--stubs-only",
         "--days",  str(args.days),
         "--max",   str(args.max_n),
     ]
+    if not args.force:
+        fixture_args.insert(0, "--stubs-only")
     if args.league:
         fixture_args += ["--league", args.league]
     if args.offset:

@@ -1,0 +1,83 @@
+name: Daily World Cup refresh
+
+on:
+  # 07:00 UTC = 08:00 BST — re-research upcoming WC fixtures each morning
+  # so overnight injuries / squad news are captured before evening kick-offs.
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Days ahead to refresh (default 4)'
+        required: false
+        default: '4'
+      batch_size:
+        description: 'Fixtures per OpenRouter call (default 5)'
+        required: false
+        default: '5'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests understatapi
+
+      - name: Re-research upcoming WC fixtures
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git pull --rebase origin main
+
+          DAYS="${{ github.event.inputs.days || '4' }}"
+          BATCH_SIZE="${{ github.event.inputs.batch_size || '5' }}"
+
+          BATCH=0
+          MAX_BATCHES=10
+          while [ $BATCH -lt $MAX_BATCHES ]; do
+            BATCH=$((BATCH + 1))
+            echo ""
+            echo "=== Batch $BATCH ==="
+
+            # --force skips --stubs-only so already-researched fixtures are refreshed
+            python auto_research.py \
+              --league worldcup \
+              --force \
+              --days "$DAYS" \
+              --max "$BATCH_SIZE" \
+              --no-apply
+
+            if [ ! -f research.json ]; then
+              echo "No upcoming WC fixtures in range — done after $((BATCH - 1)) batch(es)."
+              break
+            fi
+
+            python apply_research.py --no-push
+
+            if git diff --quiet; then
+              echo "No changes — all fixtures already up to date."
+              rm -f research.json
+              break
+            fi
+
+            COUNT=$(python -c "import json; d=json.load(open('research.json')); print(len(d))" 2>/dev/null || echo "?")
+            git add index.html
+            git commit -m "auto-research: WC refresh batch $BATCH ($COUNT fixture(s))"
+            git push origin main
+
+            rm -f research.json
+          done
