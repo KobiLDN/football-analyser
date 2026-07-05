@@ -324,6 +324,7 @@ const LEAGUES = [
   name: 'Premier League',
   country: 'England',
   round: 'Gameweek 36',
+    researchDate: '5 May 2026',
   drawRate: 26,
   fixtures: [
 
@@ -850,6 +851,7 @@ const LEAGUES = [
     name: 'La Liga',
     country: 'Spain',
     round: 'Matchday 35',
+    researchDate: '5 May 2026',
     drawRate: 24,
     fixtures: [
 
@@ -1395,6 +1397,7 @@ const LEAGUES = [
     name: 'Serie A',
     country: 'Italy',
     round: 'Matchday 36',
+    researchDate: '5 May 2026',
     drawRate: 27,
     fixtures: [
 
@@ -1882,6 +1885,7 @@ const LEAGUES = [
     name: 'Bundesliga',
     country: 'Germany',
     round: 'Matchday 33',
+    researchDate: '5 May 2026',
     drawRate: 22,
     fixtures: [
 
@@ -2119,6 +2123,7 @@ const LEAGUES = [
     name: 'Ligue 1',
     country: 'France',
     round: 'Matchday 33',
+    researchDate: '5 May 2026',
     drawRate: 25,
     fixtures: [
 
@@ -2335,6 +2340,7 @@ const LEAGUES = [
     name: 'Champions League',
     country: 'UEFA',
     round: 'Semi-Final 2nd Legs',
+    researchDate: '5 May 2026',
     drawRate: 18,
     fixtures: [
 
@@ -2376,6 +2382,7 @@ const LEAGUES = [
     name: 'Europa League',
     country: 'UEFA',
     round: 'Semi-Final 2nd Legs',
+    researchDate: '5 May 2026',
     drawRate: 20,
     fixtures: []
   },
@@ -2388,6 +2395,7 @@ const LEAGUES = [
     name: 'Conference League',
     country: 'UEFA',
     round: 'Semi-Final 2nd Legs',
+    researchDate: '5 May 2026',
     drawRate: 22,
     fixtures: []
   },
@@ -2400,6 +2408,7 @@ const LEAGUES = [
     name: 'World Cup 2026',
     country: 'FIFA',
     round: 'Group Stage',
+    researchDate: '5 May 2026',
     drawRate: 24,
     fixtures: [
 
@@ -5142,7 +5151,7 @@ function renderMain() {
       <div class="league-header-left">
         <div class="league-title">${league.country}</div>
         <div class="league-name">${league.name}</div>
-        <div class="league-sub">${league.round} · Deep research updated 5 May 2026</div>
+        <div class="league-sub">${league.round} · Deep research updated ${league.researchDate || 'unknown'}</div>
       </div>
       <div class="league-stats">
         <div class="stat-card"><div class="stat-val">${league.drawRate}%</div><div class="stat-label">League draw rate</div></div>
