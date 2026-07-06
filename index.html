@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 06 Jul 2026 15:31 BST</div>
+      <div class="updated-tag">Data · 6 Jul 2026 15:35 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5033,15 +5033,28 @@ const LEAGUES = [
       {
         day: 'Saturday 11 July',
         home: 'Norway', away: 'England', time: '22:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Low', fairOdds: '2.20-2.30',
+        homeForm: 'W W L W W',
+        awayForm: 'W D W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 45, detail: 'Norway won 4 of last 5 but England are unbeaten in 7 matches with 6 wins.' },
+          momentum:      { score: 50, detail: 'Both arrive with confidence: Norway stunned Brazil with Haaland\'s late brace, England overcame Mexico with 10 men.' },
+          goalTendency:  { score: 80, detail: 'Norway\'s matches averaged 4.2 goals with BTTS in all 5 games; England scored 3 against Mexico but conceded twice.' },
+          leagueContext: { score: 70, detail: 'England have reached 3 straight WC quarter-finals and 2 Euro finals, while Norway last advanced this far in 1938.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Erling Haaland — 7 goals this World Cup (tournament co-leader)' }
+            ],
+          away: [
+              { tag: 'out', text: 'Jarell Quansah — suspension' },
+              { tag: 'out', text: 'Jordan Henderson — wrist injury' },
+              { tag: 'doubt', text: 'Reece James — hamstring injury' },
+              { tag: 'key', text: 'Harry Kane — 6 goals this World Cup' }
+            ]
+        },
+        context: 'Norway\'s historic run relies on Erling Haaland, who scored twice against Brazil to reach 7 tournament goals. England overcame Mexico 3-2 with 10 men but face defensive reshuffling due to Quansah\'s suspension and James\' injury. Thomas Tuchel must contain Haaland while leveraging Harry Kane\'s scoring form, with England\'s midfield duo Declan Rice and Elliot Anderson crucial to disrupting Norway\'s buildup.',
+        summary: 'Norway\'s fairytale run faces tournament-hardened England in a clash defined by Erling Haaland\'s scoring streak (goals in every knockout match) and England\'s defensive absences. The Scandinavians conceded in all 5 games but possess the tournament\'s top scorer, while England\'s resilience after Quansah\'s red card against Mexico highlights their pedigree. Expect high stakes with both attacks firing but England\'s knockout experience potentially decisive.'
       },
 
       {
