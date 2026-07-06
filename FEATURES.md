@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.125** — Marked 1 World Cup result.
 - **v2.124** — Marked 1 World Cup result.
 - **v2.123** — Auto-fetched 1 World Cup 2026 fixture stubs.
 - **v2.122** — Daily WC research refresh: new `refresh-worldcup.yml` runs at 08:00 BST daily, re-researching all upcoming WC fixtures (not just stubs) to capture overnight injuries and squad news. `--force` flag added to `auto_research.py`. Offset-based batching prevents infinite loops; graceful error handling skips bad DeepSeek responses instead of crashing. All workflow display names renamed to match filenames. `apply_research.py` now auto-stamps the Data topbar timestamp on every research apply. Fix: `[World Cup]` tag removed from workflow names (unquoted square brackets break YAML parsing).

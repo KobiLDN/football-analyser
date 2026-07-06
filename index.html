@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.124 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.125 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 6 Jul 2026 01:20 BST</div>
+      <div class="updated-tag">Data · 06 Jul 2026 07:42 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4858,12 +4858,13 @@ const LEAGUES = [
       {
         day: 'Monday 6 July',
         home: 'Mexico', away: 'England', time: '01:00',
-        result: null, homeWin: 32, draw: 28, awayWin: 40, verdict: 'Low', fairOdds: '2.45-2.50',
+        result: '2-3', homeWin: 32, draw: 28, awayWin: 40, verdict: 'Low', fairOdds: '2.45-2.50',
         homeForm: 'W W W W W',
         awayForm: 'W W W W W',
         factors: {
           formBalance:   { score: 100, detail: 'Both teams enter with perfect winning records: Mexico won all four World Cup matches, England won their last five including friendlies.' },
           momentum:      { score: 60, detail: 'Mexico dominated Ecuador 2-0 in R16 while England labored to a 2-1 comeback against DR Congo.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 80, detail: 'Mexico averaged 2.5 goals per game this tournament; England scored 6 goals in their last two World Cup matches.' },
           leagueContext: { score: 90, detail: 'Mexico are unbeaten in 10 World Cup matches at Azteca Stadium (W8 D2) with a 22-game competitive unbeaten run there.' }
         },
@@ -4891,6 +4892,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 35, detail: 'Spain\'s unbeaten run (W3 D1 last 4) outweighs Portugal\'s inconsistent form despite recent wins.' },
           momentum:      { score: 70, detail: 'Spain\'s 4 clean sheets and 3-0 Austria win showcase superior rhythm; Portugal needed 94\' winner vs Croatia.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 40, detail: 'Spain\'s tournament-best defense (0 GA) clashes with Portugal\'s attack that scored twice in 3 group games.' },
           leagueContext: { score: 60, detail: 'Spain\'s Euro 2024 title and 34-match unbeaten streak provide psychological edge over Portugal\'s 2016 Euros win.' }
         },
@@ -4919,6 +4921,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient data from web search' },
           momentum:      { score: 50, detail: 'Insufficient data from web search' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Insufficient data from web search' },
           leagueContext: { score: 50, detail: 'Insufficient data from web search' }
         },
@@ -4939,6 +4942,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Insufficient data from web search' },
           momentum:      { score: 50, detail: 'Insufficient data from web search' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Insufficient data from web search' },
           leagueContext: { score: 50, detail: 'Insufficient data from web search' }
         },
