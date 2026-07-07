@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 06 Jul 2026 22:42 BST</div>
+      <div class="updated-tag">Data · 7 Jul 2026 01:16 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -2408,7 +2408,7 @@ const LEAGUES = [
     name: 'World Cup 2026',
     country: 'FIFA',
     round: 'Group Stage',
-    researchDate: '6 Jul 2026',
+    researchDate: '7 Jul 2026',
     drawRate: 24,
     fixtures: [
 
@@ -4916,22 +4916,28 @@ const LEAGUES = [
       {
         day: 'Tuesday 7 July',
         home: 'USA', away: 'Belgium', time: '01:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00-3.10',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 37, draw: 26, awayWin: 37, verdict: 'Low', fairOdds: '2.65-2.75',
+        homeForm: 'L W W L W',
+        awayForm: 'W D D W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data from web search' },
-          momentum:      { score: 50, detail: 'Insufficient data from web search' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Insufficient data from web search' },
-          leagueContext: { score: 50, detail: 'Insufficient data from web search' }
+          formBalance:   { score: 70, detail: 'Belgium are unbeaten in regulation over their last five matches (2 wins, 3 draws), while USA have won three but lost two.' },
+          momentum:      { score: 80, detail: 'USA are buoyed by a convincing 2-0 round of 16 win, while Belgium needed extra time to overcome Senegal.' },
+          goalTendency:  { score: 75, detail: 'Both teams show attacking intent, with USA scoring 2+ goals in three of their last five and Belgium netting 5 in their March friendly.' },
+          leagueContext: { score: 60, detail: 'Belgium (#9 FIFA) have stronger World Cup pedigree (2018 3rd), but co-hosts USA (#11) are current Gold Cup champions.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Cristian Roldan — muscle injury' },
+              { tag: 'doubt', text: 'Mark McKenzie — foot injury' },
+              { tag: 'key', text: 'Folarin Balogun — key striker after suspension overturned' }
+            ],
+          away: [
+              { tag: 'key', text: 'Romelu Lukaku — 2 goals this World Cup' },
+              { tag: 'key', text: 'Kevin De Bruyne — playmaker' }
+            ]
         },
-        context: 'Match preview not available due to insufficient data from web search.',
-        summary: 'Match preview not available due to insufficient data from web search.'
+        context: 'FIFA controversially suspended Folarin Balogun\'s red-card ban after alleged political intervention, allowing the USA striker to start. Belgium coach Rudi Garcia called this unprecedented, questioning tournament integrity. Tactically, USA deploy Balogun and Christian Pulisic in a 4-3-3, while Belgium rely on Kevin De Bruyne\'s creativity and Romelu Lukaku (fitness-limited) in a 4-2-3-1. As the last remaining host nation, USA seek their first quarterfinal since 2002.',
+        summary: 'USA and Belgium meet in a finely balanced last-16 tie, with Opta giving both near-equal regulation win probabilities (USA 37.2%, Belgium 36.5%). Balogun\'s availability after his overturned suspension boosts the hosts, while Lukaku\'s fitness limits Belgium\'s attack. The winner faces Portugal or Uruguay in the quarterfinals.'
       },
 
       {
@@ -4952,7 +4958,7 @@ const LEAGUES = [
           away: []
         },
         context: 'Match preview not available due to insufficient data from web search.',
-        summary: 'Match preview not available due to insufficient data from web search.'
+        summary: 'Pending deep research.'
       },
 
       {
