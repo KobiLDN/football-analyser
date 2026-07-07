@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 07 Jul 2026 07:14 BST</div>
+      <div class="updated-tag">Data · 7 Jul 2026 11:22 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4944,92 +4944,73 @@ const LEAGUES = [
       {
         day: 'Tuesday 7 July',
         home: 'Argentina', away: 'Egypt', time: '17:00',
-        result: null, homeWin: 55, draw: 35, awayWin: 10, verdict: 'Likely', fairOdds: '1.70-1.85',
-        homeForm: 'W W W W D',
-        awayForm: 'L D W D D',
+        result: null, homeWin: 69, draw: 19, awayWin: 12, verdict: 'Strong', fairOdds: '1.45-1.55',
+        homeForm: 'W W W D W',
+        awayForm: 'W D D W D',
         factors: {
-          formBalance:   { score: 70, detail: 'Argentina won their first three World Cup matches before a 90-minute draw, while Egypt managed one win amid four draws/losses in their last five.' },
-          momentum:      { score: 60, detail: 'Argentina showed vulnerability in extra-time against Cape Verde, but remain unbeaten; Egypt demonstrated resilience with three 90-minute draws but lack knockout experience.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 65, detail: 'Argentina averaged over 2 goals per game in the group stage, while Egypt conceded in all four matches including own goals.' },
-          leagueContext: { score: 80, detail: 'As defending champions and world #1s, Argentina have superior pedigree, while #35-ranked Egypt are in uncharted territory for their first knockout appearance.' }
+          formBalance:   { score: 90, detail: 'Argentina won 4 of last 5 matches while Egypt remained unbeaten but drew 3 of last 5.' },
+          momentum:      { score: 75, detail: 'Argentina\'s 8-game winning streak against African teams contrasts with Egypt\'s historic first knockout win.' },
+          goalTendency:  { score: 80, detail: 'Argentina averaged 2.5 goals per game; Egypt scored only 1 goal per match in knockouts.' },
+          leagueContext: { score: 90, detail: 'Reigning champions Argentina have won 3 World Cups; Egypt reached their first-ever knockout stage.' }
         },
         teamNews: {
           home: [
               { tag: 'doubt', text: 'Nicolás González — ankle injury' },
-              { tag: 'doubt', text: 'Facundo Medina — muscle injury' },
-              { tag: 'key', text: 'Lionel Messi — 4 goals this World Cup' }
+              { tag: 'doubt', text: 'Facundo Medina — muscle discomfort' },
+              { tag: 'key', text: 'Lionel Messi — 7 goals this World Cup' }
             ],
           away: [
               { tag: 'out', text: 'Mohamed Abdelmonem — muscle injury' },
-              { tag: 'out', text: 'Ahmed Fatouh — hamstring injury' },
-              { tag: 'doubt', text: 'Karim Hafez — muscle injury' },
-              { tag: 'key', text: 'Mohamed Salah — 1 goal, 1 assist this World Cup' }
+              { tag: 'out', text: 'Ahmed Fatouh — muscle injury' },
+              { tag: 'out', text: 'Ahmed Abou El Fotouh — hamstring injury' },
+              { tag: 'key', text: 'Mohamed Salah' },
+              { tag: 'key', text: 'Emam Ashour — 2 goals this tournament' }
             ]
         },
-        context: 'Argentina needed extra-time to overcome Cape Verde, with Lionel Scaloni noting his squad is \'absolutely knackered.\' Egypt also played 120 minutes against Australia and face a defensive crisis with Abdelmonem and Fatouh out. Salah will start despite a hamstring strain limiting his mobility. Scaloni may rotate with Tagliafico, Paredes, or Álvarez pushing for starts, while Egypt recall Lasheen from suspension.',
-        summary: 'Argentina\'s attacking quality led by Messi faces a depleted Egyptian defense missing two starters. Egypt\'s tournament pattern of 90-minute draws (three in four games) suggests they can frustrate the champions, but injuries and Salah\'s fitness reduce their upset chances. Fatigue after extra-time bouts for both sides may slow the tempo early.'
+        context: 'Argentina face fatigue concerns after extra time against Cape Verde, with Messi admitting exhaustion affecting their press. Egypt rely on defensive organization and counterattacks through Salah and Marmoush. Both teams have injury doubts in defense, with González and Medina questionable for Argentina, while Egypt misses three starters. The winner faces Switzerland or Colombia in Kansas City.',
+        summary: 'Argentina are favored (69% win probability) despite fatigue from extra time. Egypt, missing three defenders, will deploy a low block and counter with Salah. Messi aims to break the Golden Boot tie with his 8th goal, while Egypt seeks to become the fifth African quarterfinalist in history.'
       },
 
       {
         day: 'Tuesday 7 July',
         home: 'Switzerland', away: 'Colombia', time: '21:00',
-        result: null, homeWin: 30, draw: 40, awayWin: 30, verdict: 'Low', fairOdds: '2.40-2.60',
-        homeForm: 'D D W W W',
-        awayForm: 'W W W D W',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.10',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 60, detail: 'Colombia are unbeaten in their last five (4 wins, 1 draw), while Switzerland have three wins and two draws in their last five.' },
-          momentum:      { score: 55, detail: 'Colombia have kept three consecutive clean sheets and conceded only once in four matches, while Switzerland have been solid but less consistent defensively.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 75, detail: 'Both teams advanced with clean-sheet wins in the Round of 32 and have averaged under 2.5 goals per game in the tournament.' },
-          leagueContext: { score: 50, detail: 'Switzerland have exited at this stage in the last three World Cups, while Colombia aim to reach the quarterfinals for the second time.' }
+          formBalance:   { score: 50, detail: 'Insufficient recent form data for both teams.' },
+          momentum:      { score: 50, detail: 'Switzerland reached 2022 WC quarterfinals; Colombia were Copa América 2024 runners-up.' },
+          goalTendency:  { score: 50, detail: 'No goal trend data available for this fixture.' },
+          leagueContext: { score: 50, detail: 'Switzerland\'s best is QF (1954); Colombia reached 2014 QF.' }
         },
         teamNews: {
-          home: [
-              { tag: 'doubt', text: 'Michel Aebischer — muscle injury' },
-              { tag: 'doubt', text: 'Luca Jaquez — muscle injury' },
-              { tag: 'key', text: 'Breel Embolo — 1 goal this tournament' },
-              { tag: 'key', text: 'Granit Xhaka — midfield control' }
-            ],
-          away: [
-              { tag: 'doubt', text: 'James Rodríguez — virus' },
-              { tag: 'out', text: 'Jhon Córdoba — groin injury' },
-              { tag: 'key', text: 'Luis Díaz — creates chances' },
-              { tag: 'key', text: 'Davinson Sánchez — defensive standout' },
-              { tag: 'key', text: 'Jhon Arias — 1 goal this tournament' }
-            ]
+          home: [],
+          away: []
         },
-        context: 'Switzerland are expected to deploy a 3-5-2 formation built around defensive solidity and midfield control, with Granit Xhaka orchestrating play and Breel Embolo leading the attack. Colombia, missing striker Jhon Córdoba, will likely rely on Luis Díaz\'s pace and creativity alongside Jhon Arias and Luis Suárez, while their defense anchored by Davinson Sánchez has been exceptional. Both teams advanced with clean-sheet wins in the Round of 32, suggesting a tight contest where the first goal could be decisive, and the winner earns a quarterfinal against Argentina or Egypt.',
-        summary: 'Switzerland and Colombia meet in the World Cup Round of 16 after both secured clean-sheet victories in the previous round. Colombia\'s defensive record (three consecutive clean sheets) and unbeaten form make them slight favorites, but Switzerland\'s organization and home-continent advantage (playing in Vancouver) could level the contest. Key absences include Colombia\'s Jhon Córdoba (injured) and doubts over James Rodríguez, while Switzerland may be without midfielders Aebischer and Jaquez.'
+        context: 'Switzerland\'s organized defense faces Colombia\'s dynamic attack. Both teams seek their first semifinal appearance, with Switzerland\'s tournament consistency (QF in last WC/Euro) contrasting with Colombia\'s Copa América final run. Key battles may involve Granit Xhaka controlling midfield against James Rodríguez\'s creativity.',
+        summary: 'Evenly matched with no clear favorite. Switzerland\'s defensive discipline tests Colombia\'s attacking flair. The winner plays Argentina or Egypt in Kansas City.'
       },
 
       {
         day: 'Thursday 9 July',
         home: 'France', away: 'Morocco', time: '21:00',
-        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.60-1.70',
-        homeForm: 'W W W W W',
-        awayForm: 'D W W D W',
+        result: null, homeWin: 55, draw: 30, awayWin: 15, verdict: 'Likely', fairOdds: '1.80-1.90',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 80, detail: 'France boast a perfect five wins in their last five, while Morocco are unbeaten but with two draws.' },
-          momentum:      { score: 75, detail: 'France have scored 13 goals in four matches and have tournament-leading scorers, while Morocco face fitness doubts for key attackers.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 40, detail: 'France\'s high-scoring attack (13 goals) meets Morocco\'s solid defense (only 3 goals conceded in 5 matches), suggesting a moderate goal tally.' },
-          leagueContext: { score: 70, detail: 'As two-time defending finalists with deeper knockout experience, France\'s pedigree in high-stakes matches gives them an edge over Morocco\'s emerging status.' }
+          formBalance:   { score: 70, detail: 'France won 2022 WC final rematch; Morocco reached 2022 semifinals.' },
+          momentum:      { score: 65, detail: 'France\'s depth contrasts with Morocco\'s underdog resilience.' },
+          goalTendency:  { score: 75, detail: 'France scored 14 goals in 2022 WC; Morocco kept 5 clean sheets.' },
+          leagueContext: { score: 80, detail: 'France are two-time champions; Morocco were first African semifinalists in 2022.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Kylian Mbappé — 7 goals this World Cup' },
-              { tag: 'key', text: 'Michael Olise — 5 assists this World Cup' }
+              { tag: 'key', text: 'Kylian Mbappé — 7 goals this World Cup' }
             ],
-          away: [
-              { tag: 'doubt', text: 'Ismael Saibari — hamstring injury' },
-              { tag: 'doubt', text: 'Nayef Aguerd — muscle fatigue' },
-              { tag: 'key', text: 'Azzedine Ounahi — 2 goals vs Canada' },
-              { tag: 'key', text: 'Achraf Hakimi — defensive/attacking threat' }
-            ]
+          away: []
         },
-        context: 'This rematch of the 2022 semi-final features Morocco targeting France\'s right flank through Abde Ezzalzouli and Nouassir Mazraoui to exploit Jules Koundé. France will rely on Michael Olise\'s creativity in half-spaces to break Morocco\'s low block, avoiding over-dependence on Mbappé\'s speed. Key duels include Mbappé vs Hakimi (PSG teammates) and Sofyan Amrabat\'s potential double-teaming to force France central. Morocco\'s physical resilience after eliminating the Netherlands on penalties contrasts with France\'s conservative approach against Paraguay.',
-        summary: 'France enter with a 100% record and Mbappé\'s Golden Boot-leading form, but Morocco\'s 34-match unbeaten run and Achraf Hakimi\'s defensive discipline pose challenges. The absence of Morocco\'s top scorer Ismael Saibari (hamstring) significantly weakens their attack, while France\'s midfield conservatism aims to protect Adrien Rabiot. Tactical battles center on flank overloads and Olise\'s chance creation against Morocco\'s compact defense.'
+        context: 'France seeks revenge for 2022 semifinal where they edged Morocco 2-0. Mbappé leads the Golden Boot race alongside Messi and Haaland. Morocco\'s defense, anchored by Hakimi, must contain France\'s speed. Didier Deschamps may rotate after group stage, while Walid Regragui relies on counterattacks.',
+        summary: 'France favored with Mbappé\'s firepower, but Morocco\'s defense (5 clean sheets in 2022) poses a challenge. Rematch of 2022 semifinal where France prevailed narrowly. Winner advances to face European opponents.'
       },
 
       {
@@ -5049,29 +5030,25 @@ const LEAGUES = [
       {
         day: 'Saturday 11 July',
         home: 'Norway', away: 'England', time: '22:00',
-        result: null, homeWin: 30, draw: 25, awayWin: 45, verdict: 'Low', fairOdds: '2.20-2.30',
-        homeForm: 'W W L W W',
-        awayForm: 'W D W W W',
+        result: null, homeWin: 15, draw: 25, awayWin: 60, verdict: 'Likely', fairOdds: '1.65-1.75',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 45, detail: 'Norway won 4 of last 5 but England are unbeaten in 7 matches with 6 wins.' },
-          momentum:      { score: 50, detail: 'Both arrive with confidence: Norway stunned Brazil with Haaland\'s late brace, England overcame Mexico with 10 men.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 80, detail: 'Norway\'s matches averaged 4.2 goals with BTTS in all 5 games; England scored 3 against Mexico but conceded twice.' },
-          leagueContext: { score: 70, detail: 'England have reached 3 straight WC quarter-finals and 2 Euro finals, while Norway last advanced this far in 1938.' }
+          formBalance:   { score: 30, detail: 'Norway\'s first knockout since 1998; England reached last two Euro finals.' },
+          momentum:      { score: 40, detail: 'England\'s consistent deep runs contrast with Norway\'s tournament absence since 2000.' },
+          goalTendency:  { score: 75, detail: 'Haaland has 7 goals; England scored 12 in 2022 WC group stage.' },
+          leagueContext: { score: 20, detail: 'Norway\'s best is 1938 QF; England won 1966 WC but seek first major trophy since.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Erling Haaland — 7 goals this World Cup (tournament co-leader)' }
+              { tag: 'key', text: 'Erling Haaland — 7 goals this World Cup' }
             ],
           away: [
-              { tag: 'out', text: 'Jarell Quansah — suspension' },
-              { tag: 'out', text: 'Jordan Henderson — wrist injury' },
-              { tag: 'doubt', text: 'Reece James — hamstring injury' },
-              { tag: 'key', text: 'Harry Kane — 6 goals this World Cup' }
+              { tag: 'key', text: 'Harry Kane' }
             ]
         },
-        context: 'Norway\'s historic run relies on Erling Haaland, who scored twice against Brazil to reach 7 tournament goals. England overcame Mexico 3-2 with 10 men but face defensive reshuffling due to Quansah\'s suspension and James\' injury. Thomas Tuchel must contain Haaland while leveraging Harry Kane\'s scoring form, with England\'s midfield duo Declan Rice and Elliot Anderson crucial to disrupting Norway\'s buildup.',
-        summary: 'Norway\'s fairytale run faces tournament-hardened England in a clash defined by Erling Haaland\'s scoring streak (goals in every knockout match) and England\'s defensive absences. The Scandinavians conceded in all 5 games but possess the tournament\'s top scorer, while England\'s resilience after Quansah\'s red card against Mexico highlights their pedigree. Expect high stakes with both attacks firing but England\'s knockout experience potentially decisive.'
+        context: 'Norway\'s first knockout appearance in 28 years hinges on Haaland, tied for Golden Boot lead. England\'s defense (Stones, Walker) must contain his physicality. Gareth Southgate\'s side uses Saka and Foden\'s width, while Norway relies on Ødegaard\'s creativity. England aims to end 58-year trophy drought.',
+        summary: 'England favored with superior tournament experience, but Haaland\'s 7 goals make Norway dangerous. Key battle: England\'s defense vs Haaland\'s aerial threat. Winner progresses to semifinals.'
       },
 
       {
