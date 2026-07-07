@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 7 Jul 2026 01:16 BST</div>
+      <div class="updated-tag">Data · 7 Jul 2026 01:20 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4943,22 +4943,30 @@ const LEAGUES = [
       {
         day: 'Tuesday 7 July',
         home: 'Argentina', away: 'Egypt', time: '17:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00-3.10',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 55, draw: 35, awayWin: 10, verdict: 'Likely', fairOdds: '1.70-1.85',
+        homeForm: 'W W W W D',
+        awayForm: 'L D W D D',
         factors: {
-          formBalance:   { score: 50, detail: 'Insufficient data from web search' },
-          momentum:      { score: 50, detail: 'Insufficient data from web search' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Insufficient data from web search' },
-          leagueContext: { score: 50, detail: 'Insufficient data from web search' }
+          formBalance:   { score: 70, detail: 'Argentina won their first three World Cup matches before a 90-minute draw, while Egypt managed one win amid four draws/losses in their last five.' },
+          momentum:      { score: 60, detail: 'Argentina showed vulnerability in extra-time against Cape Verde, but remain unbeaten; Egypt demonstrated resilience with three 90-minute draws but lack knockout experience.' },
+          goalTendency:  { score: 65, detail: 'Argentina averaged over 2 goals per game in the group stage, while Egypt conceded in all four matches including own goals.' },
+          leagueContext: { score: 80, detail: 'As defending champions and world #1s, Argentina have superior pedigree, while #35-ranked Egypt are in uncharted territory for their first knockout appearance.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Nicolás González — ankle injury' },
+              { tag: 'doubt', text: 'Facundo Medina — muscle injury' },
+              { tag: 'key', text: 'Lionel Messi — 4 goals this World Cup' }
+            ],
+          away: [
+              { tag: 'out', text: 'Mohamed Abdelmonem — muscle injury' },
+              { tag: 'out', text: 'Ahmed Fatouh — hamstring injury' },
+              { tag: 'doubt', text: 'Karim Hafez — muscle injury' },
+              { tag: 'key', text: 'Mohamed Salah — 1 goal, 1 assist this World Cup' }
+            ]
         },
-        context: 'Match preview not available due to insufficient data from web search.',
-        summary: 'Pending deep research.'
+        context: 'Argentina needed extra-time to overcome Cape Verde, with Lionel Scaloni noting his squad is \'absolutely knackered.\' Egypt also played 120 minutes against Australia and face a defensive crisis with Abdelmonem and Fatouh out. Salah will start despite a hamstring strain limiting his mobility. Scaloni may rotate with Tagliafico, Paredes, or Álvarez pushing for starts, while Egypt recall Lasheen from suspension.',
+        summary: 'Argentina\'s attacking quality led by Messi faces a depleted Egyptian defense missing two starters. Egypt\'s tournament pattern of 90-minute draws (three in four games) suggests they can frustrate the champions, but injuries and Salah\'s fitness reduce their upset chances. Fatigue after extra-time bouts for both sides may slow the tempo early.'
       },
 
       {
