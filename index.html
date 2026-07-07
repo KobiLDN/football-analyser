@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.127 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.128 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 7 Jul 2026 01:20 BST</div>
+      <div class="updated-tag">Data · 07 Jul 2026 07:14 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -4916,12 +4916,13 @@ const LEAGUES = [
       {
         day: 'Tuesday 7 July',
         home: 'USA', away: 'Belgium', time: '01:00',
-        result: null, homeWin: 37, draw: 26, awayWin: 37, verdict: 'Low', fairOdds: '2.65-2.75',
+        result: '1-4', homeWin: 37, draw: 26, awayWin: 37, verdict: 'Low', fairOdds: '2.65-2.75',
         homeForm: 'L W W L W',
         awayForm: 'W D D W D',
         factors: {
           formBalance:   { score: 70, detail: 'Belgium are unbeaten in regulation over their last five matches (2 wins, 3 draws), while USA have won three but lost two.' },
           momentum:      { score: 80, detail: 'USA are buoyed by a convincing 2-0 round of 16 win, while Belgium needed extra time to overcome Senegal.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Both teams show attacking intent, with USA scoring 2+ goals in three of their last five and Belgium netting 5 in their March friendly.' },
           leagueContext: { score: 60, detail: 'Belgium (#9 FIFA) have stronger World Cup pedigree (2018 3rd), but co-hosts USA (#11) are current Gold Cup champions.' }
         },
@@ -4949,6 +4950,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 70, detail: 'Argentina won their first three World Cup matches before a 90-minute draw, while Egypt managed one win amid four draws/losses in their last five.' },
           momentum:      { score: 60, detail: 'Argentina showed vulnerability in extra-time against Cape Verde, but remain unbeaten; Egypt demonstrated resilience with three 90-minute draws but lack knockout experience.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'Argentina averaged over 2 goals per game in the group stage, while Egypt conceded in all four matches including own goals.' },
           leagueContext: { score: 80, detail: 'As defending champions and world #1s, Argentina have superior pedigree, while #35-ranked Egypt are in uncharted territory for their first knockout appearance.' }
         },
