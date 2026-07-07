@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 07 Jul 2026 12:11 BST</div>
+      <div class="updated-tag">Data · 7 Jul 2026 12:14 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5019,15 +5019,25 @@ const LEAGUES = [
       {
         day: 'Friday 10 July',
         home: 'Spain', away: 'Belgium', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 55, draw: 30, awayWin: 15, verdict: 'Likely', fairOdds: '1.80-1.85',
+        homeForm: 'D W W W W',
+        awayForm: 'D D W W W',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 65, detail: 'Spain have won 4 consecutive matches with 5 clean sheets, while Belgium conceded in 3 of their last 5 despite winning 3 straight.' },
+          momentum:      { score: 70, detail: 'Spain are unbeaten in 15 matches with a 23-game home undefeated streak, while Belgium haven\'t lost in 18 games but drew against weaker opponents like Iran and Egypt.' },
+          goalTendency:  { score: 45, detail: 'Belgium average 3.3 goals per game but face Spain\'s defense that hasn\'t conceded in 5 matches, reducing likelihood of high scoring.' },
+          leagueContext: { score: 60, detail: 'As reigning European champions with superior World Cup pedigree, Spain have tournament experience edge over Belgium who exited early in 2022.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Mikel Oyarzabal — 4 goals this World Cup' }
+            ],
+          away: [
+              { tag: 'key', text: 'Romelu Lukaku — 3 goals this World Cup' }
+            ]
+        },
+        context: 'Spain\'s defensive solidity (5 consecutive clean sheets) faces Belgium\'s attack that scored 13 goals in 5 matches. Oyarzabal leads Spain\'s frontline with tournament form, while Lukaku remains Belgium\'s primary threat. Historical advantage favors Spain who won 6 of 7 previous meetings, including a 2-1 World Cup victory in 1990. Both teams advanced through dramatic knockout wins - Spain over Portugal (1-0) and Belgium over USA (4-1).',
+        summary: 'Spain enter as favorites with superior defensive organization and historical dominance over Belgium, having kept 5 straight clean sheets. Belgium\'s attacking power led by Lukaku must break Spain\'s resilient backline, but their defensive vulnerabilities could be exploited. The quarterfinal likely hinges on whether Belgium can disrupt Spain\'s control or succumb to their tournament pedigree.'
       },
 
       {
