@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 08 Jul 2026 13:26 BST</div>
+      <div class="updated-tag">Data · 8 Jul 2026 13:28 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5077,15 +5077,28 @@ const LEAGUES = [
       {
         day: 'Sunday 12 July',
         home: 'Argentina', away: 'Switzerland', time: '02:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 45, draw: 35, awayWin: 20, verdict: 'Low', fairOdds: '2.20-2.25',
+        homeForm: 'W W W W W',
+        awayForm: 'W W W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Form assessment limited due to incomplete group stage data in search results.' },
+          momentum:      { score: 60, detail: 'Argentina\'s dramatic comeback against Egypt and Switzerland\'s penalty shootout win provide psychological boosts.' },
+          goalTendency:  { score: 55, detail: 'Argentina scored 3 goals against Egypt but conceded twice, while Switzerland kept a clean sheet against Colombia but failed to score.' },
+          leagueContext: { score: 70, detail: 'Argentina\'s historical dominance includes 5 wins and 2 draws against Switzerland, including a 2014 World Cup victory.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [
+              { tag: 'key', text: 'Lionel Messi — 8 goals this World Cup' },
+              { tag: 'key', text: 'Enzo Fernandez — scored stoppage-time winner against Egypt' }
+            ],
+          away: [
+              { tag: 'out', text: 'Johan Manzambi — training injury' },
+              { tag: 'doubt', text: 'Ruben Vargas — left training early before Colombia match' },
+              { tag: 'key', text: 'Granit Xhaka — midfield control pivotal' }
+            ]
+        },
+        context: 'Argentina advanced after overturning a 2-0 deficit against Egypt with late goals from Cristian Romero, Lionel Messi, and Enzo Fernandez. Switzerland reached their first quarterfinal in 72 years by drawing 0-0 with Colombia before winning 4-3 on penalties. Argentina\'s attack, spearheaded by Messi, will test Switzerland\'s narrow defensive block led by Manuel Akanji and Gregor Kobel. Granit Xhaka\'s midfield control and Breel Embolo\'s counter-attacking threat are crucial for Switzerland.',
+        summary: 'Argentina face Switzerland after a dramatic 3-2 comeback win over Egypt, while Switzerland advanced via penalties following a 0-0 draw with Colombia. Argentina\'s historical dominance (5 wins, 2 draws H2H) and Messi\'s tournament form contrast with Switzerland\'s defensive organization and first quarterfinal since 1954. Key absences include Switzerland\'s Manzambi (out), with Vargas (doubt) a fitness concern.'
       },
 
       {
