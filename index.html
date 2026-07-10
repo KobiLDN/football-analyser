@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.133 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.134 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 10 Jul 2026 11:15 BST</div>
+      <div class="updated-tag">Data · 10 Jul 2026 22:13 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5023,12 +5023,13 @@ const LEAGUES = [
       {
         day: 'Friday 10 July',
         home: 'Spain', away: 'Belgium', time: '20:00',
-        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.20-2.50',
+        result: '2-1', homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.20-2.50',
         homeForm: 'W W D W W',
         awayForm: 'W L D W W',
         factors: {
           formBalance:   { score: 55, detail: 'Spain\'s recent Euro 2024 championship form gives slight edge over Belgium\'s inconsistent knockout record.' },
           momentum:      { score: 60, detail: 'Spain enters with confidence from UEFA Euro triumph while Belgium seeks redemption after group stage exits.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Both teams averaged 1.8 goals/game in qualifiers but face upgraded defenses in knockout stage.' },
           leagueContext: { score: 70, detail: 'Spain\'s tournament pedigree (4 Euro titles) outweighs Belgium\'s \'golden generation\' underachievement.' }
         },
@@ -5055,6 +5056,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 75, detail: 'England\'s back-to-back Euro finals contrast Norway\'s 28-year major tournament absence.' },
           momentum:      { score: 80, detail: 'England unbeaten in 12 matches while Norway struggled against elite opponents in qualifiers.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 65, detail: 'England\'s 3.2 goals/game in group stage dwarfs Norway\'s 1.5 against weaker sides.' },
           leagueContext: { score: 85, detail: 'England\'s depth and tournament experience overwhelming for Norway\'s Haaland-dependent attack.' }
         },
@@ -5081,6 +5083,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 90, detail: 'Argentina\'s consecutive World Cup/Copa América titles demonstrate unmatched tournament mentality.' },
           momentum:      { score: 85, detail: 'Messi-led squad unbeaten in 18 competitive matches versus Switzerland\'s inconsistent form.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 75, detail: 'Argentina averaged 2.8 goals/game in group stage; Switzerland conceded in 80% of matches.' },
           leagueContext: { score: 95, detail: 'Reigning champions\' experience in high-stakes games overshadows Switzerland\'s quarter-final ceiling.' }
         },
