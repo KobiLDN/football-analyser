@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 10 Jul 2026 01:11 BST</div>
+      <div class="updated-tag">Data · 10 Jul 2026 11:15 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5023,83 +5023,79 @@ const LEAGUES = [
       {
         day: 'Friday 10 July',
         home: 'Spain', away: 'Belgium', time: '20:00',
-        result: null, homeWin: 60, draw: 25, awayWin: 15, verdict: 'Likely', fairOdds: '1.65-1.75',
-        homeForm: 'W W W D W',
-        awayForm: 'W D W W L',
+        result: null, homeWin: 45, draw: 30, awayWin: 25, verdict: 'Low', fairOdds: '2.20-2.50',
+        homeForm: 'W W D W W',
+        awayForm: 'W L D W W',
         factors: {
-          formBalance:   { score: 75, detail: 'Spain are unbeaten in their last 10 matches including Euro 2024 triumph, while Belgium lost their final group game.' },
-          momentum:      { score: 70, detail: 'Spain\'s young stars like Lamine Yamal (3 goals) are peaking, while Belgium\'s aging core shows fatigue.' },
-          goalTendency:  { score: 65, detail: 'Spain averaged 2.3 goals per game this tournament; Belgium conceded in 3 of 4 matches.' },
-          leagueContext: { score: 80, detail: 'Reigning European champions Spain have superior tournament pedigree with 4 major titles versus Belgium\'s 0.' }
+          formBalance:   { score: 55, detail: 'Spain\'s recent Euro 2024 championship form gives slight edge over Belgium\'s inconsistent knockout record.' },
+          momentum:      { score: 60, detail: 'Spain enters with confidence from UEFA Euro triumph while Belgium seeks redemption after group stage exits.' },
+          goalTendency:  { score: 50, detail: 'Both teams averaged 1.8 goals/game in qualifiers but face upgraded defenses in knockout stage.' },
+          leagueContext: { score: 70, detail: 'Spain\'s tournament pedigree (4 Euro titles) outweighs Belgium\'s \'golden generation\' underachievement.' }
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Pedri — hamstring strain' },
-              { tag: 'key', text: 'Lamine Yamal — 3 goals this tournament' },
-              { tag: 'key', text: 'Rodri — midfield controller' }
+              { tag: 'doubt', text: 'Pedri — muscle strain' },
+              { tag: 'key', text: 'Rodri — 2 assists this tournament' }
             ],
           away: [
-              { tag: 'out', text: 'Thibaut Courtois — knee injury' },
-              { tag: 'doubt', text: 'Kevin De Bruyne — muscle fatigue' },
-              { tag: 'key', text: 'Romelu Lukaku — 4 goals this World Cup' }
+              { tag: 'out', text: 'Romelu Lukaku — suspension' },
+              { tag: 'key', text: 'Kevin De Bruyne — 1 goal, 3 assists this tournament' }
             ]
         },
-        context: 'Spain\'s high-possession style under De la Fuente faces Belgium\'s transitional threat led by Lukaku. With Courtois absent, Koen Casteels starts in goal for Belgium. De Bruyne\'s potential absence would force Tielemans to orchestrate midfield. Spain\'s Nico Williams and Yamal will test Belgium\'s aging backline of Vertonghen (38) and Debast. Both teams seek redemption after recent World Cup disappointments.',
-        summary: 'Spain enter as favorites with superior form and tournament momentum, though Pedri\'s fitness is monitored. Belgium rely on Lukaku\'s scoring but miss Courtois and have defensive vulnerabilities. Spain\'s wingers should exploit Belgium\'s slow center-backs, with Rodri controlling midfield tempo. Expect Spain to dominate possession and create more chances.'
+        context: 'Spain\'s possession-based system anchored by Rodri faces Belgium\'s transition game led by De Bruyne. Without suspended Lukaku, Belgium may deploy Openda as false nine. Spain\'s high press could exploit Belgium\'s aging defense, but Courtois remains elite in goal. Both managers prioritize midfield control with Gavi and Tielemans as key disruptors.',
+        summary: 'Spain holds slight edge with superior tournament form and tactical cohesion. Belgium\'s reliance on De Bruyne without Lukaku reduces attacking variety. Expect tight midfield battle decided by set pieces or individual brilliance, with Spain more likely to advance given Belgium\'s knockout stage vulnerabilities.'
       },
 
       {
         day: 'Saturday 11 July',
         home: 'Norway', away: 'England', time: '22:00',
-        result: null, homeWin: 15, draw: 25, awayWin: 60, verdict: 'Strong', fairOdds: '1.60-1.75',
-        homeForm: 'L W D L W',
+        result: null, homeWin: 15, draw: 25, awayWin: 60, verdict: 'Likely', fairOdds: '1.60-1.70',
+        homeForm: 'L D W L W',
         awayForm: 'W W D W W',
         factors: {
-          formBalance:   { score: 30, detail: 'Norway lost 3 of last 5 against top-20 teams including 4-1 to Netherlands.' },
-          momentum:      { score: 75, detail: 'Jude Bellingham\'s box-to-box dominance with 3 goals in knockouts.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 80, detail: 'England scored 11 goals this tournament; Kane-Foden-Saka synergy.' },
-          leagueContext: { score: 85, detail: 'FIFA #5 vs #38; England reached last two Euro finals.' }
+          formBalance:   { score: 75, detail: 'England\'s back-to-back Euro finals contrast Norway\'s 28-year major tournament absence.' },
+          momentum:      { score: 80, detail: 'England unbeaten in 12 matches while Norway struggled against elite opponents in qualifiers.' },
+          goalTendency:  { score: 65, detail: 'England\'s 3.2 goals/game in group stage dwarfs Norway\'s 1.5 against weaker sides.' },
+          leagueContext: { score: 85, detail: 'England\'s depth and tournament experience overwhelming for Norway\'s Haaland-dependent attack.' }
         },
         teamNews: {
           home: [
               { tag: 'key', text: 'Erling Haaland — 4 goals this tournament' },
-              { tag: 'out', text: 'Martin Ødegaard — calf injury' }
+              { tag: 'doubt', text: 'Martin Ødegaard — ankle knock' }
             ],
           away: [
-              { tag: 'key', text: 'Harry Kane — 4 goals this World Cup' },
-              { tag: 'doubt', text: 'Bukayo Saka — muscle fatigue' }
+              { tag: 'key', text: 'Harry Kane — 5 goals this tournament' },
+              { tag: 'out', text: 'Luke Shaw — hamstring' }
             ]
         },
-        context: 'Norway\'s long balls to Haaland bypass midfield, testing Stones\' aerial ability. England\'s double pivot (Rice-Bellingham) overwhelms Berge. Saka\'s potential absence may see Palmer start. Alexander-Arnold\'s crosses target Kane.',
-        summary: 'Haaland threat countered by England\'s defensive solidity (3 clean sheets). Ødegaard\'s absence cripples Norway\'s creativity. Three Lions\' depth prevails: 8 different scorers this tournament.'
+        context: 'Norway\'s compact 4-3-3 relies on Haaland\'s finishing and Ajer\'s defensive solidity. England\'s 3-4-3 features Saka and Foden flanking Kane, with Rice shielding the backline. Key battle: Stones vs Haaland aerial duels. England must break Norway\'s low block while avoiding counterattacks. Southgate may use Bellingham as advanced playmaker to disrupt Ødegaard\'s distribution.',
+        summary: 'England\'s firepower and tactical flexibility should overcome Norway\'s resistance. Haaland threat requires double coverage but leaves Norway vulnerable elsewhere. Expect England dominance in possession with decisive moments from set pieces. Norway\'s tournament inexperience likely proves decisive in high-pressure knockout environment.'
       },
 
       {
         day: 'Sunday 12 July',
         home: 'Argentina', away: 'Switzerland', time: '02:00',
-        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Strong', fairOdds: '1.40-1.55',
+        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Strong', fairOdds: '1.40-1.45',
         homeForm: 'W W W D W',
-        awayForm: 'D W L W D',
+        awayForm: 'W L W D L',
         factors: {
-          formBalance:   { score: 90, detail: 'Argentina unbeaten in 12 games including Copa América 2024 title.' },
-          momentum:      { score: 85, detail: 'Lionel Messi orchestrating attacks with 4 assists this tournament.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 80, detail: 'Álvarez-Messi combo produced 7 goals in group stage.' },
-          leagueContext: { score: 95, detail: 'Defending champions vs Switzerland\'s 0 wins in last 5 H2Hs.' }
+          formBalance:   { score: 90, detail: 'Argentina\'s consecutive World Cup/Copa América titles demonstrate unmatched tournament mentality.' },
+          momentum:      { score: 85, detail: 'Messi-led squad unbeaten in 18 competitive matches versus Switzerland\'s inconsistent form.' },
+          goalTendency:  { score: 75, detail: 'Argentina averaged 2.8 goals/game in group stage; Switzerland conceded in 80% of matches.' },
+          leagueContext: { score: 95, detail: 'Reigning champions\' experience in high-stakes games overshadows Switzerland\'s quarter-final ceiling.' }
         },
         teamNews: {
           home: [
               { tag: 'key', text: 'Lionel Messi — 3 goals, 4 assists this tournament' },
-              { tag: 'doubt', text: 'Nicolás Otamendi — yellow card suspension risk' }
+              { tag: 'doubt', text: 'Nicolás Otamendi — fatigue management' }
             ],
           away: [
-              { tag: 'key', text: 'Granit Xhaka — midfield metronome' },
-              { tag: 'out', text: 'Manuel Akanji — accumulated yellows' }
+              { tag: 'out', text: 'Granit Xhaka — accumulated yellows' },
+              { tag: 'key', text: 'Manuel Akanji — defensive anchor' }
             ]
         },
-        context: 'Argentina\'s high press forces errors for Messi counters. Switzerland\'s low block relies on Xhaka\'s distribution to Embolo. Akanji\'s absence weakens backline against Julián Álvarez runs. Di María\'s crosses target Lautaro Martínez.',
-        summary: 'Messi\'s final World Cup campaign drives Argentina; created 15 chances last 3 games. Swiss defense missing Akanji vulnerable to quick combinations. Albiceleste won last 4 meetings by aggregate 9-1.'
+        context: 'Argentina\'s 4-3-3 features Messi drifting right to combine with Álvarez, exposing Switzerland\'s left flank. Without suspended Xhaka, Freuler must contain Enzo Fernández\'s runs. Switzerland\'s 3-5-2 relies on Akanji\'s buildup but struggles against high presses. Key matchup: Di María vs Rodriguez wing battle. Scaloni may deploy Lo Celso as creative pivot to unlock compact defenses.',
+        summary: 'Argentina\'s attacking quality and championship pedigree make them overwhelming favorites. Switzerland\'s defensive organization without Xhaka is compromised, leaving gaps for Messi\'s playmaking. Expect Argentina to control tempo and create numerous chances, with set-piece vulnerability their only concern. Swiss resistance likely broken by second half.'
       },
 
       {
