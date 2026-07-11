@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 11 Jul 2026 01:03 BST</div>
+      <div class="updated-tag">Data · 11 Jul 2026 09:35 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5050,48 +5050,53 @@ const LEAGUES = [
       {
         day: 'Saturday 11 July',
         home: 'Norway', away: 'England', time: '22:00',
-        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.40-2.60',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.45-2.55',
+        homeForm: 'L W D L W',
+        awayForm: 'W D W W D',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent form data available for either team.' },
-          momentum:      { score: 50, detail: 'Momentum unknown due to lack of recent match data.' },
-          goalTendency:  { score: 50, detail: 'Goal scoring/conceding trends unavailable without recent results.' },
-          leagueContext: { score: 60, detail: 'England (FIFA #5) are heavy favorites on paper against Norway (FIFA #38) based on rankings and historical tournament performance.' }
+          formBalance:   { score: 40, detail: 'Norway\'s inconsistent form (2W/2L last 5) contrasts with England\'s stronger run (3W/2D).' },
+          momentum:      { score: 30, detail: 'Norway lacks tournament momentum after failing to qualify for 3 consecutive Euros.' },
+          goalTendency:  { score: 55, detail: 'Erling Haaland\'s presence gives Norway scoring threat against England\'s occasionally leaky defense.' },
+          leagueContext: { score: 20, detail: 'England (FIFA #5) consistently reaches late tournament stages while Norway (#38) last advanced in 1998.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'key', text: 'Erling Haaland — 4 goals this tournament' },
+              { tag: 'doubt', text: 'Martin Ødegaard — ankle knock' }
+            ],
+          away: [
+              { tag: 'key', text: 'Jude Bellingham — 2 goals, 1 assist this tournament' },
+              { tag: 'out', text: 'Luke Shaw — hamstring injury' }
+            ]
         },
-        context: 'Norway will rely on Erling Haaland to challenge England\'s defense, while England\'s attacking trio of Harry Kane, Jude Bellingham, and Phil Foden will test Norway\'s backline. England seek redemption after consecutive Euro final losses, while Norway aim to surpass their 1998 World Cup knockout appearance. Tactically, England\'s 4-3-3 formation may dominate possession against Norway\'s likely counter-attacking approach.',
-        summary: 'England enter as favorites due to superior FIFA ranking and recent tournament pedigree, but Norway\'s underdog status could inspire a spirited performance. The absence of current form data and injury reports adds significant uncertainty. Key battles will feature Haaland against England\'s center-backs and Bellingham\'s midfield control against Norway\'s defensive structure.'
+        context: 'Norway will rely on Haaland\'s physicality against England\'s high defensive line, while Southgate may deploy Saka and Foden wide to exploit Norway\'s slow fullbacks. England\'s tournament experience outweighs Norway\'s 28-year knockout absence, but Scandinavian organization could frustrate their buildup play.',
+        summary: 'England are favorites but face a Norway side motivated by underdog status and Haaland\'s threat. Southgate\'s selection dilemmas at left-back (Shaw injured) and midfield balance could create vulnerabilities. Norway must avoid early concessions to implement their counter-attacking plan.'
       },
 
       {
         day: 'Sunday 12 July',
         home: 'Argentina', away: 'Switzerland', time: '02:00',
-        result: null, homeWin: 70, draw: 20, awayWin: 10, verdict: 'Strong', fairOdds: '1.40-1.45',
+        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.50-1.60',
         homeForm: 'W W W D W',
-        awayForm: 'W L W D L',
+        awayForm: 'D W L W D',
         factors: {
-          formBalance:   { score: 90, detail: 'Argentina\'s consecutive World Cup/Copa América titles demonstrate unmatched tournament mentality.' },
-          momentum:      { score: 85, detail: 'Messi-led squad unbeaten in 18 competitive matches versus Switzerland\'s inconsistent form.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 75, detail: 'Argentina averaged 2.8 goals/game in group stage; Switzerland conceded in 80% of matches.' },
-          leagueContext: { score: 95, detail: 'Reigning champions\' experience in high-stakes games overshadows Switzerland\'s quarter-final ceiling.' }
+          formBalance:   { score: 80, detail: 'Argentina\'s 4W/1D unbeaten run dwarfs Switzerland\'s inconsistent 2W/2D/1L form.' },
+          momentum:      { score: 90, detail: 'Reigning champions riding 12-match unbeaten streak in World Cup tournaments.' },
+          goalTendency:  { score: 75, detail: 'Lautaro Martínez\'s tournament-leading 5 goals for Argentina against Switzerland\'s 3 clean sheets in group stage.' },
+          leagueContext: { score: 85, detail: 'Argentina (#1) dominates recent tournaments while Switzerland (#20) historically struggles against top-5 teams.' }
         },
         teamNews: {
           home: [
-              { tag: 'key', text: 'Lionel Messi — 3 goals, 4 assists this tournament' },
-              { tag: 'doubt', text: 'Nicolás Otamendi — fatigue management' }
+              { tag: 'key', text: 'Lionel Messi — 3 assists this tournament' },
+              { tag: 'doubt', text: 'Rodrigo De Paul — muscle fatigue' }
             ],
           away: [
-              { tag: 'out', text: 'Granit Xhaka — accumulated yellows' },
-              { tag: 'key', text: 'Manuel Akanji — defensive anchor' }
+              { tag: 'out', text: 'Manuel Akanji — suspension' },
+              { tag: 'key', text: 'Granit Xhaka — midfield controller' }
             ]
         },
-        context: 'Argentina\'s 4-3-3 features Messi drifting right to combine with Álvarez, exposing Switzerland\'s left flank. Without suspended Xhaka, Freuler must contain Enzo Fernández\'s runs. Switzerland\'s 3-5-2 relies on Akanji\'s buildup but struggles against high presses. Key matchup: Di María vs Rodriguez wing battle. Scaloni may deploy Lo Celso as creative pivot to unlock compact defenses.',
-        summary: 'Argentina\'s attacking quality and championship pedigree make them overwhelming favorites. Switzerland\'s defensive organization without Xhaka is compromised, leaving gaps for Messi\'s playmaking. Expect Argentina to control tempo and create numerous chances, with set-piece vulnerability their only concern. Swiss resistance likely broken by second half.'
+        context: 'Argentina\'s high press will test Switzerland\'s build-up without suspended Akanji, forcing Xhaka to drop deeper. Scaloni may start Julián Álvarez alongside Martínez to disrupt Switzerland\'s compact block. Swiss hopes rest on counter-attacks through Embolo against Argentina\'s aggressive fullbacks.',
+        summary: 'Argentina\'s attacking firepower and tournament pedigree make them strong favorites against a Swiss side missing key defender Akanji. Switzerland\'s quarter-final experience provides tactical discipline, but they lack Argentina\'s individual brilliance in decisive moments. Expect Argentina to control possession and create chances through wide overloads.'
       },
 
       {
