@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 11 Jul 2026 15:45 BST</div>
+      <div class="updated-tag">Data · 11 Jul 2026 15:48 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5104,15 +5104,21 @@ const LEAGUES = [
       {
         day: 'Tuesday 14 July',
         home: 'France', away: 'Spain', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'Both teams\' recent form is unavailable from search results.' },
+          momentum:      { score: 50, detail: 'No current tournament momentum data found for either team.' },
+          goalTendency:  { score: 50, detail: 'Goal-scoring patterns unclear without match statistics.' },
+          leagueContext: { score: 50, detail: 'World Cup context favors both sides equally based on historical pedigree.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'France\'s recent rugby win over Australia shows national team depth but offers no football insights. Spain enters as Euro 2024 champions but lacks current World Cup performance data. Key players like Mbappé and Rodri could decide this clash between France\'s counter-attack and Spain\'s possession style.',
+        summary: 'Insufficient team-specific data prevents reliable prediction. France\'s higher FIFA ranking contrasts with Spain\'s recent Euro triumph. Without form or injury reports, this appears evenly balanced. Historical success suggests both sides could advance deep in the tournament.'
       },
 
       {
