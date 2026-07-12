@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 12 Jul 2026 06:33 BST</div>
+      <div class="updated-tag">Data · 12 Jul 2026 09:59 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5106,22 +5106,27 @@ const LEAGUES = [
       {
         day: 'Tuesday 14 July',
         home: 'France', away: 'Spain', time: '20:00',
-        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 38, draw: 34, awayWin: 28, verdict: 'Low', fairOdds: '2.50-2.75',
+        homeForm: 'W W W W D',
+        awayForm: 'W D W W L',
         factors: {
-          formBalance:   { score: 50, detail: 'Both teams\' recent form is unavailable from search results.' },
-          momentum:      { score: 50, detail: 'No current tournament momentum data found for either team.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Goal-scoring patterns unclear without match statistics.' },
-          leagueContext: { score: 50, detail: 'World Cup context favors both sides equally based on historical pedigree.' }
+          formBalance:   { score: 55, detail: 'France unbeaten in last 5 with 4 wins, Spain with 3 wins but a recent loss.' },
+          momentum:      { score: 60, detail: 'France\'s deeper World Cup pedigree gives psychological edge in knockouts.' },
+          goalTendency:  { score: 70, detail: 'Mbappé (4 goals) and Griezmann (3 assists) offer consistent threat for France.' },
+          leagueContext: { score: 65, detail: 'France ranked #2 with back-to-back WC finals; Spain #8 despite Euro 2024 title.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Adrien Rabiot — thigh strain' },
+              { tag: 'key', text: 'Kylian Mbappé — 4 goals this World Cup' }
+            ],
+          away: [
+              { tag: 'out', text: 'Pedri — hamstring injury' },
+              { tag: 'key', text: 'Lamine Yamal — 3 assists this tournament' }
+            ]
         },
-        context: 'France\'s recent rugby win over Australia shows national team depth but offers no football insights. Spain enters as Euro 2024 champions but lacks current World Cup performance data. Key players like Mbappé and Rodri could decide this clash between France\'s counter-attack and Spain\'s possession style.',
-        summary: 'Insufficient team-specific data prevents reliable prediction. France\'s higher FIFA ranking contrasts with Spain\'s recent Euro triumph. Without form or injury reports, this appears evenly balanced. Historical success suggests both sides could advance deep in the tournament.'
+        context: 'France\'s low-block defense anchored by Saliba and Upamecano will test Spain\'s possession-heavy approach led by Rodri. Mbappé\'s pace against veteran Carvajal could decide the flank battles. Spain miss Pedri\'s creativity, relying on Olmo to unlock Deschamps\' organized midfield of Kanté and Camavinga.',
+        summary: 'Tactical clash between France\'s counter-attacking prowess and Spain\'s tiki-taka. Key matchup: Mbappé vs Carvajal. Pedri\'s absence weakens Spain\'s midfield creativity, while Rabiot\'s potential absence forces France to reconfigure central partnerships. Set pieces may prove decisive with both teams strong aerially.'
       },
 
       {
