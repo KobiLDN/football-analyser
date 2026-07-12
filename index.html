@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 12 Jul 2026 18:54 BST</div>
+      <div class="updated-tag">Data · 12 Jul 2026 18:58 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5133,15 +5133,21 @@ const LEAGUES = [
       {
         day: 'Wednesday 15 July',
         home: 'England', away: 'Argentina', time: '20:00',
-        result: null, homeWin: 33, draw: 34, awayWin: 33, verdict: 'Low', fairOdds: '3.00–3.40',
+        result: null, homeWin: 35, draw: 35, awayWin: 30, verdict: 'Low', fairOdds: '2.85-2.90',
+        homeForm: '? ? ? ? ?',
+        awayForm: '? ? ? ? ?',
         factors: {
-          formBalance:   { score: 50, detail: 'Pending deep research.' },
-          momentum:      { score: 50, detail: 'Pending deep research.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 50, detail: 'Pending deep research.' },
-          leagueContext: { score: 50, detail: 'Pending deep research.' }
+          formBalance:   { score: 50, detail: 'No recent match data available for either team.' },
+          momentum:      { score: 50, detail: 'Both teams enter this World Cup semi-final with strong tournament records but no current form data.' },
+          goalTendency:  { score: 50, detail: 'Historical tournament performance suggests balanced attacking capabilities.' },
+          leagueContext: { score: 60, detail: 'England seeks redemption after consecutive Euro final losses; Argentina defends world champion status.' }
         },
-        summary: 'Pending deep research.'
+        teamNews: {
+          home: [],
+          away: []
+        },
+        context: 'England faces Argentina in the World Cup semi-finals amid regional instability following Iran\'s missile attacks on Gulf states. England\'s defensive structure, led by Harry Kane, must contain Argentina\'s attacking threats. Both teams carry psychological baggage: England seeks their first major trophy since 1966 after recent near-misses, while Argentina aims to cement their dynasty under Lionel Messi.',
+        summary: 'No current team news or form data available due to regional conflict disruptions. England\'s consecutive Euro final losses contrast with Argentina\'s back-to-back Copa América titles. The absence of recent performance metrics makes this semi-final unpredictable, though Argentina\'s championship pedigree offers slight tactical confidence.'
       },
 
       {
