@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 11 Jul 2026 15:48 BST</div>
+      <div class="updated-tag">Data · 12 Jul 2026 01:02 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -2408,7 +2408,7 @@ const LEAGUES = [
     name: 'World Cup 2026',
     country: 'FIFA',
     round: 'Group Stage',
-    researchDate: '11 Jul 2026',
+    researchDate: '12 Jul 2026',
     drawRate: 24,
     fixtures: [
 
@@ -5050,28 +5050,29 @@ const LEAGUES = [
       {
         day: 'Saturday 11 July',
         home: 'Norway', away: 'England', time: '22:00',
-        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.45-2.55',
+        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.50-2.80',
         homeForm: 'L W D L W',
-        awayForm: 'W D W W D',
+        awayForm: 'W D W W L',
         factors: {
-          formBalance:   { score: 40, detail: 'Norway\'s inconsistent form (2W/2L last 5) contrasts with England\'s stronger run (3W/2D).' },
-          momentum:      { score: 30, detail: 'Norway lacks tournament momentum after failing to qualify for 3 consecutive Euros.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 55, detail: 'Erling Haaland\'s presence gives Norway scoring threat against England\'s occasionally leaky defense.' },
-          leagueContext: { score: 20, detail: 'England (FIFA #5) consistently reaches late tournament stages while Norway (#38) last advanced in 1998.' }
+          formBalance:   { score: 40, detail: 'Norway\'s inconsistent form (2W, 1D, 2L) contrasts with England\'s stronger recent results (3W, 1D, 1L).' },
+          momentum:      { score: 35, detail: 'England\'s deeper tournament experience provides psychological edge despite Norway\'s home advantage.' },
+          goalTendency:  { score: 70, detail: 'Erling Haaland\'s threat (4 WC goals) counters England\'s defensive solidity (3 clean sheets).' },
+          leagueContext: { score: 75, detail: 'England\'s #5 FIFA ranking and recent semifinal appearances outweigh Norway\'s #38 status and tournament absence since 1998.' }
         },
         teamNews: {
           home: [
               { tag: 'key', text: 'Erling Haaland — 4 goals this tournament' },
-              { tag: 'doubt', text: 'Martin Ødegaard — ankle knock' }
+              { tag: 'out', text: 'Martin Ødegaard — hamstring injury' },
+              { tag: 'doubt', text: 'Alexander Sørloth — ankle knock' }
             ],
           away: [
-              { tag: 'key', text: 'Jude Bellingham — 2 goals, 1 assist this tournament' },
-              { tag: 'out', text: 'Luke Shaw — hamstring injury' }
+              { tag: 'key', text: 'Jude Bellingham — 3 goals, 2 assists this tournament' },
+              { tag: 'doubt', text: 'Harry Kane — fatigue management' },
+              { tag: 'out', text: 'Luke Shaw — suspension' }
             ]
         },
-        context: 'Norway will rely on Haaland\'s physicality against England\'s high defensive line, while Southgate may deploy Saka and Foden wide to exploit Norway\'s slow fullbacks. England\'s tournament experience outweighs Norway\'s 28-year knockout absence, but Scandinavian organization could frustrate their buildup play.',
-        summary: 'England are favorites but face a Norway side motivated by underdog status and Haaland\'s threat. Southgate\'s selection dilemmas at left-back (Shaw injured) and midfield balance could create vulnerabilities. Norway must avoid early concessions to implement their counter-attacking plan.'
+        context: 'Norway relies heavily on Haaland\'s physicality in transition, while England\'s midfield trio of Rice, Bellingham, and Foden controls tempo. Both teams exhibit vulnerability in wide areas, with Norway missing creative hub Ødegaard and England adjusting to Shaw\'s absence. Set pieces could prove decisive given both squads\' aerial prowess.',
+        summary: 'England\'s tournament pedigree and midfield quality make them slight favorites, but Norway\'s home support and Haaland\'s explosiveness create upset potential. Key absences (Ødegaard for Norway, Shaw for England) may disrupt tactical balance. Recent form suggests a tight contest likely decided by individual moments.'
       },
 
       {
