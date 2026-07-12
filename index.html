@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.135 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.136 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 12 Jul 2026 01:02 BST</div>
+      <div class="updated-tag">Data · 12 Jul 2026 06:33 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5050,12 +5050,13 @@ const LEAGUES = [
       {
         day: 'Saturday 11 July',
         home: 'Norway', away: 'England', time: '22:00',
-        result: null, homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.50-2.80',
+        result: '1-1', homeWin: 25, draw: 35, awayWin: 40, verdict: 'Low', fairOdds: '2.50-2.80',
         homeForm: 'L W D L W',
         awayForm: 'W D W W L',
         factors: {
           formBalance:   { score: 40, detail: 'Norway\'s inconsistent form (2W, 1D, 2L) contrasts with England\'s stronger recent results (3W, 1D, 1L).' },
           momentum:      { score: 35, detail: 'England\'s deeper tournament experience provides psychological edge despite Norway\'s home advantage.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Erling Haaland\'s threat (4 WC goals) counters England\'s defensive solidity (3 clean sheets).' },
           leagueContext: { score: 75, detail: 'England\'s #5 FIFA ranking and recent semifinal appearances outweigh Norway\'s #38 status and tournament absence since 1998.' }
         },
@@ -5078,7 +5079,7 @@ const LEAGUES = [
       {
         day: 'Sunday 12 July',
         home: 'Argentina', away: 'Switzerland', time: '02:00',
-        result: null, homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.50-1.60',
+        result: '1-1', homeWin: 65, draw: 25, awayWin: 10, verdict: 'Strong', fairOdds: '1.50-1.60',
         homeForm: 'W W W D W',
         awayForm: 'D W L W D',
         factors: {
@@ -5111,6 +5112,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'Both teams\' recent form is unavailable from search results.' },
           momentum:      { score: 50, detail: 'No current tournament momentum data found for either team.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 50, detail: 'Goal-scoring patterns unclear without match statistics.' },
           leagueContext: { score: 50, detail: 'World Cup context favors both sides equally based on historical pedigree.' }
         },
