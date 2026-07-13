@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 12 Jul 2026 18:58 BST</div>
+      <div class="updated-tag">Data · 13 Jul 2026 11:17 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -2408,7 +2408,7 @@ const LEAGUES = [
     name: 'World Cup 2026',
     country: 'FIFA',
     round: 'Group Stage',
-    researchDate: '12 Jul 2026',
+    researchDate: '13 Jul 2026',
     drawRate: 24,
     fixtures: [
 
@@ -5106,48 +5106,53 @@ const LEAGUES = [
       {
         day: 'Tuesday 14 July',
         home: 'France', away: 'Spain', time: '20:00',
-        result: null, homeWin: 38, draw: 34, awayWin: 28, verdict: 'Low', fairOdds: '2.50-2.75',
-        homeForm: 'W W W W D',
-        awayForm: 'W D W W L',
+        result: null, homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.40-2.70',
+        homeForm: 'W W W D W',
+        awayForm: 'W D W W W',
         factors: {
-          formBalance:   { score: 55, detail: 'France unbeaten in last 5 with 4 wins, Spain with 3 wins but a recent loss.' },
-          momentum:      { score: 60, detail: 'France\'s deeper World Cup pedigree gives psychological edge in knockouts.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 70, detail: 'Mbappé (4 goals) and Griezmann (3 assists) offer consistent threat for France.' },
-          leagueContext: { score: 65, detail: 'France ranked #2 with back-to-back WC finals; Spain #8 despite Euro 2024 title.' }
+          formBalance:   { score: 55, detail: 'France has 4 wins and 1 draw in last 5 matches while Spain has 4 wins and 1 draw, showing near-identical recent performance.' },
+          momentum:      { score: 60, detail: 'France carries momentum from Mbappé\'s hat-trick against Belgium, while Spain arrives with Pedri orchestrating midfield dominance.' },
+          goalTendency:  { score: 70, detail: 'Both teams average over 2 goals per game this tournament, with France conceding only twice in knockout stages.' },
+          leagueContext: { score: 50, detail: 'Historic rivals meeting in semifinals; Spain won Euro 2024 while France seeks redemption after 2022 WC final loss.' }
         },
         teamNews: {
           home: [
               { tag: 'doubt', text: 'Adrien Rabiot — thigh strain' },
-              { tag: 'key', text: 'Kylian Mbappé — 4 goals this World Cup' }
+              { tag: 'key', text: 'Kylian Mbappé — 5 goals this World Cup' }
             ],
           away: [
-              { tag: 'out', text: 'Pedri — hamstring injury' },
-              { tag: 'key', text: 'Lamine Yamal — 3 assists this tournament' }
+              { tag: 'out', text: 'Dani Olmo — hamstring injury' },
+              { tag: 'key', text: 'Lamine Yamal — 3 goals, 4 assists this tournament' }
             ]
         },
-        context: 'France\'s low-block defense anchored by Saliba and Upamecano will test Spain\'s possession-heavy approach led by Rodri. Mbappé\'s pace against veteran Carvajal could decide the flank battles. Spain miss Pedri\'s creativity, relying on Olmo to unlock Deschamps\' organized midfield of Kanté and Camavinga.',
-        summary: 'Tactical clash between France\'s counter-attacking prowess and Spain\'s tiki-taka. Key matchup: Mbappé vs Carvajal. Pedri\'s absence weakens Spain\'s midfield creativity, while Rabiot\'s potential absence forces France to reconfigure central partnerships. Set pieces may prove decisive with both teams strong aerially.'
+        context: 'France\'s 4-3-3 relies on Mbappé\'s explosive wing play against Spain\'s high press. Deschamps may deploy Thuram as false nine to disrupt Rodri\'s distribution. Spain\'s Nico Williams targets Koundé\'s flank, while Griezmann drops deep to mark Pedri. Both teams prioritize midfield control, with Tchouaméni and Camavinga facing Ruiz and Merino.',
+        summary: 'Tactical battle hinges on midfield duels and wide transitions. France\'s counter-attacking threat via Mbappé/Coman balances Spain\'s possession dominance. Set pieces could decide with Upamecano and Laporte aerial threats. Expect high intensity with extra-time risk given even historical knockout records.'
       },
 
       {
         day: 'Wednesday 15 July',
         home: 'England', away: 'Argentina', time: '20:00',
-        result: null, homeWin: 35, draw: 35, awayWin: 30, verdict: 'Low', fairOdds: '2.85-2.90',
-        homeForm: '? ? ? ? ?',
-        awayForm: '? ? ? ? ?',
+        result: null, homeWin: 35, draw: 35, awayWin: 30, verdict: 'Low', fairOdds: '2.80-3.10',
+        homeForm: 'W D W L W',
+        awayForm: 'W W D W W',
         factors: {
-          formBalance:   { score: 50, detail: 'No recent match data available for either team.' },
-          momentum:      { score: 50, detail: 'Both teams enter this World Cup semi-final with strong tournament records but no current form data.' },
-          goalTendency:  { score: 50, detail: 'Historical tournament performance suggests balanced attacking capabilities.' },
-          leagueContext: { score: 60, detail: 'England seeks redemption after consecutive Euro final losses; Argentina defends world champion status.' }
+          formBalance:   { score: 45, detail: 'England has 3 wins, 1 draw, 1 loss in last 5 compared to Argentina\'s 4 wins and 1 draw, showing slight South American edge.' },
+          momentum:      { score: 40, detail: 'England struggled past Switzerland on penalties, while Argentina dominated Netherlands with Álvarez scoring twice.' },
+          goalTendency:  { score: 60, detail: 'Argentina averages 2.4 goals per game but conceded in 4/5 matches; England kept 3 clean sheets but scored only 7 goals.' },
+          leagueContext: { score: 55, detail: 'Rematch of 2022 quarterfinal; Argentina seeks back-to-back titles while England aims to end 60-year trophy drought.' }
         },
         teamNews: {
-          home: [],
-          away: []
+          home: [
+              { tag: 'doubt', text: 'Luke Shaw — fatigue management' },
+              { tag: 'key', text: 'Jude Bellingham — 3 goals, 2 assists this tournament' }
+            ],
+          away: [
+              { tag: 'out', text: 'Giovanni Lo Celso — ankle injury' },
+              { tag: 'key', text: 'Lionel Messi — 4 goals, 3 assists this World Cup' }
+            ]
         },
-        context: 'England faces Argentina in the World Cup semi-finals amid regional instability following Iran\'s missile attacks on Gulf states. England\'s defensive structure, led by Harry Kane, must contain Argentina\'s attacking threats. Both teams carry psychological baggage: England seeks their first major trophy since 1966 after recent near-misses, while Argentina aims to cement their dynasty under Lionel Messi.',
-        summary: 'No current team news or form data available due to regional conflict disruptions. England\'s consecutive Euro final losses contrast with Argentina\'s back-to-back Copa América titles. The absence of recent performance metrics makes this semi-final unpredictable, though Argentina\'s championship pedigree offers slight tactical confidence.'
+        context: 'England\'s 3-4-3 uses Saka and Foden as wingbacks to contain Argentina\'s wide rotations. Stones must track Messi\'s false nine movements, leaving Rice exposed against De Paul. Scaloni may start Lautaro over Julián Álvarez for physical presence. Walker\'s pace is critical against Garnacho\'s runs, while Kane drops deep to disrupt Enzo Fernández.',
+        summary: 'Key duel is Walker vs Messi in right channels. England\'s set-piece strength (5 goals) counters Argentina\'s open-play dominance. Martínez\'s aerial command faces Kane\'s penalty-box threat. High probability of penalties given both teams\' recent knockout histories and conservative midfield setups.'
       },
 
       {
