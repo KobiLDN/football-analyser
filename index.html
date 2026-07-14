@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.137 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.138 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 14 Jul 2026 10:00 BST</div>
+      <div class="updated-tag">Data · 14 Jul 2026 22:06 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5106,12 +5106,13 @@ const LEAGUES = [
       {
         day: 'Tuesday 14 July',
         home: 'France', away: 'Spain', time: '20:00',
-        result: null, homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.40-2.60',
+        result: '0-2', homeWin: 40, draw: 30, awayWin: 30, verdict: 'Low', fairOdds: '2.40-2.60',
         homeForm: 'W W W W W',
         awayForm: 'W W W W W',
         factors: {
           formBalance:   { score: 50, detail: 'Both teams enter with perfect tournament records, winning all five matches.' },
           momentum:      { score: 55, detail: 'France\'s comeback wins demonstrate resilience, while Spain dominated possession in all matches.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 60, detail: 'High-scoring trends with Mbappé and Griezmann for France, Morata and Yamal for Spain.' },
           leagueContext: { score: 45, detail: 'Spain\'s Euro 2024 title gives psychological edge, but France has superior World Cup pedigree.' }
         },
@@ -5138,6 +5139,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 50, detail: 'England won four of five matches, Argentina remained unbeaten with three clean sheets.' },
           momentum:      { score: 48, detail: 'England\'s narrow wins contrast with Argentina\'s dominant group stage performances.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 55, detail: 'Kane\'s clinical finishing vs. Álvarez\'s pressing creates high-chance environments.' },
           leagueContext: { score: 52, detail: 'Argentina\'s #1 ranking and defending champion status offset England\'s home-continent advantage.' }
         },
