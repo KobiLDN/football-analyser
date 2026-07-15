@@ -49,6 +49,7 @@ Running list of ideas, things in progress, and things shipped. Pick from the Bac
 
 ## Done
 
+- **v2.140** — Auto-fetched 2 World Cup 2026 fixture stubs. Marked 1 World Cup result.
 - **v2.139** — Auto-fetched 2 World Cup 2026 fixture stubs.
 - **v2.138** — Marked 1 World Cup result.
 - **v2.137** — Auto-fetched 1 World Cup 2026 fixture stubs.
