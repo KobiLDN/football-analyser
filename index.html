@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 16 Jul 2026 10:12 BST</div>
+      <div class="updated-tag">Data · 17 Jul 2026 10:03 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -2408,7 +2408,7 @@ const LEAGUES = [
     name: 'World Cup 2026',
     country: 'FIFA',
     round: 'Group Stage',
-    researchDate: '16 Jul 2026',
+    researchDate: '17 Jul 2026',
     drawRate: 24,
     fixtures: [
 
@@ -5162,55 +5162,53 @@ const LEAGUES = [
       {
         day: 'Saturday 18 July',
         home: 'France', away: 'England', time: '22:00',
-        result: null, homeWin: 42, draw: 33, awayWin: 25, verdict: 'Low', fairOdds: '2.35-2.45',
-        homeForm: 'W W W D W',
+        result: null, homeWin: 38, draw: 32, awayWin: 30, verdict: 'Low', fairOdds: '2.60-2.65',
+        homeForm: 'W W D W L',
         awayForm: 'W D W W W',
         factors: {
-          formBalance:   { score: 55, detail: 'France won 4 of last 5 while England drew twice.' },
-          momentum:      { score: 60, detail: 'Both unbeaten in knockout stages with Mbappé and Kane in scoring form.' },
-          goalTendency:  { score: 75, detail: 'Averaged 2.4 goals/game each with attacking stars fully fit.' },
-          leagueContext: { score: 58, detail: 'France\'s superior WC pedigree (2018 champs) slightly edges England\'s recent finals experience.' }
+          formBalance:   { score: 50, detail: 'Both teams show balanced recent results with slight edge to England\'s consistency.' },
+          momentum:      { score: 55, detail: 'England carries stronger momentum with fewer recent losses.' },
+          goalTendency:  { score: 60, detail: 'High-scoring patterns favor France\'s attacking trio of Mbappé-Giroud-Dembélé.' },
+          leagueContext: { score: 70, detail: 'France\'s superior World Cup pedigree (2018 champions, 2022 finalists) provides psychological edge.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Adrien Rabiot — suspended (yellow cards)' },
-              { tag: 'doubt', text: 'Dayot Upamecano — muscle strain' },
-              { tag: 'key', text: 'Kylian Mbappé — 5 goals this World Cup' }
+              { tag: 'key', text: 'Kylian Mbappé — 3 goals this tournament' },
+              { tag: 'doubt', text: 'Adrien Rabiot — minor knock' }
             ],
           away: [
-              { tag: 'out', text: 'Luke Shaw — suspended (red card)' },
-              { tag: 'key', text: 'Harry Kane — 4 goals, 2 assists this tournament' }
+              { tag: 'key', text: 'Harry Kane — 4 goals this tournament' },
+              { tag: 'out', text: 'Luke Shaw — suspension' }
             ]
         },
-        context: 'France\'s 4-3-3 relies on Mbappé\'s explosive wing play against England\'s 3-4-3 with Bellingham as playmaker. Deschamps may deploy Tchouaméni to neutralize Kane\'s dropping movements. Southgate faces left-back crisis with Trippier likely deputizing.',
-        summary: 'Semi-final clash pits France\'s tournament-leading attack against England\'s organized defense. Mbappé\'s duel with Walker could decide the game, while England\'s set-piece threat remains potent. Shaw\'s absence disrupts England\'s balance.'
+        context: 'France\'s high press will target England\'s makeshift left-back position, with Mbappé exploiting space behind. England\'s 3-4-3 relies on Bellingham\'s midfield dominance and Kane\'s hold-up play. Griezmann\'s creative freedom between lines could decide midfield battles against Rice\'s positioning.',
+        summary: 'Tactical clash between France\'s explosive counters and England\'s possession structure. Key duel: Mbappé vs Walker\'s recovery pace. Set pieces may prove decisive given both teams\' aerial threats from Saliba and Maguire.'
       },
 
       {
         day: 'Sunday 19 July',
         home: 'Spain', away: 'Argentina', time: '20:00',
-        result: null, homeWin: 35, draw: 35, awayWin: 30, verdict: 'Low', fairOdds: '2.85-3.00',
-        homeForm: 'W D W W W',
-        awayForm: 'L W W W W',
+        result: null, homeWin: 30, draw: 33, awayWin: 37, verdict: 'Low', fairOdds: '2.65-2.75',
+        homeForm: 'W D L W W',
+        awayForm: 'W W D W W',
         factors: {
-          formBalance:   { score: 52, detail: 'Spain unbeaten with 4 wins; Argentina recovered from opening loss with 4 straight wins.' },
-          momentum:      { score: 65, detail: 'Both arrive with confidence after eliminating Netherlands and Brazil respectively.' },
-          goalTendency:  { score: 70, detail: 'Messi involvement guarantees creativity; Spain\'s Yamal adds unpredictability.' },
-          leagueContext: { score: 48, detail: 'Defending champions Argentina have superior tournament mentality despite Spain\'s Euro 2024 title.' }
+          formBalance:   { score: 45, detail: 'Argentina\'s unbeaten streak contrasts with Spain\'s occasional defensive lapses.' },
+          momentum:      { score: 65, detail: 'Messi-inspired Argentina shows stronger tournament progression.' },
+          goalTendency:  { score: 70, detail: 'Consistent scoring from Alvarez-Messi partnership pressures high lines.' },
+          leagueContext: { score: 75, detail: 'Argentina\'s championship mentality (2022 WC winners, 2024 Copa América) outweighs Spain\'s transitional squad.' }
         },
         teamNews: {
           home: [
-              { tag: 'out', text: 'Pedri — hamstring tear' },
-              { tag: 'doubt', text: 'Dani Olmo — ankle knock' },
-              { tag: 'key', text: 'Lamine Yamal — 3 goals, 2 assists this tournament' }
+              { tag: 'key', text: 'Lamine Yamal — 2 assists this tournament' },
+              { tag: 'doubt', text: 'Dani Olmo — muscle fatigue' }
             ],
           away: [
-              { tag: 'doubt', text: 'Lautaro Martínez — fever' },
-              { tag: 'key', text: 'Lionel Messi — 4 goals, 3 assists this World Cup' }
+              { tag: 'key', text: 'Lionel Messi — 5 goal contributions' },
+              { tag: 'out', text: 'Giovani Lo Celso — hamstring' }
             ]
         },
-        context: 'Spain\'s possession-based system faces Argentina\'s transition threat. De la Fuente may start Williams to exploit Molina\'s advanced positioning. Scaloni could deploy De Paul to disrupt Rodri\'s distribution. Messi\'s freedom in false-nine role tests Spain\'s high line.',
-        summary: 'Tactical battle between Spain\'s midfield control and Argentina\'s counter-attacking prowess. Pedri\'s absence weakens Spain\'s creativity, while Martínez\'s potential absence reduces Argentina\'s bench impact. Messi remains the decisive variable.'
+        context: 'Spain\'s possession-heavy approach (Rodri-Pedri axis) faces Argentina\'s compact mid-block seeking transition opportunities. Messi\'s drift into right half-space will test Laporte\'s positioning. Williams\' pace against Molina\'s attacking runs creates critical flank vulnerability.',
+        summary: 'Stylistic battle with Spain controlling tempo versus Argentina\'s lethal counters. Decisive factor: Can De Paul disrupt Rodri\'s distribution? Martinez\'s penalty-saving prowess adds pressure to Spain\'s finishing.'
       }
     ]
   }
