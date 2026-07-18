@@ -291,11 +291,11 @@
 
 <div class="topbar">
 
-  <div class="logo">Football Analyser <span>v2.140 – 2025–26</span></div>
+  <div class="logo">Football Analyser <span>v2.141 – 2025–26</span></div>
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 18 Jul 2026 09:30 BST</div>
+      <div class="updated-tag">Data · 19 Jul 2026 00:50 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -5162,12 +5162,13 @@ const LEAGUES = [
       {
         day: 'Saturday 18 July',
         home: 'France', away: 'England', time: '22:00',
-        result: null, homeWin: 42, draw: 30, awayWin: 28, verdict: 'Low', fairOdds: '2.35-2.45',
+        result: '4-6', homeWin: 42, draw: 30, awayWin: 28, verdict: 'Low', fairOdds: '2.35-2.45',
         homeForm: 'W W W W D',
         awayForm: 'W D W L W',
         factors: {
           formBalance:   { score: 60, detail: 'France unbeaten in last 5 with 4 wins, England with 3 wins but a recent loss.' },
           momentum:      { score: 55, detail: 'Mbappé scoring consistently, England\'s Kane less prolific this tournament.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 70, detail: 'Both teams averaging 2+ goals per game in knockout stages.' },
           leagueContext: { score: 65, detail: 'France\'s WC final experience vs England\'s recent tournament final appearances.' }
         },
@@ -5194,6 +5195,7 @@ const LEAGUES = [
         factors: {
           formBalance:   { score: 52, detail: 'Spain lost last group match, Argentina unbeaten but two draws in last five.' },
           momentum:      { score: 48, detail: 'Messi with 5 goal contributions, Spain\'s Morata inconsistent.' },
+          headToHead:    { score: 50, detail: 'Pending deep research.' },
           goalTendency:  { score: 45, detail: 'Argentina conceding <1 goal avg, Spain struggling against low blocks.' },
           leagueContext: { score: 58, detail: 'Spain\'s Euro 2024 win contrasts with Argentina\'s World Cup defense.' }
         },
