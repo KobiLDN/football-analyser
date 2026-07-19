@@ -295,7 +295,7 @@
   <div class="topbar-right">
     <div class="updated-stack">
       <div class="updated-tag">Page · 5 Jul 2026 15:00 BST</div>
-      <div class="updated-tag">Data · 19 Jul 2026 00:50 BST</div>
+      <div class="updated-tag">Data · 19 Jul 2026 10:01 BST</div>
     </div>
     <div class="theme-row">
       <div class="t-btn" data-tv="light">Light</div>
@@ -2408,7 +2408,7 @@ const LEAGUES = [
     name: 'World Cup 2026',
     country: 'FIFA',
     round: 'Group Stage',
-    researchDate: '18 Jul 2026',
+    researchDate: '19 Jul 2026',
     drawRate: 24,
     fixtures: [
 
@@ -5189,28 +5189,27 @@ const LEAGUES = [
       {
         day: 'Sunday 19 July',
         home: 'Spain', away: 'Argentina', time: '20:00',
-        result: null, homeWin: 38, draw: 32, awayWin: 30, verdict: 'Low', fairOdds: '2.60-2.75',
-        homeForm: 'W D W W L',
-        awayForm: 'W W D W W',
+        result: null, homeWin: 34, draw: 33, awayWin: 33, verdict: 'Low', fairOdds: '2.90-3.00',
+        homeForm: 'W W W D L',
+        awayForm: 'W D W W W',
         factors: {
-          formBalance:   { score: 52, detail: 'Spain lost last group match, Argentina unbeaten but two draws in last five.' },
-          momentum:      { score: 48, detail: 'Messi with 5 goal contributions, Spain\'s Morata inconsistent.' },
-          headToHead:    { score: 50, detail: 'Pending deep research.' },
-          goalTendency:  { score: 45, detail: 'Argentina conceding <1 goal avg, Spain struggling against low blocks.' },
-          leagueContext: { score: 58, detail: 'Spain\'s Euro 2024 win contrasts with Argentina\'s World Cup defense.' }
+          formBalance:   { score: 45, detail: 'Argentina\'s unbeaten run (4W, 1D) contrasts with Spain\'s recent loss, giving Albiceleste slight edge.' },
+          momentum:      { score: 55, detail: 'Argentina\'s Copa América 2024 title and Messi\'s form provide stronger momentum than Spain\'s Euro 2024 win.' },
+          goalTendency:  { score: 60, detail: 'Argentina averaged 2.3 goals in last 5 matches, outperforming Spain\'s 1.8 goals per game.' },
+          leagueContext: { score: 65, detail: 'As FIFA #1 and defending World Cup champions, Argentina\'s tournament pedigree exceeds Spain\'s #8 ranking.' }
         },
         teamNews: {
           home: [
-              { tag: 'doubt', text: 'Pedri — knock in training' },
-              { tag: 'key', text: 'Yamal — 3 assists this World Cup' }
+              { tag: 'doubt', text: 'Pedri — muscle strain' },
+              { tag: 'key', text: 'Lamine Yamal — 3 assists this World Cup' }
             ],
           away: [
-              { tag: 'out', text: 'Lo Celso — thigh injury' },
-              { tag: 'key', text: 'Messi — 4 goals, 2 assists this tournament' }
+              { tag: 'key', text: 'Lionel Messi — 4 goals this World Cup' },
+              { tag: 'out', text: 'Giovani Lo Celso — suspension' }
             ]
         },
-        context: 'Spain\'s possession system faces Argentina\'s compact mid-block. De Paul will shadow Rodri to disrupt buildup. Watch Alvarez\'s runs against high Spanish line. Argentina\'s 4-4-2 forces Spain\'s fullbacks into defensive duties, limiting Williams\' attacking impact.',
-        summary: 'Contrasting styles: Spain\'s tiki-taka vs Argentina\'s vertical transitions. Critical matchup: Rodri vs Enzo in midfield. Messi\'s freedom in half-spaces could exploit Ruiz\'s positioning. Both teams vulnerable to counter-attacks after committing fullbacks.'
+        context: 'Spain\'s high-possession system under Luis de la Fuente relies on Rodri\'s distribution and Lamine Yamal\'s creativity, but defensive gaps emerged in their group-stage loss to Brazil. Argentina\'s structured 4-4-2 leverages Messi\'s playmaking and Julián Álvarez\'s pressing, with Enzo Fernández controlling midfield tempo. Both teams prioritize ball retention, but Argentina\'s transition defense has been more disciplined.',
+        summary: 'World Cup holders Argentina enter with superior form and Messi\'s tournament-leading 4 goals, though Lo Celso\'s suspension weakens midfield depth. Spain\'s Yamal creates scoring chances but Pedri\'s potential absence and defensive vulnerabilities against counter-attacks remain concerns. Expect tight midfield battles with Argentina favored in knockout experience.'
       }
     ]
   }
