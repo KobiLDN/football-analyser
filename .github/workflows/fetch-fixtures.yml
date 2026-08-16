@@ -1,9 +1,7 @@
-name: fetch-fixtures
+name: Auto-fetch fixtures
 
 on:
-  schedule:
-    # Every Monday at 08:00 UTC — picks up the following week's schedule
-    - cron: '0 8 * * 1'
+  # Automatic triggers disabled (off-season) — re-enable when domestic football resumes
   workflow_dispatch:
     inputs:
       days_ahead:

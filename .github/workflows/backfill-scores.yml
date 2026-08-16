@@ -1,4 +1,4 @@
-name: backfill-scores
+name: Backfill scores (one-off)
 
 on:
   workflow_dispatch:

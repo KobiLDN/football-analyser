@@ -1,18 +1,7 @@
-name: fetch-worldcup
+name: Auto-fetch World Cup fixtures
 
 on:
-  # Every 3 hours starting 06:00 BST — picks up new fixture stubs AND live
-  # scores as openfootball updates score.ft after each match. No-ops cheaply
-  # when nothing changes, so running frequently year-round is fine.
-  schedule:
-    - cron: '0 5 * * *'   # 06:00 BST
-    - cron: '0 8 * * *'   # 09:00 BST
-    - cron: '0 11 * * *'  # 12:00 BST
-    - cron: '0 14 * * *'  # 15:00 BST
-    - cron: '0 17 * * *'  # 18:00 BST
-    - cron: '0 20 * * *'  # 21:00 BST
-    - cron: '0 23 * * *'  # 00:00 BST
-    - cron: '0 2 * * *'   # 03:00 BST
+  # Automatic triggers disabled (off-season) — re-enable when World Cup resumes
   workflow_dispatch:
     inputs:
       season:
