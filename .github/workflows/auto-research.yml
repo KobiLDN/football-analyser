@@ -1,17 +1,7 @@
 name: Auto-research fixtures
 
 on:
-  # Daily at 10:00 UTC (11am BST) — picks up any new stubs from placeholder
-  # resolution or overnight fixture fetches without waiting until Monday
-  schedule:
-    - cron: '0 10 * * *'
-  # Run after the fetch workflows so stubs exist before we research them
-  workflow_run:
-    workflows:
-      - "Auto-fetch fixtures"
-      - "Auto-fetch World Cup fixtures"
-    types: [completed]
-  # Also allow manual trigger with optional overrides
+  # Automatic triggers disabled (off-season) — re-enable when football resumes
   workflow_dispatch:
     inputs:
       league:

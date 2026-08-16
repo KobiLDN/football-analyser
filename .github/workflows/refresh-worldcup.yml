@@ -1,10 +1,7 @@
 name: Daily World Cup refresh
 
 on:
-  # 07:00 UTC = 08:00 BST — re-research upcoming WC fixtures each morning
-  # so overnight injuries / squad news are captured before evening kick-offs.
-  schedule:
-    - cron: '0 7 * * *'
+  # Automatic triggers disabled (off-season) — re-enable when World Cup resumes
   workflow_dispatch:
     inputs:
       days:

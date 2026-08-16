@@ -1,10 +1,7 @@
 name: Midnight refresh
 
 on:
-  # Midnight BST (23:00 UTC) — re-researches fixtures kicking off today or
-  # tomorrow with the latest team news, injuries, and lineup leaks
-  schedule:
-    - cron: '0 23 * * *'
+  # Automatic triggers disabled (off-season) — re-enable when football resumes
   workflow_dispatch:
     inputs:
       days:

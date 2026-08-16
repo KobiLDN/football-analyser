@@ -1,15 +1,7 @@
 name: Verify fixtures
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'index.html'
-      - 'scripts/verify-fixtures.js'
-      - '.github/workflows/verify-fixtures.yml'
-  schedule:
-    # Daily at 07:00 UTC — catches fixture changes ahead of the weekend
-    - cron: '0 7 * * *'
+  # Automatic triggers disabled (off-season) — re-enable when football resumes
   workflow_dispatch:
 
 permissions:

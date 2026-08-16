@@ -1,15 +1,7 @@
 name: Auto-mark results
 
 on:
-  schedule:
-    # Match days afternoon — 5pm BST (16:00 UTC) catches afternoon kickoffs (Thu-Sun)
-    - cron: '0 16 * * 4,5,6,0'
-    # Daily 11pm BST (22:00 UTC) — catches evening kickoffs (20:00-21:00)
-    - cron: '0 22 * * *'
-    # Daily 2am BST (01:00 UTC) — catches late kickoffs (22:00-23:00) finished after midnight
-    - cron: '0 1 * * *'
-    # Daily 6am BST (05:00 UTC) — catches overnight kickoffs (00:00-05:00 BST)
-    - cron: '0 5 * * *'
+  # Automatic triggers disabled (off-season) — re-enable when football resumes
   workflow_dispatch:
 
 permissions:
